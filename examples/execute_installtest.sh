@@ -12,6 +12,7 @@
 
 set -ex
 
-apt-get install -y "$1"
+apt-get install -y "$1" < /dev/null
+
 
 

@@ -1,5 +1,10 @@
 2003-12-16  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-createbuildenv (DEBOOTSTRAPSCRIPT): use $TRAP instead of trap,
+	and set TRAP to trap only when PRESERVE_BUILDPLACE is not yes.
+
+	* Makefile (install): install new examples.
+
 	* Documentation/pbuilder-doc.xml: Document execute_installtest.sh
 
 	* examples/execute_installtest.sh: Install testing script. Calls apt.

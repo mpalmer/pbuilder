@@ -28,6 +28,12 @@ if [ -z "$DISTRIBUTION" ]; then
 fi
 echo "Distribution is $DISTRIBUTION."
 
+if [ "${PRESERVE_BUILDPLACE}" = "yes" ]; then
+    TRAP="echo ignoring trap "
+else
+    TRAP=trap
+fi
+
 # first clean it.
 cleanbuildplace
 
@@ -37,7 +43,7 @@ if [ ! -d "$BUILDPLACE" ]; then
     echo "pbuilder: Could not make directory [$BUILDPLACE]" >&2
     exit 1
 fi
-trap cleanbuildplace exit
+$TRAP cleanbuildplace exit
 
 echo " -> running debootstrap"
 DEBOOTSTRAPSCRIPT=""
@@ -64,7 +70,7 @@ installaptlines
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"
 mountproc
-trap umountproc_cleanbuildplace exit
+$TRAP umountproc_cleanbuildplace exit
 $CHROOTEXEC /usr/bin/apt-get update
 if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
@@ -79,7 +85,7 @@ executehooks "E"
 unloadhooks
 
 umountproc
-trap cleanbuildplace exit
+$TRAP cleanbuildplace exit
 
 create_basetgz
 if [ "${PRESERVE_BUILDPLACE}" = "yes" ]; then

@@ -25,9 +25,14 @@ set -e
 if [ -n "$DISTRIBUTION" ]; then
     echo "Upgrading for distribution $DISTRIBUTION" 
 fi
+if [ "${PRESERVE_BUILDPLACE}" = "yes" ]; then
+    TRAP="echo ignoring trap "
+else
+    TRAP=trap
+fi
 
 extractbuildplace
-trap umountproc_cleanbuildplace exit
+$TRAP umountproc_cleanbuildplace exit
 
 loadhooks
 echo "Refreshing the base.tgz "
@@ -47,7 +52,7 @@ executehooks "E"
 unloadhooks
 
 umountproc
-trap cleanbuildplace exit
+$TRAP cleanbuildplace exit
 if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
     create_basetgz
 fi
