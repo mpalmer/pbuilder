@@ -1,0 +1,45 @@
+#!/bin/bash
+export LANG=C
+export LC_ALL=C
+
+PACKAGENAME=$1
+
+. /etc/pbuilderrc
+
+CHROOTEXEC="chroot $BUILDPLACE "
+
+cd $MYREPOSITORY
+echo Initializing repository
+dpkg-scanpackages . . | gzip > Packages.gz
+dpkg-scansources . . | gzip > Sources.gz
+
+echo cleaning the build env
+rm -rf $BUILDPLACE
+
+echo building the build env
+mkdir -p $BUILDPLACE
+cd $BUILDPLACE
+tar xfzp $BASETGZ
+mkdir -p $BUILDPLACE/tmp/buildd
+for a in passwd hosts hostname resolv.conf; do 
+  cp /etc/$a $BUILDPLACE/etc/$a;
+done
+
+echo Installing apt-lines
+cat > $BUILDPLACE/etc/apt/sources.list << EOF
+deb $MYREPOSITORYHTTP ./
+deb-src $MYREPOSITORYHTTP ./
+deb http://www.jp.debian.org/debian unstable main contrib non-free
+deb-src http://www.jp.debian.org/debian unstable main contrib non-free
+EOF
+
+echo Refreshing the base.tgz 
+$CHROOTEXEC /usr/bin/apt-get update
+$CHROOTEXEC /usr/bin/dpkg --purge lilo
+$CHROOTEXEC /usr/bin/apt-get -y dist-upgrade
+$CHROOTEXEC /usr/bin/apt-get -y install build-essential dpkg-dev apt $EXTRAPACKAGES
+$CHROOTEXEC /usr/bin/apt-get clean
+cd $BUILDPLACE
+echo Creating base.tgz
+tar cfz $BASETGZ *
+
