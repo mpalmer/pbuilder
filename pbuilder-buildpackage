@@ -31,8 +31,14 @@ function checkbuilddep () {
 PACKAGENAME="$1"
 CHROOTEXEC="chroot $BUILDPLACE "
 
-cleanbuildplace
 
+
+if [ ! -f "$PACKAGENAME" ]; then
+  echo "Command line parameter [$PACKAGENAME] is not a valid .dsc file name" >&2
+  exit 1;
+fi;
+
+cleanbuildplace
 echo "building the build env"
 mkdir -p "$BUILDPLACE"
 (
@@ -62,3 +68,5 @@ test -n "$BUILDRESULT" && (
     echo "Error: BUILDRESULT=[$BUILDRESULT] and is not a directory." >&2
   fi
 )
+cleanbuildplace
+
