@@ -164,16 +164,22 @@ function checkbuilddep () {
     checkbuilddep_internal;
 }
 
+function echobacktime () {
+    echo "Current time: $(date)"
+    echo "pbuilder-time-stamp: $(date +%s)"
+}
+
 . /usr/lib/pbuilder/pbuilder-checkparams
 
 PACKAGENAME="$1"
 CHROOTEXEC="chroot $BUILDPLACE "
 
-
 if [ ! -f "$PACKAGENAME" ]; then
     echo "Command line parameter [$PACKAGENAME] is not a valid .dsc file name" >&2
     exit 1;
 fi;
+
+echobacktime
 
 extractbuildplace 
 
@@ -242,3 +248,4 @@ fi
 
 cleanbuildplace
 
+echobacktime
