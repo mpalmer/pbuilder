@@ -60,7 +60,7 @@ while [ -n "$1" ]; do
 	    shift; shift;
 	    ;;
 	--buildresult)
-	    if [ -n '' ]; then
+	    if [ -n "$2" ]; then
 		BUILDRESULT=$(readlink -f "$2");
 	    else
 		BUILDRESULT=

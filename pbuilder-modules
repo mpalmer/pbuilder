@@ -126,7 +126,7 @@ function cleanbuildplace () {
     if [ "$?" -ne 0 ]; then
 	echo " -> Aborting with an error";
     fi
-    if [ "${INTERNAL_BUILD_UML}" != "yes" -a ! \( "${PRESERVE_BUILDPLACE}" = "yes" -a -d "$BUILDPLACE" \) ]; then
+    if [ "${INTERNAL_BUILD_UML}" != "yes" ]; then
 	if [ -d "$BUILDPLACE" ]; then 
 	    echo " -> cleaning the build env "
 	    rm -rf "$BUILDPLACE"
@@ -182,7 +182,7 @@ function copy_local_configuration () {
 function extractbuildplace () {
     # after calling this function, umountproc, and cleanbuildplace
     # needs to be called. Please trap it.
-    if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
+    if [ "${INTERNAL_BUILD_UML}" != "yes" -a ! \( "${PRESERVE_BUILDPLACE}" = "yes" -a -d "$BUILDPLACE" \) ]; then
 	cleanbuildplace
 	echo "Building the build Environment"
 	if ! mkdir -p "$BUILDPLACE"; then
