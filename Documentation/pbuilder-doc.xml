@@ -430,6 +430,20 @@ export DEBIAN_BUILDGCCVER=3.2
 	export PS1="pbuild chroot 32165 # "
       </screen>
     </sect1>
+    <sect1>
+      <title>Using /var/cache/apt/archives for package cache</title>
+      <para>
+	For the help of low-bandwidth systems,
+	it is possible to use <filename>/var/cache/apt/archives</filename> as the 
+	package cache.
+	Just specify it instead of the default <filename>/var/cache/pbuilder/aptcache</filename>.
+      </para>
+      <para>
+	It is however not possible to do so currently with user-mode-linux 
+	version of pbuilder, because <filename>/var/cache/apt/archives</filename>
+	is usually only writable as root.
+      </para>
+    </sect1>
   </chapter>
   <chapter id="otheruse">
     <title>Other uses of pbuilder</title>
