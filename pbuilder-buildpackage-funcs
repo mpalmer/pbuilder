@@ -65,5 +65,6 @@ function createbuilduser () {
     if [ -n "$SUTOUSER" ]; then
 	echo "$BUILDUSERNAME:x:$BUILDUSERID:$BUILDUSERID:,,,:/tmp/buildd:/bin/sh" >> $BUILDPLACE/etc/passwd
 	echo "$BUILDUSERNAME:*:$BUILDUSERID:" >> $BUILDPLACE/etc/group
+	export HOME="/tmp/buildd"
     fi
 }
