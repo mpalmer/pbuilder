@@ -5,7 +5,7 @@ export LC_ALL=C
 function copydsc () {
     local DSCFILE=$1
     local TARGET=$2
-    for FILE in 
+    for FILE in \
       "$DSCFILE" \
       $(echo "$DSCFILE" | sed 's/^\(.*\)\.dsc$/\1/' ).diff.gz \
       $(echo "$DSCFILE" | sed 's/^\(.*\)\.dsc$/\1/').tar.gz \
@@ -16,10 +16,14 @@ function copydsc () {
 }
 
 function checkbuilddep () {
-    (
-    cd $BUILDPLACE/tmp/buildd/*/
-    $CHROOTEXEC usr/bin/apt-get -y install $(dpkg-checkbuilddeps 2>&1 | sed 's/^.*: \(.*\)$/\1/' | awk 'BEGIN{RS=", "} /^([^([]*)/{print $1}')
-    )
+    for INSTALLPKG in $($CHROOTEXEC bin/sh -c "(cd tmp/buildd/*/; dpkg-checkbuilddeps)" 2>&1 |grep "^dpkg-checkbuilddeps: Unmet build dependencies: " | sed 's/^[^:]*:[^:]*: \(.*\)$/\1/' | awk 'BEGIN{RS=", "} /^([^([]*)/{print $1}'); do
+	echo   Installing $INSTALLPKG
+	$CHROOTEXEC usr/bin/apt-get -y install $INSTALLPKG
+    done;
+    for REMOVEPKG in $($CHROOTEXEC bin/sh -c "(cd tmp/buildd/*/; dpkg-checkbuilddeps)" 2>&1 |grep "^dpkg-checkbuilddeps: Build conflicts: " | sed 's/^[^:]*:[^:]*: \(.*\)$/\1/' | awk 'BEGIN{RS=", "} /^([^([]*)/{print $1}'); do
+	echo Removing $REMOVEPKG
+	$CHROOTEXEC usr/bin/apt-get -y remove $REMOVEPKG
+    done;
 }
 
 PACKAGENAME=$1
@@ -39,8 +43,8 @@ mkdir -p $BUILDPLACE
 echo Copying source file
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 echo Extracting source
-$CHROOTEXEC /usr/bin/dpkg-source -x $(basename $PACKAGENAME)
-echo Installing the build-deps 
+$CHROOTEXEC /bin/bash -c "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"
+echo Installing the build-deps
 checkbuilddep
 echo Building the package
 $CHROOTEXEC /bin/sh -c "(cd tmp/buildd/*/; dpkg-buildpackage)"
@@ -48,3 +52,4 @@ echo Installing $BUILDPLACE/tmp/buildd/* to archive
 mkdir -p $MYREPOSITORYEXTRAPATH
 cp $BUILDPLACE/tmp/buildd/* $MYREPOSITORYEXTRAPATH
 
+#  LocalWords:  dpkg
