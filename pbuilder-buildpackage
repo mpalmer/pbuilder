@@ -34,7 +34,11 @@ function checkbuilddep_internal () {
 	  fi
       fi
       echo " -> Installing $INSTALLPKG"
-      $CHROOTEXEC usr/bin/apt-get -y install $(echo "$INSTALLPKG" | awk '{print $1}')
+      $CHROOTEXEC usr/bin/apt-get -y install $(echo "$INSTALLPKG" | awk '{print $1}') || (
+	  echo Could not satisfy build-dependency.
+	  abortingfunction
+	  exit 1
+      )
     done;
     for INSTALLPKG in $(grep "^Build-Conflicts\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
@@ -52,7 +56,10 @@ function checkbuilddep_internal () {
 	  fi
       fi
       echo " -> Removing $INSTALLPKG"
-      $CHROOTEXEC usr/bin/apt-get -y remove $(echo "$INSTALLPKG" | awk '{print $1}')
+      $CHROOTEXEC usr/bin/apt-get -y remove $(echo "$INSTALLPKG" | awk '{print $1}') || (
+	  echo Could not satisfy build-conflicts
+	  abortingfunction
+	  exit 1
     done;
 }
 
