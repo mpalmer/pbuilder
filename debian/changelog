@@ -23,10 +23,12 @@ pbuilder (0.6.0.prerelease.20010930) unstable; urgency=low
   * removed pushd and popd from runhooks, just because
     I don't think it looks cute.
   * temporal upload ...
-  * logging what's copied in build target, parsing of .dsc
+  * logging what's copied in build target, parsing of .dsc (for debugging?)
   * updated README file, to have some contents
+  * changed pbuilder-buildpackage .dsc parser, to see if things improve. 
+    It used to catch a bogus entry "./"
 
- -- Junichi Uekawa <dancer@debian.org>  Sun, 30 Sep 2001 02:05:26 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 30 Sep 2001 02:09:52 +0900
 
 pbuilder (0.6) unstable; urgency=low
 
