@@ -121,8 +121,8 @@ EOF
 
     chmod a+x ${INSIDE_PBUILDER}
 
-    echo Invoking: "linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=${PBUILDER_COW}${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}"
-    if linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1="${PBUILDER_COW}${PBUILDER_UML_IMAGE}" devfs=mount init=${INSIDE_PBUILDER} ; then
+    echo Invoking: "linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=${PBUILDER_COW}${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER} rw"
+    if linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1="${PBUILDER_COW}${PBUILDER_UML_IMAGE}" devfs=mount init=${INSIDE_PBUILDER} rw ; then
 	UML_EXITCODE=$?
 	echo " -> Successful exit from user-mode linux"
     else

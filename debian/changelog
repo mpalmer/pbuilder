@@ -1,9 +1,12 @@
-pbuilder (0.79) UNRELEASED; urgency=low
+pbuilder (0.79) unstable; urgency=low
 
   * Remove reference to lv from source code, it was only for debugging 
   purposes. (closes: #203732)
+  * Mount / rw for user-mode-linux.
+    From: Daniel Schepler <schepler@math.berkeley.edu>
+    (closes: #203730): pbuilder-uml: apt cache is read-only
 
- -- Junichi Uekawa <dancer@debian.org>  Fri,  1 Aug 2003 19:55:58 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Tue,  5 Aug 2003 06:26:31 +0900
 
 pbuilder (0.78) unstable; urgency=low
 
