@@ -1,8 +1,8 @@
 # this is the configuration for buildd-pbuilder.
 
-BASEDIRECTORY=/mnt/buildd
-MIRROR=202.23.147.34
-HOOKDIR=/mnt/buildd/pbuilder-buildd/hookdir
+BASEDIRECTORY=/var/cache/pbuilder/pbuildd/
+MIRROR=ftp.debian.org
+HOOKDIR=/usr/share/doc/pbuilder/examples/pbuildd/hookdir
 ROOTCOMMAND=sudo
 
 # the following is one sample:

@@ -3,7 +3,7 @@
 
 set -e
 
-. buildd-config.sh
+. /etc/pbuilder/buildd-config.sh
 
 NOBUILDDEP=${BASEDIRECTORY}/FAILED/NOBUILDDEP
 FAILED=${BASEDIRECTORY}/FAILED
