@@ -66,6 +66,7 @@ fi
 recover_aptcache
 echo "Installing the build-deps"
 trap saveaptcache_umountproc_cleanbuildplace exit
+executehooks "D"
 checkbuilddep "$PACKAGENAME"
 save_aptcache
 trap umountproc_cleanbuildplace exit
@@ -73,7 +74,6 @@ createbuilduser
 
 echo "Copying source file"
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
-executehooks "D"
 
 echo "Extracting source"
 if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; chown $BUILDUSERNAME:$BUILDUSERNAME ../buildd *; $SUTOUSER /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then

@@ -2,8 +2,10 @@ pbuilder (0.73) UNRELEASED; urgency=low
 
   * versioned dependency on rootstrap 0.3.9-1 which handles newer 
     user-mode-linux.
+  * Fix ordering of running D hooks; D hooks should be ran before 
+    checking build-dependency. Apparently broken since 0.67
 
- -- Junichi Uekawa <dancer@debian.org>  Tue, 15 Apr 2003 19:20:11 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 19 Apr 2003 10:47:58 +0900
 
 pbuilder (0.72) unstable; urgency=low
 

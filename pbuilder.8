@@ -243,7 +243,7 @@ This allows for use of custom debootstrap hook script.
 is for 
 .B build 
 target. 
-It is executed before build starts, after
+It is executed before build starts; after
 unpacking the build system, and unpacking the source,
 and satisfying the build-dependency.
 
@@ -252,13 +252,16 @@ is executed after build system finishes building,
 successfully, before copying back the build result.
 
 .B "C<digit><digit><whatever-else-you-want>"
-is executed after build fails, before cleanup.
+is executed after build failure, before cleanup.
 
 .B "D<digit><digit><whatever-else-you-want>"
 is executed before unpacking the source inside the chroot,
 after setting up the chroot environment.
 Create $TMP, and $TMPDIR if necessary.
-This can be used for calling apt-get update.
+
+This is called before build-dependency is satisfied.
+Also useful for calling 
+.B "apt-get update"
 
 .B "E<digit><digit><whatever-else-you-want>"
 is executed after pbuilder update and pbuilder create 
