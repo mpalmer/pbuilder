@@ -18,34 +18,43 @@ function checkbuilddep_internal () {
 # fall back to this function if checkbuilddeps is not available.
     local ARCH=$(dpkg --print-architecture)
     echo " -> Attempting to parse the build-deps by myself"
-    for INSTALLPKG in $(grep "^Build-Depends\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+    for INSTALLPKGMULTI in $(grep "^Build-Depends\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
 	awk 'BEGIN{RS=","} {print $1}'); do
-      echo " -> Considering $INSTALLPKG"
-      if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
+      echo " -> Considering $INSTALLPKGMULTI"
+      SATISFIED="no"
+      for INSTALLPKG in $(echo "$INSTALLPKGMULTI" | \
+	  awk 'BEGIN{RS="|"} {print}'); do
+	echo " -> Trying to install $INSTALLPKG"
+	if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	  # this package has arch-deps.
-	  if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]!$ARCH[] ]" > /dev/null; then
-	      # don't install this on this arch
-	      continue;
-	  fi
-	  if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]$ARCH[] ]" > /dev/null; then
-	      # this arch is not listed.
-	      continue;
-	  fi
-      fi
-      echo " -> Installing $INSTALLPKG"
-      $CHROOTEXEC usr/bin/apt-get -y install $(echo "$INSTALLPKG" | awk '{print $1}') || (
+	    if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]!$ARCH[] ]" > /dev/null; then
+	      # don't install this on this arch -- satisfied? maybe. FIXME
+		SATISFIED="yes"
+		continue;
+	    fi
+	    if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]$ARCH[] ]" > /dev/null; then
+	      # this arch is not listed. -- satisfied? maybe. FIXME
+		SATISFIED="yes"
+		continue;
+	    fi
+	fi
+	echo " -> Installing $INSTALLPKG"
+	$CHROOTEXEC usr/bin/apt-get -y install $(echo "$INSTALLPKG" | awk '{print $1}') && \
+	    SATISFIED="yes"
+      done;
+      if [ "$SATISFIED" = "no" ]; then
 	  echo Could not satisfy build-dependency.
 	  abortingfunction
 	  exit 1
-      )
+      fi
     done;
     for INSTALLPKG in $(grep "^Build-Conflicts\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
 	awk 'BEGIN{RS=","} {print $1}'); do
       echo " -> Considering $INSTALLPKG"
       if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
-	  # this package has arch-deps.
+	  # this package has arch-conflicts.
 	  if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]!$ARCH[] ]" > /dev/null; then
 	      # don't install this on this arch
 	      continue;
@@ -82,11 +91,11 @@ function checkbuilddep_using_dpkgcheckbuilddeps () {
 }
 
 function checkbuilddep () {
-    if [ -x "$BUILDPLACE/usr/bin/dpkg-checkbuilddeps" ]; then
-	checkbuilddep_using_dpkgcheckbuilddeps;
-    else
+#    if [ -x "$BUILDPLACE/usr/bin/dpkg-checkbuilddeps" ]; then
+#	checkbuilddep_using_dpkgcheckbuilddeps;
+#    else
 	checkbuilddep_internal;
-    fi
+#    fi
 }
 
 . /usr/lib/pbuilder/pbuilder-checkparams
