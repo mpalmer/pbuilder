@@ -1,5 +1,11 @@
 TODO: 
   * Make pbuilder build to abort on error, and give back an errorcode.
-  * Build dependency handles |, but not when [] and | exist. -- bad sign on x packages.
-  * Build conflicts do not handle versions at all. -- should never do it.
+  * Build dependency handles |, but not when [] and | exist. -- no package should be using it.
+  * Build conflicts do not handle versions at all. -- should never do it. -- but glibc does..
+  * Build dependency either has [!xxx !xxx !xxx ...] or [xxx xxx xxx ...] [!xxx xxx] 
+    formats are not parsed.
+  * Parse the .dsc file instead of guessing the filenames.
+  * Parse the .changes file instead of guessing the resultant objects ... ?
+
+$Id$
 
