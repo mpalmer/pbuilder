@@ -279,8 +279,13 @@ Also useful for calling
 .B "apt-get update"
 
 .B "E<digit><digit><whatever-else-you-want>"
-is executed after pbuilder update and pbuilder create 
-terminates, before creating the tarball.
+is executed after
+.B "pbuilder update"
+ and
+.B "pbuilder create"
+finishes apt-get work with the chroot, 
+before umounting kernel file systems (/proc) and 
+creating the tarball from the chroot.
 
 .B "F<digit><digit><whatever-else-you-want>"
 is executed just before user logs in, or 

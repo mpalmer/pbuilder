@@ -1,0 +1,9 @@
+#!/bin/sh
+# work around libc6 postinst which mounts /sys etc.
+set +e
+umount /sys
+umount /proc/bus/usb
+umount /dev/shm
+
+exit 0
+
