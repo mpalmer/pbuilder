@@ -1,12 +1,19 @@
 Source: pbuilder
-Section: unknown
+Section: devel
 Priority: optional
 Maintainer: Junichi Uekawa <dancer@debian.org>
 Build-Depends: debhelper (>> 3.0.0)
-Standards-Version: 3.5.2
+Standards-Version: 3.5.6
 
 Package: pbuilder
-Architecture: any
+Architecture: all
 Depends: ${shlibs:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: personal package builder for Debian packages
+ Constructs a chroot system, and builds a package inside the 
+ chroot.
+ . 
+ Ideal system to use to check that Build-dependency is correct, 
+ and to be sure that unnecessary and wrong build dependency will not
+ exist with the resulting binary pacakge.
+ 
+

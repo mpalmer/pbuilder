@@ -1,0 +1,62 @@
+.TH "pbuilder" 1 "2001 Aug 25" "Debian" "pbuilder"
+.SH NAME
+pbuilder \- personal package builder
+.SH SYNOPSIS
+.BI "pbuilder create [" "options" "]"
+.BI "pbuilder update [" "options" "]"
+.BI "pbuilder build [" "options" "] " ".dsc-file"
+.SH DESCRIPTION
+Front end program to the 
+.B "pbuilder"
+suite of programs, used for creating and maintaining chroot environment 
+and building Debian package in the chroot environment.
+.SH OPTIONS
+.TP
+.B "create"
+Creates a 
+.B "base.tgz" 
+for the specified distribution.
+.TP
+.B "update"
+Updates the 
+.B "base.tgz"
+for the specified distribution.
+.TP
+.B "build"
+Builds the package specified by
+.I ".dsc-file"
+in the chroot environment created using the 
+.B "base.tgz"
+.TP
+.BI "--basetgz [" "basetgz-location" "]"
+Specifies the location of 
+.B "base.tgz"
+.TP
+.BI "--buildplace [" "location of build" "]"
+Specifies the location where building and 
+.B "base.tgz"
+updating and creation takes place. This is 
+a temporary work directory.
+.TP
+.BI "--mirror [" "mirror location" "]"
+Specifies the url of Debian mirror to be 
+specified in 
+.B "sources.list"
+inside the chroot.
+.TP
+.BI "--http-proxy [" "proxy" "]"
+Specifies the http proxy url. Something like
+.B "http://xxx.xxx.xxx.xxx:8080/"
+should do. 
+.TP
+.BI "--distribution [" "distribution" "]"
+Specifies the distribution used. Currently the supported values are
+.B "sid"
+and 
+.B "woody".
+.SH AUTHOR
+Junichi Uekawa <dancer@debian.org>
+.SH "SEE ALSO"
+.RI "pbuilder-buildpackage (" 1 "), "
+.RI "pbuilder-updatebuildenv (" 1 "), "
+.RI "pbuilder-createbuildenv (" 1 ")"
