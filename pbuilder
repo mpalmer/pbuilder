@@ -3,44 +3,32 @@
 # Copyright 2001 Junichi Uekawa
 #Distributed under GPL version 2 or later
 
-function showhelp () {
-    cat <<EOF
-pbuilder - a personal builder
-Copyright 2001 Junichi Uekawa
 
-pbuilder [operation] [operation options]
-
-command lines:
-pbuilder create [--basetgz base.tgz-path] [--distribution woody|sid]
-  Creates a base.tgz
-
-pbuilder update [--basetgz base.tgz-path] [--distribution woody|sid]
-  Updates a base.tgz
-
-pbuilder build [--buildplace temp-build-path] [--basetgz base.tgz-path] pbuilder_2.2.0-1.dsc
-  Builds using the base.tgz
-
-EOF
-    exit 1
-}
-
-test -z "$1" && showhelp
+test -z "$1" && (
+    . /usr/lib/pbuilder/pbuilder-modules
+    showhelp
+)
 
 case "$1" in
- create)
-    shift;
-    /usr/lib/pbuilder/pbuilder-createbuildenv $@
-    ;;
- update)
-    shift ;
-    /usr/lib/pbuilder/pbuilder-updatebuildenv $@
-    ;;
- build)
-    shift ;
-    /usr/lib/pbuilder/pbuilder-buildpackage $@
-    ;;
- *)
-    showhelp
-    ;;
+    create)
+	shift;
+	/usr/lib/pbuilder/pbuilder-createbuildenv $@
+	;;
+    update)
+	shift ;
+	/usr/lib/pbuilder/pbuilder-updatebuildenv $@
+	;;
+    build)
+	shift ;
+	/usr/lib/pbuilder/pbuilder-buildpackage $@
+	;;
+    clean)
+	. /etc/pbuilderrc
+	test -n "$BUILDPLACE" && rm -rf "$BUILDPLACE"/*
+	;;
+    *)
+	. /usr/lib/pbuilder/pbuilder-modules
+	showhelp
+	;;
 esac
 
