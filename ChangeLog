@@ -1,6 +1,18 @@
 2002-02-20  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilderrc.5: update the doc accordingly.
+
+	* pbuilder-buildpackage (CHROOTEXEC): add fakeroot to EXTRAPACKAGES when in fakeroot mode.
+
+	* pbuilderrc (BASETGZ): revert the pbuilderrc change to make fakeroot always installed.
+	It's only required when fakeroot mode of buildpackage is run. Make it so.
+
+	* pbuilder-buildpackage: most things are now fixed. fakeroot mode now works!
+
+	* Makefile (INSTALL_DIRECTORY): rewrote the makefile to be a bit better with install.
+
 	* pbuilder-buildpackage: add fix to chown the directory as well
+	removed some debug string.
 
 2002-02-18  Junichi Uekawa  <dancer@debian.org>
 
