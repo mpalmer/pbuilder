@@ -7,11 +7,11 @@
 
 all: pbuilder-doc.html
 
-%.html: %.xml
-	xsltproc /usr/share/sgml/docbook/stylesheet/xsl/ldp/ldp-html.xsl $< > $@
+%.html: %.xml pbuilder-doc.xsl
+	xsltproc pbuilder-doc.xsl $< > $@
 
 # for my homepage-publishing.
-release-netfort: pbuilder-doc.html pbuilder-doc.xml
+release-netfort: pbuilder-doc.html pbuilder-doc.xml pbuilder-doc.css pbuilder-doc.xsl
 	cp $^ ~/public_html/netfort/software/pbuilder-doc/
 
 
