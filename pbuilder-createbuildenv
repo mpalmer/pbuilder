@@ -76,8 +76,10 @@ $CHROOTEXEC /usr/bin/apt-get update
 if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
 fi
+recover_aptcache
 $CHROOTEXEC /usr/bin/apt-get -y dist-upgrade
 $CHROOTEXEC /usr/bin/apt-get -y install build-essential dpkg-dev apt $EXTRAPACKAGES
+save_aptcache
 $CHROOTEXEC /usr/bin/apt-get clean
 if [ -n "$HOOKDIR" ]; then
     executehooks "X"

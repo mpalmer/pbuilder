@@ -73,7 +73,9 @@ function checkbuilddep_internal () {
 # Use this function to fulfill the dependency (almost)
     local ARCH=$(dpkg --print-architecture)
     echo " -> Attempting to parse the build-deps by myself"
-    for INSTALLPKGMULTI in $(awk '/^[^ ]*:/{p=0}/^Build-Depends:/{p=1} /^Build-Depends-Indep:/{p=1}  {if(p) {print $0}}' < "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+    for INSTALLPKGMULTI in $(cat "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+	tr 'A-Z' 'a-z' | \
+	awk '/^[^ ]*:/{p=0}/^build-depends:/{p=1} /^build-depends-indep:/{p=1}  {if(p) {print $0}}'  | \
 	sed 's/^[^:]*: //' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
@@ -125,7 +127,9 @@ function checkbuilddep_internal () {
     done;
 
     # start processing build-conflicts.
-    for INSTALLPKG in $(awk '/^[^ ]*:/{p=0}/^Build-Conflicts:/{p=1} /^Build-Conflicts-Indep:/{p=1}  {if(p) {print $0}}' < "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+    for INSTALLPKG in $(cat "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+	tr 'A-Z' 'a-z' | \
+	awk '/^[^ ]*:/{p=0}/^build-conflicts:/{p=1} /^build-conflicts-indep:/{p=1}  {if(p) {print $0}}'  | \
 	sed 's/^[^:]*: //' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
@@ -192,33 +196,12 @@ if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basena
     exit 1;
 fi
 
-if [ -n "$APTCACHE" ]; then
-    echo "Obtaining the cached apt archive contents"
-    if [ "$APTCACHEHARDLINK" = "yes" ]; then
-	ln "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
-    else
-	cp "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
-    fi
-fi
+recover_aptcache
 echo Installing the build-deps
 checkbuilddep
+save_aptcache
 
-if [ -n "$APTCACHE" ]; then
-    echo "Copying back the cached apt archive contents"
-    mkdir -p "$APTCACHE" ;
-    for A in "$BUILDPLACE/var/cache/apt/archives/"*.deb; do
-	if [ ! -f "$APTCACHE/"$(basename "$A") ]; then
-	    echo " -> new cache content "$(basename "$A")" added"
-	    if [ "$APTCACHEHARDLINK" = "yes" ]; then
-		ln "$A" "$APTCACHE/"
-	    else
-		cp "$A" "$APTCACHE/"
-	    fi
-	fi
-    done
-fi
-
-echo Building the package
+echo " -> Building the package"
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 
 if [ -z "$DEBEMAIL" ]; then

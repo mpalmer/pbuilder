@@ -142,7 +142,7 @@ function extractbuildplace () {
     # after calling this function, umountproc, and cleanbuildplace
     # needs to be called. Please trap it.
     cleanbuildplace
-    echo "building the build env"
+    echo "Building the build Environment"
     echo " -> extracting base.tgz"
     if ! mkdir -p "$BUILDPLACE"; then
 	echo "E: failed to build the directory to chroot"
@@ -165,6 +165,37 @@ function extractbuildplace () {
     
     if [ -n "$DISTRIBUTION" ]; then
 	installaptlines
+    fi
+}
+
+
+function recover_aptcache() {
+    # recover the aptcache archive
+    if [ -n "$APTCACHE" ]; then
+	echo "Obtaining the cached apt archive contents"
+	if [ "$APTCACHEHARDLINK" = "yes" ]; then
+	    ln "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
+	else
+	    cp "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
+	fi
+    fi
+}
+
+function save_aptcache() {
+    # save the current aptcache archive
+    if [ -n "$APTCACHE" ]; then
+	echo "Copying back the cached apt archive contents"
+	mkdir -p "$APTCACHE" ;
+	for A in "$BUILDPLACE/var/cache/apt/archives/"*.deb; do
+	    if [ ! -f "$APTCACHE/"$(basename "$A") ]; then
+		echo " -> new cache content "$(basename "$A")" added"
+		if [ "$APTCACHEHARDLINK" = "yes" ]; then
+		    ln "$A" "$APTCACHE/"
+		else
+		    cp "$A" "$APTCACHE/"
+		fi
+	    fi
+	done
     fi
 }
 

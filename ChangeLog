@@ -1,3 +1,31 @@
+2002-02-10  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-buildpackage: Build-Depends-Indep etc. field names 
+	are handled as case-insensitive. So "BuilD-DePeNDS-inDeP" is 
+	a valid field name according to policy.
+
+	* pbuilder-updatebuildenv: uses recover_aptcache and save_aptcache.
+
+	* pbuilder-createbuildenv: added recover_aptcache, and save_aptcache 
+	to the creation process.
+
+	* pbuilder-modules: recover_aptcache, save_aptcache function
+	created
+
+	* pbuilder-buildpackage: moved the recovering the aptcache
+	and saving routine out to -modules.
+
+2002-02-09  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-modules: some message change.
+
+	* pbuilder-buildpackage: Build-[dD]epends, and 
+	Build-[Dd]epends-[Ii]ndep, because many packages seem to use
+	Build-depends instead of Build-Depends, and most tools seem to
+	cope with it.
+	Likewise for Build-Conflicts.
+	fix some messages.
+
 2002-02-08  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/changelog: release 0.21
