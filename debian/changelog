@@ -1,10 +1,10 @@
 pbuilder (0.24) unstable; urgency=low
 
-  * (not yet released) FIXME
   * hooks support is in place for build target now. Read pbuilder.1
-    for details. Adding C00bash, which contains a line calling "bash" 
-    will allow running bash inside the chroot.
-    (closes: #134757)
+    for details. Adding C00bash, which contains a line calling 
+      #!/bin/bash
+      bash < /dev/tty
+    will allow running bash inside the chroot. (closes: #134757)    
 
  -- Junichi Uekawa <dancer@debian.org>  Sun, 24 Feb 2002 20:37:35 +0900
 
