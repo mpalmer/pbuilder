@@ -38,10 +38,18 @@ while [ -n "$1" ]; do
 	    if [ "${PBCURRENTCOMMANDLINEOPERATION}" = 'create' ]; then 
 		touch "$2";
 	    fi
+	    if [ ! -f "$2" ]; then
+		echo "E: File $2 does not exist" >&2 
+		exit 1
+	    fi
 	    BASETGZ=$(readlink -f "$2");
 	    shift; shift;
 	    ;;
 	--buildplace)
+	    if [ ! -d "$2" ] ; then
+		echo "E: Directory $2 does not exist" >&2 
+		exit 1
+	    fi
 	    BUILDPLACE=$(readlink -f "$2");
 	    shift; shift;
 	    ;;
@@ -67,7 +75,12 @@ while [ -n "$1" ]; do
 	    ;;
 	--buildresult)
 	    if [ -n "$2" ]; then
-		BUILDRESULT=$(readlink -f "$2");
+		if [ -d "$2" ]; then
+		    BUILDRESULT=$(readlink -f "$2");
+		else
+		    echo "E: Directory $2 does not exist" >&2 
+		    exit 1
+		fi
 	    else
 		BUILDRESULT=
 	    fi

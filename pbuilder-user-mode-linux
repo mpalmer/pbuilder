@@ -211,10 +211,20 @@ while [ -n "$1" ] ; do
 	    shift; shift;;
 	--buildresult)
 	    # ignore buildresult
-	    UML_BUILDRESULT=$(readlink -f "$2")
+	    if [ -d "$2" ]; then
+		UML_BUILDRESULT=$(readlink -f "$2")
+	    else
+		echo "E: Directory $d does not exist" >&2
+		exit 1
+	    fi
 	    shift; shift;;
 	--buildplace)
-	    BUILDPLACE=$(readlink -f "$2")
+	    if [ -d "$2" ]; then
+		BUILDPLACE=$(readlink -f "$2")
+	    else
+		echo "E: Directory $d does not exist" >&2
+		exit 1
+	    fi
 	    shift; shift;; 
 	--logfile)
 	    exec > "$2";
