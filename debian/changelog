@@ -1,25 +1,25 @@
-pbuilder (0.24.prerelease.20020313) unstable; urgency=low
+pbuilder (0.25) unstable; urgency=low
 
-  * new version, not yet released (FIXME!!)
+  * "Fixing the personal side of the pbuilder", release
   * Build-Dependency version checking improved, should work slightly better
     when multiple versions are available (reported by jbouse@debian.org)
   * logic-error on DEBEMAIL handling fixed. When it was blank,
     it was set to "nobody@nowhere", but that shouldn't be necessary.
     (closes: #136628, #137411)
   * pbuilderrc: change the default config so that binary and source is built
-  * ignore build-depends in package lines and only use those found in the 
+  * ignore build-depends in package lines and only use those found in the
     source lines.
   * debian/TODO: updated.
-  * pbuilder-satisfydepends: split out the dependency satisfaction 
-    code, so that it can be used genericly. Or replaced with other 
+  * pbuilder-satisfydepends: split out the dependency satisfaction
+    code, so that it can be used genericly. Or replaced with other
     programs, such as sbuild. However, sbuild reads .dsc files, while
     pbuilder parses debian/control.
   * fixed regexp for multi-line build-*: field processing.
   * Add "D" scripts, for after chroot setup, and before extracting
-    source packages inside the chroot, on build target. 
+    source packages inside the chroot, on build target.
     (closes: #136536)
 
- -- Junichi Uekawa <dancer@debian.org>  Tue, 12 Mar 2002 19:06:55 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 14 Mar 2002 20:49:02 +0900
 
 pbuilder (0.24) unstable; urgency=low
 
