@@ -68,7 +68,7 @@ function installaptlines (){
     echo Installing apt-lines
     cat > "$BUILDPLACE"/etc/apt/sources.list << EOF
 deb $MIRRORSITE $DISTRIBUTION main contrib non-free
-deb-src $MIRRORSITE debian $DISTRIBUTION main contrib non-free
+deb-src $MIRRORSITE $DISTRIBUTION main contrib non-free
 EOF
 }
 
