@@ -19,13 +19,19 @@ if [ ! -d "$BUILDPLACE" ]; then
     exit 1
 fi
 echo " -> running debootstrap"
+DEBOOTSTRAPSCRIPT=""
+if [ -n "$HOOKDIR" ]; then
+    if [ -f "$HOOKDIR/$DISTRIBUTION" ]; then
+	DEBOOTSTRAPSCRIPT="$HOOKDIR/$DISTRIBUTION"
+	echo "  -> Applying user distribution dist build script $DEBOOTSTRAPSCRIPT"
+    fi
+fi
 if ! ( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE" "$DEBOOTSTRAPSCRIPT" ) ; then
     echo "pbuilder: debootstrap failed" >&2
     exit 1
 fi
 
 echo " -> debootstrap finished"
-DEBOOTSTRAPSCRIPT=""
 if [ -n "$HOOKDIR" ]; then
     loadhooks
 fi

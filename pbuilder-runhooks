@@ -18,6 +18,9 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.9  2001/10/12 16:31:18  dancer
+# fixed my logical disorder.
+#
 # Revision 1.8  2001/10/12 15:54:32  dancer
 # diff
 #
@@ -66,10 +69,6 @@ function loadhooks () {
     if [ -d "$HOOKDIR" ]; then
 	mkdir -p "$BUILDPLACE/tmp/hooks"
 	cp -a "$HOOKDIR/*" "$BUILDPLACE/$hooks"
-    fi
-    if [ -f "$BUILDPLACE/$hooks/$DISTRIBUTION" ]; then
-	DEBOOTSTRAPSCRIPT=/"$hooks/$DISTRIBUTION"
-	echo "  -> Applying user distribution dist build script $DEBOOTSTRAPSCRIPT"
     fi
 }
 
