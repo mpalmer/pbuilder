@@ -12,19 +12,24 @@ History and background of pbuilder
 
 Just to note the background of this package.
 
+
+[The Time Before PBuilder]
+
 There were dbuild, which was a shell script to build
 Debian packages from source. Lars Wirzenius wrote that 
-script, and it was good, short, and simple
-There was nothing like build-depends then, and it was simple.
+script, and it was good, short, and simple (probably).
+There was nothing like build-depends then (I think), and it was simple.
 It could have been improved, I don't have the source off-hand.
 
 debbuild was probably written by James Troup. I don't know it 
-because I have never seen the actual code, but there are 
+because I have never seen the actual code, I could only find some
 references to it on the net, and mailing list logs.
 
 sbuild is a perl script to build Debian package from source.
 It parses Build-Dependency, and performs other misc checks,
-and has a lot of hacks to actually get things building.
+and has a lot of hacks to actually get things building,
+including a table of what package to use when virtual packages are
+specified (does it do that still?).
 It supports use of local database for packages which do not 
 have build-dependency. It was written by Ronan Hodek, 
 and I think it was patched and fixed and extended by
@@ -32,10 +37,12 @@ several people. It is part of wanna-build, and used extensively
 in Debian buildd system. I think it was maintained
 mostly by Ryan Murray.
 
-wanna-build was quite difficult to set up, and it was 
+
+[Birth of PBuilder]
+
+wanna-build (sbuild) was quite difficult to set up, and it was 
 never a Debian package. dbuild was something that predated
 Build-Depends.
-
 
 Building package from source using Build-Depends 
 information within a chroot sounded trivial; and 
@@ -51,6 +58,12 @@ Debian 3.0 wasn't completely buildable with pbuilder,
 but the amount of packages which are not buildable
 are steadily decreasing. (I hope)
 
+
+[And the second year of its life]
+
+And someone wanted pbuilder to run as not root,
+and User-mode-linux was getting more useful as time passed,
+I've started experimenting with pbuilder-uml.
 
 
 $Id$

@@ -82,10 +82,10 @@ fi
     $CHROOTEXEC /bin/bash -c "${DPKG_COMMANDLINE}"
 ) &
 BUILD_PID=$!
-if [ -n ${TIMEOUT_TIME} ]; then
+if [ -n "${TIMEOUT_TIME}" ]; then
     ( 
 	: Timeout process
-	sleep "${TIMEOUT_TIME}";
+	sleep "${TIMEOUT_TIME}"
 	echo " -> Terminating build process due to timeout "
 	kill ${BUILD_PID} || true
     ) & # timeout process
