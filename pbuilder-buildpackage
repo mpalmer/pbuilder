@@ -7,7 +7,8 @@ function copydsc () {
     local TARGET="$2"
     for FILE in \
       "$DSCFILE" \
-	$(cat "$DSCFILE" | awk 'BEGIN{p=0} {if (p){print $3}} /^Files:/{p=1}') ; do
+	$(cat "$DSCFILE" | \
+	awk 'BEGIN{p=0} {if (p){print "' $(dirname "$DSCFILE") '/" $3}} /^Files:/{p=1}') ; do
         cp "$FILE" "$TARGET" ;
     done
 }
