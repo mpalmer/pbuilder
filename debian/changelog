@@ -6,8 +6,10 @@ pbuilder (0.11) unstable; urgency=low
   * fixed build-conflicts logic. It failed when build-conflicted target did not 
     already exist inside chroot.
   * README.Debian is updated.
+  * Added a nonexistent package to Build-Conflicts of debian/control, so that 
+    it will be possible to catch such possible error.
 
- -- Junichi Uekawa <dancer@debian.org>  Thu,  8 Nov 2001 11:05:29 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Fri,  9 Nov 2001 12:39:31 +0900
 
 pbuilder (0.10) unstable; urgency=low
 
