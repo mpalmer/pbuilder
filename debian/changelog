@@ -2,13 +2,17 @@ pbuilder (0.12) unstable; urgency=low
 
   * The last version had a typo... bug 120057 was the one to close, not
     12057 :P
-  * A hook to check the current command-line operation, and 
-    not to do the "exec < /dev/null" when it is trying to do 
-    "login" is implemented, so that it is actually possible to 
-    log in with noninteractive mode enabled. At the request of 
+  * A hook to check the current command-line operation, and
+    not to do the "exec < /dev/null" when it is trying to do
+    "login" is implemented, so that it is actually possible to
+    log in with noninteractive mode enabled. At the request of
     steven.robbins@videotron.ca (closes: #120064)
+  * Check for failures in umounting proc, and retry with a little
+    wait to see if something happens.
+    Will start up a command-line if something fails, and ask for
+    some remedy.
 
- -- Junichi Uekawa <dancer@debian.org>  Mon, 19 Nov 2001 06:28:05 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Fri, 23 Nov 2001 16:43:57 +0900
 
 pbuilder (0.11) unstable; urgency=low
 

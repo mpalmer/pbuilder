@@ -52,7 +52,21 @@ EOF
 function umountproc () {
     if [ "$USEPROC" = "yes" ]; then
 	echo " -> unmounting proc"
-	umount "$BUILDPLACE/proc"
+	if ! umount "$BUILDPLACE/proc"; then
+	    echo "W: Retrying to unmount proc"
+	    sleep 5s
+	    while ! umount "$BUILDPLACE/proc"; do
+		sleep 5s
+		cat <<EOF
+
+  Could not unmount /proc, there might be some program 
+  still using files in /proc (klogd?).
+  Please check and kill it so that I can unmount /proc
+
+EOF
+		chroot "$BUILDPLACE" bin/sh
+	    done
+	fi
     fi
 }
 
