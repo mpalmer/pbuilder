@@ -216,7 +216,7 @@ function recover_aptcache() {
 	if [ "$APTCACHEHARDLINK" = "yes" ]; then
 	    doit=ln
 	else
-	    doit=ln -s
+	    doit=cp
 	fi
 	echo "Obtaining the cached apt archive contents"
 	find "$APTCACHE" -name \*.deb -maxdepth 1 | \
