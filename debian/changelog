@@ -1,6 +1,5 @@
 pbuilder (0.3) unstable; urgency=low
 
-  * fixed a typo in regexp. Could not handle NMU packages, for builder.
   * note that --mirror only affects when --distribution is there.
   * fixed a typo in regexp. Could not handle NMU packages, for builder. It did not accept a "period" in the debian version number. strange.
   * depend on debootstrap 0.1.15 or greater. Because it has been tested on 0.1.15
@@ -14,8 +13,10 @@ pbuilder (0.3) unstable; urgency=low
   * fixed typo in apt-line generation
   * added an or-sign for build-dependency internal checker, and moving
     over fully to the internal checker.
+  * change priority to extra, because it depends on an extra package.
+    thanks to mechanix.
 
- -- Junichi Uekawa <dancer@debian.org>  Wed,  5 Sep 2001 23:26:32 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Fri,  7 Sep 2001 01:55:23 +0900
 
 pbuilder (0.2) unstable; urgency=low
 
