@@ -1,3 +1,17 @@
+pbuilder (0.47) unstable; urgency=low
+
+  * use "trap" for trapping error in pbuilder-buildpackage routine.
+  It might break some error conditions.
+  * LOGNAME=BUILDUSERNAME. (closes: #166682)
+  thanks: robbe@orcus.priv.at
+  * create shadow entry for user inside chroot (closes: #166683)
+  thanks: robbe@orcus.priv.at
+  * I've updated documentation to hopefully clarify the situation, if
+  you have better text for the documentation, shout! (closes: #165438)
+  thanks: Steve M. Robbins.
+
+ -- Junichi Uekawa <dancer@debian.org>  Tue, 29 Oct 2002 15:18:38 +0900
+
 pbuilder (0.46) unstable; urgency=low
 
   * Fix wrong BASEBUILDPLACE in uml-mode. (closes: #166194)
