@@ -26,6 +26,8 @@ case "$1" in
 	. /etc/pbuilderrc
 	echo "Cleaning [$BUILDPLACE]"
 	test -n "$BUILDPLACE" && rm -rf "$BUILDPLACE"/*
+	echo "Cleaning [$APTCACHE]"
+	test -n "$APTCACHE" && rm -rf "$APTCACHE"/*
 	;;
     login)
 	shift 

@@ -42,6 +42,10 @@ while [ -n "$1" ]; do
 	    BUILDRESULT=$(readlink -f "$2");
 	    shift; shift;
 	    ;;
+	--removepackages)
+	    REMOVEPACKAGES="$2";
+	    shift; shift;
+	    ;;
 	--help)
 	    showhelp
 	    ;;

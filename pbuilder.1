@@ -40,6 +40,8 @@ in the chroot environment created using the
 .B "clean"
 Cleans up the directory specified by the configuration
 .B "BUILDPLACE"
+and
+.B "APTCACHE"
 specified in 
 .I "/etc/pbuilderrc"
 
@@ -93,9 +95,20 @@ Specifies the distribution used. Currently the supported values are
 .B "sid"
 and 
 .B "woody".
+.TP
+.BI "--removepackages [" "packages to remove" "]"
+Removes the packages on creating the 
+.BI "base.tgz" "."
+Use this option to remove potentially dangerous or undesirable
+packages, like
+.B "lilo"
+which nobody will need to have inside a chroot.
 .SH "FILES"
 .TP
 .I "/etc/pbuilderrc"
 The configuration file for pbuilder.
 .SH AUTHOR
 Junichi Uekawa <dancer@debian.org>
+.SH "SEE ALSO"
+.RI "pbuilderrc (" 5 ") "
+
