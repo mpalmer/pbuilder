@@ -22,11 +22,12 @@ pbuilder (0.6.0.prerelease.20010930) unstable; urgency=low
   * fixing logic error in updatebuildenv.
   * removed pushd and popd from runhooks, just because
     I don't think it looks cute.
-  * temporal upload ...
-  * logging what's copied in build target, parsing of .dsc (for debugging?)
   * updated README file, to have some contents
-  * changed pbuilder-buildpackage .dsc parser, to see if things improve. 
-    It used to catch a bogus entry "./"
+  * Added displaying what's copied in build target, parsing of .dsc.
+    and changed pbuilder-buildpackage .dsc parser.
+    It used to catch a bogus entry, something like  "./", 
+    which is now fixed.
+  * temporal upload (yay, auric's down)...
 
  -- Junichi Uekawa <dancer@debian.org>  Sun, 30 Sep 2001 02:09:52 +0900
 
