@@ -22,18 +22,19 @@ if [ -n "$HOOKDIR" ]; then
 fi
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"
-$CHROOTEXEC /usr/bin/apt-get update || abortprocess
-$CHROOTEXEC /usr/bin/dpkg --purge lilo || abortprocess
-$CHROOTEXEC /usr/bin/apt-get -y dist-upgrade || abortprocess
-$CHROOTEXEC /usr/bin/apt-get -y install build-essential dpkg-dev apt $EXTRAPACKAGES || abortprocess
-$CHROOTEXEC /usr/bin/apt-get clean || abortprocess
+trap abortprocess exit
+$CHROOTEXEC /usr/bin/apt-get update
+$CHROOTEXEC /usr/bin/dpkg --purge lilo
+$CHROOTEXEC /usr/bin/apt-get -y dist-upgrade
+$CHROOTEXEC /usr/bin/apt-get -y install build-essential dpkg-dev apt $EXTRAPACKAGES
+$CHROOTEXEC /usr/bin/apt-get clean 
 
 if [ -n "$HOOKDIR" ]; then
     executehooks "X"
     unloadhooks
 fi
-
 umountproc
+trap cleanbuildplace exit
 echo " -> creating base.tgz"
 (cd "$BUILDPLACE"; tar cfz "$BASETGZ" *)
 cleanbuildplace
