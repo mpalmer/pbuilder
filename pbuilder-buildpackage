@@ -124,12 +124,15 @@ function checkbuilddep_internal () {
 	      continue;
 	  fi
       fi
-      #echo " -> Removing $INSTALLPKG"
-      $CHROOTEXEC usr/bin/apt-get -y remove $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') || (
-	  echo Could not satisfy build-conflicts
-	  abortingfunction
-	  exit 1
-      )
+
+
+      if $CHROOTEXEC usr/bin/dpkg -s $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}'); then
+	  if ! $CHROOTEXEC usr/bin/apt-get -y remove $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') ; then
+	      echo Could not satisfy build-conflicts
+	      abortingfunction
+	      exit 1
+	  fi
+      fi
     done
 }
 

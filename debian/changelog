@@ -1,8 +1,12 @@
 pbuilder (0.11) unstable; urgency=low
 
   * Fixing some minor glitch. pdebuild should be calling dpkg-buildpackage with -us -uc.
+  * changed pdebuild logic in obtaining version number, from using 
+    grep/cut to sed.
+  * fixed build-conflicts logic. It failed when build-conflicted target did not 
+    exist inside chroot.
 
- -- Junichi Uekawa <dancer@debian.org>  Wed,  7 Nov 2001 00:36:38 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Thu,  8 Nov 2001 10:53:09 +0900
 
 pbuilder (0.10) unstable; urgency=low
 
