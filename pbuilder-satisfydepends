@@ -69,7 +69,7 @@ function checkbuilddep_internal () {
     local INSTALLPKGMULTI
     local CURRENTREALPKGNAME
     local SATISFIED
-    echo " -> Attempting to parse the build-deps by myself"
+    echo " -> Attempting to parse the build-deps $Id$"
     for INSTALLPKGMULTI in $(cat ${DEBIAN_CONTROL} | \
 	awk '
 BEGIN{source=1} 
@@ -167,6 +167,7 @@ tolower($0) ~ /^'"${BC_REGEXP}"':/   {p=1}
 	  echo "I: ${CURRENTREALPKGNAME} package is not installed, no need to remove"
       fi
     done
+    echo " -> Finished parsing the build-deps"
 }
 
 
