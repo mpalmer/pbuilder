@@ -61,12 +61,11 @@ while [ -n "$1" ]; do
 	    HOOKDIR="$2";
 	    shift; shift;
 	    ;;
+	--debemail)
+	    DEBEMAIL="$2";
+	    shift; shift;
 	--help)
 	    showhelp
-	    ;;
-        --sponsorship)
-	    DPKG_BUILDPACKAGEOPT="-m$SPONSORING_MAILADDR";
-	    shift;
 	    ;;
 	--*)
 	    echo "Error: Unknown option [$1] was specified " >&2 
@@ -79,3 +78,6 @@ while [ -n "$1" ]; do
 done
 
 BUILDPLACE=${BUILDPLACE?"Build root directory is not defined"}
+if [ -z "$DEBEMAIL" ]; then
+		    DEBEMAIL="nobody@nowhere"
+fi

@@ -114,15 +114,16 @@ will update to this distribution, if this is specified,
 unless command line option is specified to override this.
 
 .TP
-.BI "SPONSORING_MAILADDR=" "Name <Mail@Address>";
+.BI "DEBEMAIL=" "Mail@Address";
 
 If this was specified, 
 .B dpkg-buildpackage
 command will be passed with the necessary sponsorship option 
-.B "-mName <Mail@Address>"
-when 
-.B "--sponsorship"
-command-line option is specified, on building.
+.B "-mMail@Address"
+on building.
+Overwridden with 
+.B "--debemail"
+command-line option.
 
 .SH "FILES"
 .I "/etc/pbuilderrc"

@@ -188,7 +188,7 @@ fi
 
 echo Building the package
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
-if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage \"$DPKG_BUILDPACKAGEOPT\""; then
+if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage \"-m$DEBEMAIL\""; then
     echo "pbuilder: Failed autobuilding of package" >&2
     abortingfunction
     exit 1;    

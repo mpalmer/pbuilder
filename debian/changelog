@@ -5,14 +5,13 @@ pbuilder (0.10) unstable; urgency=low
   * Depends on gcc, because debootstrap does not seem to function well
     without gcc. Actually, dpkg does not work without gcc, when it is asked
     questions about the "architecture."
-  * Add support for sponsor-uploading. Thus, forcing pbuilder to build
+  * Add support for specifying modifier. Thus, forcing pbuilder to build
     with 
-     dpkg-buildpackage -m"Junichi Uekawa <dancer@debian.org>" 
+     dpkg-buildpackage -mdancer@debian.org" 
     should be possible via 
-     pbuiler build --sponsorship package.dsc
-    and configuring SPONSORING_MAILADDR variable in pbuilderrc.
+     pbuiler build --debemail dancer@debian.org package.dsc
 
- -- Junichi Uekawa <dancer@debian.org>  Fri, 26 Oct 2001 00:46:38 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Fri,  2 Nov 2001 15:39:29 +0900
 
 pbuilder (0.9) unstable; urgency=low
 
