@@ -7,7 +7,8 @@ pbuilder (0.67) UNRELEASED; urgency=low
   * make the code work with GNU readlink, which errors out when 
     "readlink -f " is called with non-existing filename.
     (closes: #183492, #184116)
-  * document the undocumented X hooks, which are ran after update/create
+  * Fix X hooks and rename them to E, and document them.
+    They are ran after update/create.
   * unset LOGNAME for root-build cases, it was only fixed on
     fakeroot builds. 
     thanks Barak Pearlmutter <bap@cs.unm.edu> (closes: #183862)
