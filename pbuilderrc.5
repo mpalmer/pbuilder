@@ -142,14 +142,14 @@ Overwridden with
 command-line option.
 
 .TP
-.BI "DEBBUILDOPTS=" "-b"
+.BI "DEBBUILDOPTS=" ""
 
 The options given here will be passed on to
 .BR dpkg-buildpackage .
 This can be useful e.g. for binary-only builds. The command-line option
 .B "--debbuildopts"
 overrides any contents specified here.
-The default value is to build binary-only.
+The default value is to build source and binary package.
 
 .TP
 .BI "BUILDSOURCEROOTCMD=" "fakeroot"

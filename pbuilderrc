@@ -32,8 +32,9 @@ DEBEMAIL="nobody@nowhere"
 BUILDSOURCEROOTCMD="fakeroot"
 PBUILDERROOTCMD="sudo"
 
-#default is to not to build source-packages. Passed on to dpkg-buildpackage
-DEBBUILDOPTS="-b"
+#default is to build everything. Passed on to dpkg-buildpackage
+#DEBBUILDOPTS="-b"
+DEBBUILDOPTS=""
 
 #APT configuration files directory
 APTCONFDIR=""
