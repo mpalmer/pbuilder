@@ -23,7 +23,7 @@ echo " -> running debootstrap"
 echo " -> debootstrap finished"
 mkdir -p "$BUILDPLACE/tmp/buildd"
 echo " -> copying local configuration"
-for a in passwd hosts hostname resolv.conf apt; do 
+for a in passwd hosts hostname resolv.conf ; do 
     cp -r /etc/$a "$BUILDPLACE/etc/";
 done
 
