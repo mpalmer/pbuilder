@@ -668,6 +668,13 @@ PBUILDER_UML_IMAGE="/home/dancer/uml-image"
 	      </para>
 	    </listitem>
 	    <listitem>
+	      <para>
+		Make sure BUILDPLACE is writable by the user.
+		Change BUILDPLACE in the configuration file to a place
+		where the user can access.
+	      </para>
+	    </listitem>
+	    <listitem>
 	      <para>Run <command>pbuilder-user-mode-linux create --distribution sid</command> to create the image</para>
 	    </listitem>
 	    <listitem>
@@ -694,10 +701,11 @@ PBUILDER_UML_IMAGE="/home/dancer/uml-image"
 	    <para>
 	      /tmp is handled differently inside pbuilder-uml.
 	      In pbuilder-uml, /tmp is mounted as tmpfs inside UML,
-	      so accessing files under /tmp outside the user-mode-linux
+	      so accessing files under /tmp from outside the user-mode-linux
 	      does not work.
 	      It affects options like
-	      <command><option>--configfile</option></command>.
+	      <command><option>--configfile</option></command>,
+	      and when trying to build packages placed under <filename>/tmp</filename>.
 	    </para>
 	  </listitem>
 	</itemizedlist>
