@@ -276,12 +276,14 @@ will invoke debsign command after building.
 When this value is set, pbuilder will mount these directories using
 bind-mount.
 
+Example:
 .B "BINDMOUNTS=""/home /mnt/test """
 
 Do not bind-mount 
 .B "/"
 
-.B "USE_PDEBUILD_INTERNAL=" "yes"
+.TP
+.BI "USE_PDEBUILD_INTERNAL=" "yes"
 When this option is set to
 .I yes
 .B "pdebuild-internal"
@@ -289,7 +291,8 @@ implementation of
 .B pdebuild
 is used.
 
-.B "DEBOOTSTRAPOPTS=" "'--variant=buildd'"
+.TP
+.BI "DEBOOTSTRAPOPTS=" "'--variant=buildd'"
 When this option is set to 
 .B "--variant=buildd"
 .B "pbuilder"
