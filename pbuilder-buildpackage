@@ -78,8 +78,7 @@ function checkbuilddep_internal () {
     local CURRENTREALPKGNAME
     echo " -> Attempting to parse the build-deps by myself"
     for INSTALLPKGMULTI in $(cat "$BUILDPLACE/"tmp/buildd/*/debian/control | \
-	tr 'A-Z' 'a-z' | \
-	awk '/^[^ ]*:/{p=0}/^build-depends:/{p=1} /^build-depends-indep:/{p=1}  {if(p) {print $0}}'  | \
+	awk '/^[^ ]*:/{p=0} tolower($0) ~ /^build-depends:/{p=1} tolower($0) ~  /^build-depends-indep:/{p=1}  {if(p) {print $0}}'  | \
 	sed 's/^[^:]*: //' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
@@ -133,8 +132,7 @@ function checkbuilddep_internal () {
 
     # start processing build-conflicts.
     for INSTALLPKG in $(cat "$BUILDPLACE/"tmp/buildd/*/debian/control | \
-	tr 'A-Z' 'a-z' | \
-	awk '/^[^ ]*:/{p=0}/^build-conflicts:/{p=1} /^build-conflicts-indep:/{p=1}  {if(p) {print $0}}'  | \
+	awk '/^[^ ]*:/{p=0} tolower($0) ~ /^build-conflicts:/{p=1} tolower($0) ~ /^build-conflicts-indep:/{p=1}  {if(p) {print $0}}'  | \
 	sed 's/^[^:]*: //' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
