@@ -1,6 +1,7 @@
 #! /bin/bash
 export LANG=C
 export LC_ALL=C
+set -e 
 
 function copydsc () {
     local DSCFILE="$1"
@@ -188,10 +189,19 @@ fi
 
 echo Building the package
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
-if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage \"-m$DEBEMAIL\""; then
-    echo "pbuilder: Failed autobuilding of package" >&2
-    abortingfunction
-    exit 1;    
+
+if [ -z "$DEBEMAIL" ]; then
+    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage -us -uc"; then
+	echo "pbuilder: Failed autobuilding of package" >&2
+	abortingfunction
+	exit 1;    
+    fi
+else
+    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\""; then
+	echo "pbuilder: Failed autobuilding of package" >&2
+	abortingfunction
+	exit 1;    
+    fi
 fi
 
 umountproc
@@ -199,7 +209,7 @@ umountproc
 if [ -n "$BUILDRESULT" ]; then
     mkdir -p "$BUILDRESULT"
     if [ -d "$BUILDRESULT" ]; then
-	cp "$BUILDPLACE"/tmp/buildd/* "$BUILDRESULT"
+	cp "$BUILDPLACE"/tmp/buildd/* "$BUILDRESULT" || true
     else
 	echo "Error: BUILDRESULT=[$BUILDRESULT] and is not a directory." >&2
     fi

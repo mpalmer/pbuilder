@@ -60,7 +60,7 @@ function mountproc () {
 
 function cleanbuildplace () {
     if [ -d "$BUILDPLACE" ]; then 
-	echo cleaning the build env
+	echo " -> cleaning the build env "
 	rm -rf "$BUILDPLACE"
     fi;
 }
@@ -73,7 +73,7 @@ function abortingfunction () {
 
 function installaptlines (){
     echo Installing apt-lines
-    rm "$BUILDPLACE"/etc/apt/sources.list
+    rm -f "$BUILDPLACE"/etc/apt/sources.list
     test -n "$DISTRIBUTION" && (
 	echo "Distribution not specified, please specify" >&2
 	exit 1

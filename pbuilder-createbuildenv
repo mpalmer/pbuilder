@@ -1,5 +1,6 @@
 #! /bin/bash
 # Creating the build environment with debootstrap.
+set -e 
 
 . /usr/lib/pbuilder/pbuilder-checkparams
 . /usr/lib/pbuilder/pbuilder-runhooks
@@ -28,6 +29,7 @@ if [ -n "$HOOKDIR" ]; then
 fi
 if ! ( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE" "$DEBOOTSTRAPSCRIPT" ) ; then
     echo "pbuilder: debootstrap failed" >&2
+    cleanbuildplace
     exit 1
 fi
 
@@ -38,7 +40,8 @@ fi
 
 mkdir -p "$BUILDPLACE/tmp/buildd"
 echo " -> copying local configuration"
-for a in passwd hosts hostname resolv.conf ; do 
+case 
+for a in hosts hostname resolv.conf ; do 
     cp -r /etc/$a "$BUILDPLACE/etc/";
 done
 
