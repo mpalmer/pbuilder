@@ -31,7 +31,7 @@ Description: personal package builder for Debian packages
 
 Package: pbuilder-uml
 Architecture: all
-Depends: rootstrap, user-mode-linux, pbuilder
+Depends: rootstrap, user-mode-linux, pbuilder (= ${Source-Version})
 Description: user-mode-linux version of pbuilder
  pbuilder-uml uses a User-mode-linux system, and builds Debian packages
  inside the UML image. It is an ideal system to use to check 
