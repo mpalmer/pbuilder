@@ -6,7 +6,7 @@ zone(0): 8192 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
 Kernel command line: eth0=slirp,,slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage init=/usr/lib/rootstrap/builder devfs=mount rsworkdir=/home/dancer/.pbuilder-user-mode-linux
-Calibrating delay loop... 1577.37 BogoMIPS
+Calibrating delay loop... 1523.76 BogoMIPS
 Memory: 28528k available
 Dentry cache hash table entries: 4096 (order: 3, 32768 bytes)
 Inode cache hash table entries: 2048 (order: 2, 16384 bytes)
@@ -33,7 +33,7 @@ loop: loaded (max 8 devices)
 Initializing Cryptographic API
 Initializing software serial port version 1
 Netdevice 0 : SLIRP backend - command line: 'slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/gZV8X2/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/TgwmsM/mconsole
 unable to open root_fs for validation
 Partition check:
  ubdb: unknown partition table
@@ -79,6 +79,7 @@ I: Validating debootstrap.invalid_dists_sid_main_binary-i386_Packages
 I: Checking adduser...
 I: Checking apt...
 I: Checking apt-utils...
+I: Checking aptitude...
 I: Checking at...
 I: Checking base-config...
 I: Checking base-files...
@@ -148,6 +149,7 @@ I: Checking libpam0g...
 I: Checking libpcap0.7...
 I: Checking libpcre3...
 I: Checking libpopt0...
+I: Checking libsigc++-1.2-5c102...
 I: Checking libss2...
 I: Checking libssl0.9.7...
 I: Checking libstdc++5...
@@ -207,6 +209,8 @@ I: Retrieving apt
 I: Validating apt
 I: Retrieving apt-utils
 I: Validating apt-utils
+I: Retrieving aptitude
+I: Validating aptitude
 I: Retrieving at
 I: Validating at
 I: Retrieving base-config
@@ -345,6 +349,8 @@ I: Retrieving libpcre3
 I: Validating libpcre3
 I: Retrieving libpopt0
 I: Validating libpopt0
+I: Retrieving libsigc++-1.2-5c102
+I: Validating libsigc++-1.2-5c102
 I: Retrieving libss2
 I: Validating libss2
 I: Retrieving libssl0.9.7
@@ -554,8 +560,8 @@ dpkg: libc6: dependency problems, but configuring anyway as you request:
   Package libdb1-compat is not installed.
 Setting up libc6 (2.3.2.ds1-10) ...
 Current default timezone: 'UTC'.
-Local time is now:      Wed Dec 17 23:23:21 UTC 2003.
-Universal Time is now:  Wed Dec 17 23:23:21 UTC 2003.
+Local time is now:      Sat Dec 27 01:09:09 UTC 2003.
+Universal Time is now:  Sat Dec 27 01:09:09 UTC 2003.
 Run 'tzconfig' if you wish to change it.
 Package `sysvinit' is not installed and no info is available.
 Use dpkg --info (= dpkg-deb --info) to examine archive files,
@@ -631,37 +637,37 @@ Unpacking replacement dpkg ...
 Selecting previously deselected package dselect.
 Unpacking dselect (from .../dselect_1.10.18_i386.deb) ...
 Selecting previously deselected package libblkid1.
-Unpacking libblkid1 (from .../libblkid1_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Unpacking libblkid1 (from .../libblkid1_1.34+1.35-WIP-2003.12.07-2_i386.deb) ...
 Selecting previously deselected package e2fsprogs.
-dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb containing e2fsprogs, pre-dependency problem:
- e2fsprogs pre-depends on e2fslibs (= 1.34+1.35-WIP-2003.08.21-3)
+dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.12.07-2_i386.deb containing e2fsprogs, pre-dependency problem:
+ e2fsprogs pre-depends on e2fslibs (= 1.34+1.35-WIP-2003.12.07-2)
 dpkg: warning - ignoring pre-dependency problem !
-dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb containing e2fsprogs, pre-dependency problem:
+dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.12.07-2_i386.deb containing e2fsprogs, pre-dependency problem:
  e2fsprogs pre-depends on libblkid1 (>= 1.34-1)
   libblkid1 is unpacked, but has never been configured.
 dpkg: warning - ignoring pre-dependency problem !
-dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb containing e2fsprogs, pre-dependency problem:
+dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.12.07-2_i386.deb containing e2fsprogs, pre-dependency problem:
  e2fsprogs pre-depends on libcomerr2 (>= 1.34-1)
 dpkg: warning - ignoring pre-dependency problem !
-dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb containing e2fsprogs, pre-dependency problem:
+dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.12.07-2_i386.deb containing e2fsprogs, pre-dependency problem:
  e2fsprogs pre-depends on libss2 (>= 1.34-1)
 dpkg: warning - ignoring pre-dependency problem !
-dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb containing e2fsprogs, pre-dependency problem:
+dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.12.07-2_i386.deb containing e2fsprogs, pre-dependency problem:
  e2fsprogs pre-depends on libuuid1 (>= 1.34-1)
 dpkg: warning - ignoring pre-dependency problem !
-Unpacking e2fsprogs (from .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Unpacking e2fsprogs (from .../e2fsprogs_1.34+1.35-WIP-2003.12.07-2_i386.deb) ...
 Selecting previously deselected package e2fslibs.
-Unpacking e2fslibs (from .../e2fslibs_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Unpacking e2fslibs (from .../e2fslibs_1.34+1.35-WIP-2003.12.07-2_i386.deb) ...
 Selecting previously deselected package libcomerr2.
-Unpacking libcomerr2 (from .../libcomerr2_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Unpacking libcomerr2 (from .../libcomerr2_1.34+1.35-WIP-2003.12.07-2_i386.deb) ...
 Selecting previously deselected package libss2.
-Unpacking libss2 (from .../libss2_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Unpacking libss2 (from .../libss2_1.34+1.35-WIP-2003.12.07-2_i386.deb) ...
 Selecting previously deselected package libuuid1.
-Unpacking libuuid1 (from .../libuuid1_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Unpacking libuuid1 (from .../libuuid1_1.34+1.35-WIP-2003.12.07-2_i386.deb) ...
 Selecting previously deselected package findutils.
 Unpacking findutils (from .../findutils_4.1.20-3_i386.deb) ...
 Selecting previously deselected package gcc-3.2-base.
-Unpacking gcc-3.2-base (from .../gcc-3.2-base_1%3a3.2.3-8_i386.deb) ...
+Unpacking gcc-3.2-base (from .../gcc-3.2-base_1%3a3.2.3-9_i386.deb) ...
 Selecting previously deselected package gcc-3.3-base.
 Unpacking gcc-3.3-base (from .../gcc-3.3-base_1%3a3.3.3-0pre0_i386.deb) ...
 Selecting previously deselected package grep.
@@ -669,13 +675,13 @@ Unpacking grep (from .../grep_2.5.1.ds1-2_i386.deb) ...
 Selecting previously deselected package gzip.
 Unpacking gzip (from .../archives/gzip_1.3.5-7_i386.deb) ...
 Selecting previously deselected package hostname.
-Unpacking hostname (from .../hostname_2.12_i386.deb) ...
+Unpacking hostname (from .../hostname_2.13_i386.deb) ...
 Selecting previously deselected package libcap1.
 Unpacking libcap1 (from .../libcap1_1%3a1.10-12_i386.deb) ...
 Preparing to replace libc6 2.3.2.ds1-10 (using .../libc6_2.3.2.ds1-10_i386.deb) ...
 Unpacking replacement libc6 ...
 Selecting previously deselected package libdb2.
-Unpacking libdb2 (from .../libdb2_2%3a2.7.7.0-8_i386.deb) ...
+Unpacking libdb2 (from .../libdb2_2%3a2.7.7.0-8.1_i386.deb) ...
 Selecting previously deselected package libdb3.
 Unpacking libdb3 (from .../libdb3_3.2.9-19_i386.deb) ...
 Selecting previously deselected package libncurses5.
@@ -683,11 +689,11 @@ Unpacking libncurses5 (from .../libncurses5_5.3.20030719-4_i386.deb) ...
 Selecting previously deselected package libnewt0.51.
 Unpacking libnewt0.51 (from .../libnewt0.51_0.51.4-18_i386.deb) ...
 Selecting previously deselected package libpam-modules.
-Unpacking libpam-modules (from .../libpam-modules_0.76-14_i386.deb) ...
+Unpacking libpam-modules (from .../libpam-modules_0.76-14.1_i386.deb) ...
 Selecting previously deselected package libpam-runtime.
-Unpacking libpam-runtime (from .../libpam-runtime_0.76-14_all.deb) ...
+Unpacking libpam-runtime (from .../libpam-runtime_0.76-14.1_all.deb) ...
 Selecting previously deselected package libpam0g.
-Unpacking libpam0g (from .../libpam0g_0.76-14_i386.deb) ...
+Unpacking libpam0g (from .../libpam0g_0.76-14.1_i386.deb) ...
 Selecting previously deselected package libpopt0.
 Unpacking libpopt0 (from .../libpopt0_1.7-4_i386.deb) ...
 Selecting previously deselected package libstdc++5.
@@ -695,15 +701,15 @@ Unpacking libstdc++5 (from .../libstdc++5_1%3a3.3.3-0pre0_i386.deb) ...
 Selecting previously deselected package libgcc1.
 Unpacking libgcc1 (from .../libgcc1_1%3a3.3.3-0pre0_i386.deb) ...
 Selecting previously deselected package login.
-dpkg: regarding .../login_1%3a4.0.3-15_i386.deb containing login, pre-dependency problem:
+dpkg: regarding .../login_1%3a4.0.3-16_i386.deb containing login, pre-dependency problem:
  login pre-depends on libpam0g (>= 0.76)
   libpam0g is unpacked, but has never been configured.
 dpkg: warning - ignoring pre-dependency problem !
-dpkg: regarding .../login_1%3a4.0.3-15_i386.deb containing login, pre-dependency problem:
+dpkg: regarding .../login_1%3a4.0.3-16_i386.deb containing login, pre-dependency problem:
  login pre-depends on libpam-runtime (>= 0.76-13.1)
   libpam-runtime is unpacked, but has never been configured.
 dpkg: warning - ignoring pre-dependency problem !
-Unpacking login (from .../login_1%3a4.0.3-15_i386.deb) ...
+Unpacking login (from .../login_1%3a4.0.3-16_i386.deb) ...
 Selecting previously deselected package makedev.
 Unpacking makedev (from .../makedev_2.3.1-64_all.deb) ...
 Preparing to replace mawk 1.3.3-11 (using .../mawk_1.3.3-11_i386.deb) ...
@@ -721,7 +727,7 @@ dpkg: regarding .../ncurses-bin_5.3.20030719-4_i386.deb containing ncurses-bin, 
 dpkg: warning - ignoring pre-dependency problem !
 Unpacking ncurses-bin (from .../ncurses-bin_5.3.20030719-4_i386.deb) ...
 Selecting previously deselected package passwd.
-Unpacking passwd (from .../passwd_1%3a4.0.3-15_i386.deb) ...
+Unpacking passwd (from .../passwd_1%3a4.0.3-16_i386.deb) ...
 Preparing to replace perl-base 5.8.2-2 (using .../perl-base_5.8.2-2_i386.deb) ...
 Unpacking replacement perl-base ...
 Selecting previously deselected package procps.
@@ -733,15 +739,18 @@ Unpacking slang1 (from .../slang1_1.4.9-2_i386.deb) ...
 Selecting previously deselected package slang1a-utf8.
 Unpacking slang1a-utf8 (from .../slang1a-utf8_1.4.9-2_i386.deb) ...
 Selecting previously deselected package initscripts.
-Unpacking initscripts (from .../initscripts_2.85-7_all.deb) ...
+Unpacking initscripts (from .../initscripts_2.85-9_all.deb) ...
 Selecting previously deselected package sysvinit.
-dpkg: regarding .../sysvinit_2.85-7_i386.deb containing sysvinit, pre-dependency problem:
+dpkg: regarding .../sysvinit_2.85-9_i386.deb containing sysvinit, pre-dependency problem:
  sysvinit pre-depends on initscripts
   initscripts is unpacked, but has never been configured.
 dpkg: warning - ignoring pre-dependency problem !
-Unpacking sysvinit (from .../sysvinit_2.85-7_i386.deb) ...
+dpkg: regarding .../sysvinit_2.85-9_i386.deb containing sysvinit, pre-dependency problem:
+ sysvinit pre-depends on sysv-rc (>= 2.85-2) | file-rc (>> 0.7.0)
+dpkg: warning - ignoring pre-dependency problem !
+Unpacking sysvinit (from .../sysvinit_2.85-9_i386.deb) ...
 Selecting previously deselected package sysv-rc.
-Unpacking sysv-rc (from .../sysv-rc_2.85-7_all.deb) ...
+Unpacking sysv-rc (from .../sysv-rc_2.85-9_all.deb) ...
 Selecting previously deselected package tar.
 Unpacking tar (from .../tar_1.13.25-6_i386.deb) ...
 Selecting previously deselected package util-linux.
@@ -764,30 +773,30 @@ Unpacking mbr (from .../archives/mbr_1.1.5-1_i386.deb) ...
 I: Configuring required packages...
 Setting up ncurses-base (5.3.20030719-4) ...
 
-Setting up sysv-rc (2.85-7) ...
+Setting up sysv-rc (2.85-9) ...
 
-Setting up libpam-runtime (0.76-14) ...
+Setting up libpam-runtime (0.76-14.1) ...
 
-Setting up gcc-3.2-base (3.2.3-8) ...
+Setting up gcc-3.2-base (3.2.3-9) ...
 Setting up gcc-3.3-base (3.3.3-0pre0) ...
 dpkg: libc6: dependency problems, but configuring anyway as you request:
  libc6 depends on libdb1-compat; however:
   Package libdb1-compat is not installed.
 Setting up libc6 (2.3.2.ds1-10) ...
 Current default timezone: 'UTC'.
-Local time is now:      Wed Dec 17 23:24:14 UTC 2003.
-Universal Time is now:  Wed Dec 17 23:24:14 UTC 2003.
+Local time is now:      Sat Dec 27 01:10:16 UTC 2003.
+Universal Time is now:  Sat Dec 27 01:10:16 UTC 2003.
 Run 'tzconfig' if you wish to change it.
 
 Setting up libcap1 (1.10-12) ...
 
 Setting up slang1 (1.4.9-2) ...
 
-Setting up libuuid1 (1.34+1.35-WIP-2003.08.21-3) ...
+Setting up libuuid1 (1.34+1.35-WIP-2003.12.07-2) ...
 
 Setting up libpopt0 (1.7-4) ...
 
-Setting up libpam0g (0.76-14) ...
+Setting up libpam0g (0.76-14.1) ...
 
 Setting up bsdutils (2.12-6) ...
 
@@ -808,31 +817,31 @@ Setting up libattr1 (2.4.12-1) ...
 
 Setting up sed (4.0.7-3) ...
 
-Setting up e2fslibs (1.34+1.35-WIP-2003.08.21-3) ...
+Setting up e2fslibs (1.34+1.35-WIP-2003.12.07-2) ...
 
 Setting up base-passwd (3.5.5) ...
 
-Setting up libcomerr2 (1.34+1.35-WIP-2003.08.21-3) ...
+Setting up libcomerr2 (1.34+1.35-WIP-2003.12.07-2) ...
 
 Setting up mawk (1.3.3-11) ...
 
 Setting up libnewt0.51 (0.51.4-18) ...
 
 Setting up grep (2.5.1.ds1-2) ...
-Setting up hostname (2.12) ...
+Setting up hostname (2.13) ...
 Setting up libacl1 (2.2.21-1) ...
 
-Setting up libblkid1 (1.34+1.35-WIP-2003.08.21-3) ...
+Setting up libblkid1 (1.34+1.35-WIP-2003.12.07-2) ...
 
-Setting up libss2 (1.34+1.35-WIP-2003.08.21-3) ...
+Setting up libss2 (1.34+1.35-WIP-2003.12.07-2) ...
 
 Setting up findutils (4.1.20-3) ...
 
-Setting up e2fsprogs (1.34+1.35-WIP-2003.08.21-3) ...
+Setting up e2fsprogs (1.34+1.35-WIP-2003.12.07-2) ...
 Setting up liblocale-gettext-perl (1.01-17) ...
 Setting up diff (2.8.1-6) ...
 
-Setting up libdb2 (2.7.7.0-8) ...
+Setting up libdb2 (2.7.7.0-8.1) ...
 
 Setting up libdb3 (3.2.9-19) ...
 
@@ -861,7 +870,7 @@ Setting up procps (3.1.14-1) ...
 Setting up ncurses-bin (5.3.20030719-4) ...
 
 Setting up whiptail (0.51.4-18) ...
-Setting up libpam-modules (0.76-14) ...
+Setting up libpam-modules (0.76-14.1) ...
 
 Setting up base-files (3.0.12) ...
 
@@ -874,15 +883,15 @@ Setting up gzip (1.3.5-7) ...
 Setting up dselect (1.10.18) ...
 Setting up bash (2.05b-12) ...
 
-Setting up login (4.0.3-15) ...
+Setting up login (4.0.3-16) ...
 
-Setting up passwd (4.0.3-15) ...
+Setting up passwd (4.0.3-16) ...
 
 Setting up dpkg (1.10.18) ...
 
-Setting up initscripts (2.85-7) ...
+Setting up initscripts (2.85-9) ...
 
-Setting up sysvinit (2.85-7) ...
+Setting up sysvinit (2.85-9) ...
 sysvinit: creating /dev/initctl
 init: timeout opening/writing control channel /dev/initctl
 
@@ -890,24 +899,28 @@ Setting up modutils (2.4.25-3) ...
 
 I: Installing base packages...
 Selecting previously deselected package adduser.
-(Reading database ... 4267 files and directories currently installed.)
+(Reading database ... 4273 files and directories currently installed.)
 Unpacking adduser (from .../archives/adduser_3.51_all.deb) ...
 Selecting previously deselected package apt.
-Unpacking apt (from .../archives/apt_0.5.14_i386.deb) ...
+Unpacking apt (from .../archives/apt_0.5.16_i386.deb) ...
 Selecting previously deselected package apt-utils.
-Unpacking apt-utils (from .../apt-utils_0.5.14_i386.deb) ...
+Unpacking apt-utils (from .../apt-utils_0.5.16_i386.deb) ...
 Selecting previously deselected package at.
 Unpacking at (from .../archives/at_3.1.8-11_i386.deb) ...
 Selecting previously deselected package base-config.
-Unpacking base-config (from .../base-config_2.01_all.deb) ...
+Unpacking base-config (from .../base-config_2.03_all.deb) ...
+Selecting previously deselected package aptitude.
+Unpacking aptitude (from .../aptitude_0.2.13-2_i386.deb) ...
+Selecting previously deselected package libsigc++-1.2-5c102.
+Unpacking libsigc++-1.2-5c102 (from .../libsigc++-1.2-5c102_1.2.5-1_i386.deb) ...
 Selecting previously deselected package bsdmainutils.
-Unpacking bsdmainutils (from .../bsdmainutils_6.0.7_i386.deb) ...
+Unpacking bsdmainutils (from .../bsdmainutils_6.0.8_i386.deb) ...
 Selecting previously deselected package console-common.
 Unpacking console-common (from .../console-common_0.7.33_all.deb) ...
 Selecting previously deselected package console-tools.
-Unpacking console-tools (from .../console-tools_1%3a0.2.3dbs-44_i386.deb) ...
+Unpacking console-tools (from .../console-tools_1%3a0.2.3dbs-45_i386.deb) ...
 Selecting previously deselected package libconsole.
-Unpacking libconsole (from .../libconsole_1%3a0.2.3dbs-44_i386.deb) ...
+Unpacking libconsole (from .../libconsole_1%3a0.2.3dbs-45_i386.deb) ...
 Selecting previously deselected package console-data.
 Unpacking console-data (from .../console-data_2002.12.04dbs-26_all.deb) ...
 Selecting previously deselected package cpio.
@@ -917,13 +930,13 @@ Unpacking cron (from .../cron_3.0pl1-81_i386.deb) ...
 Selecting previously deselected package ed.
 Unpacking ed (from .../archives/ed_0.2-20_i386.deb) ...
 Selecting previously deselected package exim4.
-Unpacking exim4 (from .../archives/exim4_4.30-2_all.deb) ...
+Unpacking exim4 (from .../archives/exim4_4.30-3_all.deb) ...
 Selecting previously deselected package exim4-base.
-Unpacking exim4-base (from .../exim4-base_4.30-2_i386.deb) ...
+Unpacking exim4-base (from .../exim4-base_4.30-3_i386.deb) ...
 Selecting previously deselected package exim4-config.
-Unpacking exim4-config (from .../exim4-config_4.30-2_all.deb) ...
+Unpacking exim4-config (from .../exim4-config_4.30-3_all.deb) ...
 Selecting previously deselected package exim4-daemon-light.
-Unpacking exim4-daemon-light (from .../exim4-daemon-light_4.30-2_i386.deb) ...
+Unpacking exim4-daemon-light (from .../exim4-daemon-light_4.30-3_i386.deb) ...
 Selecting previously deselected package fdutils.
 Unpacking fdutils (from .../fdutils_5.4-20030718-2_i386.deb) ...
 Selecting previously deselected package gettext-base.
@@ -941,7 +954,7 @@ Unpacking libdb1-compat (from .../libdb1-compat_2.1.3-7_i386.deb) ...
 Selecting previously deselected package libident.
 Unpacking libident (from .../libident_0.22-2.2_i386.deb) ...
 Selecting previously deselected package libgnutls7.
-Unpacking libgnutls7 (from .../libgnutls7_0.8.12-3_i386.deb) ...
+Unpacking libgnutls7 (from .../libgnutls7_0.8.12-3.1_i386.deb) ...
 Selecting previously deselected package libssl0.9.7.
 Unpacking libssl0.9.7 (from .../libssl0.9.7_0.9.7c-5_i386.deb) ...
 Selecting previously deselected package libgcrypt1.
@@ -953,7 +966,7 @@ Unpacking libopencdk8 (from .../libopencdk8_0.5.1-1_i386.deb) ...
 Selecting previously deselected package libtasn1-0.
 Unpacking libtasn1-0 (from .../libtasn1-0_0.1.2-1_i386.deb) ...
 Selecting previously deselected package zlib1g.
-Unpacking zlib1g (from .../zlib1g_1%3a1.2.1-2_i386.deb) ...
+Unpacking zlib1g (from .../zlib1g_1%3a1.2.1-3_i386.deb) ...
 Selecting previously deselected package liblockfile1.
 Unpacking liblockfile1 (from .../liblockfile1_1.05_i386.deb) ...
 Selecting previously deselected package libpcre3.
@@ -983,7 +996,7 @@ Unpacking netbase (from .../archives/netbase_4.15_all.deb) ...
 Selecting previously deselected package netkit-inetd.
 Unpacking netkit-inetd (from .../netkit-inetd_0.10-9_i386.deb) ...
 Selecting previously deselected package iputils-ping.
-Unpacking iputils-ping (from .../iputils-ping_3%3a20020927-1_i386.deb) ...
+Unpacking iputils-ping (from .../iputils-ping_3%3a20020927-2_i386.deb) ...
 Selecting previously deselected package nvi.
 Unpacking nvi (from .../archives/nvi_1.79-21_i386.deb) ...
 Selecting previously deselected package ppp.
@@ -1009,7 +1022,7 @@ Unpacking telnet (from .../telnet_0.17-22_i386.deb) ...
 Selecting previously deselected package wget.
 Unpacking wget (from .../archives/wget_1.9.1-3_i386.deb) ...
 Selecting previously deselected package lilo.
-Unpacking lilo (from .../lilo_1%3a22.5.8-6_i386.deb) ...
+Unpacking lilo (from .../lilo_1%3a22.5.8-8_i386.deb) ...
 Selecting previously deselected package pciutils.
 Unpacking pciutils (from .../pciutils_1%3a2.1.11-6_i386.deb) ...
 Selecting previously deselected package syslinux.
@@ -1039,7 +1052,7 @@ Setting up libident (0.22-2.2) ...
 
 Setting up libssl0.9.7 (0.9.7c-5) ...
 
-Setting up apt (0.5.14) ...
+Setting up apt (0.5.16) ...
 
 Setting up fdutils (5.4-20030718-2) ...
 Keeping old fdmount setuid root settings.
@@ -1051,7 +1064,7 @@ Setting up console-data (2002.12.04dbs-26) ...
 Looking for keymap to install:
 NONE
 
-Setting up zlib1g (1.2.1-2) ...
+Setting up zlib1g (1.2.1-3) ...
 
 Setting up adduser (3.51) ...
 
@@ -1070,21 +1083,25 @@ Setting up ipchains (1.3.10-15) ...
 Setting up groff-base (1.18.1-14) ...
 
 Setting up net-tools (1.60-8) ...
-Setting up bsdmainutils (6.0.7) ...
+Setting up bsdmainutils (6.0.8) ...
+
+Setting up libsigc++-1.2-5c102 (1.2.5-1) ...
 
 Setting up syslinux (2.04-1) ...
 Setting up libpcre3 (4.3-3) ...
+
+Setting up aptitude (0.2.13-2) ...
 
 Setting up info (4.6-1) ...
 
 Setting up libopencdk8 (0.5.1-1) ...
 
-Setting up iputils-ping (20020927-1) ...
-Setting up lilo (22.5.8-6) ...
+Setting up iputils-ping (20020927-2) ...
+Setting up lilo (22.5.8-8) ...
 hostname: Unknown host
 Use of uninitialized value in sprintf at /usr/share/perl5/Debconf/Element/Noninteractive/Note.pm line 38, <GEN1> line 3.
 
-Setting up libgnutls7 (0.8.12-3) ...
+Setting up libgnutls7 (0.8.12-3.1) ...
 
 Setting up cron (3.0pl1-81) ...
 Adding group crontab (101)...
@@ -1100,9 +1117,8 @@ Starting internet superserver: inetd
 Warning: Fake start-stop-daemon called, doing nothing
 .
 
-Setting up libconsole (0.2.3dbs-44) ...
-
-Setting up apt-utils (0.5.14) ...
+Setting up libconsole (0.2.3dbs-45) ...
+Setting up apt-utils (0.5.16) ...
 
 Setting up iptables (1.2.9-1) ...
 
@@ -1116,7 +1132,7 @@ Setting up liblockfile1 (1.05) ...
 
 Setting up tcpd (7.6-ipv6.1-3) ...
 
-Setting up exim4-config (4.30-2) ...
+Setting up exim4-config (4.30-3) ...
 hostname: Unknown host
 Adding system-user for exim (v4)
 
@@ -1130,9 +1146,9 @@ NONE
 Setting up ifupdown (0.6.4-4.6) ...
 
 Setting up logrotate (3.6.5-2) ...
-Setting up console-tools (0.2.3dbs-44) ...
+Setting up console-tools (0.2.3dbs-45) ...
 
-Setting up base-config (2.01) ...
+Setting up base-config (2.03) ...
 
 Setting up netbase (4.15) ...
 
@@ -1141,9 +1157,9 @@ Setting up ppp (2.4.2+20031127-1) ...
 Setting up pppoe (3.5-3) ...
 Setting up pppoeconf (1.0) ...
 
-Setting up exim4-base (4.30-2) ...
+Setting up exim4-base (4.30-3) ...
 
-Setting up exim4-daemon-light (4.30-2) ...
+Setting up exim4-daemon-light (4.30-3) ...
 Starting MTA: 
 Warning: Fake start-stop-daemon called, doing nothing
 exim4.
@@ -1157,7 +1173,7 @@ Starting deferred execution scheduler: atd
 Warning: Fake start-stop-daemon called, doing nothing
 .
 
-Setting up exim4 (4.30-2) ...
+Setting up exim4 (4.30-3) ...
 Setting up sysklogd (1.4.1-13) ...
 Stopping system log daemon: syslogd
 Warning: Fake start-stop-daemon called, doing nothing
@@ -1180,7 +1196,7 @@ Setting up tasksel (1.39) ...
 
 I: Base system installed successfully.
 chroot /tmp/target dpkg --purge base-config console-common console-tools console-data console-tools-libs 
-(Reading database ... 7012 files and directories currently installed.)
+(Reading database ... 7095 files and directories currently installed.)
 Removing base-config ...
 Purging configuration files for base-config ...
 Removing console-tools ...
@@ -1197,9 +1213,9 @@ Using rootstrap module umount from:
 	/usr/lib/rootstrap/modules/umount
 umount: /tmp/target/proc: not mounted
 System halted.
-tracing thread pid = 9756
+tracing thread pid = 28120
 
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filetJbNVC rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file4bGy23 rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.22-5um (dancer@atoron) (gcc version 2.95.4 20011002 (Debian prerelease)) #3 2003年 11月 16日 日曜日 23:07:20 JST
@@ -1207,8 +1223,8 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filetJbNVC rw
-Calibrating delay loop... 1594.44 BogoMIPS
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file4bGy23 rw
+Calibrating delay loop... 1574.96 BogoMIPS
 Memory: 124716k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -1236,7 +1252,7 @@ Initializing Cryptographic API
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/q6AQ0i/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/uXNlZE/mconsole
 unable to open root_fs for validation
 Partition check:
  ubdb: unknown partition table
@@ -1282,19 +1298,19 @@ Upgrading for distribution sid
  -> installing dummy policy-rc.d
 Refreshing the base.tgz 
  -> upgrading packages
-0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main Packages [2759kB]
-            0% [1 Packages 5608/2759kB 0%]                              54% [1 Packages 1492402/2759kB 54%]98% [1 Packages 2730192/2759kB 98%]                                   99% [Working]             99% [1 Packages gzip 0]                       Get:2 http://ring.asahi-net.or.jp sid/main Release [82B]
-                       99% [1 Packages gzip 245760] [2 Release 0/82B 0%]                                                 99% [1 Packages gzip 245760]                            99% [1 Packages gzip 5959680]                             100% [Working]              Fetched 2759kB in 2s (1003kB/s)
+0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main Packages [2762kB]
+            0% [1 Packages 2804/2762kB 0%]                              97% [1 Packages 2697424/2762kB 97%]                                   99% [Working]             99% [1 Packages gzip 0]                       Get:2 http://ring.asahi-net.or.jp sid/main Release [82B]
+                       99% [1 Packages gzip 0] [2 Release 0/82B 0%]                                            99% [1 Packages gzip 0]                       99% [1 Packages gzip 5627904]                             100% [Working]              Fetched 2762kB in 2s (1278kB/s)
 Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 1%Reading Package Lists... 91%Reading Package Lists... 99%Reading Package Lists... 99%Reading Package Lists... Done
-(Reading database ... 6276 files and directories currently installed.)
+(Reading database ... 6352 files and directories currently installed.)
 Removing lilo ...
 Purging configuration files for lilo ...
-Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 79%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 48%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
+Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 77%Reading Package Lists... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 60%Building Dependency Tree... Done
 Calculating Upgrade... Done
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading Package Lists... 0%Reading Package Lists... 100%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 74%Building Dependency Tree... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 75%Building Dependency Tree... Done
 apt is already the newest version.
 The following extra packages will be installed:
   binutils cpp cpp-3.3 g++ g++-3.3 gcc gcc-3.3 libc6-dev libdb4.0
@@ -1310,25 +1326,25 @@ The following NEW packages will be installed:
 Need to get 17.9MB of archives.
 After unpacking 62.1MB of additional disk space will be used.
 0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main binutils 2.14.90.0.7-3 [2468kB]
-            0% [1 binutils 0/2468kB 0%]                           5% [1 binutils 982745/2468kB 39%]                                 11% [1 binutils 1999124/2468kB 80%]                                   13% [Working]             Get:2 http://ring.asahi-net.or.jp sid/main cpp-3.3 1:3.3.3-0pre0 [1390kB]
+            0% [1 binutils 0/2468kB 0%]                           13% [Working]             Get:2 http://ring.asahi-net.or.jp sid/main cpp-3.3 1:3.3.3-0pre0 [1390kB]
              13% [2 cpp-3.3 0/1390kB 0%]                           21% [Working]             Get:3 http://ring.asahi-net.or.jp sid/main cpp 4:3.3.2-1 [26.2kB]
              21% [3 cpp 0/26.2kB 0%]                       21% [Working]             Get:4 http://ring.asahi-net.or.jp sid/main perl-modules 5.8.2-2 [2158kB]
-             21% [4 perl-modules 0/2158kB 0%]                                30% [4 perl-modules 1637796/2158kB 75%]                                       33% [Working]             Get:5 http://ring.asahi-net.or.jp sid/main libdb4.0 4.0.14-1.3 [302kB]
+             21% [4 perl-modules 0/2158kB 0%]                                33% [Working]             Get:5 http://ring.asahi-net.or.jp sid/main libdb4.0 4.0.14-1.3 [302kB]
              33% [5 libdb4.0 0/302kB 0%]                           35% [Working]             Get:6 http://ring.asahi-net.or.jp sid/main perl 5.8.2-2 [3246kB]
-             35% [6 perl 0/3246kB 0%]                        42% [6 perl 1342004/3246kB 41%]50% [6 perl 2651460/3246kB 81%]                               53% [Working]             Get:7 http://ring.asahi-net.or.jp sid/main patch 2.5.9-1 [92.3kB]
+             35% [6 perl 0/3246kB 0%]                        53% [Working]             Get:7 http://ring.asahi-net.or.jp sid/main patch 2.5.9-1 [92.3kB]
              53% [7 patch 0/92.3kB 0%]                         54% [Working]             Get:8 http://ring.asahi-net.or.jp sid/main make 3.80-4 [349kB]
              54% [8 make 0/349kB 0%]                       56% [Working]             Get:9 http://ring.asahi-net.or.jp sid/main dpkg-dev 1.10.18 [115kB]
              56% [9 dpkg-dev 0/115kB 0%]                           56% [Working]             Get:10 http://ring.asahi-net.or.jp sid/main gcc-3.3 1:3.3.3-0pre0 [1320kB]
-             56% [10 gcc-3.3 0/1320kB 0%]                            61% [10 gcc-3.3 935208/1320kB 70%]                                  64% [Working]             Get:11 http://ring.asahi-net.or.jp sid/main gcc 4:3.3.2-1 [4854B]
+             56% [10 gcc-3.3 0/1320kB 0%]                            64% [Working]             Get:11 http://ring.asahi-net.or.jp sid/main gcc 4:3.3.2-1 [4854B]
              64% [11 gcc 0/4854B 0%]                       64% [Working]             Get:12 http://ring.asahi-net.or.jp sid/main linux-kernel-headers 2.5.999-test7-bk-10 [1375kB]
-             64% [12 linux-kernel-headers 0/1375kB 0%]                                         70% [12 linux-kernel-headers 1207908/1375kB 87%]                     2033kB/s 2s71% [Working]                                                        2033kB/s 2s                                                                                Get:13 http://ring.asahi-net.or.jp sid/main libc6-dev 2.3.2.ds1-10 [2515kB]
-71% [13 libc6-dev 0/2515kB 0%]                                       2033kB/s 2s80% [13 libc6-dev 1588864/2515kB 63%]                                2033kB/s 1s83% [13 libc6-dev 2116836/2515kB 84%]                                2033kB/s 1s85% [Working]                                                        2033kB/s 1s                                                                                Get:14 http://ring.asahi-net.or.jp sid/main libstdc++5-3.3-dev 1:3.3.3-0pre0 [769kB]
-85% [14 libstdc++5-3.3-dev 0/769kB 0%]                               2033kB/s 1s90% [Working]                                                        2033kB/s 0s                                                                                Get:15 http://ring.asahi-net.or.jp sid/main g++-3.3 1:3.3.3-0pre0 [1771kB]
-90% [15 g++-3.3 0/1771kB 0%]                                         2033kB/s 0s96% [15 g++-3.3 1241556/1771kB 70%]                                  2033kB/s 0s97% [15 g++-3.3 1307092/1771kB 73%]                                  2033kB/s 0s99% [Working]                                                        2033kB/s 0s                                                                                Get:16 http://ring.asahi-net.or.jp sid/main g++ 4:3.3.2-1 [1390B]
-99% [16 g++ 0/1390B 0%]                                              2033kB/s 0s99% [Working]                                                        2033kB/s 0s                                                                                Get:17 http://ring.asahi-net.or.jp sid/main build-essential 10 [6450B]
-99% [17 build-essential 0/6450B 0%]                                  2033kB/s 0s100% [Working]                                                       2033kB/s 0s                                                                                Fetched 17.9MB in 9s (1879kB/s)
+             64% [12 linux-kernel-headers 0/1375kB 0%]                                         71% [Working]             Get:13 http://ring.asahi-net.or.jp sid/main libc6-dev 2.3.2.ds1-10 [2515kB]
+             71% [13 libc6-dev 0/2515kB 0%]                              85% [Working]             Get:14 http://ring.asahi-net.or.jp sid/main libstdc++5-3.3-dev 1:3.3.3-0pre0 [769kB]
+             85% [14 libstdc++5-3.3-dev 0/769kB 0%]                                      90% [Working]             Get:15 http://ring.asahi-net.or.jp sid/main g++-3.3 1:3.3.3-0pre0 [1771kB]
+             90% [15 g++-3.3 0/1771kB 0%]                            99% [Working]             Get:16 http://ring.asahi-net.or.jp sid/main g++ 4:3.3.2-1 [1390B]
+             99% [16 g++ 0/1390B 0%]                       99% [Working]             Get:17 http://ring.asahi-net.or.jp sid/main build-essential 10 [6450B]
+             99% [17 build-essential 0/6450B 0%]                                   100% [Working]              Fetched 17.9MB in 5s (3570kB/s)
 Selecting previously deselected package binutils.
-(Reading database ... 6237 files and directories currently installed.)
+(Reading database ... 6311 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.14.90.0.7-3_i386.deb) ...
 Selecting previously deselected package cpp-3.3.
 Unpacking cpp-3.3 (from .../cpp-3.3_1%3a3.3.3-0pre0_i386.deb) ...
@@ -1388,6 +1404,6 @@ Setting up build-essential (10) ...
  -> ignoring umount of dev/pts filesystem
  -> ignoring umount of proc filesystem
 Kernel panic: Attempted to kill init!
- tracing thread pid = 11509
+ tracing thread pid = 31056
 
  -> Successful exit from user-mode linux

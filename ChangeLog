@@ -1,3 +1,16 @@
+2003-12-27  Junichi Uekawa  <dancer@debian.org>
+
+	* testsuite/run-test.sh (PBUILDER_UML): fix rm testbuild2.
+	Estimate is 45 minutes now. It takes longer.
+
+	* Makefile (clean): clean testsuite/testbuild2 directory also.
+
+	* pdebuild-internal: use dpkg-buildpackage inside the chroot rather than debuild.
+
+2003-12-26  Junichi Uekawa  <dancer@debian.org>
+
+	* examples/execute_installtest.sh: add CVS id output
+
 2003-12-24  Junichi Uekawa  <dancer@debian.org>
 
 	* testsuite/run-test.sh (PBUILDER_UML): add pdebuild-user-mode-linux tests.

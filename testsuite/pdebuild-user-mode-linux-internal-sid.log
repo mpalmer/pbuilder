@@ -1,4 +1,5 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/26494.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filemk3oRd rw
+W: /home/dancer/.pbuilderrc does not exist
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/1455.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/../../testimage devfs=mount init=/tmp/fileR90T6Y rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.22-5um (dancer@atoron) (gcc version 2.95.4 20011002 (Debian prerelease)) #3 2003年 11月 16日 日曜日 23:07:20 JST
@@ -6,8 +7,8 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/26494.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filemk3oRd rw
-Calibrating delay loop... 1577.37 BogoMIPS
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/1455.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/../../testimage devfs=mount init=/tmp/fileR90T6Y rw
+Calibrating delay loop... 1550.06 BogoMIPS
 Memory: 124716k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -35,9 +36,9 @@ Initializing Cryptographic API
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/A86qp8/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/CAEgFy/mconsole
 unable to open root_fs for validation
-Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/26494.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
+Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/1455.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/../../testimage"
 Partition check:
  ubdb: unknown partition table
 Initializing stdio console driver
@@ -77,17 +78,35 @@ SLiRP Ready ...
 done.
 W: /home/dancer/.pbuilderrc does not exist
  -> Running in pbuilder-user-mode-linux mode
-I: using fakeroot in build.
-pbuilder-buildpackage/i386 $Id$
-$Id$
-
-Current time: Sat Dec 27 10:41:23 JST 2003
-pbuilder-time-stamp: 1072489283
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
+-> Mounting /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2
  -> policy-rc.d already exists
-Installing the build-deps
+Using: : pdebuild-internal,v 1.1 2003/12/23 13:56:34 dancer Exp $
+Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 68%Reading Package Lists... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 48%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
+The following extra packages will be installed:
+  debootstrap
+Suggested packages:
+  pbuilder-uml
+Recommended packages:
+  sudo
+The following NEW packages will be installed:
+  debootstrap pbuilder
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 117kB of archives.
+After unpacking 530kB of additional disk space will be used.
+0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main debootstrap 0.2.19 [59.8kB]
+            Get:2 http://ring.asahi-net.or.jp sid/main pbuilder 0.97 [56.8kB]
+            89% [2 pbuilder 44858/56.8kB 79%]                                 100% [Working]              Fetched 117kB in 0s (355kB/s)
+Selecting previously deselected package debootstrap.
+(Reading database ... 9729 files and directories currently installed.)
+Unpacking debootstrap (from .../debootstrap_0.2.19_i386.deb) ...
+Selecting previously deselected package pbuilder.
+Unpacking pbuilder (from .../archives/pbuilder_0.97_all.deb) ...
+Setting up debootstrap (0.2.19) ...
+Setting up pbuilder (0.97) ...
  -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.18 2003/04/20 03:40:36 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
    -> Trying debhelper
@@ -95,7 +114,7 @@ Installing the build-deps
    -> Trying libdshconfig1-dev
  -> Installing  debhelper libdshconfig1-dev
 Reading Package Lists... 0%Reading Package Lists... 100%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 77%Building Dependency Tree... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 66%Building Dependency Tree... Done
 The following extra packages will be installed:
   debconf-utils file gettext html2text intltool-debian libdshconfig1 libmagic1
   po-debconf
@@ -105,24 +124,24 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2071kB of archives.
-After unpacking 6974kB of additional disk space will be used.
-0% [Working]            Get:1 http://ring.asahi-net.or.jp sarge/main libmagic1 4.06-1 [206kB]
-            5% [1 libmagic1 112104/206kB 54%]                                 Get:2 http://ring.asahi-net.or.jp sarge/main file 4.06-1 [25.2kB]
-                                 9% [2 file 0/25.2kB 0%]                       11% [Waiting for headers]                         Get:3 http://ring.asahi-net.or.jp sarge/main debconf-utils 1.3.22 [28.6kB]
-                         11% [3 debconf-utils 0/28.6kB 0%]                                 Get:4 http://ring.asahi-net.or.jp sarge/main html2text 1.3.1-2 [83.6kB]
-                                 12% [4 html2text 0/83.6kB 0%]                             16% [Waiting for headers]                         Get:5 http://ring.asahi-net.or.jp sarge/main gettext 0.12.1-8 [1280kB]
-                         16% [5 gettext 0/1280kB 0%]                           78% [Working]             Get:6 http://ring.asahi-net.or.jp sarge/main intltool-debian 0.27.2+20031023 [18.4kB]
-             78% [6 intltool-debian 0/18.4kB 0%]                                   79% [Working]             Get:7 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.7 [65.4kB]
-             79% [7 po-debconf 0/65.4kB 0%]                              82% [Working]             Get:8 http://ring.asahi-net.or.jp sarge/main debhelper 4.1.81 [343kB]
-             82% [8 debhelper 0/343kB 0%]                            98% [Working]             Get:9 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.8-1 [9656B]
-             98% [9 libdshconfig1 0/9656B 0%]                                99% [Working]             Get:10 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.8-1 [11.3kB]
-             99% [10 libdshconfig1-dev 0/11.3kB 0%]                                      100% [Working]              Fetched 2071kB in 0s (2405kB/s)
+Need to get 2077kB of archives.
+After unpacking 6998kB of additional disk space will be used.
+0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main libmagic1 4.06-2 [212kB]
+            0% [1 libmagic1 0/212kB 0%]                           Get:2 http://ring.asahi-net.or.jp sid/main file 4.06-2 [25.5kB]
+                           Get:3 http://ring.asahi-net.or.jp sid/main debconf-utils 1.3.22 [28.6kB]
+                           12% [3 debconf-utils 19188/28.6kB 67%]                                      Get:4 http://ring.asahi-net.or.jp sid/main html2text 1.3.1-2 [83.6kB]
+                                      16% [Waiting for headers]                         Get:5 http://ring.asahi-net.or.jp sid/main gettext 0.12.1-8 [1280kB]
+                         16% [5 gettext 0/1280kB 0%]                           78% [Working]             Get:6 http://ring.asahi-net.or.jp sid/main intltool-debian 0.27.2+20031023 [18.4kB]
+             78% [6 intltool-debian 0/18.4kB 0%]                                   79% [Working]             Get:7 http://ring.asahi-net.or.jp sid/main po-debconf 0.8.7 [65.4kB]
+             79% [7 po-debconf 0/65.4kB 0%]                              82% [Working]             Get:8 http://ring.asahi-net.or.jp sid/main debhelper 4.1.81 [343kB]
+             82% [8 debhelper 0/343kB 0%]                            98% [Working]             Get:9 http://ring.asahi-net.or.jp sid/main libdshconfig1 0.20.8-1 [9656B]
+             98% [9 libdshconfig1 0/9656B 0%]                                99% [Working]             Get:10 http://ring.asahi-net.or.jp sid/main libdshconfig1-dev 0.20.8-1 [11.3kB]
+             99% [10 libdshconfig1-dev 0/11.3kB 0%]                                      100% [Working]              Fetched 2077kB in 0s (3008kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 9659 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.06-1_i386.deb) ...
+(Reading database ... 9796 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.06-2_i386.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.06-1_i386.deb) ...
+Unpacking file (from .../archives/file_4.06-2_i386.deb) ...
 Selecting previously deselected package debconf-utils.
 Unpacking debconf-utils (from .../debconf-utils_1.3.22_all.deb) ...
 Selecting previously deselected package html2text.
@@ -139,9 +158,9 @@ Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.8-1_i386.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
 Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.8-1_i386.deb) ...
-Setting up libmagic1 (4.06-1) ...
+Setting up libmagic1 (4.06-2) ...
 
-Setting up file (4.06-1) ...
+Setting up file (4.06-2) ...
 Setting up debconf-utils (1.3.22) ...
 
 Setting up html2text (1.3.1-2) ...
@@ -155,67 +174,30 @@ Setting up libdshconfig1 (0.20.8-1) ...
 
 Setting up libdshconfig1-dev (0.20.8-1) ...
  -> Finished parsing the build-deps
-Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 64%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 63%Building Dependency Tree... Done
-The following NEW packages will be installed:
-  fakeroot
-0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 52.9kB of archives.
-After unpacking 197kB of additional disk space will be used.
-0% [Working]            Get:1 http://ring.asahi-net.or.jp sarge/main fakeroot 0.8.2 [52.9kB]
-            0% [1 fakeroot 0/52.9kB 0%]                           100% [Working]              Fetched 52.9kB in 0s (952kB/s)
-Selecting previously deselected package fakeroot.
-(Reading database ... 10163 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_0.8.2_i386.deb) ...
-Setting up fakeroot (0.8.2) ...
-Copying source file
-    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/dsh_0.25.0-1.dsc]
-    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/dsh_0.25.0.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/dsh_0.25.0-1.diff.gz]
-Extracting source
-su(pam_unix)[265]: session opened for user pbuilder by (uid=0)
-dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-source: extracting dsh in dsh-0.25.0
- -> Building the package
-su(pam_unix)[281]: session opened for user pbuilder by (uid=0)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: source package is dsh
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: source version is 0.25.0-1
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: source maintainer is Junichi Uekawa <dancer@debian.org>
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: host architecture is i386
-dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
- fakeroot debian/rules clean
+ debian/rules clean
 dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.0
-dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: building dsh using existing dsh_0.25.0.orig.tar.gz
 dpkg-source: building dsh in dsh_0.25.0-1.diff.gz
-dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
 dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
+dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
 dpkg-source: building dsh in dsh_0.25.0-1.dsc
  debian/rules build
 dh_testdir
@@ -386,18 +368,18 @@ config.status: creating po/Makefile
 touch configure-stamp
 dh_testdir
 /usr/bin/make
-make[1]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 /usr/bin/make  all-recursive
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 Making all in m4
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.0/m4'
+make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/m4'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0/m4'
+make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/m4'
 Making all in po
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.0/po'
+make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/po'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0/po'
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/po'
+make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-dsh.o -MD -MP -MF ".deps/dsh-dsh.Tpo" \
   -c -o dsh-dsh.o `test -f 'dsh.c' || echo './'`dsh.c; \
 then mv -f ".deps/dsh-dsh.Tpo" ".deps/dsh-dsh.Po"; \
@@ -419,26 +401,26 @@ gcc -Wall -g -O2 -o dsh dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  /usr/lib/lib
 mkdir build-man
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.5 > build-man/dsh.conf.5
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0'
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0'
-make[1]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
+make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 /usr/bin/make check
-make[1]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 Making check in m4
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.0/m4'
+make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/m4'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0/m4'
+make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/m4'
 Making check in po
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.0/po'
+make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/po'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0/po'
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/po'
+make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 /usr/bin/make  dsh
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 make[3]: `dsh' is up to date.
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 /usr/bin/make  check-TESTS
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 PASS: tests/param-f.sh
 dsh: File ./tests/nonexistent.file could not be opened for read
 PASS: tests/param-f-fail.sh
@@ -487,7 +469,7 @@ PASS: tests/param-r-invalid.sh
 1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Dec 27 01:44:15 UTC 2003
+Sat Dec 27 01:29:59 UTC 2003
 Using sleep as the remote shell
 Show machine names on output
 Adding machine 5,4,3,2,1 to list
@@ -505,7 +487,7 @@ DUMPing parameters passed to llexec
 DUMPing parameters passed to llexec
 [5] 
 --- Terminated running
-Sat Dec 27 01:44:22 UTC 2003
+Sat Dec 27 01:30:07 UTC 2003
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -514,70 +496,70 @@ PASS: tests/test-bufferoverflow.sh
 ===================
 All 14 tests passed
 ===================
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0'
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0'
-make[1]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
+make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 touch build-stamp
- fakeroot debian/rules binary
+ debian/rules binary
 dh_testdir
 dh_testroot
 dh_clean -k
 dh_installdirs
 # Add here commands to install the package into debian/dsh.
-/usr/bin/make install DESTDIR=/tmp/buildd/dsh-0.25.0/debian/dsh
-make[1]: Entering directory `/tmp/buildd/dsh-0.25.0'
+/usr/bin/make install DESTDIR=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
 Making install in m4
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.0/m4'
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.0/m4'
+make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/m4'
+make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/m4'
 make[3]: Nothing to be done for `install-exec-am'.
 make[3]: Nothing to be done for `install-data-am'.
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0/m4'
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0/m4'
+make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/m4'
+make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/m4'
 Making install in po
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.0/po'
-/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share
-mkdir -p -- /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share
-mkdir -p -- /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/locale/ja/LC_MESSAGES
-installing ja.gmo as /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
+make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/po'
+/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share
+mkdir -p -- /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share
+mkdir -p -- /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/locale/ja/LC_MESSAGES
+installing ja.gmo as /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
 if test "dsh" = "gettext"; then \
-  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/gettext/po; \
+  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/gettext/po; \
   for file in Makefile.in.in Makevars remove-potcdate.sin   ; do \
     /usr/bin/install -c -m 644 ./$file \
-		    /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/gettext/po/$file; \
+		    /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/gettext/po/$file; \
   done; \
 else \
   : ; \
 fi
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0/po'
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.0'
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.0'
-/bin/sh ./mkinstalldirs /tmp/buildd/dsh-0.25.0/debian/dsh/usr/bin
-  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s dsh /tmp/buildd/dsh-0.25.0/debian/dsh/usr/bin/dsh
-install -p -o root -g root -m 755 -s dsh /tmp/buildd/dsh-0.25.0/debian/dsh/usr/bin/dsh
-/bin/sh ./mkinstalldirs /tmp/buildd/dsh-0.25.0/debian/dsh/etc/dsh
- /usr/bin/install -c -m 644 dsh.conf /tmp/buildd/dsh-0.25.0/debian/dsh/etc/dsh/dsh.conf
+make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/po'
+make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
+make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
+/bin/sh ./mkinstalldirs /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/bin
+  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s dsh /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/bin/dsh
+install -p -o root -g root -m 755 -s dsh /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/bin/dsh
+/bin/sh ./mkinstalldirs /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/etc/dsh
+ /usr/bin/install -c -m 644 dsh.conf /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/etc/dsh/dsh.conf
 for LANGS in ja ; do \
-	mkdir -p /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man1 ;\
-	mkdir -p /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man5 ;\
+	mkdir -p /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man1 ;\
+	mkdir -p /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man5 ;\
 	sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.$LANGS.1 \
-		> /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
+		> /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
 	sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.$LANGS.5 \
-		> /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
+		> /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
 done
-/bin/sh ./mkinstalldirs /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man1
-mkdir -p -- /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man1
- /usr/bin/install -c -m 644 ./build-man/dsh.1 /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man1/dsh.1
-/bin/sh ./mkinstalldirs /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man5
-mkdir -p -- /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man5
- /usr/bin/install -c -m 644 ./build-man/dsh.conf.5 /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man5/dsh.conf.5
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0'
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0'
-make[1]: Leaving directory `/tmp/buildd/dsh-0.25.0'
-cp /tmp/buildd/dsh-0.25.0/debian/machines.list /tmp/buildd/dsh-0.25.0/debian/dsh/etc/dsh/machines.list
-cp /tmp/buildd/dsh-0.25.0/dsh.conf /tmp/buildd/dsh-0.25.0/debian/dsh/etc/dsh/dsh.conf
-ln -s ../machines.list /tmp/buildd/dsh-0.25.0/debian/dsh/etc/dsh/group/all
-install -d /tmp/buildd/dsh-0.25.0/debian/dsh/usr/lib/update-cluster
-install -m 755 /tmp/buildd/dsh-0.25.0/debian/dsh.updatelist /tmp/buildd/dsh-0.25.0/debian/dsh/usr/lib/update-cluster/
+/bin/sh ./mkinstalldirs /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/man/man1
+mkdir -p -- /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/man/man1
+ /usr/bin/install -c -m 644 ./build-man/dsh.1 /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/man/man1/dsh.1
+/bin/sh ./mkinstalldirs /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/man/man5
+mkdir -p -- /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/man/man5
+ /usr/bin/install -c -m 644 ./build-man/dsh.conf.5 /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/share/man/man5/dsh.conf.5
+make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
+make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0'
+cp /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/machines.list /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/etc/dsh/machines.list
+cp /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/dsh.conf /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/etc/dsh/dsh.conf
+ln -s ../machines.list /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/etc/dsh/group/all
+install -d /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/lib/update-cluster
+install -m 755 /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh.updatelist /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.0/debian/dsh/usr/lib/update-cluster/
 dh_testdir
 dh_testroot
 dh_installdocs NEWS
@@ -585,38 +567,23 @@ dh_installexamples
 dh_installmenu
 dh_installman
 dh_installchangelogs ChangeLog 
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dh_link
 dh_strip
 dh_shlibdeps
-dpkg-shlibdeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dh_compress
 dh_fixperms
 dh_installdeb
 dh_gencontrol
-dpkg-gencontrol: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dh_md5sums
 dh_builddeb
 dpkg-deb: building package `dsh' in `../dsh_0.25.0-1_i386.deb'.
  dpkg-genchanges
-dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
- -> Terminate timeout process
  -> ignoring umount of dev/pts filesystem
  -> ignoring umount of proc filesystem
-Current time: Sat Dec 27 10:44:41 JST 2003
-pbuilder-time-stamp: 1072489481
-/usr/lib/pbuilder/pbuilder-buildpackage: line 144:   277 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+ -> ignoring umount of /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2 filesystem
 Kernel panic: Attempted to kill init!
- tracing thread pid = 26509
+ tracing thread pid = 1471
 
  -> Successful exit from user-mode linux

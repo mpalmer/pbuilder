@@ -1,3 +1,10 @@
+pbuilder (0.98) UNRELEASED; urgency=low
+
+  * use dpkg-buildpackage in pdebuild-internal rather than debuild, and do not try to 
+    gpg-sign inside the chroot, which will always fail.
+
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 27 Dec 2003 10:03:08 +0900
+
 pbuilder (0.97) unstable; urgency=low
 
   * update installtest script

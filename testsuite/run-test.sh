@@ -1,6 +1,6 @@
 #!/bin/sh
 # This is a testsuite.
-# estimated run-time on my PC; 30 minutes.
+# estimated run-time on my PC; 45 minutes.
 
 PBUILDER_UML=/usr/bin/pbuilder-user-mode-linux
 
@@ -27,7 +27,7 @@ if [ -x "${PBUILDER_UML}" ]; then
 	    )
 	done
 	pbuilder-user-mode-linux execute --uml-image $(pwd)/testimage --logfile pbuilder-user-mode-linux-execute-${distribution}.log ../examples/execute_paramtest.sh test1 test2 test3
-	rm -rf testbuild testimage
+	rm -rf testbuild testbuild2 testimage
     done
 fi
 
