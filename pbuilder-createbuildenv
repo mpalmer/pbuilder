@@ -1,9 +1,8 @@
 #! /bin/bash
 #necessary for installs.
-export LANG=C
-export LC_ALL=C
 
 . /usr/lib/pbuilder/pbuilder-checkparams
+. /usr/lib/pbuilder/pbuilder-modules
 
 CHROOTEXEC="chroot $BUILDPLACE "
 if [ -z "$DISTRIBUTION" ]; then
@@ -16,12 +15,9 @@ rm -rf $BUILDPLACE
 
 echo "building the build env"
 mkdir -p $BUILDPLACE
-echo " -> mounting proc"
-mkdir -p $BUILDPLACE/proc
-mount -t proc /proc $BUILDPLACE/proc 
+mountproc
 echo " -> running debootstrap"
-cd $BUILDPLACE
-debootstrap $DISTRIBUTION .
+(cd $BUILDPLACE; debootstrap $DISTRIBUTION .)
 mkdir -p $BUILDPLACE/tmp/buildd
 echo " -> copying local configuration"
 for a in passwd hosts hostname resolv.conf apt; do 
@@ -41,8 +37,6 @@ $CHROOTEXEC /usr/bin/dpkg --purge lilo
 $CHROOTEXEC /usr/bin/apt-get -y dist-upgrade
 $CHROOTEXEC /usr/bin/apt-get -y install build-essential dpkg-dev apt $EXTRAPACKAGES
 $CHROOTEXEC /usr/bin/apt-get clean
-echo " -> unmounting proc"
-umount $BUILDPLACE/proc
+umountproc
 echo " -> creating base.tgz"
-cd $BUILDPLACE
-tar cfz $BASETGZ *
+( cd $BUILDPLACE ; tar cfz $BASETGZ * )

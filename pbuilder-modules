@@ -1,0 +1,22 @@
+#! /bin/bash
+# common modules for pbuilder.
+
+function umountproc () {
+  if [ "$USEPROC" = "yes" ]; then
+    echo " -> unmounting proc"
+    umount "$BUILDPLACE/proc"
+  fi
+}
+
+function mountproc () {
+  if [ "$USEPROC" = "yes" ]; then
+    echo " -> mounting proc"
+    mkdir -p $BUILDPLACE/proc
+    mount -t proc /proc "$BUILDPLACE/proc"
+  fi
+}
+
+
+#required for some packages to install...
+export LANG=C
+export LC_ALL=C
