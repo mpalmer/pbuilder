@@ -25,7 +25,9 @@ echo " -> running debootstrap"
     exit 1
 )
 echo " -> debootstrap finished"
-test -n "HOOKDIR" && loadhooks
+if [ -n "$HOOKDIR" ]; then
+    loadhooks
+fi
 mkdir -p "$BUILDPLACE/tmp/buildd"
 echo " -> copying local configuration"
 for a in passwd hosts hostname resolv.conf ; do 
@@ -45,7 +47,9 @@ fi
 $CHROOTEXEC /usr/bin/apt-get -y dist-upgrade
 $CHROOTEXEC /usr/bin/apt-get -y install build-essential dpkg-dev apt $EXTRAPACKAGES
 $CHROOTEXEC /usr/bin/apt-get clean
-test -n "HOOKDIR" && executehooks "X"
+if [ -n "$HOOKDIR" ]; then
+    executehooks "X"
+fi
 umountproc
 echo " -> creating base.tgz"
 ( cd "$BUILDPLACE" && tar cfz "$BASETGZ" * || echo " -> failed building base.tgz")
