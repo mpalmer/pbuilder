@@ -5,10 +5,12 @@ export LC_ALL=C
 function copydsc () {
     local DSCFILE=$1
     local TARGET=$2
-    cp $(echo $DSCFILE | sed 's/^\(.*\)\.dsc$/\1/' ).diff.gz \
-    $(echo $DSCFILE | sed 's/^\(.*\)\.dsc$/\1/').tar.gz \
-    $(echo $DSCFILE | sed 's/\(.*\)-[^-.]*\.dsc$/\1/').orig.tar.gz \
-    $TARGET
+    cp \
+      "$DSCFILE" \
+      $(echo "$DSCFILE" | sed 's/^\(.*\)\.dsc$/\1/' ).diff.gz \
+      $(echo "$DSCFILE" | sed 's/^\(.*\)\.dsc$/\1/').tar.gz \
+      $(echo "$DSCFILE" | sed 's/\(.*\)-[^-.]*\.dsc$/\1/').orig.tar.gz \
+      $TARGET
 }
 
 function checkbuilddep () {
@@ -33,7 +35,7 @@ mkdir -p $BUILDPLACE
  mkdir -p $BUILDPLACE/tmp/buildd
 )
 echo Copying source file
-copydsc $PACKAGENAME $BUILDPLACE/tmp/buildd
+copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 echo Extracting source
 $CHROOTEXEC /usr/bin/dpkg-source -x $(basename $PACKAGENAME)
 echo Installing the build-deps 
