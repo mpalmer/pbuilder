@@ -150,15 +150,15 @@ extractbuildplace
 echo Copying source file
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 echo Extracting source
-$CHROOTEXEC /bin/bash -c "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )" || (
+if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then
     echo pbuilder: Failed extracting the source >&2 
     abortingfunction
     exit 1;
-)
+fi
 
 if [ -n "$APTCACHE" ]; then
     echo "Obtaining the cached apt archive contents"
-    cp "$APTCACHE"/* "$BUILDPLACE/var/cache/apt/archives/"
+    cp "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/"
 fi
 echo Installing the build-deps
 checkbuilddep
