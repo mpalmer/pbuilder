@@ -1,5 +1,8 @@
 2002-10-05  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-buildpackage (BUILD_PID): fix more quoting problems with
+	PID. $! cannot be inside "". It seems.
+
 	* debian/TODO: note that TODO item, support building without
 	root is implemented.
 	Running as non-root in the build process is implemented through

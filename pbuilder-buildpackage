@@ -89,14 +89,14 @@ if [ -n "${TIMEOUT_TIME}" ]; then
 	echo " -> Terminating build process due to timeout "
 	kill ${BUILD_PID} || true
     ) & # timeout process
-    KILL_WAIT_PID="kill $! || true; echo \"  -> Terminate timeout process\"; "
+    KILL_WAIT_PID="kill "$!" || true; echo \"  -> Terminate timeout process\"; "
 else
     KILL_WAIT_PID=""
 fi
 
 if ! wait ${BUILD_PID}; then
     trap umountproc_cleanbuildplace exit
-    eval ${KILL_WAIT_PID}
+    eval "${KILL_WAIT_PID}"
     echo "pbuilder: Failed autobuilding of package" >&2
     executehooks "C"
     exit 1;
