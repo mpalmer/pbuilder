@@ -1,6 +1,38 @@
 #! /bin/bash
 # common modules for pbuilder.
 
+function showhelp () {
+    cat <<EOF
+pbuilder - a personal builder
+Copyright 2001 Junichi Uekawa
+Distributed under GNU Public License version 2 or later
+
+pbuilder [operation] [operation options]
+
+command lines:
+pbuilder create [--basetgz base.tgz-path] [--distribution woody|sid]
+  Creates a base.tgz
+
+pbuilder update [--basetgz base.tgz-path] [--distribution woody|sid]
+  Updates a base.tgz
+
+pbuilder build [--basetgz base.tgz-path] pbuilder_2.2.0-1.dsc
+  Builds using the base.tgz. Requires a .dsc filename
+
+pbuilder clean
+  Cleans the temporal build directory.
+
+Operation Options:
+ --basetgz [base.tgz location]
+ --buildplace [location of build]
+ --mirror [mirror location]
+ --http-proxy [proxy]
+ --distribution [distribution(potato/woody/sid)]
+ --buildresult [location-to-copy-build-result]
+EOF
+    exit 1
+}
+
 function umountproc () {
     if [ "$USEPROC" = "yes" ]; then
 	echo " -> unmounting proc"
@@ -23,6 +55,20 @@ function cleanbuildplace () {
     fi;
 }
 
+function abortingfunction () {
+    # rolling back to abort.
+    umountproc
+    cleanbuildplace
+}
+
+function installaptlines (){
+    echo Installing apt-lines
+    cat > "$BUILDPLACE"/etc/apt/sources.list << EOF
+deb $MIRRORSITE $DISTRIBUTION main contrib non-free
+deb-src $MIRRORSITE debian $DISTRIBUTION main contrib non-free
+EOF
+}
+
 function extractbuildplace () {
     # after calling this function, umountproc, and cleanbuildplace
     # needs to be called. 
@@ -39,11 +85,7 @@ function extractbuildplace () {
     done
     
     if [ -n "$DISTRIBUTION" ]; then
-	echo Installing apt-lines
-	cat > "$BUILDPLACE"/etc/apt/sources.list << EOF
-deb $MIRRORSITE $DISTRIBUTION main contrib non-free
-deb-src $MIRRORSITE debian $DISTRIBUTION main contrib non-free
-EOF
+	installaptlines
     fi
 }
 
