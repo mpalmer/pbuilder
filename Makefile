@@ -26,7 +26,7 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/etc
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/pbuilder
-	$(INSTALL_FILE) examples/B90linda $(DESTDIR)/usr/share/doc/pbuilder/examples
-	$(INSTALL_FILE) examples/D10tmp $(DESTDIR)/usr/share/doc/pbuilder/examples
+	$(INSTALL_EXECUTABLE) examples/B90linda $(DESTDIR)/usr/share/doc/pbuilder/examples
+	$(INSTALL_EXECUTABLE) examples/D10tmp $(DESTDIR)/usr/share/doc/pbuilder/examples
 
 
