@@ -115,11 +115,6 @@ else
 fi
 pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT} --buildresult "\${BUILDRESULT}" --buildplace "${UML_CHROOT_MOUNTPOINT}" --internal-build-uml ${BUILDING_DSC_FILE} 
 echo \$? > /proc/exitcode
-echo "Umounting ${UML_CHROOT_MOUNTPOINT}"
-umount ${UML_CHROOT_MOUNTPOINT}
-if [ -n "${UML_BUILDRESULT}" ]; then
-  umount "${UML_CHROOT_BUILDRESULTMOUNTDIR}"
-fi
 EOF
 
     chmod a+x ${INSIDE_PBUILDER}

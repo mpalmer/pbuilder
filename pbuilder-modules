@@ -75,6 +75,11 @@ EOF
 }
 
 function umount_one () {
+    if [ "${IGNORE_UMOUNT}" = "yes" ]; then
+	# support ignore umount option.
+	echo " -> ignoring umount of $1 filesystem"
+	return
+    fi
     echo " -> unmounting $1 filesystem"
     if ! umount "$BUILDPLACE/$1"; then
 	    echo "W: Retrying to unmount $1"

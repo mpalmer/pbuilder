@@ -29,6 +29,9 @@ PBUILDER_BUILD_LOGFILE=
 USE_PKGNAME_LOGFILE=""
 PRESERVE_BUILDPLACE="no"
 
+#option for user-mode-linux only.
+IGNORE_UMOUNT=""
+
 while [ -n "$1" ]; do 
     case "$1" in 
 	--basetgz) 
@@ -148,10 +151,17 @@ while [ -n "$1" ]; do
 	    CHROOTEXEC="$2"
 	    shift; shift;
 	    ;;
-	--internal-build-uml|--no-targz)
+	--no-targz)
+	    # specify this option if I am running in no-targz mode
+	    echo " -> Running in no-targz mode"
+	    INTERNAL_BUILD_UML="yes"
+	    shift; 
+	    ;;
+	--internal-build-uml)
 	    # specify this option if I am running inside UML.
 	    echo " -> Running in pbuilder-user-mode-linux mode"
 	    INTERNAL_BUILD_UML="yes"
+	    IGNORE_UMOUNT="yes"
 	    shift; 
 	    ;;
 

@@ -318,7 +318,11 @@
       <para>
 	There are some people who use pbuilder to automatically back-port
 	a subset of packages to the stable distribution.
-	Any URL?
+      </para>
+      <para>
+	I would like some information on how people are doing it,
+	I would appreciate any feedback or information on 
+	how you are doing, or any examples.
       </para>
     </sect1>
     <sect1>
@@ -345,14 +349,16 @@
     <sect1>
       <title>Using pbuilder for testing build with alternate compilers</title>
       <para>
-	Most packages are compiled with <command>gcc</command> or <command>g++</command>
+	Most packages are compiled with <command>gcc</command> 
+	or <command>g++</command>
 	and using the default compiler version, which was gcc 2.95 for Debian GNU/Linux 3.0 (i386).
-	However, Debian distributes other compilers, also, and provides
-	binaries such as <command>gcc-3.2</command> for gcc compiler version 3.2.
-	It is therefore possible to try compiling packages against different
+	However, Debian 3.0 was distributed with other compilers, and provided
+	binaries such as <command>gcc-3.2</command> for gcc compiler 
+	version 3.2.
+	It was therefore possible to try compiling packages against different
 	compiler versions.
-	<command>pentium-builder</command> provides an infrastructure for using different
-	compiler for building packages than the default gcc, by
+	<command>pentium-builder</command> provides an infrastructure for 
+	using different compiler for building packages than the default gcc, by
 	becoming a wrapper script called gcc, that calls the real gcc.
 	To use <command>pentium-builder</command> in <command>pbuilder</command>, it is possible to set up the
 	following in the configuration:
@@ -385,6 +391,10 @@ export DEBIAN_BUILDGCCVER=3.2
 	It is currently only possible to create software that handles the 
 	past. Future prediction features may be added later when 
 	we can successfully handle the past.
+      </para>
+      <para>
+	There are people who occasionally backport debootstrap to stable
+	versions, hunt for them.
       </para>
     </sect1>
     <sect1>
@@ -662,7 +672,7 @@ read
 	</screen>
       </sect2>
     </sect1>
-    <sect1>
+    <sect1 id="lvm">
       <title>Using LVM</title>
       <para>
 	LVM has snapshot function that features Copy-on-write images.
@@ -671,8 +681,12 @@ read
 	It may prove to be faster, but it is not implemented yet,
 	and so no measurement has been made, yet.
       </para>
+      <para>
+	Since user-mode-linux port seems to be more interesting,
+	this is abandoned.
+      </para>
     </sect1>
-    <sect1>
+    <sect1 id="withouttargz">
       <title>Using pbuilder without tar.gz</title>
       <para>
 	<command><option>--no-targz</option></command>

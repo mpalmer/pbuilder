@@ -1,3 +1,20 @@
+2003-04-08  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml: update documentation a bit.
+
+	* debian/TODO: update the TODO file wrt bind-mount/hostfs for UML.
+
+	* pbuilder-user-mode-linux: Do not try to umount 
+	the mountpoints. There is no point in doing that.
+	This works around the problem of non-upgradable UML.
+
+	* pbuilder-modules (pbuilder-options): support IGNORE_UMOUNT
+	option, and do not umount.
+
+	* pbuilder-checkparams (IGNORE_UMOUNT): split --no-targz and 
+	--internal-build-uml.
+	new variable IGNORE_UMOUNT, for ignoring umount.
+
 2003-04-06  Junichi Uekawa  <dancer@debian.org>
 
 	* Documentation/pbuilder-doc.xml (EXTRAPACKAGES): document 
