@@ -1,0 +1,1271 @@
+Checking for the skas3 patch in the host...not found
+Checking for /proc/mm...not found
+Linux version 2.4.20-7um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 SMP Fri Aug 8 18:30:28 EDT 2003
+On node 0 totalpages: 8192
+zone(0): 8192 pages.
+zone(1): 0 pages.
+zone(2): 0 pages.
+Kernel command line: eth0=slirp,,slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage init=/usr/lib/rootstrap/builder devfs=mount rsworkdir=/home/dancer/.pbuilder-user-mode-linux
+Calibrating delay loop... 1523.76 BogoMIPS
+Memory: 28964k available
+Dentry cache hash table entries: 4096 (order: 3, 32768 bytes)
+Inode cache hash table entries: 2048 (order: 2, 16384 bytes)
+Mount-cache hash table entries: 512 (order: 0, 4096 bytes)
+Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Page-cache hash table entries: 8192 (order: 3, 32768 bytes)
+Checking for host processor cmov support...Yes
+Checking for host processor xmm support...No
+Checking that ptrace can change system call numbers...OK
+Checking that host ptys support output SIGIO...Yes
+Checking that host ptys support SIGIO on close...No, enabling workaround
+POSIX conformance testing by UNIFIX
+All CPUs are go!
+Waiting on wait_init_idle (map = 0x0)
+All processors have done init_idle
+Linux NET4.0 for Linux 2.4
+Based upon Swansea University Computer Society NET3.039
+Initializing RT netlink socket
+Starting kswapd
+VFS: Diskquotas version dquot_6.4.0 initialized
+Journalled Block Device driver loaded
+devfs: v1.12c (20020818) Richard Gooch (rgooch@atnf.csiro.au)
+devfs: boot_options: 0x1
+pty: 256 Unix98 ptys configured
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+loop: loaded (max 8 devices)
+Initializing software serial port version 1
+Netdevice 0 : SLIRP backend - command line: 'slirp-fullbolt'
+mconsole (version 2) initialized on /home/dancer/.uml/2n8z6q/mconsole
+unable to open root_fs for validation
+Partition check:
+ ubdb: unknown partition table
+Initializing stdio console driver
+NET4: Linux TCP/IP 1.0 for NET4.0
+IP Protocols: ICMP, UDP, TCP, IGMP
+IP: routing cache hash table of 512 buckets, 4Kbytes
+TCP: Hash tables configured (established 2048 bind 2048)
+Linux IP multicast router 0.06 plus PIM-SM
+NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Root-NFS: No NFS server available, giving up.
+VFS: Unable to mount root fs via NFS, trying floppy.
+VFS: Mounted root (hostfs filesystem) readonly.
+Mounted devfs on /dev
+builder running...
+Using rootstrap module network from:
+	/usr/lib/rootstrap/modules/network
+Slirp v1.0.14pre1 (BETA)
+
+Copyright (c) 1995,1996 Danny Gasparovski and others.
+All rights reserved.
+This program is copyrighted, free software.
+Please read the file COPYRIGHT that came with the Slirp
+package for the terms and conditions of the copyright.
+
+IP address of Slirp host: 192.168.1.62
+IP address of your DNS(s): 218.231.0.10, 218.231.0.42
+Your address is 10.0.2.15
+(or anything else you want)
+
+Type five zeroes (0) to exit.
+
+[autodetect SLIP/CSLIP, MTU 1500, MRU 1500]
+
+SLiRP Ready ...
+Using rootstrap module mkfs from:
+	/usr/lib/rootstrap/modules/mkfs
+Using rootstrap module mount from:
+	/usr/lib/rootstrap/modules/mount
+Using rootstrap module debian from:
+	/usr/lib/rootstrap/modules/debian
+I: Retrieving http://ftp.jp.debian.org/debian/dists/sid/Release
+I: Validating /tmp/target/var/lib/apt/lists/debootstrap.invalid_dists_sid_Release
+I: Retrieving http://ftp.jp.debian.org/debian/dists/sid/main/binary-i386/Packages.bz2
+I: Validating /tmp/target/var/lib/apt/lists/debootstrap.invalid_dists_sid_main_binary-i386_Packages.bz2
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/a/adduser/adduser_3.51_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/adduser_3.51_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/a/apt/apt_0.5.12_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/apt_0.5.12_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/a/apt/apt-utils_0.5.12_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/apt-utils_0.5.12_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/a/at/at_3.1.8-11_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/at_3.1.8-11_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/b/base-config/base-config_1.72_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/base-config_1.72_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/b/base-files/base-files_3.0.10_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/base-files_3.0.10_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.5.4_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/base-passwd_3.5.4_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/b/bash/bash_2.05b-9_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/bash_2.05b-9_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/b/bsdmainutils/bsdmainutils_6.0.1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/bsdmainutils_6.0.1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/u/util-linux/bsdutils_2.12-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/bsdutils_1%3a2.12-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/c/console-common/console-common_0.7.28_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/console-common_0.7.28_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/c/console-data/console-data_2002.12.04dbs-16_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/console-data_2002.12.04dbs-16_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/c/console-tools/console-tools_0.2.3dbs-42_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/console-tools_1%3a0.2.3dbs-42_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/c/coreutils/coreutils_5.0.90-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/coreutils_5.0.90-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/c/cpio/cpio_2.5-1.1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/cpio_2.5-1.1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/c/cron/cron_3.0pl1-79_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/cron_3.0pl1-79_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/debconf/debconf_1.3.14_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/debconf_1.3.14_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/debconf/debconf-i18n_1.3.14_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/debconf-i18n_1.3.14_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/debianutils/debianutils_2.5.5_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/debianutils_2.5.5_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/diff/diff_2.8.1-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/diff_2.8.1-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/dpkg/dpkg_1.10.13_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/dpkg_1.10.13_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/dpkg/dselect_1.10.13_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/dselect_1.10.13_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/e/e2fsprogs/e2fslibs_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/e2fslibs_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/e/ed/ed_0.2-20_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/ed_0.2-20_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/e/exim/exim_3.36-8_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/exim_3.36-8_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/f/fdutils/fdutils_5.4-20030718-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/fdutils_5.4-20030718-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/f/findutils/findutils_4.1.20-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/findutils_4.1.20-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/gcc-3.2/gcc-3.2-base_3.2.3-8_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/gcc-3.2-base_1%3a3.2.3-8_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/gcc-3.3/gcc-3.3-base_3.3.2-0pre3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/gcc-3.3-base_1%3a3.3.2-0pre3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/gettext/gettext-base_0.12.1-6_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/gettext-base_0.12.1-6_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/grep/grep_2.5.1-6_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/grep_2.5.1-6_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/groff/groff-base_1.18.1-11_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/groff-base_1.18.1-11_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/gzip/gzip_1.3.5-7_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/gzip_1.3.5-7_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/h/hostname/hostname_2.10_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/hostname_2.10_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/i/ifupdown/ifupdown_0.6.4-4.6_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/ifupdown_0.6.4-4.6_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/t/texinfo/info_4.6-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/info_4.6-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/sysvinit/initscripts_2.85-7_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/initscripts_2.85-7_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/i/ipchains/ipchains_1.3.10-15_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/ipchains_1.3.10-15_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/i/iptables/iptables_1.2.8-4_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/iptables_1.2.8-4_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/i/iputils/iputils-ping_20020927-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/iputils-ping_3%3a20020927-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/sysklogd/klogd_1.4.1-11_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/klogd_1.4.1-11_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/a/acl/libacl1_2.2.15-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libacl1_2.2.15-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/a/attr/libattr1_2.4.8-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libattr1_2.4.8-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/e/e2fsprogs/libblkid1_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libblkid1_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/glibc/libc6_2.3.2-7_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libc6_2.3.2-7_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/libc/libcap/libcap1_1.10-12_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libcap1_1%3a1.10-12_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/e/e2fsprogs/libcomerr2_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libcomerr2_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/c/console-tools/libconsole_0.2.3dbs-42_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libconsole_1%3a0.2.3dbs-42_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/db1-compat/libdb1-compat_2.1.3-7_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libdb1-compat_2.1.3-7_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/db2/libdb2_2.7.7.0-8_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libdb2_2%3a2.7.7.0-8_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/db3/libdb3_3.2.9-19_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libdb3_3.2.9-19_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/gcc-3.3/libgcc1_3.3.2-0pre3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libgcc1_1%3a3.3.2-0pre3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/libg/libgcrypt/libgcrypt1_1.1.12-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libgcrypt1_1.1.12-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/gnutls7/libgnutls7_0.8.9-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libgnutls7_0.8.9-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/libi/libident/libident_0.22-2.2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libident_0.22-2.2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/o/openldap2/libldap2_2.1.22-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libldap2_2.1.22-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/libl/liblocale-gettext-perl/liblocale-gettext-perl_1.01-17_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/liblocale-gettext-perl_1.01-17_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/libl/liblockfile/liblockfile1_1.05_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/liblockfile1_1.05_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/l/lzo/liblzo1_1.08-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/liblzo1_1.08-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/ncurses/libncurses5_5.3.20030719-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libncurses5_5.3.20030719-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/newt/libnewt0.51_0.51.4-17_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libnewt0.51_0.51.4-17_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/o/opencdk/libopencdk4_0.4.2-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libopencdk4_1%3a0.4.2-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/pam/libpam-modules_0.76-14_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libpam-modules_0.76-14_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/pam/libpam-runtime_0.76-14_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/libpam-runtime_0.76-14_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/pam/libpam0g_0.76-14_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libpam0g_0.76-14_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/libp/libpcap/libpcap0.7_0.7.2-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libpcap0.7_0.7.2-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/pcre3/libpcre3_4.3-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libpcre3_4.3-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/popt/libpopt0_1.7-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libpopt0_1.7-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/r/readline4/libreadline4_4.3-5_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libreadline4_4.3-5_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/c/cyrus-sasl2/libsasl2_2.1.15-5_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libsasl2_2.1.15-5_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/e/e2fsprogs/libss2_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libss2_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/o/openssl/libssl0.9.7_0.9.7b-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libssl0.9.7_0.9.7b-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/gcc-2.95/libstdc++2.10-glibc2.2_2.95.4-17_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libstdc++2.10-glibc2.2_1%3a2.95.4-17_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/gcc-3.3/libstdc++5_3.3.2-0pre3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libstdc++5_1%3a3.3.2-0pre3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/libt/libtasn1/libtasn1-0_0.1.2-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libtasn1-0_0.1.2-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/libt/libtext-charwidth-perl/libtext-charwidth-perl_0.04-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libtext-charwidth-perl_0.04-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/libt/libtext-iconv-perl/libtext-iconv-perl_1.2-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libtext-iconv-perl_1.2-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/libt/libtext-wrapi18n-perl/libtext-wrapi18n-perl_0.06-1_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/libtext-wrapi18n-perl_0.06-1_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/e/e2fsprogs/libuuid1_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libuuid1_1.34+1.35-WIP-2003.08.21-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/t/tcp-wrappers/libwrap0_7.6-ipv6.1-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libwrap0_7.6-ipv6.1-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/l/lilo/lilo_22.5.7.2-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/lilo_1%3a22.5.7.2-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/shadow/login_4.0.3-11_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/login_1%3a4.0.3-11_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/l/logrotate/logrotate_3.6.5-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/logrotate_3.6.5-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/mailx/mailx_8.1.2-0.20030521cvs-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/mailx_1%3a8.1.2-0.20030521cvs-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/makedev/makedev_2.3.1-63_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/makedev_2.3.1-63_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/man-db/man-db_2.4.1-13_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/man-db_2.4.1-13_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/manpages/manpages_1.60-2_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/manpages_1.60-2_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/mawk/mawk_1.3.3-11_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/mawk_1.3.3-11_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/mbr/mbr_1.1.5-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/mbr_1.1.5-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/modconf/modconf_0.2.44_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/modconf_0.2.44_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/modutils/modutils_2.4.21-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/modutils_2.4.21-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/u/util-linux/mount_2.12-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/mount_2.12-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/nano/nano_1.2.2-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/nano_1.2.2-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/ncurses/ncurses-base_5.3.20030719-2_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/ncurses-base_5.3.20030719-2_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/ncurses/ncurses-bin_5.3.20030719-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/ncurses-bin_5.3.20030719-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/net-tools/net-tools_1.60-8_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/net-tools_1.60-8_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/netbase/netbase_4.13_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/netbase_4.13_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/netkit-base/netkit-inetd_0.10-9_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/netkit-inetd_0.10-9_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/nvi/nvi_1.79-21_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/nvi_1.79-21_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/shadow/passwd_4.0.3-11_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/passwd_1%3a4.0.3-11_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/pciutils/pciutils_2.1.11-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/pciutils_1%3a2.1.11-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/perl/perl-base_5.8.0-21_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/perl-base_5.8.0-21_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/ppp/ppp_2.4.1.uus2-4_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/ppp_2.4.1.uus2-4_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/pppconfig/pppconfig_2.2.0_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/pppconfig_2.2.0_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/r/rp-pppoe/pppoe_3.5-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/pppoe_3.5-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/pppoeconf/pppoeconf_0.9.10.10_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/pppoeconf_0.9.10.10_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/procps/procps_3.1.12-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/procps_1%3a3.1.12-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/psmisc/psmisc_21.3-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/psmisc_21.3-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/sed/sed_4.0.7-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/sed_4.0.7-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/slang/slang1_1.4.5-2.2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/slang1_1.4.5-2.2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/slang/slang1a-utf8_1.4.5-2.2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/slang1a-utf8_1.4.5-2.2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/sysklogd/sysklogd_1.4.1-11_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/sysklogd_1.4.1-11_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/syslinux/syslinux_2.04-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/syslinux_2.04-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/sysvinit/sysv-rc_2.85-7_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/sysv-rc_2.85-7_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.85-7_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/sysvinit_2.85-7_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/t/tar/tar_1.13.25-6_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/tar_1.13.25-6_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/t/tasksel/tasksel_1.32_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/tasksel_1.32_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/t/tcp-wrappers/tcpd_7.6-ipv6.1-3_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/tcpd_7.6-ipv6.1-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/netkit-telnet/telnet_0.17-20_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/telnet_0.17-20_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/u/util-linux/util-linux_2.12-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/util-linux_2.12-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/w/wget/wget_1.8.2-11_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/wget_1.8.2-11_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/newt/whiptail_0.51.4-17_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/whiptail_0.51.4-17_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/z/zlib/zlib1g_1.1.4-15_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/zlib1g_1%3a1.1.4-15_i386.deb
+I: Extracting /var/cache/apt/archives/base-files_3.0.10_i386.deb...
+I: Extracting /var/cache/apt/archives/base-passwd_3.5.4_i386.deb...
+I: Extracting /var/cache/apt/archives/bash_2.05b-9_i386.deb...
+I: Extracting /var/cache/apt/archives/bsdutils_1%3a2.12-2_i386.deb...
+I: Extracting /var/cache/apt/archives/coreutils_5.0.90-3_i386.deb...
+I: Extracting /var/cache/apt/archives/libacl1_2.2.15-1_i386.deb...
+I: Extracting /var/cache/apt/archives/libattr1_2.4.8-1_i386.deb...
+I: Extracting /var/cache/apt/archives/debconf_1.3.14_all.deb...
+I: Extracting /var/cache/apt/archives/debconf-i18n_1.3.14_all.deb...
+I: Extracting /var/cache/apt/archives/liblocale-gettext-perl_1.01-17_i386.deb...
+I: Extracting /var/cache/apt/archives/libtext-wrapi18n-perl_0.06-1_all.deb...
+I: Extracting /var/cache/apt/archives/libtext-charwidth-perl_0.04-1_i386.deb...
+I: Extracting /var/cache/apt/archives/debianutils_2.5.5_i386.deb...
+I: Extracting /var/cache/apt/archives/diff_2.8.1-2_i386.deb...
+I: Extracting /var/cache/apt/archives/dpkg_1.10.13_i386.deb...
+I: Extracting /var/cache/apt/archives/dselect_1.10.13_i386.deb...
+I: Extracting /var/cache/apt/archives/libblkid1_1.34+1.35-WIP-2003.08.21-3_i386.deb...
+I: Extracting /var/cache/apt/archives/e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb...
+I: Extracting /var/cache/apt/archives/e2fslibs_1.34+1.35-WIP-2003.08.21-3_i386.deb...
+I: Extracting /var/cache/apt/archives/libcomerr2_1.34+1.35-WIP-2003.08.21-3_i386.deb...
+I: Extracting /var/cache/apt/archives/libss2_1.34+1.35-WIP-2003.08.21-3_i386.deb...
+I: Extracting /var/cache/apt/archives/libuuid1_1.34+1.35-WIP-2003.08.21-3_i386.deb...
+I: Extracting /var/cache/apt/archives/findutils_4.1.20-1_i386.deb...
+I: Extracting /var/cache/apt/archives/gcc-3.2-base_1%3a3.2.3-8_i386.deb...
+I: Extracting /var/cache/apt/archives/gcc-3.3-base_1%3a3.3.2-0pre3_i386.deb...
+I: Extracting /var/cache/apt/archives/grep_2.5.1-6_i386.deb...
+I: Extracting /var/cache/apt/archives/gzip_1.3.5-7_i386.deb...
+I: Extracting /var/cache/apt/archives/hostname_2.10_i386.deb...
+I: Extracting /var/cache/apt/archives/libcap1_1%3a1.10-12_i386.deb...
+I: Extracting /var/cache/apt/archives/libc6_2.3.2-7_i386.deb...
+I: Extracting /var/cache/apt/archives/libdb2_2%3a2.7.7.0-8_i386.deb...
+I: Extracting /var/cache/apt/archives/libdb3_3.2.9-19_i386.deb...
+I: Extracting /var/cache/apt/archives/libncurses5_5.3.20030719-2_i386.deb...
+I: Extracting /var/cache/apt/archives/libnewt0.51_0.51.4-17_i386.deb...
+I: Extracting /var/cache/apt/archives/libpam-modules_0.76-14_i386.deb...
+I: Extracting /var/cache/apt/archives/libpam-runtime_0.76-14_all.deb...
+I: Extracting /var/cache/apt/archives/libpam0g_0.76-14_i386.deb...
+I: Extracting /var/cache/apt/archives/libpopt0_1.7-2_i386.deb...
+I: Extracting /var/cache/apt/archives/libreadline4_4.3-5_i386.deb...
+I: Extracting /var/cache/apt/archives/libstdc++2.10-glibc2.2_1%3a2.95.4-17_i386.deb...
+I: Extracting /var/cache/apt/archives/libstdc++5_1%3a3.3.2-0pre3_i386.deb...
+I: Extracting /var/cache/apt/archives/libgcc1_1%3a3.3.2-0pre3_i386.deb...
+I: Extracting /var/cache/apt/archives/login_1%3a4.0.3-11_i386.deb...
+I: Extracting /var/cache/apt/archives/makedev_2.3.1-63_all.deb...
+I: Extracting /var/cache/apt/archives/mawk_1.3.3-11_i386.deb...
+I: Extracting /var/cache/apt/archives/modutils_2.4.21-3_i386.deb...
+I: Extracting /var/cache/apt/archives/mount_2.12-2_i386.deb...
+I: Extracting /var/cache/apt/archives/ncurses-base_5.3.20030719-2_all.deb...
+I: Extracting /var/cache/apt/archives/ncurses-bin_5.3.20030719-2_i386.deb...
+I: Extracting /var/cache/apt/archives/passwd_1%3a4.0.3-11_i386.deb...
+I: Extracting /var/cache/apt/archives/perl-base_5.8.0-21_i386.deb...
+I: Extracting /var/cache/apt/archives/procps_1%3a3.1.12-1_i386.deb...
+I: Extracting /var/cache/apt/archives/sed_4.0.7-1_i386.deb...
+I: Extracting /var/cache/apt/archives/slang1_1.4.5-2.2_i386.deb...
+I: Extracting /var/cache/apt/archives/slang1a-utf8_1.4.5-2.2_i386.deb...
+I: Extracting /var/cache/apt/archives/initscripts_2.85-7_all.deb...
+I: Extracting /var/cache/apt/archives/sysvinit_2.85-7_i386.deb...
+I: Extracting /var/cache/apt/archives/sysv-rc_2.85-7_all.deb...
+I: Extracting /var/cache/apt/archives/tar_1.13.25-6_i386.deb...
+I: Extracting /var/cache/apt/archives/util-linux_2.12-2_i386.deb...
+I: Extracting /var/cache/apt/archives/whiptail_0.51.4-17_i386.deb...
+I: Extracting /var/cache/apt/archives/mbr_1.1.5-1_i386.deb...
+I: Installing core packages...
+Selecting previously deselected package base-files.
+(Reading database ... 0 files and directories currently installed.)
+Unpacking base-files (from .../base-files_3.0.10_i386.deb) ...
+Selecting previously deselected package base-passwd.
+Unpacking base-passwd (from .../base-passwd_3.5.4_i386.deb) ...
+dpkg: base-passwd: dependency problems, but configuring anyway as you request:
+ base-passwd depends on libc6 (>= 2.3.1-1); however:
+  Package libc6 is not installed.
+Setting up base-passwd (3.5.4) ...
+
+dpkg: base-files: dependency problems, but configuring anyway as you request:
+ base-files depends on awk; however:
+  Package awk is not installed.
+Setting up base-files (3.0.10) ...
+
+dpkg: regarding .../archives/dpkg_1.10.13_i386.deb containing dpkg, pre-dependency problem:
+ dpkg pre-depends on dselect
+  dselect is not installed.
+dpkg: warning - ignoring pre-dependency problem !
+dpkg: regarding .../archives/dpkg_1.10.13_i386.deb containing dpkg, pre-dependency problem:
+ dpkg pre-depends on libc6 (>= 2.3.2-1)
+dpkg: warning - ignoring pre-dependency problem !
+(Reading database ... 84 files and directories currently installed.)
+Preparing to replace dpkg 1.10.13 (using .../archives/dpkg_1.10.13_i386.deb) ...
+Unpacking replacement dpkg ...
+dpkg: dpkg: dependency problems, but configuring anyway as you request:
+ dpkg depends on dselect; however:
+  Package dselect is not installed.
+ dpkg depends on libc6 (>= 2.3.2-1); however:
+  Package libc6 is not installed.
+Setting up dpkg (1.10.13) ...
+Moving /usr/info/dir to /usr/share/info/dir.
+Making /usr/info a symlink to /usr/share/info.
+
+Selecting previously deselected package libc6.
+(Reading database ... 220 files and directories currently installed.)
+Unpacking libc6 (from .../libc6_2.3.2-7_i386.deb) ...
+dpkg: libc6: dependency problems, but configuring anyway as you request:
+ libc6 depends on libdb1-compat; however:
+  Package libdb1-compat is not installed.
+Setting up libc6 (2.3.2-7) ...
+Current default timezone: 'UTC'.
+Local time is now:      Thu Sep 18 21:15:26 UTC 2003.
+Universal Time is now:  Thu Sep 18 21:15:26 UTC 2003.
+Run 'tzconfig' if you wish to change it.
+Package `sysvinit' is not installed and no info is available.
+Use dpkg --info (= dpkg-deb --info) to examine archive files,
+and dpkg --contents (= dpkg-deb --contents) to list their contents.
+
+Selecting previously deselected package perl-base.
+(Reading database ... 2176 files and directories currently installed.)
+Unpacking perl-base (from .../perl-base_5.8.0-21_i386.deb) ...
+Setting up perl-base (5.8.0-21) ...
+Selecting previously deselected package mawk.
+(Reading database ... 2294 files and directories currently installed.)
+Unpacking mawk (from .../mawk_1.3.3-11_i386.deb) ...
+Setting up mawk (1.3.3-11) ...
+
+Selecting previously deselected package debconf.
+(Reading database ... 2313 files and directories currently installed.)
+Unpacking debconf (from .../debconf_1.3.14_all.deb) ...
+dpkg: debconf: dependency problems, but configuring anyway as you request:
+ debconf depends on debconf-i18n | debconf-english; however:
+  Package debconf-i18n is not installed.
+  Package debconf-english is not installed.
+Setting up debconf (1.3.14) ...
+
+I: Unpacking required packages...
+(Reading database ... 2448 files and directories currently installed.)
+Preparing to replace base-files 3.0.10 (using .../base-files_3.0.10_i386.deb) ...
+Unpacking replacement base-files ...
+Preparing to replace base-passwd 3.5.4 (using .../base-passwd_3.5.4_i386.deb) ...
+Unpacking replacement base-passwd ...
+Selecting previously deselected package bash.
+dpkg: regarding .../archives/bash_2.05b-9_i386.deb containing bash, pre-dependency problem:
+ bash pre-depends on libncurses5 (>= 5.3.20030510-1)
+dpkg: warning - ignoring pre-dependency problem !
+Unpacking bash (from .../archives/bash_2.05b-9_i386.deb) ...
+Selecting previously deselected package bsdutils.
+Unpacking bsdutils (from .../bsdutils_1%3a2.12-2_i386.deb) ...
+Selecting previously deselected package coreutils.
+dpkg: regarding .../coreutils_5.0.90-3_i386.deb containing coreutils, pre-dependency problem:
+ coreutils pre-depends on libacl1 (>= 2.2.11-1)
+dpkg: warning - ignoring pre-dependency problem !
+dpkg: regarding .../coreutils_5.0.90-3_i386.deb containing coreutils, pre-dependency problem:
+ coreutils pre-depends on libattr1 (>= 2.4.4-1)
+dpkg: warning - ignoring pre-dependency problem !
+Unpacking coreutils (from .../coreutils_5.0.90-3_i386.deb) ...
+Selecting previously deselected package libacl1.
+Unpacking libacl1 (from .../libacl1_2.2.15-1_i386.deb) ...
+Selecting previously deselected package libattr1.
+Unpacking libattr1 (from .../libattr1_2.4.8-1_i386.deb) ...
+Preparing to replace debconf 1.3.14 (using .../debconf_1.3.14_all.deb) ...
+Unpacking replacement debconf ...
+Selecting previously deselected package debconf-i18n.
+Unpacking debconf-i18n (from .../debconf-i18n_1.3.14_all.deb) ...
+Selecting previously deselected package liblocale-gettext-perl.
+Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.01-17_i386.deb) ...
+Selecting previously deselected package libtext-wrapi18n-perl.
+Unpacking libtext-wrapi18n-perl (from .../libtext-wrapi18n-perl_0.06-1_all.deb) ...
+Selecting previously deselected package libtext-charwidth-perl.
+Unpacking libtext-charwidth-perl (from .../libtext-charwidth-perl_0.04-1_i386.deb) ...
+Selecting previously deselected package debianutils.
+dpkg: regarding .../debianutils_2.5.5_i386.deb containing debianutils, pre-dependency problem:
+ debianutils pre-depends on coreutils (>= 4.5.8-1)
+  coreutils is unpacked, but has never been configured.
+dpkg: warning - ignoring pre-dependency problem !
+Unpacking debianutils (from .../debianutils_2.5.5_i386.deb) ...
+Selecting previously deselected package diff.
+Unpacking diff (from .../archives/diff_2.8.1-2_i386.deb) ...
+dpkg: regarding .../archives/dpkg_1.10.13_i386.deb containing dpkg, pre-dependency problem:
+ dpkg pre-depends on dselect
+  dselect is not installed.
+dpkg: warning - ignoring pre-dependency problem !
+Preparing to replace dpkg 1.10.13 (using .../archives/dpkg_1.10.13_i386.deb) ...
+Unpacking replacement dpkg ...
+Selecting previously deselected package dselect.
+Unpacking dselect (from .../dselect_1.10.13_i386.deb) ...
+Selecting previously deselected package libblkid1.
+Unpacking libblkid1 (from .../libblkid1_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Selecting previously deselected package e2fsprogs.
+dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb containing e2fsprogs, pre-dependency problem:
+ e2fsprogs pre-depends on e2fslibs (= 1.34+1.35-WIP-2003.08.21-3)
+dpkg: warning - ignoring pre-dependency problem !
+dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb containing e2fsprogs, pre-dependency problem:
+ e2fsprogs pre-depends on libblkid1 (>= 1.34-1)
+  libblkid1 is unpacked, but has never been configured.
+dpkg: warning - ignoring pre-dependency problem !
+dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb containing e2fsprogs, pre-dependency problem:
+ e2fsprogs pre-depends on libcomerr2 (>= 1.34-1)
+dpkg: warning - ignoring pre-dependency problem !
+dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb containing e2fsprogs, pre-dependency problem:
+ e2fsprogs pre-depends on libss2 (>= 1.34-1)
+dpkg: warning - ignoring pre-dependency problem !
+dpkg: regarding .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb containing e2fsprogs, pre-dependency problem:
+ e2fsprogs pre-depends on libuuid1 (>= 1.34-1)
+dpkg: warning - ignoring pre-dependency problem !
+Unpacking e2fsprogs (from .../e2fsprogs_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Selecting previously deselected package e2fslibs.
+Unpacking e2fslibs (from .../e2fslibs_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Selecting previously deselected package libcomerr2.
+Unpacking libcomerr2 (from .../libcomerr2_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Selecting previously deselected package libss2.
+Unpacking libss2 (from .../libss2_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Selecting previously deselected package libuuid1.
+Unpacking libuuid1 (from .../libuuid1_1.34+1.35-WIP-2003.08.21-3_i386.deb) ...
+Selecting previously deselected package findutils.
+Unpacking findutils (from .../findutils_4.1.20-1_i386.deb) ...
+Selecting previously deselected package gcc-3.2-base.
+Unpacking gcc-3.2-base (from .../gcc-3.2-base_1%3a3.2.3-8_i386.deb) ...
+Selecting previously deselected package gcc-3.3-base.
+Unpacking gcc-3.3-base (from .../gcc-3.3-base_1%3a3.3.2-0pre3_i386.deb) ...
+Selecting previously deselected package grep.
+Unpacking grep (from .../archives/grep_2.5.1-6_i386.deb) ...
+Selecting previously deselected package gzip.
+Unpacking gzip (from .../archives/gzip_1.3.5-7_i386.deb) ...
+Selecting previously deselected package hostname.
+Unpacking hostname (from .../hostname_2.10_i386.deb) ...
+Selecting previously deselected package libcap1.
+Unpacking libcap1 (from .../libcap1_1%3a1.10-12_i386.deb) ...
+Preparing to replace libc6 2.3.2-7 (using .../libc6_2.3.2-7_i386.deb) ...
+Unpacking replacement libc6 ...
+Selecting previously deselected package libdb2.
+Unpacking libdb2 (from .../libdb2_2%3a2.7.7.0-8_i386.deb) ...
+Selecting previously deselected package libdb3.
+Unpacking libdb3 (from .../libdb3_3.2.9-19_i386.deb) ...
+Selecting previously deselected package libncurses5.
+Unpacking libncurses5 (from .../libncurses5_5.3.20030719-2_i386.deb) ...
+Selecting previously deselected package libnewt0.51.
+Unpacking libnewt0.51 (from .../libnewt0.51_0.51.4-17_i386.deb) ...
+Selecting previously deselected package libpam-modules.
+Unpacking libpam-modules (from .../libpam-modules_0.76-14_i386.deb) ...
+Selecting previously deselected package libpam-runtime.
+Unpacking libpam-runtime (from .../libpam-runtime_0.76-14_all.deb) ...
+Selecting previously deselected package libpam0g.
+Unpacking libpam0g (from .../libpam0g_0.76-14_i386.deb) ...
+Selecting previously deselected package libpopt0.
+Unpacking libpopt0 (from .../libpopt0_1.7-2_i386.deb) ...
+Selecting previously deselected package libreadline4.
+Unpacking libreadline4 (from .../libreadline4_4.3-5_i386.deb) ...
+Selecting previously deselected package libstdc++2.10-glibc2.2.
+Unpacking libstdc++2.10-glibc2.2 (from .../libstdc++2.10-glibc2.2_1%3a2.95.4-17_i386.deb) ...
+Selecting previously deselected package libstdc++5.
+Unpacking libstdc++5 (from .../libstdc++5_1%3a3.3.2-0pre3_i386.deb) ...
+Selecting previously deselected package libgcc1.
+Unpacking libgcc1 (from .../libgcc1_1%3a3.3.2-0pre3_i386.deb) ...
+Selecting previously deselected package login.
+dpkg: regarding .../login_1%3a4.0.3-11_i386.deb containing login, pre-dependency problem:
+ login pre-depends on libpam0g (>= 0.76)
+  libpam0g is unpacked, but has never been configured.
+dpkg: warning - ignoring pre-dependency problem !
+dpkg: regarding .../login_1%3a4.0.3-11_i386.deb containing login, pre-dependency problem:
+ login pre-depends on libpam-runtime (>= 0.76-13.1)
+  libpam-runtime is unpacked, but has never been configured.
+dpkg: warning - ignoring pre-dependency problem !
+Unpacking login (from .../login_1%3a4.0.3-11_i386.deb) ...
+Selecting previously deselected package makedev.
+Unpacking makedev (from .../makedev_2.3.1-63_all.deb) ...
+Preparing to replace mawk 1.3.3-11 (using .../mawk_1.3.3-11_i386.deb) ...
+Unpacking replacement mawk ...
+Selecting previously deselected package modutils.
+Unpacking modutils (from .../modutils_2.4.21-3_i386.deb) ...
+Selecting previously deselected package mount.
+Unpacking mount (from .../archives/mount_2.12-2_i386.deb) ...
+Selecting previously deselected package ncurses-base.
+Unpacking ncurses-base (from .../ncurses-base_5.3.20030719-2_all.deb) ...
+Selecting previously deselected package ncurses-bin.
+dpkg: regarding .../ncurses-bin_5.3.20030719-2_i386.deb containing ncurses-bin, pre-dependency problem:
+ ncurses-bin pre-depends on libncurses5 (>= 5.3.20030510-1)
+  libncurses5 is unpacked, but has never been configured.
+dpkg: warning - ignoring pre-dependency problem !
+Unpacking ncurses-bin (from .../ncurses-bin_5.3.20030719-2_i386.deb) ...
+Selecting previously deselected package passwd.
+Unpacking passwd (from .../passwd_1%3a4.0.3-11_i386.deb) ...
+Preparing to replace perl-base 5.8.0-21 (using .../perl-base_5.8.0-21_i386.deb) ...
+Unpacking replacement perl-base ...
+Selecting previously deselected package procps.
+Unpacking procps (from .../procps_1%3a3.1.12-1_i386.deb) ...
+Selecting previously deselected package sed.
+Unpacking sed (from .../archives/sed_4.0.7-1_i386.deb) ...
+Selecting previously deselected package slang1.
+Unpacking slang1 (from .../slang1_1.4.5-2.2_i386.deb) ...
+Selecting previously deselected package slang1a-utf8.
+Unpacking slang1a-utf8 (from .../slang1a-utf8_1.4.5-2.2_i386.deb) ...
+Selecting previously deselected package initscripts.
+Unpacking initscripts (from .../initscripts_2.85-7_all.deb) ...
+Selecting previously deselected package sysvinit.
+dpkg: regarding .../sysvinit_2.85-7_i386.deb containing sysvinit, pre-dependency problem:
+ sysvinit pre-depends on initscripts
+  initscripts is unpacked, but has never been configured.
+dpkg: warning - ignoring pre-dependency problem !
+Unpacking sysvinit (from .../sysvinit_2.85-7_i386.deb) ...
+Selecting previously deselected package sysv-rc.
+Unpacking sysv-rc (from .../sysv-rc_2.85-7_all.deb) ...
+Selecting previously deselected package tar.
+Unpacking tar (from .../tar_1.13.25-6_i386.deb) ...
+Selecting previously deselected package util-linux.
+dpkg: regarding .../util-linux_2.12-2_i386.deb containing util-linux, pre-dependency problem:
+ util-linux pre-depends on libncurses5 (>= 5.3.20030510-1)
+  libncurses5 is unpacked, but has never been configured.
+dpkg: warning - ignoring pre-dependency problem !
+dpkg: regarding .../util-linux_2.12-2_i386.deb containing util-linux, pre-dependency problem:
+ util-linux pre-depends on slang1a-utf8 (>> 1.4.4-7.1)
+  slang1a-utf8 is unpacked, but has never been configured.
+dpkg: warning - ignoring pre-dependency problem !
+Unpacking util-linux (from .../util-linux_2.12-2_i386.deb) ...
+Selecting previously deselected package whiptail.
+Unpacking whiptail (from .../whiptail_0.51.4-17_i386.deb) ...
+Selecting previously deselected package mbr.
+Unpacking mbr (from .../archives/mbr_1.1.5-1_i386.deb) ...
+I: Configuring required packages...
+Setting up ncurses-base (5.3.20030719-2) ...
+
+Setting up sysv-rc (2.85-7) ...
+
+Setting up libpam-runtime (0.76-14) ...
+
+Setting up gcc-3.2-base (3.2.3-8) ...
+Setting up gcc-3.3-base (3.3.2-0pre3) ...
+dpkg: libc6: dependency problems, but configuring anyway as you request:
+ libc6 depends on libdb1-compat; however:
+  Package libdb1-compat is not installed.
+Setting up libc6 (2.3.2-7) ...
+Current default timezone: 'UTC'.
+Local time is now:      Thu Sep 18 21:16:07 UTC 2003.
+Universal Time is now:  Thu Sep 18 21:16:07 UTC 2003.
+Run 'tzconfig' if you wish to change it.
+
+Setting up libcap1 (1.10-12) ...
+
+Setting up slang1 (1.4.5-2.2) ...
+
+Setting up libuuid1 (1.34+1.35-WIP-2003.08.21-3) ...
+
+Setting up libpopt0 (1.7-2) ...
+
+Setting up libpam0g (0.76-14) ...
+
+Setting up bsdutils (2.12-2) ...
+
+Setting up perl-base (5.8.0-21) ...
+Setting up mbr (1.1.5-1) ...
+
+Setting up tar (1.13.25-6) ...
+
+Setting up slang1a-utf8 (1.4.5-2.2) ...
+
+Setting up libgcc1 (3.3.2-0pre3) ...
+
+Setting up mount (2.12-2) ...
+
+Setting up libncurses5 (5.3.20030719-2) ...
+
+Setting up libattr1 (2.4.8-1) ...
+
+Setting up sed (4.0.7-1) ...
+
+Setting up e2fslibs (1.34+1.35-WIP-2003.08.21-3) ...
+
+Setting up base-passwd (3.5.4) ...
+
+Setting up libcomerr2 (1.34+1.35-WIP-2003.08.21-3) ...
+
+Setting up mawk (1.3.3-11) ...
+
+Setting up libnewt0.51 (0.51.4-17) ...
+
+Setting up libstdc++2.10-glibc2.2 (2.95.4-17) ...
+
+Setting up grep (2.5.1-6) ...
+
+Setting up hostname (2.10) ...
+Setting up libacl1 (2.2.15-1) ...
+
+Setting up libblkid1 (1.34+1.35-WIP-2003.08.21-3) ...
+
+Setting up libss2 (1.34+1.35-WIP-2003.08.21-3) ...
+
+Setting up findutils (4.1.20-1) ...
+
+Setting up e2fsprogs (1.34+1.35-WIP-2003.08.21-3) ...
+Setting up liblocale-gettext-perl (1.01-17) ...
+Setting up diff (2.8.1-2) ...
+
+Setting up libdb2 (2.7.7.0-8) ...
+
+Setting up libdb3 (3.2.9-19) ...
+
+Setting up util-linux (2.12-2) ...
+
+Setting up libstdc++5 (3.3.2-0pre3) ...
+
+Setting up libtext-charwidth-perl (0.04-1) ...
+Setting up libtext-wrapi18n-perl (0.06-1) ...
+dpkg: debconf: dependency problems, but configuring anyway as you request:
+ debconf depends on debconf-i18n | debconf-english; however:
+  Package debconf-english is not installed.
+Setting up debconf (1.3.14) ...
+
+Setting up coreutils (5.0.90-3) ...
+
+Setting up debianutils (2.5.5) ...
+
+Setting up makedev (2.3.1-63) ...
+
+Setting up procps (3.1.12-1) ...
+
+Setting up ncurses-bin (5.3.20030719-2) ...
+
+Setting up whiptail (0.51.4-17) ...
+Setting up libpam-modules (0.76-14) ...
+
+Setting up base-files (3.0.10) ...
+
+Setting up libreadline4 (4.3-5) ...
+
+dpkg: debconf-i18n: dependency problems, but configuring anyway as you request:
+ debconf-i18n depends on libtext-iconv-perl; however:
+  Package libtext-iconv-perl is not installed.
+Setting up debconf-i18n (1.3.14) ...
+Setting up gzip (1.3.5-7) ...
+
+Setting up dselect (1.10.13) ...
+Setting up bash (2.05b-9) ...
+
+Setting up login (4.0.3-11) ...
+
+Setting up passwd (4.0.3-11) ...
+
+Setting up dpkg (1.10.13) ...
+
+Setting up initscripts (2.85-7) ...
+
+Setting up sysvinit (2.85-7) ...
+sysvinit: creating /dev/initctl
+init: timeout opening/writing control channel /dev/initctl
+
+Setting up modutils (2.4.21-3) ...
+
+I: Installing base packages...
+Selecting previously deselected package adduser.
+(Reading database ... 4223 files and directories currently installed.)
+Unpacking adduser (from .../archives/adduser_3.51_all.deb) ...
+Selecting previously deselected package apt.
+Unpacking apt (from .../archives/apt_0.5.12_i386.deb) ...
+Selecting previously deselected package apt-utils.
+Unpacking apt-utils (from .../apt-utils_0.5.12_i386.deb) ...
+Selecting previously deselected package at.
+Unpacking at (from .../archives/at_3.1.8-11_i386.deb) ...
+Selecting previously deselected package base-config.
+Unpacking base-config (from .../base-config_1.72_all.deb) ...
+Selecting previously deselected package bsdmainutils.
+Unpacking bsdmainutils (from .../bsdmainutils_6.0.1_i386.deb) ...
+Selecting previously deselected package console-common.
+Unpacking console-common (from .../console-common_0.7.28_all.deb) ...
+Selecting previously deselected package console-tools.
+Unpacking console-tools (from .../console-tools_1%3a0.2.3dbs-42_i386.deb) ...
+Selecting previously deselected package libconsole.
+Unpacking libconsole (from .../libconsole_1%3a0.2.3dbs-42_i386.deb) ...
+Selecting previously deselected package console-data.
+Unpacking console-data (from .../console-data_2002.12.04dbs-16_all.deb) ...
+Selecting previously deselected package cpio.
+Unpacking cpio (from .../archives/cpio_2.5-1.1_i386.deb) ...
+Selecting previously deselected package cron.
+Unpacking cron (from .../cron_3.0pl1-79_i386.deb) ...
+Selecting previously deselected package ed.
+Unpacking ed (from .../archives/ed_0.2-20_i386.deb) ...
+Selecting previously deselected package exim.
+Unpacking exim (from .../archives/exim_3.36-8_i386.deb) ...
+Selecting previously deselected package fdutils.
+Unpacking fdutils (from .../fdutils_5.4-20030718-1_i386.deb) ...
+Selecting previously deselected package gettext-base.
+Unpacking gettext-base (from .../gettext-base_0.12.1-6_i386.deb) ...
+Selecting previously deselected package groff-base.
+Unpacking groff-base (from .../groff-base_1.18.1-11_i386.deb) ...
+Selecting previously deselected package ifupdown.
+Unpacking ifupdown (from .../ifupdown_0.6.4-4.6_i386.deb) ...
+Selecting previously deselected package info.
+Unpacking info (from .../archives/info_4.6-1_i386.deb) ...
+Selecting previously deselected package klogd.
+Unpacking klogd (from .../klogd_1.4.1-11_i386.deb) ...
+Selecting previously deselected package libdb1-compat.
+Unpacking libdb1-compat (from .../libdb1-compat_2.1.3-7_i386.deb) ...
+Selecting previously deselected package libident.
+Unpacking libident (from .../libident_0.22-2.2_i386.deb) ...
+Selecting previously deselected package libldap2.
+Unpacking libldap2 (from .../libldap2_2.1.22-1_i386.deb) ...
+Selecting previously deselected package libgnutls7.
+Unpacking libgnutls7 (from .../libgnutls7_0.8.9-2_i386.deb) ...
+Selecting previously deselected package libssl0.9.7.
+Unpacking libssl0.9.7 (from .../libssl0.9.7_0.9.7b-2_i386.deb) ...
+Selecting previously deselected package libgcrypt1.
+Unpacking libgcrypt1 (from .../libgcrypt1_1.1.12-3_i386.deb) ...
+Selecting previously deselected package liblzo1.
+Unpacking liblzo1 (from .../liblzo1_1.08-1_i386.deb) ...
+Selecting previously deselected package libopencdk4.
+Unpacking libopencdk4 (from .../libopencdk4_1%3a0.4.2-3_i386.deb) ...
+Selecting previously deselected package libtasn1-0.
+Unpacking libtasn1-0 (from .../libtasn1-0_0.1.2-1_i386.deb) ...
+Selecting previously deselected package zlib1g.
+Unpacking zlib1g (from .../zlib1g_1%3a1.1.4-15_i386.deb) ...
+Selecting previously deselected package liblockfile1.
+Unpacking liblockfile1 (from .../liblockfile1_1.05_i386.deb) ...
+Selecting previously deselected package libpcre3.
+Unpacking libpcre3 (from .../libpcre3_4.3-3_i386.deb) ...
+Selecting previously deselected package libsasl2.
+Unpacking libsasl2 (from .../libsasl2_2.1.15-5_i386.deb) ...
+Selecting previously deselected package libtext-iconv-perl.
+Unpacking libtext-iconv-perl (from .../libtext-iconv-perl_1.2-2_i386.deb) ...
+Selecting previously deselected package libwrap0.
+Unpacking libwrap0 (from .../libwrap0_7.6-ipv6.1-3_i386.deb) ...
+Selecting previously deselected package logrotate.
+Unpacking logrotate (from .../logrotate_3.6.5-2_i386.deb) ...
+Selecting previously deselected package mailx.
+Unpacking mailx (from .../mailx_1%3a8.1.2-0.20030521cvs-1_i386.deb) ...
+Selecting previously deselected package man-db.
+Unpacking man-db (from .../man-db_2.4.1-13_i386.deb) ...
+Selecting previously deselected package manpages.
+Unpacking manpages (from .../manpages_1.60-2_all.deb) ...
+Selecting previously deselected package modconf.
+Unpacking modconf (from .../modconf_0.2.44_all.deb) ...
+Selecting previously deselected package nano.
+Unpacking nano (from .../archives/nano_1.2.2-1_i386.deb) ...
+Selecting previously deselected package net-tools.
+Unpacking net-tools (from .../net-tools_1.60-8_i386.deb) ...
+Selecting previously deselected package netbase.
+Unpacking netbase (from .../archives/netbase_4.13_all.deb) ...
+Selecting previously deselected package netkit-inetd.
+Unpacking netkit-inetd (from .../netkit-inetd_0.10-9_i386.deb) ...
+Selecting previously deselected package iputils-ping.
+Unpacking iputils-ping (from .../iputils-ping_3%3a20020927-1_i386.deb) ...
+Selecting previously deselected package nvi.
+Unpacking nvi (from .../archives/nvi_1.79-21_i386.deb) ...
+Selecting previously deselected package ppp.
+Unpacking ppp (from .../ppp_2.4.1.uus2-4_i386.deb) ...
+Selecting previously deselected package pppconfig.
+Unpacking pppconfig (from .../pppconfig_2.2.0_all.deb) ...
+Selecting previously deselected package pppoe.
+Unpacking pppoe (from .../archives/pppoe_3.5-3_i386.deb) ...
+Selecting previously deselected package pppoeconf.
+Unpacking pppoeconf (from .../pppoeconf_0.9.10.10_all.deb) ...
+Selecting previously deselected package libpcap0.7.
+Unpacking libpcap0.7 (from .../libpcap0.7_0.7.2-1_i386.deb) ...
+Selecting previously deselected package sysklogd.
+Unpacking sysklogd (from .../sysklogd_1.4.1-11_i386.deb) ...
+Selecting previously deselected package tasksel.
+Unpacking tasksel (from .../archives/tasksel_1.32_i386.deb) ...
+Selecting previously deselected package tcpd.
+Unpacking tcpd (from .../tcpd_7.6-ipv6.1-3_i386.deb) ...
+Selecting previously deselected package telnet.
+Unpacking telnet (from .../telnet_0.17-20_i386.deb) ...
+Selecting previously deselected package wget.
+Unpacking wget (from .../wget_1.8.2-11_i386.deb) ...
+Selecting previously deselected package lilo.
+Unpacking lilo (from .../lilo_1%3a22.5.7.2-1_i386.deb) ...
+Selecting previously deselected package pciutils.
+Unpacking pciutils (from .../pciutils_1%3a2.1.11-2_i386.deb) ...
+Selecting previously deselected package syslinux.
+Unpacking syslinux (from .../syslinux_2.04-1_i386.deb) ...
+Selecting previously deselected package psmisc.
+Unpacking psmisc (from .../psmisc_21.3-1_i386.deb) ...
+Selecting previously deselected package ipchains.
+Unpacking ipchains (from .../ipchains_1.3.10-15_i386.deb) ...
+Selecting previously deselected package iptables.
+Unpacking iptables (from .../iptables_1.2.8-4_i386.deb) ...
+Setting up modconf (0.2.44) ...
+
+Setting up libdb1-compat (2.1.3-7) ...
+
+Setting up telnet (0.17-20) ...
+
+Setting up gettext-base (0.12.1-6) ...
+
+Setting up libgcrypt1 (1.1.12-3) ...
+
+Setting up libtasn1-0 (0.1.2-1) ...
+
+Setting up psmisc (21.3-1) ...
+
+Setting up libident (0.22-2.2) ...
+
+Setting up libssl0.9.7 (0.9.7b-2) ...
+
+Setting up apt (0.5.12) ...
+
+Setting up fdutils (5.4-20030718-1) ...
+Keeping old fdmount setuid root settings.
+Please note that you can run
+'/usr/sbin/fdutilsconfig' to change them.
+
+Setting up pciutils (2.1.11-2) ...
+
+Setting up console-data (2002.12.04dbs-16) ...
+Looking for keymap to install:
+mac-usb-be
+Warning: cannot access console;
+  deferring until console is accessible.
+
+Setting up zlib1g (1.1.4-15) ...
+
+Setting up adduser (3.51) ...
+
+Setting up manpages (1.60-2) ...
+Setting up ed (0.2-20) ...
+
+Setting up tasksel (1.32) ...
+
+Setting up libtext-iconv-perl (1.2-2) ...
+Setting up libpcap0.7 (0.7.2-1) ...
+
+Setting up liblzo1 (1.08-1) ...
+
+Setting up wget (1.8.2-11) ...
+
+Setting up ipchains (1.3.10-15) ...
+
+Setting up groff-base (1.18.1-11) ...
+
+Setting up net-tools (1.60-8) ...
+Setting up bsdmainutils (6.0.1) ...
+
+Setting up syslinux (2.04-1) ...
+Setting up libpcre3 (4.3-3) ...
+
+Setting up info (4.6-1) ...
+
+Setting up libopencdk4 (0.4.2-3) ...
+
+Setting up iputils-ping (20020927-1) ...
+Setting up lilo (22.5.7.2-1) ...
+hostname: Unknown host
+Use of uninitialized value in sprintf at /usr/share/perl5/Debconf/Element/Noninteractive/Note.pm line 38, <GEN1> line 3.
+
+Setting up libgnutls7 (0.8.9-2) ...
+
+Setting up cron (3.0pl1-79) ...
+Adding group crontab (101)...
+Done.
+Starting periodic command scheduler: cron
+Warning: Fake start-stop-daemon called, doing nothing
+.
+
+Setting up libsasl2 (2.1.15-5) ...
+
+Setting up nano (1.2.2-1) ...
+
+Setting up netkit-inetd (0.10-9) ...
+Starting internet superserver: inetd
+Warning: Fake start-stop-daemon called, doing nothing
+.
+
+Setting up libconsole (0.2.3dbs-42) ...
+
+Setting up apt-utils (0.5.12) ...
+
+Setting up iptables (1.2.8-4) ...
+
+Setting up cpio (2.5-1.1) ...
+
+Setting up nvi (1.79-21) ...
+
+Setting up libwrap0 (7.6-ipv6.1-3) ...
+
+Setting up liblockfile1 (1.05) ...
+
+Setting up tcpd (7.6-ipv6.1-3) ...
+
+Setting up man-db (2.4.1-13) ...
+Building database of manual pages ...
+mandb: warning: /usr/share/man/man7/mdoc.samples.7.gz is a dangling symlink
+
+Setting up libldap2 (2.1.22-1) ...
+
+Setting up ifupdown (0.6.4-4.6) ...
+
+Setting up logrotate (3.6.5-2) ...
+Setting up exim (3.36-8) ...
+
+Setting up netbase (4.13) ...
+
+Setting up mailx (8.1.2-0.20030521cvs-1) ...
+
+Setting up ppp (2.4.1.uus2-4) ...
+
+Setting up at (3.1.8-11) ...
+Starting deferred execution scheduler: atd
+Warning: Fake start-stop-daemon called, doing nothing
+.
+
+Setting up pppoe (3.5-3) ...
+Setting up pppoeconf (0.9.10.10) ...
+
+Setting up pppconfig (2.2.0) ...
+
+Setting up sysklogd (1.4.1-11) ...
+Stopping system log daemon: syslogd
+Warning: Fake start-stop-daemon called, doing nothing
+.
+Starting system log daemon: syslogd
+Warning: Fake start-stop-daemon called, doing nothing
+.
+
+Setting up klogd (1.4.1-11) ...
+Stopping kernel log daemon: klogd
+Warning: Fake start-stop-daemon called, doing nothing
+.
+Starting kernel log daemon: klogd
+Warning: Fake start-stop-daemon called, doing nothing
+.
+
+Setting up console-tools (0.2.3dbs-42) ...
+
+Setting up console-common (0.7.28) ...
+Looking for keymap to install:
+mac-usb-be
+Warning: cannot access console;
+  deferring until console is accessible.
+
+Setting up base-config (1.72) ...
+
+I: Base system installed successfully.
+chroot /tmp/target dpkg --purge base-config console-common console-tools console-data console-tools-libs 
+(Reading database ... 6871 files and directories currently installed.)
+Removing base-config ...
+Purging configuration files for base-config ...
+dpkg - warning: ignoring request to remove console-tools-libs which isn't installed.
+Removing console-common ...
+Purging configuration files for console-common ...
+Removing console-tools ...
+Purging configuration files for console-tools ...
+Removing console-data ...
+Purging configuration files for console-data ...
+Using rootstrap module uml from:
+	/usr/lib/rootstrap/modules/uml
+./MAKEDEV: warning: can't read /proc/devices
+Using rootstrap module umount from:
+	/usr/lib/rootstrap/modules/umount
+umount: /tmp/target/proc: not mounted
+System halted.
+tracing thread pid = 12265
+
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file724pRZ rw
+Checking for the skas3 patch in the host...not found
+Checking for /proc/mm...not found
+Linux version 2.4.20-7um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 SMP Fri Aug 8 18:30:28 EDT 2003
+On node 0 totalpages: 32768
+zone(0): 32768 pages.
+zone(1): 0 pages.
+zone(2): 0 pages.
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file724pRZ rw
+Calibrating delay loop... 1591.02 BogoMIPS
+Memory: 126208k available
+Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
+Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
+Mount-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Buffer-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Page-cache hash table entries: 32768 (order: 5, 131072 bytes)
+Checking for host processor cmov support...Yes
+Checking for host processor xmm support...No
+Checking that ptrace can change system call numbers...OK
+Checking that host ptys support output SIGIO...Yes
+Checking that host ptys support SIGIO on close...No, enabling workaround
+POSIX conformance testing by UNIFIX
+All CPUs are go!
+Waiting on wait_init_idle (map = 0x0)
+All processors have done init_idle
+Linux NET4.0 for Linux 2.4
+Based upon Swansea University Computer Society NET3.039
+Initializing RT netlink socket
+Starting kswapd
+VFS: Diskquotas version dquot_6.4.0 initialized
+Journalled Block Device driver loaded
+devfs: v1.12c (20020818) Richard Gooch (rgooch@atnf.csiro.au)
+devfs: boot_options: 0x1
+pty: 256 Unix98 ptys configured
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+loop: loaded (max 8 devices)
+Initializing software serial port version 1
+setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
+Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
+mconsole (version 2) initialized on /home/dancer/.uml/3SYyky/mconsole
+unable to open root_fs for validation
+Partition check:
+ ubdb: unknown partition table
+Initializing stdio console driver
+NET4: Linux TCP/IP 1.0 for NET4.0
+IP Protocols: ICMP, UDP, TCP, IGMP
+IP: routing cache hash table of 512 buckets, 4Kbytes
+TCP: Hash tables configured (established 8192 bind 8192)
+Linux IP multicast router 0.06 plus PIM-SM
+NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Root-NFS: No NFS server available, giving up.
+VFS: Unable to mount root fs via NFS, trying floppy.
+VFS: Mounted root (hostfs filesystem).
+Mounted devfs on /dev
+Starting network inside the chroot
+sed: can't read /proc/mounts: No such file or directory
+sed: can't read /proc/mounts: No such file or directory
+sed: can't read /proc/mounts: No such file or directory
+Deconfiguring network interfaces... done.
+Setting up IP spoofing protection: FAILED.
+Configuring network interfaces... Slirp v1.0.14pre1 (BETA)
+
+Copyright (c) 1995,1996 Danny Gasparovski and others.
+All rights reserved.
+This program is copyrighted, free software.
+Please read the file COPYRIGHT that came with the Slirp
+package for the terms and conditions of the copyright.
+
+IP address of Slirp host: 192.168.1.62
+IP address of your DNS(s): 218.231.0.10, 218.231.0.42
+Your address is 10.0.2.15
+(or anything else you want)
+
+Type five zeroes (0) to exit.
+
+[autodetect SLIP/CSLIP, MTU 1500, MRU 1500]
+
+SLiRP Ready ...
+done.
+W: /home/dancer/.pbuilderrc does not exist
+ -> Running in pbuilder-user-mode-linux mode
+Upgrading for distribution sid
+ -> copying local configuration
+ -> mounting /proc filesystem
+ -> mounting /dev/pts filesystem
+Refreshing the base.tgz 
+ -> upgrading packages
+0% [Working]            Get:1 http://ftp.jp.debian.org sid/main Packages [2672kB]
+            0% [1 Packages 2542/2672kB 0%]                              1% [1 Packages 34208/2672kB 1%]                               6% [1 Packages 178592/2672kB 6%]                                12% [1 Packages 321152/2672kB 12%]18% [1 Packages 496832/2672kB 18%]25% [1 Packages 669632/2672kB 25%]31% [1 Packages 849632/2672kB 31%]                                  37% [1 Packages 1003712/2672kB 37%]42% [1 Packages 1141952/2672kB 42%]47% [1 Packages 1275872/2672kB 47%]53% [1 Packages 1424192/2672kB 53%]59% [1 Packages 1591232/2672kB 59%]                                   64% [1 Packages 1732352/2672kB 64%]                                   269kB/s 3s70% [1 Packages 1872032/2672kB 70%]                                   269kB/s 2s75% [1 Packages 2014592/2672kB 75%]                                   269kB/s 2s80% [1 Packages 2155712/2672kB 80%]                                   269kB/s 1s85% [1 Packages 2293952/2672kB 85%]                                   269kB/s 1s91% [1 Packages 2432192/2672kB 91%]                                   269kB/s 0s96% [1 Packages 2570432/2672kB 96%]                                   269kB/s 0s                                                                                Get:2 http://ftp.jp.debian.org sid/main Release [82B]
+99% [Working]                                                         269kB/s 0s99% [1 Packages gzip 0]                                               269kB/s 0s99% [1 Packages gzip 5140480]                                         269kB/s 0s100% [Working]                                                        269kB/s 0s                                                                                Fetched 2672kB in 11s (236kB/s)
+Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 1%Reading Package Lists... 98%Reading Package Lists... 99%Reading Package Lists... 99%Reading Package Lists... Done
+(Reading database ... 6123 files and directories currently installed.)
+Removing lilo ...
+Purging configuration files for lilo ...
+Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 79%Reading Package Lists... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
+Calculating Upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading Package Lists... 0%Reading Package Lists... 100%Reading Package Lists... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
+apt is already the newest version.
+The following extra packages will be installed:
+  binutils cpp cpp-3.3 g++ g++-3.3 gcc gcc-3.3 libc6-dev libdb4.0 libgdbm3
+  libstdc++5-3.3-dev make patch perl perl-modules
+Suggested packages:
+  gnupg manpages-dev automake flex gdb gcc-3.3-doc libstdc++5-3.3-doc
+  libterm-readline-perl-perl
+The following NEW packages will be installed:
+  binutils build-essential cpp cpp-3.3 dpkg-dev g++ g++-3.3 gcc gcc-3.3
+  libc6-dev libdb4.0 libgdbm3 libstdc++5-3.3-dev make patch perl perl-modules
+0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
+Need to get 17.0MB of archives.
+After unpacking 56.8MB of additional disk space will be used.
+0% [Working]            Get:1 http://ftp.jp.debian.org sid/main binutils 2.14.90.0.6-1 [2428kB]
+            0% [1 binutils 2550/2428kB 0%]                              0% [1 binutils 35670/2428kB 1%]                               0% [1 binutils 114144/2428kB 4%]                                1% [1 binutils 258144/2428kB 10%]2% [1 binutils 407904/2428kB 16%]3% [1 binutils 550464/2428kB 22%]3% [1 binutils 673696/2428kB 27%]4% [1 binutils 809056/2428kB 33%]5% [1 binutils 932896/2428kB 38%]                                 6% [1 binutils 1093568/2428kB 45%]7% [1 binutils 1237568/2428kB 50%]                                  8% [1 binutils 1423328/2428kB 58%]                                  232kB/s 1m6s9% [1 binutils 1567456/2428kB 64%]                                  232kB/s 1m6s10% [1 binutils 1730176/2428kB 71%]                                 232kB/s 1m5s11% [1 binutils 1876032/2428kB 77%]                                 232kB/s 1m4s12% [1 binutils 2040192/2428kB 84%]                                 232kB/s 1m4s12% [1 binutils 2185632/2428kB 90%]                                 232kB/s 1m3s13% [1 binutils 2331072/2428kB 96%]                                 232kB/s 1m3s                                                                                Get:2 http://ftp.jp.debian.org sid/main cpp-3.3 1:3.3.2-0pre3 [1387kB]
+14% [2 cpp-3.3 875/1387kB 0%]                                       232kB/s 1m2s15% [2 cpp-3.3 136235/1387kB 9%]                                    232kB/s 1m2s15% [2 cpp-3.3 285995/1387kB 20%]                                   232kB/s 1m1s16% [2 cpp-3.3 444395/1387kB 32%]                                    232kB/s 60s17% [2 cpp-3.3 591275/1387kB 42%]                                    232kB/s 60s18% [2 cpp-3.3 726635/1387kB 52%]                                    232kB/s 59s19% [2 cpp-3.3 861995/1387kB 62%]                                    291kB/s 47s20% [2 cpp-3.3 1004555/1387kB 72%]                                   291kB/s 46s21% [2 cpp-3.3 1152875/1387kB 83%]                                   291kB/s 46s22% [2 cpp-3.3 1308192/1387kB 94%]                                   291kB/s 45s                                                                                Get:3 http://ftp.jp.debian.org sid/main cpp 4:3.3.1-2 [26.0kB]
+22% [3 cpp 1644/26.0kB 6%]                                           291kB/s 45s22% [Waiting for headers]                                            291kB/s 45s                                                                                Get:4 http://ftp.jp.debian.org sid/main perl-modules 5.8.0-21 [1947kB]
+22% [4 perl-modules 1223/1947kB 0%]                                  291kB/s 45s23% [4 perl-modules 153863/1947kB 7%]                                291kB/s 44s24% [4 perl-modules 303623/1947kB 15%]                               291kB/s 44s25% [4 perl-modules 430343/1947kB 22%]                               291kB/s 43s26% [4 perl-modules 591623/1947kB 30%]                               291kB/s 43s26% [4 perl-modules 726983/1947kB 37%]                               291kB/s 42s27% [4 perl-modules 862343/1947kB 44%]                               291kB/s 42s28% [4 perl-modules 1003463/1947kB 51%]                              291kB/s 41s29% [4 perl-modules 1148903/1947kB 58%]                              280kB/s 42s30% [4 perl-modules 1291463/1947kB 66%]                              280kB/s 42s30% [4 perl-modules 1419623/1947kB 72%]                              280kB/s 41s31% [4 perl-modules 1559303/1947kB 80%]                              280kB/s 41s32% [4 perl-modules 1674503/1947kB 85%]                              280kB/s 40s33% [4 perl-modules 1817063/1947kB 93%]                              280kB/s 40s                                                                                Get:5 http://ftp.jp.debian.org sid/main libdb4.0 4.0.14-1.3 [302kB]
+34% [5 libdb4.0 265/302kB 0%]                                        280kB/s 39s34% [5 libdb4.0 112585/302kB 37%]                                    280kB/s 39s35% [5 libdb4.0 236192/302kB 78%]                                    280kB/s 39s                                                                                Get:6 http://ftp.jp.debian.org sid/main libgdbm3 1.8.3-2 [21.3kB]
+35% [6 libgdbm3 1455/21.3kB 6%]                                      280kB/s 38s35% [Waiting for headers]                                            280kB/s 38s                                                                                Get:7 http://ftp.jp.debian.org sid/main perl 5.8.0-21 [3891kB]
+35% [7 perl 1410/3891kB 0%]                                          280kB/s 38s36% [7 perl 112290/3891kB 2%]                                        280kB/s 38s37% [7 perl 228930/3891kB 5%]                                        280kB/s 37s38% [7 perl 352770/3891kB 9%]                                        280kB/s 37s38% [7 perl 482370/3891kB 12%]                                       246kB/s 42s39% [7 perl 609090/3891kB 15%]                                       246kB/s 41s40% [7 perl 734560/3891kB 18%]                                       246kB/s 41s40% [7 perl 842560/3891kB 21%]                                       246kB/s 40s41% [7 perl 950560/3891kB 24%]                                       246kB/s 40s42% [7 perl 1060000/3891kB 27%]                                      246kB/s 39s42% [7 perl 1176640/3891kB 30%]                                      246kB/s 39s43% [7 perl 1301920/3891kB 33%]                                      246kB/s 38s44% [7 perl 1428640/3891kB 36%]                                      246kB/s 38s45% [7 perl 1549600/3891kB 39%]                                      246kB/s 37s45% [7 perl 1661920/3891kB 42%]                                      246kB/s 37s46% [7 perl 1780000/3891kB 45%]                                      246kB/s 36s47% [7 perl 1885760/3891kB 48%]                                      223kB/s 40s47% [7 perl 1998080/3891kB 51%]                                      223kB/s 39s48% [7 perl 2133440/3891kB 54%]                                      223kB/s 39s49% [7 perl 2248640/3891kB 57%]                                      223kB/s 38s49% [7 perl 2352320/3891kB 60%]                                      223kB/s 38s50% [7 perl 2473280/3891kB 63%]                                      223kB/s 37s51% [7 perl 2573536/3891kB 66%]                                      223kB/s 37s51% [7 perl 2682976/3891kB 68%]                                      223kB/s 36s52% [7 perl 2795296/3891kB 71%]                                      223kB/s 36s53% [7 perl 2898976/3891kB 74%]                                      223kB/s 35s53% [7 perl 3014176/3891kB 77%]                                      223kB/s 35s54% [7 perl 3126496/3891kB 80%]                                      223kB/s 34s55% [7 perl 3233056/3891kB 83%]                                      212kB/s 36s55% [7 perl 3328096/3891kB 85%]                                      212kB/s 35s56% [7 perl 3436096/3891kB 88%]                                      212kB/s 35s56% [7 perl 3523936/3891kB 90%]                                      212kB/s 34s57% [7 perl 3636256/3891kB 93%]                                      212kB/s 34s58% [7 perl 3739872/3891kB 96%]                                      212kB/s 33s58% [7 perl 3834912/3891kB 98%]                                      212kB/s 33s58% [Waiting for headers]                                            212kB/s 32s                                                                                Get:8 http://ftp.jp.debian.org sid/main patch 2.5.9-1 [92.3kB]
+58% [8 patch 1367/92.3kB 1%]                                         212kB/s 32s                                                                                Get:9 http://ftp.jp.debian.org sid/main make 3.80-3 [361kB]
+59% [9 make 871/361kB 0%]                                            212kB/s 32s60% [9 make 104416/361kB 28%]                                        212kB/s 32s60% [9 make 219648/361kB 60%]                                        212kB/s 31s61% [9 make 343520/361kB 95%]                                        212kB/s 30s61% [Waiting for headers]                                            212kB/s 30s                                                                                Get:10 http://ftp.jp.debian.org sid/main dpkg-dev 1.10.13 [112kB]
+61% [10 dpkg-dev 1252/112kB 1%]                                      212kB/s 30s                                                                                Get:11 http://ftp.jp.debian.org sid/main gcc-3.3 1:3.3.2-0pre3 [1309kB]
+62% [11 gcc-3.3 2027/1309kB 0%]                                      212kB/s 30s63% [11 gcc-3.3 131627/1309kB 10%]                                   211kB/s 29s63% [11 gcc-3.3 249707/1309kB 19%]                                   211kB/s 29s64% [11 gcc-3.3 376427/1309kB 28%]                                   211kB/s 28s65% [11 gcc-3.3 493067/1309kB 37%]                                   211kB/s 28s65% [11 gcc-3.3 635627/1309kB 48%]                                   211kB/s 27s66% [11 gcc-3.3 762347/1309kB 58%]                                   211kB/s 26s67% [11 gcc-3.3 894827/1309kB 68%]                                   211kB/s 26s68% [11 gcc-3.3 1024427/1309kB 78%]                                  211kB/s 25s69% [11 gcc-3.3 1156907/1309kB 88%]                                  211kB/s 24s69% [11 gcc-3.3 1283627/1309kB 98%]                                  211kB/s 24s69% [Waiting for headers]                                            211kB/s 24s                                                                                Get:12 http://ftp.jp.debian.org sid/main libc6-dev 2.3.2-7 [2558kB]
+69% [12 libc6-dev 2552/2558kB 0%]                                    211kB/s 24s70% [12 libc6-dev 126392/2558kB 4%]                                  211kB/s 23s71% [12 libc6-dev 253112/2558kB 9%]                                  211kB/s 22s72% [12 libc6-dev 371584/2558kB 14%]                                 242kB/s 19s72% [12 libc6-dev 498304/2558kB 19%]                                 242kB/s 19s73% [12 libc6-dev 616384/2558kB 24%]                                 242kB/s 18s74% [12 libc6-dev 753184/2558kB 29%]                                 242kB/s 17s75% [12 libc6-dev 879904/2558kB 34%]                                 242kB/s 17s75% [12 libc6-dev 1015264/2558kB 39%]                                242kB/s 16s76% [12 libc6-dev 1150112/2558kB 44%]                                242kB/s 16s77% [12 libc6-dev 1288352/2558kB 50%]                                242kB/s 15s78% [12 libc6-dev 1429472/2558kB 55%]                                242kB/s 15s79% [12 libc6-dev 1561952/2558kB 61%]                                242kB/s 14s79% [12 libc6-dev 1688672/2558kB 66%]                                242kB/s 14s80% [12 libc6-dev 1835008/2558kB 71%]                                242kB/s 13s81% [12 libc6-dev 1967488/2558kB 76%]                                255kB/s 12s82% [12 libc6-dev 2102848/2558kB 82%]                                255kB/s 11s83% [12 libc6-dev 2229568/2558kB 87%]                                255kB/s 11s83% [12 libc6-dev 2353408/2558kB 91%]                                255kB/s 10s84% [12 libc6-dev 2474368/2558kB 96%]                                255kB/s 10s                                                                                Get:13 http://ftp.jp.debian.org sid/main libstdc++5-3.3-dev 1:3.3.2-0pre3 [766kB]
+85% [13 libstdc++5-3.3-dev 1709/766kB 0%]                             255kB/s 9s85% [13 libstdc++5-3.3-dev 88109/766kB 11%]                           255kB/s 9s86% [13 libstdc++5-3.3-dev 211949/766kB 27%]                          255kB/s 9s86% [13 libstdc++5-3.3-dev 332909/766kB 43%]                          255kB/s 8s87% [13 libstdc++5-3.3-dev 442349/766kB 57%]                          255kB/s 8s88% [13 libstdc++5-3.3-dev 548909/766kB 71%]                          255kB/s 7s88% [13 libstdc++5-3.3-dev 666989/766kB 87%]                          255kB/s 7s                                                                                Get:14 http://ftp.jp.debian.org sid/main g++-3.3 1:3.3.2-0pre3 [1767kB]
+89% [14 g++-3.3 2191/1767kB 0%]                                       225kB/s 7s90% [14 g++-3.3 120271/1767kB 6%]                                     225kB/s 7s90% [14 g++-3.3 232591/1767kB 13%]                                    225kB/s 6s91% [14 g++-3.3 347791/1767kB 19%]                                    225kB/s 6s92% [14 g++-3.3 468751/1767kB 26%]                                    225kB/s 5s93% [14 g++-3.3 627151/1767kB 35%]                                    225kB/s 5s93% [14 g++-3.3 759631/1767kB 42%]                                    225kB/s 4s94% [14 g++-3.3 882031/1767kB 49%]                                    225kB/s 3s95% [14 g++-3.3 1024591/1767kB 57%]                                   225kB/s 3s96% [14 g++-3.3 1157071/1767kB 65%]                                   225kB/s 2s97% [14 g++-3.3 1309711/1767kB 74%]                                   225kB/s 2s98% [14 g++-3.3 1475311/1767kB 83%]                                   225kB/s 1s99% [14 g++-3.3 1626511/1767kB 92%]                                   262kB/s 0s99% [Waiting for headers]                                             262kB/s 0s                                                                                Get:15 http://ftp.jp.debian.org sid/main g++ 4:3.3.1-2 [1390B]
+99% [15 g++ 1118/1390B 80%]                                           262kB/s 0s                                                                                Get:16 http://ftp.jp.debian.org sid/main gcc 4:3.3.1-2 [4850B]
+99% [16 gcc 2285/4850B 47%]                                           262kB/s 0s99% [Waiting for headers]                                             262kB/s 0s                                                                                Get:17 http://ftp.jp.debian.org sid/main build-essential 9.7 [6344B]
+99% [17 build-essential 1116/6344B 17%]                               262kB/s 0s100% [Working]                                                        262kB/s 0s                                                                                Fetched 17.0MB in 1m9s (244kB/s)
+Selecting previously deselected package binutils.
+(Reading database ... 6081 files and directories currently installed.)
+Unpacking binutils (from .../binutils_2.14.90.0.6-1_i386.deb) ...
+Selecting previously deselected package cpp-3.3.
+Unpacking cpp-3.3 (from .../cpp-3.3_1%3a3.3.2-0pre3_i386.deb) ...
+Selecting previously deselected package cpp.
+Unpacking cpp (from .../cpp_4%3a3.3.1-2_i386.deb) ...
+Selecting previously deselected package perl-modules.
+Unpacking perl-modules (from .../perl-modules_5.8.0-21_all.deb) ...
+Selecting previously deselected package libdb4.0.
+Unpacking libdb4.0 (from .../libdb4.0_4.0.14-1.3_i386.deb) ...
+Selecting previously deselected package libgdbm3.
+Unpacking libgdbm3 (from .../libgdbm3_1.8.3-2_i386.deb) ...
+Selecting previously deselected package perl.
+Unpacking perl (from .../perl_5.8.0-21_i386.deb) ...
+Selecting previously deselected package patch.
+Unpacking patch (from .../patch_2.5.9-1_i386.deb) ...
+Selecting previously deselected package make.
+Unpacking make (from .../archives/make_3.80-3_i386.deb) ...
+Selecting previously deselected package dpkg-dev.
+Unpacking dpkg-dev (from .../dpkg-dev_1.10.13_all.deb) ...
+Selecting previously deselected package gcc-3.3.
+Unpacking gcc-3.3 (from .../gcc-3.3_1%3a3.3.2-0pre3_i386.deb) ...
+Selecting previously deselected package libc6-dev.
+Unpacking libc6-dev (from .../libc6-dev_2.3.2-7_i386.deb) ...
+Selecting previously deselected package libstdc++5-3.3-dev.
+Unpacking libstdc++5-3.3-dev (from .../libstdc++5-3.3-dev_1%3a3.3.2-0pre3_i386.deb) ...
+Selecting previously deselected package g++-3.3.
+Unpacking g++-3.3 (from .../g++-3.3_1%3a3.3.2-0pre3_i386.deb) ...
+Selecting previously deselected package g++.
+Unpacking g++ (from .../g++_4%3a3.3.1-2_i386.deb) ...
+Selecting previously deselected package gcc.
+Unpacking gcc (from .../gcc_4%3a3.3.1-2_i386.deb) ...
+Selecting previously deselected package build-essential.
+Unpacking build-essential (from .../build-essential_9.7_i386.deb) ...
+Setting up binutils (2.14.90.0.6-1) ...
+
+Setting up cpp-3.3 (3.3.2-0pre3) ...
+Setting up cpp (3.3.1-2) ...
+Setting up libdb4.0 (4.0.14-1.3) ...
+
+Setting up libgdbm3 (1.8.3-2) ...
+Setting up patch (2.5.9-1) ...
+Setting up make (3.80-3) ...
+
+Setting up gcc-3.3 (3.3.2-0pre3) ...
+Setting up libc6-dev (2.3.2-7) ...
+Setting up gcc (3.3.1-2) ...
+
+Setting up libstdc++5-3.3-dev (3.3.2-0pre3) ...
+Setting up perl-modules (5.8.0-21) ...
+Setting up g++-3.3 (3.3.2-0pre3) ...
+Setting up g++ (3.3.1-2) ...
+
+Setting up perl (5.8.0-21) ...
+
+Setting up dpkg-dev (1.10.13) ...
+Setting up build-essential (9.7) ...
+ -> ignoring umount of proc filesystem
+ -> ignoring umount of dev/pts filesystem
+Kernel panic: Attempted to kill init!
+ <6>Stopping all CPUs...done
+tracing thread pid = 8785
+
+ -> Successful exit from user-mode linux

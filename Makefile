@@ -23,8 +23,14 @@ check:
 		echo $$A; \
 	done
 
+full-check: 
+	set -e; \
+	cd testsuite; \
+	./run-test.sh 
+
 clean:
 	rm -f *.bak *~ TAGS
+	rm testsuite/testimage
 
 TAGS:
 	etags pbuilder-* pbuilder

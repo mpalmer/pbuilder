@@ -258,12 +258,15 @@ case "${OPERATION}" in
 	operate_uml execute
 	;;
     create)
-	if [ ! -d ~/.pbuilder-user-mode-linux ]; then
-	    mkdir ~/.pbuilder-user-mode-linux
-	fi
-	cd ~/.pbuilder-user-mode-linux
 	if [ -n "${UML_DISTRIBUTION}" ]; then
-	    sed "s/dist=.*/dist=${UML_DISTRIBUTION}/" /etc/rootstrap/rootstrap.conf > rootstrap.conf
+	    if [ ! -d ~/.pbuilder-user-mode-linux ]; then
+		mkdir ~/.pbuilder-user-mode-linux
+	    fi
+	    sed "s/dist=.*/dist=${UML_DISTRIBUTION}/" /etc/rootstrap/rootstrap.conf >  ~/.pbuilder-user-mode-linux/rootstrap.conf
+	    if [ -f rootstrap.conf ]; then
+		sed "s/dist=.*/dist=${UML_DISTRIBUTION}/" rootstrap.conf >  ~/.pbuilder-user-mode-linux/rootstrap.conf
+	    fi
+	    cd ~/.pbuilder-user-mode-linux
 	fi
 	rootstrap -s 1000 ${PBUILDER_UML_IMAGE}
 	operate_uml update

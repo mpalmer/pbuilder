@@ -1,3 +1,15 @@
+2003-09-19  Junichi Uekawa  <dancer@debian.org>
+
+	* Makefile (clean): remove testsuite/testimage, it's 1G.
+	(full-check): add new target to run the test program.
+
+	* pbuilder-user-mode-linux (UML_EXITCODE): check for rootstrap.conf in the 
+	current directory.
+
+	* testsuite/run-test.sh (PBUILDER_UML): a test script to run pbuilder-uml and see if it's working.
+
+	* testsuite/rootstrap.conf (interface): testsuite config
+
 2003-09-05  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-uml.conf.5: document slirp here also.
