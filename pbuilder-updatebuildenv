@@ -7,25 +7,7 @@ CHROOTEXEC="chroot $BUILDPLACE "
 
 test -n "$DISTRIBUTION" && echo "Upgrading for distribution $DISTRIBUTION" 
 
-cleanbuildplace
-echo "building the build env"
-echo " -> extracting base.tgz"
-mkdir -p "$BUILDPLACE"
-(cd "$BUILDPLACE"; tar xfzp "$BASETGZ")
-mountproc
-mkdir -p "$BUILDPLACE/tmp/buildd"
-echo " -> copying local configuration"
-for a in passwd hosts hostname resolv.conf; do 
-  cp /etc/$a "$BUILDPLACE/etc/$a";
-done
-
-if [ -n "$DISTRIBUTION" ]; then
-  echo Installing apt-lines
-  cat > $BUILDPLACE/etc/apt/sources.list << EOF
-deb $MIRRORSITE $DISTRIBUTION main contrib non-free
-deb-src $MIRRORSITE debian $DISTRIBUTION main contrib non-free
-EOF
-fi
+extractbuildplace
 
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"

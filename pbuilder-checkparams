@@ -7,34 +7,34 @@
 BASEBUILDPLACE="$BUILDPLACE"
 BUILDPLACE="$BUILDPLACE/$$"
 
-while [ -n $1 ]; do
-  case "$1" in 
-    --basetgz) 
-      BASETGZ=$(readlink -f "$2");
-      shift; shift;
-      ;;
-    --buildplace)
-      BUILDPLACE=$(readlink -f "$2");
-      shift; shift;
-      ;;
-    --mirror)
-      MIRROR="$2";
-      shift; shift;
-      ;;
-    --http-proxy)
-      export http_proxy="$2";
-      shift; shift;
-      ;;
-    --distribution)
-      DISTRIBUTION="$2";
-      shift; shift;
-      ;;
-    --buildresult)
-      BUILDRESULT=$(readlink -f "$2");
-      shift; shift;
-      ;;
-    --help)
-      cat <<EOF
+while [ -n "$1" ]; do 
+    case "$1" in 
+	--basetgz) 
+	    BASETGZ=$(readlink -f "$2");
+	    shift; shift;
+	    ;;
+	--buildplace)
+	    BUILDPLACE=$(readlink -f "$2");
+	    shift; shift;
+	    ;;
+	--mirror)
+	    MIRROR="$2";
+	    shift; shift;
+	    ;;
+	--http-proxy)
+	    export http_proxy="$2";
+	    shift; shift;
+	    ;;
+	--distribution)
+	    DISTRIBUTION="$2";
+	    shift; shift;
+	    ;;
+	--buildresult)
+	    BUILDRESULT=$(readlink -f "$2");
+	    shift; shift;
+	    ;;
+	--help)
+	    cat <<EOF
 Command Line Options:
  --basetgz [base.tgz location]
  --buildplace [location of build]
@@ -43,11 +43,15 @@ Command Line Options:
  --distribution [distribution(woody/sid)]
  --buildresult [location-to-copy-build-result]
 EOF
-      exit 1;
-      ;;
-    *)
-      break;
-      ;;
+	    exit 1;
+	    ;;
+	--*)
+	    echo "Error: Unknown option [$1] was specified " >&2 
+	    exit 1;
+	    ;;
+	*)
+	    break;
+	    ;;
   esac
 done
 

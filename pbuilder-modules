@@ -2,25 +2,49 @@
 # common modules for pbuilder.
 
 function umountproc () {
-  if [ "$USEPROC" = "yes" ]; then
-    echo " -> unmounting proc"
-    umount "$BUILDPLACE/proc"
-  fi
+    if [ "$USEPROC" = "yes" ]; then
+	echo " -> unmounting proc"
+	umount "$BUILDPLACE/proc"
+    fi
 }
 
 function mountproc () {
-  if [ "$USEPROC" = "yes" ]; then
-    echo " -> mounting proc"
-    mkdir -p $BUILDPLACE/proc
-    mount -t proc /proc "$BUILDPLACE/proc"
-  fi
+    if [ "$USEPROC" = "yes" ]; then
+	echo " -> mounting proc"
+	mkdir -p $BUILDPLACE/proc
+	mount -t proc /proc "$BUILDPLACE/proc"
+    fi
 }
 
 function cleanbuildplace () {
     if [ -d "$BUILDPLACE" ]; then 
-      echo cleaning the build env
-      rm -rf "$BUILDPLACE"
+	echo cleaning the build env
+	rm -rf "$BUILDPLACE"
     fi;
+}
+
+function extractbuildplace () {
+    # after calling this function, umountproc, and cleanbuildplace
+    # needs to be called. 
+    cleanbuildplace
+    echo "building the build env"
+    echo " -> extracting base.tgz"
+    mkdir -p "$BUILDPLACE"
+    (cd "$BUILDPLACE" && tar xfzp "$BASETGZ")
+    mountproc
+    mkdir -p "$BUILDPLACE/tmp/buildd"
+    echo " -> copying local configuration"
+    for a in passwd hosts hostname resolv.conf; do 
+	cp /etc/$a "$BUILDPLACE/etc/$a";
+    done
+    
+    if [ -n "$DISTRIBUTION" ]; then
+	echo Installing apt-lines
+	cat > "$BUILDPLACE"/etc/apt/sources.list << EOF
+deb $MIRRORSITE $DISTRIBUTION main contrib non-free
+deb-src $MIRRORSITE debian $DISTRIBUTION main contrib non-free
+EOF
+    fi
 }
 
 #required for some packages to install...

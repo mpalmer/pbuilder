@@ -1,5 +1,8 @@
 clean:
-	rm -f *.bak *~
+	rm -f *.bak *~ TAGS
+
+TAGS:
+	etags pbuider-* pbuilder
 
 install:
 	install -d $(DESTDIR)/etc
