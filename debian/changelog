@@ -5,13 +5,13 @@ pbuilder (0.10) unstable; urgency=low
   * Depends on gcc, because debootstrap does not seem to function well
     without gcc. Actually, dpkg does not work without gcc, when it is asked
     questions about the "architecture."
-  * Add support for specifying modifier. Thus, forcing pbuilder to build
-    with 
-     dpkg-buildpackage -mdancer@debian.org" 
-    should be possible via 
+  * Now dpkg-buildpackage is invoked with DEBEMAIL as maintainer.
+    It can be overridden with command line option. To build it like :
+     dpkg-buildpackage -mdancer@debian.org"
+    the command-line would be like:
      pbuiler build --debemail dancer@debian.org package.dsc
 
- -- Junichi Uekawa <dancer@debian.org>  Fri,  2 Nov 2001 15:39:29 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat,  3 Nov 2001 01:07:42 +0900
 
 pbuilder (0.9) unstable; urgency=low
 
