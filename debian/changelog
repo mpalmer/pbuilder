@@ -1,8 +1,16 @@
 pbuilder (0.4) unstable; urgency=low
 
   * Updating notes on upstream page
+  * moving routines around in arch-dep checker... hoping not to have
+    broken anything.
+  * Handles provides: in build dependency, parsing apt-cache showpkg 
+    output for reverse-dependency, and randomly installing one of the
+    available packages.
+  * Now it seems to be able to build (or satisfy the build dependency of)
+    glibc, gcc-2.95 et al.
+  * Handles versioned deps and conflicts.
 
- -- Junichi Uekawa <dancer@debian.org>  Sun,  9 Sep 2001 15:22:50 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Tue, 18 Sep 2001 18:56:14 +0900
 
 pbuilder (0.3) unstable; urgency=low
 
