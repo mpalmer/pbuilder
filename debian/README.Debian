@@ -17,29 +17,28 @@ would build the file specified by the .dsc file in the chroot.
 
 
 If you were a Debian Developer doing some development
-of Debian packages, you may try invoking pdebuild
-from the Debian source directory.
-
-
+of Debian packages, you may try invoking pdebuild from the Debian
+source directory, to save you from much typing.
 
 edit /etc/pbuilderrc if the default doesn't work, especially proxy.
 I would edit the mirror location too.
 Add non-us etc, at your option.
 
 
-Please report to the BTS if a package does not build,
-and it seems like a genuine bug of pbuilder.
-Also, if something is necessary on some arches, 
-please file a bug to "build-essential" for packages,
-or to pbuilder if some other thing is necessary.
+Please report to the Debian Bug Tracking System against pbuilder
+if a package does not build, and it seems like a genuine bug of pbuilder.
+Also, if something is missing and necessary on some arches, 
+please file a bug to "build-essential" for packages.
+
 
 
 I would say this package works fine if these packages manage to build.
 
 Testsuite:
 	ecasound
-	glibc  ( a very good test. )
-	pbuilder itself (it has a funny Build-Depends line to confuse things..)
+	glibc  ( a very good test. Does not build any more? )
+	pbuilder itself (it used to have a funny Build-Depends line to
+		  confuse things, but it no longer has.)
 
 
 $Id$
