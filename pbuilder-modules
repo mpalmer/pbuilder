@@ -1,7 +1,7 @@
 #! /bin/bash
 # common modules for pbuilder.
 #   pbuilder -- personal Debian package builder
-#   Copyright (C) 2001,2002 Junichi Uekawa
+#   Copyright (C) 2001-2003 Junichi Uekawa
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 function showhelp () {
     cat <<EOF
 pbuilder - a personal builder
-Copyright 2001,2002 Junichi Uekawa
+Copyright 2001-2003 Junichi Uekawa
 Distributed under GNU Public License version 2 or later
 
 pbuilder [operation] [pbuilder-options]
@@ -40,7 +40,8 @@ pbuilder clean
   Cleans the temporal build directory.
 
 pbuilder login
-  Logs in to the build environment
+pbuilder execute [command]
+  Logs in to the build environment and execute command.
 
 pbuilder-options:
  --basetgz [base.tgz location]

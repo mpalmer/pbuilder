@@ -7,6 +7,10 @@ pbuilder-user-mode-linux \- personal package builder in UML
 .BI "pbuilder-user-mode-linux update [" "options" "]"
 .PP
 .BI "pbuilder-user-mode-linux build [" "options" "] " ".dsc-file"
+.PP
+.BI "pbuilder-user-mode-linux execute [" "options" "] " "script"
+.PP
+.BI "pbuilder-user-mode-linux login [" "options" "]"
 .SH DESCRIPTION
 Front end program to the 
 .B "pbuilder"
@@ -41,6 +45,13 @@ within the user-mode-linux environment.
 .TP
 .B "login"
 Invokes shell within UML.
+
+.TP
+.B "execute"
+Invokes a command or script inside UML.
+.B "execute"
+will copy the specified file into the UML system,
+and run it.
 
 .TP
 .BI "--uml-image [" "UML image" "]"

@@ -408,7 +408,43 @@ export DEBIAN_BUILDGCCVER=3.2
       </para>
     </sect1>
   </chapter>
-  <chapter>
+  <chapter id="otheruse">
+    <title>Other uses of pbuilder</title>
+    <sect1 id="chroot">
+      <title>Using pbuilder for small experiments</title>
+      <para>
+	There are cases when some small experimenting is required, and 
+	do not want to damage the main system,
+	like installing experimental library packages,
+	or compiling with experimental compilers.
+	For such cases, <command>pbuilder login</command> command is available.
+      </para>
+      <para>
+	<command>pbuilder login </command> is a debuggin feature for 
+	pbuilder itself, but it also allows users to have a temporal chroot.
+      </para>
+      <para>
+	Note that chroot is cleaned after logging out of the shell,
+	and mounting filesystems inside it is considered harmful.
+      </para>
+    </sect1>
+    <sect1>
+      <title>Running little programs inside the chroot</title>
+      <para>
+	To facilitate using pbuilder for other uses, 
+	<command>pbuilder execute</command> is available.
+	<command>pbuilder execute </command> will take a script 
+	specified in the command-line argument, and 
+	invoke the script inside the chroot.
+      </para>
+      <para>
+	The script can be useful for sequence of operations such as
+	installing ssh and adding a new user inside the chroot.
+      </para>
+    </sect1>
+
+  </chapter>
+  <chapter id="experimental">
     <title>Experimental or wishlist features of pbuilder</title>
     <para>
       There are some advanced features, above that of the 
@@ -543,6 +579,42 @@ PBUILDER_UML_IMAGE="/home/dancer/uml-image"
 	    </para>
 	  </listitem>
 	</itemizedlist>
+      </sect2>
+      <sect2>
+	<title>Using pbuilder-uml as a wrapper script to start up virtual machine</title>
+	<para>
+	  It is possible to use pbuilder-uml for other uses than just building Debian 
+	  packages.
+	  <command>pbuilder-user-mode-linux login</command>
+	  will let a user use a shell inside the user-mode-linux using the 
+	  pbuilder base image,
+	  and <command>pbuilder-user-mode-linux execute</command> will
+	  allow the user to execute a script inside the chroot.
+	</para>
+	<para>
+	  You can use the script to install ssh and add a new user,
+	  so that it is possible to access inside the UML through ssh.
+	</para>
+	<para>
+	  Note that it is not possible to use a script from 
+	  <filename>/tmp</filename> due to the way pbuilder-uml mounts 
+	  tmpfs at <filename>/tmp</filename>.
+	</para>
+	<para>
+	  The following is an example script  that may be useful in starting a sshd 
+	  inside uml.
+	</para>
+	<screen>
+#!/bin/bash
+
+apt-get install ssh
+echo "enter root password"
+passwd 
+sshd 
+ifconfig
+echo "Hit enter to finish"
+read
+	</screen>
       </sect2>
     </sect1>
     <sect1>

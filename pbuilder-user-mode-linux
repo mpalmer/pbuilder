@@ -237,6 +237,11 @@ case "${OPERATION}" in
 	EXTRACLEANUP=cleancow
 	operate_uml login
 	;;
+    execute)
+	usecow
+	EXTRACLEANUP=cleancow
+	operate_uml execute
+	;;
     create)
 	rootstrap -s 1000 ${PBUILDER_UML_IMAGE}
 	operate_uml update

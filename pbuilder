@@ -45,6 +45,22 @@ File extracted to: $BUILDPLACE
 "
 	chroot "$BUILDPLACE" bin/bash
 	;;
+    execute)
+	# try to execute arbitrary program.
+	shift
+	. /usr/lib/pbuilder/pbuilder-checkparams
+	EXECPROGRAM="$1"
+	if [ ! -f "${EXECPROGRAM}" ]; then
+	    echo "Command line parameter [$EXECPROGRAM] does not exist" >&2
+	    exit 1;
+	fi;
+	extractbuildplace
+	trap umountproc_cleanbuildplace exit
+	RUNNAME="$BUILDPLACE/run"
+	cat "$EXECPROGRAM" > "$RUNNAME"
+	chmod a+x "$RUNNAME"
+	chroot "$BUILDPLACE" /run
+	;;
     *)
 	. /usr/lib/pbuilder/pbuilder-modules
 	showhelp
