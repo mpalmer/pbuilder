@@ -31,6 +31,10 @@ for CONFIGFILE in  /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-
     fi
 done
 
+function usecow () {
+    PBUILDER_COW=",$BUILDPLACE/$$.cow"
+}
+
 function operate_uml () {
     # opeartes on UML, and runs pbuilder $1
 
@@ -91,10 +95,10 @@ EOF
 
     chmod a+x ${INSIDE_PBUILDER}
 
-    linux eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1=${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}
+    linux eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1="${PBUILDER_UML_IMAGE}${PBUILDER_COW}" devfs=mount init=${INSIDE_PBUILDER}
 }
 
-
+PBUILDER_COW=""
 OPERATION="$1"
 shift;
 
@@ -156,12 +160,14 @@ BUILDING_DSC_FILE=$(readlink -f "$1")
 
 case "${OPERATION}" in
     build)
+	usecow
 	operate_uml build 
 	;;
     update)
 	operate_uml update
 	;;
     login)
+	usecow
 	operate_uml login
 	;;
     create)
