@@ -35,6 +35,7 @@ function checkbuilddep_versiondeps () {
 	return 0;
       fi
     done
+    echo "      Tried versions: $PACKAGEVERSIONS"
     # cannot satisfy depends
     return 1;
 }
