@@ -4,11 +4,17 @@ pbuilder for Debian
 This is a personal builder.
 
 Try: 
-  pbuilder-createbuildenv woody
+  pbuilder create --distribution woody
 to create the initial build env.
 
-  pbuilder-updatebuildenv woody
+  pbuilder update
 would update
+
+
+pbuilder build some-random-.dsc 
+
+would build the file specified by the .dsc file in the chroot.
+
 
 It won't work with Debian 2.2, because dpkg-checkbuilddeps 
 does not exist yet in Debian 2.2.
