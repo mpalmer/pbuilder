@@ -90,7 +90,10 @@ function umount_one () {
 
   Could not unmount $1, there might be some program 
   still using files in /proc (klogd?).
-  Please check and kill it so that I can unmount $1
+  Please check and kill the process manually so that I can unmount $1
+
+  This error is only happens with chroot; try using user-mode-linux to 
+  avoid this message.
 
 EOF
 		chroot "$BUILDPLACE" bin/sh
