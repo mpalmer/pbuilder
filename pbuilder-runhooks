@@ -18,6 +18,13 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.16  2003/11/16 07:08:54  dancer
+# +	* THANKS: add
+# +
+# +	* pbuilder-runhooks: fix warning messages to be more correct, thanks
+# +	to Daniel Martin.
+# +
+#
 # Revision 1.15  2003/03/10 10:02:11  dancer
 # +2003-03-10  Junichi Uekawa  <dancer@debian.org>
 # +
@@ -159,8 +166,12 @@ function executehooks () {
 		    $CHROOTEXEC "$hooks/"$(basename "$fn")
 		    echo " -> user script $fn finished"
 		else
-		    filetype=$(basename "$fn" ) 
-		    echo "W: execute priv not set on file $filetype, not executing."
+		    if [ -f "$fn" ]; then
+			filetype=$(basename "$fn" ) 
+			echo "W: execute priv not set on file $filetype, not executing."
+		    else
+			echo "W: no hooks of type ${prefix} found"
+		    fi
 		fi  
 	        ;;	
 	esac
