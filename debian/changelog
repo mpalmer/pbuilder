@@ -1,9 +1,9 @@
-pbuilder (0.6.0.prerelease.20010927.1) unstable; urgency=low
+pbuilder (0.6.0.prerelease.20010930) unstable; urgency=low
 
   * fixing manpage section
   * Adding --configfile option, to load random config file.
-  * Adding --extrapackages option, to load random additional 
-  * Merging some patches from Dale, with some modifications to 
+  * Adding --extrapackages option, to load random additional
+  * Merging some patches from Dale, with some modifications to
     fit my taste. his changelog was :
     o Wrote pbuilder-runhooks and integrated it into the create and
       update scripts.
@@ -16,15 +16,16 @@ pbuilder (0.6.0.prerelease.20010927.1) unstable; urgency=low
 
     oo  Dale Amon <amon@vnl.com>  Wed, 26 Sep 2001 23:49:00 +0001
   * when HOOKDIR is not set, scripts won't be ran.
-    It is a security risk to be able to run any random script as 
+    It is a security risk to be able to run any random script as
     root, so be aware of this when setting "HOOKDIR".
   * debian/control: removed ${shlibs:Depends}, because there is none.
   * fixing logic error in updatebuildenv.
   * removed pushd and popd from runhooks, just because
     I don't think it looks cute.
-  * temporal upload ... 
-  
- -- Junichi Uekawa <dancer@debian.org>  Thu, 27 Sep 2001 20:09:03 +0900
+  * temporal upload ...
+  * logging what's copied in build target, parsing of .dsc
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 30 Sep 2001 01:49:59 +0900
 
 pbuilder (0.6) unstable; urgency=low
 
