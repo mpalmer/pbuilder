@@ -1,3 +1,12 @@
+2002-09-29  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilderrc.5: update manpage to document the vars.
+
+	* pbuilder-buildpackage (BUILD_PID): preserve file permissions 
+	on copying the result.
+	(BUILDRESULTUID,BUILDRESULTGID): define UID and GID.
+	chown and chgrp to the user ID after build.
+
 2002-09-25  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-runhooks (hooks): do not error out if there are no hooks in the hookdir.

@@ -110,10 +110,16 @@ executehooks "B"
 trap cleanbuildplace exit
 umountproc
 
-if [ -n "$BUILDRESULT" ]; then
-    mkdir -p "$BUILDRESULT"
-    if [ -d "$BUILDRESULT" ]; then
-	cp "$BUILDPLACE"/tmp/buildd/* "$BUILDRESULT" 2>/dev/null || true
+if [ -n "${BUILDRESULT}" ]; then
+    mkdir -p "${BUILDRESULT}"
+    if [ -d "${BUILDRESULT}" ]; then
+	if [ -n "${BUILDRESULTUID}" ]; then
+	    chown "${BUILDRESULTUID}" "${BUILDPLACE}"/tmp/buildd/*
+	fi
+	if [ -n "${BUILDRESULTGID}" ]; then
+	    chgrp "${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
+	fi
+	cp -p "${BUILDPLACE}"/tmp/buildd/* "${BUILDRESULT}" 2>/dev/null || true
     else
 	echo "E: BUILDRESULT=[$BUILDRESULT] is not a directory." >&2
     fi
