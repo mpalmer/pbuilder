@@ -3,8 +3,8 @@
 export LANG=C
 export LC_ALL=C
 
-DISTRIBUTION=$1
 . /etc/pbuilderrc
+. /usr/lib/pbuilder/pbuilder-checkparams
 CHROOTEXEC="chroot $BUILDPLACE "
 if [ -z "$DISTRIBUTION" ]; then
   DISTRIBUTION=woody

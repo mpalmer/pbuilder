@@ -2,13 +2,11 @@
 export LANG=C
 export LC_ALL=C
 
-#this option is optional
-DISTRIBUTION=$1
-
 . /etc/pbuilderrc
+. /usr/lib/pbuilder/pbuilder-checkparams
 CHROOTEXEC="chroot $BUILDPLACE "
 
-echo "Upgrading for distribution $DISTRIBUTION" 
+test -n "$DISTRIBUTION" && echo "Upgrading for distribution $DISTRIBUTION" 
 
 #cd $MYREPOSITORY
 #echo Initializing repository

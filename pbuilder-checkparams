@@ -1,3 +1,39 @@
 # this is sourced from pbuilder packages to process the optional parameters.
 
+while [ -n $1 ]; do
+  case "$1" in 
+    --basetgz) 
+      BASETGZ="$2";
+      shift; shift;
+      ;;
+    --buildplace)
+      BUILDPLACE="$2";
+      shift; shift;
+      ;;
+    --mirror)
+      MIRROR="$2";
+      shift; shift;
+      ;;
+    --http-proxy)
+      export http_proxy="$2";
+      shift; shift;
+      ;;
+    --distribution)
+      DISTRIBUTION="$2";
+      shift; shift;
+    --help)
+      cat <<EOF
+Command Line Options:
+ --basetgz [base.tgz location]
+ --buildplace [location of build]
+ --mirror [mirror location]
+ --http-proxy [proxy]
+ --distribution [distribution(woody/sid)]
+EOF
+    exit 1;
+      ;;
+    *)
+      break;
+  esac
+done
 
