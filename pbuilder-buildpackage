@@ -22,7 +22,7 @@ function checkbuilddep_internal () {
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
 	awk 'BEGIN{RS=","} {print}'); do
       echo " -> Considering $INSTALLPKG"
-      if echo "$INSTALLPKG" | grep '[' > /dev/null ; then
+      if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	  # this package has arch-deps.
 	  if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]!$ARCH[] ]" > /dev/null; then
 	      # don't install this on this arch
@@ -40,7 +40,7 @@ function checkbuilddep_internal () {
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
 	awk 'BEGIN{RS=","} {print}'); do
       echo " -> Considering $INSTALLPKG"
-      if echo "$INSTALLPKG" | grep '[' > /dev/null ; then
+      if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	  # this package has arch-deps.
 	  if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]!$ARCH[] ]" > /dev/null; then
 	      # don't install this on this arch
