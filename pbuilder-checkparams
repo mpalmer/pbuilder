@@ -35,6 +35,9 @@ IGNORE_UMOUNT=""
 while [ -n "$1" ]; do 
     case "$1" in 
 	--basetgz) 
+	    if [ "${PBCURRENTCOMMANDLINEOPERATION}" = 'create' ]; then 
+		touch "$2";
+	    fi
 	    BASETGZ=$(readlink -f "$2");
 	    shift; shift;
 	    ;;
