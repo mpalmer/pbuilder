@@ -527,15 +527,18 @@ export DEBIAN_BUILDGCCVER=3.2
       <para>
 	It has been verified that pbuilder-uml works,
 	as of version 0.59.
+	And since then, pbuilder-uml has seen a rapid evolution.
 	The configuration of pbuilder-uml goes in two steps:
 	<itemizedlist>
 	  <listitem>
 	    <para>Configuration of rootstrap</para>
+	  </listitem>
+	  <listitem>
 	    <para>Configuration of pbuilder-uml</para>
 	  </listitem>
 	</itemizedlist>
       </para>
-      <sect2>
+      <sect2 id="rootstrap">
 	<title>Configuring rootstrap</title>
 	<para>
 	  <command>rootstrap</command> is a program that 
@@ -578,7 +581,7 @@ netmask=255.255.255.0
 	  </listitem>
 	</itemizedlist>
       </sect2>
-      <sect2>
+      <sect2 id="pbuilderumlconfig">
 	<title>Configuring pbuilder-uml</title>
 	<para>
 	  The following needs to happen:
@@ -610,7 +613,33 @@ PBUILDER_UML_IMAGE="/home/dancer/uml-image"
 	  </itemizedlist>
 	</para>
       </sect2>
-      <sect2>
+      <sect2 id="consideruml">
+	<title>Considerations for running pbuilder-uml</title>
+	<para>
+	  pbuilder-user-mode-linux emulates most of pbuilder, but there
+	  are some differences.
+	</para>
+	<itemizedlist>
+	  <listitem>
+	    <para>	  
+	      pbuilder-user-mode-linux does not support all options of pbuilder
+	      properly yet. This is a problem, and will be addressed as 
+	      specific areas are discovered.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      /tmp is handled differently inside pbuilder-uml.
+	      In pbuilder-uml, /tmp is mounted as tmpfs inside UML,
+	      so accessing files under /tmp outside the user-mode-linux
+	      does not work.
+	      It affects options like
+	      <command><option>--configfile</option></command>.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+      <sect2 id="paralleluml">
 	<title>Parallel running of pbuilder-user-mode-linux</title>
 	<para>
 	  To run pbuilder-uml parallel on a system, there are a few things 
@@ -632,7 +661,7 @@ PBUILDER_UML_IMAGE="/home/dancer/uml-image"
 	  </listitem>
 	</itemizedlist>
       </sect2>
-      <sect2>
+      <sect2 id="pbuilderumlwrap">
 	<title>Using pbuilder-uml as a wrapper script to start up virtual machine</title>
 	<para>
 	  It is possible to use pbuilder-uml for other uses than just building Debian 

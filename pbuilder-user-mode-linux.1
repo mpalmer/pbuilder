@@ -139,9 +139,6 @@ Enable tracing of shell scripts used by pbuilder-user-mode-linux.
 Bind-mount the directory inside the chroot inside the user-mode-linux.
 
 .SH "NOTES"
-This software is in early stage of development. 
-Reading the source may help you in case this software doesn't work for you.
-
 For 
 .B build
 and
@@ -149,6 +146,12 @@ and
 targets, 
 .B pbuider-user-mode-linux
 will try to use COW devices.
+
+Inside user-mode-linux, pbuilder-uml will mount 
+tmpfs as 
+.B /tmp
+to avoid temporary file race conditions with outside of UML.
+This may cause problems trying to use files in /tmp directory.
 
 .SH "FILES"
 .TP
