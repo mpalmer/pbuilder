@@ -82,7 +82,11 @@ chroot /tmp/ubd1/ /tmp/chrootshell
 #some variables need to be set from outside values, possibly
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin
 export LOGNAME="${LOGNAME}"
-pbuilder "$1" --buildresult "" --buildplace /tmp/ubd1/ --internal-build-uml ${BUILDING_DSC_FILE} 
+EXTRAOPT=
+if [ -n "${UML_DISTRIBUTION}" ]; then
+  EXTRAOPT="--distribution ${UML_DISTRIBUTION}"
+fi
+pbuilder "$1" ${EXTRAOPT} --buildresult "" --buildplace /tmp/ubd1/ --internal-build-uml ${BUILDING_DSC_FILE} 
 EOF
 
     chmod a+x ${INSIDE_PBUILDER}
@@ -127,6 +131,10 @@ while [ -n "$1" ] ; do
 	    ;;
 	--mount-tmpfs)
 	    UML_MOUNT_TMPFS="$2";
+	    shift; shift;
+	    ;;
+	--distribution)
+	    UML_DISTRIBUTION="$2";
 	    shift; shift;
 	    ;;
 	--)

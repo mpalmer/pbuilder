@@ -38,6 +38,39 @@ Builds the package specified by
 .I ".dsc-file"
 within the user-mode-linux environment.
 
+.TP
+.B "login"
+Invokes shell within UML.
+
+.TP
+.BI "--eth0 [" "uml option for eth0" "]"
+Specify this option as parameter to UML.
+
+.TP
+.BI "--uml-ip [" "IP inside UML" "]"
+Specify this to set the IP inside UML.
+
+
+.TP
+.BI "--uml-netmask [" "netmask" "]"
+.TP
+.BI "--uml-network [" "network" "]"
+.TP
+.BI "--uml-broadcast [" "broadcast" "]"
+.TP
+.BI "--uml-gateway [" "gateway" "]"
+.TP
+.BI "--uml-image [" "UML image" "]"
+Specify the UML image to use.
+
+.TP
+.BI "--mount-tmpfs [" "yes" "]"
+Specify whether to mount tmpfs inside UML chroot.
+
+.TP
+.BI "--distribution [" "sid" "]"
+Specify the distribution.
+
 .SH "NOTES"
 This software is in early stage of development. 
 Reading the source may help you in case this software doesn't work for you.
