@@ -18,6 +18,9 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.6  2001/09/27 11:03:56  dancer
+# removing pushd and popd.
+#
 # Revision 1.5  2001/09/27 09:16:34  dancer
 # fixing some serious typos .
 #
@@ -83,10 +86,9 @@ function unloadhooks () {
 #
 
 function executehooks () {
-    local prefix=$1
+    local prefix="$1"
     # is this necessary?
-    pushd $BUILDPLACE/$hooks
-    for fn in $prefix[0-9][0-9]* ; do
+    for fn in "$BUILDPLACE/$hooks/$prefix"[0-9][0-9]* ; do
 	case "$fn" in
 	    *~)
 		echo "E: skipping an editor backup file $fn"
@@ -96,16 +98,15 @@ function executehooks () {
 		;;
 	    *)	
 		if [ -x $fn ]; then
-		    $CHROOTEXEC "$hooks/$fn"
+		    $CHROOTEXEC "$hooks/"$(basename "$fn")
 		    echo " -> user script $fn finished"
 		else
-		    filetype=$(readlink -f "$fn")
+		    filetype=$(readlink -f $(basename "$fn" ) )
 		    echo "E: execute priv not set on file $filetype"
 		fi  
 	        ;;	
 	esac
     done
-    popd
 }
 
 #--------------------------------------------------------------------------
