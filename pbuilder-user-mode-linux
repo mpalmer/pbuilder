@@ -161,6 +161,7 @@ case "${OPERATION}" in
 	;;
     create)
 	rootstrap -s 100 ${PBUILDER_UML_IMAGE}
+	operate_uml update
 	;;
     *)
 	echo "Error: Unknown option [${OPERATION}] was specified " >&2 
