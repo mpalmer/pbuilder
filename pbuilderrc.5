@@ -232,6 +232,14 @@ Setting this variable overrides other options.
 Sets timeout time.
 Build will be stoped with SIGTERM after the set time.
 
+.TP
+.BI "export DEBIAN_FRONTEND=" "noninteractive"
+Sets interactiveness of pbuilder run.
+Setting this value to blank will cause the 
+pbuilder run to be interactive.
+Change this value when noninteractive upgrades 
+do not work.
+
 .SH "FILES"
 .I "/etc/pbuilderrc"
 .SH "SEE ALSO"
