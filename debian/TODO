@@ -1,15 +1,22 @@
 TODO and possible bugs: 
+
   * Build dependency handles |, but not when [] and | exist. -- no
   package should be using it ?
   * Machine type specification in Build dependency should either have
    [!xxx !xxx !xxx ...] or [xxx xxx xxx ...] 
   [!xxx xxx] formats are not parsed, and should really not exist.
-  * cooperate with sbuild, and use sbuild if possible.
+  * Creating a sbuilder, command, which cooperates with sbuild, and 
+    use sbuild if possible.
   * Please file a bug if you find that pbuilder does not exit with
   error condition on failure to  build a package.
   * Remember to update the TODO file.
-  *  how about passing "-o dpkg::Options=--force-confnew" to apt?
+  * Suppor for apt-move. Some, mount --bind trick ?
+
+  * Supporting really automatic "pbuilder upgrade"
+    - how about passing "-o dpkg::Options=--force-confnew" to apt?
     and also making "start-stop-daemon" to be a dummy script?
+    - using policy-rc.d ? Get people to use invoke-rc.d?
+
 
 $Id$
 

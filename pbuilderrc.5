@@ -49,6 +49,12 @@ cleans up this directory.
 .BI "MIRRORSITE=" "http://www.jp.debian.org/debian"
 Specify the mirror site which contains the
 main Debian distribution.
+
+Note that you cannot really use
+.B "file:/" 
+kind of URL, because the location needs to be accessible from within
+the chroot.
+
 .TP
 .BI "NONUSMIRRORSITE=" "http://www.jp.debian.org/debian-non-US"
 Specify the mirror site which contains

@@ -91,6 +91,11 @@ which should point to your favorite mirror.
 This option can optionally be omitted, and left blank,
 in which case, this part is skipped.
 
+Note that these URLs specified to pbuilder will be used from within
+the chroot, and specifying 
+.B "file:/somewhere/"
+will most probably fail.
+
 .TP
 .BI "--nonusmirror [" "mirror location" "]"
 The non-US mirror, specified like the 
