@@ -34,10 +34,15 @@ TODO and possible bugs:
 
   * Do not install Build-*-Indep: targets for binary-arch building.
 
-  * Run the build target with a non-root user.
-    Create a random entry inside the chroot ?
-  * $HOME etc. environment vars are set to bogus values
+  * $HOME, $TMP, $TMPDIR, etc. environment vars are set to bogus
+    values
   * Lock-filing of $BASETGZ between processes.
+
+  * Running build as normal user, and using real root when running 
+    binary target ?
+
+  * check cross-compile support, maybe adding support for dpkg-cross
+    into build-depends checker.
 
 $Id$
 

@@ -1,3 +1,27 @@
+2002-03-12  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-satisfydepends: created
+	  Modified/forked pbuilder-buildpackage.
+	  Should be possible to install build-dependency outside of 
+	  chroot, for usual operation. 
+	  -- Do you trust pbuilder parser ? 
+	  Instead of dpkg --print-architecture, use 
+	  dpkg-architecture -qDEB_HOST_ARCH
+	  It is now possible to debug dependency with 
+	  pbuilder-satisfydepends --echo --force-version --control controlfile
+
+	* pbuilder-buildpackage: only run apt-get -y 
+	  install ${EXTRAPACKAGES} when ${EXTRAPACKAGES} is not ""
+
+	* debian/TODO: updated, non-root builds using fakeroot 
+	  are now supported.
+	  document $TMPDIR and $HOME problems.
+
+	* pbuilder-buildpackage: only handle Build-Depends / Control
+	  found in Source section and ignore any such entry in package 
+	  sections..
+	  
+
 2002-03-10  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/changelog: add new bug # to changelog.

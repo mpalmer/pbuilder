@@ -22,6 +22,7 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-modules $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder $(DESTDIR)/usr/sbin
 	$(INSTALL_EXECUTABLE) pdebuild $(DESTDIR)/usr/bin
+	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/etc
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/pbuilder
 
