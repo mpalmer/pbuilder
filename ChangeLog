@@ -1,3 +1,10 @@
+2002-09-24  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-modules (copy_local_configuration): fix the 
+	rules to copy over to work around debootstrap breakage
+	with handling of symlinks.
+	Remove the target file prior to copy.
+	
 2002-09-22  Junichi Uekawa  <dancer@debian.org>
 
 	* THANKS: updated thanks file.

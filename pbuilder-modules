@@ -168,7 +168,8 @@ EOF
 function copy_local_configuration () {
     echo " -> copying local configuration"
     for a in hosts hostname resolv.conf; do 
-	cp $( readlink -f /etc/$a ) "$BUILDPLACE/etc/$a";
+	rm -f "$BUILDPLACE/etc/$a"
+	cp $( readlink -f "/etc/$a" ) "$BUILDPLACE/etc/$a";
     done
 }
 
