@@ -1,3 +1,24 @@
+2003-03-10  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-satisfydepends: quote some strings... trying to be pedantic
+
+	* pbuilder-buildpackage-funcs: unset LOGNAME for when building with 
+	real root privilage.
+	thanks Barak Pearlmutter <bap@cs.unm.edu>
+
+	* pbuilder.8: document X hooks which were previously undocumented.
+
+	* pbuilder-user-mode-linux (BUILDING_DSC_FILE): use readlink on real existing files.
+	GNU "readlink -f " exits with an exit code of 1 when the file does not 
+	exist, debianutils readlink did not. 
+
+	* pbuilder-runhooks (hooks): do not call readlink here, 
+	  since the file may not exist.
+
+	* pbuilder-checkparams (USE_PKGNAME_LOGFILE): use readlink on real existing files.
+
+	* pbuilder-buildpackage (PACKAGENAME): use readlink on real existing files.
+
 2003-03-09  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder.8: fix typo 

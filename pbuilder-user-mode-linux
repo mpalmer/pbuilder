@@ -202,7 +202,7 @@ while [ -n "$1" ] ; do
 	    UML_BUILDRESULT=$(readlink -f "$2")
 	    shift;shift;;
 	--logfile)
-	    exec > $(readlink -f "$2");
+	    exec > "$2";
 	    exec 2>&1
 	    PBUILDER_BUILD_LOGFILE=$(readlink -f "$2")
 	    shift;shift;;
@@ -220,7 +220,7 @@ while [ -n "$1" ] ; do
     esac
 done
 
-BUILDING_DSC_FILE=$(readlink -f "$1")
+BUILDING_DSC_FILE=$(readlink -f "$1") || true # ignore failure here
 EXTRACLEANUP=
 UML_EXITCODE=1
 case "${OPERATION}" in

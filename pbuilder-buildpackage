@@ -54,9 +54,10 @@ createbuilduser
 
 if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
     if [ "${USE_PKGNAME_LOGFILE}" = "yes" ]; then
-	PBUILDER_BUILD_LOGFILE=$(readlink -f "${BUILDRESULT}/"$(basename "${PACKAGENAME}" .dsc).log)
+	PBUILDER_BUILD_LOGFILE="${BUILDRESULT}/"$(basename "${PACKAGENAME}" .dsc)
 	exec > "${PBUILDER_BUILD_LOGFILE}"
 	exec 2>&1
+	PBUILDER_BUILD_LOGFILE=$(readlink -f "${PBUILDER_BUILD_LOGFILE}")
 	echo "I: Using pkgname logfile"
 	showbuildbanner '$Id$'
 	echobacktime

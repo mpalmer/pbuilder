@@ -18,6 +18,29 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.15  2003/03/10 10:02:11  dancer
+# +2003-03-10  Junichi Uekawa  <dancer@debian.org>
+# +
+# +	* pbuilder-satisfydepends: quote some strings... trying to be pedantic
+# +
+# +	* pbuilder-buildpackage-funcs: unset LOGNAME for when building with
+# +	real root privilage.
+# +	thanks Barak Pearlmutter <bap@cs.unm.edu>
+# +
+# +	* pbuilder.8: document X hooks which were previously undocumented.
+# +
+# +	* pbuilder-user-mode-linux (BUILDING_DSC_FILE): use readlink on real existing files.
+# +	GNU "readlink -f " exits with an exit code of 1 when the file does not
+# +	exist, debianutils readlink did not.
+# +
+# +	* pbuilder-runhooks (hooks): do not call readlink here,
+# +	  since the file may not exist.
+# +
+# +	* pbuilder-checkparams (USE_PKGNAME_LOGFILE): use readlink on real existing files.
+# +
+# +	* pbuilder-buildpackage (PACKAGENAME): use readlink on real existing files.
+# +
+#
 # Revision 1.14  2002/09/25 08:55:44  dancer
 # +	* pbuilder-runhooks (hooks): do not error out if there are no hooks in the hookdir.
 #
@@ -136,7 +159,7 @@ function executehooks () {
 		    $CHROOTEXEC "$hooks/"$(basename "$fn")
 		    echo " -> user script $fn finished"
 		else
-		    filetype=$(readlink -f $(basename "$fn" ) )
+		    filetype=$(basename "$fn" ) 
 		    echo "W: execute priv not set on file $filetype, not executing."
 		fi  
 	        ;;	

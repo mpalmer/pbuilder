@@ -71,5 +71,7 @@ function createbuilduser () {
 	echo "$BUILDUSERNAME:*:$BUILDUSERID:" >> $BUILDPLACE/etc/group
 	echo "$BUILDUSERNAME:!:::::::" >> $BUILDPLACE/etc/shadow
 	unset LOGNAME
+    else
+	unset LOGNAME
     fi
 }

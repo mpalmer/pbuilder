@@ -87,7 +87,7 @@ while [ -n "$1" ]; do
 	    shift; shift;
 	    ;;
 	--logfile)
-	    exec > $(readlink -f "$2");
+	    exec > "$2";
 	    exec 2>&1
 	    PBUILDER_BUILD_LOGFILE=$(readlink -f "$2")
 	    shift; shift;
