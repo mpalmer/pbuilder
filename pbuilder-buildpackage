@@ -125,7 +125,7 @@ function checkbuilddep_internal () {
       done;
       if [ "$SATISFIED" = "no" ]; then
 	  echo "E: pbuilder: Could not satisfy build-dependency." >&2
-	  umountproc_cleanbuildplace
+	  saveaptcache_umountproc_cleanbuildplace
 	  exit 1
       fi
     done;
@@ -160,7 +160,7 @@ function checkbuilddep_internal () {
       if $CHROOTEXEC usr/bin/dpkg -s $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') 2>&1 | grep ^Package: > /dev/null; then
 	  if ! $CHROOTEXEC usr/bin/apt-get -y remove ${CURRENTREALPKGNAME} ; then
 	      echo "E: Could not satisfy build-conflicts" >&2
-	      umountproc_cleanbuildplace
+	      saveaptcache_umountproc_cleanbuildplace
 	      exit 1
 	  fi
       else
@@ -183,6 +183,13 @@ function showbuildbanner () {
     echo "pbuilder-buildpackage/"$(dpkg --print-architecture) '$Id$'
     echo
 }
+
+function saveaptcache_umountproc_cleanbuildplace () {
+    # save the apt cache, and call umountproc_cleanbuildplace
+    save_aptcache
+    umountproc_cleanbuildplace
+}
+
 
 . /usr/lib/pbuilder/pbuilder-checkparams
 
@@ -209,7 +216,7 @@ if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basena
 fi
 
 recover_aptcache
-echo Installing the build-deps
+echo "Installing the build-deps"
 checkbuilddep
 save_aptcache
 
