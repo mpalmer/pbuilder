@@ -400,6 +400,13 @@ export DEBIAN_BUILDGCCVER=3.2
 	<command><option>--othermirror "deb http://local/mirror stable main|deb-src http://local/source/repository ./"</option></command>
       </para>
     </sect1>
+    <sect1>
+      <title>How to get pbuilder to run apt-get update before trying to satisfy build-dependency</title>
+      <para>
+	You can use hook scripts for this.
+	D scripts are run before satisfying build-dependency.
+      </para>
+    </sect1>
   </chapter>
   <chapter>
     <title>Experimental or wishlist features of pbuilder</title>
