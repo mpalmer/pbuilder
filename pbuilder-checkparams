@@ -2,7 +2,7 @@
 # this is sourced from pbuilder packages to process the optional parameters.
 
 for RCFILE in /usr/share/pbuilder/pbuilderrc /etc/pbuilderrc; do
-    if [ -f "$RCFILE"]; then 
+    if [ -f "$RCFILE" ]; then 
 	. "$RCFILE"
     else
 	echo "W: $RCFILE does not exist" 
