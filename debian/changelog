@@ -1,9 +1,11 @@
-pbuilder (0.54) UNRELEASED; urgency=low
+pbuilder (0.54) unstable; urgency=low
 
   * Fixed ordering of messages so that concurrent-building experience is 
   better.
+  * Do not lock while extracting, it is not needed.
+  (closes: #173038)
 
- -- Junichi Uekawa <dancer@debian.org>  Sun, 15 Dec 2002 12:57:31 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 15 Dec 2002 13:05:05 +0900
 
 pbuilder (0.53) unstable; urgency=low
 

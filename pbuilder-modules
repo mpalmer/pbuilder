@@ -187,23 +187,15 @@ function extractbuildplace () {
 	    echo "E: failed to build the directory to chroot"
 	    exit 1
 	fi
-	while [ -f "${BASETGZ}.tmp" ]; do
-	    echo " -> Someone else has lock over ${BASETGZ}.tmp, waiting"
-	    sleep 10s
-	done
-	touch "${BASETGZ}.tmp"
 	echo " -> extracting base tarball [${BASETGZ}]"
 	if [ ! -f "$BASETGZ" ]; then
 	    echo "E: failed to find $BASETGZ, have you done <pbuilder create> to create your base tarball yet?"
-	    rm -f "${BASETGZ}.tmp"
 	    exit 1
 	fi
 	if ! (cd "$BUILDPLACE" && tar xfzp "$BASETGZ"); then
 	    echo "E: failed to extract $BASETGZ to $BUILDPLACE"
-	    rm -f "${BASETGZ}.tmp"
 	    exit 1
 	fi
-	rm -f "${BASETGZ}.tmp"
 	echo " -> creating local configuration"
 	hostname -f > "$BUILDPLACE/etc/mailname"
     fi
