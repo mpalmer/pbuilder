@@ -1,3 +1,15 @@
+pbuilder (0.117) unstable; urgency=HIGH
+
+  * Remove pbuilder-user-mode-linux package for the time being, until 
+    such time that user-mode-linux package is properly restored into Debian.
+    (closes: #276992)
+  - this is a task specially done for sarge release; to create a package 
+    which does create pbuilder-uml, copy the files and rebuild:
+    debian/rules-uml -> debian/rules
+    debian/control-uml -> debian/control
+  
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 20 Oct 2004 08:15:40 +0900
+
 pbuilder (0.116) unstable; urgency=low
 
   * Maintenance update on pbuilder
