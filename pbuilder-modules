@@ -113,6 +113,9 @@ function umountproc () {
     done
 }
 
+
+# Mount /proc /dev/pts /dev and bind-mount points
+# Also create a policy-rc.d script if it doesn't already exist.
 function mountproc () {
     if [ "$USEPROC" = "yes" ]; then
 	echo " -> mounting /proc filesystem"
@@ -134,6 +137,17 @@ function mountproc () {
 	mkdir -p "$BUILDPLACE/$mnt"
 	mount -obind "$mnt" "$BUILDPLACE/$mnt"
     done
+    if [ -f "$BUILDPLACE/usr/sbin/policy-rc.d" ]; then
+	echo " -> policy-rc.d already exists"
+    else
+	echo " -> installing dummy policy-rc.d"
+	echo "\
+#!/bin/sh
+
+exit 101
+" >  "$BUILDPLACE/usr/sbin/policy-rc.d" 
+	chmod a+x "$BUILDPLACE/usr/sbin/policy-rc.d" 
+    fi
 }
 
 ## function to clean subdirs, use instead of rm -r

@@ -94,7 +94,7 @@ fi
 
 (
     : Build process
-    $CHROOTEXEC /bin/bash -c "${DPKG_COMMANDLINE}"
+    echo  "${DPKG_COMMANDLINE}" | $CHROOTEXEC /bin/bash
 ) &
 BUILD_PID=$!
 if [ -n "${TIMEOUT_TIME}" ]; then
