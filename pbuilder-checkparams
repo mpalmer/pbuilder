@@ -24,6 +24,7 @@
 INTERNAL_BUILD_UML=""
 CHROOTEXEC=""
 OVERRIDE_APTLINES="no"
+BINARY_ARCH="no"
 
 while [ -n "$1" ]; do 
     case "$1" in 
@@ -121,6 +122,11 @@ while [ -n "$1" ]; do
 	    ;;
 	--override-config)
 	    OVERRIDE_APTLINES="yes"
+	    shift;
+	    ;;
+	--binary-arch)
+	    BINARY_ARCH="yes"
+	    DEBBUILDOPTS="${DEBBUILDOPTS} -B"
 	    shift;
 	    ;;
 	--) # this is an empty option, to no longer process.

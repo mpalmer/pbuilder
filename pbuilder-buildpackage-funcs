@@ -31,6 +31,11 @@ function copydsc () {
 }
 
 function checkbuilddep () {
+    local BUILDOPT="--binary-all"
+    case "${BINARY_ARCH}" in
+	yes) BUILDOPT="--binary-arch";;
+	*) ;;
+    esac
     if ! /usr/lib/pbuilder/pbuilder-satisfydepends --control "$BUILDPLACE/"tmp/buildd/*/debian/control --chroot "$BUILDPLACE" --binary-all ; then
 	echo "E: pbuilder-satisfydepends failed." >&2
 	exit 1

@@ -1,5 +1,17 @@
 2002-11-27  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-buildpackage-funcs: try and implement binary-arch option.
+
+	* pbuilder-checkparams (--binary-arch): set DEBBUILDOPTS.
+
+	* pbuilder.8: document --binary-arch
+
+	* pbuilder-modules (pbuilder-options): add doc of binary-arch
+
+	* pbuilder-checkparams (OVERRIDE_APTLINES): --binary-arch option.
+	(BINARY_ARCH): set initial value to "no".
+	thanks: Daniel Schepler <schepler@math.berkeley.edu>
+
 	* THANKS: update.
 
 	* pbuilder-buildpackage-funcs (createbuilduser): do not set HOME here.
