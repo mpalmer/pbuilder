@@ -3,13 +3,12 @@ pbuilder (0.23) unstable; urgency=low
   * New version, not yet released.
   * Cache is updated even when Build-Dep processing routine fails. 
     reported by Mark Brown (closes: #129053)
-    (please test)
   * Fix update target to remove packages specified in REMOVEPACKAGES.
   * Support building as non-root user, and using fakeroot inside 
-    the chroot. (please test) -- can't do.
-  * EXTRAPACKAGES takes effect within the build target. (please test)
+    the chroot. 
+  * EXTRAPACKAGES takes effect within the build target.
   * handle ( <<version) version dependency format. Space should be 
-    allowed there. (please test)
+    allowed there. 
   * /etc/mailname inside chroot is generated. (closes: #133773)
   * apply fixed description, which looks better, by joeyh, thanks.
     (closes: #134457)
