@@ -135,7 +135,7 @@ while [ -n "$1" ]; do
 	    CHROOTEXEC="$2"
 	    shift; shift;
 	    ;;
-	--internal-build-uml)
+	--internal-build-uml|--no-targz)
 	    # specify this option if I am running inside UML.
 	    echo " -> Running in pbuilder-user-mode-linux mode"
 	    INTERNAL_BUILD_UML="yes"

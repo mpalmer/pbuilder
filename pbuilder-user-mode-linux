@@ -22,34 +22,43 @@ set -e
 
 function cleanup_function () {
     rm -f ${INSIDE_PBUILDER}
+    ${EXTRACLEANUP}
 }
 
 
-for CONFIGFILE in  /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-uml.conf ${HOME}/.pbuilderrc; do
+. /usr/lib/pbuilder/pbuilder-loadconfig
+
+for CONFIGFILE in /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-uml.conf ${HOME}/.pbuilderrc; do
     if [ -f ${CONFIGFILE} ]; then
 	. ${CONFIGFILE}
     fi
 done
 
 function usecow () {
-    PBUILDER_COW="$BUILDPLACE/$$.cow,"
+    PBUILDER_COWFILENAME=$(tempfile -d "${BUILDPLACE}" --suffix .cow)     
+    PBUILDER_COW="${PBUILDER_COWFILENAME},"
+    rm -f "${PBUILDER_COWFILENAME}"
+}
+
+function cleancow () {
+    # clean the cow file
+    rm -f "${PBUILDER_COWFILENAME}"
 }
 
 function operate_uml () {
     # opeartes on UML, and runs pbuilder $1
-
-
     # use this script file to bootstrap the pbuilder inside the UML
     INSIDE_PBUILDER=$(tempfile)
     trap cleanup_function exit
 
-    UML_CHROOT_MOUNTPOINT=/tmp/ubd1
+    UML_CHROOT_MOUNTPOINT=/mnt/
+
+#The following script is ran inside UML as soon as it is started.
 
     cat <<EOF > ${INSIDE_PBUILDER}
 #! /bin/bash
 mount -t proc /proc /proc
 mount -t tmpfs /tmp /tmp
-mkdir -p ${UML_CHROOT_MOUNTPOINT}
 mount -t ext2 /dev/ubd/1 ${UML_CHROOT_MOUNTPOINT}
 if [ "${UML_MOUNT_TMPFS}" = "yes" ]; then
   mount -t tmpfs ${UML_CHROOT_MOUNTPOINT}/tmp ${UML_CHROOT_MOUNTPOINT}/tmp
@@ -57,6 +66,7 @@ else
   # clean up tmp before playing with it.
   rm -rf ${UML_CHROOT_MOUNTPOINT}/tmp
   mkdir ${UML_CHROOT_MOUNTPOINT}/tmp
+  chmod 1777 ${UML_CHROOT_MOUNTPOINT}/tmp
 fi
 
 cat <<IP > ${UML_CHROOT_MOUNTPOINT}/etc/network/interfaces
@@ -85,23 +95,24 @@ chroot ${UML_CHROOT_MOUNTPOINT} /tmp/chrootshell
 
 #some variables need to be set from outside values, possibly
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin
+export TMPDIR=/tmp
 export LOGNAME="${LOGNAME}"
 EXTRAOPT=
 if [ -n "${UML_DISTRIBUTION}" ]; then
   EXTRAOPT="--distribution ${UML_DISTRIBUTION}"
 fi
-pbuilder "$1" ${EXTRAOPT} --buildresult "" --buildplace /tmp/ubd1/ --internal-build-uml ${BUILDING_DSC_FILE} 
+pbuilder "$1" ${EXTRAOPT} --buildresult "" --buildplace ${UML_CHROOT_MOUNTPOINT} --internal-build-uml ${BUILDING_DSC_FILE} 
 EOF
 
     chmod a+x ${INSIDE_PBUILDER}
 
+    echo Invoking: "linux eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1=${PBUILDER_COW}${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}"
     linux eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1="${PBUILDER_COW}${PBUILDER_UML_IMAGE}" devfs=mount init=${INSIDE_PBUILDER}
 }
 
 PBUILDER_COW=""
 OPERATION="$1"
 shift;
-
 
 while [ -n "$1" ] ; do
     case "$1" in
@@ -156,11 +167,12 @@ while [ -n "$1" ] ; do
 done
 
 BUILDING_DSC_FILE=$(readlink -f "$1")
-
+EXTRACLEANUP=
 
 case "${OPERATION}" in
     build)
 	usecow
+	EXTRACLEANUP=cleancow
 	operate_uml build 
 	;;
     update)
@@ -168,6 +180,7 @@ case "${OPERATION}" in
 	;;
     login)
 	usecow
+	EXTRACLEANUP=cleancow
 	operate_uml login
 	;;
     create)

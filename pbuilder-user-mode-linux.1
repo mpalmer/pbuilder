@@ -86,11 +86,20 @@ will try to use COW devices.
 
 .SH "FILES"
 .TP
+.I "/etc/pbuilderrc"
+The system-wide configuration file for pbuilder.
+.TP
+.I "/usr/share/pbuilder/pbuilderrc"
+The default settings for pbuilder, used as fallback for all 
+values that is not specified in
+.B "/etc/pbuilderrc."
+.TP
 .B "/etc/pbuilder/pbuilder-uml.conf"
-System-wide configuration file.
+System-wide configuration file for pbuilder-uml, 
+it will take priority over pbuilder configurations.
 .TP
 .B "/usr/share/pbuilder/pbuilder-uml.conf"
-Software-default configuration file.
+Software-default configuration file for pbuilder-uml.
 .TP
 .B "${HOME}/.pbuilderrc"
 User-default configuration file.

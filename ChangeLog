@@ -1,3 +1,53 @@
+2003-01-07  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml: update documentation
+	and add chapter on pbuilder-uml, document that pbuilder-uml actually
+	works, and some detailed nodes on how to use them.
+	Add FAQ entry on how to specify extra apt sources.
+
+	* pbuilder-user-mode-linux.1: update doc to document that 
+	configuration files for pbuilder is now read in.
+
+	* pbuilder-user-mode-linux: add debug info, to print out
+	the command-line used for running uml.
+	export TMPDIR=/tmp inside the chroot inside UML.
+	change UML_CHROOT_MOUNTPOINT from /tmp/ubd1 to /mnt,
+	and do not mkdir UML_CHROOT_MOUNTPOINT.
+	fix /tmp creation script so that /tmp is writable when
+	not using tmpfs.
+	use tempfile in creating the COW file.
+	clean COW file after finishing.
+	remove temporary file created by tempfile, because UML doesn't seem to 
+	like the zero-byte file. (POSSIBLE SECURITY PROBLEM)
+	extra cleanup added for cleanup_function
+
+	* pbuilder-uml.conf (BUILDPLACE): add definition of BUILDPLACE
+	for pbuilder-uml. It is probably needed, because BUILDPLACE
+	needs to be writable by the user for UML, while it is not for 
+	pbuilder.
+
+	* pbuilder-user-mode-linux: load config for pbuilder also, before
+	trying to load other things.
+
+2003-01-06  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml (EXTRAPACKAGES): document possible usage of pbuilder for dchroot.
+
+	* pbuilder.8: document --no-targz
+
+	* pbuilder-checkparams (USE_PKGNAME_LOGFILE): allow
+	--no-targz option as alias to --internal-build-uml
+
+	* pdebuild (ARCHITECTURE): use dpkg-architecture
+	to find out the architecture.
+	sign changes file not dsc file.
+	pointed out by
+	Andrew Lau <netsnipe@debianplanet.org>, bug #175432
+
+2003-01-04  Junichi Uekawa  <dancer@debian.org>
+
+	* debian/control (Description): fix suggests to pbuilder-uml
+
 2003-01-03  Junichi Uekawa  <dancer@debian.org>
 
 	* Documentation/pbuilder-doc.xml: add notes on what kind of things 

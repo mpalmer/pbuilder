@@ -1,3 +1,27 @@
+pbuilder (0.59) unstable; urgency=low
+
+  * Load config for pbuilder in pbuilder-uml, so that BUILDPLACE is defined.
+  buildpackage didn't work otherwise.
+  * Fixed pbuilder-uml so that it actually works.
+  * Document how to add extra apt sources in the documentation FAQ section.
+  * pbuider-uml now works, and document how to set it up in the documentation
+    (closes: #175583)
+
+ -- Junichi Uekawa <dancer@debian.org>  Tue,  7 Jan 2003 17:34:33 +0900
+
+pbuilder (0.58) unstable; urgency=low
+
+  * Fix Suggests to pbuider-uml. (closes: #175158)
+  * Sign changes file instead of dsc file in pdebuild
+    (closes: #175432)
+  thanks to Andrew Lau <netsnipe@debianplanet.org> for
+  reporting.
+  * Documentation updates, document some features possibly
+  useful for dchroot.
+  * add --no-targz option.
+
+ -- Junichi Uekawa <dancer@debian.org>  Mon,  6 Jan 2003 16:34:17 +0900
+
 pbuilder (0.57) unstable; urgency=low
 
   * A new year release.

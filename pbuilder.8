@@ -322,6 +322,20 @@ Setting
 after this option will re-set some parts of the effect.
 
 
+.TP
+.BI "--no-targz"
+Not using base.tgz for operation.
+The
+.B "--buildplace"
+will not be deleted and reconstructed from
+a 
+.B .tar.gz
+file.
+
+Useful when experimenting with 
+chroots, or trying to create chroots outside control
+of
+.B pbuilder.
 
 .SH "FILES"
 .TP

@@ -359,14 +359,14 @@ export DEBIAN_BUILDGCCVER=3.2
     </sect1>
   </chapter>
   <chapter>
-    <title>Known Problems</title>
+    <title>Frequently asked questions</title>
     <para>
       Here, known problems and frequently asked questions are
-      documented. 
-      This part is moved from README.Debian file.
+      documented. This portion was initially available in README.Debian
+      file, but moved into here.
     </para>
     <sect1>
-      <title>Notes on pbuilder create</title>
+      <title>pbuilder create fails</title>
       <para>
 	It often happens that pbuilder cannot create latest chroot.
 	Try upgrading pbuilder and debootstrap.
@@ -386,6 +386,18 @@ export DEBIAN_BUILDGCCVER=3.2
 	directory, or set 
 	<screen>export TMPDIR=/tmp</screen>
 	in pbuilderrc. Take your pick.
+      </para>
+    </sect1>
+    <sect1>
+      <title>Specialized requirement on apt sources list</title>
+      <para>
+	If you have some very specialized requirements on your 
+	apt setup inside pbuilder, 
+	it is possible to specify that through 
+	<command><option>--othermirror</option></command>
+	option.
+	Try something like:
+	<command><option>--othermirror "deb http://local/mirror stable main|deb-src http://local/source/repository ./"</option></command>
       </para>
     </sect1>
   </chapter>
@@ -413,12 +425,96 @@ export DEBIAN_BUILDGCCVER=3.2
 	on <command>chroot</command> and <command>tar</command> 
 	and <command>gzip</command>, which are known to work
 	on most Unix systems.
+	However, <command>pbuilder-uml</command>  uses COW method for 
+	file access, and it is so much more faster than pbuilder 
+	when building most packages.
       </para>
       <para>
-	Currently there are problems with rootstrap that 
-	stops <command>pbuilder-uml</command> from starting,
-	and help, or success reports would be appreciated.
+	It has been verified that pbuilder-uml works,
+	as of version 0.59.
+	The configuration of pbuilder-uml goes in two steps:
+	<itemizedlist>
+	  <listitem>
+	    <para>Configuration of rootstrap</para>
+	    <para>Configuration of pbuilder-uml</para>
+	  </listitem>
+	</itemizedlist>
       </para>
+      <sect2>
+	<title>Configuring rootstrap</title>
+	<para>
+	  <command>rootstrap</command> is a program that 
+	  is a wrapper to debootstrap, creating a Debian disk image inside
+	  UML.
+	  To configure rootstrap, there are several requirements.
+	</para>
+	<itemizedlist>
+	  <listitem>
+	    <para>install rootstrap package</para>
+	  </listitem>
+	  <listitem>
+	    <para>add the user to uml-net group to allow access to network
+	      <screen>
+adduser dancer uml-net
+	      </screen></para>
+	  </listitem>
+	  <listitem>
+	    <para>Check that compile supports tun/tap interface,
+	      and recompile the kernel if necessary
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>Set up /etc/rootstrap/rootstrap.conf, for example,
+	      if the current host is 192.168.1.2, changing following 
+	      entries to something like this seems to work.
+	      <screen>
+transport=tuntap
+interface=eth0
+gateway=192.168.1.1
+mirror=http://192.168.1.2:8081/debian
+host=192.168.1.198
+uml=192.168.1.199
+netmask=255.255.255.0
+	      </screen>
+	      Some experimentation with configuration and running
+	      <command>rootstrap ~/test.uml</command> to actually 
+	      test it would be handy.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+      <sect2>
+	<title>Configuring pbuilder-uml</title>
+	<para>
+	  The following needs to happen:
+	  <itemizedlist>
+	    <listitem>
+	      <para>install pbuilder-uml package</para>
+	    </listitem>
+	    <listitem>
+	      <para>
+		Set configuration file <filename>/etc/pbuilder/pbuilder-uml.conf</filename> as follows
+		<screen>
+MY_ETH0=tuntap,,,192.168.1.198
+UML_IP=192.168.1.199
+UML_NETMASK=255.255.255.0
+UML_NETWORK=192.168.1.0
+UML_BROADCAST=255.255.255.255
+UML_GATEWAY=192.168.1.1
+PBUILDER_UML_IMAGE="/home/dancer/uml-image"
+		</screen>
+		and it needs to match rootstrap configuration.
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>Run <command>pbuilder-user-mode-linux create --distribution sid</command> to create the image</para>
+	    </listitem>
+	    <listitem>
+	      <para>Try running <command>pbuilder-user-mode-linux build </command></para>
+	    </listitem>
+	  </itemizedlist>
+	</para>
+      </sect2>
     </sect1>
     <sect1>
       <title>Using LVM</title>
@@ -428,6 +524,29 @@ export DEBIAN_BUILDGCCVER=3.2
 	user-mode-linux pbuilder port.
 	It may prove to be faster, but it is not implemented yet,
 	and so no measurement has been made, yet.
+      </para>
+    </sect1>
+    <sect1>
+      <title>Using pbuilder without tar.gz</title>
+      <para>
+	<command><option>--no-targz</option></command>
+	option of <command>pbuilder</command>
+	will allow usage of pbuilder in a different way
+	to conventional usage.
+	It will try to use existing chroot, 
+	and will not try to clean up after 
+	working on it.
+	It is an operation mode more like 
+	<command>sbuild</command>.
+      </para>
+      <para>
+	It should be possible to create chroot images
+	for <command>dchroot</command> with following commands:
+	<screen>
+# pbuilder  create --distribution potato --no-targz --basetgz /chroot/potato
+# pbuilder  create --distribution woody --no-targz --basetgz /chroot/woody
+# pbuilder  create --distribution sid --no-targz --basetgz /chroot/sid
+	</screen>
       </para>
     </sect1>
   </chapter>
