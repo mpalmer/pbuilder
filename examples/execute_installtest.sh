@@ -11,7 +11,7 @@
 # This will install a package using APT and see if that fails.
 
 set -ex
-
+echo 'nobody@nowhere' > /etc/mailname
 apt-get install -y "$1" < /dev/null
 
 
