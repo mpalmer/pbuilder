@@ -472,6 +472,43 @@ export DEBIAN_BUILDGCCVER=3.2
 	<screen>deb http://www.microcomaustralia.com.au/debian/ woody main</screen>
       </para>
     </sect1>
+    <sect1 id="LOGNAME">
+      <title>Warning on LOGNAME not being defined</title>
+      <para>
+	You might see a lot of warning messages when running pbuilder.
+      </para>
+      <para>
+	<screen>
+	dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+	</screen>
+      </para>
+      <para>
+	It is currently safe to ignore this warning message.
+	Please report back if you find any problem with having LOGNAME unset.
+	Setting LOGNAME caused a few problems when invoking chroot.
+      </para>
+    </sect1>
+    <sect1 id="nobuildconflictessential">
+      <title>Cannot Build-conflict against an essential package</title>
+      <para>
+	pbuilder does not currently allow Build-Conflicts against 
+	essential packages.
+	It should be obvious that essential packages should not be 
+	removed from a working Debian system, and a source 
+	package should not try to force removal of such packages 
+	to people building the package.
+      </para>
+    </sect1>
+    <sect1>
+      <title>Avoiding the "ln: Invalid cross-device link" message</title>
+      <para>
+	By default, pbuilder uses hard links to manage pbuilder package cache.
+	It is not possible to make hard links across different devices; 
+	and thus this error will occur, depending on your set up.
+	If this happens, set <screen>APTCACHEHARDLINK=no</screen>
+	in your pbuilderrc file.
+      </para>
+    </sect1>
   </chapter>
   <chapter id="otheruse">
     <title>Other uses of pbuilder</title>

@@ -2,8 +2,16 @@ pbuilder (0.76) UNRELEASED; urgency=low
 
   * Read config file in pbuilder-user-mode-linux specified by 
     --configfile.
+    Should address bugs 
+  * Update documentation FAQ section.
+  - note that the warning message about LOGNAME being unset is currently safe.
+    (closes: #187924)
+  - Document that it is not a good idea to conflict against an essential 
+    package and pbuilder doesn't particularly support it. (closes: #169223)
+  - Document "Invalid cross-device link" and how to fix it (closes: #200103)
+  * Update some manual pages to reflect the changes.
 
- -- Junichi Uekawa <dancer@debian.org>  Thu,  3 Jul 2003 00:23:13 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Tue,  8 Jul 2003 22:00:19 +0900
 
 pbuilder (0.75) unstable; urgency=low
 
