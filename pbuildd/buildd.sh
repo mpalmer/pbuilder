@@ -9,11 +9,9 @@ NOBUILDDEP=${BASEDIRECTORY}/FAILED/NOBUILDDEP
 FAILED=${BASEDIRECTORY}/FAILED
 DEPWAIT=${BASEDIRECTORY}/DEPWAIT
 SUCCESS=${BASEDIRECTORY}/SUCCESS
-DEPWAIT=${BASEDIRECTORY}/DEPWAIT
 mkdir "$FAILED" || true 
 mkdir "$DEPWAIT" || true 
 mkdir "$SUCCESS" || true 
-mkdir "$DEPWAIT" || true 
 mkdir ${BASEDIRECTORY}/WORKING || true 
 mkdir ${BASEDIRECTORY}/STATUS || true 
 mkdir "$NOBUILDDEP" || true
@@ -31,24 +29,6 @@ function status () {
 function buildone() {
     local PROGNAME="$1"
     local LOGFILE=${BASEDIRECTORY}/WORKING/"$PROGNAME.log"
-
-
-    # this part needs to be atomic
-    status "considering $PROGNAME"
-    if grep "$PROGNAME" avoidlist; then
-	echo Skip.
-	return
-    fi
-    if echo "$PROGNAME" | grep "^kernel-image"; then
-    	echo I hate kernel images.
-	return
-    fi
-
-    if [ $(find -name $PROGNAME.log | wc -l ) = "1" ]; then
-	echo Already build tried for "$PROGNAME"
-	return
-    fi
-    # end of atomic.
 
     status "building $PROGNAME"
     mkdir $BUILDTMP || true
@@ -68,6 +48,9 @@ function buildone() {
 	    elif grep '^E: Could not satisfy build-dependency' "$LOGFILE" > /dev/null ; then
 		echo "Build-dep wait" 
 		mv "$LOGFILE" "$DEPWAIT"
+	    elif grep '^E: pbuilder-satisfydepends failed.' "$LOGFILE" > /dev/null ; then
+		echo "Build-dep satisfaction failed on other package's installation"
+		mv "$LOGFILE" "$DEPWAIT"
 	    else
 		mv "$LOGFILE" "$FAILED"
 		echo Build failed
@@ -85,7 +68,26 @@ $ROOTCOMMAND pbuilder update
 tmpfile=$(tempfile)
 wget "${MIRROR}"/debian/dists/unstable/main/source/Sources.gz -O${tmpfile}
 
-for A in $( zcat ${tmpfile} | sed -n 's/^Package: //p' | cut -d\  -f1|sort | uniq | bogosort -n ); do 
+for A in $( zcat ${tmpfile} | awk "BEGIN { RS = \"\" }
+  {if (match(\$0, /\nArchitecture: [^\n]*(all|any|`dpkg --print-architecture`)/)) print \$0}" | sed -n 's/^Package: //p' | cut -d\  -f1|sort | uniq | bogosort -n ); do
+
+    # this part needs to be atomic
+    status "considering $A"
+    if grep "^$A$" $AVOIDLIST; then
+	echo Skip.
+	continue
+    fi
+    if echo "$A" | grep "^kernel-image"; then
+    	echo I hate kernel images.
+	continue
+    fi
+
+    if [ $(find ${BASEDIRECTORY} -name $A.log | wc -l ) = "1" ]; then
+	echo Already build tried for "$A"
+	continue
+    fi
+    # end of atomic.
+
     waitingroutine
     buildone $A
 done
