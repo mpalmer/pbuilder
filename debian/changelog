@@ -3,13 +3,14 @@ pbuilder (0.6) unstable; urgency=low
   * Added a man page for /etc/pbuilderrc configuration file.
     Should help people understand what is going on...
   * Added a feature of caching the contents of /var/cache/apt/archives
-    inside the chroot. 
+    inside the chroot. It's not quite apt-move, but this should do the 
+    trick ?
   * pbuilder clean will clean the apt cache.
-  * REMOVEPACKAGES is a configurable option now. 
+  * REMOVEPACKAGES is a configurable option now.
     Please be warned, if you are upgrading, that "lilo" might be left
     on your chroot, which could potentially cause nasty damage.
 
- -- Junichi Uekawa <dancer@debian.org>  Sun, 23 Sep 2001 16:02:38 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 23 Sep 2001 23:11:32 +0900
 
 pbuilder (0.5) unstable; urgency=low
 
