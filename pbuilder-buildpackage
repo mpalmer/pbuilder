@@ -106,7 +106,9 @@ function checkbuilddep_internal () {
 	  exit 1
       fi
     done;
-    for INSTALLPKG in $(awk '/^[^ ]*:/{p=0}/^Build-Depends:/{p=1} /^Build-Depends-Indep:/{p=1}  {if(p) {print $0}}' < "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+
+    # start processing build-conflicts.
+    for INSTALLPKG in $(awk '/^[^ ]*:/{p=0}/^Build-Conflicts:/{p=1} /^Build-Conflicts-Indep:/{p=1}  {if(p) {print $0}}' < "$BUILDPLACE/"tmp/buildd/*/debian/control | \
 	sed 's/^[^:]*: //' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
