@@ -1,11 +1,10 @@
-TODO: 
+TODO and possible bugs: 
   * Make pbuilder build to abort on error, and give back an errorcode.
   * Build dependency handles |, but not when [] and | exist. -- no package should be using it.
-  * Build conflicts do not handle versions at all. -- should never do it. -- but glibc does..
   * Build dependency either has [!xxx !xxx !xxx ...] or [xxx xxx xxx ...] [!xxx xxx] 
     formats are not parsed.
-  * Parse the .dsc file instead of guessing the filenames.
-  * Parse the .changes file instead of guessing the resultant objects ... ?
+  * Now parses the .dsc file, however, the format of .dsc file is not really documented anywhere?
+  * Parse the .changes file instead of guessing the resultant objects ... ? (the content of file probably changes depending on the version... not a good idea.
 
 $Id$
 
