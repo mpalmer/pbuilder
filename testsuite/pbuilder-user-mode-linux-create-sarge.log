@@ -6,7 +6,7 @@ zone(0): 8192 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
 Kernel command line: eth0=slirp,,slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage init=/usr/lib/rootstrap/builder devfs=mount rsworkdir=/home/dancer/.pbuilder-user-mode-linux
-Calibrating delay loop... 1591.02 BogoMIPS
+Calibrating delay loop... 1588.61 BogoMIPS
 Memory: 28964k available
 Dentry cache hash table entries: 4096 (order: 3, 32768 bytes)
 Inode cache hash table entries: 2048 (order: 2, 16384 bytes)
@@ -35,7 +35,7 @@ RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
 loop: loaded (max 8 devices)
 Initializing software serial port version 1
 Netdevice 0 : SLIRP backend - command line: 'slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/TZYnPV/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/5Q0MxS/mconsole
 unable to open root_fs for validation
 Partition check:
  ubdb: unknown partition table
@@ -251,7 +251,7 @@ I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/mbr/mbr_1.1.5-1_i386.d
 I: Validating /tmp/target/var/cache/apt/archives/mbr_1.1.5-1_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/modconf/modconf_0.2.44_all.deb
 I: Validating /tmp/target/var/cache/apt/archives/modconf_0.2.44_all.deb
-^[3I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/modutils/modutils_2.4.21-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/modutils/modutils_2.4.21-3_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/modutils_2.4.21-3_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/u/util-linux/mount_2.11z-1_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/mount_2.11z-1_i386.deb
@@ -417,8 +417,8 @@ dpkg: libc6: dependency problems, but configuring anyway as you request:
   Package libdb1-compat is not installed.
 Setting up libc6 (2.3.2-7) ...
 Current default timezone: 'UTC'.
-Local time is now:      Tue Sep 23 22:03:01 UTC 2003.
-Universal Time is now:  Tue Sep 23 22:03:01 UTC 2003.
+Local time is now:      Tue Sep 23 22:58:34 UTC 2003.
+Universal Time is now:  Tue Sep 23 22:58:34 UTC 2003.
 Run 'tzconfig' if you wish to change it.
 Package `sysvinit' is not installed and no info is available.
 Use dpkg --info (= dpkg-deb --info) to examine archive files,
@@ -604,8 +604,8 @@ Setting up sysv-rc (2.85-7) ...
 
 Setting up libc6 (2.3.2-7) ...
 Current default timezone: 'UTC'.
-Local time is now:      Tue Sep 23 22:03:41 UTC 2003.
-Universal Time is now:  Tue Sep 23 22:03:41 UTC 2003.
+Local time is now:      Tue Sep 23 22:59:18 UTC 2003.
+Universal Time is now:  Tue Sep 23 22:59:18 UTC 2003.
 Run 'tzconfig' if you wish to change it.
 
 Setting up tar (1.13.25-5) ...
@@ -1051,9 +1051,9 @@ Traceback (most recent call last):
 rootstrap: Module 'debian' failed, status: 1
 Kernel panic: Attempted to kill init!
  <6>Stopping all CPUs...done
-tracing thread pid = 19695
+tracing thread pid = 2044
 
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filetdqv9N rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filepckwVB rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.20-7um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 SMP Fri Aug 8 18:30:28 EDT 2003
@@ -1061,8 +1061,8 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filetdqv9N rw
-Calibrating delay loop... 1594.44 BogoMIPS
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filepckwVB rw
+Calibrating delay loop... 1523.76 BogoMIPS
 Memory: 126208k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -1092,7 +1092,7 @@ loop: loaded (max 8 devices)
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/5sKRvz/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/5fTxVw/mconsole
 unable to open root_fs for validation
 Partition check:
  ubdb: unknown partition table
@@ -1139,6 +1139,7 @@ Upgrading for distribution sarge
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
+ -> installing dummy policy-rc.d
 Refreshing the base.tgz 
  -> upgrading packages
 0% [Working]            Err http://debootstrap.invalid sarge/main Packages
@@ -1155,6 +1156,6 @@ E: Some index files failed to download, they have been ignored, or old ones used
  -> ignoring umount of dev/pts filesystem
 Kernel panic: Attempted to kill init!
  <6>Stopping all CPUs...done
-tracing thread pid = 12730
+tracing thread pid = 27497
 
  -> Exit code 100
