@@ -30,12 +30,6 @@ if a package does not build, and it seems like a genuine bug of pbuilder
 Also, if something is missing and necessary on some arches, 
 please file a bug to "build-essential" for packages.
 
-Please note that pbuilder login is for testing purposes only,
-and DO NO MOUNT inside the chroot. pbuilder will attempt to clean up 
-the working directory, and will clean up your mounted dirs along
-with it. It is best to use cp. 
-Support for mounts will hopefully come later, with some safeguards.
-
 
 Testsuite:
 	The whole of Debian archive (main) is now being test-rebuilt with
@@ -51,8 +45,9 @@ Further reading
 This documentation is not precise. I recommend reading
 pbuilder.8 and pbuilderrc.5 manual pages.
 There is also a HTML manual now, pbuilder-doc.html.
-When they are incorrect or misleading, please send bugreports.
+When they are incorrect or misleading, please send bugreports to the 
+Debian BTS.
 
 
 $Id$
- -- Junichi Uekawa <dancer@debian.org>, Tue Dec 31 15:24:22 2002
+ -- Junichi Uekawa <dancer@debian.org>, Mon Aug 25 07:18:42 2003
