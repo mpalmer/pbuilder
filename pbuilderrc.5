@@ -112,6 +112,17 @@ hooks are not executed.
 .B "pbuilder update" 
 will update to this distribution, if this is specified,
 unless command line option is specified to override this.
+
+.TP
+.BI "DPKG_BUILDPACKAGEOPT=" "option to dpkg-buildpackage";
+
+If this was specified, 
+.B dpkg-buildpackage
+command will be executed with the option.
+Overrided with 
+.B "--sponsorship"
+command-line option.
+
 .SH "FILES"
 .I "/etc/pbuilderrc"
 .SH "SEE ALSO"

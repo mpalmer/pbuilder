@@ -5,6 +5,11 @@ pbuilder (0.10) unstable; urgency=low
   * Depends on gcc, because debootstrap does not seem to function well
     without gcc. Actually, dpkg does not work without gcc, when it is asked
     questions about the "architecture."
+  * Add support for sponsor-uploading. Thus, forcing pbuilder to build
+    with 
+     dpkg-buildpackage -m"Junichi Uekawa <dancer@debian.org>" 
+    should be possible via 
+     pbuiler build --sponsorship "Junichi Uekawa <dancer@debian.org>"
 
  -- Junichi Uekawa <dancer@debian.org>  Thu, 25 Oct 2001 03:02:09 +0900
 

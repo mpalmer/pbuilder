@@ -61,6 +61,10 @@ while [ -n "$1" ]; do
 	--help)
 	    showhelp
 	    ;;
+        --sponsorship)
+	    DPKG_BUILDPACKAGEOPT="-m$2";
+	    shift; shift;
+	    ;;
 	--*)
 	    echo "Error: Unknown option [$1] was specified " >&2 
 	    exit 1;
