@@ -9,6 +9,7 @@ install:
 	install -d $(DESTDIR)/usr/sbin
 	install -d $(DESTDIR)/usr/bin
 	install -d $(DESTDIR)/usr/lib/pbuilder
+	install -d $(DESTDIR)/usr/share/pbuilder
 	install -m 755 pbuilder-buildpackage $(DESTDIR)/usr/lib/pbuilder/
 	install -m 755 pbuilder-createbuildenv $(DESTDIR)/usr/lib/pbuilder/
 	install -m 755 pbuilder-updatebuildenv $(DESTDIR)/usr/lib/pbuilder/
@@ -18,4 +19,5 @@ install:
 	install -m 755 pbuilder $(DESTDIR)/usr/sbin
 	install -m 755 pdebuild $(DESTDIR)/usr/bin
 	install -m 644 pbuilderrc $(DESTDIR)/etc
+	install -m 644 pbuilderrc $(DESTDIR)/usr/share/pbuilder
 

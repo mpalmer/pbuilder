@@ -4,7 +4,14 @@
 # empty some vars.
 DPKG_BUILDPACKAGEOPT=""
 
-. /etc/pbuilderrc
+for RCFILE in /usr/share/pbuilder/pbuilderrc /etc/pbuilderrc; do
+    if [ -f "$RCFILE"]; then 
+	. "$RCFILE"
+    else
+	echo "Warning: $RCFILE does not exist"
+    fi
+done
+
 . /usr/lib/pbuilder/pbuilder-modules
 
 # the default is to add a PID in the buildplace specified in the config file.
