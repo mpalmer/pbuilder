@@ -401,7 +401,9 @@ Do not clean the
 .B "--buildplace"
 if it has the same contents as the
 .B .tar.gz
-file.  As with
+file, and no modifications are done.
+
+As with
 .BR "--no-targz" ","
 suppresses appending
 .BR "pbuilder" "'s"
@@ -412,7 +414,8 @@ This is useful if you want to attempt to build a large number of
 packages successively, but you expect that many of them cannot have
 their build dependencies satisfied.
 
-It will clean up the build place on failure.
+It will clean up the build place on failure, 
+or after a successful build.
 
 .TP
 .BI "--bindmounts " "bind-mount-points"
