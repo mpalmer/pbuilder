@@ -1,3 +1,20 @@
+2002-03-13  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-buildpackage: will clean up and exit if 
+	  satisfydepends fail.
+
+	* pbuilder-satisfydepends: fixed --echo and --chroot race.
+	  It is now possible to specify "--chroot whatever --echo"
+	  to debug some chrooting action.
+	  "/usr/lib/pbuilder/pbuilder-satisfydepends" reads debian/control
+	  and satisfies dependency, outside of chroot. It is rather handy.
+	  saveaptcache_umountproc_cleanbuildplace cannot be called from
+	  satisfydepends.
+	  fixed error message.
+
+	* pbuilder.1: added notes on "almost obsolete"ness of 
+	  -m option.
+
 2002-03-12  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-satisfydepends: created

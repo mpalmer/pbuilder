@@ -33,8 +33,11 @@ function copydsc () {
 }
 
 function checkbuilddep () {
-    /usr/lib/pbuilder/pbuilder-satisfydepends --control "$BUILDPLACE/"tmp/buildd/*/debian/control --chroot "$BUILDPLACE"
-    checkbuilddep_internal
+    if ! /usr/lib/pbuilder/pbuilder-satisfydepends --control "$BUILDPLACE/"tmp/buildd/*/debian/control --chroot "$BUILDPLACE" ; then
+	echo "E: pbuilder-satisfydepends failed." >&2
+	saveaptcache_umountproc_cleanbuildplace
+	exit 1
+    fi
     # install extra packages to the chroot
     if [ -n "$EXTRAPACKAGES" ]; then 
 	$CHROOTEXEC usr/bin/apt-get -y install ${EXTRAPACKAGES}
