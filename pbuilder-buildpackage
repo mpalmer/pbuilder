@@ -14,21 +14,71 @@ function copydsc () {
     done
 }
 
-function checkbuilddep () {
+function checkbuilddep_internal () {
+# fall back to this function if checkbuilddeps is not available.
+    local ARCH=$(dpkg --print-architecture)
+    echo " -> Attempting to parse the build-deps by myself"
+    for INSTALLPKG in grep "^Build-Depends\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+	sed 's/^[^:]*: \(.*\)$/\1/' | \
+	awk 'BEGIN{RS=","} {print}'; do
+      echo " -> Considering $INSTALLPKG"
+      if echo "$INSTALLPKG" | grep '[' > /dev/null ; then
+	  # this package has arch-deps.
+	  if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]!$ARCH[] ]" > /dev/null; then
+	      # don't install this on this arch
+	      continue;
+	  fi
+	  if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]$ARCH[] ]" > /dev/null; then
+	      # this arch is not listed.
+	      continue;
+	  fi
+      fi
+      echo " -> Installing $INSTALLPKG"
+      $CHROOTEXEC usr/bin/apt-get -y install $(echo "$INSTALLPKG" | awk '{print $1}')
+    done;
+    for INSTALLPKG in grep "^Build-Conflicts\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+	sed 's/^[^:]*: \(.*\)$/\1/' | \
+	awk 'BEGIN{RS=","} {print}'; do
+      echo " -> Considering $INSTALLPKG"
+      if echo "$INSTALLPKG" | grep '[' > /dev/null ; then
+	  # this package has arch-deps.
+	  if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]!$ARCH[] ]" > /dev/null; then
+	      # don't install this on this arch
+	      continue;
+	  fi
+	  if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]$ARCH[] ]" > /dev/null; then
+	      # this arch is not listed.
+	      continue;
+	  fi
+      fi
+      echo " -> Removing $INSTALLPKG"
+      $CHROOTEXEC usr/bin/apt-get -y remove $(echo "$INSTALLPKG" | awk '{print $1}')
+    done;
+}
+
+function checkbuilddep_using_dpkgcheckbuilddeps () {
     for INSTALLPKG in $($CHROOTEXEC bin/sh -c "(cd tmp/buildd/*/; dpkg-checkbuilddeps)" 2>&1 | \
 	grep "^dpkg-checkbuilddeps: Unmet build dependencies: " | \
 	sed 's/^[^:]*:[^:]*: \(.*\)$/\1/' | \
-	awk 'BEGIN{RS=", "} /^([^([]*)/{print $1}'); do
+	awk 'BEGIN{RS=", "} {print $1}'); do
       echo " -> Installing $INSTALLPKG"
       $CHROOTEXEC usr/bin/apt-get -y install "$INSTALLPKG"
     done;
     for REMOVEPKG in $($CHROOTEXEC bin/sh -c "(cd tmp/buildd/*/; dpkg-checkbuilddeps)" 2>&1 | \
 	grep "^dpkg-checkbuilddeps: Build conflicts: " | \
 	sed 's/^[^:]*:[^:]*: \(.*\)$/\1/' | \
-	awk 'BEGIN{RS=", "} /^([^([]*)/{print $1}'); do
+	awk 'BEGIN{RS=", "} {print $1}'); do
       echo " -> Removing $REMOVEPKG"
       $CHROOTEXEC usr/bin/apt-get -y remove "$REMOVEPKG"
     done;
+}
+
+function checkbuilddep () {
+    if [ -x "$BUILDPLACE/usr/bin/dpkg-checkbuilddeps" ]; then
+	checkbuilddep_using_dpkgcheckbuilddeps;
+    else
+	checkbuilddep_internal;
+    fi
 }
 
 . /usr/lib/pbuilder/pbuilder-checkparams
