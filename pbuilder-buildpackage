@@ -162,9 +162,11 @@ if [ -n "$APTCACHE" ]; then
 fi
 echo Installing the build-deps
 checkbuilddep
+
 if [ -n "$APTCACHE" ]; then
     echo "Copying back the cached apt archive contents"
-    for A in "$BUILDPLACE/var/cache/apt/archives/"*; do
+    mkdir -p "$APTCACHE" ;
+    for A in "$BUILDPLACE/var/cache/apt/archives/"*.deb; do
 	if [ ! -f "$APTCACHE/"$(basename "$A") ]; then
 	    echo " -> new cache content "$(basename "$A")" added"
 	    cp "$A" "$APTCACHE/"
