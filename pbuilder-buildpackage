@@ -18,9 +18,9 @@ function checkbuilddep_internal () {
 # fall back to this function if checkbuilddeps is not available.
     local ARCH=$(dpkg --print-architecture)
     echo " -> Attempting to parse the build-deps by myself"
-    for INSTALLPKG in grep "^Build-Depends\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+    for INSTALLPKG in $(grep "^Build-Depends\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
-	awk 'BEGIN{RS=","} {print}'; do
+	awk 'BEGIN{RS=","} {print}'); do
       echo " -> Considering $INSTALLPKG"
       if echo "$INSTALLPKG" | grep '[' > /dev/null ; then
 	  # this package has arch-deps.
@@ -36,9 +36,9 @@ function checkbuilddep_internal () {
       echo " -> Installing $INSTALLPKG"
       $CHROOTEXEC usr/bin/apt-get -y install $(echo "$INSTALLPKG" | awk '{print $1}')
     done;
-    for INSTALLPKG in grep "^Build-Conflicts\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+    for INSTALLPKG in $(grep "^Build-Conflicts\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
-	awk 'BEGIN{RS=","} {print}'; do
+	awk 'BEGIN{RS=","} {print}'); do
       echo " -> Considering $INSTALLPKG"
       if echo "$INSTALLPKG" | grep '[' > /dev/null ; then
 	  # this package has arch-deps.
