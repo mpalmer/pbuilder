@@ -24,6 +24,7 @@ case "$1" in
 	;;
     clean)
 	. /etc/pbuilderrc
+	echo "Cleaning [$BUILDPLACE]"
 	test -n "$BUILDPLACE" && rm -rf "$BUILDPLACE"/*
 	;;
     *)
