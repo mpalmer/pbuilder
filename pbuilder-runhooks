@@ -18,6 +18,9 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.4  2001/09/27 08:20:58  dancer
+# changing little bits to my liking, and hopefully removing any potentially dangerous bits.
+#
 # Revision 1.3  2001/09/27 07:13:04  dancer
 # and even more reindentation.
 #
@@ -45,10 +48,12 @@ hooks=/tmp/hooks
 # 
 
 function loadhooks () {
-    if [ -e $BUILDPLACE/$hooks ]; then
-	rm -rf $BUILDPLACE/$hooks
+    if [ -e "$BUILDPLACE/$hooks" ]; then
+	rm -rf "$BUILDPLACE/$hooks"
     fi
-    cp -a $HOOKDIR $BUILDPLACE/tmp/
+    if [ -d "$HOOKDIR" ]; then
+	cp -a "$HOOKDIR" "$BUILDPLACE/tmp/"
+    fi
 }
 
 #--------------------------------------------------------------------------
@@ -56,7 +61,7 @@ function loadhooks () {
 #
 
 function unloadhooks () {
-    rm -rf $BUILDPLACE/$hooks
+    rm -rf "$BUILDPLACE/$hooks"
 }
 
 #--------------------------------------------------------------------------
@@ -72,9 +77,11 @@ function unloadhooks () {
 
 function executehooks () {
     local prefix=$1
+
+    # is this necessary?
     pushd $BUILDPLACE/$hooks
     for fn in $prefix[0-9][0-9]* ; do
-	case $fn in
+	case "$fn" in
 	    *~)
 		echo "E: skipping an editor backup file $fn"
 		;;
@@ -83,10 +90,10 @@ function executehooks () {
 		;;
 	    *)	
 		if [ -x $fn ]; then
-		    chroot $BUILDPLACE $hooks/$fn
+		    $CHROOTEXEC "$hooks/$fn"
 		    echo " -> user script $fn finished"
 		else
-		    filetype=`file --dereference $fn`
+		    filetype=$(readlink -f "$fn")
 		    echo "E: execute priv not set on file $filetype"
 		fi  
 	        ;;	
