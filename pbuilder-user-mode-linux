@@ -1,0 +1,66 @@
+#! /bin/bash
+# common modules for pbuilder.
+#   pbuilder -- personal Debian package builder
+#   Copyright (C) 2001,2002 Junichi Uekawa
+#
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+
+# use this script file to bootstrap the pbuilder inside the UML
+INSIDE_PBUILDER=$(tempfile)
+MY_ETH0=tuntap,,,192.168.30.62
+UML_IP=192.168.30.199
+UML_NETMASK=192.168.30.199
+UML_NETWORK=192.168.30.199
+UML_BROADCAST=192.168.30.199
+UML_GATEWAY=192.168.30.199
+PBUILDER_UML_IMAGE="/tmp/uml"
+BUILDING_DSC_FILE="$1"
+
+cat <<EOF > ${INSIDE_PBUILDER}
+#! /bin/bash
+mount -t proc /proc /proc
+mount -t tmpfs /tmp /tmp
+mkdir /tmp/ubd1
+mount -t ext2 /dev/ubd/1 /tmp/ubd1
+mount -t tmpfs /tmp/ubd1/tmp /tmp/ubd1/tmp
+
+cat <<IP > /tmp/ubd1/etc/network/interfaces
+auto lo
+iface lo inet loopback
+
+# The first network card - this entry was created during the Debian installation
+auto eth0
+iface eth0 inet static
+        address $UML_IP
+        netmask $UML_NETMASK
+        network $UML_NETWORK
+        broadcast $UML_BROADCAST
+        gateway $UML_GATEWAY
+
+IP
+cat <<SHELL > /tmp/ubd1/tmp/chrootshell
+#! /bin/bash
+# the shell executed inside chroot inside UML
+/etc/init.d/networking start
+SHELL
+chmod a+x /tmp/ubd1/tmp/chrootshell
+chroot /tmp/ubd1/ /tmp/chrootshell
+pbuilder build --buildplace /tmp/ubd1/tmp/1 ${BUILDING_DSC_FILE} 
+EOF
+
+chmod a+x ${INSIDE_PBUILDER}
+
+linux eth0=${MY_ETH0} mem=100M con0=fd:0,fd:1 con=pty ubd0=/ ubd1=${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}
