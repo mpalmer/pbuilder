@@ -1,4 +1,4 @@
-pbuilder (0.102) UNRELEASED; urgency=low
+pbuilder (0.102) unstable; urgency=low
 
   * Implement --variant=buildd support, thanks for Daniel Schepler
     for the work on debootstrap side.
@@ -6,8 +6,13 @@ pbuilder (0.102) UNRELEASED; urgency=low
     user-mode-linux version uses rootstrap
     (closes: #154528)
   - require debootstrap version 0.2.29 or later
+    current unstable/sarge doesn't install, see #244227 for a debootstrap 
+    workaround.
+  * remove references to non-free and contrib from default apt.conf entry.
+    If anyone has problems with this set-up, shout. But it's already configurable.
+    (Closes: #242754).
 
- -- Junichi Uekawa <dancer@debian.org>  Wed,  7 Apr 2004 07:07:11 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 18 Apr 2004 06:49:42 +0900
 
 pbuilder (0.101) unstable; urgency=low
 
