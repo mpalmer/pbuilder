@@ -29,6 +29,7 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder $(DESTDIR)/usr/sbin
 	$(INSTALL_EXECUTABLE) pdebuild $(DESTDIR)/usr/bin
 	$(INSTALL_EXECUTABLE) pbuilder-user-mode-linux $(DESTDIR)/usr/bin
+	$(INSTALL_EXECUTABLE) pdebuild-user-mode-linux $(DESTDIR)/usr/bin
 	$(INSTALL_EXECUTABLE) debuild-pbuilder $(DESTDIR)/usr/bin
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/etc

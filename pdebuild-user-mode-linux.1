@@ -1,0 +1,77 @@
+.TH "pdebuild-user-mode-linux" 1 "2003 Feb 10" "Debian" "pbuilder"
+.SH NAME
+pdebuild-user-mode-linux \- pbuilder-user-mode-linux way of doing debuild
+.SH SYNOPSIS
+.BI "pdebuild-user-mode-linux [" "pdebuild-user-mode-linux options" "] -- [" "pbuilder-user-mode-linux options" "]"
+.PP
+.SH "DESCRIPTION"
+A convenience program for 
+.B pbuilder-user-mode-linux
+which invokes pbuilder after obtaining appropriate root privilate 
+in a Debian source directory.
+One must be inside the source tree containing the
+.B debian
+directory, in order to make it work.
+
+.SH "PDEBUILD OPTIONS"
+.TP
+.BI "--buildsourceroot [" "fakeroot" "]"
+The command used to gain root privilege for 
+invoking dpkg-buildpackage
+
+.TP
+.BI "--pbuilderroot [" "sudo" "]"
+The command used to gain root privilege for 
+invoking pbuilder.
+
+.TP
+.BI "--auto-debsign"
+
+Invoke debsign at the end of pdebuild process.
+
+.TP
+.BI "--buildresult [" "Directory for build results" "]"
+
+The place which build result is stored.
+
+.TP
+.BI "-- [" "pbuilder options" "]"
+
+After the 
+.B "--"
+symbol, an arbitrary number of pbuilder options can be specified.
+See pbuilder-user-mode-linux.1 for full list of options.
+
+
+There is an exception that
+.B "--buildresult"
+needs to be specified as pdebuild option before the 
+.B "--"
+to be effective.
+
+.SH "FILES"
+.TP
+.I "/etc/pbuilderrc"
+The configuration file for pbuilder-user-mode-linux, used in pdebuild-user-mode-linux.
+
+.TP
+.I "/usr/share/pbuilder/pbuilderrc"
+The default configuration file for pbuilder-user-mode-linux, used in pdebuild-user-mode-linux.
+
+.TP
+.I "${HOME}/.pbuilderrc"
+Configuration file for pbuilder-user-mode-linux, used in pdebuild-user-mode-linux,
+overrides what is written in
+.B /etc/pbuilderrc
+
+.SH "AUTHOR"
+Initial coding, and main maintenance is done by 
+Junichi Uekawa <dancer@debian.org>.
+
+The homepage is available at
+.B "http://www.netfort.gr.jp/~dancer/software/pbuilder.html"
+
+.SH "SEE ALSO"
+.RI "pbuilder-user-mode-linux (" 1 "), "
+.RI "pbuilderrc (" 5 "), "
+.RI "pbuilder-uml.conf (" 5 ") "

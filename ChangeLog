@@ -1,3 +1,22 @@
+2003-02-10  Junichi Uekawa  <dancer@debian.org>
+
+	* pdebuild: set pdebuild here as well.
+
+	* pbuilder-checkparams (BASEBUILDPLACE): support the convention, and 
+	do not exec < /dev/null in that case.
+
+	* pdebuild-user-mode-linux (PBCURRENTCOMMANDLINEOPERATION): set to
+	pdebuild-user-mode-linux.
+
+	* pbuilder-user-mode-linux.1: fix manual to have pbuilder-uml.conf.5
+
+	* Makefile (install): add pdebuild-user-mode-linux
+
+	* pdebuild-user-mode-linux.1: Initial manual page.
+
+	* pdebuild-user-mode-linux: try making a new script that 
+	uses pbuilder-user-mode-linux for building instead of pbuilder.
+
 2003-02-04  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-buildpackage-funcs: use "cp -p" in copydsc

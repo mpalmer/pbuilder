@@ -168,8 +168,8 @@ if [ -z "${CHROOTEXEC}" ]; then
 fi
 
 case "$PBCURRENTCOMMANDLINEOPERATION" in 
-    login)
-	# don't do anything if it is "login"
+    login|pdebuild)
+	# don't do anything if it is "login", or pdebuild
 	;;
     *)
 # line from kobras@debian.org

@@ -1,6 +1,6 @@
 #! /bin/bash
-#   pbuilder -- personal Debian package builder
-#   Copyright (C) 2001-2003 Junichi Uekawa
+#   pbuilder-user-mode-linux -- personal Debian package builder
+#   Copyright (C) 2003 Junichi Uekawa
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -25,7 +25,6 @@ if test ! -d ./debian; then
     echo "Cannot find ./debian dir"
     exit 1
 fi;
-
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
 . /usr/lib/pbuilder/pbuilder-checkparams
 
@@ -34,7 +33,7 @@ PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')
 ARCHITECTURE=$(dpkg-architecture -qDEB_HOST_ARCH)
 
 dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} || true
-${PBUILDERROOTCMD} pbuilder build "$@" --buildresult "${BUILDRESULT}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
+pbuilder-user-mode-linux build "$@" --buildresult "${BUILDRESULT}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
 if [ "${AUTO_DEBSIGN}" = "yes" ]; then
     debsign "${BUILDRESULT}/${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.changes"
 fi
