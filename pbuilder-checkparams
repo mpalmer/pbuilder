@@ -156,6 +156,11 @@ while [ -n "$1" ]; do
 	    BINDMOUNTS="${BINDMOUNTS} $2"
 	    shift; shift;
 	    ;;
+	--debootstrapopts)
+	    # specify this option to set --variant=buildd value to debootstrap
+	    DEBOOTSTRAPOPTS[${#DEBOOTSTRAPOPTS[@]}]="$2";
+	    shift; shift;
+	    ;;
 	## pdebuild option
 	--auto-debsign)
 	    AUTO_DEBSIGN="yes"
@@ -172,11 +177,6 @@ while [ -n "$1" ]; do
 	--use-pdebuild-internal)
 	    USE_PDEBUILD_INTERNAL=yes;
 	    shift;
-	    ;;
-	--debootstrapopts)
-	    # specify this option to set --variant=buildd value to debootstrap
-	    DEBOOTSTRAPOPTS[${#DEBOOTSTRAPOPTS[@]}]="$2";
-	    shift; shift;
 	    ;;
 	## internal options.
 	--internal-chrootexec)

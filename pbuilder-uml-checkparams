@@ -1,0 +1,158 @@
+#! /bin/bash
+#   pbuilder-user-mode-linux -- personal Debian package builder
+#   Copyright (C) 2004 Junichi Uekawa
+#
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+# load and check params.
+# requires
+# . /usr/lib/pbuilder/pbuilder-loadconfig
+
+for SYSTEM_CONFIG in /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-uml.conf ${HOME}/.pbuilderrc; do
+    if [ -f ${SYSTEM_CONFIG} ]; then
+	. ${SYSTEM_CONFIG}
+    fi
+done
+
+
+PBUILDER_COW=""
+UML_EXTRAOPT=
+UML_DEBUGMODE=
+UML_EXECUTE_EXTRAOPT=
+UML_LOGIN_NOCOW=
+
+while [ -n "$1" ] ; do
+    case "$1" in
+	--eth0)
+	    MY_ETH0="$2";
+	    shift; shift;
+	    ;;
+	--uml-ip)
+	    UML_IP="$2";
+	    shift; shift;
+	    ;;
+	--uml-netmask)
+	    UML_NETMASK="$2";
+	    shift; shift;
+	    ;;
+	--uml-network)
+	    UML_NETWORK="$2";
+	    shift; shift;
+	    ;;
+	--uml-broadcast)
+	    UML_BROADCAST="$2";
+	    shift; shift;
+	    ;;
+	--uml-gateway)
+	    UML_GATEWAY="$2";
+	    shift; shift;
+	    ;;
+	--uml-image)
+	    PBUILDER_UML_IMAGE="$2";
+	    shift; shift;
+	    ;;
+	--mount-tmpfs)
+	    UML_MOUNT_TMPFS="$2";
+	    shift; shift;
+	    ;;
+	--uml-mem)
+	    UML_MEM="$2";
+	    shift; shift;
+	    ;;
+	--uml-hostname)
+	    UML_HOSTNAME="$2";
+	    shift; shift;
+	    ;;
+	--uml-debugmode)
+	    UML_DEBUGMODE="set -x";
+	    shift;;
+	--distribution)
+	    UML_DISTRIBUTION="$2";
+	    shift; shift;
+	    ;;
+	--uml-login-nocow)
+	    UML_LOGIN_NOCOW=yes;
+	    shift;
+	    ;;
+	#things that can be passed through without options
+	--override-config|--binary-arch)
+	    UML_EXTRAOPT="${UML_EXTRAOPT} $1"
+	    shift;;
+	--configfile)
+	    UML_EXTRAOPT="${UML_EXTRAOPT} $1 $2"
+	    . "$2"
+	    shift; shift;;
+	#things that can be passed through with options
+	--timeout|--http-proxy|--hookdir|--aptconfdir|--bindmounts|--mirror|--nonusmirror)
+	    UML_EXTRAOPT="${UML_EXTRAOPT} $1 $2"
+	    shift; shift;;
+	--buildresult)
+	    # ignore buildresult
+	    if [ -d "$2" ]; then
+		UML_BUILDRESULT=$(readlink -f "$2")
+	    else
+		echo "E: Directory $2 does not exist" >&2
+		exit 1
+	    fi
+	    shift; shift;;
+	--buildplace)
+	    if [ -d "$2" ]; then
+		BUILDPLACE=$(readlink -f "$2")
+	    else
+		echo "E: Directory $2 does not exist" >&2
+		exit 1
+	    fi
+	    shift; shift;; 
+	--logfile)
+	    exec > "$2";
+	    exec 2>&1
+	    PBUILDER_BUILD_LOGFILE=$(readlink -f "$2")
+	    shift;shift;;
+	## pdebuild options
+	--auto-debsign)
+	    AUTO_DEBSIGN="yes"
+	    shift;
+	    ;;
+	--buildsourceroot*)
+	    BUILDSOURCEROOTCMD="$2";
+	    shift; shift;
+	    ;;
+	--pbuilderroot*)
+	    PBUILDERROOTCMD="$2";
+	    shift; shift;
+	    ;;
+	--use-pdebuild-internal)
+	    USE_PDEBUILD_INTERNAL=yes;
+	    shift;
+	    ;;
+	## end pdebuild options
+	--)
+	    shift;
+	    break;
+	    ;;
+	--*)
+	    echo "Error: Unknown option [$1] was specified " >&2 
+	    exit 1;
+	    ;;
+	*)
+	    break;
+	    ;;
+    esac
+done
+
+if ! touch "${BUILDPLACE}/touch" ; then
+    echo "E: Cannot touch BUILDPLACE/touch, check BUILDPLACE" >&2
+    exit 1
+fi

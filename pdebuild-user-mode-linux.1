@@ -1,4 +1,4 @@
-.TH "pdebuild-user-mode-linux" 1 "2003 Feb 10" "Debian" "pbuilder"
+.TH "pdebuild-user-mode-linux" 1 "2004 Jul 29" "Debian" "pbuilder"
 .SH NAME
 pdebuild-user-mode-linux \- pbuilder-user-mode-linux way of doing debuild
 .SH SYNOPSIS
@@ -15,14 +15,10 @@ directory, in order to make it work.
 
 .SH "PDEBUILD OPTIONS"
 .TP
+
 .BI "--buildsourceroot [" "fakeroot" "]"
 The command used to gain root privilege for 
 invoking dpkg-buildpackage
-
-.TP
-.BI "--pbuilderroot [" "sudo" "]"
-The command used to gain root privilege for 
-invoking pbuilder.
 
 .TP
 .BI "--auto-debsign"
@@ -37,13 +33,8 @@ The place which build result is stored.
 .TP
 .BI "--configfile [" "Extra config file to use" "]"
 
-The configuration file is used, and passed on to 
+The configuration file is used, but not passed on to 
 .BR "pbuilder-user-mode-linux" .
-
-.TP
-.BI "--debbuildopts [" "options to pass to dpkg-buildpackage" "]"
-
-The space-delimited list of options are passed to dpkg-buildpackage.
 
 .TP
 .BI "--use-pdebuild-internal"

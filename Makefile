@@ -9,6 +9,7 @@ INSTALL_EXECUTABLE=install -m 0755
 SHELLCODES=pbuilder-buildpackage \
 	pbuilder-buildpackage-funcs \
 	pbuilder-checkparams \
+	pbuilder-uml-checkparams \
 	pbuilder-createbuildenv \
 	pbuilder-loadconfig \
 	pbuilder-modules \
@@ -58,6 +59,7 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-loadconfig $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-runhooks $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-checkparams $(DESTDIR)/usr/lib/pbuilder/
+	$(INSTALL_EXECUTABLE) pbuilder-uml-checkparams $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-modules $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder $(DESTDIR)/usr/sbin
 	$(INSTALL_EXECUTABLE) pdebuild $(DESTDIR)/usr/bin

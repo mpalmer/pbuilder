@@ -1,6 +1,6 @@
 #! /bin/bash
 #   pbuilder-user-mode-linux -- personal Debian package builder
-#   Copyright (C) 2003 Junichi Uekawa
+#   Copyright (C) 2003,2004 Junichi Uekawa
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -22,23 +22,29 @@ while ! test -d ./debian -o "$(pwd)" = "/" ; do
 done
 
 if test ! -d ./debian; then
-    echo "Cannot find ./debian dir"
+    echo "E: Cannot find ./debian dir"
     exit 1
 fi;
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
-. /usr/lib/pbuilder/pbuilder-checkparams
+
+. /usr/lib/pbuilder/pbuilder-loadconfig
+. /usr/lib/pbuilder/pbuilder-uml-checkparams
 
 PKG_SOURCENAME=$(dpkg-parsechangelog|sed -n 's/^Source: //p')
 PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')
 ARCHITECTURE=$(dpkg-architecture -qDEB_HOST_ARCH)
 
 if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
-    pbuilder-user-mode-linux execute "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --bindmounts $(readlink -f ..) /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}"
+    if [ ! readlink -f .. ]; then
+	echo "E: Cannot find .. dir from PWD=$(pwd)"
+	exit 1
+    fi
+    pbuilder-user-mode-linux execute "$@" --bindmounts $(readlink -f ..) /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}"
 else
     dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} $DEBBUILDOPTS
-    pbuilder-user-mode-linux build "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --buildresult "${BUILDRESULT}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
+    pbuilder-user-mode-linux build "$@" --buildresult "${UML_BUILDRESULT}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
 fi
 
 if [ "${AUTO_DEBSIGN}" = "yes" ]; then
-    debsign "${BUILDRESULT}/${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.changes"
+    debsign "${UML_BUILDRESULT}/${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.changes"
 fi

@@ -1,3 +1,21 @@
+2004-07-29  Junichi Uekawa  <dancer@debian.org>
+
+	* debian/pbuilder-uml.files: add pbuilder-uml-checkparams
+
+	* Makefile: add pbuilder-uml-checkparams
+
+	* pdebuild-user-mode-linux.1: update manual to reflect
+	  current reality of pdebuild-user-mode-linux. It was originally just a
+	  copy of pdebuild manpage.
+
+	* pbuilder-checkparams: shift around debootstrapopts parameter
+	  processing out of pdebuild options; it doesn't belong there.
+
+	* pdebuild-user-mode-linux: Call pbuilder-uml-checkparams to 
+	  parse commands in UML way, not pbuilder way.
+	* pbuilder-uml-checkparams: Move command-line parser to here
+	* pbuilder-user-mode-linux: Move command-line parser out
+
 2004-07-24  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-user-mode-linux.1: document dumpconfig.
