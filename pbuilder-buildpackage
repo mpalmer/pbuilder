@@ -112,6 +112,7 @@ function checkbuilddep_internal () {
       if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	  # this package has arch-conflicts.
 	  if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
+	      echo "I: Ignoring other-arch"
 	      continue;
 	  fi
       fi
@@ -120,18 +121,20 @@ function checkbuilddep_internal () {
 	  if ! checkbuilddep_versiondeps $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') \
 		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/') \
 		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/'); then
-	      echo "   -> Satisfies version, not trying"
+	      echo "I: Satisfies version, not trying"
 	      continue;
 	  fi
       fi
 
-
-      if $CHROOTEXEC usr/bin/dpkg -s $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}'); then
+      # if package exists, remove it.
+      if $CHROOTEXEC usr/bin/dpkg -s $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') 2>&1 | grep ^Package: > /dev/null; then
 	  if ! $CHROOTEXEC usr/bin/apt-get -y remove $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') ; then
-	      echo Could not satisfy build-conflicts
+	      echo "E: Could not satisfy build-conflicts" >&2
 	      abortingfunction
 	      exit 1
 	  fi
+      else
+	  echo "I:"
       fi
     done
 }
