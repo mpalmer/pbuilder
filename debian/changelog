@@ -1,14 +1,16 @@
 pbuilder (0.19) unstable; urgency=low
 
-  * new version, not yet released 
+  * "I know that the debootstrap version in sid doesn't work. 
+    You need to fix the mistakes in debootstrap." release
   * Improved "pbuilder update/create/build" temp file cleaning process,
-    so that in most cases it will be cleaned. (needs to be verified)
-  * documented a workaround to some problems in README.Debian (needs to be verified)
+    so that in most cases it will be cleaned. In some conditions, temp
+    file will still remain, but really, there is not much atomicity in shell?
   * pbuilder.1 typo fixed.
-  * --logfile option should be better implemented, but still more work required?
+  * --logfile option now seems to function properly, as expected.
   * ~/.pbuilderrc is checked for user configs. (closes: #131181)
+  * more documentation, noting about dangers of mount --bind.
 
- -- Junichi Uekawa <dancer@debian.org>  Mon, 28 Jan 2002 04:12:04 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 31 Jan 2002 19:09:11 +0900
 
 pbuilder (0.18) unstable; urgency=low
 

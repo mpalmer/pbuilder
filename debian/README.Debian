@@ -30,6 +30,12 @@ if a package does not build, and it seems like a genuine bug of pbuilder.
 Also, if something is missing and necessary on some arches, 
 please file a bug to "build-essential" for packages.
 
+Please note that pbuilder login is for testing purposes only,
+and DO NO MOUNT inside the chroot. pbuilder will attempt to clean up 
+the working directory, and will clean up your mounted dirs along
+with it. It is best to use cp. 
+Support for mounts will hopefully come later, with some safeguards.
+
 
 
 I would say this package works fine if these packages manage to build.
@@ -42,16 +48,6 @@ Testsuite:
 	gcc  ( trying to compile this sometimes kills my machine when
           trying to run testsuite )
 
-
-Notes:
-
-There has been some problems in the bootstrapping process of testing release of
-Debian (woody) as of January 2002
-pbuilder create --distribution woody did not complete.
-In such case, it is possible to do :
-
-pbuilder create --distribition potato
-pbuilder update --distribution woody
 
 
 $Id$
