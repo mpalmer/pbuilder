@@ -163,6 +163,12 @@ Specify the directory to place the COW file.
 The user needs to be able to access that directory,
 and the directory must exist.
 
+.TP
+.BI "--uml-login-nocow"
+Do not use COW filesystem when using 
+.B "pbuilder-user-mode-linux login"
+so that changes made in the log in session will persist.
+
 \" copied from pbuilder.8
 
 .TP

@@ -1,3 +1,20 @@
+2004-06-19  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-user-mode-linux: apply patch from 
+	Mike Markley <mike@markley.org>
+	Bug#252800: pbuilder-uml: hardcodes rootstrap image size argument
+	(--buildresult): found typo in error message,
+	It said $d instead of $2.
+
+	* pbuilder-user-mode-linux.1: document.
+
+	* pbuilder-user-mode-linux (uml-login-nocow): add --uml-login-nocow
+	option for pbuilder login without COW filesystem use.
+
+	* pdebuild.1: add warning on pdebuild/pbuilder options.
+	specifying --basetgz as pdebuild option does not work.
+	255005
+
 2004-06-17  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-updatebuildenv: Patch from matt kraai to save 

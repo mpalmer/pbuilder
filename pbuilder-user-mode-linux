@@ -150,6 +150,7 @@ OPERATION="$1"
 UML_EXTRAOPT=
 UML_DEBUGMODE=
 UML_EXECUTE_EXTRAOPT=
+UML_LOGIN_NOCOW=
 shift;
 
 while [ -n "$1" ] ; do
@@ -201,6 +202,10 @@ while [ -n "$1" ] ; do
 	    UML_DISTRIBUTION="$2";
 	    shift; shift;
 	    ;;
+	--uml-login-nocow)
+	    UML_LOGIN_NOCOW=yes;
+	    shift;
+	    ;;
 	#things that can be passed through without options
 	--override-config|--binary-arch)
 	    UML_EXTRAOPT="${UML_EXTRAOPT} $1"
@@ -218,7 +223,7 @@ while [ -n "$1" ] ; do
 	    if [ -d "$2" ]; then
 		UML_BUILDRESULT=$(readlink -f "$2")
 	    else
-		echo "E: Directory $d does not exist" >&2
+		echo "E: Directory $2 does not exist" >&2
 		exit 1
 	    fi
 	    shift; shift;;
@@ -226,7 +231,7 @@ while [ -n "$1" ] ; do
 	    if [ -d "$2" ]; then
 		BUILDPLACE=$(readlink -f "$2")
 	    else
-		echo "E: Directory $d does not exist" >&2
+		echo "E: Directory $2 does not exist" >&2
 		exit 1
 	    fi
 	    shift; shift;; 
@@ -267,8 +272,12 @@ case "${OPERATION}" in
 	operate_uml update
 	;;
     login)
-	usecow
-	EXTRACLEANUP=cleancow
+	if [ "${UML_LOGIN_NOCOW}" = "yes" ]; then
+	    echo " -> Not using COW filesystem for login session, modifications to this session will persist"
+	else
+	    usecow
+	    EXTRACLEANUP=cleancow
+	fi
 	operate_uml login
 	;;
     execute)
@@ -276,7 +285,7 @@ case "${OPERATION}" in
 	EXTRACLEANUP=cleancow
 	shift;
 	UML_EXECUTE_EXTRAOPT="${UML_EXECUTE_EXTRAOPT} $@"
-	operate_uml execute
+	operate_uml execute 
 	;;
     create)
 	if [ -n "${UML_DISTRIBUTION}" ]; then
@@ -289,7 +298,7 @@ case "${OPERATION}" in
 	    fi
 	    cd ~/.pbuilder-user-mode-linux
 	fi
-	rootstrap -s 1000 ${PBUILDER_UML_IMAGE}
+	rootstrap -s ${ROOTSTRAP_IMAGESIZE:=1000} ${PBUILDER_UML_IMAGE}
 	operate_uml update
 	;;
     *)
