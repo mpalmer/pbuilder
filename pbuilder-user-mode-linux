@@ -24,15 +24,12 @@ function cleanup_function () {
     rm -f ${INSIDE_PBUILDER}
 }
 
-#default settings -- only for me.
-MY_ETH0=tuntap,,,192.168.30.62
-UML_IP=192.168.30.199
-UML_NETMASK=255.255.255.0
-UML_NETWORK=192.168.30.0
-UML_BROADCAST=255.255.255.255
-UML_GATEWAY=192.168.30.1
-PBUILDER_UML_IMAGE="/tmp/uml"
-UML_MOUNT_TMPFS="no"
+
+for CONFIGFILE in /etc/pbuilder/pbuilder-uml.conf /usr/share/pbuilder/pbuilder-uml.conf ${HOME}/.pbuilderrc; do
+    if [ -f ${CONFIGFILE} ]; then
+	. ${CONFIGFILE}
+    fi
+done
 
 function operate_uml () {
     # opeartes on UML, and runs pbuilder $1
