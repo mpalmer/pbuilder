@@ -24,6 +24,7 @@ function cleanup_function () {
     rm -f ${INSIDE_PBUILDER}
 }
 
+#default settings -- only for me.
 MY_ETH0=tuntap,,,192.168.30.62
 UML_IP=192.168.30.199
 UML_NETMASK=255.255.255.0
@@ -31,7 +32,7 @@ UML_NETWORK=192.168.30.0
 UML_BROADCAST=255.255.255.255
 UML_GATEWAY=192.168.30.1
 PBUILDER_UML_IMAGE="/tmp/uml"
-UML_MOUNT_TMPFS="yes"
+UML_MOUNT_TMPFS="no"
 
 function operate_uml () {
     # opeartes on UML, and runs pbuilder $1
@@ -85,12 +86,11 @@ chroot /tmp/ubd1/ /tmp/chrootshell
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin
 export LOGNAME="${LOGNAME}"
 pbuilder "$1" --buildresult "" --buildplace /tmp/ubd1/ --internal-build-uml ${BUILDING_DSC_FILE} 
-/bin/sh
 EOF
 
     chmod a+x ${INSIDE_PBUILDER}
 
-    linux eth0=${MY_ETH0} mem=100M con0=fd:0,fd:1 con=pty ubd0=/ ubd1=${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}
+    linux eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1=${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}
 }
 
 
@@ -156,8 +156,11 @@ case "${OPERATION}" in
     update)
 	operate_uml update
 	;;
+    login)
+	operate_uml login
+	;;
     create)
-	rootstrap ${PBUILDER_UML_IMAGE}
+	rootstrap -s 100 ${PBUILDER_UML_IMAGE}
 	;;
     *)
 	echo "Error: Unknown option [${OPERATION}] was specified " >&2 
