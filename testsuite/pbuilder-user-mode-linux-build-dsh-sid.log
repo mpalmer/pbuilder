@@ -1,18 +1,18 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/16793.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filecDrWa2 rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/28155.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file9QTgzY rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
-Linux version 2.4.20-7um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 SMP Fri Aug 8 18:30:28 EDT 2003
+Linux version 2.4.22-5um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 Fri Sep 19 21:36:03 EDT 2003
 On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/16793.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filecDrWa2 rw
-Calibrating delay loop... 870.10 BogoMIPS
-Memory: 126208k available
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/28155.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file9QTgzY rw
+Calibrating delay loop... 1584.20 BogoMIPS
+Memory: 124720k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
-Mount-cache hash table entries: 2048 (order: 2, 16384 bytes)
-Buffer-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Mount cache hash table entries: 512 (order: 0, 4096 bytes)
+Buffer cache hash table entries: 4096 (order: 2, 16384 bytes)
 Page-cache hash table entries: 32768 (order: 5, 131072 bytes)
 Checking for host processor cmov support...Yes
 Checking for host processor xmm support...No
@@ -20,40 +20,35 @@ Checking that ptrace can change system call numbers...OK
 Checking that host ptys support output SIGIO...Yes
 Checking that host ptys support SIGIO on close...No, enabling workaround
 POSIX conformance testing by UNIFIX
-All CPUs are go!
-Waiting on wait_init_idle (map = 0x0)
-All processors have done init_idle
 Linux NET4.0 for Linux 2.4
 Based upon Swansea University Computer Society NET3.039
 Initializing RT netlink socket
 Starting kswapd
-VFS: Diskquotas version dquot_6.4.0 initialized
+VFS: Disk quotas vdquot_6.5.1
 Journalled Block Device driver loaded
 devfs: v1.12c (20020818) Richard Gooch (rgooch@atnf.csiro.au)
 devfs: boot_options: 0x1
 pty: 256 Unix98 ptys configured
 RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
 loop: loaded (max 8 devices)
+Initializing Cryptographic API
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/kXsLwI/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/Bf71ir/mconsole
 unable to open root_fs for validation
-Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/16793.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
+Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/28155.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
 Partition check:
  ubdb: unknown partition table
 Initializing stdio console driver
 NET4: Linux TCP/IP 1.0 for NET4.0
-IP Protocols: ICMP, UDP, TCP, IGMP
 IP: routing cache hash table of 512 buckets, 4Kbytes
 TCP: Hash tables configured (established 8192 bind 8192)
 Linux IP multicast router 0.06 plus PIM-SM
 NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
-Root-NFS: No NFS server available, giving up.
-VFS: Unable to mount root fs via NFS, trying floppy.
 VFS: Mounted root (hostfs filesystem).
 Mounted devfs on /dev
-0EXT2-fs warning: mounting unchecked fs, running e2fsck is recommended
+EXT2-fs warning: mounting unchecked fs, running e2fsck is recommended
 Starting network inside the chroot
 sed: can't read /proc/mounts: No such file or directory
 sed: can't read /proc/mounts: No such file or directory
@@ -86,8 +81,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Fri Oct  3 23:28:59 JST 2003
-pbuilder-time-stamp: 1065191339
+Current time: Sat Oct 18 08:03:23 JST 2003
+pbuilder-time-stamp: 1066431803
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
@@ -100,7 +95,7 @@ Installing the build-deps
    -> Trying libdshconfig1-dev
  -> Installing  debhelper libdshconfig1-dev
 Reading Package Lists... 0%Reading Package Lists... 100%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 44%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
 The following extra packages will be installed:
   debconf-utils file gettext html2text intltool-debian libdshconfig1 libmagic1
   po-debconf
@@ -110,36 +105,36 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2044kB of archives.
-After unpacking 6850kB of additional disk space will be used.
-0% [Working]            0% [Connecting to ftp.jp.debian.org (210.157.158.33)]                                                     0% [Waiting for headers]0% [Waiting for headers]                        Get:1 http://ftp.jp.debian.org sid/main libmagic1 4.04-1 [196kB]
-                        0% [1 libmagic1 2552/196kB 1%]0% [1 libmagic1 2552/196kB 1%]0% [1 libmagic1 8312/196kB 4%]                              0% [1 libmagic1 19832/196kB 10%]0% [1 libmagic1 19832/196kB 10%]2% [1 libmagic1 42872/196kB 21%]4% [1 libmagic1 84632/196kB 43%]                                6% [1 libmagic1 135392/196kB 69%]                                 6% [1 libmagic1 142592/196kB 72%]                                 23.5kB/s 1m20s                                                                                Get:2 http://ftp.jp.debian.org sid/main file 4.04-1 [24.2kB]
-9% [2 file 913/24.2kB 3%]                                         23.5kB/s 1m18s10% [2 file 9553/24.2kB 39%]                                      23.5kB/s 1m18s                                                                                Get:3 http://ftp.jp.debian.org sid/main debconf-utils 1.3.14 [36.3kB]
-10% [3 debconf-utils 847/36.3kB 2%]                               23.5kB/s 1m17s                                                                                Get:4 http://ftp.jp.debian.org sid/main html2text 1.3.1-2 [83.6kB]
-12% [4 html2text 497/83.6kB 0%]                                   23.5kB/s 1m16s13% [4 html2text 10577/83.6kB 12%]                                23.5kB/s 1m15s16% [4 html2text 73937/83.6kB 88%]                                23.5kB/s 1m12s                                                                                Get:5 http://ftp.jp.debian.org sid/main gettext 0.12.1-6 [1268kB]
-16% [5 gettext 1526/1268kB 0%]                                    23.5kB/s 1m12s19% [5 gettext 53366/1268kB 4%]                                   23.5kB/s 1m10s21% [5 gettext 90806/1268kB 7%]                                    23.5kB/s 1m8s22% [5 gettext 116726/1268kB 9%]                                   23.5kB/s 1m7s25% [5 gettext 180086/1268kB 14%]                                  23.5kB/s 1m4s27% [5 gettext 214646/1268kB 16%]                                  23.5kB/s 1m3s28% [5 gettext 243446/1268kB 19%]                                  23.5kB/s 1m2s30% [5 gettext 292406/1268kB 23%]                                   77.1kB/s 18s32% [5 gettext 315446/1268kB 24%]                                   77.1kB/s 18s34% [5 gettext 370166/1268kB 29%]                                   77.1kB/s 17s36% [5 gettext 404726/1268kB 31%]                                   77.1kB/s 16s37% [5 gettext 433526/1268kB 34%]                                   77.1kB/s 16s40% [5 gettext 485366/1268kB 38%]                                   77.1kB/s 15s41% [5 gettext 502646/1268kB 39%]                                   77.1kB/s 15s44% [5 gettext 560246/1268kB 44%]                                   77.1kB/s 14s45% [5 gettext 594806/1268kB 46%]                                   77.1kB/s 14s47% [5 gettext 623606/1268kB 49%]                                   77.1kB/s 14s49% [5 gettext 675446/1268kB 53%]                                   77.1kB/s 13s50% [5 gettext 701366/1268kB 55%]                                   77.1kB/s 13s53% [5 gettext 750326/1268kB 59%]                                   71.8kB/s 13s55% [5 gettext 784886/1268kB 61%]                                   71.8kB/s 12s56% [5 gettext 810806/1268kB 63%]                                   71.8kB/s 12s58% [5 gettext 856886/1268kB 67%]                                   71.8kB/s 11s59% [5 gettext 885686/1268kB 69%]                                   71.8kB/s 11s62% [5 gettext 937526/1268kB 73%]                                   71.8kB/s 10s63% [5 gettext 966326/1268kB 76%]                                   71.8kB/s 10s65% [5 gettext 1000886/1268kB 78%]                                   71.8kB/s 9s67% [5 gettext 1029686/1268kB 81%]                                   71.8kB/s 9s68% [5 gettext 1064246/1268kB 83%]                                   71.8kB/s 8s70% [5 gettext 1093046/1268kB 86%]                                   71.8kB/s 8s71% [5 gettext 1127606/1268kB 88%]                                   71.8kB/s 8s73% [5 gettext 1165046/1268kB 91%]                                   65.0kB/s 8s75% [5 gettext 1196726/1268kB 94%]                                   65.0kB/s 7s77% [5 gettext 1242806/1268kB 98%]                                   65.0kB/s 7s                                                                                Get:6 http://ftp.jp.debian.org sid/main intltool-debian 0.27.2+20030930 [17.7kB]
-78% [6 intltool-debian 445/17.7kB 2%]                                65.0kB/s 6s                                                                                Get:7 http://ftp.jp.debian.org sid/main po-debconf 0.7.3 [57.3kB]
-79% [7 po-debconf 1098/57.3kB 1%]                                    65.0kB/s 6s81% [7 po-debconf 31338/57.3kB 54%]                                  65.0kB/s 5s                                                                                Get:8 http://ftp.jp.debian.org sid/main debhelper 4.1.74 [340kB]
-82% [8 debhelper 2542/340kB 0%]                                      65.0kB/s 5s84% [8 debhelper 37102/340kB 10%]                                    65.0kB/s 4s85% [8 debhelper 71662/340kB 21%]                                    65.0kB/s 4s87% [8 debhelper 100462/340kB 29%]                                   65.0kB/s 4s89% [8 debhelper 146542/340kB 43%]                                   65.0kB/s 3s90% [8 debhelper 175342/340kB 51%]                                   65.0kB/s 2s93% [8 debhelper 227182/340kB 66%]                                   65.0kB/s 2s94% [8 debhelper 255982/340kB 75%]                                   69.1kB/s 1s96% [8 debhelper 290542/340kB 85%]                                   69.1kB/s 1s98% [8 debhelper 327982/340kB 96%]                                   69.1kB/s 0s                                                                                Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.8-1 [9656B]
-98% [9 libdshconfig1 403/9656B 4%]                                   69.1kB/s 0s                                                                                Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.8-1 [11.3kB]
-99% [10 libdshconfig1-dev 503/11.3kB 4%]                             69.1kB/s 0s100% [Working]                                                       69.1kB/s 0s                                                                                Fetched 2044kB in 32s (62.0kB/s)
+Need to get 2060kB of archives.
+After unpacking 6911kB of additional disk space will be used.
+0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main libmagic1 4.04-1 [196kB]
+            0% [1 libmagic1 0/196kB 0%]                           9% [Waiting for headers]                        Get:2 http://ring.asahi-net.or.jp sid/main file 4.04-1 [24.2kB]
+                        9% [2 file 0/24.2kB 0%]                       10% [Waiting for headers]                         Get:3 http://ring.asahi-net.or.jp sid/main debconf-utils 1.3.15 [36.3kB]
+                         10% [3 debconf-utils 0/36.3kB 0%]                                 Get:4 http://ring.asahi-net.or.jp sid/main html2text 1.3.1-2 [83.6kB]
+                                 16% [Waiting for headers]                         Get:5 http://ring.asahi-net.or.jp sid/main gettext 0.12.1-7 [1280kB]
+                         16% [5 gettext 0/1280kB 0%]                           64% [5 gettext 998380/1280kB 77%]                                 78% [Working]             Get:6 http://ring.asahi-net.or.jp sid/main intltool-debian 0.27.2+20031003 [17.8kB]
+             78% [6 intltool-debian 0/17.8kB 0%]                                   79% [Working]             Get:7 http://ring.asahi-net.or.jp sid/main po-debconf 0.8.2 [59.1kB]
+             79% [7 po-debconf 0/59.1kB 0%]                              82% [Working]             Get:8 http://ring.asahi-net.or.jp sid/main debhelper 4.1.77 [342kB]
+             82% [8 debhelper 0/342kB 0%]                            91% [8 debhelper 177640/342kB 51%]                                  98% [Working]             Get:9 http://ring.asahi-net.or.jp sid/main libdshconfig1 0.20.8-1 [9656B]
+             98% [9 libdshconfig1 0/9656B 0%]                                99% [Working]             Get:10 http://ring.asahi-net.or.jp sid/main libdshconfig1-dev 0.20.8-1 [11.3kB]
+             99% [10 libdshconfig1-dev 0/11.3kB 0%]                                      100% [Working]              Fetched 2060kB in 2s (808kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 9171 files and directories currently installed.)
+(Reading database ... 9160 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.04-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.04-1_i386.deb) ...
 Selecting previously deselected package debconf-utils.
-Unpacking debconf-utils (from .../debconf-utils_1.3.14_all.deb) ...
+Unpacking debconf-utils (from .../debconf-utils_1.3.15_all.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.1-2_i386.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.12.1-6_i386.deb) ...
+Unpacking gettext (from .../gettext_0.12.1-7_i386.deb) ...
 Selecting previously deselected package intltool-debian.
-Unpacking intltool-debian (from .../intltool-debian_0.27.2+20030930_all.deb) ...
+Unpacking intltool-debian (from .../intltool-debian_0.27.2+20031003_all.deb) ...
 Selecting previously deselected package po-debconf.
-Unpacking po-debconf (from .../po-debconf_0.7.3_all.deb) ...
+Unpacking po-debconf (from .../po-debconf_0.8.2_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_4.1.74_all.deb) ...
+Unpacking debhelper (from .../debhelper_4.1.77_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.8-1_i386.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -147,30 +142,30 @@ Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.8-1_i386.deb) ...
 Setting up libmagic1 (4.04-1) ...
 
 Setting up file (4.04-1) ...
-Setting up debconf-utils (1.3.14) ...
+Setting up debconf-utils (1.3.15) ...
 
 Setting up html2text (1.3.1-2) ...
 
-Setting up gettext (0.12.1-6) ...
+Setting up gettext (0.12.1-7) ...
 
-Setting up intltool-debian (0.27.2+20030930) ...
-Setting up po-debconf (0.7.3) ...
-Setting up debhelper (4.1.74) ...
+Setting up intltool-debian (0.27.2+20031003) ...
+Setting up po-debconf (0.8.2) ...
+Setting up debhelper (4.1.77) ...
 Setting up libdshconfig1 (0.20.8-1) ...
 
 Setting up libdshconfig1-dev (0.20.8-1) ...
  -> Finished parsing the build-deps
-Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 64%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 36%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
+Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 65%Reading Package Lists... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 85%Building Dependency Tree... Done
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
 Need to get 52.6kB of archives.
 After unpacking 193kB of additional disk space will be used.
-0% [Working]            0% [Connecting to ftp.jp.debian.org (210.157.158.33)]                                                     0% [Waiting for headers]                        Get:1 http://ftp.jp.debian.org sid/main fakeroot 0.7.8 [52.6kB]
-                        2% [1 fakeroot 1114/52.6kB 2%]4% [1 fakeroot 2554/52.6kB 4%]                              15% [1 fakeroot 8314/52.6kB 15%]                                37% [1 fakeroot 19834/52.6kB 37%]76% [1 fakeroot 39994/52.6kB 76%]95% [1 fakeroot 50074/52.6kB 95%]                                 100% [Working]              Fetched 52.6kB in 3s (13.4kB/s)
+0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main fakeroot 0.7.8 [52.6kB]
+            0% [1 fakeroot 0/52.6kB 0%]                           100% [Working]              Fetched 52.6kB in 0s (480kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 9671 files and directories currently installed.)
+(Reading database ... 9661 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_0.7.8_i386.deb) ...
 Setting up fakeroot (0.7.8) ...
 Copying source file
@@ -492,7 +487,7 @@ PASS: tests/param-r-invalid.sh
 1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Oct  3 14:32:30 UTC 2003
+Fri Oct 17 23:05:44 UTC 2003
 Using sleep as the remote shell
 Show machine names on output
 Adding machine 5,4,3,2,1 to list
@@ -510,7 +505,7 @@ DUMPing parameters passed to llexec
 DUMPing parameters passed to llexec
 [5] 
 --- Terminated running
-Fri Oct  3 14:32:37 UTC 2003
+Fri Oct 17 23:05:51 UTC 2003
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -618,11 +613,10 @@ dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> ignoring umount of proc filesystem
  -> ignoring umount of dev/pts filesystem
-Current time: Fri Oct  3 23:32:52 JST 2003
-pbuilder-time-stamp: 1065191572
+Current time: Sat Oct 18 08:06:07 JST 2003
+pbuilder-time-stamp: 1066431967
 /usr/lib/pbuilder/pbuilder-buildpackage: line 144:   277 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
 Kernel panic: Attempted to kill init!
- <6>Stopping all CPUs...done
-tracing thread pid = 16813
+ tracing thread pid = 28169
 
  -> Successful exit from user-mode linux

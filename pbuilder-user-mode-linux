@@ -245,6 +245,12 @@ while [ -n "$1" ] ; do
     esac
 done
 
+
+if ! touch "${BUILDPLACE}/touch" ; then
+    echo "E: Cannot touch ${BUILDPLACE}/touch, check BUILDPLACE" >&2
+    exit 1
+fi
+
 BUILDING_DSC_FILE=$(readlink -f "$1") || true # ignore failure here
 EXTRACLEANUP=
 UML_EXITCODE=1
