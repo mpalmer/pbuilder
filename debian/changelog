@@ -1,4 +1,4 @@
-pbuilder (0.6.0.prerelease.20010927) unstable; urgency=low
+pbuilder (0.6.0.prerelease.20010927.1) unstable; urgency=low
 
   * fixing manpage section
   * Adding --configfile option, to load random config file.
@@ -19,9 +19,12 @@ pbuilder (0.6.0.prerelease.20010927) unstable; urgency=low
     It is a security risk to be able to run any random script as 
     root, so be aware of this when setting "HOOKDIR".
   * debian/control: removed ${shlibs:Depends}, because there is none.
+  * fixing logic error in updatebuildenv.
+  * removed pushd and popd from runhooks, just because
+    I don't think it looks cute.
   * temporal upload ... 
   
- -- Junichi Uekawa <dancer@debian.org>  Thu, 27 Sep 2001 17:29:54 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 27 Sep 2001 20:09:03 +0900
 
 pbuilder (0.6) unstable; urgency=low
 
