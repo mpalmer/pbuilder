@@ -10,9 +10,31 @@
 
 # This will install a package using APT and see if that fails.
 
+
+
 set -ex
 echo 'nobody@nowhere' > /etc/mailname
 apt-get install -y "$1" < /dev/null
+
+
+
+
+
+# known bugs according to Christian Perrier.
+
+# anacron 	MQ	134017
+# Base-passwd	CP	184979
+		
+# exim		86210
+# Kernel-package		115884
+# Sendmail	CP	?
+# wvdial	CP	219151
+		
+# Nessusd	CP	191925
+# Libssl0.9.7		?
+		
+# php4		122353
+# seyon		147269
 
 
 
