@@ -60,7 +60,11 @@ while [ -n "$1" ]; do
 	    shift; shift;
 	    ;;
 	--buildresult)
-	    BUILDRESULT=$(readlink -f "$2");
+	    if [ -n '' ]; then
+		BUILDRESULT=$(readlink -f "$2");
+	    else
+		: # support empty case
+	    fi
 	    shift; shift;
 	    ;;
 	--removepackages)

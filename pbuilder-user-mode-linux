@@ -110,7 +110,7 @@ if [ -z "${UML_BUILDRESULT}" ]; then
 else
   echo " -> Mount build result dir outside UML [${UML_BUILDRESULT}] as [${UML_CHROOT_BUILDRESULTMOUNTDIR}]"
   BUILDRESULT=${UML_CHROOT_BUILDRESULTMOUNTDIR}
-  mkdir -p ${UML_CHROOT_BUILDRESULTMOUNTDIR}
+  mkdir -p ${UML_CHROOT_BUILDRESULTMOUNTDIR} || true
   mount -t hostfs none "${UML_CHROOT_BUILDRESULTMOUNTDIR}" -o "${UML_BUILDRESULT}"
 fi
 pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT} --buildresult "\${BUILDRESULT}" --buildplace "${UML_CHROOT_MOUNTPOINT}" --internal-build-uml ${BUILDING_DSC_FILE} 
