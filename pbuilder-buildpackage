@@ -26,8 +26,6 @@ function checkbuilddep () {
     done;
 }
 
-
-. /etc/pbuilderrc
 . /usr/lib/pbuilder/pbuilder-checkparams
 PACKAGENAME="$1"
 CHROOTEXEC="chroot $BUILDPLACE "

@@ -1,6 +1,8 @@
 #! /bin/bash 
 # this is sourced from pbuilder packages to process the optional parameters.
 
+. /etc/pbuilderrc
+
 while [ -n $1 ]; do
   case "$1" in 
     --basetgz) 
