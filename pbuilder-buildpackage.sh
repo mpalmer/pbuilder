@@ -27,9 +27,11 @@ rm -rf $BUILDPLACE
 
 echo building the build env
 mkdir -p $BUILDPLACE
-cd $BUILDPLACE
-tar xfzp $BASETGZ
-mkdir -p $BUILDPLACE/tmp/buildd
+(
+ cd $BUILDPLACE
+ tar xfzp $BASETGZ
+ mkdir -p $BUILDPLACE/tmp/buildd
+)
 echo Copying source file
 copydsc $PACKAGENAME $BUILDPLACE/tmp/buildd
 echo Extracting source
