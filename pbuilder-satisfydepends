@@ -110,6 +110,10 @@ tolower($0) ~ /^'"${BD_REGEXP}"':/   {p=1}
 	    SATISFIED="yes"
 	    INSTALLPKGLIST="${INSTALLPKGLIST} ${CURRENTREALPKGNAME}"
 	else
+	    echo "       -> Cannot install ${CURRENTREALPKGNAME}; apt errors follow:"
+	    if $CHROOTEXEC /usr/bin/apt-get -s install ${INSTALLPKGLIST} ${CURRENTREALPKGNAME}; then
+		:
+	    fi
 	    # package could not be found. -- looking for alternative.
 	    PROVIDED=""
 	    checkbuilddep_provides ${CURRENTREALPKGNAME}
@@ -122,7 +126,9 @@ tolower($0) ~ /^'"${BD_REGEXP}"':/   {p=1}
 		else
 		    # show the error for diagnostic purposes
 		    echo "       -> Cannot install $PROVIDED; apt errors follow:"
-		    $CHROOTEXEC /usr/bin/apt-get -s install ${INSTALLPKGLIST} ${PROVIDED}
+		    if $CHROOTEXEC /usr/bin/apt-get -s install ${INSTALLPKGLIST} ${PROVIDED}; then
+			:
+		    fi
 		fi
 	    fi
 	fi
