@@ -43,6 +43,7 @@ pbuilder options
  --debemail [mail address]
  --debbuildopts [dpkg-buildpackage options]
  --logfile [filename to output log]
+ --aptconfdir [overriding apt config dir]
 
 pdebuild options
  --pbuilderroot [command to obtain root privilate for pbuilder] 
@@ -94,7 +95,7 @@ function umountproc_cleanbuildplace () {
 }
 
 function installaptlines (){
-    echo Installing apt-lines
+    echo "  -> Installing apt-lines"
     rm -f "$BUILDPLACE"/etc/apt/sources.list
     if [ -z "$DISTRIBUTION" ]; then
 	echo "Distribution not specified, please specify" >&2
@@ -115,7 +116,10 @@ deb $NONUSMIRRORSITE $DISTRIBUTION/non-US main contrib non-free
 #deb-src $NONUSMIRRORSITE $DISTRIBUTION/non-US main contrib non-free
 EOF
     fi
-    
+    if [ -n "$APTCONFDIR" ]; then
+	echo "  -> Copy " "$APTCONFDIR"/* " to chroot"
+	cp -a "$APTCONFDIR/"* "$BUILDPLACE"/etc/apt
+    fi
 }
 
 function extractbuildplace () {

@@ -5,11 +5,6 @@
 
 set -e 
 
-test -z "$1" && (
-    . /usr/lib/pbuilder/pbuilder-modules
-    showhelp
-)
-
 # export this so that programs know which command line
 # operation is currently done
 export PBCURRENTCOMMANDLINEOPERATION="$1"

@@ -34,7 +34,7 @@ while [ -n "$1" ]; do
 	    shift; shift;
 	    ;;
 	--othermirror)
-	    OTHERMIRROR="$3";
+	    OTHERMIRROR="$2";
 	    shift; shift;
 	    ;;
 	--http-proxy)
@@ -84,6 +84,10 @@ while [ -n "$1" ]; do
 	--logfile)
 	    exec > $(readlink -f "$2");
 	    exec 2>&1
+	    shift; shift;
+	    ;;
+	--aptconfdir)
+	    APTCONFDIR="$2";
 	    shift; shift;
 	    ;;
 	--help)

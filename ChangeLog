@@ -1,3 +1,28 @@
+2002-02-02  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder: remove the unnecessary test -z thing,
+	 so that duplicate help message will not appear.
+
+	* pbuilderrc.5: APTCONFDIR documentation
+
+	* pbuilder.1: document --aptconfdir
+	added some more comments on "update" option and "--distribution"
+	more notes are added to --buildresult.
+
+	* pbuilder-modules: when aptconfdir is set, 
+	just dump the files inside there to /etc/apt inside chroot. 
+
+	* pbuilder-checkparams: added --aptconfdir
+
+	* pbuilderrc (APTCONFDIR): new variable.
+
+	* pbuilder-modules: installing apt-lines will use arbitrary dir to copy the template from.
+
+2002-02-01  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-checkparams: --othermirror option parser had a typo. 
+	  pointed by kov@debian.org
+
 2002-01-31  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/TODO: updated documentation in TODO.

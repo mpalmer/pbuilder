@@ -28,6 +28,11 @@ for the specified distribution.
 Updates the 
 .B "base.tgz"
 for the specified distribution.
+Also, by specifying the 
+.B "--distribution"
+option, it is possible to switch the distribution.
+Specify a dummy distribution value 
+even for custom apt config files.
 
 .TP
 .B "build"
@@ -76,6 +81,13 @@ a temporary work directory.
 Specifies the location the build result gets into after building.
 The deb files and other files that have resulted from build 
 is copied there.
+Note that the default value is not the current directory,
+or 
+.B ".."
+but somewhere else entirely. This is to avoid
+overwriting already existing deb files with
+the newly generated ones.
+
 .TP
 .BI "--mirror [" "mirror location" "]"
 Specifies the url of Debian mirror to be 
@@ -200,6 +212,16 @@ The messages generated during execution will be written to the file,
 instead of messages coming to the 
 standard output.
 
+.TP
+.BI "--aptconfdir [" "APT configuration directory to use" "]"
+Uses the apt configuration file found in the specified directory 
+as the chroot configuration.
+.B "/etc/apt"
+is one example, so that  the same configuration can be used inside the
+chroot.
+
+This option overrides other options, and may cause some inconsistency
+problems.
 
 .SH "FILES"
 .TP
