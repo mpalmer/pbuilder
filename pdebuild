@@ -34,7 +34,7 @@ PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')
 ARCHITECTURE=$(dpkg-architecture -qDEB_HOST_ARCH)
 
 dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD}
-${PBUILDERROOTCMD} pbuilder build "$@" --buildresult "${BUILDRESULT}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
+${PBUILDERROOTCMD} pbuilder build "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --buildresult "${BUILDRESULT}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
 if [ "${AUTO_DEBSIGN}" = "yes" ]; then
     debsign "${BUILDRESULT}/${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.changes"
 fi

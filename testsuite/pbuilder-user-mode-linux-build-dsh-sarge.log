@@ -1,4 +1,4 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/24810.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileDjMGOb rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/18856.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file2PWASG rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.22-5um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 Fri Sep 19 21:36:03 EDT 2003
@@ -6,8 +6,8 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/24810.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileDjMGOb rw
-Calibrating delay loop... 1594.44 BogoMIPS
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/18856.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file2PWASG rw
+Calibrating delay loop... 1414.53 BogoMIPS
 Memory: 124720k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -35,9 +35,9 @@ Initializing Cryptographic API
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/JAn7or/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/aGOUGR/mconsole
 unable to open root_fs for validation
-Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/24810.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
+Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/18856.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
 Partition check:
  ubdb: unknown partition table
 Initializing stdio console driver
@@ -81,8 +81,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Thu Oct 23 08:28:56 JST 2003
-pbuilder-time-stamp: 1066865336
+Current time: Sun Oct 26 22:43:15 JST 2003
+pbuilder-time-stamp: 1067175795
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
@@ -91,25 +91,101 @@ Installing the build-deps
  -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.18 2003/04/20 03:40:36 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
    -> Trying debhelper
-       -> Cannot install debhelper; apt errors follow:
+ -> Considering  libdshconfig1-dev
+   -> Trying libdshconfig1-dev
+ -> Installing  debhelper libdshconfig1-dev
 Reading Package Lists... 0%Reading Package Lists... 100%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
-You might want to run `apt-get -f install' to correct these:
-The following packages have unmet dependencies:
-  debhelper: Depends: perl (>= 5.6.0-16) but it is not going to be installed
-             Depends: file (>= 3.23-1) but it is not going to be installed
-             Depends: dpkg-dev (>= 1.7.0) but it is not going to be installed
-             Depends: html2text but it is not going to be installed
-             Depends: debconf-utils (>= 1.1.1) but it is not going to be installed
-             Depends: binutils but it is not going to be installed
-             Depends: po-debconf but it is not going to be installed
-  tasksel: Depends: libtextwrap1 but it is not going to be installed
-E: Unmet dependencies. Try 'apt-get -f install' with no packages (or specify a solution).
-E: Could not satisfy build-dependency.
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 19%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 87%Building Dependency Tree... Done
+The following extra packages will be installed:
+  binutils debconf-utils dpkg-dev file gettext html2text intltool-debian
+  libc6-dev libdb4.0 libdshconfig1 libmagic1 make patch perl perl-modules
+  po-debconf
+Suggested packages:
+  gnupg cvs manpages-dev libterm-readline-perl-perl
+Recommended packages:
+  c-compiler
+The following NEW packages will be installed:
+  binutils debconf-utils debhelper dpkg-dev file gettext html2text
+  intltool-debian libc6-dev libdb4.0 libdshconfig1 libdshconfig1-dev libmagic1
+  make patch perl perl-modules po-debconf
+0 upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
+2 not fully installed or removed.
+Need to get 13.7MB of archives.
+After unpacking 48.4MB of additional disk space will be used.
+0% [Working]            Err http://debootstrap.invalid sarge/main binutils 2.14.90.0.6-3
+  Could not resolve 'debootstrap.invalid'
+            0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main perl-modules 5.8.0-18
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main libdb4.0 4.0.14-1.3
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main perl 5.8.0-18
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main patch 2.5.9-1
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main make 3.80-4
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main dpkg-dev 1.10.10
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main libmagic1 4.04-1
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main file 4.04-1
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main libc6-dev 2.3.2-7
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main debconf-utils 1.3.15
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main html2text 1.3.1-2
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main gettext 0.12.1-7
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main intltool-debian 0.27.2+20031003
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main po-debconf 0.8.2
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main debhelper 4.1.74
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main libdshconfig1 0.20.8-1
+  Could not resolve 'debootstrap.invalid'
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main libdshconfig1-dev 0.20.8-1
+  Could not resolve 'debootstrap.invalid'
+                                      0% [Working]            Failed to fetch http://debootstrap.invalid/pool/main/b/binutils/binutils_2.14.90.0.6-3_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/p/perl/perl-modules_5.8.0-18_all.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/d/db4.0/libdb4.0_4.0.14-1.3_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/p/perl/perl_5.8.0-18_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/p/patch/patch_2.5.9-1_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/m/make/make_3.80-4_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/d/dpkg/dpkg-dev_1.10.10_all.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/f/file/libmagic1_4.04-1_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/f/file/file_4.04-1_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/g/glibc/libc6-dev_2.3.2-7_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/d/debconf/debconf-utils_1.3.15_all.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/h/html2text/html2text_1.3.1-2_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/g/gettext/gettext_0.12.1-7_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/i/intltool-debian/intltool-debian_0.27.2+20031003_all.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/p/po-debconf/po-debconf_0.8.2_all.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/d/debhelper/debhelper_4.1.74_all.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/libd/libdshconfig/libdshconfig1_0.20.8-1_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/libd/libdshconfig/libdshconfig1-dev_0.20.8-1_i386.deb  Could not resolve 'debootstrap.invalid'
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+ -> Trying to fix apt error
+Setting up console-data (2002.12.04dbs-18) ...
+Looking for keymap to install:
+mac-usb-be
+dpkg: error processing console-data (--configure):
+ subprocess post-installation script returned error exit status 1
+dpkg: dependency problems prevent configuration of base-config:
+ base-config depends on console-data (>= 2002.12.04dbs-16); however:
+  Package console-data is not configured yet.
+dpkg: error processing base-config (--configure):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ console-data
+ base-config
+E: Unrecoverable error installing build-dependencies.
 E: pbuilder-satisfydepends failed.
  -> ignoring umount of proc filesystem
  -> ignoring umount of dev/pts filesystem
 Kernel panic: Attempted to kill init!
- tracing thread pid = 24825
+ tracing thread pid = 18871
 
  -> Exit code 2

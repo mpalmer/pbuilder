@@ -1,3 +1,25 @@
+2003-10-28  Junichi Uekawa  <dancer@debian.org>
+
+	* pdebuild.1: pbuilder will use the config file that is specified
+	as pdebuild command-line.
+
+	* pdebuild (ARCHITECTURE): Add --configfile to the call to pbuilder 
+	invocation.
+
+	* pbuilder-checkparams (IGNORE_UMOUNT): EXTRA_CONFIGFILE is an array
+	containing the list of CONFIGFILEs loaded via --configfile.
+
+	* pbuilder-user-mode-linux: rename variable that looked similar to 
+	other variable. CONFIGFILE->SYSTEM_CONFIG.
+
+	* pbuilder-checkparams (IGNORE_UMOUNT): add error check to --configfile option
+
+	* pbuilderrc.5: update docs on BUILDRESULT not effective on 
+	pdebuild.
+
+	* pdebuild.1: add notes on pdebuild requiring buildresult to be 
+	specified.
+
 2003-10-23  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-modules (pbuilder-options): fix quoting.

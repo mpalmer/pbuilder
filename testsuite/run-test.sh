@@ -2,6 +2,8 @@
 # This is a testsuite.
 PBUILDER_UML=/usr/bin/pbuilder-user-mode-linux
 
+pbuilder --configfile non-existing-configfile
+
 if [ -x "${PBUILDER_UML}" ]; then
     for distribution in sid sarge; do
 	pbuilder-user-mode-linux create --mirror  http://ring.asahi-net.or.jp/archives/linux/debian/debian --distribution "${distribution}" --uml-image $(pwd)/testimage --logfile pbuilder-user-mode-linux-create-${distribution}.log

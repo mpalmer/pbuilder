@@ -28,6 +28,7 @@ BINARY_ARCH="no"
 PBUILDER_BUILD_LOGFILE=
 USE_PKGNAME_LOGFILE=""
 PRESERVE_BUILDPLACE="no"
+unset EXTRA_CONFIGFILE
 
 #option for user-mode-linux only.
 IGNORE_UMOUNT=""
@@ -91,7 +92,12 @@ while [ -n "$1" ]; do
 	    shift; shift;
 	    ;;
 	--configfile)
+	    if [ ! -f "$2" ]; then
+		echo "E: Config file $2 does not exist" >&2
+		exit 1
+	    fi
 	    . "$2";
+	    EXTRA_CONFIGFILE[${#EXTRA_CONFIGFILE[@]}]="$2";
 	    shift; shift; 
 	    ;;
 	--extrapackages)

@@ -28,9 +28,9 @@ function cleanup_function () {
 
 . /usr/lib/pbuilder/pbuilder-loadconfig
 
-for CONFIGFILE in /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-uml.conf ${HOME}/.pbuilderrc; do
-    if [ -f ${CONFIGFILE} ]; then
-	. ${CONFIGFILE}
+for SYSTEM_CONFIG in /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-uml.conf ${HOME}/.pbuilderrc; do
+    if [ -f ${SYSTEM_CONFIG} ]; then
+	. ${SYSTEM_CONFIG}
     fi
 done
 
