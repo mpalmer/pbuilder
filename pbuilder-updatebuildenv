@@ -24,7 +24,9 @@ set -e
 
 CHROOTEXEC="chroot $BUILDPLACE "
 
-test -n "$DISTRIBUTION" && echo "Upgrading for distribution $DISTRIBUTION" 
+if [ -n "$DISTRIBUTION" ]; then
+    echo "Upgrading for distribution $DISTRIBUTION" 
+fi
 
 extractbuildplace
 trap umountproc_cleanbuildplace exit
