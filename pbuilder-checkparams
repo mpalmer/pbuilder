@@ -80,5 +80,10 @@ done
 
 BUILDPLACE=${BUILDPLACE?"Build root directory is not defined"}
 if [ -z "$DEBEMAIL" ]; then
-		    DEBEMAIL="nobody@nowhere"
+    DEBEMAIL="nobody@nowhere"
+fi
+
+# line from kobras@debian.org
+if [ "$DEBIAN_FRONTEND" = "noninteractive" ]; then
+    exec < /dev/null
 fi
