@@ -7,9 +7,7 @@ function copydsc () {
     local TARGET="$2"
     for FILE in \
       "$DSCFILE" \
-      $(echo "$DSCFILE" | sed 's/^\(.*\)\.dsc$/\1/' ).diff.gz \
-      $(echo "$DSCFILE" | sed 's/^\(.*\)\.dsc$/\1/').tar.gz \
-      $(echo "$DSCFILE" | sed 's/\(.*\)-[^-]*\.dsc$/\1/').orig.tar.gz ; do
+	$(cat "$DSCFILE" | awk 'BEGIN{p=0} {if (p){print $3}} /^Files:/{p=1}') ; do
         cp "$FILE" "$TARGET" ;
     done
 }
