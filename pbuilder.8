@@ -153,6 +153,14 @@ The deb lines here are the ones that will appear at the top of the
 .B sources.list
 inside the chroot.
 
+These options are only valid when
+.B --override-config
+option is specified in 
+.B update 
+target, or when
+.B pbuilder create
+is being called.
+
 .TP
 .BI "--http-proxy [" "proxy" "]"
 Specifies the http proxy url. Something like
@@ -166,12 +174,13 @@ Specifies the distribution used. Currently the supported values are
 and 
 .B "woody".
 
-This option is only effective when 
+This option is only effective for 
 .B "pbuilder create" 
 or when 
 .B "pbuilder update"
 is specified with 
 .B "--override-config"
+option.
 
 .TP
 .BI "--removepackages [" "packages to remove" "]"
