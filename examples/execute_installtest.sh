@@ -14,11 +14,8 @@
 
 set -ex
 echo 'nobody@nowhere' > /etc/mailname
+echo '$Id'
 apt-get install -y "$1" < /dev/null
-
-
-
-
 
 # known bugs according to Christian Perrier.
 
