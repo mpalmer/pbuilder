@@ -21,6 +21,9 @@ This is overridden with the option
 Specifies extra packages which the system should install
 in the chroot on 
 .BR "pbuilder create" "."
+Also this is installed on
+.B "pbuilder build"
+
 .TP
 .BI "export DEBIAN_BUILDARCH=" "athlon"
 Uses this variable as 
@@ -156,6 +159,20 @@ This option is used on invocation of
 in 
 .B "pdebuild"
 
+
+.TP
+.BI "BUILDUSERID=" "1234"
+The uid to be used inside chroot.
+It should not collide with user-id outside the chroot.
+
+.TP
+.BI "BUILDUSERNAME=" "pbuilder"
+The user name of the user the build will run as.
+Specifying this will enable the use of fakeroot inside 
+pbuilder.
+
+Note that this will require fakeroot to be installed within
+the chroot.
 
 .TP
 .BI "APTCONFDIR=" "/etc/apt"

@@ -171,6 +171,8 @@ function checkbuilddep_internal () {
 
 function checkbuilddep () {
     checkbuilddep_internal
+    # install extra packages to the chroot
+    $CHROOTEXEC usr/bin/apt-get -y install ${EXTRAPACKAGES}
 }
 
 function echobacktime () {
@@ -190,12 +192,25 @@ function saveaptcache_umountproc_cleanbuildplace () {
     umountproc_cleanbuildplace
 }
 
+function createbuilduser () {
+    # create the build user
+    echo "$BUILDUSERNAME:x:$BUILDUSERID::/tmp/buildd:/bin/sh" >> $BUILDPLACE/etc/passwd
+    echo "$BUILDUSERNAME:x:$BUILDUSERID:" >> $BUILDPLACE/etc/group
+}
 
 . /usr/lib/pbuilder/pbuilder-checkparams
 
 PACKAGENAME="$1"
 CHROOTEXEC="chroot $BUILDPLACE "
-
+if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
+    SUTOUSER="su - $BUILDUSERNAME -- "
+    echo "I: using fakeroot in build."
+else
+    # run the build in root
+    SUTOUSER=""
+    BUILDUSERID=0
+    BUILDUSERNAME=root
+fi
 if [ ! -f "$PACKAGENAME" ]; then
     echo "Command line parameter [$PACKAGENAME] is not a valid .dsc file name" >&2
     exit 1;
@@ -203,14 +218,14 @@ fi;
 
 showbuildbanner
 echobacktime
-
+createbuilduser
 extractbuildplace 
 
 echo Copying source file
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 echo Extracting source
-if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then
-    echo pbuilder: Failed extracting the source >&2 
+if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; chown $BUILDUSERNAME:$BUILDUSERNAME *; $SUTOUSER /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then
+    echo "pbuilder: Failed extracting the source" >&2 
     umountproc_cleanbuildplace
     exit 1;
 fi
@@ -224,7 +239,7 @@ echo " -> Building the package"
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 
 if [ -z "$DEBEMAIL" ]; then
-    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage -us -uc $DEBBUILDOPTS"; then
+    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  $SUTOUSER dpkg-buildpackage -us -uc $DEBBUILDOPTS"; then
 	echo "pbuilder: Failed autobuilding of package" >&2
 	umountproc_cleanbuildplace
 	exit 1;    

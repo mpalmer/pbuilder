@@ -5,9 +5,11 @@ pbuilder (0.23) unstable; urgency=low
     reported by Mark Brown (closes: #129053)
     (please test)
   * Fix update target to remove packages specified in REMOVEPACKAGES.
-  * pbuilder update requests apt-get to call dpkg with --force-confnew option
+  * Support building as non-root user, and using fakeroot inside 
+    the chroot. (please test)
+  * EXTRAPACKAGES takes effect within the build target. (please test)
 
- -- Junichi Uekawa <dancer@debian.org>  Thu, 14 Feb 2002 20:32:58 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Fri, 15 Feb 2002 21:23:22 +0900
 
 pbuilder (0.22) unstable; urgency=low
 

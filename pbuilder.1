@@ -70,6 +70,13 @@ This may change in the future.
 .BI "--basetgz [" "basetgz-location" "]"
 Specifies the location of 
 .B "base.tgz"
+
+This option will define the default distribution and 
+apt-lines when used in
+.B "pbuilder update"
+and 
+.B "pbuilder create"
+
 .TP
 .BI "--buildplace [" "location of build" "]"
 Specifies the location where building and 
@@ -153,6 +160,11 @@ surrounded in double quotations, like
 Adds packages specified as an addition to the default,
 which is 
 .B build-essential
+by default.
+This is used in 
+.B build
+and 
+.B create
 
 .TP
 .BI "--configfile [" "configuration file to load" "]"
