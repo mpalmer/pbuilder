@@ -1,0 +1,26 @@
+#!/bin/bash
+# try to install the resulting debs.
+
+echo "Trying to install resulting packages and test upgrades"
+set -ex
+
+
+PKGNAMES=$(ls -1 /tmp/buildd *.deb | sed 's/_.*$//' )
+
+# install-remove check
+dpkg -i /tmp/buildd/*.deb
+dpkg --remove $PKGNAMES
+
+# install-purge check
+dpkg -i /tmp/buildd/*.deb
+dpkg --purge $PKGNAMES
+
+# upgrade-remove check
+apt-get install $PKGNAMES || true
+dpkg -i /tmp/buildd/*.deb
+dpkg --remove $PKGNAMES
+
+# upgrade-purge check
+apt-get install $PKGNAMES || true
+dpkg -i /tmp/buildd/*.deb
+dpkg --purge $PKGNAMES

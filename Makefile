@@ -34,6 +34,8 @@ install:
 	$(INSTALL_FILE) pbuilder-uml.conf $(DESTDIR)/etc/pbuilder
 	$(INSTALL_FILE) pbuilder-uml.conf $(DESTDIR)/usr/share/pbuilder
 	$(INSTALL_EXECUTABLE) examples/B90linda $(DESTDIR)/usr/share/doc/pbuilder/examples
+	$(INSTALL_EXECUTABLE) examples/B91dpkg-i $(DESTDIR)/usr/share/doc/pbuilder/examples
+	$(INSTALL_EXECUTABLE) examples/C10shell $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/D10tmp $(DESTDIR)/usr/share/doc/pbuilder/examples
 
 
