@@ -35,7 +35,7 @@ for CONFIGFILE in /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-u
 done
 
 function usecow () {
-    PBUILDER_COWFILENAME=$(tempfile -d "${BUILDPLACE}" --suffix .cow)     
+    PBUILDER_COWFILENAME="${BUILDPLACE}/$$.cow"
     PBUILDER_COW="${PBUILDER_COWFILENAME},"
     rm -f "${PBUILDER_COWFILENAME}"
 }
@@ -50,7 +50,7 @@ function operate_uml () {
     # use this script file to bootstrap the pbuilder inside the UML
     INSIDE_PBUILDER=$(tempfile)
     trap cleanup_function exit
-    UML_CHROOT_MOUNTPOINT=/mnt/
+    UML_CHROOT_MOUNTPOINT=/var/cache/pbuilder/pbuilder-mnt
 
 #The following script is ran inside UML as soon as it is started.
 
@@ -61,6 +61,7 @@ mount -t tmpfs /tmp /tmp
 mount -t ext2 /dev/ubd/1 ${UML_CHROOT_MOUNTPOINT}
 export LOGNAME="${LOGNAME}"
 export HOME="${HOME}"
+hostname "${UML_HOSTNAME}"
 if [ "${UML_MOUNT_TMPFS}" = "yes" ]; then
   mount -t tmpfs ${UML_CHROOT_MOUNTPOINT}/tmp ${UML_CHROOT_MOUNTPOINT}/tmp
 else
@@ -102,6 +103,7 @@ if [ -n "${UML_DISTRIBUTION}" ]; then
   EXTRAOPT="--distribution ${UML_DISTRIBUTION}"
 fi
 pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT} --buildresult "" --buildplace ${UML_CHROOT_MOUNTPOINT} --internal-build-uml ${BUILDING_DSC_FILE} 
+echo "Umounting ${UML_CHROOT_MOUNTPOINT}"
 umount ${UML_CHROOT_MOUNTPOINT}
 EOF
 
@@ -154,6 +156,10 @@ while [ -n "$1" ] ; do
 	    UML_MEM="$2";
 	    shift; shift;
 	    ;;
+	--uml-hostname)
+	    UML_HOSTNAME="$2";
+	    shift; shift;
+	    ;;
 	--distribution)
 	    UML_DISTRIBUTION="$2";
 	    shift; shift;
@@ -166,6 +172,9 @@ while [ -n "$1" ] ; do
 	--timeout|--http-proxy|--configfile|--hookdir|--aptconfdir)
 	    UML_EXTRAOPT="${UML_EXTRAOPT} $1 $2"
 	    shift; shift;;
+	--buildresult)
+	    # ignore buildresult
+	    shift;shift;;
 	--logfile)
 	    exec > $(readlink -f "$2");
 	    exec 2>&1

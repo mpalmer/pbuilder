@@ -16,6 +16,7 @@ install:
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/lib/pbuilder
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/pbuilder
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples
+	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-mnt
 	$(INSTALL_EXECUTABLE) pbuilder-buildpackage $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-buildpackage-funcs $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-createbuildenv $(DESTDIR)/usr/lib/pbuilder/

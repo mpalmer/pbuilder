@@ -71,6 +71,10 @@ Specify the UML image to use.
 Specify whether to mount tmpfs inside UML chroot.
 
 .TP
+.BI "--uml-hostname [" "uml-host" "]"
+The hostname inside uml.
+
+.TP
 .BI "--distribution [" "sid" "]"
 Specify the distribution.
 see pbuilder.8
@@ -110,6 +114,11 @@ to switch distribution using
 Specify this option to make the output go to 
 .I logfilename
 instead of standard output.
+
+.TP 
+.BI "--buildresult " "dummy"
+A dummy option.
+
 
 .SH "NOTES"
 This software is in early stage of development. 

@@ -1,3 +1,22 @@
+2003-01-09  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-user-mode-linux: use /var/cache/pbuilder/pbuilder-mnt
+	instead of /mnt, which may be used for other tasks.
+	PBUILDER_COWFILENAME is buildplace/$$.cow.
+
+	* Makefile (install): install /var/cache/pbuilder/pbuilder-mnt dir.
+
+	* pbuilder-user-mode-linux (UML_EXTRAOPT): --buildresult ignore.
+
+	* pbuilder-user-mode-linux.1: document --uml-hostname
+
+	* pbuilder-user-mode-linux: set hostname inside UML.
+	(UML_EXTRAOPT): --uml-hostname option.
+
+	* pbuilder-uml.conf.5: document
+
+	* pbuilder-uml.conf (UML_HOSTNAME): add variable for hostname
+
 2003-01-08  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-user-mode-linux (UML_EXTRAOPT): --logfile option.
