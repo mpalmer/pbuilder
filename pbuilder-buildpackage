@@ -133,8 +133,8 @@ if [ -n ${TIMEOUT_TIME} ]; then
     ( 
 	: Timeout process
 	sleep "${TIMEOUT_TIME}";
-	kill ${BUILD_PID} || true
 	echo " -> Terminating build process due to timeout "
+	kill ${BUILD_PID} || true
     ) & # timeout process
     KILL_WAIT_PID="kill $! || true; echo \"  -> Terminate timeout process\"; "
 else
