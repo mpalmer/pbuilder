@@ -18,7 +18,7 @@
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-set -e 
+set -e
 
 function cleanup_function () {
     rm -f ${INSIDE_PBUILDER}
@@ -51,11 +51,13 @@ function operate_uml () {
     INSIDE_PBUILDER=$(tempfile)
     trap cleanup_function exit
     UML_CHROOT_MOUNTPOINT=/var/cache/pbuilder/pbuilder-mnt
-
+    UML_CHROOT_BUILDRESULTMOUNTDIR=/var/cache/pbuilder/pbuilder-umlresult
 #The following script is ran inside UML as soon as it is started.
 
     cat <<EOF > ${INSIDE_PBUILDER}
 #! /bin/bash
+${UML_DEBUGMODE}
+
 mount -t proc /proc /proc
 mount -t tmpfs /tmp /tmp
 mount -t ext2 /dev/ubd/1 ${UML_CHROOT_MOUNTPOINT}
@@ -87,6 +89,7 @@ iface eth0 inet static
 IP
 cat <<SHELL > ${UML_CHROOT_MOUNTPOINT}/tmp/chrootshell
 #! /bin/bash
+${UML_DEBUGMODE}
 # the shell executed inside chroot inside UML
     echo Starting network inside the chroot
     /etc/init.d/networking stop
@@ -102,20 +105,39 @@ EXTRAOPT=
 if [ -n "${UML_DISTRIBUTION}" ]; then
   EXTRAOPT="--distribution ${UML_DISTRIBUTION}"
 fi
-pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT} --buildresult "" --buildplace ${UML_CHROOT_MOUNTPOINT} --internal-build-uml ${BUILDING_DSC_FILE} 
+if [ -z "${UML_BUILDRESULT}" ]; then
+  BUILDRESULT=
+else
+  echo " -> Mount build result dir outside UML [${UML_BUILDRESULT}] as [${UML_CHROOT_BUILDRESULTMOUNTDIR}]"
+  BUILDRESULT=${UML_CHROOT_BUILDRESULTMOUNTDIR}
+  mkdir -p ${UML_CHROOT_BUILDRESULTMOUNTDIR}
+  mount -t hostfs none "${UML_CHROOT_BUILDRESULTMOUNTDIR}" -o "${UML_BUILDRESULT}"
+fi
+pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT} --buildresult "\${BUILDRESULT}" --buildplace "${UML_CHROOT_MOUNTPOINT}" --internal-build-uml ${BUILDING_DSC_FILE} 
+echo \$? > /proc/exitcode
 echo "Umounting ${UML_CHROOT_MOUNTPOINT}"
 umount ${UML_CHROOT_MOUNTPOINT}
+if [ -n "${UML_BUILDRESULT}" ]; then
+  umount "${UML_CHROOT_BUILDRESULTMOUNTDIR}"
+fi
 EOF
 
     chmod a+x ${INSIDE_PBUILDER}
 
     echo Invoking: "linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1=${PBUILDER_COW}${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}"
-    linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1="${PBUILDER_COW}${PBUILDER_UML_IMAGE}" devfs=mount init=${INSIDE_PBUILDER}
+    if linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1="${PBUILDER_COW}${PBUILDER_UML_IMAGE}" devfs=mount init=${INSIDE_PBUILDER} ; then
+	UML_EXITCODE=$?
+	echo " -> Successful exit from user-mode linux"
+    else
+	UML_EXITCODE=$?
+	echo " -> Exit code ${UML_EXITCODE}"
+    fi
 }
 
 PBUILDER_COW=""
 OPERATION="$1"
 UML_EXTRAOPT=
+UML_DEBUGMODE=
 shift;
 
 while [ -n "$1" ] ; do
@@ -160,6 +182,9 @@ while [ -n "$1" ] ; do
 	    UML_HOSTNAME="$2";
 	    shift; shift;
 	    ;;
+	--uml-debugmode)
+	    UML_DEBUGMODE="set -x";
+	    shift;;
 	--distribution)
 	    UML_DISTRIBUTION="$2";
 	    shift; shift;
@@ -174,6 +199,7 @@ while [ -n "$1" ] ; do
 	    shift; shift;;
 	--buildresult)
 	    # ignore buildresult
+	    UML_BUILDRESULT=$(readlink -f "$2")
 	    shift;shift;;
 	--logfile)
 	    exec > $(readlink -f "$2");
@@ -196,7 +222,7 @@ done
 
 BUILDING_DSC_FILE=$(readlink -f "$1")
 EXTRACLEANUP=
-
+UML_EXITCODE=1
 case "${OPERATION}" in
     build)
 	usecow
@@ -219,3 +245,5 @@ case "${OPERATION}" in
 	echo "Error: Unknown option [${OPERATION}] was specified " >&2 
 	;;
 esac
+
+exit ${UML_EXITCODE}

@@ -1,3 +1,20 @@
+2003-01-10  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-user-mode-linux: use /var/cache/pbuilder/pbuilder-umlresult 
+	as directory to mount hostfs for result.
+	(UML_DEBUGMODE): --uml-debugmode option to enable trace of 
+	shell.
+
+	* Makefile (install): create pbuilder-umlresult dir.
+
+	* pbuilder-uml.conf.5: document UML_BUILDRESULT
+
+	* pbuilder-uml.conf (UML_BUILDRESULT): add UML_BUILDRESULT=
+
+	* pbuilder-user-mode-linux (EXTRAOPT): add support for exitcode.
+	Thanks mdz for the hint!
+	(UML_EXTRAOPT): try and implement BUILDRESULT
+
 2003-01-09  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-user-mode-linux: use /var/cache/pbuilder/pbuilder-mnt
