@@ -41,35 +41,8 @@ Testsuite:
 	The whole of Debian archive (main) is now being test-rebuilt with
 	pbuilder. Most packages succeed. Many fail to build from
 	source, genuinely, or from pbuilder bugs. The number of pbuilder
-	bugs are on the decreasing end. 5000 packages suceeded in building,
-	and about 1000 packages don't build from source.
-
-
-Notes on usage of $TMPDIR
-=========================
-
-First, I recommend reading the manpage.
-
-If you are setting $TMPDIR to an unusual value, of other than
-/tmp, you will find that some errors may occur inside the chroot,
-such as dpkg-source failing.
-
-There are two options, you may install a hook to create that
-directory, or set 
-
-export TMPDIR=/tmp
-
-in pbuilderrc. Take your pick.
-
-
-Notes on pbuilder create
-========================
-
-It often happens that pbuilder cannot create latest chroot.
-Try upgrading pbuilder and debootstrap.
-It is currently only possible to create software that handles the 
-past. Future prediction features may be added later when 
-we can successfully handle the past.
+	bugs are on the decreasing end. 6000 packages suceeded in building,
+	and about 600 packages don't build from source.
 
 
 Further reading
@@ -77,8 +50,9 @@ Further reading
 
 This documentation is not precise. I recommend reading
 pbuilder.8 and pbuilderrc.5 manual pages.
+There is also a HTML manual now, pbuilder-doc.html.
 When they are incorrect or misleading, please send bugreports.
 
 
 $Id$
- -- Junichi Uekawa <dancer@debian.org>, Tue Nov 12 06:06:41 2002
+ -- Junichi Uekawa <dancer@debian.org>, Tue Dec 31 15:24:22 2002

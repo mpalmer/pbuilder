@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="euc-jp"?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "docbookx.dtd"> 
-<!-- the original of this documentation is in pbuilder source tarball -->
+<!-- the original of this documentation is in pbuilder source tar-ball -->
 <book>
   <title>pbuilder User's Manual</title>
   <chapter>
@@ -30,7 +30,7 @@
       </para>
       <para>
 	The aim of pbuilder is very different from other 
-	autobuilding systems in that its aim is not in trying to build
+	auto-building systems in that its aim is not in trying to build
 	as many packages. It does not try to guess
 	what a package needs, and in most cases it tries the
 	worst choice of all if there was a choice to be made.
@@ -72,7 +72,19 @@
       </para>
       <para>
 	For fuller documentation of command-line options, see
-	pbuilder.8 manual page
+	pbuilder.8 manual page.
+	Some configuration will be required for <filename>/etc/pbuilderrc</filename>
+	for the mirror site
+	<footnote>
+	  <para>
+	    The mirror site should preferably a local one,
+	    to not to overload the public mirrors with
+	    a lot of access.
+	  </para>
+	</footnote>
+	to use, and proxy configuration is probably required to allow access
+	through HTTP.
+	See pbuilderrc.5 manual page for details.
       </para>
     </sect1>
     <sect1>
@@ -85,7 +97,7 @@
       </para>
       <para>
 	It is possible to switch the distribution which the chroot 
-	tarball is targetted at at this point.
+	tarball is targeted at at this point.
 	Specify <command><option>--distribution <parameter>sid</parameter></option> <option>--override-config</option></command> to change the distribution
 	to sid.
 	<footnote>
@@ -128,6 +140,29 @@
       </para>
     </sect1>
     <sect1>
+      <title>Facilitating Debian Developers from typing, pdebuild</title>
+      <para>
+	<command>pdebuild</command> is a little wrapper 
+	script that does the most frequent of all tasks.
+	A Debian Developer may try to do <command>debuild</command>, and 
+	build a package, inside a Debian source directory.
+	<command>pdebuild</command> will allow similar 
+	control, and allow package to be built inside the chroot,
+	to check that the current source tree will build happily
+	inside the chroot.
+      </para>
+      <para>
+	<command>pdebuild</command> calls <command>dpkg-source</command>
+	to build the source packages, and then invoke
+	<command>pbuilder</command> on the resulting source package.
+	However, unlike debuild, the resulting deb files will be
+	found somewhere in BUILDRESULT directory.
+      </para>
+      <para>
+	See pdebuild.1 manual page for more details.
+      </para>
+    </sect1>
+    <sect1>
       <title>Configuration Files</title>
       <para>
 	It is possible to specify all settings by command-line
@@ -143,7 +178,7 @@
       </para>
     </sect1>
     <sect1>
-      <title>Building packages as non-root</title>
+      <title>Building packages as non-root inside the chroot</title>
       <para>
 	<command>pbuilder</command> requires full root privilage 
 	when it is satisfying the build-dependency but most packages do not 
@@ -165,6 +200,11 @@
 	Using the fakerooting method, pbuilder will run with 
 	root privilage when it is required, when installing
 	packages to the chroot.
+      </para>
+      <para>
+	To be able to invoke pbuilder without being 
+	root, you need to use user-mode-linux, as explained
+	in <xref linkend="pbuilder-uml"/>.
       </para>
     </sect1>
     <sect1>
@@ -193,8 +233,8 @@
     <sect1>
       <title>Mass-building packages</title>
       <para>
-	pbuilder can be automated, because its operation is 
-	noninteractive.
+	pbuilder can be automated, because its operations are
+	non-interactive.
 	It is possible to run pbuilder through multiple packages 
 	noninteractively.
 	There are several such scripts known to exist.
@@ -246,7 +286,7 @@
     <sect1>
       <title>Using pbuilder for automated testing of packages</title>
       <para>
-	pbuilder can be used for automated testing of pacakges.
+	pbuilder can be used for automated testing of packages.
 	It has the feature of allowing hooks to be placed,
 	and these hooks can try to install packages inside
 	the chroot, or run them, or whatever else that 
@@ -264,14 +304,72 @@
 	</listitem>
       </itemizedlist>
     </sect1>
+    <sect1>
+      <title>Using pbuilder for testing build with alternate compilers</title>
+      <para>
+	Most packages are compiled with <command>gcc</command> or <command>g++</command>
+	and using the default compiler version, which was gcc 2.95 for Debian GNU/Linux 3.0 (i386).
+	However, Debian distributes other compilers, also, and provides
+	binaries such as <command>gcc-3.2</command> for gcc compiler version 3.2.
+	It is therefore possible to try compiling packages against different
+	compiler versions.
+	<command>pentium-builder</command> provides an infrastructure for using different
+	compiler for building packages than the default gcc, by
+	becoming a wrapper script called gcc, that calls the real gcc.
+	To use <command>pentium-builder</command> in <command>pbuilder</command>, it is possible to set up the
+	following in the configuration:
+	<screen>
+EXTRAPACKAGES="pentium-builder gcc-3.2 g++-3.2"
+export DEBIAN_BUILDARCH=athlon
+export DEBIAN_BUILDGCCVER=3.2
+	</screen>
+      </para>
+      <para>
+	It will instruct <command>pbuilder</command> to install <command>pentium-builder</command> package 
+	and also the GCC 3.2 compiler packages inside the chroot,
+	and set the environment variables required for 
+	<command>pentium-builder</command> to function.
+      </para>
+    </sect1>
   </chapter>
   <chapter>
-    <title>Enhanced and experimental features of pbuilder</title>
+    <title>Known Problems</title>
+    <para>
+      Here, known problems and frequently asked questions are
+      documented. 
+      This part is moved from README.Debian file.
+    </para>
+    <sect1>
+      <title>Notes on pbuilder create</title>
+      <para>
+	It often happens that pbuilder cannot create latest chroot.
+	Try upgrading pbuilder and debootstrap.
+	It is currently only possible to create software that handles the 
+	past. Future prediction features may be added later when 
+	we can successfully handle the past.
+      </para>
+    </sect1>
+    <sect1>
+      <title>Notes on usage of $TMPDIR</title>
+      <para>
+	If you are setting $TMPDIR to an unusual value, of other than
+	<filename>/tmp</filename>, you will find that some errors may occur inside the chroot,
+	such as <command>dpkg-source</command> failing.
+      </para>
+      <para>There are two options, you may install a hook to create that
+	directory, or set 
+	<screen>export TMPDIR=/tmp</screen>
+	in pbuilderrc. Take your pick.
+      </para>
+    </sect1>
+  </chapter>
+  <chapter>
+    <title>Experimental or wishlist features of pbuilder</title>
     <para>
       There are some advanced features, above that of the 
       basic feature of pbuilder, for some specific purposes.
     </para>
-    <sect1>
+    <sect1 id="pbuilder-uml">
       <title>Using User-mode-linux</title>
       <para>
 	<command>pbuilder-uml</command> exists.
@@ -334,9 +432,11 @@
 	The following is most possibly inaccurate account of how 
 	pbuilder happened to come, and other attempts to 
 	make something like pbuilder to happen.
+	This part of document was originally in AUTHORS file,
+	to give credit to those who existed before pbuilder.
       </para>
       <sect2>
-	<title>The Time Before PBuilder</title>
+	<title>The Time Before pbuilder</title>
 	<para>
 	  There were dbuild, which was a shell script to build
 	  Debian packages from source. Lars Wirzenius wrote that 
@@ -364,7 +464,7 @@
 	</para>
       </sect2>
       <sect2>
-	<title>Birth of PBuilder</title>
+	<title>Birth of pbuilder</title>
 	<para>
 	  wanna-build (sbuild) was quite difficult to set up, and it was 
 	  never a Debian package. dbuild was something that predated
@@ -398,8 +498,6 @@
 	  pretty hard.
 	</para>
       </sect2>
-
-
     </sect1>
   </chapter>
 </book>
