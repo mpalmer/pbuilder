@@ -68,6 +68,7 @@ function checkbuilddep_internal () {
 
     local ARCH=$(dpkg-architecture -qDEB_HOST_ARCH)
     local INSTALLPKG
+    local INSTALLPKGLIST
     local INSTALLPKGMULTI
     local CURRENTREALPKGNAME
     local SATISFIED
@@ -103,19 +104,25 @@ tolower($0) ~ /^'"${BD_REGEXP}"':/   {p=1}
 	      continue;
 	    fi
 	fi
-	echo " -> Installing "${CURRENTREALPKGNAME}
+	echo "   -> Trying "${CURRENTREALPKGNAME}
 
-	if $CHROOTEXEC /usr/bin/apt-get -y install ${CURRENTREALPKGNAME}; then
+	if $CHROOTEXEC /usr/bin/apt-get -s install ${INSTALLPKGLIST} ${CURRENTREALPKGNAME} >& /dev/null; then
 	    SATISFIED="yes"
+	    INSTALLPKGLIST="${INSTALLPKGLIST} ${CURRENTREALPKGNAME}"
 	else
 	    # package could not be found. -- looking for alternative.
 	    PROVIDED=""
 	    checkbuilddep_provides ${CURRENTREALPKGNAME}
 	    if [ -n "$PROVIDED" ]; then
 		# something provides this package
-		echo "   -> Installing $PROVIDED to satisfy the dependency "
-		if $CHROOTEXEC /usr/bin/apt-get -y install $PROVIDED; then
+		echo "     -> Considering $PROVIDED to satisfy the dependency "
+		if $CHROOTEXEC /usr/bin/apt-get -s install ${INSTALLPKGLIST} ${PROVIDED} >& /dev/null; then
 		    SATISFIED="yes";
+		    INSTALLPKGLIST="${INSTALLPKGLIST} ${PROVIDED}"
+		else
+		    # show the error for diagnostic purposes
+		    echo "       -> Cannot install $PROVIDED; apt errors follow:"
+		    $CHROOTEXEC /usr/bin/apt-get -s install ${INSTALLPKGLIST} ${PROVIDED}
 		fi
 	    fi
 	fi
@@ -130,6 +137,19 @@ tolower($0) ~ /^'"${BD_REGEXP}"':/   {p=1}
 	  fi
       fi
     done;
+    
+    # now actually install the packages
+    echo " -> Installing ${INSTALLPKGLIST}"
+    if ! $CHROOTEXEC apt-get -y install ${INSTALLPKGLIST}; then
+	echo " -> Trying to fix apt error"
+	# Work around an apt bug which causes configure to fail.
+	if $CHROOTEXEC dpkg --configure --pending && $CHROOTEXEC apt-get -y install ${INSTALLPKGLIST}; then
+	    echo " -> Apt bug workaround succeeded"
+	elif [ "$CONTINUE_FAIL" != "yes" ]; then
+	    echo "E: Unrecoverable error installing build-dependencies." >&2
+	    exit 1
+	fi
+    fi
 
     # start processing build-conflicts.
     for INSTALLPKG in $(cat "${DEBIAN_CONTROL}" | \
