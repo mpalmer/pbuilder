@@ -17,7 +17,7 @@
   </bookinfo>
   <chapter>
     <title>Introducing pbuilder</title>
-    <sect1>
+    <sect1 id="aim">
       <title>Aims of pbuilder</title>
       <para>
 	<command>pbuilder</command> stands for 
@@ -63,9 +63,9 @@
       </para>
     </sect1>
   </chapter>
-  <chapter>
+  <chapter id="usingpbuilder">
     <title>Using pbuilder</title>
-    <sect1>
+    <sect1 id="creatingbase">
       <title>Creating base chroot image</title>
       <para>
 	<command>pbuilder create</command>
@@ -121,7 +121,7 @@
 	pbuilder.8 manual page
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="buildpackagechroot">
       <title>Building a package using chroot image</title>
       <para>
 	To build a package inside the chroot, invoke
@@ -151,7 +151,7 @@
 	pbuilder.8 manual page
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="pdebuild">
       <title>Facilitating Debian Developers from typing, pdebuild</title>
       <para>
 	<command>pdebuild</command> is a little wrapper 
@@ -174,7 +174,7 @@
 	See pdebuild.1 manual page for more details.
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="configfile">
       <title>Configuration Files</title>
       <para>
 	It is possible to specify all settings by command-line
@@ -189,7 +189,7 @@
 	pbuilderrc.5 documentation.
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="nonrootchroot">
       <title>Building packages as non-root inside the chroot</title>
       <para>
 	<command>pbuilder</command> requires full root privilege 
@@ -219,7 +219,7 @@
 	in <xref linkend="pbuilder-uml"/>.
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="backporting">
       <title>Using pbuilder for back-porting</title>
       <para>
 	pbuilder can be used for back-porting software from 
@@ -242,7 +242,7 @@
 	</listitem>
       </itemizedlist>
     </sect1>
-    <sect1>
+    <sect1 id="massbuild">
       <title>Mass-building packages</title>
       <para>
 	pbuilder can be automated, because its operations are
@@ -325,7 +325,7 @@
 	how you are doing, or any examples.
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="autotesting">
       <title>Using pbuilder for automated testing of packages</title>
       <para>
 	pbuilder can be used for automated testing of packages.
@@ -346,7 +346,7 @@
 	</listitem>
       </itemizedlist>
     </sect1>
-    <sect1>
+    <sect1 id="altcompiler">
       <title>Using pbuilder for testing build with alternate compilers</title>
       <para>
 	Most packages are compiled with <command>gcc</command> 
