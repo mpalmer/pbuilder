@@ -120,10 +120,12 @@ function cleanbuildplace () {
     if [ "$?" -ne 0 ]; then
 	echo " -> Aborting with an error";
     fi
-    if [ -d "$BUILDPLACE" ]; then 
-	echo " -> cleaning the build env "
-	rm -rf "$BUILDPLACE"
-    fi;
+    if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
+	if [ -d "$BUILDPLACE" ]; then 
+	    echo " -> cleaning the build env "
+	    rm -rf "$BUILDPLACE"
+	fi;
+    fi
 }
 
 function umountproc_cleanbuildplace () {
@@ -166,28 +168,30 @@ EOF
 function extractbuildplace () {
     # after calling this function, umountproc, and cleanbuildplace
     # needs to be called. Please trap it.
-    cleanbuildplace
-    echo "Building the build Environment"
-    echo " -> extracting base.tgz"
-    if ! mkdir -p "$BUILDPLACE"; then
-	echo "E: failed to build the directory to chroot"
-	exit 1
-    fi
-    if [ ! -f "$BASETGZ" ]; then
-	echo "E: failed to find $BASETGZ, have you done <pbuilder create> to create your base tarball yet?"
-	exit 1
-    fi
-    if ! (cd "$BUILDPLACE" && tar xfzp "$BASETGZ"); then
-	echo "E: failed to extract $BASETGZ to $BUILDPLACE"
-	exit 1
+    if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
+	cleanbuildplace
+	echo "Building the build Environment"
+	echo " -> extracting base.tgz"
+	if ! mkdir -p "$BUILDPLACE"; then
+	    echo "E: failed to build the directory to chroot"
+	    exit 1
+	fi
+	if [ ! -f "$BASETGZ" ]; then
+	    echo "E: failed to find $BASETGZ, have you done <pbuilder create> to create your base tarball yet?"
+	    exit 1
+	fi
+	if ! (cd "$BUILDPLACE" && tar xfzp "$BASETGZ"); then
+	    echo "E: failed to extract $BASETGZ to $BUILDPLACE"
+	    exit 1
+	fi
+	echo " -> copying/creating local configuration"
+	for a in hosts hostname resolv.conf; do 
+	    cp $( readlink -f /etc/$a ) "$BUILDPLACE/etc/$a";
+	done
     fi
     mountproc
-    mkdir -p "$BUILDPLACE/tmp/buildd"
-    echo " -> copying/creating local configuration"
-    for a in hosts hostname resolv.conf; do 
-	cp $( readlink -f /etc/$a ) "$BUILDPLACE/etc/$a";
-    done
     hostname -f > "$BUILDPLACE/etc/mailname"
+    mkdir -p "$BUILDPLACE/tmp/buildd"
     
     if [ -n "$DISTRIBUTION" ]; then
 	installaptlines

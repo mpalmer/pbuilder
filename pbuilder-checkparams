@@ -25,6 +25,8 @@
 BASEBUILDPLACE="$BUILDPLACE"
 BUILDPLACE="$BUILDPLACE/$$"
 CHROOTEXEC="chroot $BUILDPLACE "
+#default value for this option is !empty!
+INTERNAL_BUILD_UML=""
 
 while [ -n "$1" ]; do 
     case "$1" in 
@@ -106,10 +108,17 @@ while [ -n "$1" ]; do
 	    TIMEOUT_TIME="$2"
 	    shift; shift;
 	    ;;
+	## internal options.
 	--internal-chrootexec)
 	    # specify custom chrootexec function -- this is internal debugging function
 	    CHROOTEXEC="$2"
 	    shift; shift;
+	    ;;
+	--internal-build-uml)
+	    # specify this option if I am running inside UML.
+	    echo " -> Running in pbuilder-user-mode-linux mode"
+	    INTERNAL_BUILD_UML="yes"
+	    shift; 
 	    ;;
 	--help)
 	    showhelp

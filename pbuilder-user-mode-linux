@@ -58,7 +58,7 @@ cat <<SHELL > /tmp/ubd1/tmp/chrootshell
 SHELL
 chmod a+x /tmp/ubd1/tmp/chrootshell
 chroot /tmp/ubd1/ /tmp/chrootshell
-pbuilder build --buildplace /tmp/ubd1/tmp/1 ${BUILDING_DSC_FILE} 
+pbuilder build --buildplace /tmp/ubd1/ --internal-build-uml ${BUILDING_DSC_FILE} 
 EOF
 
 chmod a+x ${INSIDE_PBUILDER}
