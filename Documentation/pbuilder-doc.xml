@@ -191,11 +191,13 @@
       <itemizedlist>
 	<listitem>
 	  <para>Build-Dependency needs to install noninteractively, but 
-	    some packages cannot install without interaction (postgresql)</para>
+	    some packages are so broken that they cannot install 
+	    without interaction (like postgresql)</para>
 	</listitem>
 	<listitem>
 	  <para>When a library package breaks, or gcc/gcj/g++ breaks, 
 	    or even bison, a large number of build failure are reported.
+	    (gcj-3.0 which had no "javac", bison which got more strict, etc.)
 	  </para>
 	</listitem>
 	<listitem>
@@ -205,6 +207,18 @@
       <para>
 	But most of these problems are now getting solved.
 	Only about 10% of Debian now fail to build from source (29 Dec 2002).
+      </para>
+      <para>
+	A script that was used by Junichi Uekawa is now included in 
+	pbuilder distribution, as <command>pbuildd.sh</command>.
+	It is available in <filename>/usr/share/doc/pbuilder/examples/pbuildd/</filename>
+	and its configuration is in <filename>/etc/pbuilder/pbuildd-config.sh</filename>.
+	It should be easy enough to set up for people who are used to 
+	pbuilder. It has been running for quite a while, and it should be 
+	possible to set the application up on your system also.
+	However, it is a new introduction, and please file bugs
+	to the Debian BTS if you know of possible problems,
+	or improved on the script considerably.
       </para>
     </sect1>
     <sect1>
