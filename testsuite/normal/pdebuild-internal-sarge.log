@@ -35,7 +35,7 @@ Get:7 http://ring.asahi-net.or.jp sarge/main libssl0.9.7 0.9.7d-1 [2173kB]
 Get:8 http://ring.asahi-net.or.jp sarge/main wget 1.9.1-4 [424kB]
 Get:9 http://ring.asahi-net.or.jp sarge/main debootstrap 0.2.31 [61.0kB]
 Get:10 http://ring.asahi-net.or.jp sarge/main pbuilder 0.101 [59.4kB]
-Fetched 2928kB in 0s (3827kB/s)
+Fetched 2928kB in 1s (2223kB/s)
 Selecting previously deselected package liblocale-gettext-perl.
 (Reading database ... 7318 files and directories currently installed.)
 Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.01-17_i386.deb) ...
@@ -102,7 +102,7 @@ Get:9 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.7 [350kB]
 Get:10 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.10-1 [10.3kB]
 Get:11 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.10-1 [12.2kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 2469kB in 0s (3723kB/s)
+Fetched 2469kB in 1s (2440kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 7676 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.07-2_i386.deb) ...
@@ -444,7 +444,7 @@ PASS: tests/param-r-invalid.sh
 1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Apr 17 22:00:04 UTC 2004
+Mon Apr 19 23:17:11 UTC 2004
 1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
@@ -514,13 +514,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Apr 17 22:00:10 UTC 2004
+Mon Apr 19 23:17:17 UTC 2004
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 c: c
-a: a
+dsh: Process terminated (before write).
 b: b
+a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -615,4 +616,4 @@ dpkg-buildpackage: full upload (original source is included)
  -> unmounting proc filesystem
  -> unmounting /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2 filesystem
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/6888 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/6964 and its subdirectories

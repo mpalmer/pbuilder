@@ -2,8 +2,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sun Apr 18 06:53:57 JST 2004
-pbuilder-time-stamp: 1082238837
+Current time: Tue Apr 20 08:10:42 JST 2004
+pbuilder-time-stamp: 1082416242
 Building the build Environment
  -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage]
  -> creating local configuration
@@ -54,7 +54,7 @@ Get:14 http://ring.asahi-net.or.jp sid/main po-debconf 0.8.10 [66.3kB]
 Get:15 http://ring.asahi-net.or.jp sid/main debhelper 4.2.8 [353kB]
 Get:16 http://ring.asahi-net.or.jp sid/main libdshconfig1 0.20.10-1 [10.3kB]
 Get:17 http://ring.asahi-net.or.jp sid/main libdshconfig1-dev 0.20.10-1 [12.2kB]
-Fetched 2684kB in 1s (1801kB/s)
+Fetched 2684kB in 1s (1576kB/s)
 Selecting previously deselected package liblocale-gettext-perl.
 (Reading database ... 7325 files and directories currently installed.)
 Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.01-17_i386.deb) ...
@@ -124,7 +124,7 @@ Need to get 55.0kB of archives.
 After unpacking 193kB of additional disk space will be used.
 Get:1 http://ring.asahi-net.or.jp sid/main fakeroot 0.9.0 [55.0kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 55.0kB in 0s (602kB/s)
+Fetched 55.0kB in 0s (558kB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 8137 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_0.9.0_i386.deb) ...
@@ -451,7 +451,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Apr 17 21:54:43 UTC 2004
+Mon Apr 19 23:11:21 UTC 2004
 1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
@@ -521,11 +521,12 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Apr 17 21:54:49 UTC 2004
+Mon Apr 19 23:11:27 UTC 2004
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 c: c
+dsh: Process terminated (before write).
 a: a
 b: b
 PASS: tests/segv-catcher.sh
@@ -633,8 +634,8 @@ dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-/usr/lib/pbuilder/pbuilder-buildpackage: line 141:  7210 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
-Current time: Sun Apr 18 06:54:51 JST 2004
-pbuilder-time-stamp: 1082238891
+/usr/lib/pbuilder/pbuilder-buildpackage: line 141:  7272 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+Current time: Tue Apr 20 08:11:29 JST 2004
+pbuilder-time-stamp: 1082416289
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/6891 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/6954 and its subdirectories

@@ -112,6 +112,9 @@ function umountproc () {
 	umount_one "dev"
     fi
     if [ "$USEPROC" = "yes" ]; then
+	if [ -e $BUILDPLACE/proc/sys/fs/binfmt_misc/status ]; then
+	    umount_one "proc/sys/fs/binfmt_misc"
+	fi
 	umount_one "proc"
     fi
     for mnt in $BINDMOUNTS; do
