@@ -119,6 +119,28 @@ which is
 .TP
 .BI "--configfile [" "configuration file to load" "]"
 Loads the configuration file.
+
+.TP
+.BI "--hookdir [" "location of user scripts" "]"
+Specifies the location where scripts for user intervention during
+the create and update process are stored. Currently scripts are
+executed at only one point, on eXit from the chrooted environment,
+just before either a create or a build regenerated the base.tgz
+file. The script names must be in the form 
+.B "X<digit><digit><whatever-else-you-want>"
+much like boot scripts. The scripts must be executable and may
+be either binaries or interpreted scripts. If it is a script
+in other than Bourne Shell or Perl, it is up to the user to
+ensure the interpreter was previously installed in the chrooted
+environment. Files ending in ~ or .bak are ignored.
+
+Although it may not seem necessary, 
+.B "pbuilder update" 
+does not invoke the hooks if 
+.B "--hookdir"
+is empty, so if you want to avoid running hooks,
+run pbuilder with
+.B "--hookdir """""
 .SH "FILES"
 .TP
 .I "/etc/pbuilderrc"
@@ -126,7 +148,9 @@ The configuration file for pbuilder.
 .SH BUGS
 This program is starting to have too many options already.
 .SH AUTHOR
-Junichi Uekawa <dancer@debian.org>
+Initial coding, and main maintenance is done by 
+Junichi Uekawa <dancer@debian.org>.
+User hooks code added by Dale Amon <amon@vnl.com>
 .SH "SEE ALSO"
 .RI "pbuilderrc (" 5 ") "
 

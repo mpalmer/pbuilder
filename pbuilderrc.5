@@ -92,6 +92,19 @@ Specify the packages to be removed on creation of
 .B base.tgz
 Leaving lilo in the chroot is like keeping a timebomb...
 
+.TP
+.BI "HOOKDIR=" "/usr/lib/pbuilder/hooks"
+Specifies the default location for the user hooks
+directory. 
+This is overridden with the option 
+.BR "--hookdir" "."
+
+If this is specified, hooks are searched for in
+the chroot, when running 
+.BR "pbuilder update" "."
+If it is not defined, or is an empty string, 
+hooks are not executed.
+
 .B "pbuilder update" 
 will update to this distribution, if this is specified,
 unless command line option is specified to override this.

@@ -2,6 +2,7 @@
 # Creating the build environment with debootstrap.
 
 . /usr/lib/pbuilder/pbuilder-checkparams
+. /usr/lib/pbuilder/pbuilder-runhooks
 
 CHROOTEXEC="chroot $BUILDPLACE "
 if [ -z "$DISTRIBUTION" ]; then
@@ -18,12 +19,13 @@ if [ ! -d "$BUILDPLACE" ]; then
     exit 1
 fi
 echo " -> running debootstrap"
-( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE" || exit 1) || 
+( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE" || exit 1) || \
 (
     echo "pbuilder: debootstrap failed" >&2
     exit 1
 )
 echo " -> debootstrap finished"
+test -n "HOOKDIR" && loadhooks
 mkdir -p "$BUILDPLACE/tmp/buildd"
 echo " -> copying local configuration"
 for a in passwd hosts hostname resolv.conf ; do 
@@ -43,6 +45,7 @@ fi
 $CHROOTEXEC /usr/bin/apt-get -y dist-upgrade
 $CHROOTEXEC /usr/bin/apt-get -y install build-essential dpkg-dev apt $EXTRAPACKAGES
 $CHROOTEXEC /usr/bin/apt-get clean
+test -n "HOOKDIR" && executehooks "X"
 umountproc
 echo " -> creating base.tgz"
 ( cd "$BUILDPLACE" && tar cfz "$BASETGZ" * || echo " -> failed building base.tgz")

@@ -1,10 +1,27 @@
-pbuilder (0.7) unstable; urgency=low
+pbuilder (0.6.0.prerelease.20010927) unstable; urgency=low
 
   * fixing manpage section
   * Adding --configfile option, to load random config file.
   * Adding --extrapackages option, to load random additional 
+  * Merging some patches from Dale, with some modifications to 
+    fit my taste. his changelog was :
+    o Wrote pbuilder-runhooks and integrated it into the create and
+      update scripts.
+    o Added HOOKDIR to configuration options
+    o Added --hookdir to command line options
+     Updated man pages for pbuilder and pbuilderrc
+    o Added defaulting/error checks of a couple key variables in
+      pbuilder-checkparams.
+    o Added /usr/lib/pbuilder/hooks default hook directory to debian/dirs
 
- -- Junichi Uekawa <dancer@debian.org>  Tue, 25 Sep 2001 14:04:49 +0900
+    oo  Dale Amon <amon@vnl.com>  Wed, 26 Sep 2001 23:49:00 +0001
+  * when HOOKDIR is not set, scripts won't be ran.
+    It is a security risk to be able to run any random script as 
+    root, so be aware of this when setting "HOOKDIR".
+  * debian/control: removed ${shlibs:Depends}, because there is none.
+  * temporal upload ... 
+  
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 27 Sep 2001 17:29:54 +0900
 
 pbuilder (0.6) unstable; urgency=low
 

@@ -54,6 +54,10 @@ while [ -n "$1" ]; do
 	    EXTRAPACKAGES="$2";
 	    shift; shift;
 	    ;;
+	--hookdir)
+	    HOOKDIR="$2";
+	    shift; shift;
+	    ;;
 	--help)
 	    showhelp
 	    ;;
@@ -67,3 +71,4 @@ while [ -n "$1" ]; do
   esac
 done
 
+BUILDPLACE=${BUILDPLACE?"Build root directory is not defined"}
