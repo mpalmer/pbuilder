@@ -1,5 +1,18 @@
 2002-02-10  Junichi Uekawa  <dancer@debian.org>
 
+	* debian/TODO: updated TODO
+
+	* debian/README.Debian (Testsuite): document testsuit. 
+	The current testsuite is not individual programs, but the 
+	Debian main archive itself.
+
+	* debian/changelog: update the changelog wrt the problem with debootstrap.
+
+	* debian/control (Depends): update the depends field to require 0.1.16.2
+	of debootstrap. There was a bug in 0.1.16 and 0.1.16.1
+	0.1.15.7 etc. should work, but they no longer exist in the archive,
+	I shouldn't worry about it.
+
 	* pbuilder-buildpackage: fixed the sed rule to allow for space.
 	
 	* pbuilder-buildpackage: fixing the awk big to make case-insensitive,

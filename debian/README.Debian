@@ -37,16 +37,10 @@ with it. It is best to use cp.
 Support for mounts will hopefully come later, with some safeguards.
 
 
-I would say this package works fine if these packages manage to build.
-
 Testsuite:
-	ecasound
-	glibc  ( used to be a very good test. Does not build any more, why? )
-	pbuilder itself (it used to have a funny Build-Depends line to
-	  confuse things, but it no longer has.)
-	gcc  ( trying to compile this sometimes kills my machine when
-          trying to run testsuite )
-
+	The whole of Debian archive (main) is now being test-rebuilt with
+	pbuilder. Most packages succeed. Many fail to build from
+	source, genuinely, or from pbuilder bugs.
 
 
 $Id$
