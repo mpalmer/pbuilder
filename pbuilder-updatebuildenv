@@ -48,7 +48,6 @@ unloadhooks
 umountproc
 trap cleanbuildplace exit
 if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
-    echo " -> creating base.tgz"
-    (cd "$BUILDPLACE"; tar cfz "$BASETGZ" *)
+    create_basetgz
 fi
 cleanbuildplace

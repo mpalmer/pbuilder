@@ -82,7 +82,4 @@ unloadhooks
 umountproc
 trap cleanbuildplace exit
 
-echo " -> creating base.tgz"
-( cd "$BUILDPLACE" && tar cfz "$BASETGZ" * || echo " -> failed building base.tgz")
-
-
+create_basetgz

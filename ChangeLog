@@ -1,3 +1,16 @@
+2002-10-11  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-modules (create_basetgz): new function
+	add file locking
+	(extractbuildplace) add file locking.
+
+	* pbuilder-updatebuildenv: use create_basetgz
+
+	* pbuilder-createbuildenv (DEBOOTSTRAPSCRIPT): make error handling more
+	fine-grained, and add more handling for error cases.
+	(create_basetgz): move function over to -modules.
+	and use it.
+
 2002-10-05  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-buildpackage (BUILD_PID): fix more quoting problems with
