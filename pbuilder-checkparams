@@ -106,6 +106,10 @@ while [ -n "$1" ]; do
 	    APTCONFDIR="$2";
 	    shift; shift;
 	    ;;
+	--timeout)
+	    TIMEOUT_TIME="$2"
+	    shift; shift;
+	    ;;
 	--help)
 	    showhelp
 	    ;;

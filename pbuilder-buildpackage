@@ -118,19 +118,32 @@ export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 
 executehooks "A"
 
+
+
 if [ -z "$DEBEMAIL" ]; then
-    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/; $SUTOUSER dpkg-buildpackage -us -uc $DEBBUILDOPTS"; then
-	echo "pbuilder: Failed autobuilding of package" >&2
-	umountproc_cleanbuildplace
-	exit 1;    
-    fi
+    DPKG_COMMANDLINE="cd tmp/buildd/*/; $SUTOUSER dpkg-buildpackage -us -uc $DEBBUILDOPTS"
 else
-    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  $SUTOUSER dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"; then
-	echo "pbuilder: Failed autobuilding of package" >&2
-	executehooks "C"
-	umountproc_cleanbuildplace
-	exit 1;    
-    fi
+    DPKG_COMMANDLINE="cd tmp/buildd/*/;  $SUTOUSER dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"
+fi
+
+($CHROOTEXEC /bin/bash -c "${DPKG_COMMANDLINE}") &
+BUILD_PID=$!
+if [ -n ${TIMEOUT_TIME} ]; then
+    ( sleep "${TIMEOUT_TIME}"; kill ${BUILD_PID} )& # timeout process
+    KILL_WAIT_PID="kill $!"
+else
+    KILL_WAIT_PID=""
+fi
+
+if ! wait ${BUILD_PID}; then
+    ${KILL_WAIT_PID}
+    echo "pbuilder: Failed autobuilding of package" >&2
+    executehooks "C"
+    umountproc_cleanbuildplace
+    exit 1;
+else
+    ${KILL_WAIT_PID}
+    # build was successful
 fi
 
 executehooks "B"
