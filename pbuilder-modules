@@ -25,6 +25,10 @@ pbuilder clean
 pbuilder login
   Logs in to the build environment
 
+pbuilder debuild
+  Builds a Debian package from debian source directory, 
+  similar to the manner of "debuild" command.
+
 Operation Options:
  --basetgz [base.tgz location]
  --buildplace [location of build]
@@ -39,6 +43,8 @@ Operation Options:
  --configfile [configuration file to load]
  --hookdir [hook directory]
  --debemail [mail address]
+ --pbuilderroot [command to obtain root privilate for pbuilder] (for debuild)
+ --buildsourceroot [command to obtain root privilate for dpkg-buildpackage] (for debuild)
 EOF
     exit 1
 }

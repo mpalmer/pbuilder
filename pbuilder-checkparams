@@ -65,6 +65,14 @@ while [ -n "$1" ]; do
 	    DEBEMAIL="$2";
 	    shift; shift;
 	    ;;
+	--buildsourceroot*)
+	    BUILDSOURCEROOTCMD="$2";
+	    shift; shift;
+	    ;;
+	--pbuilderroot*)
+	    PBUILDERROOTCMD="$2";
+	    shift; shift;
+	    ;;
 	--help)
 	    showhelp
 	    ;;

@@ -2,6 +2,8 @@ pbuilder (0.10) unstable; urgency=low
 
   * Patch for full non-interactive compilation by
     Daniel Kobras (kobras@debian.org) applied. (closes: #116891)
+    However, note that doing this will result in "pbuilder login" being very
+    uninteresting.
   * Depends on gcc, because debootstrap does not seem to function well
     without gcc. Actually, dpkg does not work without gcc, when it is asked
     questions about the "architecture."
@@ -21,6 +23,8 @@ pbuilder (0.10) unstable; urgency=low
   * full non-interactive compilation patch, moved over to 
     pbuilder-modules, so that build/update/create all benefit from this.
   * cleans build place on debootstrap failure.
+  * a little hack called "pbuilder debuild" is available, but not yet
+    tested very well. This is my "most often used pattern".
 
  -- Junichi Uekawa <dancer@debian.org>  Sat,  3 Nov 2001 02:23:41 +0900
 

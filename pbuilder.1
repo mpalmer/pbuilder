@@ -11,6 +11,8 @@ pbuilder \- personal package builder
 .BI "pbuilder clean"
 .PP
 .BI "pbuilder login"
+.PP
+.BI "pbuilder debuild"
 .SH DESCRIPTION
 Front end program to the 
 .B "pbuilder"
@@ -49,6 +51,18 @@ specified in
 .B "login"
 Logs into the chroot, and cleaned up afterwards.
 Any changes you make will not be kept.
+
+.TP
+.B "debuild"
+Builds a Debian package from the Debian source directory.
+There needs to be a 
+.I "debian/"
+directory in the current directory.
+
+This command is a convenience script, 
+and it does not accept most command-line options.
+This may change in the future.
+
 .TP
 .BI "--basetgz [" "basetgz-location" "]"
 Specifies the location of 
@@ -159,6 +173,18 @@ Specifies that dpkg-buildpackage be called with
 .B "-m$DEBEMAIL"
 instead of default value specified in the environmental
 variable, or pbuilderrc
+
+.TP
+.BI "--buildsourceroot [" "fakeroot" "]"
+The command to gain root privilege for 
+invoking dpkg-buildpackage, used in 
+.B "pbuilder debuild"
+
+.TP
+.BI "--pbuilderroot [" "sudo" "]"
+The command to gain root privilege for 
+invoking pbuilder, used in 
+.B "pbuilder debuild"
 
 .SH "FILES"
 .TP
