@@ -26,7 +26,9 @@ function copydsc () {
 	$(cat "$DSCFILE" | \
 	awk 'BEGIN{p=0} /^$/ {p=0} /^.*:/ {p=0} {if (p){print "'$(dirname "$DSCFILE")'/" $3}} /^Files:/{p=1}' ) ; do
 	echo "    -> copying [$FILE]"
-        cp "$FILE" "$TARGET" ;
+        if ! cp "$FILE" "$TARGET" ; then
+	    umountproc_cleanbuildplace
+	fi
     done
 }
 
