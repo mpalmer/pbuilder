@@ -4,7 +4,7 @@
   and the latest version is found in CVS repository. -->
 <book>
   <bookinfo>
-    <date>2003-03-01</date>
+    <date>2004-07-14</date>
     <title>pbuilder User's Manual</title>
     <abbrev>pbuilder-doc</abbrev>
     <subtitle>Usage and operations</subtitle>
@@ -666,7 +666,7 @@ read
 	pbuilder does not provide a way to work around debootstrap.
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="tmpdir">
       <title>Notes on usage of $TMPDIR</title>
       <para>
 	If you are setting $TMPDIR to an unusual value, of other than
@@ -677,6 +677,10 @@ read
 	directory, or set 
 	<screen>export TMPDIR=/tmp</screen>
 	in pbuilderrc. Take your pick.
+      </para>
+      <para>
+	An example script is provided as 
+	<filename>examples/D10tmp</filename> with pbuilder.
       </para>
     </sect1>
     <sect1>

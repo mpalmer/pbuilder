@@ -127,6 +127,7 @@ else
 fi
 pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT[@]} --buildresult "\${BUILDRESULT}" --buildplace "${UML_CHROOT_MOUNTPOINT}" --internal-build-uml ${BUILDING_DSC_FILE}  ${UML_EXECUTE_EXTRAOPT}
 echo \$? > /proc/exitcode
+/sbin/halt -d -f 
 EOF
 
     chmod a+x ${INSIDE_PBUILDER}

@@ -1,3 +1,22 @@
+2004-07-16  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-user-mode-linux: 259325: call /sbin/halt -d -f 
+	instead of just doing an exit from UML.
+	init=/bin/sh, and this is required for safe exit now, apparently.
+
+2004-07-14  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml: update notes on D10tmp script.
+
+	* examples/D10tmp: mkdir -p
+
+2004-07-09  Junichi Uekawa  <dancer@debian.org>
+
+	* testsuite/run-test.sh (IOSTATPID): add debemail to testsuite.
+
+	* pbuilder-buildpackage (PACKAGENAME): move SUTOUSER outside of what's fed into bash.
+	Run bash in SUTOUSER. SUTOUSER might be eating quote characters.
+
 2004-06-19  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-user-mode-linux: apply patch from 

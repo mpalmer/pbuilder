@@ -34,7 +34,7 @@ if [ -x "${PBUILDER}" ]; then
 		cd testbuild
 		apt-get source -d ${PKG}
 	    )
-	    sudo ${PBUILDER} build --basetgz $(pwd)/testimage --buildplace $(pwd)/testbuild/ --logfile normal/pbuilder-build-${PKG}-${distribution}.log testbuild/${PKG}*.dsc
+	    sudo ${PBUILDER} build --debemail "Junichi Uekawa <dancer@debian.org>" --basetgz $(pwd)/testimage --buildplace $(pwd)/testbuild/ --logfile normal/pbuilder-build-${PKG}-${distribution}.log testbuild/${PKG}*.dsc
 	    log_success build-${distribution}-${PKG}
 
 	    (

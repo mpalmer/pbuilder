@@ -87,14 +87,14 @@ export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 executehooks "A"
 
 if [ -z "$DEBEMAIL" ]; then
-    DPKG_COMMANDLINE="cd tmp/buildd/*/; $SUTOUSER dpkg-buildpackage -us -uc $DEBBUILDOPTS"
+    DPKG_COMMANDLINE="cd tmp/buildd/*/; dpkg-buildpackage -us -uc $DEBBUILDOPTS"
 else
-    DPKG_COMMANDLINE="cd tmp/buildd/*/;  $SUTOUSER dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"
+    DPKG_COMMANDLINE="cd tmp/buildd/*/; dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"
 fi
 
 (
     : Build process
-    echo  "${DPKG_COMMANDLINE}" | $CHROOTEXEC /bin/bash
+    echo  "${DPKG_COMMANDLINE}" | $CHROOTEXEC $SUTOUSER /bin/bash
 ) &
 BUILD_PID=$!
 if [ -n "${TIMEOUT_TIME}" ]; then
