@@ -22,8 +22,6 @@ set -e
 . /usr/lib/pbuilder/pbuilder-runhooks
 
 
-CHROOTEXEC="chroot $BUILDPLACE "
-
 if [ -n "$DISTRIBUTION" ]; then
     echo "Upgrading for distribution $DISTRIBUTION" 
 fi

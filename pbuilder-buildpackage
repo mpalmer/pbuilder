@@ -73,7 +73,6 @@ function createbuilduser () {
 . /usr/lib/pbuilder/pbuilder-runhooks
 
 PACKAGENAME="$1"
-CHROOTEXEC="chroot $BUILDPLACE "
 if [ ! -f "$PACKAGENAME" ]; then
     echo "Command line parameter [$PACKAGENAME] is not a valid .dsc file name" >&2
     exit 1;

@@ -24,6 +24,7 @@
 # the default is to add a PID in the buildplace specified in the config file.
 BASEBUILDPLACE="$BUILDPLACE"
 BUILDPLACE="$BUILDPLACE/$$"
+CHROOTEXEC="chroot $BUILDPLACE "
 
 while [ -n "$1" ]; do 
     case "$1" in 
@@ -33,6 +34,7 @@ while [ -n "$1" ]; do
 	    ;;
 	--buildplace)
 	    BUILDPLACE=$(readlink -f "$2");
+	    CHROOTEXEC="chroot $BUILDPLACE "
 	    shift; shift;
 	    ;;
 	--mirror)
@@ -102,6 +104,11 @@ while [ -n "$1" ]; do
 	    ;;
 	--timeout)
 	    TIMEOUT_TIME="$2"
+	    shift; shift;
+	    ;;
+	--internal-chrootexec)
+	    # specify custom chrootexec function -- this is internal debugging function
+	    CHROOTEXEC="$2"
 	    shift; shift;
 	    ;;
 	--help)
