@@ -18,6 +18,9 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.2  2001/09/27 07:12:51  dancer
+# reindent etc.
+#
 # Revision 1.1  2001/09/27 07:10:47  dancer
 # new file from dale amon.
 #
@@ -31,11 +34,7 @@
 #		  filtered besides *~ and *.bak?
 #
 #==========================================================================
-# Debugging scaffold
-#BUILDPLACE=/var/cache/pbuilder/build/31456
-#. pbuilder-checkparams
 
-# If values unassigned, use a default
 hooks=/tmp/hooks
 
 #==========================================================================
@@ -69,23 +68,28 @@ function unloadhooks () {
 #
 
 function executehooks () {
-        local prefix=$1
-	pushd $BUILDPLACE/$hooks
-	for fn in $prefix[0-9][0-9]* ; do
-	  case $fn in
-	    *~) echo "E: skipping an editor backup file $fn";;
-	    *.bak) echo "E: skipping a backup file $fn";;
-	    *)	if [ -x $fn ]; then
+    local prefix=$1
+    pushd $BUILDPLACE/$hooks
+    for fn in $prefix[0-9][0-9]* ; do
+	case $fn in
+	    *~)
+		echo "E: skipping an editor backup file $fn"
+		;;
+	    *.bak) 
+		echo "E: skipping a backup file $fn"
+		;;
+	    *)	
+		if [ -x $fn ]; then
 		    chroot $BUILDPLACE $hooks/$fn
 		    echo " -> user script $fn finished"
 		else
 		    filetype=`file --dereference $fn`
 		    echo "E: execute priv not set on file $filetype"
-		fi
-	        ;;
-	  esac
-	done
-	popd
+		fi  
+	        ;;	
+	esac
+    done
+    popd
 }
 
 #--------------------------------------------------------------------------
