@@ -52,7 +52,7 @@ EOF
 
 function umountproc () {
     if [ "$USEPROC" = "yes" ]; then
-	echo " -> unmounting proc"
+	echo " -> unmounting /proc filesystem"
 	if ! umount "$BUILDPLACE/proc"; then
 	    echo "W: Retrying to unmount proc"
 	    sleep 5s
@@ -73,7 +73,7 @@ EOF
 
 function mountproc () {
     if [ "$USEPROC" = "yes" ]; then
-	echo " -> mounting proc"
+	echo " -> mounting /proc filesystem"
 	mkdir -p $BUILDPLACE/proc
 	mount -t proc /proc "$BUILDPLACE/proc"
     fi
