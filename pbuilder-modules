@@ -102,14 +102,14 @@ EOF
 }
 
 function umountproc () {
-    if [ "$USEPROC" = "yes" ]; then
-	umount_one "proc"
-    fi
     if [ "$USEDEVPTS" = "yes" ]; then
 	umount_one "dev/pts"
     fi
     if [ "$USEDEVFS" = "yes" ]; then
 	umount_one "dev"
+    fi
+    if [ "$USEPROC" = "yes" ]; then
+	umount_one "proc"
     fi
     for mnt in $BINDMOUNTS; do
 	umount_one "$mnt"
@@ -125,15 +125,15 @@ function mountproc () {
 	mkdir -p $BUILDPLACE/proc
 	mount -t proc /proc "$BUILDPLACE/proc"
     fi
-    if [ "$USEDEVPTS" = "yes" ]; then
-	echo " -> mounting /dev/pts filesystem"
-	mkdir -p $BUILDPLACE/dev/pts || true
-	mount -t devpts /dev/pts "$BUILDPLACE/dev/pts" 
-    fi
     if [ "$USEDEVFS" = "yes" ]; then
 	echo " -> mounting /dev filesystem"
 	mkdir -p $BUILDPLACE/dev || true
 	mount -t devfs /dev "$BUILDPLACE/dev" 
+    fi
+    if [ "$USEDEVPTS" = "yes" ]; then
+	echo " -> mounting /dev/pts filesystem"
+	mkdir -p $BUILDPLACE/dev/pts || true
+	mount -t devpts /dev/pts "$BUILDPLACE/dev/pts" 
     fi
     for mnt in $BINDMOUNTS; do
 	echo "-> Mounting $mnt"

@@ -2,8 +2,13 @@ pbuilder (0.94) UNRELEASED; urgency=low
 
   * pdebuild-user-mode-linux: support --configfile as pdebuild does.
   * [UML] pbuilder-user-mode-linux; fsck before mount.
+  * Bug fix: "pbuilder: Trying to unmount dev/pts when not mounted",
+    thanks to Chris Halls (Closes: #219941).
+    Reordered mount order so that /dev/pts and /dev mounts can be 
+    specified at the same time. It might not be the real problem, but
+    this seems like one big problem, at least.
 
- -- Junichi Uekawa <dancer@debian.org>  Thu,  6 Nov 2003 07:18:31 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Tue, 11 Nov 2003 08:28:49 +0900
 
 pbuilder (0.93) unstable; urgency=low
 
