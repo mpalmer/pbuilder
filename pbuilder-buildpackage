@@ -199,13 +199,13 @@ echo Building the package
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 
 if [ -z "$DEBEMAIL" ]; then
-    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage -us -uc"; then
+    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage -us -uc $DEBBUILDOPTS"; then
 	echo "pbuilder: Failed autobuilding of package" >&2
 	abortingfunction
 	exit 1;    
     fi
 else
-    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\""; then
+    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"; then
 	echo "pbuilder: Failed autobuilding of package" >&2
 	abortingfunction
 	exit 1;    

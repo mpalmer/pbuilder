@@ -5,7 +5,7 @@ TODO and possible bugs:
   * Machine type specification in Build dependency should either have
    [!xxx !xxx !xxx ...] or [xxx xxx xxx ...] 
   [!xxx xxx] formats are not parsed, and should really not exist.
-  * Creating a sbuilder, command, which cooperates with sbuild, and 
+  * Creating a "sbuilder" command, which cooperates with sbuild, and 
     use sbuild if possible.
   * Please file a bug if you find that pbuilder does not exit with
   error condition on failure to  build a package.
@@ -14,6 +14,7 @@ TODO and possible bugs:
     - documentation of how to do it
     - updating the script hooks interface (mount / umount)
     - putting example scripts.
+  * Supporting use of system /etc/apt config files?
 
   * Supporting really automatic "pbuilder upgrade"
     - how about passing "-o dpkg::Options=--force-confnew" to apt?

@@ -32,3 +32,5 @@ export DEBIAN_FRONTEND="noninteractive"
 BUILDSOURCEROOTCMD="fakeroot"
 PBUILDERROOTCMD="sudo"
 
+#default is to not to build source-packages. Passed on to dpkg-buildpackage
+DEBBUILDOPTS="-b"

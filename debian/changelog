@@ -1,12 +1,14 @@
 pbuilder (0.18) unstable; urgency=low
 
   * New version, "Trying to address some wishlists" (not yet released)
-  * This version should implement using system apt/ configuration files.
-  and some other goodies ...
   * Added usr/share/pbuilder/pbuilderrc for default configuration.
   * Apply $@ -> "$@" fix from Daniel Kobras.
+  * Apply the patch from Daniel Kobras for specifying options to 
+    dpkg-buildpacakge invocation in pbuilder-buildpacakge.
+    It should be possible to build binary-only uploads etc.
+    (closes: #129221)
 
- -- Junichi Uekawa <dancer@debian.org>  Tue, 15 Jan 2002 19:10:23 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Fri, 18 Jan 2002 03:34:53 +0900
 
 pbuilder (0.17) unstable; urgency=low
 
