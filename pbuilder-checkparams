@@ -3,6 +3,10 @@
 
 . /etc/pbuilderrc
 
+# the default is to add a PID in the buildplace specified in the config file.
+BASEBUILDPLACE="$BUILDPLACE"
+BUILDPLACE="$BUILDPLACE/$$"
+
 while [ -n $1 ]; do
   case "$1" in 
     --basetgz) 
