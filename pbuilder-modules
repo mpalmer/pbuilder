@@ -69,32 +69,34 @@ EOF
     exit 1
 }
 
-function umountproc () {
-    if [ "$USEPROC" = "yes" ]; then
-	echo " -> unmounting /proc filesystem"
-	if ! umount "$BUILDPLACE/proc"; then
-	    echo "W: Retrying to unmount proc"
+function umount_one () {
+    echo " -> unmounting $1 filesystem"
+    if ! umount "$BUILDPLACE/$1"; then
+	    echo "W: Retrying to unmount $1"
 	    sleep 5s
-	    while ! umount "$BUILDPLACE/proc"; do
+	    while ! umount "$BUILDPLACE/$1"; do
 		sleep 5s
 		cat <<EOF
 
-  Could not unmount /proc, there might be some program 
+  Could not unmount $1, there might be some program 
   still using files in /proc (klogd?).
-  Please check and kill it so that I can unmount /proc
+  Please check and kill it so that I can unmount $1
 
 EOF
 		chroot "$BUILDPLACE" bin/sh
 	    done
 	fi
+}
+
+function umountproc () {
+    if [ "$USEPROC" = "yes" ]; then
+	umount_one "proc"
     fi
     if [ "$USEDEVPTS" = "yes" ]; then
-	echo " -> unmounting /dev/pts filesystem"
-	umount "$BUILDPLACE/dev/pts" || true
+	umount_one "dev/pts"
     fi
     if [ "$USEDEVFS" = "yes" ]; then
-	echo " -> unmounting /dev filesystem"
-	umount "$BUILDPLACE/dev" || true
+	umount_one "dev"
     fi
 }
 

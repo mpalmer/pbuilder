@@ -1,3 +1,27 @@
+2002-10-19  Junichi Uekawa  <dancer@debian.org>
+
+	* debian/TODO: beautify file, with Todoo mode.
+
+	* debian/control (Standards-Version): 3.5.7
+
+        * and revert the change made.... fuser will kill anything that 
+	uses proc, which may be outside the chroot (including X and other
+	things..)
+	
+	* pbuilder-modules (umountproc): use "umount_one".
+
+	* debian/control (Suggests): add psmisc Suggestion.
+
+	* pbuilder-modules (umount_one): generic umount module split out from
+	umountproc
+	Add FORCE_KILL_WITH_FUSER option, kills processes with fuser if 
+	"yes"
+	Reported by Thorsten Sauter <tsauter@gmx.net>
+
+2002-10-18  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-buildpackage-funcs: hack HOME variable.
+
 2002-10-16  Junichi Uekawa  <dancer@debian.org>
 
 	* THANKS: update.

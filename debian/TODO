@@ -1,42 +1,41 @@
 TODO and possible bugs: 
 
-  * BUG: Too many options! Creeping featurism!!
+* BUG: Too many options! Creeping featurism!!
 
-  * Build dependency handles |, but not when [] and | exist. -- no
-  package should be using it ?
-  * Machine type specification in Build dependency should either have
-   [!xxx !xxx !xxx ...] or [xxx xxx xxx ...] 
-  [!xxx xxx] formats are not parsed, and should really not exist.
-  * Creating a "sbuilder" command, which cooperates with sbuild, and 
-    use sbuild if possible.
-  * Please file a bug if you find that pbuilder does not exit with
-  error condition on failure to  build a package.
-  * Remember to update the TODO file.
+* Build dependency handles |, but not when [] and | exist. -- no package should be using it ?
 
-  * Support for apt-move. Some, mount --bind trick ?
-    - documentation of how to do it
-    - updating the script hooks interface (mount / umount)
-    - putting example scripts.
+* Machine type specification in Build dependency should either have  [!xxx !xxx !xxx ...] or [xxx xxx xxx ...]   [!xxx xxx] formats are not parsed, and should really not exist.
 
-  * Supporting really automatic/noninteractive "pbuilder upgrade"
-    - how about passing "-o dpkg::Options=--force-confnew" to apt?
-    and also making "start-stop-daemon" to be a dummy script?
-    (shouldn't be necessary because the config files won't be overwritten?)
-    - using policy-rc.d ? Get people to use invoke-rc.d?
+* Creating a "sbuilder" command, which cooperates with sbuild, and use sbuild if possible.
 
-  * Supporting arbitrary mount --bind for inside chroot.
-    - some critical checking.
-    - how to clean up afterwards safely.
+* Please file a bug if you find that pbuilder does not exit with error condition on failure to  build a package.
 
-  * Do not install Build-*-Indep: targets for binary-arch building.
+* Remember to update the TODO file.
 
-  * $HOME, $TMP, $TMPDIR, etc. environment vars are set to bogus
-    values
-  * Lock-filing of $BASETGZ between processes.
+* Support for apt-move. Some, mount --bind trick ?
+   - documentation of how to do it
+   - updating the script hooks interface (mount / umount)
+   - putting example scripts.
+         
+* Supporting really automatic/noninteractive "pbuilder upgrade"
+   - how about passing "-o dpkg::Options=--force-confnew" to apt? and also making "start-stop-daemon" to be a dummy script?  (shouldn't be necessary because the config files won't be overwritten?).
+   - using policy-rc.d ? Get people to use invoke-rc.d?
+   - Killing any processes that are left over ? 
 
-  * check cross-compile support, maybe adding support for dpkg-cross
-    into build-depends checker?
+* Supporting arbitrary mount --bind for inside chroot.
+   - some critical checking.
+   - how to clean up afterwards safely.
 
-  * potato su does not like dpkg-source, executes as a bash script.
+* Do not install Build-*-Indep: targets for binary-arch building.
+
+* $HOME, $TMP, $TMPDIR, etc. environment vars are set to bogus values
+
+* Lock-filing of $BASETGZ between processes.
+
+* check cross-compile support, maybe adding support for dpkg-cross into build-depends checker?
+
+* potato su does not like dpkg-source, executes as a bash script.
 
 $Id$
+
+
