@@ -65,8 +65,8 @@ fi
 
 recover_aptcache
 echo "Installing the build-deps"
-trap saveaptcache_umountproc_cleanbuildplace exit
 executehooks "D"
+trap saveaptcache_umountproc_cleanbuildplace exit
 checkbuilddep "$PACKAGENAME"
 save_aptcache
 trap umountproc_cleanbuildplace exit
