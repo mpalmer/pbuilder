@@ -47,6 +47,7 @@ fi
 showbuildbanner '$Id'
 echobacktime
 extractbuildplace 
+trap umountproc_cleanbuildplace exit
 loadhooks
 createbuilduser
 
@@ -57,14 +58,15 @@ executehooks "D"
 echo Extracting source
 if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; chown $BUILDUSERNAME:$BUILDUSERNAME ../buildd *; $SUTOUSER /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then
     echo "pbuilder: Failed extracting the source" >&2 
-    umountproc_cleanbuildplace
     exit 1;
 fi
 
 recover_aptcache
 echo "Installing the build-deps"
+trap saveaptcache_umountproc_cleanbuildplace exit
 checkbuilddep
 save_aptcache
+trap umountproc_cleanbuildplace exit
 
 echo " -> Building the package"
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
