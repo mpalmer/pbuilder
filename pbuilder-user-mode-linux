@@ -206,7 +206,7 @@ while [ -n "$1" ] ; do
 	    . "$2"
 	    shift; shift;;
 	#things that can be passed through with options
-	--timeout|--http-proxy|--hookdir|--aptconfdir|--bindmounts)
+	--timeout|--http-proxy|--hookdir|--aptconfdir|--bindmounts|--mirror|--nonusmirror)
 	    UML_EXTRAOPT="${UML_EXTRAOPT} $1 $2"
 	    shift; shift;;
 	--buildresult)
