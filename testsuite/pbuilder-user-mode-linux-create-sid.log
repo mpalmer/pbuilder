@@ -6,7 +6,7 @@ zone(0): 8192 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
 Kernel command line: eth0=slirp,,slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage init=/usr/lib/rootstrap/builder devfs=mount rsworkdir=/home/dancer/.pbuilder-user-mode-linux
-Calibrating delay loop... 1744.62 BogoMIPS
+Calibrating delay loop... 1298.48 BogoMIPS
 Memory: 28532k available
 Dentry cache hash table entries: 4096 (order: 3, 32768 bytes)
 Inode cache hash table entries: 2048 (order: 2, 16384 bytes)
@@ -33,7 +33,7 @@ loop: loaded (max 8 devices)
 Initializing Cryptographic API
 Initializing software serial port version 1
 Netdevice 0 : SLIRP backend - command line: 'slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/S0ccuG/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/PSdY9o/mconsole
 unable to open root_fs for validation
 Partition check:
  ubdb: unknown partition table
@@ -429,8 +429,8 @@ dpkg: libc6: dependency problems, but configuring anyway as you request:
   Package libdb1-compat is not installed.
 Setting up libc6 (2.3.2-8) ...
 Current default timezone: 'UTC'.
-Local time is now:      Fri Oct 17 22:58:28 UTC 2003.
-Universal Time is now:  Fri Oct 17 22:58:28 UTC 2003.
+Local time is now:      Sat Oct 18 00:56:54 UTC 2003.
+Universal Time is now:  Sat Oct 18 00:56:54 UTC 2003.
 Run 'tzconfig' if you wish to change it.
 Package `sysvinit' is not installed and no info is available.
 Use dpkg --info (= dpkg-deb --info) to examine archive files,
@@ -650,8 +650,8 @@ dpkg: libc6: dependency problems, but configuring anyway as you request:
   Package libdb1-compat is not installed.
 Setting up libc6 (2.3.2-8) ...
 Current default timezone: 'UTC'.
-Local time is now:      Fri Oct 17 22:59:12 UTC 2003.
-Universal Time is now:  Fri Oct 17 22:59:12 UTC 2003.
+Local time is now:      Sat Oct 18 00:57:40 UTC 2003.
+Universal Time is now:  Sat Oct 18 00:57:40 UTC 2003.
 Run 'tzconfig' if you wish to change it.
 
 Setting up libcap1 (1.10-12) ...
@@ -1073,9 +1073,9 @@ Using rootstrap module umount from:
 	/usr/lib/rootstrap/modules/umount
 umount: /tmp/target/proc: not mounted
 System halted.
-tracing thread pid = 30026
+tracing thread pid = 882
 
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filetUhblL rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileJASZn9 rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.22-5um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 Fri Sep 19 21:36:03 EDT 2003
@@ -1083,8 +1083,8 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filetUhblL rw
-Calibrating delay loop... 1560.30 BogoMIPS
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileJASZn9 rw
+Calibrating delay loop... 1526.17 BogoMIPS
 Memory: 124720k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -1112,7 +1112,7 @@ Initializing Cryptographic API
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/X9Dkgd/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/9rxAZi/mconsole
 unable to open root_fs for validation
 Partition check:
  ubdb: unknown partition table
@@ -1159,14 +1159,14 @@ Upgrading for distribution sid
 Refreshing the base.tgz 
  -> upgrading packages
 0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main Packages [2695kB]
-            0% [1 Packages 2804/2695kB 0%]                              8% [1 Packages 218820/2695kB 8%]                                31% [1 Packages 853288/2695kB 31%]                                  50% [1 Packages 1372408/2695kB 50%]79% [1 Packages 2132560/2695kB 79%]91% [1 Packages 2460680/2695kB 91%]                                   99% [Working]             Get:2 http://ring.asahi-net.or.jp sid/main Release [82B]
-99% [Working]             99% [1 Packages gzip 0]                       99% [1 Packages gzip 5566464]                             100% [Working]              Fetched 2695kB in 4s (651kB/s)
-Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 1%Reading Package Lists... 95%Reading Package Lists... 99%Reading Package Lists... 99%Reading Package Lists... Done
+            0% [1 Packages 0/2695kB 0%]                           51% [1 Packages 1400228/2695kB 51%]59% [1 Packages 1616244/2695kB 59%]97% [1 Packages 2636396/2695kB 97%]                                   99% [Working]             Get:2 http://ring.asahi-net.or.jp sid/main Release [82B]
+99% [Working]             99% [1 Packages gzip 0]                       99% [1 Packages gzip 5414912]                             100% [Working]              Fetched 2695kB in 3s (770kB/s)
+Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 1%Reading Package Lists... 93%Reading Package Lists... 99%Reading Package Lists... 99%Reading Package Lists... Done
 (Reading database ... 6164 files and directories currently installed.)
 Removing lilo ...
 Purging configuration files for lilo ...
 Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 79%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 93%Building Dependency Tree... Done
 Calculating Upgrade... Done
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading Package Lists... 0%Reading Package Lists... 100%Reading Package Lists... Done
@@ -1185,22 +1185,22 @@ The following NEW packages will be installed:
 Need to get 16.7MB of archives.
 After unpacking 57.8MB of additional disk space will be used.
 0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main binutils 2.14.90.0.6-4 [2430kB]
-            0% [1 binutils 0/2430kB 0%]                           9% [1 binutils 1653218/2430kB 68%]                                  14% [1 binutils 2409384/2430kB 99%]                                   14% [Working]             Get:2 http://ring.asahi-net.or.jp sid/main cpp-3.3 1:3.3.2-0pre5 [1387kB]
-             14% [2 cpp-3.3 0/1387kB 0%]                           20% [2 cpp-3.3 902660/1387kB 65%]20% [2 cpp-3.3 926054/1387kB 66%]                                 21% [2 cpp-3.3 1126868/1387kB 81%]                                  22% [Working]             Get:3 http://ring.asahi-net.or.jp sid/main cpp 4:3.3.1-2 [26.0kB]
+            0% [1 binutils 0/2430kB 0%]                           3% [1 binutils 546940/2430kB 22%]                                 13% [1 binutils 2284442/2430kB 94%]                                   14% [Working]             Get:2 http://ring.asahi-net.or.jp sid/main cpp-3.3 1:3.3.2-0pre5 [1387kB]
+             14% [2 cpp-3.3 0/1387kB 0%]                           17% [2 cpp-3.3 483768/1387kB 34%]                                 22% [Working]             Get:3 http://ring.asahi-net.or.jp sid/main cpp 4:3.3.1-2 [26.0kB]
              22% [3 cpp 0/26.0kB 0%]                       23% [Working]             Get:4 http://ring.asahi-net.or.jp sid/main perl-modules 5.8.1-2 [2156kB]
-             23% [4 perl-modules 0/2156kB 0%]                                28% [4 perl-modules 837344/2156kB 38%]                                      35% [4 perl-modules 2041404/2156kB 94%]35% [4 perl-modules 2041404/2156kB 94%]                                       36% [Working]             Get:5 http://ring.asahi-net.or.jp sid/main libdb4.0 4.0.14-1.3 [302kB]
-             36% [5 libdb4.0 0/302kB 0%]                           37% [5 libdb4.0 185832/302kB 61%]                                   1006kB/s 10s37% [Working]                                                       1006kB/s 10s                                                                                Get:6 http://ring.asahi-net.or.jp sid/main perl 5.8.1-2 [3305kB]
-37% [6 perl 0/3305kB 0%]                                            1006kB/s 10s45% [6 perl 1238972/3305kB 37%]                                      1006kB/s 9s45% [6 perl 1334692/3305kB 40%]                                      1006kB/s 8s48% [6 perl 1748718/3305kB 52%]                                      1006kB/s 8s53% [6 perl 2580976/3305kB 78%]                                      1006kB/s 7s53% [6 perl 2580976/3305kB 78%]                                      1006kB/s 7s57% [Working]                                                        1006kB/s 7s                                                                                Get:7 http://ring.asahi-net.or.jp sid/main patch 2.5.9-1 [92.3kB]
-57% [7 patch 0/92.3kB 0%]                                            1006kB/s 7s58% [Working]                                                        1006kB/s 6s                                                                                Get:8 http://ring.asahi-net.or.jp sid/main make 3.80-4 [349kB]
-58% [8 make 0/349kB 0%]                                              1006kB/s 6s60% [Working]                                                        1006kB/s 6s                                                                                Get:9 http://ring.asahi-net.or.jp sid/main dpkg-dev 1.10.15 [112kB]
-60% [9 dpkg-dev 0/112kB 0%]                                          1006kB/s 6s61% [Working]                                                        1006kB/s 6s                                                                                Get:10 http://ring.asahi-net.or.jp sid/main gcc-3.3 1:3.3.2-0pre5 [1313kB]
-61% [10 gcc-3.3 0/1313kB 0%]                                         1006kB/s 6s67% [10 gcc-3.3 1125026/1313kB 85%]                                  1006kB/s 5s67% [10 gcc-3.3 1131816/1313kB 86%]                                  1006kB/s 5s68% [Working]                                                        1006kB/s 5s68% [Waiting for headers]                                            1006kB/s 5s                                                                                Get:11 http://ring.asahi-net.or.jp sid/main libc6-dev 2.3.2-8 [2633kB]
-68% [11 libc6-dev 0/2633kB 0%]                                        829kB/s 6s73% [11 libc6-dev 795724/2633kB 30%]                                  829kB/s 5s75% [11 libc6-dev 1115652/2633kB 42%]                                 829kB/s 4s75% [11 libc6-dev 1115652/2633kB 42%]                                 829kB/s 4s76% [11 libc6-dev 1342444/2633kB 50%]                                 829kB/s 4s77% [11 libc6-dev 1421780/2633kB 53%]                                 829kB/s 4s83% [11 libc6-dev 2452488/2633kB 93%]                                 829kB/s 3s84% [Working]                                                         829kB/s 3s                                                                                Get:12 http://ring.asahi-net.or.jp sid/main libstdc++5-3.3-dev 1:3.3.2-0pre5 [767kB]
-84% [12 libstdc++5-3.3-dev 0/767kB 0%]                                829kB/s 3s86% [12 libstdc++5-3.3-dev 270556/767kB 35%]                          829kB/s 2s87% [12 libstdc++5-3.3-dev 400446/767kB 52%]                          829kB/s 2s89% [Working]                                                         829kB/s 2s                                                                                Get:13 http://ring.asahi-net.or.jp sid/main g++-3.3 1:3.3.2-0pre5 [1767kB]
-89% [13 g++-3.3 0/1767kB 0%]                                          829kB/s 2s91% [13 g++-3.3 432032/1767kB 24%]                                    630kB/s 2s94% [13 g++-3.3 918604/1767kB 51%]                                    630kB/s 1s95% [13 g++-3.3 1016908/1767kB 57%]                                   630kB/s 1s99% [13 g++-3.3 1631748/1767kB 92%]                                   630kB/s 0s99% [13 g++-3.3 1716472/1767kB 97%]                                   630kB/s 0s99% [Working]                                                         630kB/s 0s                                                                                Get:14 http://ring.asahi-net.or.jp sid/main g++ 4:3.3.1-2 [1390B]
-99% [14 g++ 0/1390B 0%]                                               630kB/s 0s99% [Working]                                                         630kB/s 0s                                                                                Get:15 http://ring.asahi-net.or.jp sid/main gcc 4:3.3.1-2 [4850B]
-99% [15 gcc 0/4850B 0%]                                               630kB/s 0s99% [15 gcc 0/4850B 0%]                                               630kB/s 0s99% [Working]                                                         630kB/s 0s                                                                                Get:16 http://ring.asahi-net.or.jp sid/main build-essential 10 [6450B]
-99% [16 build-essential 0/6450B 0%]                                   630kB/s 0s100% [Working]                                                        630kB/s 0s                                                                                Fetched 16.7MB in 21s (764kB/s)
+             23% [4 perl-modules 0/2156kB 0%]                                25% [4 perl-modules 451660/2156kB 20%]                                      36% [Working]             Get:5 http://ring.asahi-net.or.jp sid/main libdb4.0 4.0.14-1.3 [302kB]
+             36% [5 libdb4.0 0/302kB 0%]                           37% [Working]             Get:6 http://ring.asahi-net.or.jp sid/main perl 5.8.1-2 [3305kB]
+             37% [6 perl 0/3305kB 0%]                        48% [6 perl 1831820/3305kB 55%]50% [6 perl 2178688/3305kB 65%]                               57% [Working]                                                        1569kB/s 4s                                                                                Get:7 http://ring.asahi-net.or.jp sid/main patch 2.5.9-1 [92.3kB]
+57% [7 patch 0/92.3kB 0%]                                            1569kB/s 4s58% [Working]                                                        1569kB/s 4s                                                                                Get:8 http://ring.asahi-net.or.jp sid/main make 3.80-4 [349kB]
+58% [8 make 0/349kB 0%]                                              1569kB/s 4s60% [Working]                                                        1569kB/s 4s                                                                                Get:9 http://ring.asahi-net.or.jp sid/main dpkg-dev 1.10.15 [112kB]
+60% [9 dpkg-dev 0/112kB 0%]                                          1569kB/s 4s61% [Working]                                                        1569kB/s 4s                                                                                Get:10 http://ring.asahi-net.or.jp sid/main gcc-3.3 1:3.3.2-0pre5 [1313kB]
+61% [10 gcc-3.3 0/1313kB 0%]                                         1569kB/s 4s63% [10 gcc-3.3 420816/1313kB 32%]                                   1569kB/s 3s67% [10 gcc-3.3 1036096/1313kB 78%]                                  1569kB/s 3s67% [10 gcc-3.3 1070266/1313kB 81%]                                  1569kB/s 3s68% [Working]                                                        1569kB/s 3s                                                                                Get:11 http://ring.asahi-net.or.jp sid/main libc6-dev 2.3.2-8 [2633kB]
+68% [11 libc6-dev 0/2633kB 0%]                                       1569kB/s 3s75% [11 libc6-dev 1146276/2633kB 43%]                                1569kB/s 2s79% [11 libc6-dev 1799932/2633kB 68%]                                1569kB/s 2s79% [11 libc6-dev 1799932/2633kB 68%]                                1569kB/s 2s81% [11 libc6-dev 2116836/2633kB 80%]                                1569kB/s 1s81% [11 libc6-dev 2116836/2633kB 80%]                                1569kB/s 1s82% [11 libc6-dev 2196172/2633kB 83%]                                1569kB/s 1s83% [11 libc6-dev 2406580/2633kB 91%]                                 712kB/s 3s84% [Working]                                                         712kB/s 3s                                                                                Get:12 http://ring.asahi-net.or.jp sid/main libstdc++5-3.3-dev 1:3.3.2-0pre5 [767kB]
+84% [12 libstdc++5-3.3-dev 0/767kB 0%]                                712kB/s 3s85% [12 libstdc++5-3.3-dev 153064/767kB 19%]                          712kB/s 3s89% [Working]                                                         712kB/s 2s                                                                                Get:13 http://ring.asahi-net.or.jp sid/main g++-3.3 1:3.3.2-0pre5 [1767kB]
+89% [13 g++-3.3 0/1767kB 0%]                                          712kB/s 2s96% [13 g++-3.3 1260964/1767kB 71%]                                   712kB/s 0s99% [13 g++-3.3 1635432/1767kB 92%]                                   712kB/s 0s99% [13 g++-3.3 1635432/1767kB 92%]                                   712kB/s 0s99% [Working]                                                         712kB/s 0s                                                                                Get:14 http://ring.asahi-net.or.jp sid/main g++ 4:3.3.1-2 [1390B]
+99% [14 g++ 0/1390B 0%]                                               712kB/s 0s99% [Working]                                                         712kB/s 0s                                                                                Get:15 http://ring.asahi-net.or.jp sid/main gcc 4:3.3.1-2 [4850B]
+99% [15 gcc 0/4850B 0%]                                               712kB/s 0s99% [Working]                                                         712kB/s 0s                                                                                Get:16 http://ring.asahi-net.or.jp sid/main build-essential 10 [6450B]
+99% [16 build-essential 0/6450B 0%]                                   712kB/s 0s100% [Working]                                                        712kB/s 0s                                                                                Fetched 16.7MB in 15s (1089kB/s)
 Selecting previously deselected package binutils.
 (Reading database ... 6125 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.14.90.0.6-4_i386.deb) ...
@@ -1259,6 +1259,6 @@ Setting up build-essential (10) ...
  -> ignoring umount of proc filesystem
  -> ignoring umount of dev/pts filesystem
 Kernel panic: Attempted to kill init!
- tracing thread pid = 27228
+ tracing thread pid = 30578
 
  -> Successful exit from user-mode linux

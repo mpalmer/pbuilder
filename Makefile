@@ -30,7 +30,8 @@ full-check:
 
 clean:
 	rm -f *.bak *~ TAGS
-	rm testsuite/testimage
+	rm -f testsuite/testimage
+	rm -rf testsuite/testbuild
 
 TAGS:
 	etags pbuilder-* pbuilder
