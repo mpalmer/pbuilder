@@ -66,7 +66,7 @@ fi
 recover_aptcache
 echo "Installing the build-deps"
 trap saveaptcache_umountproc_cleanbuildplace exit
-checkbuilddep
+checkbuilddep "$PACKAGENAME"
 save_aptcache
 trap umountproc_cleanbuildplace exit
 createbuilduser
