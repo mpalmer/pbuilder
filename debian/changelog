@@ -11,6 +11,10 @@ pbuilder (0.12) unstable; urgency=low
     wait to see if something happens.
     Will start up a command-line if something fails, and ask for
     some remedy.
+  * It will now parse debian/control file with multi-line 
+    Build-Depends line or Build-Conflicts line (closes: #120718)
+    However, I don't think the policy really permits this very clearly.
+    There are packages which exist doing this, and other tools do support this.
 
  -- Junichi Uekawa <dancer@debian.org>  Fri, 23 Nov 2001 16:43:57 +0900
 

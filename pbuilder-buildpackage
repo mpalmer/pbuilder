@@ -56,8 +56,8 @@ function checkbuilddep_internal () {
 # Use this function to fulfill the dependency (almost)
     local ARCH=$(dpkg --print-architecture)
     echo " -> Attempting to parse the build-deps by myself"
-    for INSTALLPKGMULTI in $(grep "^Build-Depends\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
-	sed 's/^[^:]*: \(.*\)$/\1/' | \
+    for INSTALLPKGMULTI in $(awk '/^[^ ]*:/{p=0}/^Build-Depends:/{p=1} /^Build-Depends-Indep:/{p=1}  {if(p) {print $0}}' < "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+	sed 's/^[^:]*: //' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
       echo " -> Considering "$(echo $INSTALLPKGMULTI | tr "/" " " | awk '{print $1}' )
@@ -106,8 +106,8 @@ function checkbuilddep_internal () {
 	  exit 1
       fi
     done;
-    for INSTALLPKG in $(grep "^Build-Conflicts\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
-	sed 's/^[^:]*: \(.*\)$/\1/' | \
+    for INSTALLPKG in $(awk '/^[^ ]*:/{p=0}/^Build-Depends:/{p=1} /^Build-Depends-Indep:/{p=1}  {if(p) {print $0}}' < "$BUILDPLACE/"tmp/buildd/*/debian/control | \
+	sed 's/^[^:]*: //' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
       echo " -> Considering "$(echo $INSTALLPKG | tr "/" " " | awk '{print $1}' )
