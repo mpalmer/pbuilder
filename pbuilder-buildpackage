@@ -19,10 +19,10 @@ function checkbuilddep_versiondeps () {
     local PACKAGE="$1"
     local COMPARESTRING="$2"
     local DEPSVERSION="$3"
-    local PACKAGEVERSION=$(apt-cache show $PACKAGE | grep "^Version:" | sed 's/^Version: \(.*\)$/\1/')
+    local PACKAGEVERSION=$(apt-cache show $PACKAGE | grep "^Version:" | sort | head -1 | sed 's/^Version: \(.*\)$/\1/')
     # no versioned provides.
-
-    if dpkg --compare-versions "$DEPSVERSION" "$COMPARESTRING" "$PACKAGEVERSION"; then
+    echo    dpkg --compare-versions "[$PACKAGEVERSION]" "[$COMPARESTRING]" "[$DEPSVERSION]";
+    if dpkg --compare-versions "$PACKAGEVERSION" "$COMPARESTRING" "$DEPSVERSION"; then
 	# satisfies depends
 	return 0;
     else
@@ -32,21 +32,25 @@ function checkbuilddep_versiondeps () {
 }
 
 function checkbuilddep_archdeps () {
+    # returns FALSE on INSTALL
     local INSTALLPKG="$1"
     local ARCH="$2"
-    if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]!$ARCH[]/]" > /dev/null; then
-	      # don't install this on this arch -- satisfied? maybe. FIXME
+    if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/][!]$ARCH[]/]" > /dev/null; then
+	# if !$ARCH exists in there, ERROR.
 	return 0;
     fi
-    if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]$ARCH[]/]" > /dev/null; then
-	      # this arch is not listed. -- satisfied? maybe. FIXME
-	return 0;
+    if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[!]" > /dev/null; then
+	if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]$ARCH[]/]" > /dev/null; then
+	# if $ARCH does not exist, ERROR.
+	    return 0;
+	fi
     fi
     return 1;
 }
 
 function checkbuilddep_provides () {
-    # not used yet.
+    # not used yet. -- returns a potential candidate in $PACKAGE, if available.
+    local PACKAGENAME="$1"
     PROVIDED=$(apt-cache showpkg $PACKAGENAME | awk '{p=0}/^Reverse Provides:/,/^$/{p=1}{if(p && ($0 !~ "Reverse Provides:")){PACKAGE=$1}} END{print PACKAGE}')
 }
 
@@ -58,21 +62,43 @@ function checkbuilddep_internal () {
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
-      #echo " -> Considering $INSTALLPKGMULTI"
+      echo " -> Considering "$(echo $INSTALLPKGMULTI | tr "/" " " | awk '{print $1}' )
       SATISFIED="no"
       for INSTALLPKG in $(echo "$INSTALLPKGMULTI" | \
 	  awk 'BEGIN{RS="|"} {print}'); do
 	#echo " -> Trying to install $INSTALLPKG"
 	if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
-	  # this package has arch-deps.
 	    if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
 		SATISFIED="yes"
+		echo "   -> This package is not for this architecture"
 		continue;
 	    fi
 	fi
-	#echo " -> Installing $INSTALLPKG"
-	$CHROOTEXEC usr/bin/apt-get -y install $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') && \
+	if echo "$INSTALLPKG" | grep '[(]' > /dev/null; then
+	    #echo "Debug: $INSTALLPKG"
+	    if ! checkbuilddep_versiondeps $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') \
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/') \
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/') ; then
+	      echo "   -> Does not satisfy version, not trying"
+	      continue;
+	    fi
+	fi
+	echo " -> Installing "$(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}')
+
+	if $CHROOTEXEC usr/bin/apt-get -y install $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}'); then
 	    SATISFIED="yes"
+	else
+	    # package could not be found. -- looking for alternative.
+	    PROVIDED=""
+	    checkbuilddep_provides $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}')
+	    if [ -n "$PROVIDED" ]; then
+		# something provides this package
+		echo "   -> Installing $PROVIDED to satisfy the dependency "
+		if $CHROOTEXEC usr/bin/apt-get -y install $PROVIDED; then
+		    SATISFIED="yes";
+		fi
+	    fi
+	fi
       done;
       if [ "$SATISFIED" = "no" ]; then
 	  echo Could not satisfy build-dependency.
@@ -84,10 +110,19 @@ function checkbuilddep_internal () {
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
-      #echo " -> Considering $INSTALLPKG"
+      echo " -> Considering "$(echo $INSTALLPKGMULTI | tr "/" " " | awk '{print $1}' )
       if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	  # this package has arch-conflicts.
 	  if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
+	      continue;
+	  fi
+      fi
+      if echo "$INSTALLPKG" | grep '[(]' > /dev/null ; then
+	  # this package has version-conflicts
+	  if ! checkbuilddep_versiondeps $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') \
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/') \
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/'); then
+	      echo "   -> Satisfies version, not trying"
 	      continue;
 	  fi
       fi
@@ -97,24 +132,6 @@ function checkbuilddep_internal () {
 	  abortingfunction
 	  exit 1
       )
-    done
-}
-
-function checkbuilddep_using_dpkgcheckbuilddeps () {
-    # this function is not used currently... and is incomplete.
-    for INSTALLPKG in $($CHROOTEXEC bin/sh -c "(cd tmp/buildd/*/; dpkg-checkbuilddeps)" 2>&1 | \
-	grep "^dpkg-checkbuilddeps: Unmet build dependencies: " | \
-	sed 's/^[^:]*:[^:]*: \(.*\)$/\1/' | \
-	awk 'BEGIN{RS=", "} {print $1}'); do
-      echo " -> Installing $INSTALLPKG"
-      $CHROOTEXEC usr/bin/apt-get -y install "$INSTALLPKG"
-    done
-    for REMOVEPKG in $($CHROOTEXEC bin/sh -c "(cd tmp/buildd/*/; dpkg-checkbuilddeps)" 2>&1 | \
-	grep "^dpkg-checkbuilddeps: Build conflicts: " | \
-	sed 's/^[^:]*:[^:]*: \(.*\)$/\1/' | \
-	awk 'BEGIN{RS=", "} {print $1}'); do
-      echo " -> Removing $REMOVEPKG"
-      $CHROOTEXEC usr/bin/apt-get -y remove "$REMOVEPKG"
     done
 }
 
@@ -145,22 +162,23 @@ $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $P
 echo Installing the build-deps
 checkbuilddep
 echo Building the package
-$CHROOTEXEC /bin/bash -c "(cd tmp/buildd/*/; dpkg-buildpackage)" || (
-    echo pbuilder: Failed autobuilding of package >&2
+export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
+if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage"; then
+    echo "pbuilder: Failed autobuilding of package" >&2
     abortingfunction
     exit 1;    
-)
+fi
 
 umountproc
 
-test -n "$BUILDRESULT" && (
+if [ -n "$BUILDRESULT" ]; then
     mkdir -p "$BUILDRESULT"
     if [ -d "$BUILDRESULT" ]; then
 	cp "$BUILDPLACE"/tmp/buildd/* "$BUILDRESULT"
     else
 	echo "Error: BUILDRESULT=[$BUILDRESULT] and is not a directory." >&2
     fi
-)
+fi
 
 cleanbuildplace
 
