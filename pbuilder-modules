@@ -136,6 +136,22 @@ function mountproc () {
     done
 }
 
+## function to clean subdirs, use instead of rm -r
+function clean_subdirectories () {
+  if [ -z "$1" ]; then
+      echo "Fatal internal error in clean_subdirectories"
+      exit 1;
+  fi
+  if [ ! -d "$1" ]; then
+      echo "Warning: directory $1 does not exist in clean_subdirectories"
+      return;
+  fi
+  echo "    -> removing directory $1 and its subdirectories"
+  find "$1" \( \! -type d \) -a -xdev -print0 |xargs -0 rm -f
+  find "$1"  -type d -xdev -depth -print0 | \
+      (xargs -0 rmdir || true)
+}
+
 function cleanbuildplace () {
     if [ "$?" -ne 0 ]; then
 	echo " -> Aborting with an error";
@@ -143,9 +159,7 @@ function cleanbuildplace () {
     if [ "${INTERNAL_BUILD_UML}" != "yes" ]; then
 	if [ -d "$BUILDPLACE" ]; then 
 	    echo " -> cleaning the build env "
-	    find "$BUILDPLACE" \( \! -type d \) -a -xdev -print0 |xargs -0 rm -f
-	    find "$BUILDPLACE"  -type d -xdev -depth -print0 |(xargs -0 \
-		rmdir || true)
+	    clean_subdirectories "$BUILDPLACE"
 	fi;
     fi
 }

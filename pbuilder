@@ -27,11 +27,11 @@ case "$1" in
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	if [ -n "$BASEBUILDPLACE" ]; then 
 	    echo "Cleaning [$BASEBUILDPLACE]"
-	    rm -rf "$BASEBUILDPLACE"/* || true
+	    clean_subdirectories "$BASEBUILDPLACE" || true
 	fi
 	if [ -n "$APTCACHE" ]; then
 	    echo "Cleaning [$APTCACHE]"
-	    rm -rf "$APTCACHE"/* || true
+	    clean_subdirectories "$APTCACHE" || true
 	fi
 	;;
     login)
