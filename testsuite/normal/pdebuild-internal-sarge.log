@@ -1,4 +1,3 @@
-W: /home/dancer/.pbuilderrc does not exist
 Building the build Environment
  -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage]
  -> creating local configuration
@@ -23,8 +22,8 @@ The following NEW packages will be installed:
   debconf debconf-i18n debootstrap liblocale-gettext-perl libssl0.9.7
   libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl pbuilder wget
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2934kB of archives.
-After unpacking 9153kB of additional disk space will be used.
+Need to get 2931kB of archives.
+After unpacking 9146kB of additional disk space will be used.
 Get:1 http://ring.asahi-net.or.jp sarge/main liblocale-gettext-perl 1.01-17 [16.8kB]
 Get:2 http://ring.asahi-net.or.jp sarge/main libtext-iconv-perl 1.2-3 [12.2kB]
 Get:3 http://ring.asahi-net.or.jp sarge/main libtext-charwidth-perl 0.04-1 [11.0kB]
@@ -33,11 +32,11 @@ Get:5 http://ring.asahi-net.or.jp sarge/main debconf-i18n 1.4.29 [68.0kB]
 Get:6 http://ring.asahi-net.or.jp sarge/main debconf 1.4.29 [99.1kB]
 Get:7 http://ring.asahi-net.or.jp sarge/main libssl0.9.7 0.9.7d-3 [2171kB]
 Get:8 http://ring.asahi-net.or.jp sarge/main wget 1.9.1-4 [424kB]
-Get:9 http://ring.asahi-net.or.jp sarge/main debootstrap 0.2.39 [62.1kB]
+Get:9 http://ring.asahi-net.or.jp sarge/main debootstrap 0.2.39.1 [59.4kB]
 Get:10 http://ring.asahi-net.or.jp sarge/main pbuilder 0.107 [60.5kB]
-Fetched 2934kB in 0s (3839kB/s)
+Fetched 2931kB in 1s (2733kB/s)
 Selecting previously deselected package liblocale-gettext-perl.
-(Reading database ... 7560 files and directories currently installed.)
+(Reading database ... 7593 files and directories currently installed.)
 Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.01-17_i386.deb) ...
 Selecting previously deselected package libtext-iconv-perl.
 Unpacking libtext-iconv-perl (from .../libtext-iconv-perl_1.2-3_i386.deb) ...
@@ -54,7 +53,7 @@ Unpacking libssl0.9.7 (from .../libssl0.9.7_0.9.7d-3_i386.deb) ...
 Selecting previously deselected package wget.
 Unpacking wget (from .../archives/wget_1.9.1-4_i386.deb) ...
 Selecting previously deselected package debootstrap.
-Unpacking debootstrap (from .../debootstrap_0.2.39_i386.deb) ...
+Unpacking debootstrap (from .../debootstrap_0.2.39.1_i386.deb) ...
 Selecting previously deselected package pbuilder.
 Unpacking pbuilder (from .../pbuilder_0.107_all.deb) ...
 Setting up liblocale-gettext-perl (1.01-17) ...
@@ -68,7 +67,7 @@ Setting up libssl0.9.7 (0.9.7d-3) ...
 
 Setting up wget (1.9.1-4) ...
 
-Setting up debootstrap (0.2.39) ...
+Setting up debootstrap (0.2.39.1) ...
 Setting up pbuilder (0.107) ...
 Setting DEBBUILDOPTS=
  -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.18 2003/04/20 03:40:36 dancer Exp $
@@ -102,9 +101,9 @@ Get:9 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.11 [353kB]
 Get:10 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:11 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.11-1 [12.4kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 2477kB in 0s (4005kB/s)
+Fetched 2477kB in 0s (3017kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 7919 files and directories currently installed.)
+(Reading database ... 7950 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.09-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.09-1_i386.deb) ...
@@ -439,7 +438,7 @@ PASS: tests/param-r-invalid.sh
 1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue Jul 13 21:40:40 UTC 2004
+Sat Jul 24 01:20:41 UTC 2004
 1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
@@ -509,13 +508,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue Jul 13 21:40:46 UTC 2004
+Sat Jul 24 01:20:47 UTC 2004
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 c: c
-dsh: Process terminated (before write).
 b: b
+dsh: Process terminated (before write).
 a: a
 PASS: tests/segv-catcher.sh
 l w
@@ -610,4 +609,4 @@ dpkg-buildpackage: full upload (original source is included)
  -> unmounting proc filesystem
  -> unmounting /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2 filesystem
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/22140 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/13241 and its subdirectories

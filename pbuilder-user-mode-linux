@@ -125,7 +125,7 @@ else
   mkdir -p ${UML_CHROOT_BUILDRESULTMOUNTDIR} || true
   mount -t hostfs none "${UML_CHROOT_BUILDRESULTMOUNTDIR}" -o "${UML_BUILDRESULT}"
 fi
-pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT[@]} --buildresult "\${BUILDRESULT}" --buildplace "${UML_CHROOT_MOUNTPOINT}" --internal-build-uml ${BUILDING_DSC_FILE}  ${UML_EXECUTE_EXTRAOPT}
+pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT[@]} --buildresult "\${BUILDRESULT}" --buildplace "${UML_CHROOT_MOUNTPOINT}" --internal-build-uml ${UML_DEBUGMODE:+--debug} ${BUILDING_DSC_FILE}  ${UML_EXECUTE_EXTRAOPT} 
 echo \$? > /proc/exitcode
 /sbin/halt -d -f 
 EOF
@@ -287,6 +287,17 @@ case "${OPERATION}" in
 	shift;
 	UML_EXECUTE_EXTRAOPT="${UML_EXECUTE_EXTRAOPT} $@"
 	operate_uml execute 
+	;;
+    dumpconfig)
+	echo " -> start dump outside of UML"
+	echo "  -> set"
+	set;
+	echo "  -> env"
+	env;
+	echo " -> end dump outside of UML"
+	usecow
+	EXTRACLEANUP=cleancow
+	operate_uml dumpconfig
 	;;
     create)
 	if [ -n "${UML_DISTRIBUTION}" ]; then

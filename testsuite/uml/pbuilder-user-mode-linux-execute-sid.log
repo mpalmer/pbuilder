@@ -1,14 +1,18 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/mnt/buildd/uml-cow//17509.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileKwFkC4 rw
+Invoking: linux mem=128M eth0=tuntap,,,192.168.30.198 con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/mnt/buildd/uml-cow//10522.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileBWBnNb rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
-Linux version 2.4.22-5um (dancer@atoron) (gcc version 2.95.4 20011002 (Debian prerelease)) #3 2003年 11月 16日 日曜日 23:07:20 JST
+Checking for /dev/anon on the host...Not available (open failed with errno 2)
+Checking for /dev/anon on the host...Not available (open failed with errno 2)
+Checking for /dev/anon on the host...Not available (open failed with errno 2)
+Checking for /dev/anon on the host...Not available (open failed with errno 2)
+Linux version 2.4.24-1um (root@atoron) (gcc バージョン 3.3.3 20031206 (prerelease) (Debian)) #2 2004年 3月 13日 土曜日 02:28:54 JST
 On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/mnt/buildd/uml-cow//17509.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileKwFkC4 rw
-Calibrating delay loop... 1574.96 BogoMIPS
-Memory: 124716k available
+Kernel command line: mem=128M eth0=tuntap,,,192.168.30.198 con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/mnt/buildd/uml-cow//10522.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileBWBnNb rw
+Calibrating delay loop... 1667.89 BogoMIPS
+Memory: 124888k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
 Mount cache hash table entries: 512 (order: 0, 4096 bytes)
@@ -33,59 +37,23 @@ RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
 loop: loaded (max 8 devices)
 Initializing Cryptographic API
 Initializing software serial port version 1
-setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
-Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/jaRept/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/jxJqUd/mconsole
 unable to open root_fs for validation
-Creating "/mnt/buildd/uml-cow//17509.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
-Partition check:
- ubdb: unknown partition table
+Couldn't stat "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage" : err = 2
+Backing file '/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage' mtime request failed, err = 2
+unable to open /mnt/buildd/uml-cow//10522.cow for validation
 Initializing stdio console driver
+Netdevice 0 : TUN/TAP backend - IP = 192.168.30.198
 NET4: Linux TCP/IP 1.0 for NET4.0
 IP: routing cache hash table of 512 buckets, 4Kbytes
-TCP: Hash tables configured (established 8192 bind 8192)
+TCP: Hash tables configured (established 8192 bind 16384)
 Linux IP multicast router 0.06 plus PIM-SM
 NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
 VFS: Mounted root (hostfs filesystem).
 Mounted devfs on /dev
-EXT2-fs warning: mounting unchecked fs, running e2fsck is recommended
-Starting network inside the chroot
-sed: can't read /proc/mounts: No such file or directory
-sed: can't read /proc/mounts: No such file or directory
-sed: can't read /proc/mounts: No such file or directory
-Deconfiguring network interfaces...SIOCDELRT: No such process
-done.
-Setting up IP spoofing protection: FAILED.
-Configuring network interfaces...Slirp v1.0.14pre1 (BETA)
-
-Copyright (c) 1995,1996 Danny Gasparovski and others.
-All rights reserved.
-This program is copyrighted, free software.
-Please read the file COPYRIGHT that came with the Slirp
-package for the terms and conditions of the copyright.
-
-IP address of Slirp host: 192.168.1.62
-IP address of your DNS(s): 218.231.0.10, 218.231.0.42
-Your address is 10.0.2.15
-(or anything else you want)
-
-Type five zeroes (0) to exit.
-
-[autodetect SLIP/CSLIP, MTU 1500, MRU 1500]
-
-SLiRP Ready ...
-done.
-W: /home/dancer/.pbuilderrc does not exist
- -> Running in pbuilder-user-mode-linux mode
- -> copying local configuration
- -> mounting /proc filesystem
- -> mounting /dev/pts filesystem
- -> policy-rc.d already exists
---- parameters given to this script
-[test1 test2 test3]
- -> ignoring umount of dev/pts filesystem
- -> ignoring umount of proc filesystem
+mount: special device /dev/ubd/1 does not exist
+E: Cannot mount /dev/ubd/1, is UML root image accessible as current user?
 Kernel panic: Attempted to kill init!
- tracing thread pid = 17559
+ tracing thread pid = 10536
 
  -> Successful exit from user-mode linux

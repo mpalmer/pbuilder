@@ -86,6 +86,21 @@ File extracted to: $BUILDPLACE
 	executehooks "F"
 	chroot "$BUILDPLACE" /run "$@"
 	;;
+    dumpconfig)
+	shift
+	. /usr/lib/pbuilder/pbuilder-checkparams
+	. /usr/lib/pbuilder/pbuilder-runhooks
+	extractbuildplace
+	trap umountproc_cleanbuildplace exit
+	loadhooks
+	executehooks "F"
+	echo " -> start dump config"
+	echo "  -> set"
+	set;
+	echo "  -> env"
+	env;
+	echo " -> end dump config"
+	;;
     *)
 	. /usr/lib/pbuilder/pbuilder-modules
 	showhelp
