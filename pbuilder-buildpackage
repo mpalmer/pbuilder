@@ -33,7 +33,7 @@ function copydsc () {
 }
 
 function checkbuilddep () {
-    if ! /usr/lib/pbuilder/pbuilder-satisfydepends --control "$BUILDPLACE/"tmp/buildd/*/debian/control --chroot "$BUILDPLACE" ; then
+    if ! /usr/lib/pbuilder/pbuilder-satisfydepends --control "$BUILDPLACE/"tmp/buildd/*/debian/control --chroot "$BUILDPLACE" --binary-all ; then
 	echo "E: pbuilder-satisfydepends failed." >&2
 	saveaptcache_umountproc_cleanbuildplace
 	exit 1
