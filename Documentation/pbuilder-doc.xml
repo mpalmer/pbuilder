@@ -370,7 +370,7 @@ export DEBIAN_BUILDGCCVER=3.2
       </para>
     </sect1>
   </chapter>
-  <chapter>
+  <chapter id="faq">
     <title>Frequently asked questions</title>
     <para>
       Here, known problems and frequently asked questions are
@@ -418,6 +418,17 @@ export DEBIAN_BUILDGCCVER=3.2
 	You can use hook scripts for this.
 	D scripts are run before satisfying build-dependency.
       </para>
+    </sect1>
+    <sect1>
+      <title>Different bash prompts inside pbuilder login</title>
+      <para>
+	To make distinguishing bash prompts inside pbuilder
+	easier, it is possible to set environmental variables such as PS1
+	inside <filename>pbuilderrc</filename>
+      </para>
+      <screen>
+	export PS1="pbuild chroot 32165 # "
+      </screen>
     </sect1>
   </chapter>
   <chapter id="otheruse">
