@@ -124,14 +124,19 @@ else
     DPKG_COMMANDLINE="cd tmp/buildd/*/;  $SUTOUSER dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"
 fi
 
-($CHROOTEXEC /bin/bash -c "${DPKG_COMMANDLINE}") &
+(
+    : Build process
+    $CHROOTEXEC /bin/bash -c "${DPKG_COMMANDLINE}"
+) &
 BUILD_PID=$!
 if [ -n ${TIMEOUT_TIME} ]; then
     ( 
+	: Timeout process
 	sleep "${TIMEOUT_TIME}";
-	echo " --> Terminating build process "
-	kill ${BUILD_PID} ) & # timeout process
-    KILL_WAIT_PID="echo \"  --> Terminate timeout process\"; kill $!"
+	kill ${BUILD_PID}
+	echo " -> Terminating build process due to timeout "
+    ) & # timeout process
+    KILL_WAIT_PID="kill $!; echo \"  -> Terminate timeout process\"; "
 else
     KILL_WAIT_PID=""
 fi
