@@ -14,6 +14,42 @@ function copydsc () {
     done
 }
 
+function checkbuilddep_versiondeps () {
+    # not used yet.
+    local PACKAGE="$1"
+    local COMPARESTRING="$2"
+    local DEPSVERSION="$3"
+    local PACKAGEVERSION=$(apt-cache show $PACKAGE | grep "^Version:" | sed 's/^Version: \(.*\)$/\1/')
+    # no versioned provides.
+
+    if dpkg --compare-versions "$DEPSVERSION" "$COMPARESTRING" "$PACKAGEVERSION"; then
+	# satisfies depends
+	return 0;
+    else
+	# cannot satisfy depends
+	return 1;
+    fi
+}
+
+function checkbuilddep_archdeps () {
+    local INSTALLPKG="$1"
+    local ARCH="$2"
+    if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]!$ARCH[]/]" > /dev/null; then
+	      # don't install this on this arch -- satisfied? maybe. FIXME
+	return 0;
+    fi
+    if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]$ARCH[]/]" > /dev/null; then
+	      # this arch is not listed. -- satisfied? maybe. FIXME
+	return 0;
+    fi
+    return 1;
+}
+
+function checkbuilddep_provides () {
+    # not used yet.
+    PROVIDED=$(apt-cache showpkg $PACKAGENAME | awk '{p=0}/^Reverse Provides:/,/^$/{p=1}{if(p && ($0 !~ "Reverse Provides:")){PACKAGE=$1}} END{print PACKAGE}')
+}
+
 function checkbuilddep_internal () {
 # Use this function to fulfill the dependency (almost)
     local ARCH=$(dpkg --print-architecture)
@@ -29,13 +65,7 @@ function checkbuilddep_internal () {
 	#echo " -> Trying to install $INSTALLPKG"
 	if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	  # this package has arch-deps.
-	    if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]!$ARCH[]/]" > /dev/null; then
-	      # don't install this on this arch -- satisfied? maybe. FIXME
-		SATISFIED="yes"
-		continue;
-	    fi
-	    if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]$ARCH[]/]" > /dev/null; then
-	      # this arch is not listed. -- satisfied? maybe. FIXME
+	    if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
 		SATISFIED="yes"
 		continue;
 	    fi
@@ -57,12 +87,7 @@ function checkbuilddep_internal () {
       #echo " -> Considering $INSTALLPKG"
       if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	  # this package has arch-conflicts.
-	  if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]!$ARCH[]/]" > /dev/null; then
-	      # don't install this on this arch
-	      continue;
-	  fi
-	  if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]$ARCH[]/]" > /dev/null; then
-	      # this arch is not listed.
+	  if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
 	      continue;
 	  fi
       fi
