@@ -15,13 +15,11 @@ function copydsc () {
 }
 
 function checkbuilddep_versiondeps () {
-    # not used yet.
     local PACKAGE="$1"
     local COMPARESTRING="$2"
     local DEPSVERSION="$3"
-    local PACKAGEVERSION=$(apt-cache show $PACKAGE | grep "^Version:" | sort | head -1 | sed 's/^Version: \(.*\)$/\1/')
+    local PACKAGEVERSION=$("$CHROOTEXEC" usr/bin/apt-cache show $PACKAGE | grep "^Version:" | sort | head -1 | sed 's/^Version: \(.*\)$/\1/')
     # no versioned provides.
-    #echo    dpkg --compare-versions "[$PACKAGEVERSION]" "[$COMPARESTRING]" "[$DEPSVERSION]";
     if dpkg --compare-versions "$PACKAGEVERSION" "$COMPARESTRING" "$DEPSVERSION"; then
 	# satisfies depends
 	return 0;
@@ -49,9 +47,8 @@ function checkbuilddep_archdeps () {
 }
 
 function checkbuilddep_provides () {
-    # not used yet. -- returns a potential candidate in $PACKAGE, if available.
     local PACKAGENAME="$1"
-    PROVIDED=$(apt-cache showpkg $PACKAGENAME | awk '{p=0}/^Reverse Provides:/,/^$/{p=1}{if(p && ($0 !~ "Reverse Provides:")){PACKAGE=$1}} END{print PACKAGE}')
+    PROVIDED=$("$CHROOTEXEC" usr/bin/apt-cache showpkg $PACKAGENAME | awk '{p=0}/^Reverse Provides:/,/^$/{p=1}{if(p && ($0 !~ "Reverse Provides:")){PACKAGE=$1}} END{print PACKAGE}')
 }
 
 function checkbuilddep_internal () {
