@@ -536,7 +536,7 @@ export DEBIAN_BUILDGCCVER=3.2
 	Make sure you have set your path correctly, as described in <filename>/usr/share/doc/fakechroot/README.Debian</filename>
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="debconfinsidepbuilder">
       <title>Using debconf inside pbuilder sessions</title>
       <para>
 	To use debconf inside pbuilder, setting DEBIAN_FRONTEND to 
@@ -545,6 +545,25 @@ export DEBIAN_BUILDGCCVER=3.2
 	whiptail or dialog is installed inside the chroot.
       </para>
     </sect1>
+    <sect1 id="nodev">
+      <title>nodev mount options hinder pbuilder activity</title>
+      <para>
+	If you see messages such as this in building chroot, you are mounting the filesystem with 
+	nodev option.
+      </para>
+      <screen>
+	/var/lib/dpkg/info/base-files.postinst: /dev/null: Permission denied
+      </screen>
+      <para>
+	You will also have problems if you mount the filesystem with noexec option, or nosuid.
+	Make sure you do not have these flags set when mounting the filesystem for 
+	<filename>/var/cache/pbuilder</filename>; or $BUILDPLACE.
+      </para>
+      <para>
+	This is not a problem on User-mode-linux.
+      </para>
+    </sect1>
+    <!-- end of FAQ -->
   </chapter>
   <chapter id="otheruse">
     <title>Other uses of pbuilder</title>
