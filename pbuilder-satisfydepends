@@ -77,7 +77,7 @@ BEGIN{source=1}
 /^[^ ]*:/ {p=0} 
 tolower($0) ~ /^'"${BD_REGEXP}"':/   {p=1} 
 {if(p && source) {print $0}}'  | \
-	sed 's/^[^: ]*: //' | \
+	sed 's/^[^: ]*://' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
       echo " -> Considering "$(echo $INSTALLPKGMULTI | tr "/" " " | awk '{print $0}' )
@@ -134,7 +134,7 @@ tolower($0) ~ /^'"${BD_REGEXP}"':/   {p=1}
 /^[^ ]*:/{p=0} 
 tolower($0) ~ /^'"${BC_REGEXP}"':/   {p=1} 
 {if(p && source) {print $0}}'  | \
-	sed 's/^[^: ]*: //' | \
+	sed 's/^[^: ]*://' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
       CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed -e 's/^[/]*//' -e 's/[[/(].*//')
