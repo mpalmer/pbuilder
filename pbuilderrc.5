@@ -114,14 +114,15 @@ will update to this distribution, if this is specified,
 unless command line option is specified to override this.
 
 .TP
-.BI "DPKG_BUILDPACKAGEOPT=" "option to dpkg-buildpackage";
+.BI "SPONSORING_MAILADDR=" "Name <Mail@Address>";
 
 If this was specified, 
 .B dpkg-buildpackage
-command will be executed with the option.
-Overrided with 
+command will be passed with the necessary sponsorship option 
+.B "-mName <Mail@Address>"
+when 
 .B "--sponsorship"
-command-line option.
+command-line option is specified, on building.
 
 .SH "FILES"
 .I "/etc/pbuilderrc"

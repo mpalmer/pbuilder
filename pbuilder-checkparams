@@ -1,6 +1,9 @@
 #! /bin/bash 
 # this is sourced from pbuilder packages to process the optional parameters.
 
+# empty some vars.
+DPKG_BUILDPACKAGEOPT=""
+
 . /etc/pbuilderrc
 . /usr/lib/pbuilder/pbuilder-modules
 
@@ -62,8 +65,8 @@ while [ -n "$1" ]; do
 	    showhelp
 	    ;;
         --sponsorship)
-	    DPKG_BUILDPACKAGEOPT="-m$2";
-	    shift; shift;
+	    DPKG_BUILDPACKAGEOPT="-m$SPONSORING_MAILADDR";
+	    shift;
 	    ;;
 	--*)
 	    echo "Error: Unknown option [$1] was specified " >&2 

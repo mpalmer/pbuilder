@@ -153,13 +153,16 @@ as the 4th parameter in the chroot creation process.
 This allows for use of custom debootstrap hook script.
 
 .TP
-.BI "--sponsorship [" "Name/address of maintainer" "]"
+.BI "--sponsorship"
 
 For Debian developer to compile packge for a sponsored 
 person, the Maintainer: address is set to the sponsored,
 but the upload needs to be signed by the sponsor.
 Thus, this is required hack to make that possible.
 Add your own name, so that you can sign your package.
+
+It is configured through the configuration 
+.B "SPONSORING_MAILADDR"
 
 .SH "FILES"
 .TP
