@@ -86,7 +86,7 @@ function checkbuilddep_internal () {
       SATISFIED="no"
       for INSTALLPKG in $(echo "$INSTALLPKGMULTI" | \
 	  awk 'BEGIN{RS="|"} {print}'); do
-	CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed 's/[[/(].*//')
+	CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed -e 's/^[/]*//' -e 's/[[/(].*//')
 	if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	    if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
 		SATISFIED="yes"
@@ -136,7 +136,7 @@ function checkbuilddep_internal () {
 	sed 's/^[^:]*: //' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
-      CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed 's/[[/(].*//')
+      CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed -e 's/^[/]*//' -e 's/[[/(].*//')
       echo " -> Considering "${CURRENTREALPKGNAME}
       
       if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
