@@ -40,17 +40,13 @@ install: build
 	# Add here commands to install the package into debian/build-package.
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/pbuilder
 
-
 # Build architecture-independent files here.
 binary-indep: build install
-# We have nothing to do by default.
-
-# Build architecture-dependent files here.
-binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installdocs
 	dh_installman pbuilder.8 pbuilderrc.5 pdebuild.1 debuild-pbuilder.1
+	dh_movefiles --sourcedir=debian/pbuilder
 	dh_installchangelogs
 	dh_link
 	dh_compress
@@ -59,6 +55,9 @@ binary-arch: build install
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
+
+# Build architecture-dependent files here.
+binary-arch: build install
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install configure

@@ -7,14 +7,14 @@ Standards-Version: 3.5.6
 
 Package: pbuilder
 Architecture: all
-Depends: debootstrap (>= 0.1.17.5), wget, gcc, debianutils (>= 1.13.1)
+Depends: debootstrap (>= 0.1.17.9), wget, gcc, debianutils (>= 1.13.1)
 Recommends: fakeroot, sudo
-Suggests: rootstrap, user-mode-linux
+Suggests: pbuilder-user-mode-linux
 Description: personal package builder for Debian packages
  pbuilder constructs a chroot system, and builds a package inside the
- chroot. It is an ideal system to use to check that a package's
- build-dependencies are correct, and to be sure that unnecessary and
- wrong build dependencies will not exist in the resulting package.
+ chroot. 
+ It is an ideal system to use to check 
+ that a package has correct build-dependencies.
  It uses apt extensively, and a local mirror, or a fast connection
  to a Debian mirror is ideal, but not necessary.
  .
@@ -28,3 +28,22 @@ Description: personal package builder for Debian packages
  .
  pdebuild is a wrapper for Debian Developers, to allow running
  pbuilder just like "debuild", as a normal user.
+
+Package: pbuilder-uml
+Architecture: all
+Depends: rootstrap, user-mode-linux, pbuilder
+Description: user-mode-linux version of pbuilder
+ pbuilder-uml uses a User-mode-linux system, and builds Debian packages
+ inside the UML image. It is an ideal system to use to check 
+ that a package has correct build-dependencies.
+ It uses apt extensively, and a local mirror, or a fast connection
+ to a Debian mirror is ideal, but not necessary.
+ .
+ Requires user-mode-linux to function correctly
+ .
+ "pbuilder-user-mode-linux create" uses rootstrap to create UML image
+ .
+ "pbuilder-user-mode-linux update" updates the image to the current state of
+ testing/unstable/whatever
+ .
+ "pbuilder-user-mode-linux build" takes a *.dsc file and builds a binary in the UML
