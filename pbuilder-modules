@@ -230,8 +230,8 @@ EOF
     fi
     if [ -n "$NONUSMIRRORSITE" ]; then 
 	cat  >> "$BUILDPLACE"/etc/apt/sources.list << EOF
-deb $NONUSMIRRORSITE $DISTRIBUTION/non-US main contrib non-free
-#deb-src $NONUSMIRRORSITE $DISTRIBUTION/non-US main contrib non-free
+deb $NONUSMIRRORSITE $DISTRIBUTION/non-US main 
+#deb-src $NONUSMIRRORSITE $DISTRIBUTION/non-US main
 EOF
     fi
     if [ -n "$APTCONFDIR" ]; then
