@@ -129,7 +129,7 @@ if [ -n "${BUILDRESULT}" ]; then
     mkdir -p "${BUILDRESULT}"
     if [ -d "${BUILDRESULT}" ]; then
 	if [ -n "${BUILDRESULTUID}" ]; then
-	    chown "${BUILDRESULTUID}" "${BUILDPLACE}"/tmp/buildd/*
+	    chown "${BUILDRESULTUID}:" "${BUILDPLACE}"/tmp/buildd/*
 	fi
 	if [ -n "${BUILDRESULTGID}" ]; then
 	    chgrp "${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
