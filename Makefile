@@ -74,6 +74,8 @@ install:
 	$(INSTALL_EXECUTABLE) examples/B91dpkg-i $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/C10shell $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/D10tmp $(DESTDIR)/usr/share/doc/pbuilder/examples
+	$(INSTALL_EXECUTABLE) examples/D90chrootmemo $(DESTDIR)/usr/share/doc/pbuilder/examples
+	$(INSTALL_EXECUTABLE) examples/F90chrootmemo $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/execute_installtest.sh $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/execute_paramtest.sh $(DESTDIR)/usr/share/doc/pbuilder/examples
 	cd pbuildd; make install DESTDIR=$(DESTDIR)

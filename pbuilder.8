@@ -210,9 +210,9 @@ This is used in
 .B "build"
 and 
 .B "create"
- (after successfully creating the initial chroot)
+(after successfully creating the initial chroot)
 and 
-.B "update"
+.BR "update" .
 
 The packages should be specified as a space-delimited list.
 
@@ -282,7 +282,17 @@ Also useful for calling
 is executed after pbuilder update and pbuilder create 
 terminates, before creating the tarball.
 
+.B "F<digit><digit><whatever-else-you-want>"
+is executed just before user logs in, or 
+program starts executing, after chroot is created 
+in 
+.B login
+or 
+.B execute
+target.
+
 \" End of hookdir description
+
 
 .TP
 .BI "--debemail [" "maintainer-name <email-address>" "]"
