@@ -1,15 +1,16 @@
-pbuilder (0.119) UNRELEASED; urgency=low
+pbuilder (0.119) unstable; urgency=low
 
   * pbuilderrc.5:Fix manual page formatting (closes: #279700)
   * Add example script from Jamin W Collins for short-cut way of specifying distribution. (closes: #255165)
   * Warn if build-depends is not satisfied when invoking dpkg-buildpackage -S (closes: #266349)
-  * TODO: Potential pdebuild fix, waiting for confirmation from submitter (closes: #281085)
-  * TODO: doc patches update.
+  * Potential pdebuild debbuildopts fix (closes: #281085)
+      pdebuild --debug --debbuildopts '"-i\+\+pristine-trees|,,*|\{arch\}|\.arch-ids"'
+    seems to work now.
   * "Documentation updates & fixes", thanks to era
     eriksson (Closes: #283135).
   * default distribution in pbuilder create is now 'sid', not 'woody'.
 
- -- Junichi Uekawa <dancer@debian.org>  Thu,  2 Dec 2004 08:45:05 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 11 Dec 2004 10:12:27 +0900
 
 pbuilder (0.118) unstable; urgency=low
 

@@ -8,8 +8,7 @@
     <title>pbuilder User's Manual</title>
     <abbrev>pbuilder-doc</abbrev>
     <subtitle>Usage and operations</subtitle>
-    <!-- TODO: maybe fix wrapping of the CVS $Revision tag -->
-    <releaseinfo>documentation in progress ($Revision$)</releaseinfo>
+    <releaseinfo>documentation in progress ($Id$)</releaseinfo>
     <authorgroup>
       <author>
 	<firstname>Junichi</firstname>
@@ -192,7 +191,7 @@
 	inside the chroot with
 	the <command><option>--use-pdebuild-internal</option></command>.
 	<!-- FIXME: name of option is misleading, change it?
-	 -- maybe when it's more useful.
+	 maybe when it's more useful.
 	-->
 	It will try to bind mount the working directory inside chroot, 
 	and run <command>dpkg-buildpackage</command> inside.
@@ -252,19 +251,19 @@
 	when root privilege is required.
       </para>
       <para>
-        <!-- FIXME: what are these parameters? Environment variables? Explain -->
-	BUILDUSERID should be set to a value for a user id that
+	BUILDUSERID configuration option should be set to a value for a user id that
 	does not already exist on the system, so that it is more difficult for 
 	packages that are being built with 
 	<command>pbuilder</command> to affect the environment outside the chroot.
-	<!-- FIXME: what does the following mean? Clarify, please -->
-	When BUILDUSERNAME is also set,  
-	pbuilder will use that user id and fakeroot for building packages.
+	When BUILDUSERNAME configuration option is also set,  
+	pbuilder will use the specified user name and fakeroot for building packages,
+	instead of running as root inside chroot.
       </para>
       <para>
-	Using the fakerooting method, pbuilder will run with 
-	root privilege when it is required, when installing
-	packages to the chroot.
+	Even when using the fakerooting method, pbuilder will run with 
+	root privilege when it is required.
+	For example, when installing
+	packages to the chroot, pbuilder will run under root privilege.
       </para>
       <para>
 	To be able to invoke pbuilder without being 
@@ -407,7 +406,6 @@
 	  <para>Automatically running lintian/linda (distributed as an example in
 	    <filename>/usr/share/doc/pbuilder/examples/B90linda</filename>).</para>
 	</listitem>
-	<!-- FIXME: either obsolete or update this item? -->
 	<listitem>
 	  <para>Automatic debian-test of the package?
 	  The debian-test package has been removed from Debian.
