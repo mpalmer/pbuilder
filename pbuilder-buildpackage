@@ -118,8 +118,6 @@ export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 
 executehooks "A"
 
-
-
 if [ -z "$DEBEMAIL" ]; then
     DPKG_COMMANDLINE="cd tmp/buildd/*/; $SUTOUSER dpkg-buildpackage -us -uc $DEBBUILDOPTS"
 else
@@ -129,20 +127,23 @@ fi
 ($CHROOTEXEC /bin/bash -c "${DPKG_COMMANDLINE}") &
 BUILD_PID=$!
 if [ -n ${TIMEOUT_TIME} ]; then
-    ( sleep "${TIMEOUT_TIME}"; kill ${BUILD_PID} )& # timeout process
-    KILL_WAIT_PID="kill $!"
+    ( 
+	sleep "${TIMEOUT_TIME}";
+	echo " --> Terminating build process "
+	kill ${BUILD_PID} ) & # timeout process
+    KILL_WAIT_PID="echo \"  --> Terminate timeout process\"; kill $!"
 else
     KILL_WAIT_PID=""
 fi
 
 if ! wait ${BUILD_PID}; then
-    ${KILL_WAIT_PID}
+    eval ${KILL_WAIT_PID}
     echo "pbuilder: Failed autobuilding of package" >&2
     executehooks "C"
     umountproc_cleanbuildplace
     exit 1;
 else
-    ${KILL_WAIT_PID}
+    eval ${KILL_WAIT_PID}
     # build was successful
 fi
 
