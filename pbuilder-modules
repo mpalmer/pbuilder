@@ -87,6 +87,10 @@ EOF
 	    done
 	fi
     fi
+    if [ "$USEDEVPTS" = "yes" ]; then
+	echo " -> unmounting /dev/pts filesystem"
+	umount "$BUILDPLACE/dev/pts" || true
+    fi
 }
 
 function mountproc () {
@@ -94,6 +98,11 @@ function mountproc () {
 	echo " -> mounting /proc filesystem"
 	mkdir -p $BUILDPLACE/proc
 	mount -t proc /proc "$BUILDPLACE/proc"
+    fi
+    if [ "$USEDEVPTS" = "yes" ]; then
+	echo " -> mounting /dev/pts filesystem"
+	mkdir -p $BUILDPLACE/dev/pts || true
+	mount -t devpts /dev/pts "$BUILDPLACE/dev/pts" 
     fi
 }
 
