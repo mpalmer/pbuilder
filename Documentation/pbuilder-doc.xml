@@ -175,6 +175,28 @@
       <para>
 	See pdebuild.1 manual page for more details.
       </para>
+      <para>
+	There is a slightly different mode of operation available 
+	to pdebuild since version 0.97. pdebuild usually runs <command>debian/rules clean</command> outside of chroot, however, it is possible to change the behavior to run it inside chroot with <command><option>--use-pdebuild-internal</option></command>.
+	It will try to bind mount the working directory inside chroot, 
+	and run <command>dpkg-buildpackage</command> inside.
+	It has the following characteristics, and thus cannot be made default.
+      </para>
+      <itemizedlist>
+	<listitem>
+	  <para>The working directory is modified from inside chroot</para>
+	</listitem>
+	<listitem>
+	  <para>Building with pdebuild does not guarantee that it works with pbuilder</para>
+	</listitem>
+	<listitem>
+	  <para>If making source package fails, the chroot session is wasted</para>
+	</listitem>
+	<listitem>
+	  <para>Does not work in the same manner as it used to, such as --buildresult does not have an effect</para>
+	</listitem>
+      </itemizedlist>
+
     </sect1>
     <sect1 id="configfile">
       <title>Configuration Files</title>
@@ -970,7 +992,6 @@ read
 	  The third year is already there. pbuilder is widely adopted, and activity is focused on fixing minor problems.
 	  Some features are added, but most was filling the missing portions for user-mode-linux port.
 	</para>
-	
       </sect2>
     </sect1>
   </chapter>
