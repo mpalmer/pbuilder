@@ -15,19 +15,21 @@ pbuilder (0.10) unstable; urgency=low
   * dpkg-buildpackage is being called with -us -uc
   * site local /etc/passwd is no longer copied to inside chroot.
     Copying of that file was never really required, as it seems.
-  * use "set -e" at the beginning of shell scripts. 
+  * use "set -e" at the beginning of shell scripts.
     It should work fine.
   * "cleaning the build env" message is prepended with ->
   * error state for cp for finished work in pbuilder-buildpackage
     is now ignored. (to work with set -e)
-  * full non-interactive compilation patch, moved over to 
+  * full non-interactive compilation patch, moved over to
     pbuilder-modules, so that build/update/create all benefit from this.
   * cleans build place on debootstrap failure.
-  * A simple hack "pdebuild" is available. It can be invoked 
-    from a Debian source tree, and builds the package within a chroot 
+  * A new command "pdebuild" is introduced. It can be invoked
+    from a Debian source tree, and builds the package within a chroot
     after gaining root privilages appropriately.
+  * added recommends: for fakeroot and sudo, since pdebuild requires 
+    them.
 
- -- Junichi Uekawa <dancer@debian.org>  Sat,  3 Nov 2001 19:53:07 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat,  3 Nov 2001 23:56:12 +0900
 
 pbuilder (0.9) unstable; urgency=low
 

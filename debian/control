@@ -8,6 +8,7 @@ Standards-Version: 3.5.6
 Package: pbuilder
 Architecture: all
 Depends: debootstrap (>= 0.1.15), wget, gcc
+Recommends: fakeroot, sudo
 Description: personal package builder for Debian packages
  Constructs a chroot system, and builds a package inside the 
  chroot.
@@ -23,6 +24,9 @@ Description: personal package builder for Debian packages
  .
  pbuilder build takes a *.dsc file to build a binary in the chroot 
  image.
+ .
+ pdebuild is a wrapper for Debian Developers, to allow running 
+ pbuilder just like "debuild", from a normal user privilege
  .
  Uses apt extensively, and a local mirror, or a fast connection
  to a Debian mirror is ideal, but not necessary.
