@@ -142,17 +142,19 @@ else
 fi
 
 if ! wait ${BUILD_PID}; then
+    trap umountproc_cleanbuildplace exit
     eval ${KILL_WAIT_PID}
     echo "pbuilder: Failed autobuilding of package" >&2
     executehooks "C"
-    umountproc_cleanbuildplace
     exit 1;
 else
     eval ${KILL_WAIT_PID}
     # build was successful
 fi
 
+trap umountproc_cleanbuildplace exit
 executehooks "B"
+trap cleanbuildplace exit
 umountproc
 
 if [ -n "$BUILDRESULT" ]; then
@@ -164,6 +166,5 @@ if [ -n "$BUILDRESULT" ]; then
     fi
 fi
 
-cleanbuildplace
-
 echobacktime
+

@@ -18,11 +18,13 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-buildpackage $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-createbuildenv $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-updatebuildenv $(DESTDIR)/usr/lib/pbuilder/
+	$(INSTALL_EXECUTABLE) pbuilder-loadconfig $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-runhooks $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-checkparams $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-modules $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder $(DESTDIR)/usr/sbin
 	$(INSTALL_EXECUTABLE) pdebuild $(DESTDIR)/usr/bin
+	$(INSTALL_EXECUTABLE) debuild-pbuilder $(DESTDIR)/usr/bin
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/etc
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/pbuilder

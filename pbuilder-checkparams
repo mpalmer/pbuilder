@@ -17,13 +17,7 @@
 #   along with this program; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-for RCFILE in /usr/share/pbuilder/pbuilderrc /etc/pbuilderrc ${HOME}/.pbuilderrc; do
-    if [ -f "$RCFILE" ]; then 
-	. "$RCFILE"
-    else
-	echo "W: $RCFILE does not exist" 
-    fi
-done
+. /usr/lib/pbuilder/pbuilder-loadconfig
 
 . /usr/lib/pbuilder/pbuilder-modules
 

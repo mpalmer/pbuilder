@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+. /usr/lib/pbuilder/pbuilder-loadconfig
+"$PBUILDERROOTCMD" /usr/lib/pbuilder/pbuilder-satisfydepends
+/usr/bin/debuild "$@"
