@@ -60,7 +60,7 @@ function checkbuilddep_internal () {
 	  echo Could not satisfy build-conflicts
 	  abortingfunction
 	  exit 1
-    done;
+    done
 }
 
 function checkbuilddep_using_dpkgcheckbuilddeps () {
@@ -70,14 +70,14 @@ function checkbuilddep_using_dpkgcheckbuilddeps () {
 	awk 'BEGIN{RS=", "} {print $1}'); do
       echo " -> Installing $INSTALLPKG"
       $CHROOTEXEC usr/bin/apt-get -y install "$INSTALLPKG"
-    done;
+    done
     for REMOVEPKG in $($CHROOTEXEC bin/sh -c "(cd tmp/buildd/*/; dpkg-checkbuilddeps)" 2>&1 | \
 	grep "^dpkg-checkbuilddeps: Build conflicts: " | \
 	sed 's/^[^:]*:[^:]*: \(.*\)$/\1/' | \
 	awk 'BEGIN{RS=", "} {print $1}'); do
       echo " -> Removing $REMOVEPKG"
       $CHROOTEXEC usr/bin/apt-get -y remove "$REMOVEPKG"
-    done;
+    done
 }
 
 function checkbuilddep () {
