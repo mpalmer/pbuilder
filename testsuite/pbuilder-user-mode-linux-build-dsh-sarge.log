@@ -1,4 +1,4 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/6510.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileJdyfM9 rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/10358.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filePkCcKu rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.20-7um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 SMP Fri Aug 8 18:30:28 EDT 2003
@@ -6,7 +6,7 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/6510.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileJdyfM9 rw
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/10358.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/filePkCcKu rw
 Calibrating delay loop... 1526.17 BogoMIPS
 Memory: 126208k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
@@ -37,9 +37,9 @@ loop: loaded (max 8 devices)
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/j89IIg/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/rCblTX/mconsole
 unable to open root_fs for validation
-Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/6510.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
+Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/10358.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
 Partition check:
  ubdb: unknown partition table
 Initializing stdio console driver
@@ -86,8 +86,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sun Sep 28 10:56:00 JST 2003
-pbuilder-time-stamp: 1064714160
+Current time: Thu Oct  2 09:41:33 JST 2003
+pbuilder-time-stamp: 1065055293
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
@@ -100,18 +100,23 @@ Installing the build-deps
    -> Trying libdshconfig1-dev
  -> Installing  debhelper libdshconfig1-dev
 Reading Package Lists... 0%Reading Package Lists... 100%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 31%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 79%Building Dependency Tree... Done
 The following extra packages will be installed:
   binutils debconf-utils dpkg-dev file gettext html2text intltool-debian
   libc6-dev libdb4.0 libdshconfig1 libgdbm3 libmagic1 make patch perl
-  perl-modules po-debconf 
+  perl-modules po-debconf
+Suggested packages:
+  binutils-doc gnupg cvs manpages-dev libterm-readline-perl-perl
+Recommended packages:
+  c-compiler
 The following NEW packages will be installed:
   binutils debconf-utils debhelper dpkg-dev file gettext html2text
   intltool-debian libc6-dev libdb4.0 libdshconfig1 libdshconfig1-dev libgdbm3
-  libmagic1 make patch perl perl-modules po-debconf 
-0 packages upgraded, 19 newly installed, 0 to remove and 0  not upgraded.
-2 packages not fully installed or removed.
-Need to get 13.5MB of archives. After unpacking 47.6MB will be used.
+  libmagic1 make patch perl perl-modules po-debconf
+0 upgraded, 19 newly installed, 0 to remove and 0 not upgraded.
+2 not fully installed or removed.
+Need to get 13.5MB of archives.
+After unpacking 47.6MB of additional disk space will be used.
 0% [Working]            Err http://debootstrap.invalid sarge/main libgdbm3 1.8.3-2
   Could not resolve 'debootstrap.invalid'
             0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main binutils 2.14.90.0.4-0.1
@@ -122,9 +127,9 @@ Need to get 13.5MB of archives. After unpacking 47.6MB will be used.
   Could not resolve 'debootstrap.invalid'
 0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main perl 5.8.0-18
   Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main patch 2.5.9-1
+                                      0% [Working]            Err http://debootstrap.invalid sarge/main patch 2.5.9-1
   Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main make 3.80-2
+            0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main make 3.80-2
   Could not resolve 'debootstrap.invalid'
 0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main dpkg-dev 1.10.10
   Could not resolve 'debootstrap.invalid'
@@ -190,6 +195,6 @@ E: pbuilder-satisfydepends failed.
  -> ignoring umount of dev/pts filesystem
 Kernel panic: Attempted to kill init!
  <6>Stopping all CPUs...done
-tracing thread pid = 6524
+tracing thread pid = 10372
 
  -> Exit code 2
