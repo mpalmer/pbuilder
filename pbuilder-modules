@@ -105,13 +105,13 @@ function installaptlines (){
     if [ -n "$MIRRORSITE" ] ; then
 	cat >> "$BUILDPLACE"/etc/apt/sources.list << EOF
 deb $MIRRORSITE $DISTRIBUTION main contrib non-free
-deb-src $MIRRORSITE $DISTRIBUTION main contrib non-free
+#deb-src $MIRRORSITE $DISTRIBUTION main contrib non-free
 EOF
     fi
     if [ -n "$NONUSMIRRORSITE" ]; then 
 	cat  >> "$BUILDPLACE"/etc/apt/sources.list << EOF
 deb $NONUSMIRRORSITE $DISTRIBUTION/non-US main contrib non-free
-deb-src $NONUSMIRRORSITE $DISTRIBUTION/non-US main contrib non-free
+#deb-src $NONUSMIRRORSITE $DISTRIBUTION/non-US main contrib non-free
 EOF
     fi
     
