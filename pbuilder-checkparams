@@ -22,6 +22,7 @@ while [ -n $1 ]; do
     --distribution)
       DISTRIBUTION="$2";
       shift; shift;
+      ;;
     --help)
       cat <<EOF
 Command Line Options:
@@ -31,10 +32,11 @@ Command Line Options:
  --http-proxy [proxy]
  --distribution [distribution(woody/sid)]
 EOF
-    exit 1;
+      exit 1;
       ;;
     *)
       break;
+      ;;
   esac
 done
 
