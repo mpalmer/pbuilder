@@ -37,6 +37,10 @@ done
 function usecow () {
     PBUILDER_COWFILENAME="${BUILDPLACE}/$$.cow"
     PBUILDER_COW="${PBUILDER_COWFILENAME},"
+    if ! touch "${PBUILDER_COWFILENAME}"; then
+	echo "E: Cannot write-access to the COW file, check buildplace"
+	exit 1;
+    fi
     rm -f "${PBUILDER_COWFILENAME}"
 }
 
@@ -208,7 +212,10 @@ while [ -n "$1" ] ; do
 	--buildresult)
 	    # ignore buildresult
 	    UML_BUILDRESULT=$(readlink -f "$2")
-	    shift;shift;;
+	    shift; shift;;
+	--buildplace)
+	    BUILDPLACE=$(readlink -f "$2")
+	    shift; shift;; 
 	--logfile)
 	    exec > "$2";
 	    exec 2>&1

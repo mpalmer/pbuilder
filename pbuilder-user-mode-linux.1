@@ -74,15 +74,19 @@ Specify this to set the IP inside UML.
 
 .TP
 .BI "--uml-netmask [" "netmask" "]"
+The netmask.
+
 .TP
 .BI "--uml-network [" "network" "]"
+The network address.
+
 .TP
 .BI "--uml-broadcast [" "broadcast" "]"
+The broadcast address.
+
 .TP
 .BI "--uml-gateway [" "gateway" "]"
-.TP
-.BI "--uml-image [" "UML image" "]"
-Specify the UML image to use.
+The gateway address.
 
 .TP
 .BI "--mount-tmpfs [" "yes" "]"
@@ -146,6 +150,11 @@ Enable tracing of shell scripts used by pbuilder-user-mode-linux.
 .TP 
 .BI "--bindmounts " "/dir/to/bind-mount"
 Bind-mount the directory inside the chroot inside the user-mode-linux.
+
+.TP
+.BI "--buildplace " "place-to-put-COW-file"
+Specify the directory to place the COW file.
+The user needs to be able to access that directory.
 
 .SH "NOTES"
 For 
