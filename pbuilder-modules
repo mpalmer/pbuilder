@@ -8,6 +8,7 @@ Copyright 2001 Junichi Uekawa
 Distributed under GNU Public License version 2 or later
 
 pbuilder [operation] [operation options]
+pdebuild [operation options]
 
 command lines:
 pbuilder create [--basetgz base.tgz-path] [--distribution woody|sid]
@@ -25,11 +26,8 @@ pbuilder clean
 pbuilder login
   Logs in to the build environment
 
-pbuilder debuild
-  Builds a Debian package from debian source directory, 
-  similar to the manner of "debuild" command.
-
 Operation Options:
+pbuilder options
  --basetgz [base.tgz location]
  --buildplace [location of build]
  --mirror [mirror location]
@@ -43,8 +41,10 @@ Operation Options:
  --configfile [configuration file to load]
  --hookdir [hook directory]
  --debemail [mail address]
- --pbuilderroot [command to obtain root privilate for pbuilder] (for debuild)
- --buildsourceroot [command to obtain root privilate for dpkg-buildpackage] (for debuild)
+
+pdebuild options
+ --pbuilderroot [command to obtain root privilate for pbuilder] 
+ --buildsourceroot [command to obtain root privilate for dpkg-buildpackage]
 EOF
     exit 1
 }

@@ -23,10 +23,11 @@ pbuilder (0.10) unstable; urgency=low
   * full non-interactive compilation patch, moved over to 
     pbuilder-modules, so that build/update/create all benefit from this.
   * cleans build place on debootstrap failure.
-  * a little hack called "pbuilder debuild" is available, but not yet
-    tested very well. This is my "most often used pattern".
+  * A simple hack "pdebuild" is available. It can be invoked 
+    from a Debian source tree, and builds the package within a chroot 
+    after gaining root privilages appropriately.
 
- -- Junichi Uekawa <dancer@debian.org>  Sat,  3 Nov 2001 02:23:41 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat,  3 Nov 2001 19:53:07 +0900
 
 pbuilder (0.9) unstable; urgency=low
 

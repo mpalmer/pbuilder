@@ -1,0 +1,35 @@
+.TH "pdebuild" 1 "2001 Nov 3" "Debian" "pbuilder"
+.SH NAME
+pdebuild \- pbuilder way of doing debuild
+.SH SYNOPSIS
+.BI "pdebuild [" "options" "]"
+.PP
+.SH DESCRIPTION
+A convenience program for 
+.B pbuilder
+which invokes pbuilder after obtaining appropriate root privilate 
+in a Debian source directory.
+.B debian
+directory must be visible on the current directory when 
+invoked.
+.SH OPTIONS
+.TP
+.BI "--buildsourceroot [" "fakeroot" "]"
+The command to gain root privilege for 
+invoking dpkg-buildpackage
+
+.TP
+.BI "--pbuilderroot [" "sudo" "]"
+The command to gain root privilege for 
+invoking pbuilder.
+
+.SH "FILES"
+.TP
+.I "/etc/pbuilderrc"
+The configuration file for pbuilder, used in pdebuild.
+.SH AUTHOR
+Initial coding, and main maintenance is done by 
+Junichi Uekawa <dancer@debian.org>.
+.SH "SEE ALSO"
+.RI "pbuilder (" 1 "), "
+.RI "pbuilderrc (" 5 ") "

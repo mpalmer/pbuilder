@@ -1,0 +1,8 @@
+#! /bin/bash
+set -e
+
+test -d ./debian 
+. /usr/lib/pbuilder/pbuilder-checkparams
+$BUILDSOURCEROOTCMD dpkg-buildpackage -S || true
+$PBUILDERROOTCMD pbuilder build "$@" ../$(dpkg-parsechangelog|grep ^Source:| cut -d\  -f2 )_$(dpkg-parsechangelog|grep ^Version: | cut -d\  -f2).dsc
+
