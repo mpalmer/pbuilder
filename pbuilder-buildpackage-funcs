@@ -66,6 +66,6 @@ function createbuilduser () {
 	echo "$BUILDUSERNAME:*:$BUILDUSERID:" >> $BUILDPLACE/etc/group
 	echo "$BUILDUSERNAME:!:::::::" >> $BUILDPLACE/etc/shadow
 	export HOME="/tmp/buildd"
-	export LOGNAME="${BUILDUSERNAME}"
+	unset LOGNAME
     fi
 }
