@@ -10,6 +10,10 @@ test -z "$1" && (
     showhelp
 )
 
+# export this so that programs know which command line
+# operation is currently done
+export PBCURRENTCOMMANDLINEOPERATION="$1"
+
 case "$1" in
     create)
 	shift;

@@ -95,7 +95,15 @@ if [ -z "$DEBEMAIL" ]; then
     DEBEMAIL="nobody@nowhere"
 fi
 
+case "$PBCURRENTCOMMANDLINEOPERATION" in 
+    login)
+	# don't do anything if it is "login"
+	;;
+    *)
 # line from kobras@debian.org
-if [ "$DEBIAN_FRONTEND" = "noninteractive" ]; then
-    exec < /dev/null
-fi
+	if [ "$DEBIAN_FRONTEND" = "noninteractive" ]; then
+	    exec < /dev/null
+	fi
+	;;
+esac
+
