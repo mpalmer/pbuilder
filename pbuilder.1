@@ -174,6 +174,9 @@ The packages should be specified as a space-delimited list.
 .BI "--configfile [" "configuration file to load" "]"
 Loads the configuration file.
 
+
+\" START OF hookdir description
+
 .TP
 .BI "--hookdir [" "location of user scripts" "]"
 Specifies the location where scripts for user intervention during
@@ -187,8 +190,6 @@ be either binaries or interpreted scripts. If it is a script
 in other than Bourne Shell or Perl, it is up to the user to
 ensure the interpreter was previously installed in the chrooted
 environment. Files ending in ~ or .bak are ignored.
-
-
 
 Although it may not seem necessary, 
 .B "pbuilder update" 
@@ -226,6 +227,10 @@ is executed after build fails, before cleanup.
 is executed before unpacking the source inside the chroot,
 after setting up the chroot environment.
 Create $TMP, and $TMPDIR if necessary.
+
+
+
+\" End of hookdir description
 
 .TP
 .BI "--debemail [" "email-address" "]"
