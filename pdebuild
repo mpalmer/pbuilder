@@ -36,7 +36,7 @@ ARCHITECTURE=$(dpkg-architecture -qDEB_HOST_ARCH)
 if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
     ${PBUILDERROOTCMD} pbuilder execute "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --bindmounts $(readlink -f ..) /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}"
 else
-    if [ ! dpkg-checkbuilddeps -B ]; then
+    if ! dpkg-checkbuilddeps -B ; then
 	echo "W: Unmet build-dependency in source"
     fi
     echo "dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} $DEBBUILDOPTS" | /bin/bash
