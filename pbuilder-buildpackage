@@ -18,7 +18,7 @@ function checkbuilddep_versiondeps () {
     local PACKAGE="$1"
     local COMPARESTRING="$2"
     local DEPSVERSION="$3"
-    local PACKAGEVERSION=$("$CHROOTEXEC" usr/bin/apt-cache show $PACKAGE | grep "^Version:" | sort | head -1 | sed 's/^Version: \(.*\)$/\1/')
+    local PACKAGEVERSION=$($CHROOTEXEC usr/bin/apt-cache show $PACKAGE | grep "^Version:" | sort | head -1 | sed 's/^Version: \(.*\)$/\1/')
     # no versioned provides.
     if dpkg --compare-versions "$PACKAGEVERSION" "$COMPARESTRING" "$DEPSVERSION"; then
 	# satisfies depends
@@ -48,7 +48,7 @@ function checkbuilddep_archdeps () {
 
 function checkbuilddep_provides () {
     local PACKAGENAME="$1"
-    PROVIDED=$("$CHROOTEXEC" usr/bin/apt-cache showpkg $PACKAGENAME | awk '{p=0}/^Reverse Provides:/,/^$/{p=1}{if(p && ($0 !~ "Reverse Provides:")){PACKAGE=$1}} END{print PACKAGE}')
+    PROVIDED=$($CHROOTEXEC usr/bin/apt-cache showpkg $PACKAGENAME | awk '{p=0}/^Reverse Provides:/,/^$/{p=1}{if(p && ($0 !~ "Reverse Provides:")){PACKAGE=$1}} END{print PACKAGE}')
 }
 
 function checkbuilddep_internal () {
