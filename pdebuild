@@ -4,5 +4,5 @@ set -e
 test -d ./debian 
 . /usr/lib/pbuilder/pbuilder-checkparams
 $BUILDSOURCEROOTCMD dpkg-buildpackage -S -us -uc || true
-$PBUILDERROOTCMD pbuilder build "$@" ../$(dpkg-parsechangelog|sed -n 's/^Source: //p')_$(dpkg-parsechangelog|sed -n 's/^Version: //p').dsc
+$PBUILDERROOTCMD pbuilder build "$@" ../$(dpkg-parsechangelog|sed -n 's/^Source: //p')_$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p').dsc
 
