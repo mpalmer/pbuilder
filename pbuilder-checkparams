@@ -25,6 +25,7 @@ INTERNAL_BUILD_UML=""
 CHROOTEXEC=""
 OVERRIDE_APTLINES="no"
 BINARY_ARCH="no"
+PBUILDER_BUILD_LOGFILE=
 
 while [ -n "$1" ]; do 
     case "$1" in 
@@ -84,17 +85,10 @@ while [ -n "$1" ]; do
 	    DEBBUILDOPTS="$2";
 	    shift; shift;
 	    ;;
-	--buildsourceroot*)
-	    BUILDSOURCEROOTCMD="$2";
-	    shift; shift;
-	    ;;
-	--pbuilderroot*)
-	    PBUILDERROOTCMD="$2";
-	    shift; shift;
-	    ;;
 	--logfile)
 	    exec > $(readlink -f "$2");
 	    exec 2>&1
+	    PBUILDER_BUILD_LOGFILE=$(readlink -f "$2")
 	    shift; shift;
 	    ;;
 	--aptconfdir)
@@ -103,6 +97,31 @@ while [ -n "$1" ]; do
 	    ;;
 	--timeout)
 	    TIMEOUT_TIME="$2"
+	    shift; shift;
+	    ;;
+	--help)
+	    showhelp
+	    ;;
+	--override-config)
+	    OVERRIDE_APTLINES="yes"
+	    shift;
+	    ;;
+	--binary-arch)
+	    BINARY_ARCH="yes"
+	    DEBBUILDOPTS="${DEBBUILDOPTS} -B"
+	    shift;
+	    ;;
+	## pdebuild option
+	--auto-debsign)
+	    AUTO_DEBSIGN="yes"
+	    shift;
+	    ;;
+	--buildsourceroot*)
+	    BUILDSOURCEROOTCMD="$2";
+	    shift; shift;
+	    ;;
+	--pbuilderroot*)
+	    PBUILDERROOTCMD="$2";
 	    shift; shift;
 	    ;;
 	## internal options.
@@ -117,18 +136,7 @@ while [ -n "$1" ]; do
 	    INTERNAL_BUILD_UML="yes"
 	    shift; 
 	    ;;
-	--help)
-	    showhelp
-	    ;;
-	--override-config)
-	    OVERRIDE_APTLINES="yes"
-	    shift;
-	    ;;
-	--binary-arch)
-	    BINARY_ARCH="yes"
-	    DEBBUILDOPTS="${DEBBUILDOPTS} -B"
-	    shift;
-	    ;;
+
 	--) # this is an empty option, to no longer process.
 	    shift; 
 	    break;

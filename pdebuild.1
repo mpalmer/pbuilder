@@ -24,6 +24,15 @@ invoking dpkg-buildpackage
 The command used to gain root privilege for 
 invoking pbuilder.
 
+.TP
+.BI "--auto-debsign"
+
+Invoke debsign at the end of pdebuild process.
+
+.TP
+.BI "--buildresult [" "Directory for build results" "]"
+
+The place which build result is stored.
 
 .TP
 .BI "-- [" "pbuilder options" "]"
@@ -31,6 +40,11 @@ invoking pbuilder.
 After the 
 .B "--"
 symbol, an arbitrary number of pbuilder options can be specified.
+
+Except for
+.B "--buildresult"
+which needs to be specified before the 
+.B "--"
 
 .SH "FILES"
 .TP

@@ -1,5 +1,23 @@
 2002-12-12  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-checkparams (PBUILDER_BUILD_LOGFILE): logfile name is stored in PBUILDER_BUILD_LOGFILE
+
+	* pbuilderrc.5: update doc to document AUTO_DEBSIGN
+
+	* pdebuild: force set BUILDRESULT from pdebuild options when invoking pbuilder, so that config from
+	pdebuild is used inside pbuilder.
+	(PKG_SOURCENAME, PKG_VERSION): define as version and source base name.
+	(debsign): invoke debsign when AUTO_DEBSIGN=yes.
+
+	* pdebuild.1: update docs, so that --buildresult quirk is documented,
+	and --auto-debsign is documented.
+
+	* pbuilder-checkparams: change option ordering so that
+	internal options go at bottom.
+	--auto-debsign option added for setting AUTO_DEBSIGN=yes
+	(BINARY_ARCH): move buildsourceroot and pbuilderroot option around 
+	so that they are in the pdebuild options section.
+
 	* pbuilder.8: fix the documentation to clarify that A is executed 
 	after satisfying the build-depends.
 

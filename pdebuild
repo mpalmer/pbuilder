@@ -11,6 +11,13 @@ if test ! -d ./debian; then
 fi;
 
 . /usr/lib/pbuilder/pbuilder-checkparams
-dpkg-buildpackage -S -us -uc -r$BUILDSOURCEROOTCMD || true
-$PBUILDERROOTCMD pbuilder build "$@" ../$(dpkg-parsechangelog|sed -n 's/^Source: //p')_$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p').dsc
+
+PKG_SOURCENAME=$(dpkg-parsechangelog|sed -n 's/^Source: //p')
+PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')
+
+dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} || true
+${PBUILDERROOTCMD} pbuilder build "$@" --buildresult "${BUILDRESULT}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
+if [ "${AUTO_DEBSIGN}" = "yes" ]; then
+    debsign "${BUILDRESULT}/${PKG_SOURCENAME}_${PKG_VERSION}.dsc"
+fi
 
