@@ -43,13 +43,16 @@ within the user-mode-linux environment.
 Invokes shell within UML.
 
 .TP
+.BI "--uml-image [" "UML image" "]"
+Specify the UML image to use.
+
+.TP
 .BI "--eth0 [" "uml option for eth0" "]"
 Specify this option as parameter to UML.
 
 .TP
 .BI "--uml-ip [" "IP inside UML" "]"
 Specify this to set the IP inside UML.
-
 
 .TP
 .BI "--uml-netmask [" "netmask" "]"
@@ -70,6 +73,43 @@ Specify whether to mount tmpfs inside UML chroot.
 .TP
 .BI "--distribution [" "sid" "]"
 Specify the distribution.
+see pbuilder.8
+
+.TP
+.BI "--binary-arch"
+Specify only to build binary-arch targets.
+see pbuilder.8
+
+.TP
+.BI "--timeout " "timeouttime"
+Timeout build after specified time.
+see pbuilder.8
+
+.TP
+.BI "--configfile " "config file to read"
+Makes pbuilder to read the config file inside UML.
+
+.TP
+.BI "--hookdir " "location of hooks"
+Makes pbuilder use the specified hookdir inside UML.
+
+.TP
+.BI "--aptconfdir " "apt configuretion directory"
+Makes pbuilder to use specified apt configuration directory instead of 
+other settings. See pbuilder.8
+
+.TP 
+.BI "--override-config"
+Specify this option along with
+.B --distribution 
+to switch distribution using 
+.B "pbuilder-user-mode-linux update"
+
+.TP 
+.BI "--logfile " "logfilename"
+Specify this option to make the output go to 
+.I logfilename
+instead of standard output.
 
 .SH "NOTES"
 This software is in early stage of development. 
@@ -82,7 +122,6 @@ and
 targets, 
 .B pbuider-user-mode-linux
 will try to use COW devices.
-
 
 .SH "FILES"
 .TP

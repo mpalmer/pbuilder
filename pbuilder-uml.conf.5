@@ -1,0 +1,70 @@
+.TH "pbuilder-uml.conf" 5 "2003 Jan 8" "Debian" "pbuilder"
+.SH NAME
+pbuilder-uml.conf \- configuration file for user-mode-linux port of pbuilder
+.SH DESCRIPTION
+.B "/etc/pbuilder/pbuilder-uml.conf" 
+contains default values used in 
+.B pbuilder-user-mode-linux
+program invocation.
+
+.SH "FORMAT"
+.TP
+.BI "MY_ETH0=" "tuntap,,,192.168.0.2"
+Configures ethernet setting used for booting linux.
+See how rootstrap boots your system, and copy that.
+
+.TP 
+.BI "UML_IP=" "192.168.0.3"
+IP address to use for guest OS.
+
+.TP 
+.BI "UML_NETMASK" "=255.255.255.0"
+Guest OS netmask
+
+.TP 
+.BI "UML_NETWORK" "=192.168.0.0"
+Guest OS network
+
+.TP 
+.BI "UML_BROADCAST" "=255.255.255.255"
+Guest OS broadcast
+
+.TP 
+.BI "UML_GATEWAY" "=192.168.0.1"
+Guest OS gateway
+
+.TP 
+.BI "PBUILDER_UML_IMAGE=" "${HOME}/uml-image"
+Guest OS file system image.
+
+.TP 
+.BI "UML_MOUNT_TMPFS="  "no"
+Whether to mount tmpfs inside the guest image.
+This is probably mostly useless.
+
+.TP 
+.BI "BUILDPLACE=" "${HOME}/tmp/"
+The location which build will take place.
+.B pbuilder-user-mode-linux
+will place temporary COW files to there.
+
+.TP 
+.BI "UML_MEM=" "128"
+The amount of memory allowed for UML.
+Give more value to here.
+
+.SH AUTHOR
+Initial coding, and main maintenance is done by 
+Junichi Uekawa <dancer@debian.org>.
+
+The homepage is available at
+.B "http://www.netfort.gr.jp/~dancer/software/pbuilder.html"
+.SH "FILES"
+.I "/etc/pbuilder/pbuilder-uml.conf, ${HOME}/.pbuilderrc"
+.SH "SEE ALSO"
+.RI "pbuilder-user-mode-linux (" 1 "), "
+.RI "pbuilder (" 8 "), "
+.RI "pbuilderrc (" 5 "), "
+.RI "pdebuild (" 1 ")"
+
+

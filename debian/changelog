@@ -1,8 +1,16 @@
 pbuilder (0.60) UNRELEASED; urgency=low
 
   * customized documentation stylesheets to look like other netfort pages
+  * Changing the timing LOGNAME is set inside UML.
+  * UML: umount the device after running pbuilder.
+  * UML: set $HOME inside (closes: #175785)
+    thanks to Matt Zimmerman <mdz@debian.org> for noticing the problem.
+  * UML: manual page pbuilder-uml.conf.5 added.
+  * UML: --uml-mem option for specifying amount of memory.
+    implement --override-config.
+  * UML: --logfile option implemented.
 
- -- Junichi Uekawa <dancer@debian.org>  Tue,  7 Jan 2003 19:25:06 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Wed,  8 Jan 2003 17:54:17 +0900
 
 pbuilder (0.59) unstable; urgency=low
 

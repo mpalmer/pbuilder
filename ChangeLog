@@ -1,3 +1,39 @@
+2003-01-08  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-user-mode-linux (UML_EXTRAOPT): --logfile option.
+
+	* pbuilder-user-mode-linux.1: and document these new options.
+
+	* pbuilder-user-mode-linux (OPERATION): --override-config option passed
+	through to pbuilder.
+	(EXTRAOPT): quote ${EXTRAOPT} which is probably meant to be passed 
+	through.
+	(UML_EXTRAOPT): define as variable that is used to pass uml extra options.
+	and, of course, add these options: --binary-arch --override-config --timeout --http-proxy --configfile --hookdir --aptconfdir
+
+
+	* debian/rules (binary-arch): add manual page installation
+
+	* pbuilder-uml.conf.5: new manual page
+
+	* pbuilder-uml.conf (UML_MEM): Use 128MB memory per default, it would 
+	be better to use that.
+
+	* pbuilder-user-mode-linux: export HOME inside UML
+	Try and umount the device afterwards, so that it will be clean-mount
+	the next time.
+	thanks: Matt Zimmerman <mdz@debian.org>
+	(OPERATION): --uml-mem option.
+
+	* pbuilder-checkparams: update copyright
+
+	* pdebuild: update copyright info.
+
+	* update copyright information to add 2003.
+
+	* pbuilder-user-mode-linux: LOGNAME is set as soon as
+	entering UML.
+
 2003-01-07  Junichi Uekawa  <dancer@debian.org>
 
 	* Documentation/pbuilder-doc.xml (PBUILDER_UML_IMAGE): update notes
@@ -1073,7 +1109,7 @@
 	energy. When pbuilder stabilizes, I will look at doing it.
 
 	14 Jan 2002 Junichi Uekawa <dancer@debian.org>
-	Copyright (c) 2001, 2002 Junichi Uekawa
+	Copyright (c) 2001-2003 Junichi Uekawa
 
 	$Id$
 

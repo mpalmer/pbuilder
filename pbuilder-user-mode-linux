@@ -1,7 +1,7 @@
 #! /bin/bash
 # common modules for pbuilder.
 #   pbuilder -- personal Debian package builder
-#   Copyright (C) 2001,2002 Junichi Uekawa
+#   Copyright (C) 2001-2003 Junichi Uekawa
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -50,7 +50,6 @@ function operate_uml () {
     # use this script file to bootstrap the pbuilder inside the UML
     INSIDE_PBUILDER=$(tempfile)
     trap cleanup_function exit
-
     UML_CHROOT_MOUNTPOINT=/mnt/
 
 #The following script is ran inside UML as soon as it is started.
@@ -60,6 +59,8 @@ function operate_uml () {
 mount -t proc /proc /proc
 mount -t tmpfs /tmp /tmp
 mount -t ext2 /dev/ubd/1 ${UML_CHROOT_MOUNTPOINT}
+export LOGNAME="${LOGNAME}"
+export HOME="${HOME}"
 if [ "${UML_MOUNT_TMPFS}" = "yes" ]; then
   mount -t tmpfs ${UML_CHROOT_MOUNTPOINT}/tmp ${UML_CHROOT_MOUNTPOINT}/tmp
 else
@@ -96,22 +97,23 @@ chroot ${UML_CHROOT_MOUNTPOINT} /tmp/chrootshell
 #some variables need to be set from outside values, possibly
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin
 export TMPDIR=/tmp
-export LOGNAME="${LOGNAME}"
 EXTRAOPT=
 if [ -n "${UML_DISTRIBUTION}" ]; then
   EXTRAOPT="--distribution ${UML_DISTRIBUTION}"
 fi
-pbuilder "$1" ${EXTRAOPT} --buildresult "" --buildplace ${UML_CHROOT_MOUNTPOINT} --internal-build-uml ${BUILDING_DSC_FILE} 
+pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT} --buildresult "" --buildplace ${UML_CHROOT_MOUNTPOINT} --internal-build-uml ${BUILDING_DSC_FILE} 
+umount ${UML_CHROOT_MOUNTPOINT}
 EOF
 
     chmod a+x ${INSIDE_PBUILDER}
 
-    echo Invoking: "linux eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1=${PBUILDER_COW}${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}"
-    linux eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1="${PBUILDER_COW}${PBUILDER_UML_IMAGE}" devfs=mount init=${INSIDE_PBUILDER}
+    echo Invoking: "linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1=${PBUILDER_COW}${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}"
+    linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1="${PBUILDER_COW}${PBUILDER_UML_IMAGE}" devfs=mount init=${INSIDE_PBUILDER}
 }
 
 PBUILDER_COW=""
 OPERATION="$1"
+UML_EXTRAOPT=
 shift;
 
 while [ -n "$1" ] ; do
@@ -148,10 +150,27 @@ while [ -n "$1" ] ; do
 	    UML_MOUNT_TMPFS="$2";
 	    shift; shift;
 	    ;;
+	--uml-mem)
+	    UML_MEM="$2";
+	    shift; shift;
+	    ;;
 	--distribution)
 	    UML_DISTRIBUTION="$2";
 	    shift; shift;
 	    ;;
+	#things that can be passed through without options
+	--override-config|--binary-arch)
+	    UML_EXTRAOPT="${UML_EXTRAOPT} $1"
+	    shift;;
+	#things that can be passed through with options
+	--timeout|--http-proxy|--configfile|--hookdir|--aptconfdir)
+	    UML_EXTRAOPT="${UML_EXTRAOPT} $1 $2"
+	    shift; shift;;
+	--logfile)
+	    exec > $(readlink -f "$2");
+	    exec 2>&1
+	    PBUILDER_BUILD_LOGFILE=$(readlink -f "$2")
+	    shift;shift;;
 	--)
 	    shift;
 	    break;
