@@ -2,7 +2,7 @@ Source: pbuilder
 Section: devel
 Priority: extra
 Maintainer: Junichi Uekawa <dancer@debian.org>
-Build-Depends-Indep: debhelper (>= 4.1.0)
+Build-Depends: debhelper (>= 4.1.0)
 Standards-Version: 3.5.7
 
 Package: pbuilder
@@ -30,7 +30,7 @@ Description: personal package builder for Debian packages
  pbuilder just like "debuild", as a normal user.
 
 Package: pbuilder-uml
-Architecture: all
+Architecture: i386
 Depends: rootstrap, user-mode-linux, pbuilder (= ${Source-Version})
 Description: user-mode-linux version of pbuilder
  pbuilder-uml uses a User-mode-linux system, and builds Debian packages
