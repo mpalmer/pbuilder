@@ -15,13 +15,21 @@ invoked.
 .SH OPTIONS
 .TP
 .BI "--buildsourceroot [" "fakeroot" "]"
-The command to gain root privilege for 
+The command used to gain root privilege for 
 invoking dpkg-buildpackage
 
 .TP
 .BI "--pbuilderroot [" "sudo" "]"
-The command to gain root privilege for 
+The command used to gain root privilege for 
 invoking pbuilder.
+
+
+.TP
+.BI "-- [" "pbuilder options" "]"
+
+After the 
+.B "--"
+symbol, an arbitrary number of pbuilder options can be specified.
 
 .SH "FILES"
 .TP

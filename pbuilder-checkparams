@@ -76,6 +76,10 @@ while [ -n "$1" ]; do
 	--help)
 	    showhelp
 	    ;;
+	--) # this is an empty option, to no longer process.
+	    shift; 
+	    break;
+	    ;;
 	--*)
 	    echo "Error: Unknown option [$1] was specified " >&2 
 	    exit 1;
