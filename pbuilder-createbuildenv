@@ -28,7 +28,7 @@ if [ -z "$DISTRIBUTION" ]; then
 fi
 echo "Distribution is $DISTRIBUTION."
 
-if [ "${PRESERVE_BUILDPLACE}" = "yes" ]; then
+if [ "${PBUILDER_DEBUGMODE}" = "yes" ]; then
     TRAP="echo ignoring trap "
 else
     TRAP=trap

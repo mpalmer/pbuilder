@@ -1,5 +1,18 @@
 2003-12-16  Junichi Uekawa  <dancer@debian.org>
 
+	* debian/control (Description): do not conflict with older bash.
+
+	* pbuilder-buildpackage-funcs: 
+	* pbuilder-checkparams: do not error out on
+	failure to unset.
+
+	* pbuilder.8: document --debug.
+
+	* pbuilder-checkparams (IGNORE_UMOUNT): --debug option.
+
+	* pbuilder-createbuildenv: 
+	* pbuilder-updatebuildenv: use PBUILDER_DEBUGMODE variable
+
 	* pbuilder-createbuildenv (DEBOOTSTRAPSCRIPT): use $TRAP instead of trap,
 	and set TRAP to trap only when PRESERVE_BUILDPLACE is not yes.
 

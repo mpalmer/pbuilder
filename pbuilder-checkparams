@@ -28,7 +28,8 @@ BINARY_ARCH="no"
 PBUILDER_BUILD_LOGFILE=
 USE_PKGNAME_LOGFILE=""
 PRESERVE_BUILDPLACE="no"
-unset EXTRA_CONFIGFILE
+unset EXTRA_CONFIGFILE || true
+PBUILDER_DEBUGMODE=
 
 #option for user-mode-linux only.
 IGNORE_UMOUNT=""
@@ -173,6 +174,11 @@ while [ -n "$1" ]; do
 	    CHROOTEXEC="$2"
 	    shift; shift;
 	    ;;
+	--debug)
+	    PBUILDER_DEBUGMODE=yes
+	    set -x
+	    shift;
+	    ;;
 	--no-targz)
 	    # specify this option if I am running in no-targz mode
 	    echo " -> Running in no-targz mode"
@@ -225,7 +231,7 @@ case "$PBCURRENTCOMMANDLINEOPERATION" in
 	    FORCE_CONFNEW[0]='-o'
 	    FORCE_CONFNEW[1]='DPkg::Options::=--force-confnew'
 	else
-	    unset FORCE_CONFNEW
+	    unset FORCE_CONFNEW || true
 	fi
 	;;
 esac

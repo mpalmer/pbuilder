@@ -25,7 +25,7 @@ set -e
 if [ -n "$DISTRIBUTION" ]; then
     echo "Upgrading for distribution $DISTRIBUTION" 
 fi
-if [ "${PRESERVE_BUILDPLACE}" = "yes" ]; then
+if [ "${PBUILDER_DEBUGMODE}" = "yes" ]; then
     TRAP="echo ignoring trap "
 else
     TRAP=trap
