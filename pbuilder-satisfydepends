@@ -25,7 +25,7 @@ function checkbuilddep_versiondeps () {
     local COMPARESTRING="$2"
     local DEPSVERSION="$3"
     $CHROOTEXEC /usr/bin/apt-cache show "$PACKAGE"
-    local PACKAGEVERSIONS=$($CHROOTEXEC /usr/bin/apt-cache show "$PACKAGE" | sed -n  's/^Version: \(.*\)$/\1/p' | xargs)
+    local PACKAGEVERSIONS=$( ( $CHROOTEXEC /usr/bin/apt-cache show "$PACKAGE" ) | sed -n  's/^Version: \(.*\)$/\1/p' | xargs)
     # no versioned provides.
     if [ "${FORCEVERSION}" = "yes" ]; then
 	return 0;
