@@ -45,7 +45,7 @@ else
     if [ ! dpkg-checkbuilddeps -B ]; then
 	echo "W: Unmet build-dependency in source"
     fi
-    dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} $DEBBUILDOPTS
+    echo "dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} $DEBBUILDOPTS" | /bin/sh
     pbuilder-user-mode-linux build "$@" --buildresult "${UML_BUILDRESULT}" --debbuildopts "${DEBBUILDOPTS}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
 fi
 
