@@ -578,8 +578,11 @@ export DEBIAN_BUILDGCCVER=3.2
 	It has been verified that pbuilder-uml works,
 	as of version 0.59.
 	And since then, pbuilder-uml has seen a rapid evolution.
-	The configuration of pbuilder-uml goes in two steps:
+	The configuration of pbuilder-uml goes in three steps:
 	<itemizedlist>
+	  <listitem>
+	    <para>Configuration of user-mode-linux</para>
+	  </listitem>
 	  <listitem>
 	    <para>Configuration of rootstrap</para>
 	  </listitem>
@@ -588,6 +591,16 @@ export DEBIAN_BUILDGCCVER=3.2
 	  </listitem>
 	</itemizedlist>
       </para>
+      <sect2 id="user-mode-linux-config">
+	<title>Configuring user-mode-linux</title>
+	<para>
+	  <command>user-mode-linux</command> requires 
+	  the user to be in uml-net group in order to configure the network 
+	  (at the time of writing, 15 August 2003).
+	  Read <filename>/usr/share/doc/uml-utilities/README.Debian</filename>
+	  for details.
+	</para>
+      </sect2>
       <sect2 id="rootstrap">
 	<title>Configuring rootstrap</title>
 	<para>
