@@ -87,7 +87,7 @@ function cleanbuildplace () {
     fi;
 }
 
-function abortingfunction () {
+function umountproc_cleanbuildplace () {
     # rolling back to abort.
     umountproc
     cleanbuildplace
@@ -120,7 +120,7 @@ EOF
 
 function extractbuildplace () {
     # after calling this function, umountproc, and cleanbuildplace
-    # needs to be called. 
+    # needs to be called. Please trap it.
     cleanbuildplace
     echo "building the build env"
     echo " -> extracting base.tgz"

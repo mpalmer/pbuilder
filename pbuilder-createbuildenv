@@ -11,6 +11,7 @@ if [ -z "$DISTRIBUTION" ]; then
 fi
 echo "Distribution is $DISTRIBUTION."
 
+# first clean it.
 cleanbuildplace
 
 echo "Building the build environment"
@@ -19,6 +20,8 @@ if [ ! -d "$BUILDPLACE" ]; then
     echo "pbuilder: Could not make directory [$BUILDPLACE]" >&2
     exit 1
 fi
+trap cleanbuildplace exit
+
 echo " -> running debootstrap"
 DEBOOTSTRAPSCRIPT=""
 if [ -n "$HOOKDIR" ]; then
@@ -29,7 +32,6 @@ if [ -n "$HOOKDIR" ]; then
 fi
 if ! ( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE" "$DEBOOTSTRAPSCRIPT" ) ; then
     echo "pbuilder: debootstrap failed" >&2
-    cleanbuildplace
     exit 1
 fi
 
@@ -51,6 +53,7 @@ installaptlines
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"
 mountproc
+trap umountproc_cleanbuildplace exit
 $CHROOTEXEC /usr/bin/apt-get update
 if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
@@ -62,8 +65,11 @@ if [ -n "$HOOKDIR" ]; then
     executehooks "X"
     unloadhooks
 fi
+
 umountproc
+trap cleanbuildplace exit
+
 echo " -> creating base.tgz"
 ( cd "$BUILDPLACE" && tar cfz "$BASETGZ" * || echo " -> failed building base.tgz")
-cleanbuildplace
+
 

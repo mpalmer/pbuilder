@@ -1,3 +1,15 @@
+2002-01-27  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder: modified to use umountproc_cleanbuildplace in "trap" for "pbuilder login"
+
+	* pbuilder-createbuildenv: added a trap function to cleanbuildplace on exit.
+	some obsolete and unnecessary cleanbuildplace invocation removed.
+
+	* pbuilder-buildpackage: changed abortingfunction -> umountproc_cleanbuildplace (name change)
+	* pbuilder-modules (umountproc_cleanbuildplace): changed function name.
+	* pbuilder-updatebuildenv: changed aborting function to umountproc_cleanbuildplace, to unify.
+	moved the "trap" invocation to a better location, before loadhooks.
+
 2002-01-24  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-updatebuildenv: Aborting function is performed through 

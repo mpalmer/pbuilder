@@ -38,10 +38,9 @@ case "$1" in
 	shift 
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	extractbuildplace
+	trap umountproc_cleanbuildplace exit
 	echo " -> entering the shell"
 	chroot "$BUILDPLACE" bin/bash
-	umountproc
-	cleanbuildplace
 	;;
     *)
 	. /usr/lib/pbuilder/pbuilder-modules

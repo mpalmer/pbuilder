@@ -5,24 +5,19 @@ set -e
 . /usr/lib/pbuilder/pbuilder-checkparams
 . /usr/lib/pbuilder/pbuilder-runhooks
 
-function abortprocess () {
-# function to do the aborting process in pbuilder-updatebuildenv
-    umountproc
-    cleanbuildplace    
-}
 
 CHROOTEXEC="chroot $BUILDPLACE "
 
 test -n "$DISTRIBUTION" && echo "Upgrading for distribution $DISTRIBUTION" 
 
 extractbuildplace
+trap umountproc_cleanbuildplace exit
 
 if [ -n "$HOOKDIR" ]; then
     loadhooks
 fi
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"
-trap abortprocess exit
 $CHROOTEXEC /usr/bin/apt-get update
 $CHROOTEXEC /usr/bin/dpkg --purge lilo
 $CHROOTEXEC /usr/bin/apt-get -y dist-upgrade

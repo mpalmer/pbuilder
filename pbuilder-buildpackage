@@ -102,7 +102,7 @@ function checkbuilddep_internal () {
       done;
       if [ "$SATISFIED" = "no" ]; then
 	  echo Could not satisfy build-dependency.
-	  abortingfunction
+	  umountproc_cleanbuildplace
 	  exit 1
       fi
     done;
@@ -134,7 +134,7 @@ function checkbuilddep_internal () {
       if $CHROOTEXEC usr/bin/dpkg -s $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') 2>&1 | grep ^Package: > /dev/null; then
 	  if ! $CHROOTEXEC usr/bin/apt-get -y remove $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') ; then
 	      echo "E: Could not satisfy build-conflicts" >&2
-	      abortingfunction
+	      umountproc_cleanbuildplace
 	      exit 1
 	  fi
       else
@@ -165,7 +165,7 @@ copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 echo Extracting source
 if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then
     echo pbuilder: Failed extracting the source >&2 
-    abortingfunction
+    umountproc_cleanbuildplace
     exit 1;
 fi
 
@@ -201,13 +201,13 @@ export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 if [ -z "$DEBEMAIL" ]; then
     if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage -us -uc $DEBBUILDOPTS"; then
 	echo "pbuilder: Failed autobuilding of package" >&2
-	abortingfunction
+	umountproc_cleanbuildplace
 	exit 1;    
     fi
 else
     if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"; then
 	echo "pbuilder: Failed autobuilding of package" >&2
-	abortingfunction
+	umountproc_cleanbuildplace
 	exit 1;    
     fi
 fi
