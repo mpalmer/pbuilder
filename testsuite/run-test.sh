@@ -1,6 +1,6 @@
 #!/bin/sh
 # This is a testsuite.
-# estimated run-time on my PC; ?? minutes.
+# estimated run-time on my PC; 11 minutes.
 
 PBUILDER=/usr/sbin/pbuilder
 
