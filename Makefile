@@ -14,6 +14,7 @@ install:
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/bin
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/lib/pbuilder
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/pbuilder
+	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) pbuilder-buildpackage $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-createbuildenv $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-updatebuildenv $(DESTDIR)/usr/lib/pbuilder/
@@ -25,4 +26,7 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/etc
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/pbuilder
+	$(INSTALL_FILE) examples/B90linda $(DESTDIR)/usr/share/doc/pbuilder/examples
+	$(INSTALL_FILE) examples/D10tmp $(DESTDIR)/usr/share/doc/pbuilder/examples
+
 
