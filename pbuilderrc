@@ -49,3 +49,7 @@ BUILDUSERID=1234
 # BINDMOUNTS is a space separated list of things to mount
 # inside the chroot.
 BINDMOUNTS=""
+
+# Set the debootstrap variant to 'buildd' type.
+DEBOOTSRTAPOPTS[0]='--variant=buildd'
+# unset DEBOOTSRTAPOPTS

@@ -289,6 +289,16 @@ implementation of
 .B pdebuild
 is used.
 
+.B "DEBOOTSTRAPOPTS=" "'--variant=buildd'"
+When this option is set to 
+.B "--variant=buildd"
+.B "pbuilder"
+will invoke 
+.B "debootstrap" 
+with "--variant=buildd"
+option, which results in debootstrap creating a minimal chroot for 
+buildd instead of trying to create a minimal installation chroot.
+
 .SH "AUTHOR"
 Initial coding, and main maintenance is done by 
 Junichi Uekawa <dancer@debian.org>.

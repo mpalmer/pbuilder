@@ -53,7 +53,7 @@ if [ -n "$HOOKDIR" ]; then
 	echo "  -> Applying user distribution dist build script $DEBOOTSTRAPSCRIPT"
     fi
 fi
-if ! ( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE" "$DEBOOTSTRAPSCRIPT" ) ; then
+if ! ( cd "$BUILDPLACE" && debootstrap "${DEBOOTSTRAPOPTS[@]}" "$DISTRIBUTION" . "$MIRRORSITE" "$DEBOOTSTRAPSCRIPT" ) ; then
     echo "pbuilder: debootstrap failed" >&2
     exit 1
 fi

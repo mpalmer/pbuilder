@@ -1,7 +1,7 @@
 #! /bin/bash 
 # this is sourced from pbuilder packages to process the optional parameters.
 #   pbuilder -- personal Debian package builder
-#   Copyright (C) 2001-2003 Junichi Uekawa
+#   Copyright (C) 2001-2004 Junichi Uekawa
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -173,6 +173,11 @@ while [ -n "$1" ]; do
 	    USE_PDEBUILD_INTERNAL=yes;
 	    shift;
 	    ;;
+	--debootstrapopts)
+	    # specify this option to set --variant=buildd value to debootstrap
+	    DEBOOTSTRAPOPTS[${#DEBOOTSTRAPOPTS[@]}]="$2";
+	    shift; shift;
+	    ;;
 	## internal options.
 	--internal-chrootexec)
 	    # specify custom chrootexec function -- this is internal debugging function
@@ -197,7 +202,6 @@ while [ -n "$1" ]; do
 	    IGNORE_UMOUNT="yes"
 	    shift; 
 	    ;;
-
 	--) # end of processing for this
 	    shift;
 	    break;
