@@ -33,7 +33,7 @@ if [ ! -f "$PACKAGENAME" ]; then
 fi;
 
 if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
-    SUTOUSER="HOME=/tmp/buildd su $BUILDUSERNAME -- "
+    SUTOUSER="su $BUILDUSERNAME -- "
     DEBBUILDOPTS="$DEBBUILDOPTS -rfakeroot"
     EXTRAPACKAGES="${EXTRAPACKAGES} fakeroot"
     echo "I: using fakeroot in build."
@@ -43,6 +43,8 @@ else
     BUILDUSERID=0
     BUILDUSERNAME=root
 fi
+
+export HOME="/tmp/buildd"
 
 showbuildbanner '$Id'
 echobacktime
