@@ -6,8 +6,11 @@ pbuilder (0.7.0.20011012) unstable; urgency=low
     not called a hookdir ...
   * changed "hooks" variable in pbuilder-runhooks, to not to have
     a starting "/". It should be unnecessary
+  * E: messages in pbuilder-runhooks are now "W:" messages, because
+    even when those errors are detected, they should not really 
+    stop the execution of pbuilder halfway.
 
- -- Junichi Uekawa <dancer@debian.org>  Fri, 12 Oct 2001 13:08:39 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 13 Oct 2001 01:53:28 +0900
 
 pbuilder (0.7) unstable; urgency=low
 

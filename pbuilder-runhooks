@@ -18,6 +18,9 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.10  2001/10/12 16:56:41  dancer
+# changing the error message to warning, because these messages do not stop execution
+#
 # Revision 1.9  2001/10/12 16:31:18  dancer
 # fixed my logical disorder.
 #
@@ -100,10 +103,10 @@ function executehooks () {
     for fn in "$BUILDPLACE/$hooks/$prefix"[0-9][0-9]* ; do
 	case "$fn" in
 	    *~)
-		echo "E: skipping an editor backup file $fn"
+		echo "W: skipping an editor backup file $fn"
 		;;
 	    *.bak)
-		echo "E: skipping a backup file $fn"
+		echo "W: skipping a backup file $fn"
 		;;
 	    *)	
 		if [ -x $fn ]; then
@@ -111,7 +114,7 @@ function executehooks () {
 		    echo " -> user script $fn finished"
 		else
 		    filetype=$(readlink -f $(basename "$fn" ) )
-		    echo "E: execute priv not set on file $filetype"
+		    echo "W: execute priv not set on file $filetype, not executing."
 		fi  
 	        ;;	
 	esac
