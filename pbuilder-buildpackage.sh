@@ -5,12 +5,14 @@ export LC_ALL=C
 function copydsc () {
     local DSCFILE=$1
     local TARGET=$2
-    cp \
+    for FILE in 
       "$DSCFILE" \
       $(echo "$DSCFILE" | sed 's/^\(.*\)\.dsc$/\1/' ).diff.gz \
       $(echo "$DSCFILE" | sed 's/^\(.*\)\.dsc$/\1/').tar.gz \
-      $(echo "$DSCFILE" | sed 's/\(.*\)-[^-.]*\.dsc$/\1/').orig.tar.gz \
-      $TARGET
+      $(echo "$DSCFILE" | sed 's/\(.*\)-[^-.]*\.dsc$/\1/').orig.tar.gz ; do
+        cp $FILE $TARGET ;
+    done
+
 }
 
 function checkbuilddep () {

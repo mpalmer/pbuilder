@@ -2,11 +2,12 @@
 export LANG=C
 export LC_ALL=C
 
-PACKAGENAME=$1
-
+DISTRIBUTION=$1
+test -z "$DISTRIBUTION" && DISTRIBUTION=woody
 . /etc/pbuilderrc
-
 CHROOTEXEC="chroot $BUILDPLACE "
+
+echo "Upgrading for distribution $DISTRIBUTION" 
 
 cd $MYREPOSITORY
 echo Initializing repository
@@ -29,8 +30,8 @@ echo Installing apt-lines
 cat > $BUILDPLACE/etc/apt/sources.list << EOF
 deb $MYREPOSITORYHTTP ./
 deb-src $MYREPOSITORYHTTP ./
-deb http://www.jp.debian.org/debian unstable main contrib non-free
-deb-src http://www.jp.debian.org/debian unstable main contrib non-free
+deb http://www.jp.debian.org/debian $DISTRIBUTION main contrib non-free
+deb-src http://www.jp.debian.org/debian $DISTRIBUTION main contrib non-free
 EOF
 
 echo Refreshing the base.tgz 
