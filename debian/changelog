@@ -1,3 +1,15 @@
+pbuilder (0.25) unstable; urgency=low
+
+  * new version, not yet released (FIXME!!)
+  * Build-Dependency version checking improved, should work slightly better
+    when multiple versions are available (reported by jbouse@debian.org)
+  * logic-error on DEBEMAIL handling fixed. When it was blank, 
+    it was set to "nobody@nowhere", but that shouldn't be necessary.
+    (closes: 136628)
+  * pbuilderrc.5: documenting pbuilder default is to build binary-only build.
+
+ -- Junichi Uekawa <dancer@debian.org>  Mon,  4 Mar 2002 00:27:08 +0900
+
 pbuilder (0.24) unstable; urgency=low
 
   * hooks support is in place for build target now. Read pbuilder.1

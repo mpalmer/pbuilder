@@ -1,3 +1,20 @@
+2002-03-03  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder.1: fix the documentation, --debbuildopts.
+	Note the default.
+
+	* pbuilder-checkparams (BUILDPLACE): no longer set DEBEMAIL to
+	nobody@nowhere even if it is "". Just hope that the 
+	user has set it to a valid value.
+
+	* pbuilderrc (DEBEMAIL): nobody@nowhere is the default DEBEMAIL.
+	Configure it!
+
+2002-02-26  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-buildpackage: reversed logic. sort -nr instead of sort in 
+	  PACKAGEVERSION apt-cache routine.
+
 2002-02-24  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/changelog: release 0.24
