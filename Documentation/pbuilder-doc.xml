@@ -192,13 +192,13 @@
     <sect1>
       <title>Building packages as non-root inside the chroot</title>
       <para>
-	<command>pbuilder</command> requires full root privilage 
+	<command>pbuilder</command> requires full root privilege 
 	when it is satisfying the build-dependency but most packages do not 
-	need root privilage, or even do not build when they are root.
+	need root privilege, or even do not build when they are root.
 	<command>pbuilder </command> can create a user only used 
 	inside <command>pbuilder </command> and use that user id when
 	building, and use <command>fakeroot</command> command
-	when root privilage is required.
+	when root privilege is required.
       </para>
       <para>
 	BUILDUSERID needs should be set to a value for a user id that
@@ -210,7 +210,7 @@
       </para>
       <para>
 	Using the fakerooting method, pbuilder will run with 
-	root privilage when it is required, when installing
+	root privilege when it is required, when installing
 	packages to the chroot.
       </para>
       <para>
@@ -220,15 +220,15 @@
       </para>
     </sect1>
     <sect1>
-      <title>Using pbuilder for backporting</title>
+      <title>Using pbuilder for back-porting</title>
       <para>
-	pbuilder can be used for backporting software from 
+	pbuilder can be used for back-porting software from 
 	the latest Debian distribution to 
 	older stable distribution, by using a chroot that contains
 	image of older distribution, and building packages inside the
 	chroot.
 	There are several points to consider, and due to the following reasons,
-	automatic backporting is usually not possible, and 
+	automatic back-porting is usually not possible, and 
 	manual interaction is required:
       </para>
       <itemizedlist>
@@ -248,15 +248,15 @@
 	pbuilder can be automated, because its operations are
 	non-interactive.
 	It is possible to run pbuilder through multiple packages 
-	noninteractively.
+	non-interactively.
 	There are several such scripts known to exist.
 	Junichi Uekawa has been running such script since 2001,
 	and has been filing bugs on packages that fail the 
-	test of pbuilder. There were several problems with autobuilding:
+	test of pbuilder. There were several problems with auto-building:
       </para>
       <itemizedlist>
 	<listitem>
-	  <para>Build-Dependency needs to install noninteractively, but 
+	  <para>Build-Dependency needs to install non-interactively, but 
 	    some packages are so broken that they cannot install 
 	    without interaction (like postgresql)</para>
 	</listitem>
@@ -316,7 +316,7 @@
     <sect1>
       <title>Auto-backporting scripts</title>
       <para>
-	There are some people who use pbuilder to automatically backport
+	There are some people who use pbuilder to automatically back-port
 	a subset of packages to the stable distribution.
 	Any URL?
       </para>
@@ -457,12 +457,12 @@ export DEBIAN_BUILDGCCVER=3.2
 	For such cases, <command>pbuilder login</command> command is available.
       </para>
       <para>
-	<command>pbuilder login </command> is a debuggin feature for 
+	<command>pbuilder login </command> is a debugging feature for 
 	pbuilder itself, but it also allows users to have a temporal chroot.
       </para>
       <para>
 	Note that chroot is cleaned after logging out of the shell,
-	and mounting filesystems inside it is considered harmful.
+	and mounting file systems inside it is considered harmful.
       </para>
     </sect1>
     <sect1>
@@ -481,7 +481,7 @@ export DEBIAN_BUILDGCCVER=3.2
     </sect1>
   </chapter>
   <chapter id="experimental">
-    <title>Experimental or wishlist features of pbuilder</title>
+    <title>Experimental or wish list features of pbuilder</title>
     <para>
       There are some advanced features, above that of the 
       basic feature of pbuilder, for some specific purposes.
