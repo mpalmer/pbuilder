@@ -16,6 +16,12 @@ function mountproc () {
   fi
 }
 
+function cleanbuildplace () {
+    if [ -d "$BUILDPLACE" ]; then 
+      echo cleaning the build env
+      rm -rf "$BUILDPLACE"
+    fi;
+}
 
 #required for some packages to install...
 export LANG=C

@@ -31,8 +31,7 @@ function checkbuilddep () {
 PACKAGENAME="$1"
 CHROOTEXEC="chroot $BUILDPLACE "
 
-echo "cleaning the build env [$BUILDPLACE]"
-rm -rf "$BUILDPLACE"
+cleanbuildplace
 
 echo "building the build env"
 mkdir -p "$BUILDPLACE"

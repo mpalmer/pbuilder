@@ -10,15 +10,14 @@ if [ -z "$DISTRIBUTION" ]; then
 fi
 echo Distribution is $DISTRIBUTION.
 
-echo cleaning the build env
-rm -rf $BUILDPLACE
+cleanbuildplace
 
 echo "building the build env"
-mkdir -p $BUILDPLACE
+mkdir -p "$BUILDPLACE"
 mountproc
 echo " -> running debootstrap"
-(cd $BUILDPLACE; debootstrap $DISTRIBUTION .)
-mkdir -p $BUILDPLACE/tmp/buildd
+( cd "$BUILDPLACE"; debootstrap "$DISTRIBUTION" . )
+mkdir -p "$BUILDPLACE/tmp/buildd"
 echo " -> copying local configuration"
 for a in passwd hosts hostname resolv.conf apt; do 
   cp -r /etc/$a $BUILDPLACE/etc/;
@@ -39,4 +38,5 @@ $CHROOTEXEC /usr/bin/apt-get -y install build-essential dpkg-dev apt $EXTRAPACKA
 $CHROOTEXEC /usr/bin/apt-get clean
 umountproc
 echo " -> creating base.tgz"
-( cd $BUILDPLACE ; tar cfz $BASETGZ * )
+( cd "$BUILDPLACE" ; tar cfz "$BASETGZ" * )
+cleanbuildplace
