@@ -367,7 +367,7 @@
       <itemizedlist>
 	<listitem>
 	  <para>Automatic install-remove-upgrade-remove-install-purge-upgrade-purge testsuite (distributed as an example, <filename>B91dpkg-i</filename>), 
-	    or just check that everything installs somewhat (<filename>execute_installtest.sh</filename></para>
+	    or just check that everything installs somewhat (<filename>execute_installtest.sh</filename>)</para>
 	</listitem>
 
 	<listitem>
@@ -666,6 +666,34 @@ read
 	pbuilder does not provide a way to work around debootstrap.
       </para>
     </sect1>
+    <sect1 id="bindmountlimits">
+      <title>Directories that cannot be bind-mounted</title>
+      <para>
+	Because of the way pbuilder works, there are several directories 
+	that pbuilder will not function properly if they are bind-mounted.
+	The directories include <filename>/tmp</filename>,
+	<filename>/var/cache/pbuilder</filename>, 
+	and system directories such as <filename>/etc</filename> and
+	<filename>/usr</filename>.
+	The recommendation is to use directories from under user home directory
+	for bind-mounts.
+      </para>
+    </sect1>
+    <sect1 id="modifyupdate">
+      <title>Logging in to pbuilder to modify environment</title>
+      <para>
+	It is sometimes necessary to modify the chroot environment.
+	<command>login</command> will remove the contents of the chroot after logout.
+	It is possible to invoke shell using hook scripts.
+	<command>pbuilder update</command> executes 'E' scripts, and a sample for invoking shell
+	is provided as <filename>C10shell</filename>.
+      </para>
+      <screen>
+$ mkdir ~/loginhooks
+$ cp C10shell ~/loginhooks/E10shell
+$ sudo pbuilder update --hookdir ~/loginhooks/E10shell
+      </screen>
+    </sect1>
     <sect1 id="tmpdir">
       <title>Notes on usage of $TMPDIR</title>
       <para>
@@ -715,6 +743,20 @@ read
 	easier, it is possible to set environmental variables such as PS1
 	inside <filename>pbuilderrc</filename>
       </para>
+      <para>
+	With versions of bash more recent than 2.05b-2-15,
+	debian_chroot variable can be set to specify the name of 
+	chroot which is incorporated to create PS1.
+	On prior versions of bash<footnote>
+	  <para>Versions of bash from and before Debian 3.0</para>
+	</footnote>
+	it setting PS1 in pbuilderrc worked.
+      </para>
+      <para>example of debian_chroot</para>
+      <screen>
+	export debian_chroot="pbuild$$"
+      </screen>
+      <para>example os PS1</para>
       <screen>
 	export PS1="pbuild chroot 32165 # "
       </screen>

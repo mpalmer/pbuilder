@@ -1,3 +1,23 @@
+2004-10-09  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml (PBUILDER_UML_IMAGE): documentation on
+	what directories cannot be bind-mounted
+	#275113
+	
+	Added documentation on how to hook to pbuilder update.
+	somewhat addresses #275016, #272353
+	
+	* debian/control (Depends): remove versioned depends on user-mode-linux. Packages are provided from other kernel packages.
+	#275544
+
+	* pbuilder: implement pbuilder debuild
+	#275110
+
+	* Documentation/pbuilder-doc.xml (PBUILDER_UML_IMAGE): update doc on 
+	debian_chroot env var.
+	#275466
+	
+
 2004-09-13  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-modules (pbuilder-options): remove non-free and contrib from non-us.

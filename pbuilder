@@ -101,6 +101,10 @@ File extracted to: $BUILDPLACE
 	env;
 	echo " -> end dump config"
 	;;
+    debuild)
+	shift
+	"$0" execute "$@" /usr/lib/pbuilder/pdebuild-internal
+	;;
     *)
 	. /usr/lib/pbuilder/pbuilder-modules
 	showhelp

@@ -1,3 +1,15 @@
+pbuilder (0.116) unstable; urgency=low
+
+  * Maintenance update on pbuilder
+  * Fix bugs reported by madduck
+  * UML: versioned depends on user-mode-linux is removed, now depends on user-mode-linux so that packages with 'Provides:' can be used (closes: #275544)
+  * 'pbuilder debuild' is implemented  (closes: #275110)
+  * update docs on PS1 and 'debian_chroot' environmental variable introduced in newer bash package (closes: #275466) 
+  * Add notes on what cannot be bind-mounted (closes: #275113)
+  * hook to pbuilder update (closes: #275016, #272353)
+
+ -- Junichi Uekawa <dancer@debian.org>  Sat,  9 Oct 2004 09:22:30 +0900
+
 pbuilder (0.115) unstable; urgency=low
 
   * remove non-free and non-us from contrib. (closes: #271329)
