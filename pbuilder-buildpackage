@@ -194,8 +194,11 @@ function saveaptcache_umountproc_cleanbuildplace () {
 
 function createbuilduser () {
     # create the build user
-    echo "$BUILDUSERNAME:x:$BUILDUSERID::/tmp/buildd:/bin/sh" >> $BUILDPLACE/etc/passwd
-    echo "$BUILDUSERNAME:x:$BUILDUSERID:" >> $BUILDPLACE/etc/group
+    if [ -n "$SUTOUSER" ]; then
+	echo "$BUILDUSERNAME:x:$BUILDUSERID:$BUILDUSERID:,,,:/tmp/buildd:/bin/sh" >> $BUILDPLACE/etc/passwd
+	echo "$BUILDUSERNAME:x:$BUILDUSERID:" >> $BUILDPLACE/etc/group
+	cat $BUILDPLACE/etc/passwd
+    fi
 }
 
 . /usr/lib/pbuilder/pbuilder-checkparams
@@ -203,7 +206,8 @@ function createbuilduser () {
 PACKAGENAME="$1"
 CHROOTEXEC="chroot $BUILDPLACE "
 if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
-    SUTOUSER="su - $BUILDUSERNAME -- "
+    SUTOUSER="HOME=/tmp/buildd su - $BUILDUSERNAME -- "
+    DEBBUILDOPTS="$DEBBUILDOPTS -rfakeroot"
     echo "I: using fakeroot in build."
 else
     # run the build in root
@@ -218,8 +222,8 @@ fi;
 
 showbuildbanner
 echobacktime
-createbuilduser
 extractbuildplace 
+createbuilduser
 
 echo Copying source file
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
@@ -245,7 +249,7 @@ if [ -z "$DEBEMAIL" ]; then
 	exit 1;    
     fi
 else
-    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"; then
+    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  $SUTOUSER dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"; then
 	echo "pbuilder: Failed autobuilding of package" >&2
 	umountproc_cleanbuildplace
 	exit 1;    

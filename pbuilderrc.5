@@ -88,6 +88,14 @@ be copied over to after the building.
 .TP
 .BI "DISTRIBUTION=" "woody"
 Specify the default distribution to use.
+This option affects 
+.B "create" 
+and 
+.B "update"
+but not 
+.B "build"
+nor 
+.B "login"
 
 .TP
 .BI "APTCACHE=" "/var/cache/pbuilder/aptcache"
@@ -159,7 +167,6 @@ This option is used on invocation of
 in 
 .B "pdebuild"
 
-
 .TP
 .BI "BUILDUSERID=" "1234"
 The uid to be used inside chroot.
@@ -173,6 +180,10 @@ pbuilder.
 
 Note that this will require fakeroot to be installed within
 the chroot.
+And 
+.B "-rfakeroot"
+will be added to
+.B "DEBBUILDOPTS"
 
 .TP
 .BI "APTCONFDIR=" "/etc/apt"
