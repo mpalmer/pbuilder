@@ -1,6 +1,15 @@
 2002-02-14  Junichi Uekawa  <dancer@debian.org>
 
+	* debian/TODO: document some known bugs and features.
+
+	* pbuilder-updatebuildenv: instead of purge lilo,
+	purge $REMOVEPACKAGES
+	Tried to add something like: -o 'DPkg::Options={"--force-confnew";}' 
+	to apt-get dist-upgrade, but it doesn't seem to function.
+
 	* pbuilder-buildpackage: quoting some string
+	redirct the cp error output to /dev/null because it looks ugly.
+	Slight mods to message
 
 2002-02-13  Junichi Uekawa  <dancer@debian.org>
 

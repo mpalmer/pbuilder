@@ -4,8 +4,10 @@ pbuilder (0.23) unstable; urgency=low
   * Cache is updated even when Build-Dep processing routine fails. 
     reported by Mark Brown (closes: #129053)
     (please test)
+  * Fix update target to remove packages specified in REMOVEPACKAGES.
+  * pbuilder update requests apt-get to call dpkg with --force-confnew option
 
- -- Junichi Uekawa <dancer@debian.org>  Wed, 13 Feb 2002 02:35:41 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 14 Feb 2002 20:32:58 +0900
 
 pbuilder (0.22) unstable; urgency=low
 

@@ -35,7 +35,9 @@ fi
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"
 $CHROOTEXEC /usr/bin/apt-get update
-$CHROOTEXEC /usr/bin/dpkg --purge lilo
+if [ -n "$REMOVEPACKAGES" ]; then
+    $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
+fi
 recover_aptcache
 $CHROOTEXEC /usr/bin/apt-get -y dist-upgrade
 $CHROOTEXEC /usr/bin/apt-get -y install build-essential dpkg-dev apt $EXTRAPACKAGES
