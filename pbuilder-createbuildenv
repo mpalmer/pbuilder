@@ -22,7 +22,7 @@ echo " -> running debootstrap"
 DEBOOTSTRAPSCRIPT=""
 if [ -n "$HOOKDIR" ]; then
     if [ -f "$HOOKDIR/$DISTRIBUTION" ]; then
-	DEBOOTSTRAPSCRIPT="$HOOKDIR/$DISTRIBUTION"
+	DEBOOTSTRAPSCRIPT=$(readlink -f $HOOKDIR)"/$DISTRIBUTION"
 	echo "  -> Applying user distribution dist build script $DEBOOTSTRAPSCRIPT"
     fi
 fi
