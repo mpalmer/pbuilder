@@ -1,5 +1,15 @@
 #!/bin/bash
 set -e
+
+while ! test -d ./debian -o "$(pwd)" = "/" ; do
+    cd ..;
+done
+
+if test ! -d ./debian; then
+    echo "Cannot find ./debian dir"
+    exit 1
+fi;
+
 . /usr/lib/pbuilder/pbuilder-loadconfig
 "$PBUILDERROOTCMD" /usr/lib/pbuilder/pbuilder-satisfydepends
 /usr/bin/debuild "$@"
