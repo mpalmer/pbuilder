@@ -24,8 +24,6 @@ function cleanup_function () {
     rm -f ${INSIDE_PBUILDER}
 }
 
-trap cleanup_function exit
-
 MY_ETH0=tuntap,,,192.168.30.62
 UML_IP=192.168.30.199
 UML_NETMASK=255.255.255.0
@@ -33,39 +31,52 @@ UML_NETWORK=192.168.30.0
 UML_BROADCAST=255.255.255.255
 UML_GATEWAY=192.168.30.1
 PBUILDER_UML_IMAGE="/tmp/uml"
-BUILDING_DSC_FILE=$(readlink -f "$1")
+UML_MOUNT_TMPFS="yes"
 
-# use this script file to bootstrap the pbuilder inside the UML
-INSIDE_PBUILDER=$(tempfile)
+function operate_uml () {
+    # opeartes on UML, and runs pbuilder $1
 
-cat <<EOF > ${INSIDE_PBUILDER}
+
+    # use this script file to bootstrap the pbuilder inside the UML
+    INSIDE_PBUILDER=$(tempfile)
+    trap cleanup_function exit
+
+    UML_CHROOT_MOUNTPOINT=/tmp/ubd1
+
+    cat <<EOF > ${INSIDE_PBUILDER}
 #! /bin/bash
 mount -t proc /proc /proc
 mount -t tmpfs /tmp /tmp
 mkdir /tmp/ubd1
-mount -t ext2 /dev/ubd/1 /tmp/ubd1
-mount -t tmpfs /tmp/ubd1/tmp /tmp/ubd1/tmp
+mount -t ext2 /dev/ubd/1 ${UML_CHROOT_MOUNTPOINT}
+if [ "${UML_MOUNT_TMPFS}" = "yes" ]; then
+  mount -t tmpfs ${UML_CHROOT_MOUNTPOINT}/tmp ${UML_CHROOT_MOUNTPOINT}/tmp
+else
+  # clean up tmp before playing with it.
+  rm -rf ${UML_CHROOT_MOUNTPOINT}/tmp
+  mkdir ${UML_CHROOT_MOUNTPOINT}/tmp
+fi
 
-cat <<IP > /tmp/ubd1/etc/network/interfaces
+cat <<IP > ${UML_CHROOT_MOUNTPOINT}/etc/network/interfaces
 auto lo
 iface lo inet loopback
 
 # The first network card - this entry was created during the Debian installation
 auto eth0
 iface eth0 inet static
-        address $UML_IP
-        netmask $UML_NETMASK
-        network $UML_NETWORK
-        broadcast $UML_BROADCAST
-        gateway $UML_GATEWAY
+    address $UML_IP
+    netmask $UML_NETMASK
+    network $UML_NETWORK
+    broadcast $UML_BROADCAST
+    gateway $UML_GATEWAY
 
 IP
-cat <<SHELL > /tmp/ubd1/tmp/chrootshell
+cat <<SHELL > ${UML_CHROOT_MOUNTPOINT}/tmp/chrootshell
 #! /bin/bash
 # the shell executed inside chroot inside UML
-echo Starting network inside the chroot
-/etc/init.d/networking stop
-/etc/init.d/networking start
+    echo Starting network inside the chroot
+    /etc/init.d/networking stop
+    /etc/init.d/networking start
 SHELL
 chmod a+x /tmp/ubd1/tmp/chrootshell
 chroot /tmp/ubd1/ /tmp/chrootshell
@@ -73,12 +84,82 @@ chroot /tmp/ubd1/ /tmp/chrootshell
 #some variables need to be set from outside values, possibly
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin
 export LOGNAME="${LOGNAME}"
-pbuilder update --buildplace /tmp/ubd1/ --internal-build-uml 
-pbuilder build --buildresult "" --buildplace /tmp/ubd1/ --internal-build-uml ${BUILDING_DSC_FILE} 
+pbuilder "$1" --buildresult "" --buildplace /tmp/ubd1/ --internal-build-uml ${BUILDING_DSC_FILE} 
 /bin/sh
 EOF
 
-chmod a+x ${INSIDE_PBUILDER}
+    chmod a+x ${INSIDE_PBUILDER}
 
-linux eth0=${MY_ETH0} mem=100M con0=fd:0,fd:1 con=pty ubd0=/ ubd1=${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}
+    linux eth0=${MY_ETH0} mem=100M con0=fd:0,fd:1 con=pty ubd0=/ ubd1=${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER}
+}
 
+
+OPERATION="$1"
+shift;
+
+
+while [ -n "$1" ] ; do
+    case "$1" in
+	--eth0)
+	    MY_ETH0="$2";
+	    shift; shift;
+	    ;;
+	--uml-ip)
+	    UML_IP="$2";
+	    shift; shift;
+	    ;;
+	--uml-netmask)
+	    UML_NETMASK="$2";
+	    shift; shift;
+	    ;;
+	--uml-network)
+	    UML_NETWORK="$2";
+	    shift; shift;
+	    ;;
+	--uml-broadcast)
+	    UML_BROADCAST="$2";
+	    shift; shift;
+	    ;;
+	--uml-gateway)
+	    UML_GATEWAY="$2";
+	    shift; shift;
+	    ;;
+	--uml-image)
+	    PBUILDER_UML_IMAGE="$2";
+	    shift; shift;
+	    ;;
+	--mount-tmpfs)
+	    UML_MOUNT_TMPFS="$2";
+	    shift; shift;
+	    ;;
+	--)
+	    shift;
+	    break;
+	    ;;
+	--*)
+	    echo "Error: Unknown option [$1] was specified " >&2 
+	    exit 1;
+	    ;;
+	*)
+	    break;
+	    ;;
+    esac
+done
+
+BUILDING_DSC_FILE=$(readlink -f "$1")
+
+
+case "${OPERATION}" in
+    build)
+	operate_uml build 
+	;;
+    update)
+	operate_uml update
+	;;
+    create)
+	rootstrap ${PBUILDER_UML_IMAGE}
+	;;
+    *)
+	echo "Error: Unknown option [${OPERATION}] was specified " >&2 
+	;;
+esac

@@ -1,0 +1,53 @@
+.TH "pbuilder-user-mode-linux" 1 "2002 Sep 17" "Debian" "pbuilder"
+.SH NAME
+pbuilder-user-mode-linux \- personal package builder in UML
+.SH SYNOPSIS
+.BI "pbuilder-user-mode-linux create [" "options" "]"
+.PP
+.BI "pbuilder-user-mode-linux update [" "options" "]"
+.PP
+.BI "pbuilder-user-mode-linux build [" "options" "] " ".dsc-file"
+.SH DESCRIPTION
+Front end program to the 
+.B "pbuilder"
+suite of programs, used for creating and maintaining user-mode-linux environment
+and building Debian package within the user-mode-linux virtual machine 
+environment.
+.SH OPTIONS
+.TP
+.B "create"
+Creates a user-mode-linux root image 
+for the specified distribution using 
+.B rootstrap
+software
+
+.TP
+.B "update"
+Updates the 
+user-mode-linux root image
+for the specified distribution.
+Also, by specifying the 
+.B "--distribution"
+option, it is possible to switch the distribution.
+Specify a dummy distribution value 
+even for custom apt config files.
+
+.TP
+.B "build"
+Builds the package specified by
+.I ".dsc-file"
+within the user-mode-linux environment.
+
+.SH "NOTES"
+This software is in early stage of development. 
+Reading the source may help you in case this software doesn't work for you.
+
+.SH "SEE ALSO"
+.RI "pdebuild (" 1 "), "
+.RI "pbuilder (" 8 "), "
+.RI "rootstrap (" 1 "), "
+.RI "linux (" 1 "), "
+.RI "pbuilderrc (" 5 ") "
+
+
+
