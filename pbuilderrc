@@ -8,8 +8,8 @@ BASETGZ=/var/cache/pbuilder/base.tgz
 #EXTRAPACKAGES=gcc3.0-athlon-builder
 #export DEBIAN_BUILDARCH=athlon
 BUILDPLACE=/var/cache/pbuilder/build/
-MIRRORSITE=http://www.jp.debian.org/debian
-#NONUSMIRRORSITE="http://www.jp.debian.org/debian-non-US"
+MIRRORSITE=http://ftp.jp.debian.org/debian
+#NONUSMIRRORSITE="http://ftp.jp.debian.org/debian-non-US"
 #OTHERMIRROR="deb http://www.home.com/updates/ ./"
 #export http_proxy=http://your-proxy:8080/
 USEPROC=yes
@@ -18,7 +18,7 @@ USEDEVFS=no
 BUILDRESULT=/var/cache/pbuilder/result/
 
 # specifying the distribution forces the distribution on "pbuilder update"
-#DISTRIBUTION=woody
+#DISTRIBUTION=sarge
 #specify the cache for APT 
 APTCACHE="/var/cache/pbuilder/aptcache/"
 APTCACHEHARDLINK="yes"

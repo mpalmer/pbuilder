@@ -6,7 +6,7 @@ Building the build Environment
  -> mounting /dev/pts filesystem
 -> Mounting /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2
  -> policy-rc.d already exists
-Using: : pdebuild-internal,v 1.3 2004/01/18 23:31:04 dancer Exp $
+Using: : pdebuild-internal,v 1.4 2005/01/04 01:47:18 dancer Exp $
 Reading Package Lists...
 Building Dependency Tree...
 The following extra packages will be installed:
@@ -22,8 +22,8 @@ The following NEW packages will be installed:
   debconf debconf-i18n debootstrap liblocale-gettext-perl libssl0.9.7
   libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl pbuilder wget
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2984kB of archives.
-After unpacking 9427kB of additional disk space will be used.
+Need to get 2990kB of archives.
+After unpacking 9417kB of additional disk space will be used.
 Get:1 http://ring.asahi-net.or.jp sarge/main liblocale-gettext-perl 1.01-17 [16.8kB]
 Get:2 http://ring.asahi-net.or.jp sarge/main libtext-iconv-perl 1.2-3 [12.2kB]
 Get:3 http://ring.asahi-net.or.jp sarge/main libtext-charwidth-perl 0.04-1 [11.0kB]
@@ -32,11 +32,11 @@ Get:5 http://ring.asahi-net.or.jp sarge/main debconf-i18n 1.4.30.11 [90.1kB]
 Get:6 http://ring.asahi-net.or.jp sarge/main debconf 1.4.30.11 [101kB]
 Get:7 http://ring.asahi-net.or.jp sarge/main libssl0.9.7 0.9.7e-2 [2190kB]
 Get:8 http://ring.asahi-net.or.jp sarge/main wget 1.9.1-8 [425kB]
-Get:9 http://ring.asahi-net.or.jp sarge/main debootstrap 0.2.45 [65.8kB]
-Get:10 http://ring.asahi-net.or.jp sarge/main pbuilder 0.119 [64.4kB]
-Fetched 2984kB in 0s (4129kB/s)
+Get:9 http://ring.asahi-net.or.jp sarge/main debootstrap 0.2.45-0.1 [71.9kB]
+Get:10 http://ring.asahi-net.or.jp sarge/main pbuilder 0.121 [63.5kB]
+Fetched 2990kB in 0s (3735kB/s)
 Selecting previously deselected package liblocale-gettext-perl.
-(Reading database ... 7695 files and directories currently installed.)
+(Reading database ... 7698 files and directories currently installed.)
 Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.01-17_i386.deb) ...
 Selecting previously deselected package libtext-iconv-perl.
 Unpacking libtext-iconv-perl (from .../libtext-iconv-perl_1.2-3_i386.deb) ...
@@ -53,9 +53,9 @@ Unpacking libssl0.9.7 (from .../libssl0.9.7_0.9.7e-2_i386.deb) ...
 Selecting previously deselected package wget.
 Unpacking wget (from .../archives/wget_1.9.1-8_i386.deb) ...
 Selecting previously deselected package debootstrap.
-Unpacking debootstrap (from .../debootstrap_0.2.45_i386.deb) ...
+Unpacking debootstrap (from .../debootstrap_0.2.45-0.1_i386.deb) ...
 Selecting previously deselected package pbuilder.
-Unpacking pbuilder (from .../pbuilder_0.119_all.deb) ...
+Unpacking pbuilder (from .../pbuilder_0.121_all.deb) ...
 Setting up liblocale-gettext-perl (1.01-17) ...
 Setting up libtext-iconv-perl (1.2-3) ...
 Setting up libtext-charwidth-perl (0.04-1) ...
@@ -67,8 +67,8 @@ Setting up libssl0.9.7 (0.9.7e-2) ...
 
 Setting up wget (1.9.1-8) ...
 
-Setting up debootstrap (0.2.45) ...
-Setting up pbuilder (0.119) ...
+Setting up debootstrap (0.2.45-0.1) ...
+Setting up pbuilder (0.121) ...
 Setting DEBBUILDOPTS=
  -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.18 2003/04/20 03:40:36 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
@@ -89,40 +89,40 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext gettext-base html2text intltool-debian
   libdshconfig1 libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 11 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2510kB of archives.
-After unpacking 8958kB of additional disk space will be used.
+Need to get 2512kB of archives.
+After unpacking 8966kB of additional disk space will be used.
 Get:1 http://ring.asahi-net.or.jp sarge/main libmagic1 4.12-1 [233kB]
 Get:2 http://ring.asahi-net.or.jp sarge/main file 4.12-1 [28.6kB]
-Get:3 http://ring.asahi-net.or.jp sarge/main gettext-base 0.14.1-6 [91.1kB]
+Get:3 http://ring.asahi-net.or.jp sarge/main gettext-base 0.14.1-7 [91.2kB]
 Get:4 http://ring.asahi-net.or.jp sarge/main debconf-utils 1.4.30.11 [33.0kB]
 Get:5 http://ring.asahi-net.or.jp sarge/main html2text 1.3.2a-1 [89.3kB]
-Get:6 http://ring.asahi-net.or.jp sarge/main gettext 0.14.1-6 [1555kB]
+Get:6 http://ring.asahi-net.or.jp sarge/main gettext 0.14.1-7 [1555kB]
 Get:7 http://ring.asahi-net.or.jp sarge/main intltool-debian 0.30+20040213 [23.5kB]
-Get:8 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.15 [72.9kB]
-Get:9 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.28 [361kB]
+Get:8 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.17 [73.2kB]
+Get:9 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.30 [362kB]
 Get:10 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:11 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.11-1 [12.4kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 2510kB in 2s (908kB/s)
+Fetched 2512kB in 0s (3493kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 8063 files and directories currently installed.)
+(Reading database ... 8066 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.12-1_i386.deb) ...
 Selecting previously deselected package gettext-base.
-Unpacking gettext-base (from .../gettext-base_0.14.1-6_i386.deb) ...
+Unpacking gettext-base (from .../gettext-base_0.14.1-7_i386.deb) ...
 Selecting previously deselected package debconf-utils.
 Unpacking debconf-utils (from .../debconf-utils_1.4.30.11_all.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-1_i386.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.14.1-6_i386.deb) ...
+Unpacking gettext (from .../gettext_0.14.1-7_i386.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.30+20040213_all.deb) ...
 Selecting previously deselected package po-debconf.
-Unpacking po-debconf (from .../po-debconf_0.8.15_all.deb) ...
+Unpacking po-debconf (from .../po-debconf_0.8.17_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_4.2.28_all.deb) ...
+Unpacking debhelper (from .../debhelper_4.2.30_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_i386.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -130,17 +130,17 @@ Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_i386.deb) ...
 Setting up libmagic1 (4.12-1) ...
 
 Setting up file (4.12-1) ...
-Setting up gettext-base (0.14.1-6) ...
+Setting up gettext-base (0.14.1-7) ...
 
 Setting up debconf-utils (1.4.30.11) ...
 
 Setting up html2text (1.3.2a-1) ...
 
-Setting up gettext (0.14.1-6) ...
+Setting up gettext (0.14.1-7) ...
 
 Setting up intltool-debian (0.30+20040213) ...
-Setting up po-debconf (0.8.15) ...
-Setting up debhelper (4.2.28) ...
+Setting up po-debconf (0.8.17) ...
+Setting up debhelper (4.2.30) ...
 Setting up libdshconfig1 (0.20.11-1) ...
 
 Setting up libdshconfig1-dev (0.20.11-1) ...
@@ -443,7 +443,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Wed Dec 29 11:29:33 UTC 2004
+Sun Feb 13 07:18:13 UTC 2005
 1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
@@ -513,13 +513,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Wed Dec 29 11:29:39 UTC 2004
+Sun Feb 13 07:18:19 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 c: c
-b: b
 dsh: Process terminated (before write).
+b: b
 a: a
 PASS: tests/segv-catcher.sh
 l w
@@ -614,4 +614,4 @@ dpkg-buildpackage: full upload (original source is included)
  -> unmounting proc filesystem
  -> unmounting /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2 filesystem
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/18189 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/29008 and its subdirectories

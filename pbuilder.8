@@ -1,4 +1,4 @@
-.TH "pbuilder" 8 "2004 Apr 4" "Debian" "pbuilder"
+.TH "pbuilder" 8 "2005 Feb 13" "Debian" "pbuilder"
 .SH NAME
 pbuilder \- personal package builder
 .SH SYNOPSIS
@@ -37,8 +37,8 @@ the given options and settings in the configuration file
 for the base.tgz.
 
 For example, to switch the distribution of an existing
-base.tgz to woody, specify the
-.B "--distribution woody --override-config" 
+base.tgz to sarge, specify the
+.B "--distribution sarge --override-config" 
 options to update.
 
 .TP
@@ -374,6 +374,8 @@ Setting
 .B "--debbuildopts"
 after this option will re-set some parts of the effect.
 
+Use this option rather than using 
+.B "--debbuildopts -B"
 
 .TP
 .BI "--no-targz"

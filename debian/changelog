@@ -1,3 +1,16 @@
+pbuilder (0.122) unstable; urgency=low
+
+  * set umask 0022 (closes: #276589)
+  * pdebuild will create resulting files as user, not as root (closes: #286397)
+  * emphasise in manpage that --debbuildopts -B is not recommended, and use --binary-arch (closes: #286602)
+  * Documentation typo update (closes: #293882)
+
+  * Minor changes in default config file:
+  - mention sarge rather than woody (closes: #289170)
+  - Change default mirror from www.jp.debian.org to ftp.jp.debian.org(closes: #295032)
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 13 Feb 2005 16:13:25 +0900
+
 pbuilder (0.121) unstable; urgency=low
 
   * Modify documentation to work with the new LDP stylesheet 0.0.20040321-0.1.

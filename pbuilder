@@ -23,6 +23,7 @@ set -e
 # export this so that programs know which command line
 # operation is currently done
 export PBCURRENTCOMMANDLINEOPERATION="$1"
+umask 0022
 
 case "$1" in
     create)

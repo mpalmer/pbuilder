@@ -1,3 +1,27 @@
+2005-02-13  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder.8: update documentation to include 'sarge'
+
+	* pbuilder: set umask 0022 in pbuilder.
+	276589
+
+	* pbuilderrc (BUILDRESULT): make default distribution sarge, instead of woody.
+
+	* pbuilder-modules: update to include sarge in list of distributions; 
+	this list is too long, needs some improvement.
+	289170
+
+	* pdebuild: Change build results by default to be owned by the building user, not root:root
+	This change only required for pdebuild only, UML already runs as user.
+	286397
+
+	* pbuilder.8: clarify documentation for 286602, Do not use --debbuildopts -B, but 
+	use --binary-arch
+
+	* Documentation/pbuilder-doc.xml: 293882: Jens Seidel <jensseidel@users.sf.net> small typo fixes.
+
+	* pbuilderrc (MIRRORSITE): 295032: change default mirror from www.jp.debian.org to ftp.jp.debian.org
+
 2005-01-04  Junichi Uekawa  <dancer@debian.org>
 
 	* Documentation/pbuilder-doc.xsl: update XSL stylesheet to work with new LDP
