@@ -401,7 +401,7 @@ export DEBIAN_BUILDGCCVER=3.2
       </para>
     </sect1>
     <sect1>
-      <title>Specialized requirement on apt sources list</title>
+      <title>Using special apt sources list other than the default</title>
       <para>
 	If you have some very specialized requirements on your 
 	apt setup inside pbuilder, 
@@ -410,6 +410,12 @@ export DEBIAN_BUILDGCCVER=3.2
 	option.
 	Try something like:
 	<command><option>--othermirror "deb http://local/mirror stable main|deb-src http://local/source/repository ./"</option></command>
+      </para>
+      <para>
+	To use the local filesystem instead of http, it is necessary to do 
+	bind-mounting.
+	<command><option>--bindmounts</option></command>
+	is a command-line option useful for such cases.
       </para>
     </sect1>
     <sect1>

@@ -1,3 +1,39 @@
+2003-04-06  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml (EXTRAPACKAGES): document 
+	bindmounts option.
+
+	* pbuilderrc: add reference to the manual page in the example 
+	  configuration file.
+
+	* pbuilder-user-mode-linux (UML_DEBUGMODE): --bindmounts option.
+
+	* debian/TODO: remove bind-mount from TODO.
+
+	* pbuilder.8: document --bindmounts.
+
+	* pbuilder-modules (pbuilder-options): add --bindmounts option
+
+	* pbuilder-checkparams (PRESERVE_BUILDPLACE): add --bindmounts option
+
+	* AUTHORS: update
+
+	* pbuilderrc.5: document BINDMOUNTS option
+	
+2003-04-05  Sam Hartman  <hartmans@debian.org>
+ 
+ 	* pbuilder: Remove warning about bind filesystems as it is no
+ 	longer true. 
+ 
+ 	* pbuilder-modules :  Support Bind mounts
+ 
+ 	* pbuilderrc (BINDMOUNTS): New option
+ 
+2003-04-05  Sam Hartman  <hartmans@debian.org>
+ 
+ 	* pbuilder-modules (cleanbuildplace): Use find not  rm -rf to
+ 	clean up; avoid crossing out of the chroot on bind mounts. 
+ 
 2003-03-30  Junichi Uekawa  <dancer@debian.org>
 
 	* Documentation/pbuilder-doc.xml (PBUILDER_UML_IMAGE): spell-checked

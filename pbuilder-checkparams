@@ -125,6 +125,10 @@ while [ -n "$1" ]; do
 	    PRESERVE_BUILDPLACE="yes"
 	    shift;
 	    ;;
+	--bindmounts)
+	    BINDMOUNTS="$2"
+	    shift; shift;
+	    ;;
 	## pdebuild option
 	--auto-debsign)
 	    AUTO_DEBSIGN="yes"

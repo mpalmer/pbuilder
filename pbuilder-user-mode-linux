@@ -194,7 +194,7 @@ while [ -n "$1" ] ; do
 	    UML_EXTRAOPT="${UML_EXTRAOPT} $1"
 	    shift;;
 	#things that can be passed through with options
-	--timeout|--http-proxy|--configfile|--hookdir|--aptconfdir)
+	--timeout|--http-proxy|--configfile|--hookdir|--aptconfdir|--bindmounts)
 	    UML_EXTRAOPT="${UML_EXTRAOPT} $1 $2"
 	    shift; shift;;
 	--buildresult)

@@ -255,6 +255,16 @@ When this value is set to yes,
 will invoke debsign command after building.
 
 
+.TP
+.BI "BINDMOUNTS=" "directories-to-bind-mount"
+When this value is set, pbuilder will mount these directories using
+bind-mount.
+
+.B "BINDMOUNTS=""/home /mnt/test """
+
+Do not bind-mount 
+.B "/"
+
 .SH "AUTHOR"
 Initial coding, and main maintenance is done by 
 Junichi Uekawa <dancer@debian.org>.

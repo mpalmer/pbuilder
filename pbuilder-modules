@@ -65,6 +65,7 @@ pbuilder-options:
  --override-config 
  --binary-arch
  --preserve-buildplace
+ --bindmounts [bind-mount-point]
 
 pdebuild-specific pbuilder-options
  --pbuilderroot [command to obtain root privilege for pbuilder] 
@@ -102,6 +103,9 @@ function umountproc () {
     if [ "$USEDEVFS" = "yes" ]; then
 	umount_one "dev"
     fi
+    for mnt in $BINDMOUNTS; do
+	umount_one "$mnt"
+    done
 }
 
 function mountproc () {
@@ -120,6 +124,11 @@ function mountproc () {
 	mkdir -p $BUILDPLACE/dev || true
 	mount -t devfs /dev "$BUILDPLACE/dev" 
     fi
+    for mnt in $BINDMOUNTS; do
+	echo "-> Mounting $mnt"
+	mkdir -p "$BUILDPLACE/$mnt"
+	mount -obind "$mnt" "$BUILDPLACE/$mnt"
+    done
 }
 
 function cleanbuildplace () {
@@ -129,7 +138,9 @@ function cleanbuildplace () {
     if [ "${INTERNAL_BUILD_UML}" != "yes" ]; then
 	if [ -d "$BUILDPLACE" ]; then 
 	    echo " -> cleaning the build env "
-	    rm -rf "$BUILDPLACE"
+	    find "$BUILDPLACE" \( \! -type d \) -a -xdev -print0 |xargs -0 rm -f
+	    find "$BUILDPLACE"  -type d -xdev -depth -print0 |(xargs -0 \
+		rmdir || true)
 	fi;
     fi
 }

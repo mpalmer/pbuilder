@@ -1,6 +1,8 @@
 # this is your configuration file for pbuilder.
 # the file in /usr/share/pbuilder/pbuilderrc is the default template.
 # /etc/pbuilderrc is the one meant for editing.
+#
+# read pbuilderrc.5 document for notes on specific options.
 
 BASETGZ=/var/cache/pbuilder/base.tgz
 #EXTRAPACKAGES=gcc3.0-athlon-builder
@@ -43,3 +45,7 @@ APTCONFDIR=""
 # the username and ID used by pbuilder, inside chroot. Needs fakeroot, really
 BUILDUSERID=1234
 #BUILDUSERNAME=pbuilder
+
+# BINDMOUNTS is a space separated list of things to mount
+# inside the chroot.
+BINDMOUNTS=""
