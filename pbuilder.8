@@ -63,6 +63,9 @@ Logs into the chroot, and cleaned up afterwards.
 Any changes you make will not be kept.
 Only use this for temporary and debugging purposes.
 Do not bind-mount filesystems.
+Use
+.B "--bindmounts" 
+option to mount.
 
 .TP
 .B "execute"
@@ -390,7 +393,8 @@ their build dependencies satisfied.
 .TP
 .BI "--bindmounts " "bind-mount-points"
 Bind-mount the specified directories to inside the chroot.
-
+.I "bind-mount-points"
+is a space-delimited list of directories to bind-mount.
 
 .SH "FILES"
 .TP
