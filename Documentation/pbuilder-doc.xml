@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "docbookx.dtd"> 
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd"> 
 <!-- the original of this documentation is in pbuilder source tar-ball,
   and the latest version is found in CVS repository. -->
 <book>
@@ -94,6 +94,7 @@
 	    The mirror site should preferably a local mirror or a cache server,
 	    to not to overload the public mirrors with
 	    a lot of access.
+	    Use of tools such as apt-proxy would be advisable.
 	  </para>
 	</footnote>
 	to use, and proxy configuration may be required to allow access
@@ -490,6 +491,10 @@ export DEBIAN_BUILDGCCVER=3.2
 	It is however not possible to do so currently with user-mode-linux 
 	version of pbuilder, because <filename>/var/cache/apt/archives</filename>
 	is usually only writable as root.
+      </para>
+      <para>
+	Use of dedicated tools such as apt-proxy is recommended, since caching of packages 
+	would benefit the system outside the scope of pbuilder.
       </para>
     </sect1>
     <sect1 id="woodybackport">
