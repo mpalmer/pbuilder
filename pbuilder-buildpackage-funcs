@@ -31,14 +31,22 @@ function copydsc () {
 }
 
 function checkbuilddep () {
+    # call satisfydepends
     local BUILDOPT="--binary-all"
     case "${BINARY_ARCH}" in
 	yes) BUILDOPT="--binary-arch";;
 	*) ;;
     esac
-    if ! /usr/lib/pbuilder/pbuilder-satisfydepends --control "$BUILDPLACE/"tmp/buildd/*/debian/control --chroot "$BUILDPLACE" "${BUILDOPT}" ; then
+    if /usr/lib/pbuilder/pbuilder-satisfydepends --control "$1" --chroot "$BUILDPLACE" "${BUILDOPT}" ; then
+	:
+    else
+    # If asked to preserve the build place, and pbuilder-satisfydepends
+    # didn't taint it, then don't clean it when exiting.
+	if [ $? -eq 2 -a "${PRESERVE_BUILDPLACE}" = "yes" ]; then
+	    trap umountproc exit
+	fi
 	echo "E: pbuilder-satisfydepends failed." >&2
-	exit 1
+	exit 2
     fi
     # install extra packages to the chroot
     if [ -n "$EXTRAPACKAGES" ]; then 

@@ -64,6 +64,7 @@ pbuilder-options:
  --timeout [timeout time]
  --override-config 
  --binary-arch
+ --preserve-buildplace
 
 pdebuild-specific pbuilder-options
  --pbuilderroot [command to obtain root privilege for pbuilder] 
@@ -125,7 +126,7 @@ function cleanbuildplace () {
     if [ "$?" -ne 0 ]; then
 	echo " -> Aborting with an error";
     fi
-    if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
+    if [ "${INTERNAL_BUILD_UML}" != "yes" -a ! \( "${PRESERVE_BUILDPLACE}" = "yes" -a -d "$BUILDPLACE" \) ]; then
 	if [ -d "$BUILDPLACE" ]; then 
 	    echo " -> cleaning the build env "
 	    rm -rf "$BUILDPLACE"

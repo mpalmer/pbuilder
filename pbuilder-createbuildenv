@@ -83,3 +83,6 @@ umountproc
 trap cleanbuildplace exit
 
 create_basetgz
+if [ "${PRESERVE_BUILDPLACE}" = "yes" ]; then
+    trap exit
+fi

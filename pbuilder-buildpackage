@@ -50,7 +50,6 @@ echobacktime
 extractbuildplace 
 trap umountproc_cleanbuildplace exit
 loadhooks
-createbuilduser
 
 if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
     if [ "${USE_PKGNAME_LOGFILE}" = "yes" ]; then
@@ -64,6 +63,14 @@ if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
     fi
 fi
 
+recover_aptcache
+echo "Installing the build-deps"
+trap saveaptcache_umountproc_cleanbuildplace exit
+checkbuilddep
+save_aptcache
+trap umountproc_cleanbuildplace exit
+createbuilduser
+
 echo "Copying source file"
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 executehooks "D"
@@ -73,13 +80,6 @@ if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; chown $BUILDUSERNAME:$BUILDUSERN
     echo "pbuilder: Failed extracting the source" >&2 
     exit 1;
 fi
-
-recover_aptcache
-echo "Installing the build-deps"
-trap saveaptcache_umountproc_cleanbuildplace exit
-checkbuilddep
-save_aptcache
-trap umountproc_cleanbuildplace exit
 
 echo " -> Building the package"
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"

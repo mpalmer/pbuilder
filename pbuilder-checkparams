@@ -27,6 +27,7 @@ OVERRIDE_APTLINES="no"
 BINARY_ARCH="no"
 PBUILDER_BUILD_LOGFILE=
 USE_PKGNAME_LOGFILE=""
+PRESERVE_BUILDPLACE="no"
 
 while [ -n "$1" ]; do 
     case "$1" in 
@@ -116,6 +117,10 @@ while [ -n "$1" ]; do
 	    DEBBUILDOPTS="${DEBBUILDOPTS} -B"
 	    shift;
 	    ;;
+	--preserve-buildplace)
+	    PRESERVE_BUILDPLACE="yes"
+	    shift;
+	    ;;
 	## pdebuild option
 	--auto-debsign)
 	    AUTO_DEBSIGN="yes"
@@ -160,7 +165,7 @@ BUILDPLACE=${BUILDPLACE?"Build root directory is not defined"}
 
 # the default is to add a PID in the buildplace specified in the config file.
 BASEBUILDPLACE="$BUILDPLACE"
-if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
+if [ "${INTERNAL_BUILD_UML}" != "yes" -a "${PRESERVE_BUILDPLACE}" != "yes" ]; then
     BUILDPLACE="$BUILDPLACE/$$"
 fi
 if [ -z "${CHROOTEXEC}" ]; then

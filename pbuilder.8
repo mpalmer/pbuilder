@@ -347,11 +347,35 @@ will not be deleted and reconstructed from
 a 
 .B .tar.gz
 file.
+Also, 
+.B "pbuilder"
+will not add its process ID to the
+.B "--buildplace"
+as it usually would.
 
 Useful when experimenting with 
 chroots, or trying to create chroots outside control
 of
-.B pbuilder.
+.B "pbuilder."
+
+.TP
+.BI "--preserve-buildplace"
+Do not clean the
+.B "--buildplace"
+if it has the same contents as the
+.B .tar.gz
+file.  As with
+.BR "--no-targz" ","
+suppresses appending
+.BR "pbuilder" "'s"
+process ID to the
+.BR "--buildplace" "."
+
+This is useful if you want to attempt to build a large number of
+packages successively, but you expect that many of them cannot have
+their build dependencies satisfied.
+
+
 
 .SH "FILES"
 .TP

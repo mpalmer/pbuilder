@@ -1,5 +1,29 @@
 2003-03-10  Junichi Uekawa  <dancer@debian.org>
 
+	* debian/rules: add check target for build.
+
+	* Makefile (check): add check target to makefile, to see if there is 
+	any syntax error.
+
+	* pbuilder-updatebuildenv: support --preserve-buildplace
+	apply things from 
+	Daniel Schepler <schepler@math.berkeley.edu>
+
+	* pbuilder-satisfydepends: support --preserve-buildplace
+	support Format: field.
+
+	* pbuilder-modules (pbuilder-options): support --preserve-buildplace
+
+	* pbuilder-buildpackage (PACKAGENAME): support --preserve-buildplace
+
+	* pbuilder-buildpackage-funcs: support --preserve-buildplace
+
+	* pbuilder-createbuildenv (DEBOOTSTRAPSCRIPT): support --preserve-buildplace
+
+	* pbuilder-checkparams (PRESERVE_BUILDPLACE): add PRESERVE_BUILDPLACE
+
+	* pbuilder.8: update docs to add --preserve-buildplace
+
 	* pbuilder-satisfydepends: quote some strings... trying to be pedantic
 
 	* pbuilder-buildpackage-funcs: unset LOGNAME for when building with 

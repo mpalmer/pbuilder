@@ -2,6 +2,27 @@ INSTALL_DIRECTORY=install -d -m 0755
 INSTALL_FILE=install -m 0644
 INSTALL_EXECUTABLE=install -m 0755
 
+SHELLCODES=pbuilder-buildpackage \
+	pbuilder-buildpackage-funcs \
+	pbuilder-checkparams \
+	pbuilder-createbuildenv \
+	pbuilder-loadconfig \
+	pbuilder-modules \
+	pbuilder-runhooks \
+	pbuilder-satisfydepends \
+	pbuilder-updatebuildenv \
+	pbuilder-user-mode-linux \
+	pbuilder \
+	pdebuild \
+	pdebuild-user-mode-linux 
+
+check:
+	set -e;
+	for A in $(SHELLCODES); do \
+		bash -n $$A; \
+		echo $$A; \
+	done
+
 clean:
 	rm -f *.bak *~ TAGS
 
