@@ -3,6 +3,12 @@
 	* pbuilder-buildpackage: Build-Depends-Indep etc. field names 
 	are handled as case-insensitive. So "BuilD-DePeNDS-inDeP" is 
 	a valid field name according to policy.
+	INSTALLPKG and INSTALLPKGMULTI are local vars
+	considering INSTALLPKGMULTI is printed with $0, not $1 (which contains random output)
+	introduced CURRENTREALPKGNAME
+	Using the CURRENTREALPKGNAME variable in depends/conflicts checker.
+	fixed the CURRENTREALPKGNAME to handle packages with build-dependency 
+	without space. i.e. PACKAGENAME(>> version)
 
 	* pbuilder-updatebuildenv: uses recover_aptcache and save_aptcache.
 
