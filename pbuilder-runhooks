@@ -18,6 +18,9 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.11  2001/10/21 05:03:21  dancer
+# fixing bugs related to runhooks, reported by Dale. Some serious logic disorder seems to be.
+#
 # Revision 1.10  2001/10/12 16:56:41  dancer
 # changing the error message to warning, because these messages do not stop execution
 #
@@ -71,7 +74,7 @@ function loadhooks () {
     fi
     if [ -d "$HOOKDIR" ]; then
 	mkdir -p "$BUILDPLACE/tmp/hooks"
-	cp -a "$HOOKDIR/*" "$BUILDPLACE/$hooks"
+	cp -a "$HOOKDIR/"* "$BUILDPLACE/$hooks"
     fi
 }
 

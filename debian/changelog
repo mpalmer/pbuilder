@@ -1,4 +1,4 @@
-pbuilder (0.8.0.20011013) unstable; urgency=low
+pbuilder (0.8.0.20011021) unstable; urgency=low
 
   * allow use of hardlinks in apt cache handling, with new option
     APTCACHEHARDLINK. This cannot be enabled if pbuilder
@@ -6,8 +6,10 @@ pbuilder (0.8.0.20011013) unstable; urgency=low
     It should speed up processing.
   * Depends on wget, since debootstrap only recommends, and I think this
     program is not quite functional as it is without wget
+  * fix runhook breakage introduced by my hacking around with quotes.
+  * Make runhook work as advertized in pbuilder.1 manpage. (closes: #116416)
 
- -- Junichi Uekawa <dancer@debian.org>  Sat, 13 Oct 2001 16:45:47 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 21 Oct 2001 13:37:42 +0900
 
 pbuilder (0.8) unstable; urgency=low
 
