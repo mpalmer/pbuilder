@@ -2,17 +2,18 @@
 export LANG=C
 export LC_ALL=C
 
+#this option is optional
 DISTRIBUTION=$1
-test -z "$DISTRIBUTION" && DISTRIBUTION=woody
+
 . /etc/pbuilderrc
 CHROOTEXEC="chroot $BUILDPLACE "
 
 echo "Upgrading for distribution $DISTRIBUTION" 
 
-cd $MYREPOSITORY
-echo Initializing repository
-dpkg-scanpackages . . | gzip > Packages.gz
-dpkg-scansources . . | gzip > Sources.gz
+#cd $MYREPOSITORY
+#echo Initializing repository
+#dpkg-scanpackages . . | gzip > Packages.gz
+#dpkg-scansources . . | gzip > Sources.gz
 
 echo cleaning the build env
 rm -rf $BUILDPLACE
@@ -26,13 +27,13 @@ for a in passwd hosts hostname resolv.conf; do
   cp /etc/$a $BUILDPLACE/etc/$a;
 done
 
-echo Installing apt-lines
-cat > $BUILDPLACE/etc/apt/sources.list << EOF
-deb $MYREPOSITORYHTTP ./
-deb-src $MYREPOSITORYHTTP ./
-deb http://www.jp.debian.org/debian $DISTRIBUTION main contrib non-free
-deb-src http://www.jp.debian.org/debian $DISTRIBUTION main contrib non-free
+if [ -n "$DISTRIBUTION" ]; then
+  echo Installing apt-lines
+  cat > $BUILDPLACE/etc/apt/sources.list << EOF
+deb $MIRRORSITE $DISTRIBUTION main contrib non-free
+deb-src $MIRRORSITE debian $DISTRIBUTION main contrib non-free
 EOF
+fi
 
 echo Refreshing the base.tgz 
 $CHROOTEXEC /usr/bin/apt-get update

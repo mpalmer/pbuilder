@@ -48,8 +48,5 @@ echo Installing the build-deps
 checkbuilddep
 echo Building the package
 $CHROOTEXEC /bin/sh -c "(cd tmp/buildd/*/; dpkg-buildpackage)"
-echo Installing $BUILDPLACE/tmp/buildd/* to archive
-mkdir -p $MYREPOSITORYEXTRAPATH
-cp $BUILDPLACE/tmp/buildd/* $MYREPOSITORYEXTRAPATH
 
 #  LocalWords:  dpkg

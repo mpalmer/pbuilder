@@ -11,11 +11,6 @@ if [ -z "$DISTRIBUTION" ]; then
 fi
 echo Distribution is $DISTRIBUTION.
 
-cd $MYREPOSITORY
-echo Initializing repository
-dpkg-scanpackages . . | gzip > Packages.gz
-dpkg-scansources . . | gzip > Sources.gz
-
 echo cleaning the build env
 rm -rf $BUILDPLACE
 
@@ -30,10 +25,8 @@ done
 
 echo Installing apt-lines
 cat > $BUILDPLACE/etc/apt/sources.list << EOF
-deb $MYREPOSITORYHTTP ./
-deb-src $MYREPOSITORYHTTP ./
-deb http://www.jp.debian.org/debian $DISTRIBUTION main contrib non-free
-deb-src http://www.jp.debian.org/debian $DISTRIBUTION main contrib non-free
+deb $MIRRORSITE $DISTRIBUTION main contrib non-free
+deb-src $MIRRORSITE $DISTRIBUTION main contrib non-free
 EOF
 
 echo Refreshing the base.tgz 
