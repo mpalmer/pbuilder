@@ -6,4 +6,50 @@ Daniel Kobras -- Patches and bugfixes for non-interactive building, and
   some other bugs.
 
 
+History and background of pbuilder
+==================================
+
+Just to note the background of this package.
+
+There were dbuild, which was a shell script to build
+Debian packages from source. Lars Wirzenius wrote that 
+script, and it was good, short, and simple
+There was nothing like build-depends then, and it was simple.
+It could have been improved, I don't have the source off-hand.
+
+debbuild was probably written by James Troup. I don't know it 
+because I have never seen the actual code, but there are 
+references to it on the net, and mailing list logs.
+
+sbuild is a perl script to build Debian package from source.
+It parses Build-Dependency, and performs other misc checks,
+and has a lot of hacks to actually get things building.
+It supports use of local database for packages which do not 
+have build-dependency. It was written by Ronan Hodek, 
+and I think it was patched and fixed and extended by
+several people. It is part of wanna-build, and used extensively
+in Debian buildd system. I think it was maintained
+mostly by Ryan Murray.
+
+wanna-build was quite difficult to set up, and it was 
+never a Debian package. dbuild was something that predated
+Build-Depends.
+
+
+Building package from source using Build-Depends 
+information within a chroot sounded trivial; and 
+pbuilder was born. It was initially a shell script
+with only a few lines, which called debootstrap
+and chroot and dpkg-buildpackage in the same run,
+but soon, it was decided that's too slow.
+
+Yes, and it took almost an year to get things somewhat 
+right, and in the middle of the process, Debian 3.0
+was released. Yay.
+Debian 3.0 wasn't completely buildable with pbuilder,
+but the amount of packages which are not buildable
+are steadily decreasing. (I hope)
+
+
+
 $Id$
