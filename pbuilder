@@ -23,7 +23,8 @@ case "$1" in
 	/usr/lib/pbuilder/pbuilder-buildpackage "$@"
 	;;
     clean)
-	. /etc/pbuilderrc
+	shift;
+	. /usr/lib/pbuilder/pbuilder-checkparams
 	echo "Cleaning [$BUILDPLACE]"
 	test -n "$BUILDPLACE" && rm -rf "$BUILDPLACE"/* || true
 	echo "Cleaning [$APTCACHE]"
