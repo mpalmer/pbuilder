@@ -63,7 +63,7 @@ umountproc
 test -n "$BUILDRESULT" && (
   mkdir -p "$BUILDRESULT"
   if [ -d "$BUILDRESULT" ]; then
-    cp "$BUILDPLACE/tmp/buildd/*" "$BUILDRESULT"
+    cp "$BUILDPLACE"/tmp/buildd/* "$BUILDRESULT"
   else
     echo "Error: BUILDRESULT=[$BUILDRESULT] and is not a directory." >&2
   fi
