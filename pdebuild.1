@@ -44,6 +44,21 @@ The configuration file is used, and passed on to
 .BR "pbuilder" .
 
 .TP
+.BI "--use-pdebuild-internal"
+Uses a different implementation of pdebuild, which calls clean and build inside 
+the chroot, using bind-mounts.
+
+.B "pdebuild-internal"
+tries to run debian/rules clean inside the chroot.
+To achieve the goal, the working directory is passed on inside the chroot,
+in the form of bind-mounting and
+.B debuild 
+is run.
+
+This option will not protect the working directory and its parent directories 
+from the build scripts.
+
+.TP
 .BI "-- [" "pbuilder options" "]"
 
 After the 

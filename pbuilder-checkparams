@@ -152,7 +152,7 @@ while [ -n "$1" ]; do
 	    shift;
 	    ;;
 	--bindmounts)
-	    BINDMOUNTS="$2"
+	    BINDMOUNTS="${BINDMOUNTS} $2"
 	    shift; shift;
 	    ;;
 	## pdebuild option
@@ -167,6 +167,10 @@ while [ -n "$1" ]; do
 	--pbuilderroot*)
 	    PBUILDERROOTCMD="$2";
 	    shift; shift;
+	    ;;
+	--use-pdebuild-internal)
+	    USE_PDEBUILD_INTERNAL=yes;
+	    shift;
 	    ;;
 	## internal options.
 	--internal-chrootexec)

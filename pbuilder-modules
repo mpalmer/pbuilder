@@ -66,10 +66,12 @@ pbuilder-options:
  --binary-arch
  --preserve-buildplace
  --bindmounts [bind-mount-point]
+ --debug
 
-pdebuild-specific pbuilder-options
+pdebuild-specific pbuilder-options:
  --pbuilderroot [command to obtain root privilege for pbuilder] 
  --buildsourceroot [command to obtain root privilege for dpkg-buildpackage]
+ --use-pdebuild-internal
 EOF
     exit 1
 }

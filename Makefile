@@ -2,6 +2,10 @@ INSTALL_DIRECTORY=install -d -m 0755
 INSTALL_FILE=install -m 0644
 INSTALL_EXECUTABLE=install -m 0755
 
+
+#
+# To add new script, add it to here, so that it will be tested. And then add a rule to install: target.
+#
 SHELLCODES=pbuilder-buildpackage \
 	pbuilder-buildpackage-funcs \
 	pbuilder-checkparams \
@@ -14,7 +18,8 @@ SHELLCODES=pbuilder-buildpackage \
 	pbuilder-user-mode-linux \
 	pbuilder \
 	pdebuild \
-	pdebuild-user-mode-linux 
+	pdebuild-user-mode-linux \
+	pdebuild-internal
 
 check:
 	set -e;
@@ -60,6 +65,7 @@ install:
 	$(INSTALL_EXECUTABLE) pdebuild-user-mode-linux $(DESTDIR)/usr/bin
 	$(INSTALL_EXECUTABLE) debuild-pbuilder $(DESTDIR)/usr/bin
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends $(DESTDIR)/usr/lib/pbuilder/
+	$(INSTALL_EXECUTABLE) pdebuild-internal $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/etc
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/pbuilder
 	$(INSTALL_FILE) pbuilder-uml.conf $(DESTDIR)/etc/pbuilder

@@ -1,8 +1,18 @@
 pbuilder (0.97) UNRELEASED; urgency=low
 
   * update installtest script
+  * allow multiple  --bindmounts option to be specified for multiple
+    bind-mount operation.
+  * Support pdebuild which does not run debian/rules clean outside of 
+    chroot. Set 'USE_PDEBUILD_INTERNAL=yes' to use it, or 
+    --use-pdebuild-internal. It will not be the default yet, because 
+    it changes the manner of operation drastically.
+  - "pdebuild builds source package outside chroot" by
+    Matt Kraai (Closes: #211230).
+  - "pbuilder: don't run debian/rules clean outside chroot" by
+    thanks to Brian May (Closes: #215192).
 
- -- Junichi Uekawa <dancer@debian.org>  Sat, 20 Dec 2003 15:04:53 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Tue, 23 Dec 2003 22:14:45 +0900
 
 pbuilder (0.96) unstable; urgency=low
 

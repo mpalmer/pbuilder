@@ -1,6 +1,33 @@
+2003-12-23  Junichi Uekawa  <dancer@debian.org>
+
+	* Makefile (install): update build rules to install pdebuild-internal
+
+	* pbuilderrc.5: update document USE_PDEBUILD_INTERNAL
+
+	* pdebuild-user-mode-linux.1: document --use-pdebuild-internal
+
+	* pdebuild.1: document --use-pdebuild-internal
+
+	* pbuilder-modules: document use-pdebuild-internal
+
+	* pbuilder-checkparams: --use-pdebuild-internal option.
+
+	* pdebuild: use pdebuild-internal if USE_PDEBUILD_INTERNAL option is 'yes'
+
+	* pdebuild-user-mode-linux: use pdebuild-internal if USE_PDEBUILD_INTERNAL option is 'yes'
+
+	* pdebuild-internal: Implement a pbuilder execute script to be
+	used for pdebuild without doing debian/rules clean outside of chroot.
+
+	* pbuilder-checkparams: support multiple bindmounts;
+	delimit it with spaces.
+
+	* pbuilder-modules: add --debug option here.
+
 2003-12-20  Junichi Uekawa  <dancer@debian.org>
 
 	* examples/execute_installtest.sh: add /etc/mailname hack for emacs.
+	note known bugs as comment.
 
 2003-12-18  Junichi Uekawa  <dancer@debian.org>
 
