@@ -1,14 +1,14 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/6094.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileczmSIq rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/10577.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file4wee1X rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
-Linux version 2.4.22-5um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 Fri Sep 19 21:36:03 EDT 2003
+Linux version 2.4.22-5um (dancer@atoron) (gcc version 2.95.4 20011002 (Debian prerelease)) #3 2003年 11月 16日 日曜日 23:07:20 JST
 On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/6094.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileczmSIq rw
-Calibrating delay loop... 1594.44 BogoMIPS
-Memory: 124720k available
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/10577.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file4wee1X rw
+Calibrating delay loop... 1577.37 BogoMIPS
+Memory: 124716k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
 Mount cache hash table entries: 512 (order: 0, 4096 bytes)
@@ -35,9 +35,9 @@ Initializing Cryptographic API
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/SoLmLI/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/67RDoM/mconsole
 unable to open root_fs for validation
-Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/6094.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
+Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/10577.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
 Partition check:
  ubdb: unknown partition table
 Initializing stdio console driver
@@ -81,8 +81,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Wed Oct 29 08:25:15 JST 2003
-pbuilder-time-stamp: 1067383515
+Current time: Sun Nov 16 23:59:56 JST 2003
+pbuilder-time-stamp: 1068994796
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
@@ -95,97 +95,528 @@ Installing the build-deps
    -> Trying libdshconfig1-dev
  -> Installing  debhelper libdshconfig1-dev
 Reading Package Lists... 0%Reading Package Lists... 100%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 95%Building Dependency Tree... Done
 The following extra packages will be installed:
-  binutils debconf-utils dpkg-dev file gettext html2text intltool-debian
-  libc6-dev libdb4.0 libdshconfig1 libmagic1 make patch perl perl-modules
+  debconf-utils file gettext html2text intltool-debian libdshconfig1 libmagic1
   po-debconf
 Suggested packages:
-  gnupg cvs manpages-dev libterm-readline-perl-perl
-Recommended packages:
-  c-compiler
+  cvs
 The following NEW packages will be installed:
-  binutils debconf-utils debhelper dpkg-dev file gettext html2text
-  intltool-debian libc6-dev libdb4.0 libdshconfig1 libdshconfig1-dev libmagic1
-  make patch perl perl-modules po-debconf
-0 upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
-2 not fully installed or removed.
-Need to get 13.7MB of archives.
-After unpacking 48.4MB of additional disk space will be used.
-0% [Working]            Err http://debootstrap.invalid sarge/main binutils 2.14.90.0.6-3
-  Could not resolve 'debootstrap.invalid'
-            0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main perl-modules 5.8.0-18
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main libdb4.0 4.0.14-1.3
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main perl 5.8.0-18
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main patch 2.5.9-1
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main make 3.80-4
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main dpkg-dev 1.10.15
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main libmagic1 4.04-1
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main file 4.04-1
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main libc6-dev 2.3.2-7
-  Could not resolve 'debootstrap.invalid'
-                                      0% [Working]            Err http://debootstrap.invalid sarge/main debconf-utils 1.3.15
-  Could not resolve 'debootstrap.invalid'
-0% [Working]            Err http://debootstrap.invalid sarge/main html2text 1.3.1-2
-  Could not resolve 'debootstrap.invalid'
-            0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main gettext 0.12.1-8
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main intltool-debian 0.27.2+20031003
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main po-debconf 0.8.2
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main debhelper 4.1.74
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main libdshconfig1 0.20.8-1
-  Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main libdshconfig1-dev 0.20.8-1
-  Could not resolve 'debootstrap.invalid'
-                                      0% [Working]            Failed to fetch http://debootstrap.invalid/pool/main/b/binutils/binutils_2.14.90.0.6-3_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/p/perl/perl-modules_5.8.0-18_all.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/d/db4.0/libdb4.0_4.0.14-1.3_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/p/perl/perl_5.8.0-18_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/p/patch/patch_2.5.9-1_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/m/make/make_3.80-4_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/d/dpkg/dpkg-dev_1.10.15_all.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/f/file/libmagic1_4.04-1_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/f/file/file_4.04-1_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/g/glibc/libc6-dev_2.3.2-7_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/d/debconf/debconf-utils_1.3.15_all.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/h/html2text/html2text_1.3.1-2_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/g/gettext/gettext_0.12.1-8_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/i/intltool-debian/intltool-debian_0.27.2+20031003_all.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/p/po-debconf/po-debconf_0.8.2_all.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/d/debhelper/debhelper_4.1.74_all.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/libd/libdshconfig/libdshconfig1_0.20.8-1_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/libd/libdshconfig/libdshconfig1-dev_0.20.8-1_i386.deb  Could not resolve 'debootstrap.invalid'
-E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
- -> Trying to fix apt error
-Setting up console-data (2002.12.04dbs-18) ...
-Looking for keymap to install:
-mac-usb-be
-dpkg: error processing console-data (--configure):
- subprocess post-installation script returned error exit status 1
-dpkg: dependency problems prevent configuration of base-config:
- base-config depends on console-data (>= 2002.12.04dbs-16); however:
-  Package console-data is not configured yet.
-dpkg: error processing base-config (--configure):
- dependency problems - leaving unconfigured
-Errors were encountered while processing:
- console-data
- base-config
-E: Unrecoverable error installing build-dependencies.
-E: pbuilder-satisfydepends failed.
- -> ignoring umount of proc filesystem
- -> ignoring umount of dev/pts filesystem
-Kernel panic: Attempted to kill init!
- tracing thread pid = 6109
+  debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
+  libdshconfig1-dev libmagic1 po-debconf
+0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2077kB of archives.
+After unpacking 6991kB of additional disk space will be used.
+0% [Working]            Get:1 http://ring.asahi-net.or.jp sarge/main libmagic1 4.06-1 [206kB]
+            0% [1 libmagic1 2804/206kB 1%]                              Get:2 http://ring.asahi-net.or.jp sarge/main file 4.06-1 [25.2kB]
+                              10% [2 file 20590/25.2kB 81%]                             Get:3 http://ring.asahi-net.or.jp sarge/main debconf-utils 1.3.20 [36.2kB]
+                             11% [3 debconf-utils 5608/36.2kB 15%]                                     Get:4 http://ring.asahi-net.or.jp sarge/main html2text 1.3.1-2 [83.6kB]
+                                     13% [4 html2text 4206/83.6kB 5%]                                Get:5 http://ring.asahi-net.or.jp sarge/main gettext 0.12.1-8 [1280kB]
+                                17% [5 gettext 5608/1280kB 0%]                              59% [5 gettext 878524/1280kB 68%]                                 78% [Working]             Get:6 http://ring.asahi-net.or.jp sarge/main intltool-debian 0.27.2+20031023 [18.4kB]
+             78% [6 intltool-debian 0/18.4kB 0%]                                   79% [Working]             Get:7 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.6 [64.6kB]
+             79% [7 po-debconf 0/64.6kB 0%]                              82% [Working]             Get:8 http://ring.asahi-net.or.jp sarge/main debhelper 4.1.77 [342kB]
+             82% [8 debhelper 0/342kB 0%]                            98% [Working]             Get:9 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.8-1 [9656B]
+             98% [9 libdshconfig1 0/9656B 0%]                                99% [Working]             Get:10 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.8-1 [11.3kB]
+             99% [10 libdshconfig1-dev 0/11.3kB 0%]                                      100% [Working]              Fetched 2077kB in 0s (2088kB/s)
+Selecting previously deselected package libmagic1.
+(Reading database ... 9142 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.06-1_i386.deb) ...
+Selecting previously deselected package file.
+Unpacking file (from .../archives/file_4.06-1_i386.deb) ...
+Selecting previously deselected package debconf-utils.
+Unpacking debconf-utils (from .../debconf-utils_1.3.20_all.deb) ...
+Selecting previously deselected package html2text.
+Unpacking html2text (from .../html2text_1.3.1-2_i386.deb) ...
+Selecting previously deselected package gettext.
+Unpacking gettext (from .../gettext_0.12.1-8_i386.deb) ...
+Selecting previously deselected package intltool-debian.
+Unpacking intltool-debian (from .../intltool-debian_0.27.2+20031023_all.deb) ...
+Selecting previously deselected package po-debconf.
+Unpacking po-debconf (from .../po-debconf_0.8.6_all.deb) ...
+Selecting previously deselected package debhelper.
+Unpacking debhelper (from .../debhelper_4.1.77_all.deb) ...
+Selecting previously deselected package libdshconfig1.
+Unpacking libdshconfig1 (from .../libdshconfig1_0.20.8-1_i386.deb) ...
+Selecting previously deselected package libdshconfig1-dev.
+Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.8-1_i386.deb) ...
+Setting up libmagic1 (4.06-1) ...
 
- -> Exit code 2
+Setting up file (4.06-1) ...
+Setting up debconf-utils (1.3.20) ...
+
+Setting up html2text (1.3.1-2) ...
+
+Setting up gettext (0.12.1-8) ...
+
+Setting up intltool-debian (0.27.2+20031023) ...
+Setting up po-debconf (0.8.6) ...
+Setting up debhelper (4.1.77) ...
+Setting up libdshconfig1 (0.20.8-1) ...
+
+Setting up libdshconfig1-dev (0.20.8-1) ...
+ -> Finished parsing the build-deps
+Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 65%Reading Package Lists... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 70%Building Dependency Tree... Done
+The following NEW packages will be installed:
+  fakeroot
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 52.6kB of archives.
+After unpacking 193kB of additional disk space will be used.
+0% [Working]            Get:1 http://ring.asahi-net.or.jp sarge/main fakeroot 0.7.8 [52.6kB]
+            0% [1 fakeroot 0/52.6kB 0%]                           100% [Working]              Fetched 52.6kB in 0s (513kB/s)
+Selecting previously deselected package fakeroot.
+(Reading database ... 9650 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_0.7.8_i386.deb) ...
+Setting up fakeroot (0.7.8) ...
+Copying source file
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/dsh_0.25.0-1.dsc]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/dsh_0.25.0.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/dsh_0.25.0-1.diff.gz]
+Extracting source
+su(pam_unix)[265]: session opened for user pbuilder by (uid=0)
+dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-source: extracting dsh in dsh-0.25.0
+ -> Building the package
+su(pam_unix)[281]: session opened for user pbuilder by (uid=0)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-buildpackage: source package is dsh
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-buildpackage: source version is 0.25.0-1
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-buildpackage: source maintainer is Junichi Uekawa <dancer@debian.org>
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-buildpackage: host architecture is i386
+dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp configure-stamp
+/usr/bin/make clean
+make[1]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[1]: *** No rule to make target `clean'.  Stop.
+make[1]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make: [clean] Error 2 (ignored)
+/usr/bin/make distclean
+make[1]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[1]: *** No rule to make target `distclean'.  Stop.
+make[1]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make: [clean] Error 2 (ignored)
+dh_clean
+ dpkg-source -b dsh-0.25.0
+dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-source: building dsh using existing dsh_0.25.0.orig.tar.gz
+dpkg-source: building dsh in dsh_0.25.0-1.diff.gz
+dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
+dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
+dpkg-source: building dsh in dsh_0.25.0-1.dsc
+ debian/rules build
+dh_testdir
+INSTALL_PROGRAM='install -p    -o root -g root  -m  755 -s' CFLAGS='-Wall -g -O2' \
+ ./configure --prefix=/usr --sysconfdir=/etc/dsh --mandir=/usr/share/man
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking dependency style of gcc... gcc3
+checking for strerror in -lcposix... no
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ANSI C... (cached) none needed
+checking dependency style of gcc... (cached) gcc3
+checking for gcc option to accept ANSI C... none needed
+checking whether make sets $(MAKE)... (cached) yes
+checking how to run the C preprocessor... gcc -E
+checking for egrep... grep -E
+checking for ANSI C header files... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
+checking for a sed that does not truncate output... /bin/sed
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking whether ln -s works... yes
+checking how to recognise dependent libraries... pass_all
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for g77... no
+checking for f77... no
+checking for xlf... no
+checking for frt... no
+checking for pgf77... no
+checking for fl32... no
+checking for af77... no
+checking for fort77... no
+checking for f90... no
+checking for xlf90... no
+checking for pgf90... no
+checking for epcf90... no
+checking for f95... no
+checking for fort... no
+checking for xlf95... no
+checking for lf95... no
+checking for g95... no
+checking whether we are using the GNU Fortran 77 compiler... no
+checking whether  accepts -g... no
+checking the maximum length of command line arguments... 32768
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking if gcc static flag  works... yes
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC
+checking if gcc PIC flag -fPIC works... yes
+checking if gcc supports -c -o file.o... yes
+checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+configure: creating libtool
+appending configuration tag "CXX" to libtool
+checking for ld used by g++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC
+checking if g++ PIC flag -fPIC works... yes
+checking if g++ supports -c -o file.o... yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+appending configuration tag "F77" to libtool
+checking for an ANSI C-conforming const... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking whether NLS is requested... yes
+checking for GNU gettext in libc... yes
+checking for gettext... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for stdlib.h... (cached) yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking netgroup.h usability... no
+checking netgroup.h presence... no
+checking for netgroup.h... no
+checking for libdshconfig.h ... yes
+checking for asprintf... yes
+checking for strdup... yes
+checking for getopt_long... yes
+checking for getline... yes
+checking for dup2... yes
+checking for setlocale... yes
+checking for strcasecmp... yes
+checking for strchr... yes
+checking for setnetgrent... yes
+checking for getnetgrent... yes
+checking for endnetgrent... yes
+checking for open_dshconfig in -ldshconfig... yes
+checking netdb.h has setnetgrent that returns void... no
+checking getopt with a GNU option reordering extention... yes, disabling
+configure: creating ./config.status
+config.status: creating po/Makefile.in
+config.status: creating m4/Makefile
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+touch configure-stamp
+dh_testdir
+/usr/bin/make
+make[1]: Entering directory `/tmp/buildd/dsh-0.25.0'
+/usr/bin/make  all-recursive
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.0'
+Making all in m4
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.0/m4'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0/m4'
+Making all in po
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.0/po'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0/po'
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.0'
+if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-dsh.o -MD -MP -MF ".deps/dsh-dsh.Tpo" \
+  -c -o dsh-dsh.o `test -f 'dsh.c' || echo './'`dsh.c; \
+then mv -f ".deps/dsh-dsh.Tpo" ".deps/dsh-dsh.Po"; \
+else rm -f ".deps/dsh-dsh.Tpo"; exit 1; \
+fi
+if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-linkedlist.o -MD -MP -MF ".deps/dsh-linkedlist.Tpo" \
+  -c -o dsh-linkedlist.o `test -f 'linkedlist.c' || echo './'`linkedlist.c; \
+then mv -f ".deps/dsh-linkedlist.Tpo" ".deps/dsh-linkedlist.Po"; \
+else rm -f ".deps/dsh-linkedlist.Tpo"; exit 1; \
+fi
+if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-parameter.o -MD -MP -MF ".deps/dsh-parameter.Tpo" \
+  -c -o dsh-parameter.o `test -f 'parameter.c' || echo './'`parameter.c; \
+then mv -f ".deps/dsh-parameter.Tpo" ".deps/dsh-parameter.Po"; \
+else rm -f ".deps/dsh-parameter.Tpo"; exit 1; \
+fi
+/bin/sh ./libtool --mode=link gcc  -Wall -g -O2   -o dsh  dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  -ldshconfig 
+mkdir .libs
+gcc -Wall -g -O2 -o dsh dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  /usr/lib/libdshconfig.so
+mkdir build-man
+sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
+sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.5 > build-man/dsh.conf.5
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[1]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+/usr/bin/make check
+make[1]: Entering directory `/tmp/buildd/dsh-0.25.0'
+Making check in m4
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.0/m4'
+make[2]: Nothing to be done for `check'.
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0/m4'
+Making check in po
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.0/po'
+make[2]: Nothing to be done for `check'.
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0/po'
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.0'
+/usr/bin/make  dsh
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[3]: `dsh' is up to date.
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+/usr/bin/make  check-TESTS
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.0'
+PASS: tests/param-f.sh
+dsh: File ./tests/nonexistent.file could not be opened for read
+PASS: tests/param-f-fail.sh
+PASS: tests/param-f-with-space.sh
+PASS: tests/param-m.sh
+test to check that unknown parameter checking is right.
+./dsh: unrecognized option `--unknown-parameter'
+./dsh: invalid option -- u
+PASS: tests/param-unknown.sh
+dsh: dsh.c:573: do_shell: Assertion `((((__extension__ ({ union { __typeof(childstatus) __in; int __i; } __u; __u.__in = (childstatus); __u.__i; }))) & 0x7f) == 0)' failed.
+PASS: tests/param-i.sh
+Check that cn4 option is working.
+PASS: tests/param-cn4.sh
+test to check that -b0 is rejected, and -b1 is accepted
+Buffer size needs to be greater than 1
+Buffer size needs to be greater than 1
+b
+a
+PASS: tests/param-b-0.sh
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+success
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+success
+success
+success
+success
+success
+d: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
+b: dsh: Failed executing ./invalid-exec-file with llexec call
+a: dsh: Failed executing ./invalid-exec-file with llexec call
+success
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+success
+PASS: tests/param-r-invalid.sh
+2: 2
+1: 1
+dsh: fork limit and wait shell cannot be specified at the same time
+PASS: tests/param-F-invalid.sh
+Sun Nov 16 15:02:47 UTC 2003
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+DUMPing parameters passed to llexec
+[1] 
+DUMPing parameters passed to llexec
+[2] 
+... Waiting for process to end with waitpid
+DUMPing parameters passed to llexec
+[3] 
+DUMPing parameters passed to llexec
+[4] 
+... Waiting for process to end with waitpid
+DUMPing parameters passed to llexec
+[5] 
+--- Terminated running
+Sun Nov 16 15:02:54 UTC 2003
+PASS: tests/param-F-forklimit.sh
+PASS: tests/param-gnu-getopt.sh
+PASS: tests/news-okay.sh
+l w
+PASS: tests/test-bufferoverflow.sh
+===================
+All 14 tests passed
+===================
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[1]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+touch build-stamp
+ fakeroot debian/rules binary
+dh_testdir
+dh_testroot
+dh_clean -k
+dh_installdirs
+# Add here commands to install the package into debian/dsh.
+/usr/bin/make install DESTDIR=/tmp/buildd/dsh-0.25.0/debian/dsh
+make[1]: Entering directory `/tmp/buildd/dsh-0.25.0'
+Making install in m4
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.0/m4'
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.0/m4'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0/m4'
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0/m4'
+Making install in po
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.0/po'
+/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share
+mkdir -p -- /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share
+mkdir -p -- /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/locale/ja/LC_MESSAGES
+installing ja.gmo as /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
+if test "dsh" = "gettext"; then \
+  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/gettext/po; \
+  for file in Makefile.in.in Makevars remove-potcdate.sin   ; do \
+    /usr/bin/install -c -m 644 ./$file \
+		    /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0/po'
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.0'
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.0'
+/bin/sh ./mkinstalldirs /tmp/buildd/dsh-0.25.0/debian/dsh/usr/bin
+  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s dsh /tmp/buildd/dsh-0.25.0/debian/dsh/usr/bin/dsh
+install -p -o root -g root -m 755 -s dsh /tmp/buildd/dsh-0.25.0/debian/dsh/usr/bin/dsh
+/bin/sh ./mkinstalldirs /tmp/buildd/dsh-0.25.0/debian/dsh/etc/dsh
+ /usr/bin/install -c -m 644 dsh.conf /tmp/buildd/dsh-0.25.0/debian/dsh/etc/dsh/dsh.conf
+for LANGS in ja ; do \
+	mkdir -p /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man1 ;\
+	mkdir -p /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man5 ;\
+	sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.$LANGS.1 \
+		> /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
+	sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.$LANGS.5 \
+		> /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
+done
+/bin/sh ./mkinstalldirs /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man1
+mkdir -p -- /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man1
+ /usr/bin/install -c -m 644 ./build-man/dsh.1 /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man1/dsh.1
+/bin/sh ./mkinstalldirs /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man5
+mkdir -p -- /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man5
+ /usr/bin/install -c -m 644 ./build-man/dsh.conf.5 /tmp/buildd/dsh-0.25.0/debian/dsh/usr/share/man/man5/dsh.conf.5
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+make[1]: Leaving directory `/tmp/buildd/dsh-0.25.0'
+cp /tmp/buildd/dsh-0.25.0/debian/machines.list /tmp/buildd/dsh-0.25.0/debian/dsh/etc/dsh/machines.list
+cp /tmp/buildd/dsh-0.25.0/dsh.conf /tmp/buildd/dsh-0.25.0/debian/dsh/etc/dsh/dsh.conf
+ln -s ../machines.list /tmp/buildd/dsh-0.25.0/debian/dsh/etc/dsh/group/all
+install -d /tmp/buildd/dsh-0.25.0/debian/dsh/usr/lib/update-cluster
+install -m 755 /tmp/buildd/dsh-0.25.0/debian/dsh.updatelist /tmp/buildd/dsh-0.25.0/debian/dsh/usr/lib/update-cluster/
+dh_testdir
+dh_testroot
+dh_installdocs NEWS
+dh_installexamples
+dh_installmenu
+dh_installman
+dh_installchangelogs ChangeLog 
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dh_link
+dh_strip
+dh_shlibdeps
+dpkg-shlibdeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dh_compress
+dh_fixperms
+dh_installdeb
+dh_gencontrol
+dpkg-gencontrol: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dh_md5sums
+dh_builddeb
+dpkg-deb: building package `dsh' in `../dsh_0.25.0-1_i386.deb'.
+ dpkg-genchanges
+dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-genchanges: including full source code in upload
+dpkg-buildpackage: full upload (original source is included)
+ -> Terminate timeout process
+ -> ignoring umount of dev/pts filesystem
+ -> ignoring umount of proc filesystem
+Current time: Mon Nov 17 00:03:12 JST 2003
+pbuilder-time-stamp: 1068994992
+/usr/lib/pbuilder/pbuilder-buildpackage: line 144:   277 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+Kernel panic: Attempted to kill init!
+ tracing thread pid = 10592
+
+ -> Successful exit from user-mode linux

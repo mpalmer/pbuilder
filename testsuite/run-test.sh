@@ -2,7 +2,7 @@
 # This is a testsuite.
 PBUILDER_UML=/usr/bin/pbuilder-user-mode-linux
 
-pbuilder --configfile non-existing-configfile
+pbuilder-user-mode-linux --configfile non-existing-configfile
 
 if [ -x "${PBUILDER_UML}" ]; then
     for distribution in sid sarge; do
