@@ -434,6 +434,18 @@ targets.
 .BI "--debootstrapopts " "--variant=buildd"
 Add extra command-line options to debootstrap.
 
+.TP
+.BI "--save-after-login "
+.TP
+.BI "--save-after-exec "
+Save the chroot image after exiting from the chroot instead of 
+deleting changes.
+Effective for 
+.B login
+and 
+.B exec
+session.
+
 .SH "FILES"
 .TP
 .I "/etc/pbuilderrc"

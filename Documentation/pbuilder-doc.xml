@@ -693,6 +693,18 @@ $ mkdir ~/loginhooks
 $ cp C10shell ~/loginhooks/E10shell
 $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
       </screen>
+      <para>
+	It is also possible to add --save-after-exec, --save-after-login option
+	to <command>pbuilder login</command> session to achieve the goal.
+	Also, it is possible to add --uml-login-nocow option to <command>pbuilder-user-mode-linux login</command> session.
+      </para>
+    </sect1>
+    <sect1 id="BUILDRESULTUID">
+      <title>Setting BUILDRESULTUID for pdebuild sessions using sudo</title>
+      <para>
+	It is possible to set BUILDRESULTUID=$SUDO_UID in pbuilderrc 
+	to set the proper BUILDRESULTUID when using sudo.
+      </para>
     </sect1>
     <sect1 id="tmpdir">
       <title>Notes on usage of $TMPDIR</title>

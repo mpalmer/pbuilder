@@ -51,6 +51,11 @@ extractbuildplace
 trap umountproc_cleanbuildplace exit
 loadhooks
 
+if [ -n "${BUILDRESULT}" ]; then
+    echo " -> created buildresult dir :${BUILDRESULT}"
+    mkdir -p "${BUILDRESULT}"
+fi
+
 if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
     if [ "${USE_PKGNAME_LOGFILE}" = "yes" ]; then
 	PBUILDER_BUILD_LOGFILE="${BUILDRESULT}/"$(basename "${PACKAGENAME}" .dsc)
@@ -125,19 +130,16 @@ executehooks "B"
 trap cleanbuildplace exit
 umountproc
 
-if [ -n "${BUILDRESULT}" ]; then
-    mkdir -p "${BUILDRESULT}"
-    if [ -d "${BUILDRESULT}" ]; then
-	if [ -n "${BUILDRESULTUID}" ]; then
-	    chown "${BUILDRESULTUID}:${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
-	fi
-	if [ -n "${BUILDRESULTGID}" ]; then
-	    chgrp "${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
-	fi
-	cp -p "${BUILDPLACE}"/tmp/buildd/* "${BUILDRESULT}" 2>/dev/null || true
-    else
-	echo "E: BUILDRESULT=[$BUILDRESULT] is not a directory." >&2
+if [ -d "${BUILDRESULT}" ]; then
+    if [ -n "${BUILDRESULTUID}" ]; then
+	chown "${BUILDRESULTUID}:${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
     fi
+    if [ -n "${BUILDRESULTGID}" ]; then
+	chgrp "${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
+    fi
+    cp -p "${BUILDPLACE}"/tmp/buildd/* "${BUILDRESULT}" 2>/dev/null || true
+else
+    echo "E: BUILDRESULT=[$BUILDRESULT] is not a directory." >&2
 fi
 
 echobacktime

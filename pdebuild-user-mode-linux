@@ -42,7 +42,7 @@ if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
     pbuilder-user-mode-linux execute "$@" --bindmounts $(readlink -f ..) /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}"
 else
     dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} $DEBBUILDOPTS
-    pbuilder-user-mode-linux build "$@" --buildresult "${UML_BUILDRESULT}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
+    pbuilder-user-mode-linux build "$@" --buildresult "${UML_BUILDRESULT}" --debbuildopts "${DEBBUILDOPTS}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
 fi
 
 if [ "${AUTO_DEBSIGN}" = "yes" ]; then

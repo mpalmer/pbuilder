@@ -37,6 +37,13 @@ The configuration file is used, but not passed on to
 .BR "pbuilder-user-mode-linux" .
 
 .TP
+.BI "--debbuildopts [" "options to pass to dpkg-buildpackage" "]"
+
+The space-delimited list of options are passed to dpkg-buildpackage.
+This option overrides pbuilder option 
+.B "--debbuildopts"
+
+.TP
 .BI "--use-pdebuild-internal"
 Uses a different implementation of pdebuild, which calls clean and build inside 
 the chroot, using bind-mounts.

@@ -1,3 +1,29 @@
+2004-10-31  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml (PBUILDER_UML_IMAGE): add notes on 
+	BUILRESULTUID and SUDO interaction.
+
+	* pbuilder-buildpackage (PACKAGENAME): move around buildresult dir creation before pkgname logfile creation.
+
+	* pbuilder.8: add documentation for --save-after-login/exec option.
+
+	* pbuilder: execute and login with --save-after-login/exec option.
+
+	* pbuilder-user-mode-linux.1: add notes that uml-nocow is effective for exec and login.
+
+	* pbuilder-uml-checkparams (UML_SAVE_AFTER_LOGIN): add UML_NOCOW for exec
+
+	* pbuilder-checkparams (SAVE_AFTER_LOGIN): --save-after-login/exec command-option.
+
+	* pdebuild-user-mode-linux.1: add notes that the option will override 
+	pbuilder option.
+
+	* pdebuild.1: add notes that the option will override pbuilder option
+
+	* pdebuild-user-mode-linux: ditto.
+
+	* pdebuild: override --debbbuildopts in pbuilder option when DEBBUILDOPTS is available and for non-internal mode.
+
 2004-10-20  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/control: Remove uml package

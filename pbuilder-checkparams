@@ -17,6 +17,9 @@
 #   along with this program; if not, write to the Free Software
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+# This code is called for pbuilder and pbuilder inside pbuilder-uml; 
+# pbuilder-uml calls uml-checkparams.
+
 . /usr/lib/pbuilder/pbuilder-loadconfig
 . /usr/lib/pbuilder/pbuilder-modules
 
@@ -30,6 +33,7 @@ USE_PKGNAME_LOGFILE=""
 PRESERVE_BUILDPLACE="no"
 unset EXTRA_CONFIGFILE || true
 PBUILDER_DEBUGMODE=
+SAVE_AFTER_LOGIN=
 
 #option for user-mode-linux only.
 IGNORE_UMOUNT=""
@@ -176,6 +180,10 @@ while [ -n "$1" ]; do
 	    ;;
 	--use-pdebuild-internal)
 	    USE_PDEBUILD_INTERNAL=yes;
+	    shift;
+	    ;;
+	--save-after-login|--save-after-exec)
+	    SAVE_AFTER_LOGIN=yes;
 	    shift;
 	    ;;
 	## internal options.

@@ -168,8 +168,12 @@ case "${OPERATION}" in
 	operate_uml login
 	;;
     execute)
-	usecow
-	EXTRACLEANUP=cleancow
+	if [ "${UML_LOGIN_NOCOW}" = "yes" ]; then
+	    echo " -> Not using COW filesystem for login session, modifications to this session will persist"
+	else
+	    usecow
+	    EXTRACLEANUP=cleancow
+	fi
 	shift;
 	UML_EXECUTE_EXTRAOPT="${UML_EXECUTE_EXTRAOPT} $@"
 	operate_uml execute 

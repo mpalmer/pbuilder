@@ -1,3 +1,22 @@
+pbuilder (0.118) unstable; urgency=low
+
+  * --debbuildopts behavior change for pdebuild:
+    It is now: pdebuild --debbuildopts "xxx" 
+    It was: pdebuild --debbuildopts "xxx" -- --debbuildopts "xxx" (for internal pdebuild mode)
+    pdebuild --debbuildopts "xxx" (for non-internal pdebuild mode)
+  (closes: #278999)
+  * pbuilder: --save-after-login, --save-after-exec options added.
+    NOTE: pbuilder-UML already has --uml-login-nocow option, which is 
+    equivalent to this new feature.
+    (closes: #275970, #275016)
+  * buildresult dir creation is done after pkgname-logfile creation.
+  Thanks:   Mike Hommey <mh@glandium.org>
+    (closes: #273882)
+  * add notes on sudo and BUILDRESULTDUID on the manual
+    (closes: #271211)
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 31 Oct 2004 20:01:58 +0900
+
 pbuilder (0.117) unstable; urgency=HIGH
 
   * Remove pbuilder-user-mode-linux package for the time being, until 

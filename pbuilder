@@ -65,6 +65,19 @@ File extracted to: $BUILDPLACE
 	fi
 	executehooks "F"
 	chroot "$BUILDPLACE" bin/bash
+
+	# saving the place afterwards
+	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
+	    if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
+		echo "E: Invalid combination of internal-build-uml and save-after-login flags"
+	    else
+		echo " -> Saving the results, modifications to this session will persist"
+		unloadhooks
+		umountproc
+		trap cleanbuildplace exit
+		create_basetgz
+	    fi
+	fi
 	;;
     execute)
 	# try to execute arbitrary program.
@@ -78,13 +91,29 @@ File extracted to: $BUILDPLACE
 	    exit 1;
 	fi;
 	extractbuildplace
+
 	trap umountproc_cleanbuildplace exit
+
 	loadhooks
 	RUNNAME="$BUILDPLACE/run"
 	cat "$EXECPROGRAM" > "$RUNNAME"
 	chmod a+x "$RUNNAME"
 	executehooks "F"
 	chroot "$BUILDPLACE" /run "$@"
+
+
+	# saving the place afterwards
+	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
+	    if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
+		echo "E: Invalid combination of internal-build-uml and save-after-login flags"
+	    else
+		echo " -> Saving the results, modifications to this session will persist"
+		unloadhooks
+		umountproc
+		trap cleanbuildplace exit
+		create_basetgz
+	    fi
+	fi
 	;;
     dumpconfig)
 	shift
