@@ -201,6 +201,7 @@ function createbuilduser () {
 }
 
 . /usr/lib/pbuilder/pbuilder-checkparams
+. /usr/lib/pbuilder/pbuilder-runhooks
 
 PACKAGENAME="$1"
 CHROOTEXEC="chroot $BUILDPLACE "
