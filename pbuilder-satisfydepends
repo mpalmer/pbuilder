@@ -124,7 +124,9 @@ tolower($0) ~ /^'"${BD_REGEXP}"':/   {p=1}
       done;
       if [ "$SATISFIED" = "no" ]; then
 	  echo "E: Could not satisfy build-dependency." >&2
-	  exit 1
+	  if [ "$CONTINUE_FAIL" != "yes" ]; then
+	      exit 1
+	  fi
       fi
     done;
 
@@ -185,6 +187,7 @@ Copyright 2002  Junichi Uekawa <daner@debian.org>
 --binary-arch: include binary-arch only
 --echo:        echo mode, do nothing. (--force-version required for most operation)
 --force-version: skip version check.
+--continue-fail: continue even when failed.
 
 EOF
 }
@@ -195,6 +198,7 @@ CHROOTEXEC=""
 BD_REGEXP="build-(depends|depends-indep)"
 BC_REGEXP="build-(conflicts|conflicts-indep)"
 FORCEVERSION=""
+CONTINUE_FAIL="no"
 
 
 while [ -n "$1" ]; do
@@ -219,6 +223,10 @@ while [ -n "$1" ]; do
 	    ;;
 	--echo)
 	    CHROOTEXEC="echo $CHROOTEXEC"
+	    shift
+	    ;;
+	--continue-fail)
+	    CONTINUE_FAIL="yes"
 	    shift
 	    ;;
 	--force-version)
