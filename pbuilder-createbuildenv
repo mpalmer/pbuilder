@@ -8,7 +8,7 @@ CHROOTEXEC="chroot $BUILDPLACE "
 if [ -z "$DISTRIBUTION" ]; then
   DISTRIBUTION=woody
 fi
-echo Distribution is $DISTRIBUTION.
+echo "Distribution is $DISTRIBUTION."
 
 cleanbuildplace
 
@@ -20,11 +20,11 @@ echo " -> running debootstrap"
 mkdir -p "$BUILDPLACE/tmp/buildd"
 echo " -> copying local configuration"
 for a in passwd hosts hostname resolv.conf apt; do 
-  cp -r /etc/$a $BUILDPLACE/etc/;
+  cp -r /etc/$a "$BUILDPLACE/etc/";
 done
 
 echo "Installing apt-lines"
-cat > $BUILDPLACE/etc/apt/sources.list << EOF
+cat > "$BUILDPLACE/etc/apt/sources.list" << EOF
 deb $MIRRORSITE $DISTRIBUTION main contrib non-free
 deb-src $MIRRORSITE $DISTRIBUTION main contrib non-free
 EOF
