@@ -64,7 +64,6 @@ function checkbuilddep_internal () {
       SATISFIED="no"
       for INSTALLPKG in $(echo "$INSTALLPKGMULTI" | \
 	  awk 'BEGIN{RS="|"} {print}'); do
-	#echo " -> Trying to install $INSTALLPKG"
 	if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	    if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
 		SATISFIED="yes"
@@ -96,6 +95,9 @@ function checkbuilddep_internal () {
 		    SATISFIED="yes";
 		fi
 	    fi
+	fi
+	if [ "$SATISFIED" = "yes" ]; then
+	    break;
 	fi
       done;
       if [ "$SATISFIED" = "no" ]; then
