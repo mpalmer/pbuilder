@@ -229,7 +229,7 @@ createbuilduser
 echo Copying source file
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 echo Extracting source
-if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; chown $BUILDUSERNAME:$BUILDUSERNAME *; $SUTOUSER /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then
+if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; chown $BUILDUSERNAME:$BUILDUSERNAME ../buildd *; $SUTOUSER /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then
     echo "pbuilder: Failed extracting the source" >&2 
     umountproc_cleanbuildplace
     exit 1;
