@@ -9,7 +9,7 @@ function copydsc () {
       "$DSCFILE" \
       $(echo "$DSCFILE" | sed 's/^\(.*\)\.dsc$/\1/' ).diff.gz \
       $(echo "$DSCFILE" | sed 's/^\(.*\)\.dsc$/\1/').tar.gz \
-      $(echo "$DSCFILE" | sed 's/\(.*\)-[^-.]*\.dsc$/\1/').orig.tar.gz ; do
+      $(echo "$DSCFILE" | sed 's/\(.*\)-[^-]*\.dsc$/\1/').orig.tar.gz ; do
         cp "$FILE" "$TARGET" ;
     done
 }
