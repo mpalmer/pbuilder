@@ -10,8 +10,12 @@ A convenience program for
 which invokes pbuilder after obtaining appropriate root privilate 
 in a Debian source directory.
 .B debian
-directory must be visible on the current directory when 
+directory must either be visible on the current directory, when 
 invoked.
+It also works when 
+.B "../debian" 
+exists. 
+
 .SH OPTIONS
 .TP
 .BI "--buildsourceroot [" "fakeroot" "]"
