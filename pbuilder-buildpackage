@@ -21,7 +21,7 @@ function checkbuilddep_versiondeps () {
     local DEPSVERSION="$3"
     local PACKAGEVERSION=$(apt-cache show $PACKAGE | grep "^Version:" | sort | head -1 | sed 's/^Version: \(.*\)$/\1/')
     # no versioned provides.
-    echo    dpkg --compare-versions "[$PACKAGEVERSION]" "[$COMPARESTRING]" "[$DEPSVERSION]";
+    #echo    dpkg --compare-versions "[$PACKAGEVERSION]" "[$COMPARESTRING]" "[$DEPSVERSION]";
     if dpkg --compare-versions "$PACKAGEVERSION" "$COMPARESTRING" "$DEPSVERSION"; then
 	# satisfies depends
 	return 0;
@@ -110,7 +110,7 @@ function checkbuilddep_internal () {
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
-      echo " -> Considering "$(echo $INSTALLPKGMULTI | tr "/" " " | awk '{print $1}' )
+      echo " -> Considering "$(echo $INSTALLPKG | tr "/" " " | awk '{print $1}' )
       if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	  # this package has arch-conflicts.
 	  if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
