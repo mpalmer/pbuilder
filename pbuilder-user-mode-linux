@@ -248,7 +248,7 @@ case "${OPERATION}" in
 	    mkdir ~/.pbuilder-user-mode-linux
 	fi
 	cd ~/.pbuilder-user-mode-linux
-	sed "s/dist=.*/dist=${UML_DISTRIBUTION}/" /etc/rootstrap/rootstrap.conf|lv > rootstrap.conf
+	sed "s/dist=.*/dist=${UML_DISTRIBUTION}/" /etc/rootstrap/rootstrap.conf > rootstrap.conf
 	rootstrap -s 1000 ${PBUILDER_UML_IMAGE}
 	operate_uml update
 	;;
