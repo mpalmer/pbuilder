@@ -1,4 +1,4 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/mnt/buildd/uml-cow//9990.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/files1AEE3 rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/23506.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileVCt4rV rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.20-7um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 SMP Fri Aug 8 18:30:28 EDT 2003
@@ -6,8 +6,8 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/mnt/buildd/uml-cow//9990.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/files1AEE3 rw
-Calibrating delay loop... 1594.44 BogoMIPS
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/23506.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileVCt4rV rw
+Calibrating delay loop... 1598.85 BogoMIPS
 Memory: 126208k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -37,9 +37,9 @@ loop: loaded (max 8 devices)
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/mcXuyM/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/r7ecH7/mconsole
 unable to open root_fs for validation
-Creating "/mnt/buildd/uml-cow//9990.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
+Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/23506.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
 Partition check:
  ubdb: unknown partition table
 Initializing stdio console driver
@@ -86,8 +86,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Fri Sep 19 06:32:33 JST 2003
-pbuilder-time-stamp: 1063920753
+Current time: Fri Sep 19 07:32:17 JST 2003
+pbuilder-time-stamp: 1063924337
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
@@ -112,16 +112,16 @@ The following NEW packages will be installed:
 Need to get 2018kB of archives.
 After unpacking 6781kB of additional disk space will be used.
 0% [Working]            Get:1 http://ftp.jp.debian.org sid/main libmagic1 4.03-3 [193kB]
-            0% [1 libmagic1 2552/193kB 1%]                              5% [1 libmagic1 102624/193kB 53%]                                 9% [Waiting for headers]                        Get:2 http://ftp.jp.debian.org sid/main file 4.03-3 [23.9kB]
-                        9% [2 file 2845/23.9kB 11%]                           Get:3 http://ftp.jp.debian.org sid/main debconf-utils 1.3.14 [36.3kB]
-                           10% [3 debconf-utils 1613/36.3kB 4%]                                    Get:4 http://ftp.jp.debian.org sid/main html2text 1.3.1-2 [83.6kB]
-                                    12% [4 html2text 1937/83.6kB 2%]                                Get:5 http://ftp.jp.debian.org sid/main gettext 0.12.1-6 [1268kB]
-                                16% [5 gettext 1526/1268kB 0%]                              25% [5 gettext 182560/1268kB 14%]31% [5 gettext 290560/1268kB 22%]37% [5 gettext 416256/1268kB 32%]47% [5 gettext 615712/1268kB 48%]55% [5 gettext 781312/1268kB 61%]63% [5 gettext 941600/1268kB 74%]                                 73% [5 gettext 1140000/1268kB 89%]                                  79% [Waiting for headers]                         Get:6 http://ftp.jp.debian.org sid/main intltool-debian 0.26+20030525 [15.9kB]
-                         79% [6 intltool-debian 1383/15.9kB 8%]                                      80% [Waiting for headers]                         Get:7 http://ftp.jp.debian.org sid/main po-debconf 0.7.2 [36.3kB]
-                         80% [7 po-debconf 1115/36.3kB 3%]                                 Get:8 http://ftp.jp.debian.org sid/main debhelper 4.1.73 [340kB]
-                                 82% [8 debhelper 1905/340kB 0%]                               92% [8 debhelper 216465/340kB 63%]                                    306kB/s 0s98% [Waiting for headers]                                             306kB/s 0s                                                                                Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.8-1 [9656B]
-99% [9 libdshconfig1 2557/9656B 26%]                                  306kB/s 0s99% [Waiting for headers]                                             306kB/s 0s                                                                                Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.8-1 [11.3kB]
-99% [10 libdshconfig1-dev 2657/11.3kB 23%]                            306kB/s 0s100% [Working]                                                        306kB/s 0s                                                                                Fetched 2018kB in 6s (307kB/s)
+            0% [1 libmagic1 2552/193kB 1%]                              6% [1 libmagic1 127808/193kB 66%]                                 Get:2 http://ftp.jp.debian.org sid/main file 4.03-3 [23.9kB]
+                                 9% [2 file 669/23.9kB 2%]                         Get:3 http://ftp.jp.debian.org sid/main debconf-utils 1.3.14 [36.3kB]
+                         10% [3 debconf-utils 2317/36.3kB 6%]                                    Get:4 http://ftp.jp.debian.org sid/main html2text 1.3.1-2 [83.6kB]
+                                    12% [4 html2text 286/83.6kB 0%]                               16% [Waiting for headers]                         Get:5 http://ftp.jp.debian.org sid/main gettext 0.12.1-6 [1268kB]
+                         16% [5 gettext 1315/1268kB 0%]                              27% [5 gettext 220195/1268kB 17%]37% [5 gettext 410848/1268kB 32%]48% [5 gettext 642688/1268kB 50%]60% [5 gettext 878848/1268kB 69%]                                 70% [5 gettext 1090304/1268kB 85%]                                  Get:6 http://ftp.jp.debian.org sid/main intltool-debian 0.26+20030525 [15.9kB]
+                                  79% [6 intltool-debian 3463/15.9kB 21%]                                       Get:7 http://ftp.jp.debian.org sid/main po-debconf 0.7.2 [36.3kB]
+                                       80% [7 po-debconf 1662/36.3kB 4%]                                 Get:8 http://ftp.jp.debian.org sid/main debhelper 4.1.73 [340kB]
+                                 82% [8 debhelper 1878/340kB 0%]                               95% [8 debhelper 268278/340kB 78%]                                  98% [Waiting for headers]                         Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.8-1 [9656B]
+                         99% [9 libdshconfig1 1117/9656B 11%]                                    99% [Waiting for headers]                         Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.8-1 [11.3kB]
+                         99% [10 libdshconfig1-dev 1116/11.3kB 9%]                                         100% [Working]              Fetched 2018kB in 4s (431kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 9039 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.03-3_i386.deb) ...
@@ -160,14 +160,14 @@ Setting up libdshconfig1 (0.20.8-1) ...
 Setting up libdshconfig1-dev (0.20.8-1) ...
  -> Finished parsing the build-deps
 Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 63%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 99%Building Dependency Tree... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
 Need to get 51.7kB of archives.
 After unpacking 188kB of additional disk space will be used.
 0% [Working]            Get:1 http://ftp.jp.debian.org sid/main fakeroot 0.7.6 [51.7kB]
-            2% [1 fakeroot 1114/51.7kB 2%]                              100% [Working]              Fetched 51.7kB in 0s (73.3kB/s)
+            4% [1 fakeroot 2554/51.7kB 4%]                              100% [Working]              Fetched 51.7kB in 0s (156kB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 9530 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_0.7.6_i386.deb) ...
@@ -492,7 +492,7 @@ PASS: tests/param-r-invalid.sh
 1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Thu Sep 18 21:34:43 UTC 2003
+Thu Sep 18 22:34:35 UTC 2003
 Using sleep as the remote shell
 Show machine names on output
 Adding machine 5,4,3,2,1 to list
@@ -510,7 +510,7 @@ DUMPing parameters passed to llexec
 DUMPing parameters passed to llexec
 [5] 
 --- Terminated running
-Thu Sep 18 21:34:50 UTC 2003
+Thu Sep 18 22:34:42 UTC 2003
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -619,11 +619,11 @@ dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> ignoring umount of proc filesystem
  -> ignoring umount of dev/pts filesystem
-Current time: Fri Sep 19 06:35:03 JST 2003
-pbuilder-time-stamp: 1063920903
+Current time: Fri Sep 19 07:34:58 JST 2003
+pbuilder-time-stamp: 1063924498
 /usr/lib/pbuilder/pbuilder-buildpackage: line 144:   277 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
 Kernel panic: Attempted to kill init!
  <6>Stopping all CPUs...done
-tracing thread pid = 10003
+tracing thread pid = 23520
 
  -> Successful exit from user-mode linux
