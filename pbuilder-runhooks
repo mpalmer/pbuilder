@@ -18,6 +18,9 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.12  2002/02/24 07:57:06  dancer
+# added hooks support for pbuilder build target.
+#
 # Revision 1.11  2001/10/21 05:03:21  dancer
 # fixing bugs related to runhooks, reported by Dale. Some serious logic disorder seems to be.
 #
@@ -69,6 +72,9 @@ hooks=tmp/hooks
 # 
 
 function loadhooks () {
+    if [ -z "$HOOKDIR" ]; then
+	return ;
+    fi
     if [ -d "$BUILDPLACE/$hooks" ]; then
 	rm -rf "$BUILDPLACE/$hooks"
     fi
@@ -83,6 +89,9 @@ function loadhooks () {
 #
 
 function unloadhooks () {
+    if [ -z "$HOOKDIR" ]; then
+	return ;
+    fi
     if [ -d "$BUILDPLACE/$hooks" ]; then
 	rm -rf "$BUILDPLACE/$hooks"
     else
@@ -103,6 +112,9 @@ function unloadhooks () {
 
 function executehooks () {
     local prefix="$1"
+    if [ -z "$HOOKDIR" ]; then
+	return ;
+    fi
     for fn in "$BUILDPLACE/$hooks/$prefix"[0-9][0-9]* ; do
 	case "$fn" in
 	    *~)
@@ -112,7 +124,7 @@ function executehooks () {
 		echo "W: skipping a backup file $fn"
 		;;
 	    *)	
-		if [ -x $fn ]; then
+		if [ -x "$fn" ]; then
 		    $CHROOTEXEC "$hooks/"$(basename "$fn")
 		    echo " -> user script $fn finished"
 		else

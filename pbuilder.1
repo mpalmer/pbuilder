@@ -188,6 +188,8 @@ in other than Bourne Shell or Perl, it is up to the user to
 ensure the interpreter was previously installed in the chrooted
 environment. Files ending in ~ or .bak are ignored.
 
+
+
 Although it may not seem necessary, 
 .B "pbuilder update" 
 does not invoke the hooks if 
@@ -205,6 +207,20 @@ chroot for
 distribution, pbuilder will call debootstrap with that 
 as the 4th parameter in the chroot creation process.
 This allows for use of custom debootstrap hook script.
+
+.B "A<digit><digit><whatever-else-you-want>"
+is for 
+.B build 
+target. 
+It is executed before build starts, after
+unpacking the build system, and unpacking the source.
+
+.B "B<digit><digit><whatever-else-you-want>"
+is executed after build system finishes building,
+successfully, before copying back the build result.
+
+.B "C<digit><digit><whatever-else-you-want>"
+is executed after build fails, before cleanup.
 
 .TP
 .BI "--debemail [" "email-address" "]"
