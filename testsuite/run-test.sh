@@ -6,7 +6,7 @@ PBUILDER=/usr/sbin/pbuilder
 
 vmstat -n 1 > vmstat &
 VMSTATPID=$!
-LC_ALL=C iostat -dxt hda > iostat & 
+LC_ALL=C iostat -dxt hda 1 > iostat & 
 IOSTATPID=$!
 
 if [ -x "${PBUILDER}" ]; then
