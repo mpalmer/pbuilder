@@ -1,8 +1,10 @@
-pbuilder (0.86) UNRELEASED; urgency=low
+pbuilder (0.86) unstable; urgency=low
 
   * check if /etc/hosts etc. exist before trying to readlink and cp.
+  * Use force-confnew option of dpkg to make upgrade noninteractive
+    if DEBIAN_FRONTEND=noninteractive. (closes: #208602)
 
- -- Junichi Uekawa <dancer@debian.org>  Tue,  2 Sep 2003 22:02:46 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Thu,  4 Sep 2003 08:07:32 +0900
 
 pbuilder (0.85) unstable; urgency=low
 

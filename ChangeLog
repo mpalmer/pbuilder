@@ -1,3 +1,17 @@
+2003-09-04  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-modules: fix typo in file existence checking.
+
+	* debian/TODO:  how about passing "-o dpkg::Options=--force-confnew" to apt? is now done.
+	Request from Roland Stigge <ernie@atari.antcom.de>
+	to finally implement the missing feature.
+
+	* pbuilder-checkparams: set FORCE_CONFNEW array variable if 
+	DEBIAN_FRONTEND is noninteractive to allow non-interactive install.
+
+	* pbuilder-updatebuildenv: use FORCE_CONFNEW variable to 
+	give force-confnew option to DPKG
+
 2003-09-02  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-modules: check if etc/hosts etc. exists before trying to 

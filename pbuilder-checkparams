@@ -201,6 +201,12 @@ case "$PBCURRENTCOMMANDLINEOPERATION" in
 # line from kobras@debian.org
 	if [ "$DEBIAN_FRONTEND" = "noninteractive" -o "$DEBIAN_FRONTEND" = "Noninteractive" ]; then
 	    exec < /dev/null
+
+	    # set variables used in the upgrade option.
+	    FORCE_CONFNEW[0]='-o'
+	    FORCE_CONFNEW[1]='DPkg::Options::=--force-confnew'
+	else
+	    unset FORCE_CONFNEW
 	fi
 	;;
 esac

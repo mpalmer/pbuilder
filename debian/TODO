@@ -2,7 +2,9 @@ TODO and possible bugs:
 
 * BUG: Too many options! Creeping featurism!!
 
-* Fix pbuilder-user-mode-linux bind-mount, it probably needs to be done via hostfs for better performance, and space-handling in shell.
+* Fix pbuilder-user-mode-linux bind-mount, 
+   -  Use hostfs for better performance, 
+   -  fix space-handling in, use arrays
 
 * Build dependency handles |, but not when [] and | exist. -- no package should be using it ?
 
@@ -19,12 +21,13 @@ TODO and possible bugs:
    - putting example scripts.
          
 * Supporting really automatic/noninteractive "pbuilder upgrade"
-   - how about passing "-o dpkg::Options=--force-confnew" to apt? and also making "start-stop-daemon" to be a dummy script?  (shouldn't be necessary because the config files won't be overwritten?).
+   - making "start-stop-daemon" to be a dummy script?
    - using policy-rc.d ? Get people to use invoke-rc.d?
    - Killing any processes that are left over ? 
    - user-mode-linux is noninteractive, it no longer umounts.
 
 * $HOME, $TMP, $TMPDIR, etc. environment vars are set to bogus values
+* set LOGNAME=root ?
 
 * check cross-compile support, maybe adding support for dpkg-cross into build-depends checker?
 
