@@ -723,6 +723,17 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	<filename>examples/D10tmp</filename> with pbuilder.
       </para>
     </sect1>
+    <sect1 id="DISTRIBUTIONSWITCH">
+      <title>Creating shortcut for running pbuilder with specific distribution</title>
+      <para>
+	When working with multiple chroots, it would be nice to work with 
+	scripts that facilitate the amount of typing.
+	An example script 
+	<filename>pbuilder-distribution.sh</filename> is provided as an example.
+	Invoking the script as <filename>pbuilder-woody</filename> will invoke
+	pbuilder for woody chroot.
+      </para>
+    </sect1>
     <sect1>
       <title>Using special apt sources list other than the default</title>
       <para>

@@ -34,6 +34,7 @@ PKG_SOURCENAME=$(dpkg-parsechangelog|sed -n 's/^Source: //p')
 PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')
 ARCHITECTURE=$(dpkg-architecture -qDEB_HOST_ARCH)
 
+
 if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
     if [ ! readlink -f .. ]; then
 	echo "E: Cannot find .. dir from PWD=$(pwd)"
@@ -41,6 +42,9 @@ if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
     fi
     pbuilder-user-mode-linux execute "$@" --bindmounts $(readlink -f ..) /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}"
 else
+    if [ ! dpkg-checkbuilddeps -B ]; then
+	echo "W: Unmet build-dependency in source"
+    fi
     dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} $DEBBUILDOPTS
     pbuilder-user-mode-linux build "$@" --buildresult "${UML_BUILDRESULT}" --debbuildopts "${DEBBUILDOPTS}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
 fi
