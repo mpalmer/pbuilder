@@ -74,6 +74,15 @@ The format is something like:
 .I "http://http.us.debian.org/debian" 
 which should point to your favorite mirror.
 .TP
+.BI "--nonusmirror [" "mirror location" "]"
+The non-US mirror, specified like the 
+.B "--mirror"
+option
+.TP
+.BI "--othermirror [" "apt deb line " "|" " other deb lines... " "]"
+The lines which is added to the sources.list, delimited with 
+.B "|"
+.TP
 .BI "--http-proxy [" "proxy" "]"
 Specifies the http proxy url. Something like
 .B "http://xxx.xxx.xxx.xxx:8080/"

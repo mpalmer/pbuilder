@@ -22,6 +22,14 @@ while [ -n "$1" ]; do
 	    MIRRORSITE="$2";
 	    shift; shift;
 	    ;;
+	--nonusmirror)
+	    NONUSMIRRORSITE="$2";
+	    shift; shift;
+	    ;;
+	--othermirror)
+	    OTHERMIRROR="$3";
+	    shift; shift;
+	    ;;
 	--http-proxy)
 	    export http_proxy="$2";
 	    shift; shift;

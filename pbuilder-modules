@@ -29,6 +29,8 @@ Operation Options:
  --basetgz [base.tgz location]
  --buildplace [location of build]
  --mirror [mirror location]
+ --nonusmirror [non-US mirror location]
+ --othermirror [other mirror location in apt deb-line format, delimited with | signs]
  --http-proxy [proxy]
  --distribution [distribution(potato/woody/sid)]
  --buildresult [location-to-copy-build-result]
@@ -66,10 +68,27 @@ function abortingfunction () {
 
 function installaptlines (){
     echo Installing apt-lines
-    cat > "$BUILDPLACE"/etc/apt/sources.list << EOF
+    rm "$BUILDPLACE"/etc/apt/sources.list
+    test -n "$DISTRIBUTION" && (
+	echo "Distribution not specified, please specify" >&2
+	exit 1
+    )
+    if [ -n "$MIRRORSITE" ] then 
+	cat >> "$BUILDPLACE"/etc/apt/sources.list << EOF
 deb $MIRRORSITE $DISTRIBUTION main contrib non-free
 deb-src $MIRRORSITE $DISTRIBUTION main contrib non-free
 EOF
+    fi
+    if [ -n "$NONUSMIRRORSITE" ] then 
+	cat >> "$BUILDPLACE"/etc/apt/sources.list << EOF
+deb $NONUSMIRRORSITE $DISTRIBUTION/non-US main contrib non-free
+deb-src $NONUSMIRRORSITE $DISTRIBUTION/non-US main contrib non-free
+EOF
+    fi
+    if [ -n "$OTHERMIRROR" ] then 
+	echo "$OTHERMIRROR" | tr "|" "\n" >> "$BUILDPLACE"/etc/apt/sources.list 
+    fi
+    
 }
 
 function extractbuildplace () {
