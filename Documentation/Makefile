@@ -13,3 +13,8 @@ all: pbuilder-doc.html
 # for my homepage-publishing.
 release-netfort: pbuilder-doc.html pbuilder-doc.xml
 	cp $^ ~/public_html/netfort/software/pbuilder-doc/
+
+
+install: pbuilder-doc.html
+	install -d -m 755 -o root -g root $(DESTDIR)/usr/share/doc/pbuilder/
+	install -m 644 -o root -g root pbuilder-doc.html $(DESTDIR)/usr/share/doc/pbuilder/

@@ -2,17 +2,23 @@
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "docbookx.dtd"> 
 <!-- the original of this documentation is in pbuilder source tarball -->
 <book>
-  <title>pbuilder User's manual</title>
+  <title>pbuilder User's Manual</title>
   <chapter>
     <title>Introducing pbuilder</title>
     <sect1>
       <title>Aims of pbuilder</title>
       <para>
+	<command>pbuilder</command> stands for 
+	Personal Builder, and it is a automatic Debian Package Building system
+	for personal environments.
 	<command>pbuilder</command> aims to be an 
 	easy-to-setup system
 	for auto-building Debian packages inside a clean-room
 	environment, so that it is possible to verify that
 	a package can be built on most Debian installations.
+	Clean-room environment is achieved through use of a chroot image,
+	so that only minimal packages will be installed inside the
+	chroot.
       </para>
       <para>
 	Debian distribution consists of free software
@@ -30,10 +36,18 @@
 	worst choice of all if there was a choice to be made.
       </para>
       <para>
-	In this way, pbuilder tries to ensure that packages 
-	tested against pbuilder will be able to build in 
+	In this way, <command>pbuilder</command> tries to ensure 
+	that packages 
+	tested against pbuilder will build in 
 	most Debian environments, hopefully resulting
 	in a good overall Debian source-buildability.
+      </para>
+      <para>
+	The goal of making Debian buildable from source is 
+	somewhat achieved, and has progressed well.
+	It is known that Debian 3.0 is not quite 
+	buildable from source, but the next version should 
+	be better.
       </para>
     </sect1>
   </chapter>
@@ -313,6 +327,79 @@
 	  http://www.netfort.gr.jp/~dancer/software/pbuilder.html
 	</ulink>
       </para>
+    </sect1>
+    <sect1>
+      <title>Inaccurate Background of pbuilder</title>
+      <para>
+	The following is most possibly inaccurate account of how 
+	pbuilder happened to come, and other attempts to 
+	make something like pbuilder to happen.
+      </para>
+      <sect2>
+	<title>The Time Before PBuilder</title>
+	<para>
+	  There were dbuild, which was a shell script to build
+	  Debian packages from source. Lars Wirzenius wrote that 
+	  script, and it was good, short, and simple (probably).
+	  There was nothing like build-depends then (I think), and it was simple.
+	  It could have been improved, I don't have the source off-hand.
+	</para>
+	<para>
+	  debbuild was probably written by James Troup. I don't know it 
+	  because I have never seen the actual code, I could only find some
+	  references to it on the net, and mailing list logs.
+	</para>
+	<para>
+	  sbuild is a perl script to build Debian package from source.
+	  It parses Build-Dependency, and performs other misc checks,
+	  and has a lot of hacks to actually get things building,
+	  including a table of what package to use when virtual packages are
+	  specified (does it do that still?).
+	  It supports use of local database for packages which do not 
+	  have build-dependency. It was written by Ronan Hodek, 
+	  and I think it was patched and fixed and extended by
+	  several people. It is part of wanna-build, and used extensively
+	  in Debian buildd system. I think it was maintained
+	  mostly by Ryan Murray.
+	</para>
+      </sect2>
+      <sect2>
+	<title>Birth of PBuilder</title>
+	<para>
+	  wanna-build (sbuild) was quite difficult to set up, and it was 
+	  never a Debian package. dbuild was something that predated
+	  Build-Depends.
+	</para>
+	<para>
+	  Building package from source using Build-Depends 
+	  information within a chroot sounded trivial; and 
+	  pbuilder was born. It was initially a shell script
+	  with only a few lines, which called debootstrap
+	  and chroot and dpkg-buildpackage in the same run,
+	  but soon, it was decided that's too slow.
+	</para>
+	<para>
+	  Yes, and it took almost an year to get things somewhat 
+	  right, and in the middle of the process, Debian 3.0
+	  was released. Yay.
+	  Debian 3.0 wasn't completely buildable with pbuilder,
+	  but the amount of packages which are not buildable
+	  are steadily decreasing. (I hope)
+	</para>
+      </sect2>
+      <sect2>
+	<title>And the second year of its life</title>
+	<para>
+	  And someone wanted pbuilder to run as not root,
+	  and User-mode-linux has become more useful as time passed,
+	  I've started experimenting with pbuilder-uml.
+	  pbuilder-uml has not been able to run as often as it should,
+	  and bootstrapping user-mode-linux environment has been
+	  pretty hard.
+	</para>
+      </sect2>
+
+
     </sect1>
   </chapter>
 </book>
