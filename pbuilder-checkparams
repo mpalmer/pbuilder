@@ -1,7 +1,7 @@
 #! /bin/bash 
 # this is sourced from pbuilder packages to process the optional parameters.
 
-for RCFILE in /usr/share/pbuilder/pbuilderrc /etc/pbuilderrc; do
+for RCFILE in /usr/share/pbuilder/pbuilderrc /etc/pbuilderrc ${HOME}/.pbuilderrc; do
     if [ -f "$RCFILE" ]; then 
 	. "$RCFILE"
     else
@@ -82,7 +82,8 @@ while [ -n "$1" ]; do
 	    shift; shift;
 	    ;;
 	--logfile)
-	    exec 2>&1 > $(readlink -f "$2");
+	    exec > $(readlink -f "$2");
+	    exec 2>&1
 	    shift; shift;
 	    ;;
 	--help)

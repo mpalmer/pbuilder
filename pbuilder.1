@@ -73,7 +73,7 @@ updating and creation takes place. This is
 a temporary work directory.
 .TP
 .BI "--buildresult [" "location to put build result" "]"
-Specifiees the location the build result gets into after building.
+Specifies the location the build result gets into after building.
 The deb files and other files that have resulted from build 
 is copied there.
 .TP
@@ -204,7 +204,13 @@ standard output.
 .SH "FILES"
 .TP
 .I "/etc/pbuilderrc"
-The configuration file for pbuilder.
+The system-wide configuration file for pbuilder.
+.TP
+.I "/usr/share/pbuilder/pbuilderrc"
+The default settings for pbuilder, used as fallback.
+.TP
+.I "${HOME}/.pbuilderrc"
+The personal configuration file for pbuilder.
 .SH BUGS
 This program is starting to have too many options already.
 .SH AUTHOR
