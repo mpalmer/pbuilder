@@ -3,6 +3,7 @@
 # Copyright 2001 Junichi Uekawa
 #Distributed under GPL version 2 or later
 
+set -e 
 
 test -z "$1" && (
     . /usr/lib/pbuilder/pbuilder-modules
@@ -25,9 +26,9 @@ case "$1" in
     clean)
 	. /etc/pbuilderrc
 	echo "Cleaning [$BUILDPLACE]"
-	test -n "$BUILDPLACE" && rm -rf "$BUILDPLACE"/*
+	test -n "$BUILDPLACE" && rm -rf "$BUILDPLACE"/* || true
 	echo "Cleaning [$APTCACHE]"
-	test -n "$APTCACHE" && rm -rf "$APTCACHE"/*
+	test -n "$APTCACHE" && rm -rf "$APTCACHE"/* || true
 	;;
     login)
 	shift 
@@ -37,6 +38,12 @@ case "$1" in
 	chroot "$BUILDPLACE" bin/bash
 	umountproc
 	cleanbuildplace
+	;;
+    debuild) # undocumented untested code.
+	shift;
+	. /usr/lib/pbuilder/pbuilder-checkparams
+	$BUILDSOURCEROOTCMD dpkg-buildpackage -S || true
+	$PBUILDERROOTCMD pbuilder build ../$(dpkg-parsechangelog|grep ^Source:| cut -d\  -f2 )_$(dpkg-parsechangelog|grep ^Version: | cut -d\  -f2).dsc
 	;;
     *)
 	. /usr/lib/pbuilder/pbuilder-modules
