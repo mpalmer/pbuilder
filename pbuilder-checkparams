@@ -63,7 +63,7 @@ while [ -n "$1" ]; do
 	    if [ -n '' ]; then
 		BUILDRESULT=$(readlink -f "$2");
 	    else
-		: # support empty case
+		BUILDRESULT=
 	    fi
 	    shift; shift;
 	    ;;
