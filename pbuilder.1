@@ -141,6 +141,16 @@ does not invoke the hooks if
 is empty, so if you want to avoid running hooks,
 run pbuilder with
 .B "--hookdir """""
+.PP
+If there is a distribution hook, for example, if 
+there was a file 
+.B "sid"
+inside the hook directory, and the script was creating the 
+chroot for
+.B "sid"
+distribution, pbuilder will call debootstrap with that 
+as the 4th parameter in the chroot creation process.
+This allows for use of custom debootstrap hook script.
 .SH "FILES"
 .TP
 .I "/etc/pbuilderrc"

@@ -18,6 +18,9 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.8  2001/10/12 15:54:32  dancer
+# diff
+#
 # Revision 1.7  2001/09/27 11:04:54  dancer
 # removing comment
 #
@@ -50,7 +53,7 @@
 #
 #==========================================================================
 
-hooks=/tmp/hooks
+hooks=tmp/hooks
 
 #==========================================================================
 # Set up fresh chroot'd hooks tmp script directory
@@ -61,7 +64,12 @@ function loadhooks () {
 	rm -rf "$BUILDPLACE/$hooks"
     fi
     if [ -d "$HOOKDIR" ]; then
-	cp -a "$HOOKDIR" "$BUILDPLACE/tmp/"
+	mkdir -p "$BUILDPLACE/tmp/hooks"
+	cp -a "$HOOKDIR/*" "$BUILDPLACE/$hooks"
+    fi
+    if [ -f "$BUILDPLACE/$hooks/$DISTRIBUTION" ]; then
+	DEBOOTSTRAPSCRIPT=/"$hooks/$DISTRIBUTION"
+	echo "  -> Applying user distribution dist build script $DEBOOTSTRAPSCRIPT"
     fi
 }
 
