@@ -409,8 +409,239 @@ export DEBIAN_BUILDGCCVER=3.2
       </para>
     </sect1>
   </chapter>
+
+  <chapter id="pbuilder-uml">
+    <title>Using User-mode-linux with pbuilder</title>
+    <para>
+      <command>pbuilder-uml</command> exists.
+      Invoking that command instead of <command>pbuilder</command>
+      it is possible to use user-mode-linux.
+      The advantage of using user-mode-linux is that 
+      it does not require root privilege to run,
+      and it does Copy-on-write, which is probably  much faster than
+      conventional pbuilder method.
+    </para>
+    <para>
+      The problem is that this relies on User-mode-linux
+      which is a relatively new project, and has not quite
+      matured, as opposed to conventional pbuilder which rely 
+      on <command>chroot</command> and <command>tar</command> 
+      and <command>gzip</command>, which are known to work
+      on most Unix systems.
+      However, <command>pbuilder-uml</command>  uses COW method for 
+      file access, and it is so much more faster than pbuilder 
+      when building most packages.
+    </para>
+    <para>
+      It has been verified that pbuilder-uml works,
+      as of version 0.59.
+      And since then, pbuilder-uml has seen a rapid evolution.
+      The configuration of pbuilder-uml goes in three steps:
+      <itemizedlist>
+	<listitem>
+	  <para>Configuration of user-mode-linux</para>
+	</listitem>
+	<listitem>
+	  <para>Configuration of rootstrap</para>
+	</listitem>
+	<listitem>
+	  <para>Configuration of pbuilder-uml</para>
+	</listitem>
+      </itemizedlist>
+    </para>
+    <sect1 id="user-mode-linux-config">
+      <title>Configuring user-mode-linux</title>
+      <para>
+	<command>user-mode-linux</command> requires 
+	the user to be in uml-net group in order to configure the network 
+	unless you are using slirp.
+	Read <filename>/usr/share/doc/uml-utilities/README.Debian</filename>
+	for details.
+      </para>
+    </sect1>
+    <sect1 id="rootstrap">
+      <title>Configuring rootstrap</title>
+      <para>
+	<command>rootstrap</command> is a program that 
+	is a wrapper to debootstrap, creating a Debian disk image inside
+	UML.
+	To configure rootstrap, there are several requirements.
+      </para>
+      <itemizedlist>
+	<listitem>
+	  <para>install rootstrap package</para>
+	</listitem>
+	<listitem>
+	  <para>
+	    TUN/TAP only: 
+	    add the user to uml-net group to allow access to network
+	    <screen>
+adduser dancer uml-net
+	    </screen></para>
+	</listitem>
+	<listitem>
+	  <para>TUN/TAP only: 
+	    Check that compile supports tun/tap interface,
+	    and recompile the kernel if necessary
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>Set up /etc/rootstrap/rootstrap.conf, for example,
+	    if the current host is 192.168.1.2, changing following 
+	    entries to something like this seems to work.
+	    <screen>
+transport=tuntap
+interface=eth0
+gateway=192.168.1.1
+mirror=http://192.168.1.2:8081/debian
+host=192.168.1.198
+uml=192.168.1.199
+netmask=255.255.255.0
+	    </screen>
+	    Some experimentation with configuration and running
+	    <command>rootstrap ~/test.uml</command> to actually 
+	    test it would be handy.
+	  </para>
+	  <para>
+	    Using slirp requires less configuration. 
+	    The default configuration comes with a working example.
+	  </para>
+	</listitem>
+      </itemizedlist>
+    </sect1>
+    <sect1 id="pbuilderumlconfig">
+      <title>Configuring pbuilder-uml</title>
+      <para>
+	The following needs to happen:
+	<itemizedlist>
+	  <listitem>
+	    <para>install pbuilder-uml package</para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      Set configuration file <filename>/etc/pbuilder/pbuilder-uml.conf</filename> in the following manner. It will be different for slirp.
+	      <screen>
+MY_ETH0=tuntap,,,192.168.1.198
+UML_IP=192.168.1.199
+UML_NETMASK=255.255.255.0
+UML_NETWORK=192.168.1.0
+UML_BROADCAST=255.255.255.255
+UML_GATEWAY=192.168.1.1
+PBUILDER_UML_IMAGE="/home/dancer/uml-image"
+	      </screen>
+	      and it needs to match rootstrap configuration.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      Make sure BUILDPLACE is writable by the user.
+	      Change BUILDPLACE in the configuration file to a place
+	      where the user can access.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>Run <command>pbuilder-user-mode-linux create --distribution sid</command> to create the image</para>
+	  </listitem>
+	  <listitem>
+	    <para>Try running <command>pbuilder-user-mode-linux build </command></para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect1>
+    <sect1 id="consideruml">
+      <title>Considerations for running pbuilder-uml</title>
+      <para>
+	pbuilder-user-mode-linux emulates most of pbuilder, but there
+	are some differences.
+      </para>
+      <itemizedlist>
+	<listitem>
+	  <para>	  
+	    pbuilder-user-mode-linux does not support all options of pbuilder
+	    properly yet. This is a problem, and will be addressed as 
+	    specific areas are discovered.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>
+	    /tmp is handled differently inside pbuilder-uml.
+	    In pbuilder-uml, /tmp is mounted as tmpfs inside UML,
+	    so accessing files under /tmp from outside the user-mode-linux
+	    does not work.
+	    It affects options like
+	    <command><option>--configfile</option></command>,
+	    and when trying to build packages placed under <filename>/tmp</filename>.
+	  </para>
+	</listitem>
+      </itemizedlist>
+    </sect1>
+    <sect1 id="paralleluml">
+      <title>Parallel running of pbuilder-user-mode-linux</title>
+      <para>
+	To run pbuilder-uml parallel on a system, there are a few things 
+	to bear in mind.
+      </para>
+      <itemizedlist>
+	<listitem>
+	  <para>create and update methods must not be ran when build is in progress, or COW file will be invalid</para>
+	</listitem>
+	<listitem>
+	  <para>
+	    If you are not using slirp, UML processes that are running in parallel needs to have 
+	    different IP addresses.
+	    So, something like the following will work, 
+	    <command>for IP in 102 103 104 105; do xterm -e  pbuilder-user-mode-linux build --uml-ip 192.168.0.$IP 20030107/whizzytex_1.1.1-1.dsc&amp; done 
+	    </command>
+	    but just trying to run <command>pbuilder-uml</command> 
+	    several times will result in failure to access the network.
+	    When using slirp, this problem does not exist.
+	  </para>
+	</listitem>
+      </itemizedlist>
+    </sect1>
+    <sect1 id="pbuilderumlwrap">
+      <title>Using pbuilder-uml as a wrapper script to start up virtual machine</title>
+      <para>
+	It is possible to use pbuilder-uml for other uses than just building Debian 
+	packages.
+	<command>pbuilder-user-mode-linux login</command>
+	will let a user use a shell inside the user-mode-linux using the 
+	pbuilder base image,
+	and <command>pbuilder-user-mode-linux execute</command> will
+	allow the user to execute a script inside the chroot.
+      </para>
+      <para>
+	You can use the script to install ssh and add a new user,
+	so that it is possible to access inside the UML through ssh.
+      </para>
+      <para>
+	Note that it is not possible to use a script from 
+	<filename>/tmp</filename> due to the way pbuilder-uml mounts 
+	tmpfs at <filename>/tmp</filename>.
+      </para>
+      <para>
+	The following is an example script  that may be useful in starting a sshd 
+	inside uml.
+      </para>
+      <screen>
+#!/bin/bash
+
+apt-get install -y ssh xbase-clients xterm
+echo "enter root password"
+passwd 
+cp /etc/ssh/sshd_config{,-}
+cat /etc/ssh/sshd_config- | sed 's/X11Forwarding.*/X11Forwarding yes/' &gt; /etc/ssh/sshd_config
+
+/etc/init.d/ssh restart
+ifconfig
+echo "Hit enter to finish"
+read
+      </screen>
+    </sect1>
+  </chapter>
   <chapter id="faq">
-    <title>Frequently asked questions</title>
+    <title>Frequently asked questions </title>
+    <!-- Start of FAQ -->
     <para>
       Here, known problems and frequently asked questions are
       documented. This portion was initially available in README.Debian
@@ -592,6 +823,19 @@ export DEBIAN_BUILDGCCVER=3.2
 	This is not a problem on User-mode-linux.
       </para>
     </sect1>
+    <sect1 id="faqslowpbuilder">
+      <title>pbuilder is slow</title>
+      <para>
+	pbuilder is often slow. The slowest part of pbuilder is extracting of tar.gz every time 
+	pbuilder is invoked. That can be avoided by using <command>pbuilder-user-mode-linux</command>.
+	<command>pbuilder-user-mode-linux</command> uses 
+	COW filesystem, and thus does not need to clean up and recreate the root filesystem.
+      </para>
+      <para>
+	pbuilder-user-mode-linux is slower in executing the actual build system, due to the 
+	usual user-mode-linux overhead for system calls. It is more friendly to the hard drive.
+      </para>
+    </sect1>
     <!-- end of FAQ -->
   </chapter>
   <chapter id="otheruse">
@@ -635,235 +879,6 @@ export DEBIAN_BUILDGCCVER=3.2
       There are some advanced features, above that of the 
       basic feature of pbuilder, for some specific purposes.
     </para>
-    <sect1 id="pbuilder-uml">
-      <title>Using User-mode-linux</title>
-      <para>
-	<command>pbuilder-uml</command> exists.
-	Invoking that command instead of <command>pbuilder</command>
-	it is possible to use user-mode-linux.
-	The advantage of using user-mode-linux is that 
-	it does not require root privilege to run,
-	and it does Copy-on-write, which is probably  much faster than
-	conventional pbuilder method.
-      </para>
-      <para>
-	The problem is that this relies on User-mode-linux
-	which is a relatively new project, and has not quite
-	matured, as opposed to conventional pbuilder which rely 
-	on <command>chroot</command> and <command>tar</command> 
-	and <command>gzip</command>, which are known to work
-	on most Unix systems.
-	However, <command>pbuilder-uml</command>  uses COW method for 
-	file access, and it is so much more faster than pbuilder 
-	when building most packages.
-      </para>
-      <para>
-	It has been verified that pbuilder-uml works,
-	as of version 0.59.
-	And since then, pbuilder-uml has seen a rapid evolution.
-	The configuration of pbuilder-uml goes in three steps:
-	<itemizedlist>
-	  <listitem>
-	    <para>Configuration of user-mode-linux</para>
-	  </listitem>
-	  <listitem>
-	    <para>Configuration of rootstrap</para>
-	  </listitem>
-	  <listitem>
-	    <para>Configuration of pbuilder-uml</para>
-	  </listitem>
-	</itemizedlist>
-      </para>
-      <sect2 id="user-mode-linux-config">
-	<title>Configuring user-mode-linux</title>
-	<para>
-	  <command>user-mode-linux</command> requires 
-	  the user to be in uml-net group in order to configure the network 
-	  unless you are using slirp.
-	  Read <filename>/usr/share/doc/uml-utilities/README.Debian</filename>
-	  for details.
-	</para>
-      </sect2>
-      <sect2 id="rootstrap">
-	<title>Configuring rootstrap</title>
-	<para>
-	  <command>rootstrap</command> is a program that 
-	  is a wrapper to debootstrap, creating a Debian disk image inside
-	  UML.
-	  To configure rootstrap, there are several requirements.
-	</para>
-	<itemizedlist>
-	  <listitem>
-	    <para>install rootstrap package</para>
-	  </listitem>
-	  <listitem>
-	    <para>
-	      TUN/TAP only: 
-	      add the user to uml-net group to allow access to network
-	      <screen>
-adduser dancer uml-net
-	      </screen></para>
-	  </listitem>
-	  <listitem>
-	    <para>TUN/TAP only: 
-	      Check that compile supports tun/tap interface,
-	      and recompile the kernel if necessary
-	    </para>
-	  </listitem>
-	  <listitem>
-	    <para>Set up /etc/rootstrap/rootstrap.conf, for example,
-	      if the current host is 192.168.1.2, changing following 
-	      entries to something like this seems to work.
-	      <screen>
-transport=tuntap
-interface=eth0
-gateway=192.168.1.1
-mirror=http://192.168.1.2:8081/debian
-host=192.168.1.198
-uml=192.168.1.199
-netmask=255.255.255.0
-	      </screen>
-	      Some experimentation with configuration and running
-	      <command>rootstrap ~/test.uml</command> to actually 
-	      test it would be handy.
-	    </para>
-	    <para>
-	      Using slirp requires less configuration. 
-	      The default configuration comes with a working example.
-	    </para>
-	  </listitem>
-	</itemizedlist>
-      </sect2>
-      <sect2 id="pbuilderumlconfig">
-	<title>Configuring pbuilder-uml</title>
-	<para>
-	  The following needs to happen:
-	  <itemizedlist>
-	    <listitem>
-	      <para>install pbuilder-uml package</para>
-	    </listitem>
-	    <listitem>
-	      <para>
-		Set configuration file <filename>/etc/pbuilder/pbuilder-uml.conf</filename> in the following manner. It will be different for slirp.
-		<screen>
-MY_ETH0=tuntap,,,192.168.1.198
-UML_IP=192.168.1.199
-UML_NETMASK=255.255.255.0
-UML_NETWORK=192.168.1.0
-UML_BROADCAST=255.255.255.255
-UML_GATEWAY=192.168.1.1
-PBUILDER_UML_IMAGE="/home/dancer/uml-image"
-		</screen>
-		and it needs to match rootstrap configuration.
-	      </para>
-	    </listitem>
-	    <listitem>
-	      <para>
-		Make sure BUILDPLACE is writable by the user.
-		Change BUILDPLACE in the configuration file to a place
-		where the user can access.
-	      </para>
-	    </listitem>
-	    <listitem>
-	      <para>Run <command>pbuilder-user-mode-linux create --distribution sid</command> to create the image</para>
-	    </listitem>
-	    <listitem>
-	      <para>Try running <command>pbuilder-user-mode-linux build </command></para>
-	    </listitem>
-	  </itemizedlist>
-	</para>
-      </sect2>
-      <sect2 id="consideruml">
-	<title>Considerations for running pbuilder-uml</title>
-	<para>
-	  pbuilder-user-mode-linux emulates most of pbuilder, but there
-	  are some differences.
-	</para>
-	<itemizedlist>
-	  <listitem>
-	    <para>	  
-	      pbuilder-user-mode-linux does not support all options of pbuilder
-	      properly yet. This is a problem, and will be addressed as 
-	      specific areas are discovered.
-	    </para>
-	  </listitem>
-	  <listitem>
-	    <para>
-	      /tmp is handled differently inside pbuilder-uml.
-	      In pbuilder-uml, /tmp is mounted as tmpfs inside UML,
-	      so accessing files under /tmp from outside the user-mode-linux
-	      does not work.
-	      It affects options like
-	      <command><option>--configfile</option></command>,
-	      and when trying to build packages placed under <filename>/tmp</filename>.
-	    </para>
-	  </listitem>
-	</itemizedlist>
-      </sect2>
-      <sect2 id="paralleluml">
-	<title>Parallel running of pbuilder-user-mode-linux</title>
-	<para>
-	  To run pbuilder-uml parallel on a system, there are a few things 
-	  to bear in mind.
-	</para>
-	<itemizedlist>
-	  <listitem>
-	    <para>create and update methods must not be ran when build is in progress, or COW file will be invalid</para>
-	  </listitem>
-	  <listitem>
-	    <para>
-              If you are not using slirp, UML processes that are running in parallel needs to have 
-	      different IP addresses.
-	      So, something like the following will work, 
-	      <command>for IP in 102 103 104 105; do xterm -e  pbuilder-user-mode-linux build --uml-ip 192.168.0.$IP 20030107/whizzytex_1.1.1-1.dsc&amp; done 
-	      </command>
-	      but just trying to run <command>pbuilder-uml</command> 
-	      several times will result in failure to access the network.
-              When using slirp, this problem does not exist.
-	    </para>
-	  </listitem>
-	</itemizedlist>
-      </sect2>
-      <sect2 id="pbuilderumlwrap">
-	<title>Using pbuilder-uml as a wrapper script to start up virtual machine</title>
-	<para>
-	  It is possible to use pbuilder-uml for other uses than just building Debian 
-	  packages.
-	  <command>pbuilder-user-mode-linux login</command>
-	  will let a user use a shell inside the user-mode-linux using the 
-	  pbuilder base image,
-	  and <command>pbuilder-user-mode-linux execute</command> will
-	  allow the user to execute a script inside the chroot.
-	</para>
-	<para>
-	  You can use the script to install ssh and add a new user,
-	  so that it is possible to access inside the UML through ssh.
-	</para>
-	<para>
-	  Note that it is not possible to use a script from 
-	  <filename>/tmp</filename> due to the way pbuilder-uml mounts 
-	  tmpfs at <filename>/tmp</filename>.
-	</para>
-	<para>
-	  The following is an example script  that may be useful in starting a sshd 
-	  inside uml.
-	</para>
-	<screen>
-#!/bin/bash
-
-apt-get install -y ssh xbase-clients xterm
-echo "enter root password"
-passwd 
-cp /etc/ssh/sshd_config{,-}
-cat /etc/ssh/sshd_config- | sed 's/X11Forwarding.*/X11Forwarding yes/' &gt; /etc/ssh/sshd_config
-
-/etc/init.d/ssh restart
-ifconfig
-echo "Hit enter to finish"
-read
-	</screen>
-      </sect2>
-    </sect1>
     <sect1 id="lvm">
       <title>Using LVM</title>
       <para>
