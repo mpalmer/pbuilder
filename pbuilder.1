@@ -84,6 +84,8 @@ option
 .BI "--othermirror [" "apt deb line " "|" " other deb lines... " "]"
 The lines which is added to the sources.list, delimited with 
 .B "|"
+Like 
+.B "deb http://local/mirror stable main|deb file:/usr/local/mirror ./"
 .TP
 .BI "--http-proxy [" "proxy" "]"
 Specifies the http proxy url. Something like
@@ -103,10 +105,26 @@ Use this option to remove potentially dangerous or undesirable
 packages, like
 .B "lilo"
 which nobody will need to have inside a chroot.
+
+Packages should be specified in a space-delimited manner, 
+surrounded in double quotations, like 
+.B """lilo gcc mawk"""
+
+.TP
+.BI "--extrapackages [" "packages to add" "]"
+Adds packages specified as an addition to the default,
+which is 
+.B build-essential
+
+.TP
+.BI "--configfile [" "configuration file to load" "]"
+Loads the configuration file.
 .SH "FILES"
 .TP
 .I "/etc/pbuilderrc"
 The configuration file for pbuilder.
+.SH BUGS
+This program is starting to have too many options already.
 .SH AUTHOR
 Junichi Uekawa <dancer@debian.org>
 .SH "SEE ALSO"

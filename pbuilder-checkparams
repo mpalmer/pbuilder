@@ -46,6 +46,14 @@ while [ -n "$1" ]; do
 	    REMOVEPACKAGES="$2";
 	    shift; shift;
 	    ;;
+	--configfile)
+	    . "$2";
+	    shift; shift; 
+	    ;;
+	--extrapackages)
+	    EXTRAPACKAGES="$2";
+	    shift; shift;
+	    ;;
 	--help)
 	    showhelp
 	    ;;
