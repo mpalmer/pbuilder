@@ -515,6 +515,28 @@ PBUILDER_UML_IMAGE="/home/dancer/uml-image"
 	  </itemizedlist>
 	</para>
       </sect2>
+      <sect2>
+	<title>Parallel running of pbuilder-user-mode-linux</title>
+	<para>
+	  To run pbuilder-uml parallel on a system, there are a few things 
+	  to bear in mind.
+	</para>
+	<itemizedlist>
+	  <listitem>
+	    <para>create and update methods must not be ran when build is in progress, or COW file will be invalid</para>
+	  </listitem>
+	  <listitem>
+	    <para>UML processes that are running in parallel needs to have 
+	      different IP addresses.
+	      So, something like the following will work, 
+	      <command>for IP in 102 103 104 105; do xterm -e  pbuilder-user-mode-linux build --uml-ip 192.168.0.$IP 20030107/whizzytex_1.1.1-1.dsc&amp; done 
+	      </command>
+	      but just trying to run <command>pbuilder-uml</command> 
+	      several times will result in failure to access the network.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
     </sect1>
     <sect1>
       <title>Using LVM</title>
