@@ -39,10 +39,14 @@ case "$1" in
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	extractbuildplace
 	trap umountproc_cleanbuildplace exit
-	echo " -> entering the shell
+	if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
+	    echo " -> entering the shell"
+	else
+	    echo " -> entering the shell
 DO NOT bind mount file system inside, they will be cleaned.
 File extracted to: $BUILDPLACE
 "
+	fi
 	chroot "$BUILDPLACE" bin/bash
 	;;
     execute)
