@@ -2,7 +2,6 @@
 # Creating the build environment with debootstrap.
 
 . /usr/lib/pbuilder/pbuilder-checkparams
-. /usr/lib/pbuilder/pbuilder-modules
 
 CHROOTEXEC="chroot $BUILDPLACE "
 if [ -z "$DISTRIBUTION" ]; then
@@ -19,7 +18,11 @@ if [ ! -d "$BUILDPLACE" ]; then
     exit 1
 fi
 echo " -> running debootstrap"
-( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE")
+( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE" || exit 1) || 
+(
+    echo "pbuilder: debootstrap failed" >&2
+    exit 1
+)
 echo " -> debootstrap finished"
 mkdir -p "$BUILDPLACE/tmp/buildd"
 echo " -> copying local configuration"
@@ -27,11 +30,8 @@ for a in passwd hosts hostname resolv.conf ; do
     cp -r /etc/$a "$BUILDPLACE/etc/";
 done
 
-echo " -> installing apt-lines"
-cat > "$BUILDPLACE/etc/apt/sources.list" << EOF
-deb $MIRRORSITE $DISTRIBUTION main contrib non-free
-deb-src $MIRRORSITE $DISTRIBUTION main contrib non-free
-EOF
+
+installaptlines
 
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"

@@ -2,6 +2,7 @@
 # this is sourced from pbuilder packages to process the optional parameters.
 
 . /etc/pbuilderrc
+. /usr/lib/pbuilder/pbuilder-modules
 
 # the default is to add a PID in the buildplace specified in the config file.
 BASEBUILDPLACE="$BUILDPLACE"
@@ -34,16 +35,7 @@ while [ -n "$1" ]; do
 	    shift; shift;
 	    ;;
 	--help)
-	    cat <<EOF
-Command Line Options:
- --basetgz [base.tgz location]
- --buildplace [location of build]
- --mirror [mirror location]
- --http-proxy [proxy]
- --distribution [distribution(woody/sid)]
- --buildresult [location-to-copy-build-result]
-EOF
-	    exit 1;
+	    showhelp
 	    ;;
 	--*)
 	    echo "Error: Unknown option [$1] was specified " >&2 

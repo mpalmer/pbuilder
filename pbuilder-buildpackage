@@ -103,11 +103,19 @@ extractbuildplace
 echo Copying source file
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 echo Extracting source
-$CHROOTEXEC /bin/bash -c "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"
+$CHROOTEXEC /bin/bash -c "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )" || (
+    echo pbuilder: Failed extracting the source >&2 
+    abortingfunction
+    exit 1;
+)
 echo Installing the build-deps
 checkbuilddep
 echo Building the package
-$CHROOTEXEC /bin/sh -c "(cd tmp/buildd/*/; dpkg-buildpackage)"
+$CHROOTEXEC /bin/bash -c "(cd tmp/buildd/*/; dpkg-buildpackage)" || (
+    echo pbuilder: Failed autobuilding of package >&2
+    abortingfunction
+    exit 1;    
+)
 
 umountproc
 
