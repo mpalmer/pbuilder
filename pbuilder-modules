@@ -107,7 +107,7 @@ function extractbuildplace () {
     mountproc
     mkdir -p "$BUILDPLACE/tmp/buildd"
     echo " -> copying local configuration"
-    for a in passwd hosts hostname resolv.conf; do 
+    for a in hosts hostname resolv.conf; do 
 	cp /etc/$a "$BUILDPLACE/etc/$a";
     done
     
