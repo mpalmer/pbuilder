@@ -169,7 +169,7 @@ function extractbuildplace () {
     mkdir -p "$BUILDPLACE/tmp/buildd"
     echo " -> copying/creating local configuration"
     for a in hosts hostname resolv.conf; do 
-	cp /etc/$a "$BUILDPLACE/etc/$a";
+	cp $( readlink -f /etc/$a ) "$BUILDPLACE/etc/$a";
     done
     hostname -f > "$BUILDPLACE/etc/mailname"
     
