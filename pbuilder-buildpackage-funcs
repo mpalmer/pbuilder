@@ -1,0 +1,69 @@
+#! /bin/bash
+#   pbuilder -- personal Debian package builder
+#   Copyright (C) 2001,2002 Junichi Uekawa
+#
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+# functions local to pbuilder-buildpackage
+
+function copydsc () {
+    local DSCFILE="$1"
+    local TARGET="$2"
+    for FILE in \
+      "$DSCFILE" \
+	$(cat "$DSCFILE" | \
+	awk 'BEGIN{p=0} /^$/ {p=0} /^.*:/ {p=0} {if (p){print "'$(dirname "$DSCFILE")'/" $3}} /^Files:/{p=1}' ) ; do
+	echo "    -> copying [$FILE]"
+        cp "$FILE" "$TARGET" ;
+    done
+}
+
+function checkbuilddep () {
+    if ! /usr/lib/pbuilder/pbuilder-satisfydepends --control "$BUILDPLACE/"tmp/buildd/*/debian/control --chroot "$BUILDPLACE" --binary-all ; then
+	echo "E: pbuilder-satisfydepends failed." >&2
+	saveaptcache_umountproc_cleanbuildplace
+	exit 1
+    fi
+    # install extra packages to the chroot
+    if [ -n "$EXTRAPACKAGES" ]; then 
+	$CHROOTEXEC usr/bin/apt-get -y install ${EXTRAPACKAGES}
+    fi
+}
+
+function echobacktime () {
+    echo "Current time: $(date)"
+    echo "pbuilder-time-stamp: $(date +%s)"
+}
+
+function showbuildbanner () {
+    # show some banners for building
+    echo "pbuilder-buildpackage/"$(dpkg --print-architecture) '$Id$'
+    echo "$1"
+    echo
+}
+
+function saveaptcache_umountproc_cleanbuildplace () {
+    # save the apt cache, and call umountproc_cleanbuildplace
+    save_aptcache
+    umountproc_cleanbuildplace
+}
+
+function createbuilduser () {
+    # create the build user
+    if [ -n "$SUTOUSER" ]; then
+	echo "$BUILDUSERNAME:x:$BUILDUSERID:$BUILDUSERID:,,,:/tmp/buildd:/bin/sh" >> $BUILDPLACE/etc/passwd
+	echo "$BUILDUSERNAME:*:$BUILDUSERID:" >> $BUILDPLACE/etc/group
+    fi
+}
