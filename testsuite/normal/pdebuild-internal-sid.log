@@ -34,8 +34,8 @@ Get:6 http://ring.asahi-net.or.jp sid/main debconf 1.4.28 [99.0kB]
 Get:7 http://ring.asahi-net.or.jp sid/main libssl0.9.7 0.9.7d-3 [2171kB]
 Get:8 http://ring.asahi-net.or.jp sid/main wget 1.9.1-4 [424kB]
 Get:9 http://ring.asahi-net.or.jp sid/main debootstrap 0.2.39 [62.1kB]
-Get:10 http://ring.asahi-net.or.jp sid/main pbuilder 0.105 [60.1kB]
-Fetched 2933kB in 0s (3712kB/s)
+Get:10 http://ring.asahi-net.or.jp sid/main pbuilder 0.106 [60.2kB]
+Fetched 2933kB in 0s (3825kB/s)
 Selecting previously deselected package liblocale-gettext-perl.
 (Reading database ... 7395 files and directories currently installed.)
 Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.01-17_i386.deb) ...
@@ -56,7 +56,7 @@ Unpacking wget (from .../archives/wget_1.9.1-4_i386.deb) ...
 Selecting previously deselected package debootstrap.
 Unpacking debootstrap (from .../debootstrap_0.2.39_i386.deb) ...
 Selecting previously deselected package pbuilder.
-Unpacking pbuilder (from .../pbuilder_0.105_all.deb) ...
+Unpacking pbuilder (from .../pbuilder_0.106_all.deb) ...
 Setting up liblocale-gettext-perl (1.01-17) ...
 Setting up libtext-iconv-perl (1.2-3) ...
 Setting up libtext-charwidth-perl (0.04-1) ...
@@ -69,7 +69,7 @@ Setting up libssl0.9.7 (0.9.7d-3) ...
 Setting up wget (1.9.1-4) ...
 
 Setting up debootstrap (0.2.39) ...
-Setting up pbuilder (0.105) ...
+Setting up pbuilder (0.106) ...
 Setting DEBBUILDOPTS=
  -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.18 2003/04/20 03:40:36 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
@@ -102,7 +102,7 @@ Get:9 http://ring.asahi-net.or.jp sid/main debhelper 4.2.11 [353kB]
 Get:10 http://ring.asahi-net.or.jp sid/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:11 http://ring.asahi-net.or.jp sid/main libdshconfig1-dev 0.20.11-1 [12.4kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 2477kB in 0s (4511kB/s)
+Fetched 2477kB in 0s (2688kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 7754 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.09-1_i386.deb) ...
@@ -426,8 +426,8 @@ success
 success
 d: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
-a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
+a: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -439,7 +439,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Wed Jun 16 15:52:21 UTC 2004
+Sat Jun 19 02:42:03 UTC 2004
 1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
@@ -509,7 +509,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Wed Jun 16 15:52:27 UTC 2004
+Sat Jun 19 02:42:09 UTC 2004
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -610,4 +610,4 @@ dpkg-buildpackage: full upload (original source is included)
  -> unmounting proc filesystem
  -> unmounting /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2 filesystem
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/28033 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/18465 and its subdirectories
