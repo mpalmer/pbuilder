@@ -1,5 +1,7 @@
 #!/bin/sh
 # This is a testsuite.
+# estimated run-time on my PC; 30 minutes.
+
 PBUILDER_UML=/usr/bin/pbuilder-user-mode-linux
 
 pbuilder-user-mode-linux test --configfile non-existing-configfile
