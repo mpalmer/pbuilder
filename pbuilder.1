@@ -87,6 +87,10 @@ update and build targets.
 The format is something like:
 .I "http://http.us.debian.org/debian" 
 which should point to your favorite mirror.
+
+This option can optionally be omitted, and left blank,
+in which case, this part is skipped.
+
 .TP
 .BI "--nonusmirror [" "mirror location" "]"
 The non-US mirror, specified like the 
@@ -98,6 +102,11 @@ The lines which is added to the sources.list, delimited with
 .B "|"
 Like 
 .B "deb http://local/mirror stable main|deb file:/usr/local/mirror ./"
+
+The deb lines here are the ones that will appear at the top of the 
+.B sources.list
+inside the chroot.
+
 .TP
 .BI "--http-proxy [" "proxy" "]"
 Specifies the http proxy url. Something like
