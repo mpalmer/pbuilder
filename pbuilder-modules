@@ -158,10 +158,11 @@ function extractbuildplace () {
     fi
     mountproc
     mkdir -p "$BUILDPLACE/tmp/buildd"
-    echo " -> copying local configuration"
+    echo " -> copying/creating local configuration"
     for a in hosts hostname resolv.conf; do 
 	cp /etc/$a "$BUILDPLACE/etc/$a";
     done
+    hostname -f > "$BUILDPLACE/etc/mailname"
     
     if [ -n "$DISTRIBUTION" ]; then
 	installaptlines

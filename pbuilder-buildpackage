@@ -205,6 +205,11 @@ function createbuilduser () {
 
 PACKAGENAME="$1"
 CHROOTEXEC="chroot $BUILDPLACE "
+if [ ! -f "$PACKAGENAME" ]; then
+    echo "Command line parameter [$PACKAGENAME] is not a valid .dsc file name" >&2
+    exit 1;
+fi;
+
 if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
     SUTOUSER="HOME=/tmp/buildd su - $BUILDUSERNAME -- "
     DEBBUILDOPTS="$DEBBUILDOPTS -rfakeroot"
@@ -215,10 +220,6 @@ else
     BUILDUSERID=0
     BUILDUSERNAME=root
 fi
-if [ ! -f "$PACKAGENAME" ]; then
-    echo "Command line parameter [$PACKAGENAME] is not a valid .dsc file name" >&2
-    exit 1;
-fi;
 
 showbuildbanner
 echobacktime

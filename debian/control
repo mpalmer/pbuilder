@@ -10,24 +10,20 @@ Architecture: all
 Depends: debootstrap (>= 0.1.16.2), wget, gcc
 Recommends: fakeroot, sudo
 Description: personal package builder for Debian packages
- Constructs a chroot system, and builds a package inside the 
- chroot.
- . 
- Ideal system to use to check that Build-dependency is correct, 
- and to be sure that unnecessary and wrong build dependency will not
- exist with the resulting binary package.
+ pbuilder constructs a chroot system, and builds a package inside the
+ chroot. It is an ideal system to use to check that a package's
+ build-dependencies are correct, and to be sure that unnecessary and
+ wrong build dependencies will not exist in the resulting package.
+ It uses apt extensively, and a local mirror, or a fast connection
+ to a Debian mirror is ideal, but not necessary.
  .
- pbuilder create uses debootstrap to create a chroot  image.
+ "pbuilder create" uses debootstrap to create a chroot image. 
  .
- pbuilder update updates the image to the current state of 
+ "pbuilder update" updates the image to the current state of
  testing/unstable/whatever
  .
- pbuilder build takes a *.dsc file to build a binary in the chroot 
+ "pbuilder build" takes a *.dsc file and builds a binary in the chroot
  image.
  .
- pdebuild is a wrapper for Debian Developers, to allow running 
- pbuilder just like "debuild", from a normal user privilege
- .
- Uses apt extensively, and a local mirror, or a fast connection
- to a Debian mirror is ideal, but not necessary.
-
+ pdebuild is a wrapper for Debian Developers, to allow running
+ pbuilder just like "debuild", as a normal user.
