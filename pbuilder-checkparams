@@ -26,6 +26,7 @@ CHROOTEXEC=""
 OVERRIDE_APTLINES="no"
 BINARY_ARCH="no"
 PBUILDER_BUILD_LOGFILE=
+USE_PKGNAME_LOGFILE=""
 
 while [ -n "$1" ]; do 
     case "$1" in 
@@ -90,6 +91,10 @@ while [ -n "$1" ]; do
 	    exec 2>&1
 	    PBUILDER_BUILD_LOGFILE=$(readlink -f "$2")
 	    shift; shift;
+	    ;;
+	--pkgname-logfile)
+	    USE_PKGNAME_LOGFILE="yes"
+	    shift; 
 	    ;;
 	--aptconfdir)
 	    APTCONFDIR="$2";

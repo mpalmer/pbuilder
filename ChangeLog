@@ -1,6 +1,24 @@
 2002-12-12  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-buildpackage (PACKAGENAME): add banner for logfile.
+
+	* debian/control (Recommends): add devscripts to recommends
+
+	* pbuilder-checkparams (USE_PKGNAME_LOGFILE): fix typo
+
+	* pbuilder-modules (pbuilder-options): add reference to pkgname-logfile to help text.
+
+	* pbuilder.8: documentation of pkgname-logfile moved closer to --logfile option.
+
+	* ChangeLog: spell-checked.
+
+	* pbuilder.8: document --pkgname-logfile option.
+	From Michael Banck <mbanck@gmx.net>, requested feature.
+
 	* pbuilder-checkparams (PBUILDER_BUILD_LOGFILE): logfile name is stored in PBUILDER_BUILD_LOGFILE
+	(PBUILDER_BUILD_LOGFILE): add --pkgname-logfile option for using logfile with pkgname-version.log
+	(USE_PKGNAME_LOGFILE): make this variable be usable only as command-line option, and not for 
+	configuration.
 
 	* pbuilderrc.5: update doc to document AUTO_DEBSIGN
 
@@ -8,6 +26,7 @@
 	pdebuild is used inside pbuilder.
 	(PKG_SOURCENAME, PKG_VERSION): define as version and source base name.
 	(debsign): invoke debsign when AUTO_DEBSIGN=yes.
+	From Andrew Lau <netsnipe@debianplanet.org>, requested feature.
 
 	* pdebuild.1: update docs, so that --buildresult quirk is documented,
 	and --auto-debsign is documented.
@@ -63,7 +82,7 @@
 2002-11-12  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/README.Debian: update documentation a 
-	littlebit.
+	little-bit.
 
 2002-10-30  Junichi Uekawa  <dancer@debian.org>
 
@@ -97,7 +116,7 @@
 	Reported by: Robert Bihlmeyer <robbe@orcus.priv.at>
 
 	* pbuilder-buildpackage: Changed to work with trap instead of other
-	kludgy alternatives.
+	kludgey alternatives.
 
 	* pbuilder-buildpackage-funcs: fixed to use trap for buildpackage hooks.
 

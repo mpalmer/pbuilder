@@ -275,6 +275,16 @@ instead of messages coming to the
 standard output.
 
 .TP
+.BI "--pkgname-logfile"
+Alternative option to 
+.B "--logfile"
+option. 
+Automatically creates a logfile that is named by the .dsc file name,
+only really applicable for 
+.B build
+target
+
+.TP
 .BI "--aptconfdir [" "APT configuration directory to use" "]"
 Uses the apt configuration file found in the specified directory 
 as the chroot configuration.
@@ -310,6 +320,7 @@ Specify to build architecture specific targets instead of all targets.
 Setting
 .B "--debbuildopts"
 after this option will re-set some parts of the effect.
+
 
 
 .SH "FILES"

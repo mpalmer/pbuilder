@@ -1,10 +1,14 @@
-pbuilder (0.52) UNRELEASED; urgency=low
+pbuilder (0.52) unstable; urgency=low
 
   * Clarify pbuilder.8 documentation on the timing of hook "A".
   * --auto-debsign option, to debsign the resulting package. 
   (closes: #165511), requested from Andrew Lau <netsnipe@debianplanet.org>
+  * --pkgname-logfile option, to allow creation of log files based on
+  package name and version. (closes: #157791), requested from Michael Banck <mbanck@gmx.net>
+  * debian/control: add devscripts to recommends, because this package uses
+  devscripts features quite a lot in pdebuild etc.
 
- -- Junichi Uekawa <dancer@debian.org>  Thu, 12 Dec 2002 17:45:49 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 12 Dec 2002 18:28:48 +0900
 
 pbuilder (0.51) unstable; urgency=low
 

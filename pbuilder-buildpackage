@@ -20,7 +20,6 @@ export LANG=C
 export LC_ALL=C
 set -e
 
-
 . /usr/lib/pbuilder/pbuilder-checkparams
 . /usr/lib/pbuilder/pbuilder-runhooks
 . /usr/lib/pbuilder/pbuilder-buildpackage-funcs
@@ -46,18 +45,29 @@ fi
 
 export HOME="/tmp/buildd"
 
-showbuildbanner '$Id'
+showbuildbanner '$Id$'
 echobacktime
 extractbuildplace 
 trap umountproc_cleanbuildplace exit
 loadhooks
 createbuilduser
 
-echo Copying source file
+if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
+    if [ "${USE_PKGNAME_LOGFILE}" = "yes" ]; then
+	PBUILDER_BUILD_LOGFILE=$(readlink -f "${BUILDRESULT}/"$(basename "${PACKAGENAME}" .dsc).log)
+	exec > "${PBUILDER_BUILD_LOGFILE}"
+	exec 2>&1
+	echo "I: Using pkgname logfile"
+	showbuildbanner '$Id$'
+	echobacktime
+    fi
+fi
+
+echo "Copying source file"
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 executehooks "D"
 
-echo Extracting source
+echo "Extracting source"
 if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; chown $BUILDUSERNAME:$BUILDUSERNAME ../buildd *; $SUTOUSER /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then
     echo "pbuilder: Failed extracting the source" >&2 
     exit 1;
