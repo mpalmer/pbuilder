@@ -1,3 +1,13 @@
+pbuilder (0.10) unstable; urgency=low
+
+  * Patch for full non-interactive compilation by
+    Daniel Kobras (kobras@debian.org) applied. (closes: #116891)
+  * Depends on gcc, because debootstrap does not seem to function well
+    without gcc. Actually, dpkg does not work without gcc, when it is asked
+    questions about the "architecture."
+
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 25 Oct 2001 03:02:09 +0900
+
 pbuilder (0.9) unstable; urgency=low
 
   * allow use of hardlinks in apt cache handling, with new option

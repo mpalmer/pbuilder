@@ -141,6 +141,9 @@ function checkbuilddep () {
 PACKAGENAME="$1"
 CHROOTEXEC="chroot $BUILDPLACE "
 
+# line from kobras@debian.org
+test "$DEBIAN_FRONTEND" = "noninteractive" && exec < /dev/null
+
 if [ ! -f "$PACKAGENAME" ]; then
     echo "Command line parameter [$PACKAGENAME] is not a valid .dsc file name" >&2
     exit 1;
