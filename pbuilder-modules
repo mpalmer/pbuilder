@@ -148,7 +148,7 @@ function mountproc () {
 #!/bin/sh
 
 while true; do
-case $1 in
+case "\$1" in
   -*) shift ;;
   makedev) exit 0;;
   *)  exit 101;;
