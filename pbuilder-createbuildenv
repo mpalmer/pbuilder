@@ -40,7 +40,7 @@ fi
 
 mkdir -p "$BUILDPLACE/tmp/buildd"
 echo " -> copying local configuration"
-case 
+
 for a in hosts hostname resolv.conf ; do 
     cp -r /etc/$a "$BUILDPLACE/etc/";
 done

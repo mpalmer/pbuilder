@@ -80,10 +80,10 @@ function abortingfunction () {
 function installaptlines (){
     echo Installing apt-lines
     rm -f "$BUILDPLACE"/etc/apt/sources.list
-    test -n "$DISTRIBUTION" && (
+    if [ -z "$DISTRIBUTION" ]; then
 	echo "Distribution not specified, please specify" >&2
 	exit 1
-    )
+    fi
     if [ -n "$BUILDPLACE" ] ; then
 	cat >> "$BUILDPLACE"/etc/apt/sources.list << EOF
 deb $MIRRORSITE $DISTRIBUTION main contrib non-free

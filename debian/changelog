@@ -10,8 +10,15 @@ pbuilder (0.11) unstable; urgency=low
     it will be possible to catch such possible error.
   * patch from fbiere@abacom.com, fixes build-dependency with 
     OR conditions. It used to try out all. (closes: #119541)
+  * Redundant "case" removed from pbuilder-createbasetgz. 
+    (it was introduced in 0.10).
+    Thanks go to Steve for pointing this out.
+    (closes: #12057)
+  * Fixed the reverse-logic for the "distribution is not specified"
+    line in pbuilder-modules. Thanks for steven.robbins@videotron.ca
+    (again) for pointing this out. (closes: #120063)
 
- -- Junichi Uekawa <dancer@debian.org>  Sun, 18 Nov 2001 11:33:43 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 18 Nov 2001 17:56:06 +0900
 
 pbuilder (0.10) unstable; urgency=low
 
