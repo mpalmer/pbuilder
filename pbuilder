@@ -57,6 +57,9 @@ case "$1" in
 	extractbuildplace
 	trap umountproc_cleanbuildplace exit
 	loadhooks
+	recover_aptcache
+	trap saveaptcache_umountproc_cleanbuildplace exit
+
 	if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
 	    echo " -> entering the shell"
 	else
@@ -66,6 +69,9 @@ File extracted to: $BUILDPLACE
 	fi
 	executehooks "F"
 	chroot "$BUILDPLACE" bin/bash
+
+	save_aptcache
+	trap umountproc_cleanbuildplace exit
 
 	# saving the place afterwards
 	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
@@ -96,12 +102,17 @@ File extracted to: $BUILDPLACE
 	trap umountproc_cleanbuildplace exit
 
 	loadhooks
+	recover_aptcache
+	trap saveaptcache_umountproc_cleanbuildplace exit
+
 	RUNNAME="$BUILDPLACE/run"
 	cat "$EXECPROGRAM" > "$RUNNAME"
 	chmod a+x "$RUNNAME"
 	executehooks "F"
 	chroot "$BUILDPLACE" /run "$@"
 
+	save_aptcache
+	trap umountproc_cleanbuildplace exit
 
 	# saving the place afterwards
 	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then

@@ -192,6 +192,13 @@ is specified with
 option.
 
 .TP
+.BI "--aptcache [" "location of retrieved package files" "]"
+Specifies the location where the packages downloaded by apt should
+be cached. Use
+.B "--aptcache """""
+if you want caching to be turned off.
+
+.TP
 .BI "--removepackages [" "packages to remove" "]"
 Removes the packages on creating the 
 .BR "base.tgz" "."
@@ -308,7 +315,7 @@ target.
 
 Specifies that dpkg-buildpackage be called with
 .B "-m$DEBEMAIL"
-instead of default value specified in the environmental
+instead of default value specified in the environment
 variable, or pbuilderrc
 
 .B "This option is almost obsolete, use --debbuildopts instead"

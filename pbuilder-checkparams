@@ -92,6 +92,19 @@ while [ -n "$1" ]; do
 	    fi
 	    shift; shift;
 	    ;;
+	--aptcache)
+	    if [ -n "$2" ]; then
+		if [ -d "$2" ]; then
+		    APTCACHE=$(readlink -f "$2");
+		else
+		    echo "E: Directory $2 does not exist" >&2 
+		    exit 1
+		fi
+	    else
+		APTCACHE=
+	    fi
+	    shift; shift;
+	    ;;
 	--removepackages)
 	    REMOVEPACKAGES="$2";
 	    shift; shift;
