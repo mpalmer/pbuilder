@@ -32,16 +32,20 @@ function checkbuilddep () {
 PACKAGENAME="$1"
 CHROOTEXEC="chroot $BUILDPLACE "
 
-echo cleaning the build env "[$BUILDPLACE]"
+echo "cleaning the build env [$BUILDPLACE]"
 rm -rf "$BUILDPLACE"
 
-echo building the build env
+echo "building the build env"
 mkdir -p "$BUILDPLACE"
 (
  cd "$BUILDPLACE"
  tar xfzp "$BASETGZ"
  mkdir -p "$BUILDPLACE/tmp/buildd"
-)
+ )
+echo " -> mounting proc"
+mkdir -p "$BUILDPLACE/proc"
+mount -t proc /proc "$BUILDPLACE/proc"
+
 echo Copying source file
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 echo Extracting source
@@ -51,3 +55,5 @@ checkbuilddep
 echo Building the package
 $CHROOTEXEC /bin/sh -c "(cd tmp/buildd/*/; dpkg-buildpackage)"
 
+echo " -> unmounting proc"
+umount "$BUILDPLACE/proc"

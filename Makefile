@@ -1,4 +1,5 @@
 clean:
+	rm -f *.bak *~
 
 install:
 	install -d $(DESTDIR)/etc

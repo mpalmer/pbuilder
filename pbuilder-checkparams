@@ -4,11 +4,11 @@
 while [ -n $1 ]; do
   case "$1" in 
     --basetgz) 
-      BASETGZ="$2";
+      BASETGZ=$(realink -f "$2");
       shift; shift;
       ;;
     --buildplace)
-      BUILDPLACE="$2";
+      BUILDPLACE=$(readlink -f "$2");
       shift; shift;
       ;;
     --mirror)

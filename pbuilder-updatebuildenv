@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 export LANG=C
 export LC_ALL=C
 
@@ -8,19 +8,19 @@ CHROOTEXEC="chroot $BUILDPLACE "
 
 test -n "$DISTRIBUTION" && echo "Upgrading for distribution $DISTRIBUTION" 
 
-#cd $MYREPOSITORY
-#echo Initializing repository
-#dpkg-scanpackages . . | gzip > Packages.gz
-#dpkg-scansources . . | gzip > Sources.gz
-
-echo cleaning the build env
+echo "cleaning the build env"
 rm -rf $BUILDPLACE
 
-echo building the build env
+echo "building the build env"
+echo " -> extracting base.tgz"
 mkdir -p $BUILDPLACE
 cd $BUILDPLACE
 tar xfzp $BASETGZ
+echo " -> mounting proc"
+mkdir -p "$BUILDPLACE/proc"
+mount -t proc /proc $BUILDPLACE/proc 
 mkdir -p $BUILDPLACE/tmp/buildd
+echo " -> copying local configuration"
 for a in passwd hosts hostname resolv.conf; do 
   cp /etc/$a $BUILDPLACE/etc/$a;
 done
@@ -33,13 +33,16 @@ deb-src $MIRRORSITE debian $DISTRIBUTION main contrib non-free
 EOF
 fi
 
-echo Refreshing the base.tgz 
+echo "Refreshing the base.tgz "
+echo " -> upgrading packages"
 $CHROOTEXEC /usr/bin/apt-get update
 $CHROOTEXEC /usr/bin/dpkg --purge lilo
 $CHROOTEXEC /usr/bin/apt-get -y dist-upgrade
 $CHROOTEXEC /usr/bin/apt-get -y install build-essential dpkg-dev apt $EXTRAPACKAGES
 $CHROOTEXEC /usr/bin/apt-get clean
+echo " -> unmounting proc"
+umount $BUILDPLACE/proc
+echo " -> creating base.tgz"
 cd $BUILDPLACE
-echo Creating base.tgz
 tar cfz $BASETGZ *
 
