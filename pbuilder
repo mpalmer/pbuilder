@@ -17,15 +17,15 @@ export PBCURRENTCOMMANDLINEOPERATION="$1"
 case "$1" in
     create)
 	shift;
-	/usr/lib/pbuilder/pbuilder-createbuildenv $@
+	/usr/lib/pbuilder/pbuilder-createbuildenv "$@"
 	;;
     update)
 	shift ;
-	/usr/lib/pbuilder/pbuilder-updatebuildenv $@
+	/usr/lib/pbuilder/pbuilder-updatebuildenv "$@"
 	;;
     build)
 	shift ;
-	/usr/lib/pbuilder/pbuilder-buildpackage $@
+	/usr/lib/pbuilder/pbuilder-buildpackage "$@"
 	;;
     clean)
 	. /etc/pbuilderrc

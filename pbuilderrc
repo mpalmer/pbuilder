@@ -1,4 +1,7 @@
-# this is your configuration
+# this is your configuration file for pbuilder.
+# the file in /usr/share/pbuilder/pbuilderrc is the default template.
+# /etc/pbuilderrc is the one meant for editing.
+
 BASETGZ=/var/cache/pbuilder/base.tgz
 #EXTRAPACKAGES=gcc3.0-athlon-builder
 #export DEBIAN_BUILDARCH=athlon
@@ -13,19 +16,19 @@ BUILDRESULT=/var/cache/pbuilder/result/
 # specifying the distribution forces the distribution on "pbuilder update"
 #DISTRIBUTION=woody
 #specify the cache for APT 
-APTCACHE=/var/cache/pbuilder/aptcache/
-APTCACHEHARDLINK=yes
-REMOVEPACKAGES=lilo
-#HOOKDIR=/usr/lib/pbuilder/hooks
+APTCACHE="/var/cache/pbuilder/aptcache/"
+APTCACHEHARDLINK="yes"
+REMOVEPACKAGES="lilo"
+#HOOKDIR="/usr/lib/pbuilder/hooks"
 HOOKDIR=""
 
 # make debconf not interact with user
-export DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND="noninteractive"
 
 # Address used when building.
 #DEBEMAIL="someone@somewhere"
 
 #for pbuilder debuild
-BUILDSOURCEROOTCMD=fakeroot
-PBUILDERROOTCMD=sudo
+BUILDSOURCEROOTCMD="fakeroot"
+PBUILDERROOTCMD="sudo"
 

@@ -1,14 +1,11 @@
 #! /bin/bash 
 # this is sourced from pbuilder packages to process the optional parameters.
 
-# empty some vars.
-DPKG_BUILDPACKAGEOPT=""
-
 for RCFILE in /usr/share/pbuilder/pbuilderrc /etc/pbuilderrc; do
     if [ -f "$RCFILE"]; then 
 	. "$RCFILE"
     else
-	echo "Warning: $RCFILE does not exist"
+	echo "W: $RCFILE does not exist" 
     fi
 done
 
