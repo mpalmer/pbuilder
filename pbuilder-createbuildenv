@@ -19,15 +19,16 @@ if [ ! -d "$BUILDPLACE" ]; then
     exit 1
 fi
 echo " -> running debootstrap"
-( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE" || exit 1) || \
-(
+if ! ( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE" ) ; then
     echo "pbuilder: debootstrap failed" >&2
     exit 1
-)
+fi
+
 echo " -> debootstrap finished"
 if [ -n "$HOOKDIR" ]; then
     loadhooks
 fi
+
 mkdir -p "$BUILDPLACE/tmp/buildd"
 echo " -> copying local configuration"
 for a in passwd hosts hostname resolv.conf ; do 
