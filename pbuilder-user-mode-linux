@@ -25,7 +25,7 @@ function cleanup_function () {
 }
 
 
-for CONFIGFILE in /etc/pbuilder/pbuilder-uml.conf /usr/share/pbuilder/pbuilder-uml.conf ${HOME}/.pbuilderrc; do
+for CONFIGFILE in  /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-uml.conf ${HOME}/.pbuilderrc; do
     if [ -f ${CONFIGFILE} ]; then
 	. ${CONFIGFILE}
     fi

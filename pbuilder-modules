@@ -181,7 +181,7 @@ function extractbuildplace () {
     if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
 	cleanbuildplace
 	echo "Building the build Environment"
-	echo " -> extracting base.tgz"
+	echo " -> extracting base tarball [${BASETGZ}]"
 	if ! mkdir -p "$BUILDPLACE"; then
 	    echo "E: failed to build the directory to chroot"
 	    exit 1
@@ -251,7 +251,7 @@ function save_aptcache() {
 
 function create_basetgz() {
     # create base.tgz
-    echo " -> creating base.tgz"
+    echo " -> creating base tarball [${BASETGZ}]"
     ( 
 	if ! cd "$BUILDPLACE"; then
 	    echo "Error: unexpected error in chdir to $BUILDPLACE" >&2
@@ -262,7 +262,7 @@ function create_basetgz() {
 	    sleep 10s
 	done
 	if ! tar cfz "${BASETGZ}.tmp" * ; then
-	    echo " -> failed building base.tgz"
+	    echo " -> failed building base tarball"
 	    rm -f "${BASETGZ}.tmp"
 	    exit 1;
 	fi
