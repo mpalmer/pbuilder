@@ -1,8 +1,12 @@
-pbuilder (0.101) UNRELEASED; urgency=low
+pbuilder (0.101) unstable; urgency=low
 
   * Update documentation, minor fix in documentation.
-
- -- Junichi Uekawa <dancer@debian.org>  Sat, 13 Mar 2004 01:38:31 +0900
+  * Add libc6 upgrade workaround script. 
+    add 
+    "--hookdir /usr/share/doc/pbuilder/examples/libc6workaround"
+    for update command-line, until libc6 bug230008 is fixed.
+  
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 13 Mar 2004 12:00:59 +0900
 
 pbuilder (0.100) unstable; urgency=low
 
