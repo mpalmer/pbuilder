@@ -20,27 +20,28 @@ function checkbuilddep_internal () {
     echo " -> Attempting to parse the build-deps by myself"
     for INSTALLPKGMULTI in $(grep "^Build-Depends\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
-	awk 'BEGIN{RS=","} {print $1}'); do
-      echo " -> Considering $INSTALLPKGMULTI"
+	tr " " "/" | \
+	awk 'BEGIN{RS=","} {print}'); do
+      #echo " -> Considering $INSTALLPKGMULTI"
       SATISFIED="no"
       for INSTALLPKG in $(echo "$INSTALLPKGMULTI" | \
 	  awk 'BEGIN{RS="|"} {print}'); do
-	echo " -> Trying to install $INSTALLPKG"
+	#echo " -> Trying to install $INSTALLPKG"
 	if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	  # this package has arch-deps.
-	    if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]!$ARCH[] ]" > /dev/null; then
+	    if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]!$ARCH[]/]" > /dev/null; then
 	      # don't install this on this arch -- satisfied? maybe. FIXME
 		SATISFIED="yes"
 		continue;
 	    fi
-	    if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]$ARCH[] ]" > /dev/null; then
+	    if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]$ARCH[]/]" > /dev/null; then
 	      # this arch is not listed. -- satisfied? maybe. FIXME
 		SATISFIED="yes"
 		continue;
 	    fi
 	fi
-	echo " -> Installing $INSTALLPKG"
-	$CHROOTEXEC usr/bin/apt-get -y install $(echo "$INSTALLPKG" | awk '{print $1}') && \
+	#echo " -> Installing $INSTALLPKG"
+	$CHROOTEXEC usr/bin/apt-get -y install $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') && \
 	    SATISFIED="yes"
       done;
       if [ "$SATISFIED" = "no" ]; then
@@ -51,21 +52,22 @@ function checkbuilddep_internal () {
     done;
     for INSTALLPKG in $(grep "^Build-Conflicts\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
 	sed 's/^[^:]*: \(.*\)$/\1/' | \
-	awk 'BEGIN{RS=","} {print $1}'); do
-      echo " -> Considering $INSTALLPKG"
+	tr " " "/" | \
+	awk 'BEGIN{RS=","} {print}'); do
+      #echo " -> Considering $INSTALLPKG"
       if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	  # this package has arch-conflicts.
-	  if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]!$ARCH[] ]" > /dev/null; then
+	  if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]!$ARCH[]/]" > /dev/null; then
 	      # don't install this on this arch
 	      continue;
 	  fi
-	  if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[ ]$ARCH[] ]" > /dev/null; then
+	  if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]$ARCH[]/]" > /dev/null; then
 	      # this arch is not listed.
 	      continue;
 	  fi
       fi
-      echo " -> Removing $INSTALLPKG"
-      $CHROOTEXEC usr/bin/apt-get -y remove $(echo "$INSTALLPKG" | awk '{print $1}') || (
+      #echo " -> Removing $INSTALLPKG"
+      $CHROOTEXEC usr/bin/apt-get -y remove $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') || (
 	  echo Could not satisfy build-conflicts
 	  abortingfunction
 	  exit 1
