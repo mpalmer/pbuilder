@@ -2,18 +2,16 @@
 # This is a testsuite.
 # estimated run-time on my PC; ?? minutes.
 
-PBUILDER=/usr/bin/pbuilder
+PBUILDER=/usr/sbin/pbuilder
 
 vmstat -n 1 > vmstat &
 VMSTATPID=$!
 LC_ALL=C iostat -dxt hda > iostat & 
 IOSTATPID=$!
 
-sudo pbuilder test --configfile non-existing-configfile
-
 if [ -x "${PBUILDER}" ]; then
     for distribution in sid sarge; do
-	sudo ${PBUILDER} create --mirror http://ring.asahi-net.or.jp/archives/linux/debian/debian --distribution "${distribution}" --basetgz $(pwd)/testimage --logfile ${PBUILDER}-create-${distribution}.log
+	sudo ${PBUILDER} create --mirror http://ring.asahi-net.or.jp/archives/linux/debian/debian --distribution "${distribution}" --basetgz $(pwd)/testimage --logfile pbuilder-create-${distribution}.log 
 
 	for PKG in dsh; do 
 	    ( 
@@ -32,7 +30,7 @@ if [ -x "${PBUILDER}" ]; then
 	    )
 	done
 	sudo ${PBUILDER} execute --basetgz $(pwd)/testimage --logfile pbuilder-execute-${distribution}.log ../examples/execute_paramtest.sh test1 test2 test3
-	rm -rf testbuild testbuild2 testimage
+	sudo rm -rf testbuild testbuild2 testimage
     done
 fi
 
