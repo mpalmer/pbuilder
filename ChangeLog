@@ -1,5 +1,22 @@
 2002-09-16  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-user-mode-linux: add trapping and cleaning up routine.
+
+	* pbuilder-modules: modify things shuffling around until it works...
+
+	* pbuilder-user-mode-linux (BUILDING_DSC_FILE): add call to pbuilder update.
+
+	* pbuilder-updatebuildenv: check for INTERNAL_BUILD_UML and ignore the 
+	basetgz creation in UML.
+
+	* pbuilder-modules: remove invocation of hostname from uml.
+
+	* debian/control (Depends): require 1.31.1 or greater of debianutils for readlink
+
+	* Makefile (install): add pbuilder-user-mode-linux to install target
+
+	* debian/control (Depends): add depends on debianutils, for readlink
+
 	* pbuilder-user-mode-linux (BUILDING_DSC_FILE): use --internal-build-uml
 
 	* pbuilder-modules (extractbuildplace): change to do less things 

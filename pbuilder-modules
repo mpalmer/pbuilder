@@ -184,13 +184,14 @@ function extractbuildplace () {
 	    echo "E: failed to extract $BASETGZ to $BUILDPLACE"
 	    exit 1
 	fi
-	echo " -> copying/creating local configuration"
-	for a in hosts hostname resolv.conf; do 
-	    cp $( readlink -f /etc/$a ) "$BUILDPLACE/etc/$a";
-	done
+	echo " -> creating local configuration"
+	hostname -f > "$BUILDPLACE/etc/mailname"
     fi
+    echo " -> copying local configuration"
+    for a in hosts hostname resolv.conf; do 
+	cp $( readlink -f /etc/$a ) "$BUILDPLACE/etc/$a";
+    done
     mountproc
-    hostname -f > "$BUILDPLACE/etc/mailname"
     mkdir -p "$BUILDPLACE/tmp/buildd"
     
     if [ -n "$DISTRIBUTION" ]; then

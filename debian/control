@@ -7,8 +7,9 @@ Standards-Version: 3.5.6
 
 Package: pbuilder
 Architecture: all
-Depends: debootstrap (>= 0.1.17.5), wget, gcc
+Depends: debootstrap (>= 0.1.17.5), wget, gcc, debianutils (>= 1.13.1)
 Recommends: fakeroot, sudo
+Suggests: rootstrap, user-mode-linux
 Description: personal package builder for Debian packages
  pbuilder constructs a chroot system, and builds a package inside the
  chroot. It is an ideal system to use to check that a package's
