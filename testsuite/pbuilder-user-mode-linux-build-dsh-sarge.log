@@ -1,4 +1,4 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/8275.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file4UctHc rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/13824.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file8C9NEd rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.22-5um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 Fri Sep 19 21:36:03 EDT 2003
@@ -6,8 +6,8 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/8275.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file4UctHc rw
-Calibrating delay loop... 1635.40 BogoMIPS
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/13824.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file8C9NEd rw
+Calibrating delay loop... 1598.85 BogoMIPS
 Memory: 124720k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -35,9 +35,9 @@ Initializing Cryptographic API
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/GCsqlA/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/6vVNsv/mconsole
 unable to open root_fs for validation
-Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/8275.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
+Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/13824.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
 Partition check:
  ubdb: unknown partition table
 Initializing stdio console driver
@@ -81,8 +81,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sat Oct 18 10:12:37 JST 2003
-pbuilder-time-stamp: 1066439557
+Current time: Sun Oct 19 07:11:26 JST 2003
+pbuilder-time-stamp: 1066515086
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
@@ -186,6 +186,6 @@ E: pbuilder-satisfydepends failed.
  -> ignoring umount of proc filesystem
  -> ignoring umount of dev/pts filesystem
 Kernel panic: Attempted to kill init!
- tracing thread pid = 8290
+ tracing thread pid = 13839
 
  -> Exit code 2
