@@ -1,8 +1,9 @@
 TODO and possible bugs: 
   * Make pbuilder build to abort on error, and give back an errorcode.
   * Build dependency handles |, but not when [] and | exist. -- no package should be using it.
-  * Build dependency either has [!xxx !xxx !xxx ...] or [xxx xxx xxx ...] [!xxx xxx] 
-    formats are not parsed.
+  * Machine type specification in Build dependency should either have
+   [!xxx !xxx !xxx ...] or [xxx xxx xxx ...] 
+  [!xxx xxx] formats are not parsed, and should really not exist.
   * Now parses the .dsc file, however, the format of .dsc file is not really documented anywhere?
   * Parse the .changes file instead of guessing the resultant objects ... ? (the content of file probably changes depending on the version... not a good idea.
 
