@@ -1,10 +1,26 @@
 #! /bin/bash
 # common modules for pbuilder.
+#   pbuilder -- personal Debian package builder
+#   Copyright (C) 2001,2002 Junichi Uekawa
+#
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 function showhelp () {
     cat <<EOF
 pbuilder - a personal builder
-Copyright 2001 Junichi Uekawa
+Copyright 2001,2002 Junichi Uekawa
 Distributed under GNU Public License version 2 or later
 
 pbuilder [operation] [operation options]
@@ -46,8 +62,8 @@ pbuilder options
  --aptconfdir [overriding apt config dir]
 
 pdebuild options
- --pbuilderroot [command to obtain root privilate for pbuilder] 
- --buildsourceroot [command to obtain root privilate for dpkg-buildpackage]
+ --pbuilderroot [command to obtain root privilege for pbuilder] 
+ --buildsourceroot [command to obtain root privilege for dpkg-buildpackage]
 EOF
     exit 1
 }
