@@ -8,8 +8,10 @@ pbuilder (0.11) unstable; urgency=low
   * README.Debian is updated.
   * Added a nonexistent package to Build-Conflicts of debian/control, so that 
     it will be possible to catch such possible error.
+  * patch from fbiere@abacom.com, fixes build-dependency with 
+    OR conditions. It used to try out all. (closes: #119541)
 
- -- Junichi Uekawa <dancer@debian.org>  Fri,  9 Nov 2001 12:39:31 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 18 Nov 2001 11:33:43 +0900
 
 pbuilder (0.10) unstable; urgency=low
 
