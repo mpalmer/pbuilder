@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="euc-jp"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "docbookx.dtd"> 
+<!-- the original of this documentation is in pbuilder source tarball -->
+<book>
+  <title>pbuilder User's manual</title>
+  <chapter>
+    <title>Introducing pbuilder</title>
+    <sect1>
+      <title>Aims of pbuilder</title>
+      <para>
+	<command>pbuilder</command> aims to be an 
+	easy-to-setup system
+	for auto-building Debian packages inside a clean-room
+	environment, so that it is possible to verify that
+	a package can be built on most Debian installations.
+      </para>
+      <para>
+	Debian distribution consists of free software
+	accompanied with source.
+	The source code within Debian "main" section
+	must build within Debian "main",
+	with only the explicitly specified build-dependencies
+	installed.
+      </para>
+      <para>
+	The aim of pbuilder is very different from other 
+	autobuilding systems in that its aim is not in trying to build
+	as many packages. It does not try to guess
+	what a package needs, and in most cases it tries the
+	worst choice of all if there was a choice to be made.
+      </para>
+      <para>
+	In this way, pbuilder tries to ensure that packages 
+	tested against pbuilder will be able to build in 
+	most Debian environments, hopefully resulting
+	in a good overall Debian source-buildability.
+      </para>
+    </sect1>
+  </chapter>
+  <chapter>
+    <title>Using pbuilder</title>
+    <sect1>
+      <title>Creating base chroot image</title>
+      <para>
+	<command>pbuilder create</command>
+	will create base chroot image.
+	Distribution code-name needs to be specified with 
+	<command><option>--distribution</option></command>
+	command-line option.
+	Usually, "sid" is the proper distribution.
+      </para>
+      <para>
+	<command>debootstrap</command> is used to create 
+	the bare minimum Debian installation, 
+	and then build-essential packages are installed on top 
+	of the minimum installation using <command>apt-get</command> 
+	inside the chroot.
+      </para>
+      <para>
+	For fuller documentation of command-line options, see
+	pbuilder.8 manual page
+      </para>
+    </sect1>
+    <sect1>
+      <title>Updating base chroot image</title>
+      <para><command>pbuilder update</command>
+	will update the chroot image.
+	It will extract the chroot, invoke <command>apt-get update</command>
+	and <command>apt-get dist-upgrade</command> inside the 
+	chroot, and then recreate the base tarball.
+      </para>
+      <para>
+	It is possible to switch the distribution which the chroot 
+	tarball is targetted at at this point.
+	Specify <command><option>--distribution <parameter>sid</parameter></option> <option>--override-config</option></command> to change the distribution
+	to sid.
+	<footnote>
+	  <para>However, only upgrading is really supported.</para>
+	</footnote>
+      </para>
+      <para>
+	For fuller documentation of command-line options, see
+	pbuilder.8 manual page
+      </para>
+    </sect1>
+    <sect1>
+      <title>Building a package using chroot image</title>
+      <para>
+	To build a package inside the chroot, invoke
+	<command>pbuilder build <option>whatever.dsc</option></command>.
+	<command>pbuilder</command> will extract 
+	chroot image to a temporal working directory,
+	and satisfy the build-dependency inside the chroot,
+	and build the package.
+	The built packages will be moved to a 
+	directory specified with 
+	<command><option>--buildresult</option></command>
+	command-line option.
+      </para>
+      <para>
+	<command><option>--basetgz</option></command> option can be 
+	used to specify which chroot image to use.
+      </para>
+      <para>
+	<command>pbuilder</command> will extract a fresh chroot image
+	created with <command>pbuilder build</command>
+	and updated with <command>pbuilder update</command>,
+	and populate the chroot with build-dependency by parsing 
+	debian/control and invoking <command>apt-get</command>.
+      </para>
+      <para>
+	For fuller documentation of command-line options, see
+	pbuilder.8 manual page
+      </para>
+    </sect1>
+    <sect1>
+      <title>Configuration Files</title>
+      <para>
+	It is possible to specify all settings by command-line
+	option. However, for convenience it is possible to 
+	use a configuration file.
+      </para>
+      <para>
+	<filename>/etc/pbuilderrc</filename> and 
+	<filename>${HOME}/.pbuilderrc</filename>
+	are read in when pbuilder is invoked.
+	The possible options are documented in 
+	pbuilderrc.5 documentation.
+      </para>
+    </sect1>
+    <sect1>
+      <title>Building packages as non-root</title>
+      <para>
+	<command>pbuilder</command> requires full root privilage 
+	when it is satisfying the build-dependency but most packages do not 
+	need root privilage, or even do not build when they are root.
+	<command>pbuilder </command> can create a user only used 
+	inside <command>pbuilder </command> and use that user id when
+	building, and use <command>fakeroot</command> command
+	when root privilage is required.
+      </para>
+      <para>
+	BUILDUSERID needs should be set to a value for a user id that
+	does not exist on the system, so that it is harder for 
+	packages that are being built with 
+	<command>pbuilder</command> to do harm to the main system.
+	BUILDUSERNAME needs to be set to some value, and 
+	pbuilder will use that user id and use fakeroot for building.
+      </para>
+      <para>
+	Using the fakerooting method, pbuilder will run with 
+	root privilage when it is required, when installing
+	packages to the chroot.
+      </para>
+    </sect1>
+    <sect1>
+      <title>Using pbuilder for backporting</title>
+      <para>
+	pbuilder can be used for backporting software from 
+	the latest Debian distribution to 
+	older stable distribution, by using a chroot that contains
+	image of older distribution, and building packages inside the
+	chroot.
+	There are several points to consider, and due to the following reasons,
+	automatic backporting is usually not possible, and 
+	manual interaction is required:
+      </para>
+      <itemizedlist>
+	<listitem>
+	  <para>Build-Dependency in stable may not be enough to build a package in unstable distribution, so package may need more than what exists in stable</para>
+	</listitem>
+	<listitem>
+	  <para>Stable distribution may have bugs that have been fixed in unstable that needs to be worked around.</para></listitem>
+	<listitem>
+	  <para>Package in unstable distribution may have problem building even for unstable.</para>
+	</listitem>
+      </itemizedlist>
+    </sect1>
+    <sect1>
+      <title>Mass-building packages</title>
+      <para>
+	pbuilder can be automated, because its operation is 
+	noninteractive.
+	It is possible to run pbuilder through multiple packages 
+	noninteractively.
+	There are several such scripts known to exist.
+	Junichi Uekawa has been running such script since 2001,
+	and has been filing bugs on packages that fail the 
+	test of pbuilder. There were several problems with autobuilding:
+      </para>
+      <itemizedlist>
+	<listitem>
+	  <para>Build-Dependency needs to install noninteractively, but 
+	    some packages cannot install without interaction (postgresql)</para>
+	</listitem>
+	<listitem>
+	  <para>When a library package breaks, or gcc/gcj/g++ breaks, 
+	    or even bison, a large number of build failure are reported.
+	  </para>
+	</listitem>
+	<listitem>
+	  <para>Some people were quite hostile against build failure reports.</para>
+	</listitem>
+      </itemizedlist>
+      <para>
+	But most of these problems are now getting solved.
+	Only about 10% of Debian now fail to build from source (29 Dec 2002).
+      </para>
+    </sect1>
+    <sect1>
+      <title>Auto-backporting scripts</title>
+      <para>
+	There are some people who use pbuilder to automatically backport
+	a subset of packages to the stable distribution.
+	Any URL?
+      </para>
+    </sect1>
+    <sect1>
+      <title>Using pbuilder for automated testing of packages</title>
+      <para>
+	pbuilder can be used for automated testing of pacakges.
+	It has the feature of allowing hooks to be placed,
+	and these hooks can try to install packages inside
+	the chroot, or run them, or whatever else that 
+	can be done. Some known tests and ideas:
+      </para>
+      <itemizedlist>
+	<listitem>
+	  <para>Automatic install-remove-upgrade-remove-install-purge-upgrade-purge testsuite (distributed as an example)</para>
+	</listitem>
+	<listitem>
+	  <para>Automatic lintian running (distributed as an example)</para>
+	</listitem>
+	<listitem>
+	  <para>Automatic debian-test of the package?</para>
+	</listitem>
+      </itemizedlist>
+    </sect1>
+  </chapter>
+  <chapter>
+    <title>Enhanced and experimental features of pbuilder</title>
+    <para>
+      There are some advanced features, above that of the 
+      basic feature of pbuilder, for some specific purposes.
+    </para>
+    <sect1>
+      <title>Using User-mode-linux</title>
+      <para>
+	<command>pbuilder-uml</command> exists.
+	Invoking that command instead of <command>pbuilder</command>
+	it is possible to use user-mode-linux.
+	The advantage of using user-mode-linux is that 
+	it does not require root privilege to run,
+	and it does Copy-on-write, which is probably  much faster than
+	conventional pbuilder method.
+      </para>
+      <para>
+	The problem is that this relies on User-mode-linux
+	which is a relatively new project, and has not quite
+	matured, as opposed to conventional pbuilder which rely 
+	on <command>chroot</command> and <command>tar</command> 
+	and <command>gzip</command>, which are known to work
+	on most Unix systems.
+      </para>
+      <para>
+	Currently there are problems with rootstrap that 
+	stops <command>pbuilder-uml</command> from starting,
+	and help, or success reports would be appreciated.
+      </para>
+    </sect1>
+    <sect1>
+      <title>Using LVM</title>
+      <para>
+	LVM has snapshot function that features Copy-on-write images.
+	That could be used for pbuilder just it can be used for 
+	user-mode-linux pbuilder port.
+	It may prove to be faster, but it is not implemented yet,
+	and so no measurement has been made, yet.
+      </para>
+    </sect1>
+  </chapter>
+  <chapter>
+    <title>Minor details</title>
+    <sect1>
+      <title>Documentation history </title>
+      <para>
+	This document is started on 28 Dec 2002 by
+	Junichi Uekawa, trying to document what is known
+	about pbuilder.
+      </para>
+      <para>
+	This documentation is available from pbuilder source tarball,
+	and from CVS repository of pbuilder (which might not be 
+	public yet now).
+	A copy of this documentation can be found in
+	<ulink url="http://www.netfort.gr.jp/~dancer/software/pbuilder-doc/pbuilder-doc.html">Netfort page for pbuilder</ulink>.
+	The homepage for pbuilder is 
+	<ulink url="http://www.netfort.gr.jp/~dancer/software/pbuilder.html">
+	  http://www.netfort.gr.jp/~dancer/software/pbuilder.html
+	</ulink>
+      </para>
+    </sect1>
+  </chapter>
+</book>
+
