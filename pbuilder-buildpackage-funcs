@@ -36,7 +36,7 @@ function checkbuilddep () {
 	yes) BUILDOPT="--binary-arch";;
 	*) ;;
     esac
-    if ! /usr/lib/pbuilder/pbuilder-satisfydepends --control "$BUILDPLACE/"tmp/buildd/*/debian/control --chroot "$BUILDPLACE" --binary-all ; then
+    if ! /usr/lib/pbuilder/pbuilder-satisfydepends --control "$BUILDPLACE/"tmp/buildd/*/debian/control --chroot "$BUILDPLACE" "${BUILDOPT}" ; then
 	echo "E: pbuilder-satisfydepends failed." >&2
 	exit 1
     fi
