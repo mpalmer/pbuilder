@@ -1,3 +1,12 @@
+pbuilder (0.14) unstable; urgency=low
+
+  * Removed the test build-depends etc. from the debian/control.
+    (closes: #124192), it really should not be there.
+    The original debian/control is left as debian/control.test,
+    so that testing can be done easily, by cp debian/control{.test,}
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 16 Dec 2001 23:35:50 +0900
+
 pbuilder (0.13) unstable; urgency=low
 
   * pdebuild could not handle packages with an epoch. Fixed.
