@@ -124,7 +124,7 @@ function checkbuilddep_internal () {
 	fi
       done;
       if [ "$SATISFIED" = "no" ]; then
-	  echo "Could not satisfy build-dependency." >&2
+	  echo "E: pbuilder: Could not satisfy build-dependency." >&2
 	  umountproc_cleanbuildplace
 	  exit 1
       fi
