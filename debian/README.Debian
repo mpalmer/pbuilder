@@ -42,5 +42,17 @@ Testsuite:
 	gcc  ( trying to compile this sometimes kills my machine when
           trying to run testsuite )
 
+
+Notes:
+
+There has been some problems in the bootstrapping process of testing release of
+Debian (woody) as of January 2002
+pbuilder create --distribution woody did not complete.
+In such case, it is possible to do :
+
+pbuilder create --distribition potato
+pbuilder update --distribution woody
+
+
 $Id$
  -- Junichi Uekawa <dancer@debian.org>, Sat, 28 Jul 2001 17:05:50 +0900
