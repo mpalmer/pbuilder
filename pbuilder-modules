@@ -107,6 +107,9 @@ function mountproc () {
 }
 
 function cleanbuildplace () {
+    if [ "$?" -ne 0 ]; then
+	echo " -> Aborting with an error";
+    fi
     if [ -d "$BUILDPLACE" ]; then 
 	echo " -> cleaning the build env "
 	rm -rf "$BUILDPLACE"
