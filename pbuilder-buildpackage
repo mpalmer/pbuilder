@@ -86,6 +86,7 @@ function checkbuilddep_internal () {
       SATISFIED="no"
       for INSTALLPKG in $(echo "$INSTALLPKGMULTI" | \
 	  awk 'BEGIN{RS="|"} {print}'); do
+	CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed 's/[[/(].*//')
 	if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
 	    if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
 		SATISFIED="yes"
@@ -95,14 +96,13 @@ function checkbuilddep_internal () {
 	fi
 	if echo "$INSTALLPKG" | grep '[(]' > /dev/null; then
 	    #echo "Debug: $INSTALLPKG"
-	    if ! checkbuilddep_versiondeps $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') \
+	    if ! checkbuilddep_versiondeps ${CURRENTREALPKGNAME} \
 		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/') \
 		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/') ; then
 	      echo "   -> Does not satisfy version, not trying"
 	      continue;
 	    fi
 	fi
-	CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed 's/[[/(].*//')
 	echo " -> Installing "${CURRENTREALPKGNAME}
 
 	if $CHROOTEXEC usr/bin/apt-get -y install ${CURRENTREALPKGNAME}; then
