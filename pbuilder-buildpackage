@@ -197,7 +197,6 @@ function createbuilduser () {
     if [ -n "$SUTOUSER" ]; then
 	echo "$BUILDUSERNAME:x:$BUILDUSERID:$BUILDUSERID:,,,:/tmp/buildd:/bin/sh" >> $BUILDPLACE/etc/passwd
 	echo "$BUILDUSERNAME:*:$BUILDUSERID:" >> $BUILDPLACE/etc/group
-	cat $BUILDPLACE/etc/passwd
     fi
 }
 
@@ -244,13 +243,13 @@ echo " -> Building the package"
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 
 if [ -z "$DEBEMAIL" ]; then
-    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  $SUTOUSER dpkg-buildpackage -us -uc $DEBBUILDOPTS"; then
+    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/; echo debug ; pwd;  $SUTOUSER dpkg-buildpackage -us -uc $DEBBUILDOPTS"; then
 	echo "pbuilder: Failed autobuilding of package" >&2
 	umountproc_cleanbuildplace
 	exit 1;    
     fi
 else
-    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  $SUTOUSER dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"; then
+    if ! $CHROOTEXEC /bin/bash -c "cd tmp/buildd/*/;  echo debug ;pwd ; $SUTOUSER dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"; then
 	echo "pbuilder: Failed autobuilding of package" >&2
 	umountproc_cleanbuildplace
 	exit 1;    
