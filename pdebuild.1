@@ -2,7 +2,7 @@
 .SH NAME
 pdebuild \- pbuilder way of doing debuild
 .SH SYNOPSIS
-.BI "pdebuild [" "options" "] -- [" "pbuilder options" "]"
+.BI "pdebuild [" "pdebuild options" "] -- [" "pbuilder options" "]"
 .PP
 .SH DESCRIPTION
 A convenience program for 
@@ -13,7 +13,7 @@ One must be inside the source tree containing the
 .B debian
 directory, in order to make it work.
 
-.SH OPTIONS
+.SH "PDEBUILD OPTIONS"
 .TP
 .BI "--buildsourceroot [" "fakeroot" "]"
 The command used to gain root privilege for 
@@ -40,16 +40,30 @@ The place which build result is stored.
 After the 
 .B "--"
 symbol, an arbitrary number of pbuilder options can be specified.
+See pbuilder.8 for full list of options.
 
-Except for
+
+There is an exception that
 .B "--buildresult"
-which needs to be specified before the 
+needs to be specified as pdebuild option before the 
 .B "--"
+to be effective.
 
 .SH "FILES"
 .TP
 .I "/etc/pbuilderrc"
 The configuration file for pbuilder, used in pdebuild.
+
+.TP
+.I "/usr/share/pbuilder/pbuilderrc"
+The default configuration file for pbuilder, used in pdebuild.
+
+.TP
+.I "${HOME}/.pbuilderrc"
+Configuration file for pbuilder, used in pdebuild,
+overrides what is written in
+.B /etc/pbuilderrc
+
 
 .SH "AUTHOR"
 Initial coding, and main maintenance is done by 
