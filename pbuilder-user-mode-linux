@@ -32,7 +32,7 @@ for CONFIGFILE in  /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-
 done
 
 function usecow () {
-    PBUILDER_COW=",$BUILDPLACE/$$.cow"
+    PBUILDER_COW="$BUILDPLACE/$$.cow,"
 }
 
 function operate_uml () {
@@ -95,7 +95,7 @@ EOF
 
     chmod a+x ${INSIDE_PBUILDER}
 
-    linux eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1="${PBUILDER_UML_IMAGE}${PBUILDER_COW}" devfs=mount init=${INSIDE_PBUILDER}
+    linux eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty ubd0=/ ubd1="${PBUILDER_COW}${PBUILDER_UML_IMAGE}" devfs=mount init=${INSIDE_PBUILDER}
 }
 
 PBUILDER_COW=""
