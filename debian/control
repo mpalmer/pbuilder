@@ -15,4 +15,15 @@ Description: personal package builder for Debian packages
  Ideal system to use to check that Build-dependency is correct, 
  and to be sure that unnecessary and wrong build dependency will not
  exist with the resulting binary package.
+ .
+ pbuilder create uses debootstrap to create a chroot  image.
+ .
+ pbuilder update updates the image to the current state of 
+ testing/unstable/whatever
+ .
+ pbuilder build takes a *.dsc file to build a binary in the chroot 
+ image.
+ .
+ Uses apt extensively, and a local mirror, or a fast connection
+ to a Debian mirror is ideal, but not necessary.
 

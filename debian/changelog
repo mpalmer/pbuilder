@@ -3,16 +3,17 @@ pbuilder (0.3) unstable; urgency=low
   * note that --mirror only affects when --distribution is there.
   * fixed a typo in regexp. Could not handle NMU packages, for builder. It did not accept a "period" in the debian version number. strange.
   * depend on debootstrap 0.1.15 or greater. Because it has been tested on 0.1.15
-  * includes an internal checkbuilddep (crude hack) to support potato.
-  Internal build-dependency checker is used when dpkg-checkbuilddeps is not available.
-  This really needs to be fixed.
+  * includes an internal checkbuilddep to support potato.
+  Internal build-dependency checker is used instead of dpkg-checkbuilddeps.
   * does no longer copy the /etc/apt directory into the chroot. It should be non-necessary.
   * added a clean target to pbuilder program to clean up cruft.
   * removed the debian-changelog-mode thing at the bottom of the changelog.
   * added login target to pbuilder, to allow for easy debugging.
   * fixed typo in apt-line generation
   * added an or-sign for build-dependency internal checker, and moving
-    over fully to the internal checker.
+    over fully to the internal checker. Build dep checker does not support 
+    a Build depends with an or sign and a machine specification.
+    Also it ignores the version preference.
   * change priority to extra, because it depends on an extra package.
     thanks to mechanix.
   * added non-us mirror and other mirror options
