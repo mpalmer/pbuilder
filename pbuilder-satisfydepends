@@ -24,18 +24,19 @@ function checkbuilddep_versiondeps () {
     local PACKAGE="$1"
     local COMPARESTRING="$2"
     local DEPSVERSION="$3"
-    local PACKAGEVERSION=$($CHROOTEXEC /usr/bin/apt-cache show $PACKAGE | grep "^Version:" | sort -rn | head -1 | sed 's/^Version: \(.*\)$/\1/')
+    local PACKAGEVERSIONS="$($CHROOTEXEC /usr/bin/apt-cache show $PACKAGE | sed -n  's/^Version: \(.*\)$/\1/p' | xargs)"
     # no versioned provides.
     if [ "${FORCEVERSION}" = "yes" ]; then
 	return 0;
     fi
-    if dpkg --compare-versions "$PACKAGEVERSION" "$COMPARESTRING" "$DEPSVERSION"; then
+    for PACKAGEVERSION in $PACKAGEVERSIONS ; do
+      if dpkg --compare-versions "$PACKAGEVERSION" "$COMPARESTRING" "$DEPSVERSION"; then
 	# satisfies depends
 	return 0;
-    else
-	# cannot satisfy depends
-	return 1;
-    fi
+      fi
+    done
+    # cannot satisfy depends
+    return 1;
 }
 
 function checkbuilddep_archdeps () {
