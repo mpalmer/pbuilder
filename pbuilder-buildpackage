@@ -97,8 +97,8 @@ function checkbuilddep_internal () {
 	if echo "$INSTALLPKG" | grep '[(]' > /dev/null; then
 	    #echo "Debug: $INSTALLPKG"
 	    if ! checkbuilddep_versiondeps ${CURRENTREALPKGNAME} \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/') \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/') ; then
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/') \
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/') ; then
 	      echo "   -> Does not satisfy version, not trying"
 	      continue;
 	    fi
@@ -149,8 +149,8 @@ function checkbuilddep_internal () {
       if echo "$INSTALLPKG" | grep '[(]' > /dev/null ; then
 	  # this package has version-conflicts
 	  if ! checkbuilddep_versiondeps ${CURRENTREALPKGNAME} \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/') \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*(\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/'); then
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/') \
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/'); then
 	      echo "I: Satisfies version, not trying"
 	      continue;
 	  fi
