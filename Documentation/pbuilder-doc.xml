@@ -607,10 +607,13 @@ PBUILDER_UML_IMAGE="/home/dancer/uml-image"
 	<screen>
 #!/bin/bash
 
-apt-get install ssh
+apt-get install -y ssh xbase-clients xterm
 echo "enter root password"
 passwd 
-sshd 
+cp /etc/ssh/sshd_config{,-}
+cat /etc/ssh/sshd_config- | sed 's/X11Forwarding.*/X11Forwarding yes/' &gt; /etc/ssh/sshd_config
+
+/etc/init.d/ssh restart
 ifconfig
 echo "Hit enter to finish"
 read
