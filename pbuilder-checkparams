@@ -141,7 +141,9 @@ BUILDPLACE=${BUILDPLACE?"Build root directory is not defined"}
 
 # the default is to add a PID in the buildplace specified in the config file.
 BASEBUILDPLACE="$BUILDPLACE"
-BUILDPLACE="$BUILDPLACE/$$"
+if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
+    BUILDPLACE="$BUILDPLACE/$$"
+fi
 if [ -z "${CHROOTEXEC}" ]; then
     CHROOTEXEC="chroot $BUILDPLACE "
 fi

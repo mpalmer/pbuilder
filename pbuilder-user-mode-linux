@@ -45,7 +45,7 @@ function operate_uml () {
 #! /bin/bash
 mount -t proc /proc /proc
 mount -t tmpfs /tmp /tmp
-mkdir /tmp/ubd1
+mkdir -p ${UML_CHROOT_MOUNTPOINT}
 mount -t ext2 /dev/ubd/1 ${UML_CHROOT_MOUNTPOINT}
 if [ "${UML_MOUNT_TMPFS}" = "yes" ]; then
   mount -t tmpfs ${UML_CHROOT_MOUNTPOINT}/tmp ${UML_CHROOT_MOUNTPOINT}/tmp
@@ -76,8 +76,8 @@ cat <<SHELL > ${UML_CHROOT_MOUNTPOINT}/tmp/chrootshell
     /etc/init.d/networking stop
     /etc/init.d/networking start
 SHELL
-chmod a+x /tmp/ubd1/tmp/chrootshell
-chroot /tmp/ubd1/ /tmp/chrootshell
+chmod a+x ${UML_CHROOT_MOUNTPOINT}/tmp/chrootshell
+chroot ${UML_CHROOT_MOUNTPOINT} /tmp/chrootshell
 
 #some variables need to be set from outside values, possibly
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin
