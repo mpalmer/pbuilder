@@ -18,6 +18,9 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.14  2002/09/25 08:55:44  dancer
+# +	* pbuilder-runhooks (hooks): do not error out if there are no hooks in the hookdir.
+#
 # Revision 1.13  2002/02/24 12:06:55  dancer
 # release is ready, I've checked.
 #
@@ -83,7 +86,9 @@ function loadhooks () {
     fi
     if [ -d "$HOOKDIR" ]; then
 	mkdir -p "$BUILDPLACE/$hooks"
-	cp -a "$HOOKDIR/"* "$BUILDPLACE/$hooks"
+	if ! cp -a "$HOOKDIR/"* "$BUILDPLACE/$hooks"; then
+	    echo "W: no hooks found on the hookdir"
+	fi
     fi
 }
 
