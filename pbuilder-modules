@@ -203,6 +203,12 @@ function umountproc_cleanbuildplace () {
     cleanbuildplace
 }
 
+function saveaptcache_umountproc_cleanbuildplace () {
+    # save the apt cache, and call umountproc_cleanbuildplace
+    save_aptcache
+    umountproc_cleanbuildplace
+}
+
 function installaptlines (){
     echo "  -> Installing apt-lines"
     rm -f "$BUILDPLACE"/etc/apt/sources.list

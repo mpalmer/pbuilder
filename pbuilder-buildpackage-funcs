@@ -66,12 +66,6 @@ function showbuildbanner () {
     echo
 }
 
-function saveaptcache_umountproc_cleanbuildplace () {
-    # save the apt cache, and call umountproc_cleanbuildplace
-    save_aptcache
-    umountproc_cleanbuildplace
-}
-
 function createbuilduser () {
     # create the build user
     if [ -n "$SUTOUSER" ]; then
