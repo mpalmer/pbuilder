@@ -7,6 +7,10 @@ pbuilder \- personal package builder
 .BI "pbuilder update [" "options" "]"
 .PP
 .BI "pbuilder build [" "options" "] " ".dsc-file"
+.PP
+.BI "pbuilder clean"
+.PP
+.BI "pbuilder login"
 .SH DESCRIPTION
 Front end program to the 
 .B "pbuilder"
@@ -18,23 +22,31 @@ and building Debian package in the chroot environment.
 Creates a 
 .B "base.tgz" 
 for the specified distribution.
+
 .TP
 .B "update"
 Updates the 
 .B "base.tgz"
 for the specified distribution.
+
 .TP
 .B "build"
 Builds the package specified by
 .I ".dsc-file"
 in the chroot environment created using the 
 .B "base.tgz"
+
 .TP
 .B "clean"
 Cleans up the directory specified by the configuration
 .B "BUILDPLACE"
 specified in 
 .I "/etc/pbuilderrc"
+
+.TP
+.B "login"
+Logs into the chroot, and cleaned up afterwards.
+Any changes you make will not be kept.
 .TP
 .BI "--basetgz [" "basetgz-location" "]"
 Specifies the location of 

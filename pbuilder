@@ -27,6 +27,15 @@ case "$1" in
 	echo "Cleaning [$BUILDPLACE]"
 	test -n "$BUILDPLACE" && rm -rf "$BUILDPLACE"/*
 	;;
+    login)
+	shift 
+	. /usr/lib/pbuilder/pbuilder-checkparams
+	extractbuildplace
+	echo " -> entering the shell"
+	chroot "$BUILDPLACE" bin/bash
+	umountproc
+	cleanbuildplace
+	;;
     *)
 	. /usr/lib/pbuilder/pbuilder-modules
 	showhelp
