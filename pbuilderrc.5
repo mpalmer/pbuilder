@@ -1,0 +1,102 @@
+.TH "pbuilderrc" 1 "2001 Aug 25" "Debian" "pbuilder"
+.SH NAME
+pbuilderrc \- configuration files for personal package builder
+.SH DESCRIPTION
+.B "/etc/pbuilderrc" 
+contains default values used in the 
+.B "pbuilder"
+program invocation.
+.PP
+The file itself is sourced by a shell script, so
+it is required that the file conforms to shell script conventions.
+.SH "FORMAT"
+.TP
+.BI "BASETGZ=" "/var/cache/pbuilder/base.tgz"
+Specifies the default location for the archived 
+chroot image to be created and used.
+This is overridden with the option 
+.BR "--basetgz" "."
+.TP
+.BI "EXTRAPACKAGES=" "gcc3.0-athlon-builder"
+Specifies extra packages which the system should install
+in the chroot on 
+.BR "pbuilder create" "."
+.TP
+.BI "export DEBIAN_BUILDARCH=" "athlon"
+Uses this variable as 
+.BR "DEBIAN_BUILDARCH" "."
+This trick can be used for other environmental variables as well.
+.TP
+.BI "BUILDPLACE=" "/var/cache/pbuilder/build/"
+The default place which the chroot is constructed.
+.B pbuilder
+will use the directory 
+.BR "$BUILDPLACE$$" "."
+which means, that it will use the directory and the 
+PID to determine the directory to use.
+This should obtain an unique directory for 
+concurrent runs of pbuilder in one machine.
+This is not guaranteed to happen on network shared drives,
+so be aware of this fact when playing with this option
+on NFS shared beowulf clusters.
+Change it to something like 
+.I "/var/cache/pbuilder/build/$HOSTNAME/"
+when doing such a thing.
+.PP
+Also 
+.B "pbuilder clean"
+cleans up this directory.
+.TP
+.BI "MIRRORSITE=" "http://www.jp.debian.org/debian"
+Specify the mirror site which contains the
+main Debian distribution.
+.TP
+.BI "NONUSMIRRORSITE=" "http://www.jp.debian.org/debian-non-US"
+Specify the mirror site which contains
+.B "non-US"
+distribution.
+.TP
+.BI "OTHERMIRROR=" """deb http://www.home.com/updates/ ./"""
+Add other sources which you want to have added to
+.B "/etc/apt/sources.list" 
+here.
+.TP
+.BI "export http_proxy=" "http://your-proxy:8080/"
+Defines the proxy for http connection.
+.TP
+.BI "USEPROC=" "yes"
+Specify 
+.B yes
+when it is desired to mount
+.B /proc
+interface. It is usually a good idea, since there are many
+software which fail miserably when there is no
+.B /proc
+being mounted.
+.TP
+.BI "BUILDRESULT=" "/var/cache/pbuilder/result/"
+Specify the default directory which the build result will
+be copied over to after the building.
+.TP
+.BI "DISTRIBUTION=" "woody"
+Specify the default distribution to use.
+
+.TP
+.BI "APTCACHE=" "/var/cache/pbuilder/aptcache"
+Specify the location that the packages downloaded by apt
+should be cached.
+
+.TP
+.BI "REMOVEPACKAGES=" "lilo"
+Specify the packages to be removed on creation of 
+.B base.tgz
+Leaving lilo in the chroot is like keeping a timebomb...
+
+.B "pbuilder update" 
+will update to this distribution, if this is specified,
+unless command line option is specified to override this.
+.SH "FILES"
+.I "/etc/pbuilderrc"
+.SH "SEE ALSO"
+.RI "pbuilder (" 1 ") "
+
