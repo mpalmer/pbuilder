@@ -1,3 +1,10 @@
+2003-01-16  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-modules (save_aptcache,recover_aptcache): 
+	use "find | while read ; " combination to go over the limits of 
+	shell globbing.
+	#176872, reported by "Michel D\"anzer" <daenzer@debian.org>.
+
 2003-01-10  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-user-mode-linux: use /var/cache/pbuilder/pbuilder-umlresult 

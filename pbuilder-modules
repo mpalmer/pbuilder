@@ -210,34 +210,38 @@ function extractbuildplace () {
 
 
 function recover_aptcache() {
+    local doit
     # recover the aptcache archive
     if [ -n "$APTCACHE" ]; then
-	echo "Obtaining the cached apt archive contents"
-	if ls "$APTCACHE"/*.deb > /dev/null 2> /dev/null ; then
-	    if [ "$APTCACHEHARDLINK" = "yes" ]; then
-		ln "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
-	    else
-		cp "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
-	    fi
+	if [ "$APTCACHEHARDLINK" = "yes" ]; then
+	    doit=ln
 	else
-	    echo "W: No cache contents yet."
+	    doit=ln -s
 	fi
+	echo "Obtaining the cached apt archive contents"
+	find "$APTCACHE" -name \*.deb -maxdepth 1 | \
+	    while read A ; do
+	    $doit "$A" "$BUILDPLACE/var/cache/apt/archives/" || true
+	done
     fi
 }
 
 function save_aptcache() {
     # save the current aptcache archive
+    local doit
     if [ -n "$APTCACHE" ]; then
 	echo "Copying back the cached apt archive contents"
 	mkdir -p "$APTCACHE" ;
-	for A in "$BUILDPLACE/var/cache/apt/archives/"*.deb; do
+	if [ "$APTCACHEHARDLINK" = "yes" ]; then
+	    doit=ln
+	else
+	    doit=cp
+	fi
+	find "$BUILDPLACE/var/cache/apt/archives/" -name \*.deb -maxdepth 1 | \
+	    while read A ;do
 	    if [ ! -f "$APTCACHE/"$(basename "$A") -a -f "$A" ]; then
 		echo " -> new cache content "$(basename "$A")" added"
-		if [ "$APTCACHEHARDLINK" = "yes" ]; then
-		    ln "$A" "$APTCACHE/" || true
-		else
-		    cp "$A" "$APTCACHE/" || true
-		fi
+		$doit "$A" "$APTCACHE/" || true
 	    fi
 	done
     fi
