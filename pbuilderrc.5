@@ -114,18 +114,13 @@ be copied over to after the building.
 .TP
 .BI "DISTRIBUTION=" "woody"
 Specify the default distribution to use.
-This option affects 
-.B "create" 
-and 
-.B "update"
-but not 
-.B "build"
-nor 
-.B "login"
-
+This option only affects when doing
+.B "pbuilder create" 
+except for when 
+.B "--override-config"
+is specified for 
 .B "pbuilder update" 
-will update to this distribution, if this is specified,
-unless command line option is specified to override this.
+option.
 
 .TP
 .BI "APTCACHE=" "/var/cache/pbuilder/aptcache"

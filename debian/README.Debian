@@ -8,7 +8,7 @@ Try:
 to create the initial chroot build environment.
 
   pbuilder update
-would update
+would update the tarball.
 
 
 pbuilder build some-random-.dsc 
@@ -21,12 +21,12 @@ of Debian packages, you may try invoking pdebuild from the Debian
 source directory, to save you from much typing.
 
 edit /etc/pbuilderrc if the default doesn't work, especially proxy.
-I would edit the mirror location too.
-Add non-us etc, at your option.
-
+Editing the mirror location is also recommended, although the default 
+should work fine.
 
 Please report to the Debian Bug Tracking System against pbuilder
-if a package does not build, and it seems like a genuine bug of pbuilder.
+if a package does not build, and it seems like a genuine bug of pbuilder 
+(i.e. you cannot work around the build failure in any way).
 Also, if something is missing and necessary on some arches, 
 please file a bug to "build-essential" for packages.
 
@@ -72,5 +72,13 @@ past.
 
 
 
+Further reading
+===============
+
+This documentation is not precise. I recommend reading
+pbuilder.8 and pbuilderrc.5 manual pages.
+
+
+
 $Id$
- -- Junichi Uekawa <dancer@debian.org>, Wed Oct 16 13:05:54 2002
+ -- Junichi Uekawa <dancer@debian.org>, Wed Oct 16 20:50:49 2002

@@ -23,6 +23,7 @@
 #default value for this option is !empty!
 INTERNAL_BUILD_UML=""
 CHROOTEXEC=""
+OVERRIDE_APTLINES="no"
 
 while [ -n "$1" ]; do 
     case "$1" in 
@@ -117,6 +118,10 @@ while [ -n "$1" ]; do
 	    ;;
 	--help)
 	    showhelp
+	    ;;
+	--override-config)
+	    OVERRIDE_APTLINES="yes"
+	    shift;
 	    ;;
 	--) # this is an empty option, to no longer process.
 	    shift; 

@@ -23,8 +23,8 @@ pbuilder - a personal builder
 Copyright 2001,2002 Junichi Uekawa
 Distributed under GNU Public License version 2 or later
 
-pbuilder [operation] [operation options]
-pdebuild [operation options]
+pbuilder [operation] [pbuilder-options]
+pdebuild [pbuilder-options]
 
 command lines:
 pbuilder create [--basetgz base.tgz-path] [--distribution woody|sid]
@@ -42,8 +42,7 @@ pbuilder clean
 pbuilder login
   Logs in to the build environment
 
-Operation Options:
-pbuilder options
+pbuilder-options:
  --basetgz [base.tgz location]
  --buildplace [location of build]
  --mirror [mirror location]
@@ -61,8 +60,9 @@ pbuilder options
  --logfile [filename to output log]
  --aptconfdir [overriding apt config dir]
  --timeout [timeout time]
+ --override-config 
 
-pdebuild options
+pdebuild-specific pbuilder-options
  --pbuilderroot [command to obtain root privilege for pbuilder] 
  --buildsourceroot [command to obtain root privilege for dpkg-buildpackage]
 EOF
@@ -207,7 +207,7 @@ function extractbuildplace () {
     mountproc
     mkdir -p "$BUILDPLACE/tmp/buildd"
     
-    if [ -n "$DISTRIBUTION" ]; then
+    if [ "$OVERRIDE_APTLINES" = "yes" ]; then
 	installaptlines
     fi
 }

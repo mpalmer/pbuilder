@@ -1,5 +1,20 @@
 2002-10-16  Junichi Uekawa  <dancer@debian.org>
 
+	* debian/README.Debian: update everything.
+
+	* pbuilderrc.5: update doc to mention --override-config
+
+	* pbuilder.8: update doc to mention that sid/sarge/woody are supported.
+	update doc to mention --override-config
+
+	* pbuilder-modules: update the help text a little bit.
+
+	* pbuilder-checkparams (OVERRIDE_APTLINES): new option --override-config
+	to install new aptlines.
+
+	* pbuilder-modules (extractbuildplace): Check that OVERRIDE_APTLINES is not set,
+	and rewrite apt lines.
+
 	* pbuilder-satisfydepends: apply patch from hmh, thanks!
 	It now searches for a version that matches.
 	Bug: #164919

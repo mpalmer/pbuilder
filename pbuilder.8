@@ -29,10 +29,12 @@ Updates the
 .B "base.tgz"
 for the specified distribution.
 Also, by specifying the 
-.B "--distribution"
-option, it is possible to switch the distribution.
-Specify a dummy distribution value 
-even for custom apt config files.
+.B "--override-config"
+option, it is possible to install a new apt-line using 
+the given options for the base.tgz.
+To switch the distribution, use the
+.B "--distribution" 
+option along with this.
 
 .TP
 .B "build"
@@ -144,8 +146,14 @@ should do.
 .BI "--distribution [" "distribution" "]"
 Specifies the distribution used. Currently the supported values are
 .B "sid"
+.B "sarge"
 and 
 .B "woody".
+
+The distribution switch only happens when 
+.B "--override-config" 
+option is set.
+
 .TP
 .BI "--removepackages [" "packages to remove" "]"
 Removes the packages on creating the 
@@ -163,7 +171,7 @@ surrounded in double quotations, like
 .BI "--extrapackages [" "packages to add" "]"
 Adds packages specified as an addition to the default,
 which is 
-.B build-essential
+.B "build-essential"
 by default.
 This is used in 
 .B "build"
@@ -177,7 +185,6 @@ The packages should be specified as a space-delimited list.
 .TP
 .BI "--configfile [" "configuration file to load" "]"
 Loads the configuration file.
-
 
 \" START OF hookdir description
 
@@ -278,6 +285,16 @@ Specify something like
 .B "--timeout 10h"
 in the command line.
 Default is no timeout.
+
+
+.TP
+.BI "--override-config"
+
+Specify to use different apt set up inside the chroot than it was used for creating the 
+base.tgz.
+Specify this when you want to do pbuilder update with a different distribution
+target set up.
+
 
 .SH "FILES"
 .TP
