@@ -6,7 +6,7 @@ zone(0): 8192 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
 Kernel command line: eth0=slirp,,slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage init=/usr/lib/rootstrap/builder devfs=mount rsworkdir=/home/dancer/.pbuilder-user-mode-linux
-Calibrating delay loop... 1421.36 BogoMIPS
+Calibrating delay loop... 1046.89 BogoMIPS
 Memory: 28964k available
 Dentry cache hash table entries: 4096 (order: 3, 32768 bytes)
 Inode cache hash table entries: 2048 (order: 2, 16384 bytes)
@@ -35,7 +35,7 @@ RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
 loop: loaded (max 8 devices)
 Initializing software serial port version 1
 Netdevice 0 : SLIRP backend - command line: 'slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/WXJzxP/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/ks7Nf6/mconsole
 unable to open root_fs for validation
 Partition check:
  ubdb: unknown partition table
@@ -89,8 +89,8 @@ I: Retrieving http://ftp.jp.debian.org/debian/pool/main/a/apt/apt-utils_0.5.14_i
 I: Validating /tmp/target/var/cache/apt/archives/apt-utils_0.5.14_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/a/at/at_3.1.8-11_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/at_3.1.8-11_i386.deb
-I: Retrieving http://ftp.jp.debian.org/debian/pool/main/b/base-config/base-config_1.72_all.deb
-I: Validating /tmp/target/var/cache/apt/archives/base-config_1.72_all.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/b/base-config/base-config_1.73_all.deb
+I: Validating /tmp/target/var/cache/apt/archives/base-config_1.73_all.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/b/base-files/base-files_3.0.10_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/base-files_3.0.10_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/b/base-passwd/base-passwd_3.5.4_i386.deb
@@ -119,8 +119,8 @@ I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/debconf/debconf-i18n_1
 I: Validating /tmp/target/var/cache/apt/archives/debconf-i18n_1.3.14_all.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/debianutils/debianutils_2.5.5_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/debianutils_2.5.5_i386.deb
-I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/diff/diff_2.8.1-3_i386.deb
-I: Validating /tmp/target/var/cache/apt/archives/diff_2.8.1-3_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/diff/diff_2.8.1-4_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/diff_2.8.1-4_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/dpkg/dpkg_1.10.15_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/dpkg_1.10.15_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/d/dpkg/dselect_1.10.15_i386.deb
@@ -227,12 +227,12 @@ I: Retrieving http://ftp.jp.debian.org/debian/pool/main/p/popt/libpopt0_1.7-2_i3
 I: Validating /tmp/target/var/cache/apt/archives/libpopt0_1.7-2_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/r/readline4/libreadline4_4.3-5_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/libreadline4_4.3-5_i386.deb
-I: Retrieving http://ftp.jp.debian.org/debian/pool/main/c/cyrus-sasl2/libsasl2_2.1.15-5.1_i386.deb
-I: Validating /tmp/target/var/cache/apt/archives/libsasl2_2.1.15-5.1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/c/cyrus-sasl2/libsasl2_2.1.15-5.2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libsasl2_2.1.15-5.2_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/e/e2fsprogs/libss2_1.34+1.35-WIP-2003.08.21-3_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/libss2_1.34+1.35-WIP-2003.08.21-3_i386.deb
-I: Retrieving http://ftp.jp.debian.org/debian/pool/main/o/openssl/libssl0.9.7_0.9.7b-2_i386.deb
-I: Validating /tmp/target/var/cache/apt/archives/libssl0.9.7_0.9.7b-2_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/o/openssl/libssl0.9.7_0.9.7c-1_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/libssl0.9.7_0.9.7c-1_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/gcc-2.95/libstdc++2.10-glibc2.2_2.95.4-17_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/libstdc++2.10-glibc2.2_1%3a2.95.4-17_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/g/gcc-3.3/libstdc++5_3.3.2-0pre4_i386.deb
@@ -273,8 +273,8 @@ I: Retrieving http://ftp.jp.debian.org/debian/pool/main/m/modutils/modutils_2.4.
 I: Validating /tmp/target/var/cache/apt/archives/modutils_2.4.25-1_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/u/util-linux/mount_2.12-3_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/mount_2.12-3_i386.deb
-I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/nano/nano_1.2.2-1_i386.deb
-I: Validating /tmp/target/var/cache/apt/archives/nano_1.2.2-1_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/nano/nano_1.2.2-2_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/nano_1.2.2-2_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/ncurses/ncurses-base_5.3.20030719-2_all.deb
 I: Validating /tmp/target/var/cache/apt/archives/ncurses-base_5.3.20030719-2_all.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/ncurses/ncurses-bin_5.3.20030719-2_i386.deb
@@ -321,8 +321,8 @@ I: Retrieving http://ftp.jp.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.85
 I: Validating /tmp/target/var/cache/apt/archives/sysvinit_2.85-7_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/t/tar/tar_1.13.25-6_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/tar_1.13.25-6_i386.deb
-I: Retrieving http://ftp.jp.debian.org/debian/pool/main/t/tasksel/tasksel_1.34_i386.deb
-I: Validating /tmp/target/var/cache/apt/archives/tasksel_1.34_i386.deb
+I: Retrieving http://ftp.jp.debian.org/debian/pool/main/t/tasksel/tasksel_1.35_i386.deb
+I: Validating /tmp/target/var/cache/apt/archives/tasksel_1.35_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/t/tcp-wrappers/tcpd_7.6-ipv6.1-3_i386.deb
 I: Validating /tmp/target/var/cache/apt/archives/tcpd_7.6-ipv6.1-3_i386.deb
 I: Retrieving http://ftp.jp.debian.org/debian/pool/main/n/netkit-telnet/telnet_0.17-20_i386.deb
@@ -348,7 +348,7 @@ I: Extracting /var/cache/apt/archives/liblocale-gettext-perl_1.01-17_i386.deb...
 I: Extracting /var/cache/apt/archives/libtext-wrapi18n-perl_0.06-1_all.deb...
 I: Extracting /var/cache/apt/archives/libtext-charwidth-perl_0.04-1_i386.deb...
 I: Extracting /var/cache/apt/archives/debianutils_2.5.5_i386.deb...
-I: Extracting /var/cache/apt/archives/diff_2.8.1-3_i386.deb...
+I: Extracting /var/cache/apt/archives/diff_2.8.1-4_i386.deb...
 I: Extracting /var/cache/apt/archives/dpkg_1.10.15_i386.deb...
 I: Extracting /var/cache/apt/archives/dselect_1.10.15_i386.deb...
 I: Extracting /var/cache/apt/archives/libblkid1_1.34+1.35-WIP-2003.08.21-3_i386.deb...
@@ -440,8 +440,8 @@ dpkg: libc6: dependency problems, but configuring anyway as you request:
   Package libdb1-compat is not installed.
 Setting up libc6 (2.3.2-8) ...
 Current default timezone: 'UTC'.
-Local time is now:      Wed Oct  1 23:49:30 UTC 2003.
-Universal Time is now:  Wed Oct  1 23:49:30 UTC 2003.
+Local time is now:      Thu Oct  2 23:44:20 UTC 2003.
+Universal Time is now:  Thu Oct  2 23:44:20 UTC 2003.
 Run 'tzconfig' if you wish to change it.
 Package `sysvinit' is not installed and no info is available.
 Use dpkg --info (= dpkg-deb --info) to examine archive files,
@@ -507,7 +507,7 @@ dpkg: regarding .../debianutils_2.5.5_i386.deb containing debianutils, pre-depen
 dpkg: warning - ignoring pre-dependency problem !
 Unpacking debianutils (from .../debianutils_2.5.5_i386.deb) ...
 Selecting previously deselected package diff.
-Unpacking diff (from .../archives/diff_2.8.1-3_i386.deb) ...
+Unpacking diff (from .../archives/diff_2.8.1-4_i386.deb) ...
 dpkg: regarding .../archives/dpkg_1.10.15_i386.deb containing dpkg, pre-dependency problem:
  dpkg pre-depends on dselect
   dselect is not installed.
@@ -665,8 +665,8 @@ dpkg: libc6: dependency problems, but configuring anyway as you request:
   Package libdb1-compat is not installed.
 Setting up libc6 (2.3.2-8) ...
 Current default timezone: 'UTC'.
-Local time is now:      Wed Oct  1 23:51:22 UTC 2003.
-Universal Time is now:  Wed Oct  1 23:51:22 UTC 2003.
+Local time is now:      Thu Oct  2 23:45:49 UTC 2003.
+Universal Time is now:  Thu Oct  2 23:45:49 UTC 2003.
 Run 'tzconfig' if you wish to change it.
 
 Setting up libcap1 (1.10-12) ...
@@ -723,7 +723,7 @@ Setting up findutils (4.1.20-1) ...
 
 Setting up e2fsprogs (1.34+1.35-WIP-2003.08.21-3) ...
 Setting up liblocale-gettext-perl (1.01-17) ...
-Setting up diff (2.8.1-3) ...
+Setting up diff (2.8.1-4) ...
 
 Setting up libdb2 (2.7.7.0-8) ...
 
@@ -794,7 +794,7 @@ Unpacking apt-utils (from .../apt-utils_0.5.14_i386.deb) ...
 Selecting previously deselected package at.
 Unpacking at (from .../archives/at_3.1.8-11_i386.deb) ...
 Selecting previously deselected package base-config.
-Unpacking base-config (from .../base-config_1.72_all.deb) ...
+Unpacking base-config (from .../base-config_1.73_all.deb) ...
 Selecting previously deselected package bsdmainutils.
 Unpacking bsdmainutils (from .../bsdmainutils_6.0.4_i386.deb) ...
 Selecting previously deselected package console-common.
@@ -838,7 +838,7 @@ Unpacking libident (from .../libident_0.22-2.2_i386.deb) ...
 Selecting previously deselected package libgnutls7.
 Unpacking libgnutls7 (from .../libgnutls7_0.8.9-2_i386.deb) ...
 Selecting previously deselected package libssl0.9.7.
-Unpacking libssl0.9.7 (from .../libssl0.9.7_0.9.7b-2_i386.deb) ...
+Unpacking libssl0.9.7 (from .../libssl0.9.7_0.9.7c-1_i386.deb) ...
 Selecting previously deselected package libgcrypt1.
 Unpacking libgcrypt1 (from .../libgcrypt1_1.1.12-3_i386.deb) ...
 Selecting previously deselected package liblzo1.
@@ -854,7 +854,7 @@ Unpacking liblockfile1 (from .../liblockfile1_1.05_i386.deb) ...
 Selecting previously deselected package libpcre3.
 Unpacking libpcre3 (from .../libpcre3_4.3-3_i386.deb) ...
 Selecting previously deselected package libsasl2.
-Unpacking libsasl2 (from .../libsasl2_2.1.15-5.1_i386.deb) ...
+Unpacking libsasl2 (from .../libsasl2_2.1.15-5.2_i386.deb) ...
 Selecting previously deselected package libtext-iconv-perl.
 Unpacking libtext-iconv-perl (from .../libtext-iconv-perl_1.2-2_i386.deb) ...
 Selecting previously deselected package libwrap0.
@@ -872,7 +872,7 @@ Unpacking manpages (from .../manpages_1.60-3_all.deb) ...
 Selecting previously deselected package modconf.
 Unpacking modconf (from .../modconf_0.2.44_all.deb) ...
 Selecting previously deselected package nano.
-Unpacking nano (from .../archives/nano_1.2.2-1_i386.deb) ...
+Unpacking nano (from .../archives/nano_1.2.2-2_i386.deb) ...
 Selecting previously deselected package net-tools.
 Unpacking net-tools (from .../net-tools_1.60-8_i386.deb) ...
 Selecting previously deselected package netbase.
@@ -896,7 +896,7 @@ Unpacking libpcap0.7 (from .../libpcap0.7_0.7.2-1_i386.deb) ...
 Selecting previously deselected package sysklogd.
 Unpacking sysklogd (from .../sysklogd_1.4.1-12_i386.deb) ...
 Selecting previously deselected package tasksel.
-Unpacking tasksel (from .../archives/tasksel_1.34_i386.deb) ...
+Unpacking tasksel (from .../archives/tasksel_1.35_i386.deb) ...
 Selecting previously deselected package tcpd.
 Unpacking tcpd (from .../tcpd_7.6-ipv6.1-3_i386.deb) ...
 Selecting previously deselected package telnet.
@@ -932,7 +932,7 @@ Setting up psmisc (21.3-1) ...
 
 Setting up libident (0.22-2.2) ...
 
-Setting up libssl0.9.7 (0.9.7b-2) ...
+Setting up libssl0.9.7 (0.9.7c-1) ...
 
 Setting up apt (0.5.14) ...
 
@@ -956,8 +956,11 @@ Setting up adduser (3.51) ...
 Setting up manpages (1.60-3) ...
 Setting up ed (0.2-20) ...
 
-Setting up tasksel (1.34) ...
-
+dpkg: dependency problems prevent configuration of tasksel:
+ tasksel depends on libtextwrap1; however:
+  Package libtextwrap1 is not installed.
+dpkg: error processing tasksel (--configure):
+ dependency problems - leaving unconfigured
 Setting up libtext-iconv-perl (1.2-2) ...
 Setting up libpcap0.7 (0.7.2-1) ...
 
@@ -993,9 +996,9 @@ Starting periodic command scheduler: cron
 Warning: Fake start-stop-daemon called, doing nothing
 .
 
-Setting up libsasl2 (2.1.15-5.1) ...
+Setting up libsasl2 (2.1.15-5.2) ...
 
-Setting up nano (1.2.2-1) ...
+Setting up nano (1.2.2-2) ...
 
 Setting up netkit-inetd (0.10-9) ...
 Starting internet superserver: inetd
@@ -1054,7 +1057,7 @@ mac-usb-be
 Warning: cannot access console;
   deferring until console is accessible.
 
-Setting up base-config (1.72) ...
+Setting up base-config (1.73) ...
 
 Setting up sysklogd (1.4.1-12) ...
 Stopping system log daemon: syslogd
@@ -1079,28 +1082,52 @@ Warning: Fake start-stop-daemon called, doing nothing
 .
 
 Setting up exim4 (4.22-5) ...
-I: Base system installed successfully.
-chroot /tmp/target dpkg --purge base-config console-common console-tools console-data console-tools-libs 
-(Reading database ... 6951 files and directories currently installed.)
-Removing base-config ...
-Purging configuration files for base-config ...
-dpkg - warning: ignoring request to remove console-tools-libs which isn't installed.
-Removing console-common ...
-Purging configuration files for console-common ...
-Removing console-tools ...
-Purging configuration files for console-tools ...
-Removing console-data ...
-Purging configuration files for console-data ...
-Using rootstrap module uml from:
-	/usr/lib/rootstrap/modules/uml
-./MAKEDEV: warning: can't read /proc/devices
-Using rootstrap module umount from:
-	/usr/lib/rootstrap/modules/umount
-umount: /tmp/target/proc: not mounted
-System halted.
-tracing thread pid = 26707
+Errors were encountered while processing:
+ tasksel
+W: Failure while configuring base packages.  This will be attempted 5 times.
+dpkg: dependency problems prevent configuration of tasksel:
+ tasksel depends on libtextwrap1; however:
+  Package libtextwrap1 is not installed.
+dpkg: error processing tasksel (--configure):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ tasksel
+W: Failure while configuring base packages.  This will be attempted 5 times.
+dpkg: dependency problems prevent configuration of tasksel:
+ tasksel depends on libtextwrap1; however:
+  Package libtextwrap1 is not installed.
+dpkg: error processing tasksel (--configure):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ tasksel
+W: Failure while configuring base packages.  This will be attempted 5 times.
+dpkg: dependency problems prevent configuration of tasksel:
+ tasksel depends on libtextwrap1; however:
+  Package libtextwrap1 is not installed.
+dpkg: error processing tasksel (--configure):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ tasksel
+W: Failure while configuring base packages.  This will be attempted 5 times.
+dpkg: dependency problems prevent configuration of tasksel:
+ tasksel depends on libtextwrap1; however:
+  Package libtextwrap1 is not installed.
+dpkg: error processing tasksel (--configure):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ tasksel
+W: Failure while configuring base packages.  This will be attempted 5 times.
+Traceback (most recent call last):
+  File "/usr/lib/rootstrap/builder", line 66, in ?
+    dispatch(module, modulevars)
+  File "/usr/lib/rootstrap/builder", line 44, in dispatch
+    raise "rootstrap: Module '%s' failed, status: %d" % (module,status)
+rootstrap: Module 'debian' failed, status: 1
+Kernel panic: Attempted to kill init!
+ <6>Stopping all CPUs...done
+tracing thread pid = 24935
 
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileKrd2de rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileoQMmaW rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.20-7um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 SMP Fri Aug 8 18:30:28 EDT 2003
@@ -1108,8 +1135,8 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileKrd2de rw
-Calibrating delay loop... 1264.34 BogoMIPS
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileoQMmaW rw
+Calibrating delay loop... 1608.09 BogoMIPS
 Memory: 126208k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -1139,7 +1166,7 @@ loop: loaded (max 8 devices)
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/fy2fbN/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/SJCVbl/mconsole
 unable to open root_fs for validation
 Partition check:
  ubdb: unknown partition table
@@ -1154,6 +1181,7 @@ Root-NFS: No NFS server available, giving up.
 VFS: Unable to mount root fs via NFS, trying floppy.
 VFS: Mounted root (hostfs filesystem).
 Mounted devfs on /dev
+EXT2-fs warning: mounting unchecked fs, running e2fsck is recommended
 Starting network inside the chroot
 sed: can't read /proc/mounts: No such file or directory
 sed: can't read /proc/mounts: No such file or directory
@@ -1188,108 +1216,19 @@ Upgrading for distribution sid
  -> installing dummy policy-rc.d
 Refreshing the base.tgz 
  -> upgrading packages
-0% [Working]            0% [Waiting for headers]                        Get:1 http://ftp.jp.debian.org sid/main Packages [2693kB]
-                        0% [1 Packages 0/2693kB 0%]                           0% [1 Packages 8302/2693kB 0%]                              0% [1 Packages 19822/2693kB 0%]1% [1 Packages 39982/2693kB 1%]                               4% [1 Packages 120622/2693kB 4%]7% [1 Packages 191182/2693kB 7%]9% [1 Packages 254542/2693kB 9%]                                12% [1 Packages 329422/2693kB 12%]16% [1 Packages 444622/2693kB 16%]18% [1 Packages 507982/2693kB 18%]                                  22% [1 Packages 600142/2693kB 22%]                                 100.0kB/s 20s25% [1 Packages 692302/2693kB 25%]                                 100.0kB/s 20s28% [1 Packages 761422/2693kB 28%]                                 100.0kB/s 19s31% [1 Packages 846382/2693kB 31%]                                 100.0kB/s 18s34% [1 Packages 928462/2693kB 34%]                                 100.0kB/s 17s37% [1 Packages 1011982/2693kB 37%]                                100.0kB/s 16s40% [1 Packages 1078222/2693kB 40%]                                100.0kB/s 16s43% [1 Packages 1184782/2693kB 43%]                                100.0kB/s 15s47% [1 Packages 1268302/2693kB 47%]                                100.0kB/s 14s50% [1 Packages 1364782/2693kB 50%]                                100.0kB/s 13s54% [1 Packages 1458336/2693kB 54%]                                100.0kB/s 12s56% [1 Packages 1521696/2693kB 56%]                                100.0kB/s 11s59% [1 Packages 1610976/2693kB 59%]                                   162kB/s 6s63% [1 Packages 1708896/2693kB 63%]                                   162kB/s 6s67% [1 Packages 1826976/2693kB 67%]                                   162kB/s 5s71% [1 Packages 1917696/2693kB 71%]                                   162kB/s 4s75% [1 Packages 2021376/2693kB 75%]                                   162kB/s 4s78% [1 Packages 2100576/2693kB 78%]                                   162kB/s 3s82% [1 Packages 2210016/2693kB 82%]                                   162kB/s 2s85% [1 Packages 2293536/2693kB 85%]                                   162kB/s 2s89% [1 Packages 2407296/2693kB 89%]                                   162kB/s 1s93% [1 Packages 2522496/2693kB 93%]                                   162kB/s 1s96% [1 Packages 2603136/2693kB 96%]                                   162kB/s 0s                                                                                Get:2 http://ftp.jp.debian.org sid/main Release [82B]
-99% [Working]                                                         177kB/s 0s99% [1 Packages gzip 0]                                               177kB/s 0s99% [1 Packages gzip 4517888]                                         177kB/s 0s99% [1 Packages gzip 9068544]                                         177kB/s 0s100% [Working]                                                        177kB/s 0s                                                                                Fetched 2693kB in 21s (126kB/s)
-Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 1%Reading Package Lists... 34%Reading Package Lists... 59%Reading Package Lists... 86%Reading Package Lists... 99%Reading Package Lists... 99%Reading Package Lists... Done
-(Reading database ... 6204 files and directories currently installed.)
-Removing lilo ...
-Purging configuration files for lilo ...
-Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 77%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 29%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 64%Building Dependency Tree... Done
-Calculating Upgrade... Done
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Reading Package Lists... 0%Reading Package Lists... 100%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 32%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 78%Building Dependency Tree... Done
-apt is already the newest version.
-The following extra packages will be installed:
-  binutils cpp cpp-3.3 g++ g++-3.3 gcc gcc-3.3 libc6-dev libdb4.0
-  libstdc++5-3.3-dev make patch perl perl-modules
-Suggested packages:
-  gnupg manpages-dev automake flex gdb gcc-3.3-doc libstdc++5-3.3-doc
-  libterm-readline-perl-perl
-The following NEW packages will be installed:
-  binutils build-essential cpp cpp-3.3 dpkg-dev g++ g++-3.3 gcc gcc-3.3
-  libc6-dev libdb4.0 libstdc++5-3.3-dev make patch perl perl-modules
-0 upgraded, 16 newly installed, 0 to remove and 0 not upgraded.
-Need to get 16.6MB of archives.
-After unpacking 58.2MB of additional disk space will be used.
-0% [Working]            0% [Waiting for headers]                        Get:1 http://ftp.jp.debian.org sid/main binutils 2.14.90.0.6-3 [2429kB]
-                        0% [1 binutils 2550/2429kB 0%]0% [1 binutils 8310/2429kB 0%]                              0% [1 binutils 31350/2429kB 1%]0% [1 binutils 60150/2429kB 2%]                               0% [1 binutils 138272/2429kB 5%]                                1% [1 binutils 247712/2429kB 10%]1% [1 binutils 319712/2429kB 13%]2% [1 binutils 384512/2429kB 15%]2% [1 binutils 457952/2429kB 18%]3% [1 binutils 518432/2429kB 21%]                                 3% [1 binutils 590432/2429kB 24%]                                 98.0kB/s 2m43s3% [1 binutils 652352/2429kB 26%]                                 98.0kB/s 2m43s4% [1 binutils 705632/2429kB 29%]                                 98.0kB/s 2m42s4% [1 binutils 770432/2429kB 31%]                                 98.0kB/s 2m42s4% [1 binutils 832352/2429kB 34%]                                 98.0kB/s 2m41s5% [1 binutils 900032/2429kB 37%]                                 98.0kB/s 2m40s5% [1 binutils 948992/2429kB 39%]                                 98.0kB/s 2m40s6% [1 binutils 1025312/2429kB 42%]                                98.0kB/s 2m39s6% [1 binutils 1081472/2429kB 44%]                                98.0kB/s 2m38s6% [1 binutils 1147712/2429kB 47%]                                98.0kB/s 2m38s7% [1 binutils 1221152/2429kB 50%]                                98.0kB/s 2m37s7% [1 binutils 1297472/2429kB 53%]                                98.0kB/s 2m36s8% [1 binutils 1365152/2429kB 56%]                                  123kB/s 2m4s8% [1 binutils 1389632/2429kB 57%]                                  123kB/s 2m4s8% [1 binutils 1490432/2429kB 61%]                                  123kB/s 2m3s9% [1 binutils 1542272/2429kB 63%]                                  123kB/s 2m3s9% [1 binutils 1594112/2429kB 65%]                                  123kB/s 2m2s9% [1 binutils 1653152/2429kB 68%]                                  123kB/s 2m2s10% [1 binutils 1730912/2429kB 71%]                                 123kB/s 2m1s10% [1 binutils 1789952/2429kB 73%]                                 123kB/s 2m1s10% [1 binutils 1830272/2429kB 75%]                                 123kB/s 2m0s11% [1 binutils 1905568/2429kB 78%]                                 123kB/s 2m0s11% [1 binutils 1971808/2429kB 81%]                                123kB/s 1m59s12% [1 binutils 2031616/2429kB 83%]                                123kB/s 1m59s12% [1 binutils 2093536/2429kB 86%]                                 115kB/s 2m6s12% [1 binutils 2152576/2429kB 88%]                                 115kB/s 2m5s13% [1 binutils 2215936/2429kB 91%]                                 115kB/s 2m5s13% [1 binutils 2280736/2429kB 93%]                                 115kB/s 2m4s14% [1 binutils 2342656/2429kB 96%]                                 115kB/s 2m4s14% [1 binutils 2410336/2429kB 99%]                                 115kB/s 2m3s                                                                                Get:2 http://ftp.jp.debian.org sid/main cpp-3.3 1:3.3.2-0pre4 [1387kB]
-14% [2 cpp-3.3 1627/1387kB 0%]                                      115kB/s 2m3s15% [2 cpp-3.3 82267/1387kB 5%]                                     115kB/s 2m2s15% [2 cpp-3.3 151387/1387kB 10%]                                   115kB/s 2m2s15% [2 cpp-3.3 216768/1387kB 15%]                                   115kB/s 2m1s16% [2 cpp-3.3 285888/1387kB 20%]                                   115kB/s 2m0s16% [2 cpp-3.3 350688/1387kB 25%]                                   115kB/s 2m0s17% [2 cpp-3.3 414048/1387kB 29%]                                  115kB/s 1m59s17% [2 cpp-3.3 486048/1387kB 35%]                                  128kB/s 1m47s17% [2 cpp-3.3 553728/1387kB 39%]                                  128kB/s 1m46s18% [2 cpp-3.3 617088/1387kB 44%]                                  128kB/s 1m46s18% [2 cpp-3.3 689088/1387kB 49%]                                  128kB/s 1m45s19% [2 cpp-3.3 763968/1387kB 55%]                                  128kB/s 1m44s19% [2 cpp-3.3 835968/1387kB 60%]                                  128kB/s 1m44s20% [2 cpp-3.3 913728/1387kB 65%]                                  128kB/s 1m43s20% [2 cpp-3.3 977088/1387kB 70%]                                  128kB/s 1m43s20% [2 cpp-3.3 1051968/1387kB 75%]                                 128kB/s 1m42s21% [2 cpp-3.3 1123968/1387kB 81%]                                 128kB/s 1m42s21% [2 cpp-3.3 1193088/1387kB 86%]                                 128kB/s 1m41s22% [2 cpp-3.3 1250688/1387kB 90%]                                 128kB/s 1m41s22% [2 cpp-3.3 1325568/1387kB 95%]                                 132kB/s 1m37s                                                                                Get:3 http://ftp.jp.debian.org sid/main cpp 4:3.3.1-2 [26.0kB]
-22% [3 cpp 1996/26.0kB 7%]                                         132kB/s 1m37s                                                                                Get:4 http://ftp.jp.debian.org sid/main perl-modules 5.8.1-2 [2156kB]
-23% [4 perl-modules 1575/2156kB 0%]                                132kB/s 1m37s23% [4 perl-modules 70695/2156kB 3%]                               132kB/s 1m36s23% [4 perl-modules 151335/2156kB 7%]                              132kB/s 1m35s24% [4 perl-modules 214695/2156kB 9%]                              132kB/s 1m35s24% [4 perl-modules 278055/2156kB 12%]                             132kB/s 1m34s25% [4 perl-modules 341415/2156kB 15%]                             132kB/s 1m34s25% [4 perl-modules 404775/2156kB 18%]                             132kB/s 1m33s25% [4 perl-modules 468135/2156kB 21%]                             132kB/s 1m33s26% [4 perl-modules 531495/2156kB 24%]                             132kB/s 1m32s26% [4 perl-modules 594855/2156kB 27%]                             132kB/s 1m32s27% [4 perl-modules 658215/2156kB 30%]                             132kB/s 1m32s27% [4 perl-modules 721575/2156kB 33%]                             125kB/s 1m36s27% [4 perl-modules 783495/2156kB 36%]                             125kB/s 1m36s28% [4 perl-modules 846855/2156kB 39%]                             125kB/s 1m35s28% [4 perl-modules 930375/2156kB 43%]                             125kB/s 1m34s29% [4 perl-modules 993735/2156kB 46%]                             125kB/s 1m34s29% [4 perl-modules 1035495/2156kB 48%]                            125kB/s 1m34s29% [4 perl-modules 1075815/2156kB 49%]                            125kB/s 1m33s29% [4 perl-modules 1136295/2156kB 52%]                            125kB/s 1m33s30% [4 perl-modules 1198215/2156kB 55%]                            125kB/s 1m32s30% [4 perl-modules 1251495/2156kB 58%]                            125kB/s 1m32s30% [4 perl-modules 1314855/2156kB 60%]                            125kB/s 1m31s31% [4 perl-modules 1349415/2156kB 62%]                            125kB/s 1m31s31% [4 perl-modules 1391175/2156kB 64%]                            106kB/s 1m47s31% [4 perl-modules 1451655/2156kB 67%]                            106kB/s 1m47s32% [4 perl-modules 1510695/2156kB 70%]                            106kB/s 1m46s32% [4 perl-modules 1568295/2156kB 72%]                            106kB/s 1m46s32% [4 perl-modules 1598535/2156kB 74%]                            106kB/s 1m45s32% [4 perl-modules 1641735/2156kB 76%]                            106kB/s 1m45s33% [4 perl-modules 1703655/2156kB 79%]                            106kB/s 1m44s33% [4 perl-modules 1762695/2156kB 81%]                            106kB/s 1m44s34% [4 perl-modules 1823175/2156kB 84%]                            106kB/s 1m43s34% [4 perl-modules 1886535/2156kB 87%]                            106kB/s 1m43s34% [4 perl-modules 1945575/2156kB 90%]                            106kB/s 1m42s35% [4 perl-modules 2007495/2156kB 93%]                            106kB/s 1m41s35% [4 perl-modules 2065095/2156kB 95%]                            107kB/s 1m40s35% [4 perl-modules 2105415/2156kB 97%]                            107kB/s 1m40s36% [4 perl-modules 2154375/2156kB 99%]                            107kB/s 1m39s                                                                                Get:5 http://ftp.jp.debian.org sid/main libdb4.0 4.0.14-1.3 [302kB]
-36% [5 libdb4.0 746/302kB 0%]                                      107kB/s 1m39s36% [5 libdb4.0 52586/302kB 17%]                                   107kB/s 1m39s36% [5 libdb4.0 110186/302kB 36%]                                  107kB/s 1m38s37% [5 libdb4.0 170666/302kB 56%]                                  107kB/s 1m38s37% [5 libdb4.0 234026/302kB 77%]                                  107kB/s 1m37s37% [5 libdb4.0 297386/302kB 98%]                                  107kB/s 1m37s                                                                                Get:6 http://ftp.jp.debian.org sid/main perl 5.8.1-2 [3305kB]
-37% [6 perl 725/3305kB 0%]                                         107kB/s 1m37s38% [6 perl 58325/3305kB 1%]                                       107kB/s 1m36s38% [6 perl 121685/3305kB 3%]                                      107kB/s 1m35s38% [6 perl 172085/3305kB 5%]                                      107kB/s 1m35s39% [6 perl 210965/3305kB 6%]                                      100kB/s 1m40s39% [6 perl 262805/3305kB 7%]                                      100kB/s 1m40s39% [6 perl 320405/3305kB 9%]                                      100kB/s 1m39s40% [6 perl 382325/3305kB 11%]                                     100kB/s 1m39s40% [6 perl 441365/3305kB 13%]                                     100kB/s 1m38s40% [6 perl 501845/3305kB 15%]                                     100kB/s 1m38s41% [6 perl 562325/3305kB 17%]                                     100kB/s 1m37s41% [6 perl 622805/3305kB 18%]                                     100kB/s 1m36s41% [6 perl 668885/3305kB 20%]                                     100kB/s 1m36s42% [6 perl 736565/3305kB 22%]                                     100kB/s 1m35s42% [6 perl 792725/3305kB 23%]                                     100kB/s 1m35s42% [6 perl 856085/3305kB 25%]                                     100kB/s 1m34s43% [6 perl 919445/3305kB 27%]                                     112kB/s 1m23s43% [6 perl 971285/3305kB 29%]                                     112kB/s 1m23s44% [6 perl 1030325/3305kB 31%]                                    112kB/s 1m22s44% [6 perl 1079285/3305kB 32%]                                    112kB/s 1m22s44% [6 perl 1132565/3305kB 34%]                                    112kB/s 1m21s45% [6 perl 1195925/3305kB 36%]                                    112kB/s 1m21s45% [6 perl 1259285/3305kB 38%]                                    112kB/s 1m20s45% [6 perl 1322645/3305kB 40%]                                    112kB/s 1m20s46% [6 perl 1386005/3305kB 41%]                                    112kB/s 1m19s46% [6 perl 1440725/3305kB 43%]                                    112kB/s 1m19s46% [6 perl 1512725/3305kB 45%]                                    112kB/s 1m18s47% [6 perl 1576085/3305kB 47%]                                    112kB/s 1m18s47% [6 perl 1639445/3305kB 49%]                                    113kB/s 1m16s48% [6 perl 1702805/3305kB 51%]                                    113kB/s 1m16s48% [6 perl 1766165/3305kB 53%]                                    113kB/s 1m15s48% [6 perl 1829525/3305kB 55%]                                    113kB/s 1m15s49% [6 perl 1892885/3305kB 57%]                                    113kB/s 1m14s49% [6 perl 1954805/3305kB 59%]                                    113kB/s 1m14s49% [6 perl 2019605/3305kB 61%]                                    113kB/s 1m13s50% [6 perl 2082965/3305kB 63%]                                    113kB/s 1m13s50% [6 perl 2149205/3305kB 65%]                                    113kB/s 1m12s51% [6 perl 2247296/3305kB 67%]                                    113kB/s 1m11s51% [6 perl 2325056/3305kB 70%]                                    113kB/s 1m10s52% [6 perl 2392736/3305kB 72%]                                    113kB/s 1m10s52% [6 perl 2460416/3305kB 74%]                                      130kB/s 60s53% [6 perl 2523776/3305kB 76%]                                      130kB/s 60s53% [6 perl 2587136/3305kB 78%]                                      130kB/s 59s53% [6 perl 2650496/3305kB 80%]                                      130kB/s 59s54% [6 perl 2713856/3305kB 82%]                                      130kB/s 58s54% [6 perl 2777216/3305kB 84%]                                      130kB/s 58s54% [6 perl 2840576/3305kB 85%]                                      130kB/s 57s55% [6 perl 2924096/3305kB 88%]                                      130kB/s 56s55% [6 perl 2987456/3305kB 90%]                                      130kB/s 56s56% [6 perl 3068096/3305kB 92%]                                      130kB/s 55s56% [6 perl 3137216/3305kB 94%]                                      130kB/s 55s57% [6 perl 3207776/3305kB 97%]                                      130kB/s 54s57% [6 perl 3271136/3305kB 98%]                                      129kB/s 54s                                                                                Get:7 http://ftp.jp.debian.org sid/main patch 2.5.9-1 [92.3kB]
-57% [7 patch 1553/92.3kB 1%]                                         129kB/s 54s58% [7 patch 66353/92.3kB 71%]                                       129kB/s 54s                                                                                Get:8 http://ftp.jp.debian.org sid/main make 3.80-4 [349kB]
-58% [8 make 1057/349kB 0%]                                           129kB/s 53s58% [8 make 58657/349kB 16%]                                         129kB/s 53s58% [8 make 116257/349kB 33%]                                        129kB/s 52s59% [8 make 199777/349kB 57%]                                        129kB/s 52s59% [8 make 263137/349kB 75%]                                        129kB/s 51s60% [8 make 325152/349kB 93%]                                        129kB/s 51s60% [Waiting for headers]                                            129kB/s 51s                                                                                Get:9 http://ftp.jp.debian.org sid/main dpkg-dev 1.10.15 [112kB]
-60% [9 dpkg-dev 2554/112kB 2%]                                       129kB/s 51s60% [9 dpkg-dev 88954/112kB 79%]                                     129kB/s 50s                                                                                Get:10 http://ftp.jp.debian.org sid/main gcc-3.3 1:3.3.2-0pre4 [1309kB]
-61% [10 gcc-3.3 3569/1309kB 0%]                                      129kB/s 50s61% [10 gcc-3.3 113009/1309kB 8%]                                    129kB/s 49s62% [10 gcc-3.3 180689/1309kB 13%]                                   129kB/s 48s62% [10 gcc-3.3 249809/1309kB 19%]                                   137kB/s 45s62% [10 gcc-3.3 312192/1309kB 23%]                                   137kB/s 44s63% [10 gcc-3.3 376992/1309kB 28%]                                   137kB/s 44s63% [10 gcc-3.3 451872/1309kB 34%]                                   137kB/s 43s64% [10 gcc-3.3 523872/1309kB 40%]                                   137kB/s 43s64% [10 gcc-3.3 589824/1309kB 45%]                                   137kB/s 42s65% [10 gcc-3.3 690624/1309kB 52%]                                   137kB/s 42s65% [10 gcc-3.3 761184/1309kB 58%]                                   137kB/s 41s66% [10 gcc-3.3 836064/1309kB 63%]                                   137kB/s 41s66% [10 gcc-3.3 921024/1309kB 70%]                                   137kB/s 40s67% [10 gcc-3.3 1020384/1309kB 77%]                                  137kB/s 39s67% [10 gcc-3.3 1111104/1309kB 84%]                                  137kB/s 39s68% [10 gcc-3.3 1203264/1309kB 91%]                                  152kB/s 34s68% [10 gcc-3.3 1281024/1309kB 97%]                                  152kB/s 34s                                                                                Get:11 http://ftp.jp.debian.org sid/main libc6-dev 2.3.2-8 [2633kB]
-68% [11 libc6-dev 1580/2633kB 0%]                                    152kB/s 34s69% [11 libc6-dev 80780/2633kB 3%]                                   152kB/s 33s69% [11 libc6-dev 177260/2633kB 6%]                                  152kB/s 32s70% [11 libc6-dev 269420/2633kB 10%]                                 152kB/s 32s70% [11 libc6-dev 345740/2633kB 13%]                                 152kB/s 31s71% [11 libc6-dev 423500/2633kB 16%]                                 152kB/s 31s72% [11 libc6-dev 527180/2633kB 20%]                                 152kB/s 30s72% [11 libc6-dev 604940/2633kB 22%]                                 152kB/s 30s72% [11 libc6-dev 679820/2633kB 25%]                                 152kB/s 29s73% [11 libc6-dev 767660/2633kB 29%]                                 152kB/s 29s74% [11 libc6-dev 859820/2633kB 32%]                                 152kB/s 28s74% [11 libc6-dev 931820/2633kB 35%]                                 163kB/s 26s74% [11 libc6-dev 1003820/2633kB 38%]                                163kB/s 25s75% [11 libc6-dev 1101740/2633kB 41%]                                163kB/s 25s75% [11 libc6-dev 1182380/2633kB 44%]                                163kB/s 24s76% [11 libc6-dev 1257260/2633kB 47%]                                163kB/s 24s77% [11 libc6-dev 1352300/2633kB 51%]                                163kB/s 23s77% [11 libc6-dev 1457420/2633kB 55%]                                163kB/s 22s78% [11 libc6-dev 1565420/2633kB 59%]                                163kB/s 22s78% [11 libc6-dev 1663340/2633kB 63%]                                163kB/s 21s79% [11 libc6-dev 1746860/2633kB 66%]                                163kB/s 21s79% [11 libc6-dev 1827500/2633kB 69%]                                163kB/s 20s80% [11 libc6-dev 1922540/2633kB 73%]                                163kB/s 20s81% [11 libc6-dev 2023340/2633kB 76%]                                174kB/s 18s81% [11 libc6-dev 2112620/2633kB 80%]                                174kB/s 17s82% [11 libc6-dev 2219180/2633kB 84%]                                174kB/s 16s82% [11 libc6-dev 2302700/2633kB 87%]                                174kB/s 16s83% [11 libc6-dev 2420780/2633kB 91%]                                174kB/s 15s83% [11 libc6-dev 2495660/2633kB 94%]                                174kB/s 15s84% [11 libc6-dev 2610860/2633kB 99%]                                174kB/s 14s84% [Waiting for headers]                                            174kB/s 14s                                                                                Get:12 http://ftp.jp.debian.org sid/main libstdc++5-3.3-dev 1:3.3.2-0pre4 [766kB]
-84% [12 libstdc++5-3.3-dev 2553/766kB 0%]                            174kB/s 14s85% [12 libstdc++5-3.3-dev 109113/766kB 14%]                         174kB/s 13s85% [12 libstdc++5-3.3-dev 189753/766kB 24%]                         174kB/s 13s86% [12 libstdc++5-3.3-dev 276153/766kB 36%]                         174kB/s 13s86% [12 libstdc++5-3.3-dev 359673/766kB 46%]                         174kB/s 12s87% [12 libstdc++5-3.3-dev 435993/766kB 56%]                         174kB/s 12s87% [12 libstdc++5-3.3-dev 515193/766kB 67%]                         174kB/s 11s88% [12 libstdc++5-3.3-dev 615993/766kB 80%]                         174kB/s 11s88% [12 libstdc++5-3.3-dev 700953/766kB 91%]                         174kB/s 10s                                                                                Get:13 http://ftp.jp.debian.org sid/main g++-3.3 1:3.3.2-0pre4 [1767kB]
-89% [13 g++-3.3 1968/1767kB 0%]                                      174kB/s 10s90% [13 g++-3.3 117168/1767kB 6%]                                     174kB/s 9s90% [13 g++-3.3 236688/1767kB 13%]                                    174kB/s 8s91% [13 g++-3.3 320208/1767kB 18%]                                    174kB/s 8s91% [13 g++-3.3 331728/1767kB 18%]                                    174kB/s 8s92% [13 g++-3.3 484368/1767kB 27%]                                    174kB/s 7s92% [13 g++-3.3 603888/1767kB 34%]                                    174kB/s 6s93% [13 g++-3.3 711888/1767kB 40%]                                    174kB/s 6s94% [13 g++-3.3 811248/1767kB 45%]                                    174kB/s 5s94% [13 g++-3.3 920688/1767kB 52%]                                    195kB/s 4s95% [13 g++-3.3 1020048/1767kB 57%]                                   195kB/s 3s96% [13 g++-3.3 1122288/1767kB 63%]                                   195kB/s 3s96% [13 g++-3.3 1214448/1767kB 68%]                                   195kB/s 2s97% [13 g++-3.3 1306608/1767kB 73%]                                   195kB/s 2s97% [13 g++-3.3 1367088/1767kB 77%]                                   195kB/s 2s98% [13 g++-3.3 1447728/1767kB 81%]                                   195kB/s 1s98% [13 g++-3.3 1515408/1767kB 85%]                                   195kB/s 1s98% [13 g++-3.3 1567248/1767kB 88%]                                   195kB/s 1s99% [13 g++-3.3 1655088/1767kB 93%]                                   195kB/s 0s99% [13 g++-3.3 1725648/1767kB 97%]                                   195kB/s 0s99% [Waiting for headers]                                             195kB/s 0s                                                                                Get:14 http://ftp.jp.debian.org sid/main g++ 4:3.3.1-2 [1390B]
-99% [Waiting for headers]                                             195kB/s 0s                                                                                Get:15 http://ftp.jp.debian.org sid/main gcc 4:3.3.1-2 [4850B]
-99% [15 gcc 1149/4850B 23%]                                           195kB/s 0s                                                                                Get:16 http://ftp.jp.debian.org sid/main build-essential 10 [6450B]
-99% [16 build-essential 1735/6450B 26%]                               195kB/s 0s100% [Working]                                                        195kB/s 0s                                                                                Fetched 16.6MB in 2m4s (133kB/s)
-Selecting previously deselected package binutils.
-(Reading database ... 6165 files and directories currently installed.)
-Unpacking binutils (from .../binutils_2.14.90.0.6-3_i386.deb) ...
-Selecting previously deselected package cpp-3.3.
-Unpacking cpp-3.3 (from .../cpp-3.3_1%3a3.3.2-0pre4_i386.deb) ...
-Selecting previously deselected package cpp.
-Unpacking cpp (from .../cpp_4%3a3.3.1-2_i386.deb) ...
-Selecting previously deselected package perl-modules.
-Unpacking perl-modules (from .../perl-modules_5.8.1-2_all.deb) ...
-Selecting previously deselected package libdb4.0.
-Unpacking libdb4.0 (from .../libdb4.0_4.0.14-1.3_i386.deb) ...
-Selecting previously deselected package perl.
-Unpacking perl (from .../archives/perl_5.8.1-2_i386.deb) ...
-Selecting previously deselected package patch.
-Unpacking patch (from .../patch_2.5.9-1_i386.deb) ...
-Selecting previously deselected package make.
-Unpacking make (from .../archives/make_3.80-4_i386.deb) ...
-Selecting previously deselected package dpkg-dev.
-Unpacking dpkg-dev (from .../dpkg-dev_1.10.15_all.deb) ...
-Selecting previously deselected package gcc-3.3.
-Unpacking gcc-3.3 (from .../gcc-3.3_1%3a3.3.2-0pre4_i386.deb) ...
-Selecting previously deselected package libc6-dev.
-Unpacking libc6-dev (from .../libc6-dev_2.3.2-8_i386.deb) ...
-Selecting previously deselected package libstdc++5-3.3-dev.
-Unpacking libstdc++5-3.3-dev (from .../libstdc++5-3.3-dev_1%3a3.3.2-0pre4_i386.deb) ...
-Selecting previously deselected package g++-3.3.
-Unpacking g++-3.3 (from .../g++-3.3_1%3a3.3.2-0pre4_i386.deb) ...
-Selecting previously deselected package g++.
-Unpacking g++ (from .../g++_4%3a3.3.1-2_i386.deb) ...
-Selecting previously deselected package gcc.
-Unpacking gcc (from .../gcc_4%3a3.3.1-2_i386.deb) ...
-Selecting previously deselected package build-essential.
-Unpacking build-essential (from .../build-essential_10_i386.deb) ...
-Setting up binutils (2.14.90.0.6-3) ...
-
-Setting up cpp-3.3 (3.3.2-0pre4) ...
-Setting up cpp (3.3.1-2) ...
-Setting up libdb4.0 (4.0.14-1.3) ...
-
-Setting up patch (2.5.9-1) ...
-Setting up make (3.80-4) ...
-
-Setting up gcc-3.3 (3.3.2-0pre4) ...
-Setting up libc6-dev (2.3.2-8) ...
-Setting up gcc (3.3.1-2) ...
-
-Setting up libstdc++5-3.3-dev (3.3.2-0pre4) ...
-Setting up perl-modules (5.8.1-2) ...
-Setting up g++-3.3 (3.3.2-0pre4) ...
-Setting up g++ (3.3.1-2) ...
-
-Setting up perl (5.8.1-2) ...
-
-Setting up dpkg-dev (1.10.15) ...
-Setting up build-essential (10) ...
+0% [Working]            Err http://debootstrap.invalid sid/main Packages
+  Could not resolve 'debootstrap.invalid'
+            0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sid/main Release
+  Could not resolve 'debootstrap.invalid'
+                                      0% [Working]            Failed to fetch http://debootstrap.invalid/dists/sid/main/binary-i386/Packages.gz  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/dists/sid/main/binary-i386/Release  Could not resolve 'debootstrap.invalid'
+Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 1%Reading Package Lists... 29%Reading Package Lists... 53%Reading Package Lists... 80%Reading Package Lists... 99%Reading Package Lists... 99%Reading Package Lists... 99%Reading Package Lists... Done
+E: Some index files failed to download, they have been ignored, or old ones used instead.
+ -> Aborting with an error
  -> ignoring umount of proc filesystem
  -> ignoring umount of dev/pts filesystem
 Kernel panic: Attempted to kill init!
  <6>Stopping all CPUs...done
-tracing thread pid = 29575
+tracing thread pid = 6359
 
- -> Successful exit from user-mode linux
+ -> Exit code 100
