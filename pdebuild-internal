@@ -1,6 +1,6 @@
 #! /bin/bash
 #   pbuilder-internal -- personal Debian package builder, internal routine
-#   Copyright (C) 2003 Junichi Uekawa
+#   Copyright (C) 2003,2004 Junichi Uekawa
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -34,7 +34,12 @@ apt-get install -y pbuilder
 # I'm not going to have the same LOGNAME as outside, I'm root.
 export LOGNAME=root
 
+if [ "$2" = "--debbuildopts" ]; then
+    echo "Setting DEBBUILDOPTS=$3"
+    DEBBUILDOPTS="$3"
+fi
+
 cd "$1"
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
 /usr/lib/pbuilder/pbuilder-satisfydepends
-/usr/bin/dpkg-buildpackage -us -uc 
+/usr/bin/dpkg-buildpackage -us -uc ${DEBBUILDOPTS}

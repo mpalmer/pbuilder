@@ -1,3 +1,19 @@
+2004-01-19  Junichi Uekawa  <dancer@debian.org>
+
+	* pdebuild-user-mode-linux.1: document
+
+	* pdebuild.1: document
+
+	* pdebuild-internal: add support for DEBBUILDOPTS
+
+	* pdebuild-user-mode-linux: add support for DEBBUILDOPTS
+	  remove '|| true ' from dpkg-source invocation
+
+	* pdebuild: --debbuildopts support.
+
+	* examples/execute_installtest.sh (KILLPID): add killing routine;
+	change it to reboot, to get a reboot done.
+
 2004-01-12  Junichi Uekawa  <dancer@debian.org>
 
 	* testsuite/run-test.sh (IOSTATPID): create normal/ dir for plain pbuilder logs.
@@ -8,7 +24,7 @@
 
 2004-01-11  Junichi Uekawa  <dancer@debian.org>
 
-	* pbuilder-checkparams (IGNORE_UMOUNT): logging
+	* pbuilder-checkparams: logging
 
 	* debian/copyright (Copyright): update copyright info.
 

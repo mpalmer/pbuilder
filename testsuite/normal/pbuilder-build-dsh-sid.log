@@ -2,8 +2,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Mon Jan 12 00:27:36 JST 2004
-pbuilder-time-stamp: 1073834856
+Current time: Mon Jan 12 10:14:45 JST 2004
+pbuilder-time-stamp: 1073870085
 Building the build Environment
  -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage]
  -> creating local configuration
@@ -41,7 +41,7 @@ Get:7 http://ring.asahi-net.or.jp sid/main po-debconf 0.8.7 [65.4kB]
 Get:8 http://ring.asahi-net.or.jp sid/main debhelper 4.1.83 [343kB]
 Get:9 http://ring.asahi-net.or.jp sid/main libdshconfig1 0.20.10-1 [10.3kB]
 Get:10 http://ring.asahi-net.or.jp sid/main libdshconfig1-dev 0.20.10-1 [12.2kB]
-Fetched 2316kB in 0s (3010kB/s)
+Fetched 2316kB in 1s (1162kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 10673 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.06-2_i386.deb) ...
@@ -87,7 +87,7 @@ The following NEW packages will be installed:
 Need to get 53.1kB of archives.
 After unpacking 197kB of additional disk space will be used.
 Get:1 http://ring.asahi-net.or.jp sid/main fakeroot 0.8.3 [53.1kB]
-Fetched 53.1kB in 0s (1099kB/s)
+Fetched 53.1kB in 0s (631kB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 11190 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_0.8.3_i386.deb) ...
@@ -409,7 +409,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun Jan 11 15:28:13 UTC 2004
+Mon Jan 12 01:15:19 UTC 2004
 1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
@@ -479,7 +479,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun Jan 11 15:28:19 UTC 2004
+Mon Jan 12 01:15:25 UTC 2004
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -585,10 +585,10 @@ debian: warning: no utmp entry available and LOGNAME not defined; using uid of p
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
+/usr/lib/pbuilder/pbuilder-buildpackage: line 122: 23799 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting dev/pts filesystem
-/usr/lib/pbuilder/pbuilder-buildpackage: line 126:   815 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting proc filesystem
-Current time: Mon Jan 12 00:28:22 JST 2004
-pbuilder-time-stamp: 1073834902
+Current time: Mon Jan 12 10:15:27 JST 2004
+pbuilder-time-stamp: 1073870127
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/548 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/23523 and its subdirectories

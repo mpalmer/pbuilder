@@ -44,6 +44,11 @@ The configuration file is used, and passed on to
 .BR "pbuilder" .
 
 .TP
+.BI "--debbuildopts [" "options to pass to dpkg-buildpackage" "]"
+
+The space-delimited list of options are passed to dpkg-buildpackage.
+
+.TP
 .BI "--use-pdebuild-internal"
 Uses a different implementation of pdebuild, which calls clean and build inside 
 the chroot, using bind-mounts.

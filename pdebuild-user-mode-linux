@@ -33,9 +33,9 @@ PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')
 ARCHITECTURE=$(dpkg-architecture -qDEB_HOST_ARCH)
 
 if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
-    pbuilder-user-mode-linux execute "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --bindmounts $(readlink -f ..) /usr/lib/pbuilder/pdebuild-internal ${PWD}
+    pbuilder-user-mode-linux execute "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --bindmounts $(readlink -f ..) /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}"
 else
-    dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} || true
+    dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} $DEBBUILDOPTS
     pbuilder-user-mode-linux build "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --buildresult "${BUILDRESULT}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
 fi
 

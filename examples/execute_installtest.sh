@@ -10,12 +10,18 @@
 
 # This will install a package using APT and see if that fails.
 
-
-
 set -ex
+
+# practically, killing is not enough, do a reboot here instead.
 echo 'nobody@nowhere' > /etc/mailname
 echo '$Id'
+INSTALLTESTPID=$$
+( sleep 1h ; kill $INSTALLTESTPID ) &
+KILLPID=$!
+
 apt-get install -y "$1" < /dev/null
+
+kill $KILLPID
 
 # known bugs according to Christian Perrier.
 
