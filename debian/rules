@@ -45,7 +45,8 @@ binary-indep: build install
 	dh_testdir
 	dh_testroot
 	dh_installdocs
-	dh_installman pbuilder.8 pbuilderrc.5 pdebuild.1 debuild-pbuilder.1
+	dh_installman pbuilder.8 pbuilderrc.5 pdebuild.1 debuild-pbuilder.1 
+	dh_installman -ppbuilder-uml pbuilder-user-mode-linux.1
 	dh_movefiles --sourcedir=debian/pbuilder
 	dh_installchangelogs
 	dh_link
