@@ -274,6 +274,32 @@
 	to the Debian BTS if you know of possible problems,
 	or improved on the script considerably.
       </para>
+      <para>
+	To set up pbuildd, there are some points to be aware of.
+      </para>
+      <itemizedlist>
+	<listitem>
+	  <para>A file <filename>./avoidlist</filename> needs to be available with the list of packages to avoid building. </para>
+	</listitem>
+	<listitem>
+	  <para>It will try building anything, even packages that are not aimed for your architecture</para>
+	</listitem>
+	<listitem>
+	  <para>Because you are running random build scripts, it is better to use 
+	  fakeroot option of pbuilder, to avoid running build in root privilege</para>
+	</listitem>
+	<listitem>
+	  <para>Because not all builds are guaranteed to finish in a finite time,
+	    setting timeout is probably necessary, or build may stall with
+	    a bad build</para>
+	</listitem>
+	<listitem>
+	  <para>
+	    Some packages require a lot of disk space, 
+	    around 2GB seems to be quite sufficient for the time being.
+	  </para>
+	</listitem>
+      </itemizedlist>
     </sect1>
     <sect1>
       <title>Auto-backporting scripts</title>
