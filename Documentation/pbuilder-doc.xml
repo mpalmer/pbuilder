@@ -536,6 +536,15 @@ export DEBIAN_BUILDGCCVER=3.2
 	Make sure you have set your path correctly, as described in <filename>/usr/share/doc/fakechroot/README.Debian</filename>
       </para>
     </sect1>
+    <sect1>
+      <title>Using debconf inside pbuilder sessions</title>
+      <para>
+	To use debconf inside pbuilder, setting DEBIAN_FRONTEND to 
+	<quote>readline</quote> in <filename>pbuilderrc</filename> should work.
+	Setting it to <quote>dialog</quote> should also work, but make sure
+	whiptail or dialog is installed inside the chroot.
+      </para>
+    </sect1>
   </chapter>
   <chapter id="otheruse">
     <title>Other uses of pbuilder</title>

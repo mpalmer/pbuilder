@@ -1,4 +1,4 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/25740.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileMl3vR5 rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/24831.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileywrhgW rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.22-5um (dancer@atoron) (gcc version 2.95.4 20011002 (Debian prerelease)) #3 2003年 11月 16日 日曜日 23:07:20 JST
@@ -6,8 +6,8 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/25740.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileMl3vR5 rw
-Calibrating delay loop... 1574.96 BogoMIPS
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/24831.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileywrhgW rw
+Calibrating delay loop... 1635.40 BogoMIPS
 Memory: 124716k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -35,9 +35,9 @@ Initializing Cryptographic API
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/nK2OBU/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/gGnNH7/mconsole
 unable to open root_fs for validation
-Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/25740.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
+Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/24831.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
 Partition check:
  ubdb: unknown partition table
 Initializing stdio console driver
@@ -81,8 +81,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Thu Dec 11 22:49:42 JST 2003
-pbuilder-time-stamp: 1071150582
+Current time: Sun Dec 14 17:48:30 JST 2003
+pbuilder-time-stamp: 1071391710
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
@@ -95,7 +95,7 @@ Installing the build-deps
    -> Trying libdshconfig1-dev
  -> Installing  debhelper libdshconfig1-dev
 Reading Package Lists... 0%Reading Package Lists... 100%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 73%Building Dependency Tree... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 63%Building Dependency Tree... Done
 The following extra packages will be installed:
   debconf-utils file gettext html2text intltool-debian libdshconfig1 libmagic1
   po-debconf
@@ -108,18 +108,18 @@ The following NEW packages will be installed:
 Need to get 2071kB of archives.
 After unpacking 6974kB of additional disk space will be used.
 0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main libmagic1 4.06-1 [206kB]
-            0% [1 libmagic1 0/206kB 0%]                           Get:2 http://ring.asahi-net.or.jp sid/main file 4.06-1 [25.2kB]
-                           11% [2 file 24576/25.2kB 97%]                             Get:3 http://ring.asahi-net.or.jp sid/main debconf-utils 1.3.22 [28.6kB]
-                             11% [3 debconf-utils 0/28.6kB 0%]                                 Get:4 http://ring.asahi-net.or.jp sid/main html2text 1.3.1-2 [83.6kB]
-                                 12% [4 html2text 0/83.6kB 0%]                             Get:5 http://ring.asahi-net.or.jp sid/main gettext 0.12.1-8 [1280kB]
-                             16% [5 gettext 0/1280kB 0%]                           78% [Working]             Get:6 http://ring.asahi-net.or.jp sid/main intltool-debian 0.27.2+20031023 [18.4kB]
+            0% [1 libmagic1 16384/206kB 7%]                               Get:2 http://ring.asahi-net.or.jp sid/main file 4.06-1 [25.2kB]
+                               9% [2 file 0/25.2kB 0%]                       Get:3 http://ring.asahi-net.or.jp sid/main debconf-utils 1.3.22 [28.6kB]
+                       11% [3 debconf-utils 0/28.6kB 0%]                                 12% [Waiting for headers]                         Get:4 http://ring.asahi-net.or.jp sid/main html2text 1.3.1-2 [83.6kB]
+                         12% [4 html2text 0/83.6kB 0%]                             Get:5 http://ring.asahi-net.or.jp sid/main gettext 0.12.1-8 [1280kB]
+                             16% [5 gettext 0/1280kB 0%]                           57% [5 gettext 856604/1280kB 66%]                                 78% [Working]             Get:6 http://ring.asahi-net.or.jp sid/main intltool-debian 0.27.2+20031023 [18.4kB]
              78% [6 intltool-debian 0/18.4kB 0%]                                   79% [Working]             Get:7 http://ring.asahi-net.or.jp sid/main po-debconf 0.8.7 [65.4kB]
              79% [7 po-debconf 0/65.4kB 0%]                              82% [Working]             Get:8 http://ring.asahi-net.or.jp sid/main debhelper 4.1.81 [343kB]
              82% [8 debhelper 0/343kB 0%]                            98% [Working]             Get:9 http://ring.asahi-net.or.jp sid/main libdshconfig1 0.20.8-1 [9656B]
              98% [9 libdshconfig1 0/9656B 0%]                                99% [Working]             Get:10 http://ring.asahi-net.or.jp sid/main libdshconfig1-dev 0.20.8-1 [11.3kB]
-             99% [10 libdshconfig1-dev 0/11.3kB 0%]                                      100% [Working]              Fetched 2071kB in 1s (1536kB/s)
+             99% [10 libdshconfig1-dev 0/11.3kB 0%]                                      100% [Working]              Fetched 2071kB in 1s (1395kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 9656 files and directories currently installed.)
+(Reading database ... 9655 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.06-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.06-1_i386.deb) ...
@@ -156,16 +156,16 @@ Setting up libdshconfig1 (0.20.8-1) ...
 Setting up libdshconfig1-dev (0.20.8-1) ...
  -> Finished parsing the build-deps
 Reading Package Lists... 0%Reading Package Lists... 0%Reading Package Lists... 64%Reading Package Lists... Done
-Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
+Building Dependency Tree... 0%Building Dependency Tree... 0%Building Dependency Tree... 47%Building Dependency Tree... 50%Building Dependency Tree... 50%Building Dependency Tree... Done
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
 Need to get 52.9kB of archives.
 After unpacking 197kB of additional disk space will be used.
 0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main fakeroot 0.8.2 [52.9kB]
-            0% [1 fakeroot 0/52.9kB 0%]                           100% [Working]              Fetched 52.9kB in 0s (593kB/s)
+            0% [1 fakeroot 0/52.9kB 0%]                           100% [Working]              Fetched 52.9kB in 0s (643kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 10160 files and directories currently installed.)
+(Reading database ... 10159 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_0.8.2_i386.deb) ...
 Setting up fakeroot (0.8.2) ...
 Copying source file
@@ -433,6 +433,7 @@ make[2]: Entering directory `/tmp/buildd/dsh-0.25.0/po'
 make[2]: Nothing to be done for `check'.
 make[2]: Leaving directory `/tmp/buildd/dsh-0.25.0/po'
 make[2]: Entering directory `/tmp/buildd/dsh-0.25.0'
+sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
 /usr/bin/make  dsh
 make[3]: Entering directory `/tmp/buildd/dsh-0.25.0'
 make[3]: `dsh' is up to date.
@@ -487,7 +488,7 @@ PASS: tests/param-r-invalid.sh
 1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Thu Dec 11 13:52:41 UTC 2003
+Sun Dec 14 08:52:34 UTC 2003
 Using sleep as the remote shell
 Show machine names on output
 Adding machine 5,4,3,2,1 to list
@@ -505,7 +506,7 @@ DUMPing parameters passed to llexec
 DUMPing parameters passed to llexec
 [5] 
 --- Terminated running
-Thu Dec 11 13:52:48 UTC 2003
+Sun Dec 14 08:52:42 UTC 2003
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -613,10 +614,10 @@ dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> ignoring umount of dev/pts filesystem
  -> ignoring umount of proc filesystem
-Current time: Thu Dec 11 22:53:09 JST 2003
-pbuilder-time-stamp: 1071150789
+Current time: Sun Dec 14 17:53:29 JST 2003
+pbuilder-time-stamp: 1071392009
 /usr/lib/pbuilder/pbuilder-buildpackage: line 144:   277 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
 Kernel panic: Attempted to kill init!
- tracing thread pid = 25755
+ tracing thread pid = 24848
 
  -> Successful exit from user-mode linux
