@@ -56,12 +56,9 @@ echo " -> debootstrap finished"
 loadhooks
 
 mkdir -p "$BUILDPLACE/tmp/buildd"
-echo " -> copying local configuration"
 
-for a in hosts hostname resolv.conf ; do 
-    cp -r /etc/$a "$BUILDPLACE/etc/";
-done
 
+copy_local_configuration
 
 installaptlines
 

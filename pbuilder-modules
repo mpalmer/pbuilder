@@ -165,6 +165,13 @@ EOF
     fi
 }
 
+function copy_local_configuration () {
+    echo " -> copying local configuration"
+    for a in hosts hostname resolv.conf; do 
+	cp $( readlink -f /etc/$a ) "$BUILDPLACE/etc/$a";
+    done
+}
+
 function extractbuildplace () {
     # after calling this function, umountproc, and cleanbuildplace
     # needs to be called. Please trap it.
@@ -187,10 +194,7 @@ function extractbuildplace () {
 	echo " -> creating local configuration"
 	hostname -f > "$BUILDPLACE/etc/mailname"
     fi
-    echo " -> copying local configuration"
-    for a in hosts hostname resolv.conf; do 
-	cp $( readlink -f /etc/$a ) "$BUILDPLACE/etc/$a";
-    done
+    copy_local_configuration
     mountproc
     mkdir -p "$BUILDPLACE/tmp/buildd"
     
