@@ -188,8 +188,12 @@ while [ -n "$1" ] ; do
 	--override-config|--binary-arch)
 	    UML_EXTRAOPT="${UML_EXTRAOPT} $1"
 	    shift;;
+	--configfile)
+	    UML_EXTRAOPT="${UML_EXTRAOPT} $1 $2"
+	    . "$2"
+	    shift; shift;;
 	#things that can be passed through with options
-	--timeout|--http-proxy|--configfile|--hookdir|--aptconfdir|--bindmounts)
+	--timeout|--http-proxy|--hookdir|--aptconfdir|--bindmounts)
 	    UML_EXTRAOPT="${UML_EXTRAOPT} $1 $2"
 	    shift; shift;;
 	--buildresult)
