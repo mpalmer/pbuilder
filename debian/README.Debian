@@ -40,7 +40,26 @@ Support for mounts will hopefully come later, with some safeguards.
 Testsuite:
 	The whole of Debian archive (main) is now being test-rebuilt with
 	pbuilder. Most packages succeed. Many fail to build from
-	source, genuinely, or from pbuilder bugs.
+	source, genuinely, or from pbuilder bugs. The number of pbuilder
+	bugs are on the decreasing end.
+
+
+Notes on usage of $TMPDIR
+=========================
+
+First, I recommend reading the manpage.
+
+If you are setting $TMPDIR to an unusual value, of other than
+/tmp, you will find that some errors may occur inside the chroot,
+such as dpkg-source failing.
+
+There are two options, you may install a hook to create that
+directory, or set 
+
+export TMPDIR=/tmp
+
+in pbuilderrc. Take your pick.
+
 
 
 $Id$
