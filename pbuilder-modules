@@ -115,6 +115,9 @@ function cleanbuildplace () {
 
 function umountproc_cleanbuildplace () {
     # rolling back to abort.
+    if [ "$?" -ne 0 ]; then
+	echo " -> Aborting with an error";
+    fi
     umountproc
     cleanbuildplace
 }
