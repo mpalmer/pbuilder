@@ -15,7 +15,7 @@ function copydsc () {
 }
 
 function checkbuilddep_internal () {
-# fall back to this function if checkbuilddeps is not available.
+# Use this function to fulfill the dependency (almost)
     local ARCH=$(dpkg --print-architecture)
     echo " -> Attempting to parse the build-deps by myself"
     for INSTALLPKGMULTI in $(grep "^Build-Depends\(-Indep\|\): " "$BUILDPLACE/"tmp/buildd/*/debian/control | \
@@ -76,6 +76,7 @@ function checkbuilddep_internal () {
 }
 
 function checkbuilddep_using_dpkgcheckbuilddeps () {
+    # this function is not used currently... and is incomplete.
     for INSTALLPKG in $($CHROOTEXEC bin/sh -c "(cd tmp/buildd/*/; dpkg-checkbuilddeps)" 2>&1 | \
 	grep "^dpkg-checkbuilddeps: Unmet build dependencies: " | \
 	sed 's/^[^:]*:[^:]*: \(.*\)$/\1/' | \
@@ -93,11 +94,7 @@ function checkbuilddep_using_dpkgcheckbuilddeps () {
 }
 
 function checkbuilddep () {
-#    if [ -x "$BUILDPLACE/usr/bin/dpkg-checkbuilddeps" ]; then
-#	checkbuilddep_using_dpkgcheckbuilddeps;
-#    else
-	checkbuilddep_internal;
-#    fi
+    checkbuilddep_internal;
 }
 
 . /usr/lib/pbuilder/pbuilder-checkparams
