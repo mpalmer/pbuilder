@@ -18,6 +18,13 @@
 #
 # HISTORY:
 # $Log$
+# Revision 1.17  2003/12/10 23:18:48  dancer
+# +
+# +	* debuild-pbuilder.1: fix document formatting error, from Roland Stigge.
+# +
+# +	* pbuilder-runhooks (hooks): Try and detect file name non-matching case
+# +	for hooks, from Dale Amon.
+#
 # Revision 1.16  2003/11/16 07:08:54  dancer
 # +	* THANKS: add
 # +
@@ -155,6 +162,9 @@ function executehooks () {
     fi
     for fn in "$BUILDPLACE/$hooks/$prefix"[0-9][0-9]* ; do
 	case "$fn" in
+	    "$BUILDPLACE/$hooks/$prefix"'[0-9][0-9]*')
+		echo "W: no hooks of type ${prefix} found -- ignoring"
+		;;
 	    *~)
 		echo "W: skipping an editor backup file $fn"
 		;;
@@ -170,7 +180,8 @@ function executehooks () {
 			filetype=$(basename "$fn" ) 
 			echo "W: execute priv not set on file $filetype, not executing."
 		    else
-			echo "W: no hooks of type ${prefix} found"
+			# Should it reach here ? This case should be caught in the above case.
+			echo "W: no hooks of type ${prefix} found -- internal error in logic"
 		    fi
 		fi  
 	        ;;	
