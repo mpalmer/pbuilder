@@ -1,0 +1,38 @@
+#! /bin/bash
+# pbuilder by Junichi Uekawa <dancer@debian.org> 2001 Aug 25
+# Copyright 2001 Junichi Uekawa
+#Distributed under GPL version 2 or later
+
+function showhelp () {
+    cat <<EOF
+pbuilder - a personal builder
+Copyright 2001 Junichi Uekawa
+
+pbuilder [operation] [operation options]
+
+pbuilder create --basetgz base.tgz
+pbuilder update --basetgz base.tgz --distribution woody
+pbuilder build --basetgz base.tgz pbuilder_2.2.0-1.dsc
+EOF
+    exit 1
+}
+
+test -z "$1" && showhelp
+
+case "$1" in
+ create)
+    shift;
+    echo $@
+    ;;
+ update)
+    shift ;
+    echo $@
+    ;;
+ build)
+    shift ;
+    echo $@
+    ;;
+ *)
+    showhelp
+    ;;
+esac
