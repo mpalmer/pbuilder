@@ -1,5 +1,9 @@
 2002-02-08  Junichi Uekawa  <dancer@debian.org>
 
+	* pdebuild: use the dpkg-buildpackage -r option rather than
+	calling it with $BUILDSOURCEROOTCMD.
+	dpkg-buildpackage does more optimal things. Am I breaking things?
+
 	* pbuilder-checkparams : adding DEBIAN_FRONTEND=Noninteractive
 	case to the noninteractive mode check. Needed to work around FAI/
 	sbuild/whateverelse undocumented incompatibility.

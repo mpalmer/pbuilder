@@ -11,6 +11,6 @@ if test ! -d ./debian; then
 fi;
 
 . /usr/lib/pbuilder/pbuilder-checkparams
-$BUILDSOURCEROOTCMD dpkg-buildpackage -S -us -uc || true
+dpkg-buildpackage -S -us -uc -r$BUILDSOURCEROOTCMD || true
 $PBUILDERROOTCMD pbuilder build "$@" ../$(dpkg-parsechangelog|sed -n 's/^Source: //p')_$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p').dsc
 
