@@ -16,6 +16,7 @@ if [ -x "${PBUILDER_UML}" ]; then
 	    )
 	    pbuilder-user-mode-linux build --uml-image $(pwd)/testimage --buildplace $(pwd)/testbuild/ --logfile pbuilder-user-mode-linux-build-${PKG}-${distribution}.log testbuild/${PKG}*.dsc
 	done
+	pbuilder-user-mode-linux execute --uml-image $(pwd)/testimage --logfile pbuilder-user-mode-linux-execute-${distribution}.log ../examples/execute_paramtest.sh test1 test2 test3
 	rm -rf testbuild testimage
     done
 fi

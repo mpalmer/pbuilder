@@ -1,3 +1,27 @@
+2003-12-16  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml: Document execute_installtest.sh
+
+	* examples/execute_installtest.sh: Install testing script. Calls apt.
+
+	* testsuite/run-test.sh (PBUILDER_UML): add regression test on execute script.
+
+	* pbuilder-user-mode-linux.1: update manual page on 
+	passing on of the command-line on 'execute'.
+
+	* pbuilder.8: update manual page on passing on of the 
+	command-line on 'execute'
+
+	* pbuilder-user-mode-linux (UML_EXECUTE_EXTRAOPT): added new option
+	for appending parameters to the end of the pbuilder-command-line.
+
+	* examples/execute_paramtest.sh: sample execute script;
+	to give what is given as a parameter.
+
+	* pbuilder-user-mode-linux: || true on unset.
+
+	* pbuilder: Accept command-line options for 'execute' command
+
 2003-12-15  Junichi Uekawa  <dancer@debian.org>
 
 	* Documentation/pbuilder-doc.xml (EXTRAPACKAGES): document problem with /dev/null

@@ -1,9 +1,17 @@
 pbuilder (0.96) UNRELEASED; urgency=low
 
-  * Update documentation on using debconf inside pbuilder.
-    Note in FAQ that /dev/null error comes from 'nodev' mount option.
+  * Update documentation 
+    - Using debconf inside pbuilder.
+    - Note in FAQ that /dev/null error comes from 'nodev' mount option.
+    - Note that execute_installtest.sh can be used for light-weight 
+      mass-install testing.
+  * pbuilder execute: now passes on command-line arguments to the script.
+  * pbuilder-user-mode-linux execute: ditto.
+  * examples/execute_installtest.sh: Tries to 'apt-get install' a package 
+    and sees if it does install.
+  * examples/execute_paramtest.sh: Just dumps the parameter.
 
- -- Junichi Uekawa <dancer@debian.org>  Sun, 14 Dec 2003 22:17:30 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Tue, 16 Dec 2003 08:22:46 +0900
 
 pbuilder (0.95) unstable; urgency=low
 

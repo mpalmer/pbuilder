@@ -53,6 +53,7 @@ File extracted to: $BUILDPLACE
 	shift
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	EXECPROGRAM="$1"
+	shift
 	if [ ! -f "${EXECPROGRAM}" ]; then
 	    echo "Command line parameter [$EXECPROGRAM] does not exist" >&2
 	    exit 1;
@@ -62,7 +63,7 @@ File extracted to: $BUILDPLACE
 	RUNNAME="$BUILDPLACE/run"
 	cat "$EXECPROGRAM" > "$RUNNAME"
 	chmod a+x "$RUNNAME"
-	chroot "$BUILDPLACE" /run
+	chroot "$BUILDPLACE" /run "$@"
 	;;
     *)
 	. /usr/lib/pbuilder/pbuilder-modules

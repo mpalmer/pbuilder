@@ -111,7 +111,7 @@ chroot ${UML_CHROOT_MOUNTPOINT} /tmp/chrootshell
 #some variables need to be set from outside values, possibly
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin
 export TMPDIR=/tmp
-unset EXTRAOPT
+unset EXTRAOPT || true
 declare -a EXTRAOPT
 if [ -n "${UML_DISTRIBUTION}" ]; then
   EXTRAOPT[0]="--distribution"
@@ -125,7 +125,7 @@ else
   mkdir -p ${UML_CHROOT_BUILDRESULTMOUNTDIR} || true
   mount -t hostfs none "${UML_CHROOT_BUILDRESULTMOUNTDIR}" -o "${UML_BUILDRESULT}"
 fi
-pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT[@]} --buildresult "\${BUILDRESULT}" --buildplace "${UML_CHROOT_MOUNTPOINT}" --internal-build-uml ${BUILDING_DSC_FILE} 
+pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT[@]} --buildresult "\${BUILDRESULT}" --buildplace "${UML_CHROOT_MOUNTPOINT}" --internal-build-uml ${BUILDING_DSC_FILE}  ${UML_EXECUTE_EXTRAOPT}
 echo \$? > /proc/exitcode
 EOF
 
@@ -149,6 +149,7 @@ PBUILDER_COW=""
 OPERATION="$1"
 UML_EXTRAOPT=
 UML_DEBUGMODE=
+UML_EXECUTE_EXTRAOPT=
 shift;
 
 while [ -n "$1" ] ; do
@@ -273,6 +274,8 @@ case "${OPERATION}" in
     execute)
 	usecow
 	EXTRACLEANUP=cleancow
+	shift;
+	UML_EXECUTE_EXTRAOPT="${UML_EXECUTE_EXTRAOPT} $@"
 	operate_uml execute
 	;;
     create)
