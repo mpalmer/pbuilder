@@ -39,7 +39,10 @@ case "$1" in
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	extractbuildplace
 	trap umountproc_cleanbuildplace exit
-	echo " -> entering the shell"
+	echo " -> entering the shell
+DO NOT bind mount file system inside, they will be cleaned.
+File extracted to: $BUILDPLACE
+"
 	chroot "$BUILDPLACE" bin/bash
 	;;
     *)

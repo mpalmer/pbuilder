@@ -55,7 +55,13 @@ Give more value to here.
 
 .TP 
 .BI "UML_HOSTNAME=" "uml-host"
-The hostname for the UML
+The hostname for the UML.
+
+The hostname should be available in 
+.B /etc/hosts
+so that 
+.B "hostname -f "
+will be able to return the FQDN.
 
 .TP 
 .BI "UML_BUILDRESULT=" "/directory/of/build/result"
