@@ -159,7 +159,11 @@ fi
 
 if [ -n "$APTCACHE" ]; then
     echo "Obtaining the cached apt archive contents"
-    cp "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/"
+    if [ "$APTCACHEHARDLINK" = "yes" ]; then
+	ln "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
+    else
+	cp "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
+    fi
 fi
 echo Installing the build-deps
 checkbuilddep
@@ -170,7 +174,11 @@ if [ -n "$APTCACHE" ]; then
     for A in "$BUILDPLACE/var/cache/apt/archives/"*.deb; do
 	if [ ! -f "$APTCACHE/"$(basename "$A") ]; then
 	    echo " -> new cache content "$(basename "$A")" added"
-	    cp "$A" "$APTCACHE/"
+	    if [ "$APTCACHEHARDLINK" = "yes" ]; then
+		ln "$A" "$APTCACHE/"
+	    else
+		cp "$A" "$APTCACHE/"
+	    fi
 	fi
     done
 fi

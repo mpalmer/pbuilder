@@ -1,4 +1,15 @@
-pbuilder (0.7.0.20011012) unstable; urgency=low
+pbuilder (0.8.0.20011013) unstable; urgency=low
+
+  * allow use of hardlinks in apt cache handling, with new option
+    APTCACHEHARDLINK. This cannot be enabled if pbuilder
+    files are distributed among filesystems.
+    It should speed up processing.
+  * Depends on wget, since debootstrap only recommends, and I think this
+    program is not quite functional as it is without wget
+
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 13 Oct 2001 16:45:47 +0900
+
+pbuilder (0.8) unstable; urgency=low
 
   * support custom debootstrap scripts, requested by amon@vnl.com
     (closes: #114691)
@@ -7,10 +18,10 @@ pbuilder (0.7.0.20011012) unstable; urgency=low
   * changed "hooks" variable in pbuilder-runhooks, to not to have
     a starting "/". It should be unnecessary
   * E: messages in pbuilder-runhooks are now "W:" messages, because
-    even when those errors are detected, they should not really 
+    even when those errors are detected, they should not really
     stop the execution of pbuilder halfway.
 
- -- Junichi Uekawa <dancer@debian.org>  Sat, 13 Oct 2001 01:53:28 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 13 Oct 2001 01:58:34 +0900
 
 pbuilder (0.7) unstable; urgency=low
 
