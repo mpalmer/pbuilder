@@ -6,7 +6,7 @@
 while [ -n $1 ]; do
   case "$1" in 
     --basetgz) 
-      BASETGZ=$(realink -f "$2");
+      BASETGZ=$(readlink -f "$2");
       shift; shift;
       ;;
     --buildplace)
@@ -25,6 +25,10 @@ while [ -n $1 ]; do
       DISTRIBUTION="$2";
       shift; shift;
       ;;
+    --buildresult)
+      BUILDRESULT=$(readlink -f "$2");
+      shift; shift;
+      ;;
     --help)
       cat <<EOF
 Command Line Options:
@@ -33,6 +37,7 @@ Command Line Options:
  --mirror [mirror location]
  --http-proxy [proxy]
  --distribution [distribution(woody/sid)]
+ --buildresult [location-to-copy-build-result]
 EOF
       exit 1;
       ;;

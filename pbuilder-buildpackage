@@ -54,3 +54,12 @@ checkbuilddep
 echo Building the package
 $CHROOTEXEC /bin/sh -c "(cd tmp/buildd/*/; dpkg-buildpackage)"
 umountproc
+
+test -n "$BUILDRESULT" && (
+  mkdir -p "$BUILDRESULT"
+  if [ -d "$BUILDRESULT" ]; then
+    cp $BUILDPLACE/tmp/buildd/* $BUILDRESULT
+  else
+    echo "Error: BUILDRESULT=[$BUILDRESULT] and is not a directory." >&2
+  fi
+)
