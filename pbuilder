@@ -25,9 +25,9 @@ case "$1" in
     clean)
 	shift;
 	. /usr/lib/pbuilder/pbuilder-checkparams
-	if [ -n "$BUILDPLACE" ]; then 
-	    echo "Cleaning [$BUILDPLACE]"
-	    rm -rf "$BUILDPLACE"/* || true
+	if [ -n "$BASEBUILDPLACE" ]; then 
+	    echo "Cleaning [$BASEBUILDPLACE]"
+	    rm -rf "$BASEBUILDPLACE"/* || true
 	fi
 	if [ -n "$APTCACHE" ]; then
 	    echo "Cleaning [$APTCACHE]"
