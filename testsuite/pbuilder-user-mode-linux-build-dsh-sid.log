@@ -1,4 +1,4 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/5018.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileYVM44G rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/13598.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileoRNk3O rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.22-5um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 Fri Sep 19 21:36:03 EDT 2003
@@ -6,7 +6,7 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/5018.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileYVM44G rw
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/13598.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileoRNk3O rw
 Calibrating delay loop... 1594.44 BogoMIPS
 Memory: 124720k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
@@ -35,9 +35,9 @@ Initializing Cryptographic API
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/E7SZW1/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/aMfhAu/mconsole
 unable to open root_fs for validation
-Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/5018.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
+Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/13598.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
 Partition check:
  ubdb: unknown partition table
 Initializing stdio console driver
@@ -58,7 +58,6 @@ done.
 Setting up IP spoofing protection: FAILED.
 Configuring network interfaces... Slirp v1.0.14pre1 (BETA)
 
-done.
 Copyright (c) 1995,1996 Danny Gasparovski and others.
 All rights reserved.
 This program is copyrighted, free software.
@@ -75,14 +74,15 @@ Type five zeroes (0) to exit.
 [autodetect SLIP/CSLIP, MTU 1500, MRU 1500]
 
 SLiRP Ready ...
+done.
 W: /home/dancer/.pbuilderrc does not exist
  -> Running in pbuilder-user-mode-linux mode
 I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sun Oct 19 07:01:48 JST 2003
-pbuilder-time-stamp: 1066514508
+Current time: Wed Oct 22 07:03:11 JST 2003
+pbuilder-time-stamp: 1066773791
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
@@ -108,18 +108,18 @@ The following NEW packages will be installed:
 Need to get 2071kB of archives.
 After unpacking 6979kB of additional disk space will be used.
 0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main libmagic1 4.06-1 [206kB]
-            0% [1 libmagic1 0/206kB 0%]                           Get:2 http://ring.asahi-net.or.jp sid/main file 4.06-1 [25.2kB]
-                           9% [2 file 0/25.2kB 0%]                       11% [Waiting for headers]                         Get:3 http://ring.asahi-net.or.jp sid/main debconf-utils 1.3.15 [36.3kB]
-                         11% [3 debconf-utils 0/36.3kB 0%]                                 12% [Working]             Get:4 http://ring.asahi-net.or.jp sid/main html2text 1.3.1-2 [83.6kB]
-             12% [4 html2text 0/83.6kB 0%]                             16% [Working]             Get:5 http://ring.asahi-net.or.jp sid/main gettext 0.12.1-7 [1280kB]
-             16% [5 gettext 0/1280kB 0%]                           72% [5 gettext 1151004/1280kB 89%]72% [5 gettext 1151004/1280kB 89%]                                  78% [Working]             Get:6 http://ring.asahi-net.or.jp sid/main intltool-debian 0.27.2+20031003 [17.8kB]
+            0% [1 libmagic1 0/206kB 0%]                           9% [Waiting for headers]                        Get:2 http://ring.asahi-net.or.jp sid/main file 4.06-1 [25.2kB]
+                        9% [2 file 0/25.2kB 0%]                       Get:3 http://ring.asahi-net.or.jp sid/main debconf-utils 1.3.15 [36.3kB]
+                       11% [3 debconf-utils 0/36.3kB 0%]                                 Get:4 http://ring.asahi-net.or.jp sid/main html2text 1.3.1-2 [83.6kB]
+                                 12% [4 html2text 0/83.6kB 0%]                             16% [Waiting for headers]                         Get:5 http://ring.asahi-net.or.jp sid/main gettext 0.12.1-8 [1280kB]
+                         16% [5 gettext 0/1280kB 0%]                           24% [5 gettext 166644/1280kB 13%]46% [5 gettext 617864/1280kB 48%]46% [5 gettext 617864/1280kB 48%]                                 75% [5 gettext 1205544/1280kB 94%]75% [5 gettext 1205544/1280kB 94%]                                  78% [Working]             Get:6 http://ring.asahi-net.or.jp sid/main intltool-debian 0.27.2+20031003 [17.8kB]
              78% [6 intltool-debian 0/17.8kB 0%]                                   79% [Working]             Get:7 http://ring.asahi-net.or.jp sid/main po-debconf 0.8.2 [59.1kB]
              79% [7 po-debconf 0/59.1kB 0%]                              82% [Working]             Get:8 http://ring.asahi-net.or.jp sid/main debhelper 4.1.77 [342kB]
              82% [8 debhelper 0/342kB 0%]                            98% [Working]             Get:9 http://ring.asahi-net.or.jp sid/main libdshconfig1 0.20.8-1 [9656B]
              98% [9 libdshconfig1 0/9656B 0%]                                99% [Working]             Get:10 http://ring.asahi-net.or.jp sid/main libdshconfig1-dev 0.20.8-1 [11.3kB]
-             99% [10 libdshconfig1-dev 0/11.3kB 0%]                                      100% [Working]              Fetched 2071kB in 1s (1069kB/s)
+             99% [10 libdshconfig1-dev 0/11.3kB 0%]                                      100% [Working]              Fetched 2071kB in 3s (627kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 9160 files and directories currently installed.)
+(Reading database ... 9163 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.06-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.06-1_i386.deb) ...
@@ -128,7 +128,7 @@ Unpacking debconf-utils (from .../debconf-utils_1.3.15_all.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.1-2_i386.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.12.1-7_i386.deb) ...
+Unpacking gettext (from .../gettext_0.12.1-8_i386.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.27.2+20031003_all.deb) ...
 Selecting previously deselected package po-debconf.
@@ -146,7 +146,7 @@ Setting up debconf-utils (1.3.15) ...
 
 Setting up html2text (1.3.1-2) ...
 
-Setting up gettext (0.12.1-7) ...
+Setting up gettext (0.12.1-8) ...
 
 Setting up intltool-debian (0.27.2+20031003) ...
 Setting up po-debconf (0.8.2) ...
@@ -163,9 +163,9 @@ The following NEW packages will be installed:
 Need to get 52.6kB of archives.
 After unpacking 193kB of additional disk space will be used.
 0% [Working]            Get:1 http://ring.asahi-net.or.jp sid/main fakeroot 0.7.8 [52.6kB]
-            0% [1 fakeroot 0/52.6kB 0%]                           100% [Working]              Fetched 52.6kB in 0s (540kB/s)
+            0% [1 fakeroot 0/52.6kB 0%]                           72% [1 fakeroot 38376/52.6kB 72%]                                 100% [Working]              Fetched 52.6kB in 0s (83.1kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 9666 files and directories currently installed.)
+(Reading database ... 9669 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_0.7.8_i386.deb) ...
 Setting up fakeroot (0.7.8) ...
 Copying source file
@@ -487,7 +487,7 @@ PASS: tests/param-r-invalid.sh
 1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Oct 18 22:04:09 UTC 2003
+Tue Oct 21 22:05:33 UTC 2003
 Using sleep as the remote shell
 Show machine names on output
 Adding machine 5,4,3,2,1 to list
@@ -505,7 +505,7 @@ DUMPing parameters passed to llexec
 DUMPing parameters passed to llexec
 [5] 
 --- Terminated running
-Sat Oct 18 22:04:16 UTC 2003
+Tue Oct 21 22:05:40 UTC 2003
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -613,10 +613,10 @@ dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> ignoring umount of proc filesystem
  -> ignoring umount of dev/pts filesystem
-Current time: Sun Oct 19 07:04:31 JST 2003
-pbuilder-time-stamp: 1066514671
+Current time: Wed Oct 22 07:05:55 JST 2003
+pbuilder-time-stamp: 1066773955
 /usr/lib/pbuilder/pbuilder-buildpackage: line 144:   277 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
 Kernel panic: Attempted to kill init!
- tracing thread pid = 5033
+ tracing thread pid = 13613
 
  -> Successful exit from user-mode linux

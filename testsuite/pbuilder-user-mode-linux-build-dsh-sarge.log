@@ -1,4 +1,4 @@
-Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/13824.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file8C9NEd rw
+Invoking: linux mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/22401.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileGFCME0 rw
 Checking for the skas3 patch in the host...not found
 Checking for /proc/mm...not found
 Linux version 2.4.22-5um (mdz@mizar) (gcc version 2.95.4 20011002 (Debian prerelease)) #1 Fri Sep 19 21:36:03 EDT 2003
@@ -6,8 +6,8 @@ On node 0 totalpages: 32768
 zone(0): 32768 pages.
 zone(1): 0 pages.
 zone(2): 0 pages.
-Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/13824.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/file8C9NEd rw
-Calibrating delay loop... 1598.85 BogoMIPS
+Kernel command line: mem=128M eth0=slirp,12345,/usr/bin/slirp-fullbolt con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/22401.cow,/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage devfs=mount init=/tmp/fileGFCME0 rw
+Calibrating delay loop... 1427.18 BogoMIPS
 Memory: 124720k available
 Dentry cache hash table entries: 16384 (order: 5, 131072 bytes)
 Inode cache hash table entries: 8192 (order: 4, 65536 bytes)
@@ -35,9 +35,9 @@ Initializing Cryptographic API
 Initializing software serial port version 1
 setup_etheraddr: failed to parse '/usr/bin/slirp-fullbolt' as an ethernet address
 Netdevice 0 : SLIRP backend - command line: '/usr/bin/slirp-fullbolt'
-mconsole (version 2) initialized on /home/dancer/.uml/6vVNsv/mconsole
+mconsole (version 2) initialized on /home/dancer/.uml/SZ2lXs/mconsole
 unable to open root_fs for validation
-Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/13824.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
+Creating "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/22401.cow" as COW file for "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage"
 Partition check:
  ubdb: unknown partition table
 Initializing stdio console driver
@@ -81,8 +81,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sun Oct 19 07:11:26 JST 2003
-pbuilder-time-stamp: 1066515086
+Current time: Wed Oct 22 07:14:41 JST 2003
+pbuilder-time-stamp: 1066774481
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
@@ -136,11 +136,11 @@ After unpacking 48.4MB of additional disk space will be used.
   Could not resolve 'debootstrap.invalid'
 0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main html2text 1.3.1-2
   Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main gettext 0.12.1-6
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main gettext 0.12.1-7
   Could not resolve 'debootstrap.invalid'
 0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main intltool-debian 0.27.2+20031003
   Could not resolve 'debootstrap.invalid'
-0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main po-debconf 0.7.3
+0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main po-debconf 0.8.2
   Could not resolve 'debootstrap.invalid'
 0% [Connecting to debootstrap.invalid]                                      Err http://debootstrap.invalid sarge/main debhelper 4.1.74
   Could not resolve 'debootstrap.invalid'
@@ -160,9 +160,9 @@ Failed to fetch http://debootstrap.invalid/pool/main/f/file/file_4.04-1_i386.deb
 Failed to fetch http://debootstrap.invalid/pool/main/g/glibc/libc6-dev_2.3.2-7_i386.deb  Could not resolve 'debootstrap.invalid'
 Failed to fetch http://debootstrap.invalid/pool/main/d/debconf/debconf-utils_1.3.14_all.deb  Could not resolve 'debootstrap.invalid'
 Failed to fetch http://debootstrap.invalid/pool/main/h/html2text/html2text_1.3.1-2_i386.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/g/gettext/gettext_0.12.1-6_i386.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/g/gettext/gettext_0.12.1-7_i386.deb  Could not resolve 'debootstrap.invalid'
 Failed to fetch http://debootstrap.invalid/pool/main/i/intltool-debian/intltool-debian_0.27.2+20031003_all.deb  Could not resolve 'debootstrap.invalid'
-Failed to fetch http://debootstrap.invalid/pool/main/p/po-debconf/po-debconf_0.7.3_all.deb  Could not resolve 'debootstrap.invalid'
+Failed to fetch http://debootstrap.invalid/pool/main/p/po-debconf/po-debconf_0.8.2_all.deb  Could not resolve 'debootstrap.invalid'
 Failed to fetch http://debootstrap.invalid/pool/main/d/debhelper/debhelper_4.1.74_all.deb  Could not resolve 'debootstrap.invalid'
 Failed to fetch http://debootstrap.invalid/pool/main/libd/libdshconfig/libdshconfig1_0.20.8-1_i386.deb  Could not resolve 'debootstrap.invalid'
 Failed to fetch http://debootstrap.invalid/pool/main/libd/libdshconfig/libdshconfig1-dev_0.20.8-1_i386.deb  Could not resolve 'debootstrap.invalid'
@@ -186,6 +186,6 @@ E: pbuilder-satisfydepends failed.
  -> ignoring umount of proc filesystem
  -> ignoring umount of dev/pts filesystem
 Kernel panic: Attempted to kill init!
- tracing thread pid = 13839
+ tracing thread pid = 22416
 
  -> Exit code 2
