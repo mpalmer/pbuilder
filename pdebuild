@@ -1,13 +1,15 @@
 #! /bin/bash
 set -e
 
-if ! test -d ./debian ; then
-    if test -d ../debian; then
-	cd ..;
-    else
-	echo "This is (probably) not a Debian source package directory."
-    fi
+while ! test -d ./debian -o "$(pwd)" = "/" ; do
+    cd ..;
+done
+
+if test ! -d ./debian; then
+    echo "Cannot find ./debian dir"
+    exit 1
 fi;
+
 . /usr/lib/pbuilder/pbuilder-checkparams
 $BUILDSOURCEROOTCMD dpkg-buildpackage -S -us -uc || true
 $PBUILDERROOTCMD pbuilder build "$@" ../$(dpkg-parsechangelog|sed -n 's/^Source: //p')_$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p').dsc
