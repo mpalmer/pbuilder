@@ -1,5 +1,14 @@
 2002-03-13  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilderrc.5: fixed the documentation, somehow 
+	  --distribution doc was mixed in with --hookdir.
+	  refer to pbuilder.1 for --hookdir options.
+
+	* pbuilder-buildpackage (CHROOTEXEC): executehooks "D" before unpack, 
+	  and after extract.
+
+	* pbuilder.1: document new hook "D"
+
 	* pbuilder-satisfydepends: fix depends regexp, so that 
 	  multi-line Build-Depends with epoch versions will not fail.
 

@@ -63,9 +63,7 @@ function checkbuilddep_provides () {
 
 function checkbuilddep_internal () {
 # Use this function to fulfill the dependency (almost)
-#requires: 
-#   CHROOTEXEC = how to run chroot
-#   
+
     local ARCH=$(dpkg-architecture -qDEB_HOST_ARCH)
     local INSTALLPKG
     local INSTALLPKGMULTI
@@ -125,7 +123,6 @@ tolower($0) ~ /^'"${BD_REGEXP}"':/   {p=1}
       done;
       if [ "$SATISFIED" = "no" ]; then
 	  echo "E: Could not satisfy build-dependency." >&2
-	  #saveaptcache_umountproc_cleanbuildplace
 	  exit 1
       fi
     done;
@@ -164,7 +161,6 @@ tolower($0) ~ /^'"${BC_REGEXP}"':/   {p=1}
       if $CHROOTEXEC /usr/bin/dpkg -s $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') 2>&1 | grep ^Package: > /dev/null; then
 	  if ! $CHROOTEXEC /usr/bin/apt-get -y remove ${CURRENTREALPKGNAME} ; then
 	      echo "E: Could not satisfy build-conflicts" >&2
-	      #saveaptcache_umountproc_cleanbuildplace
 	      exit 1
 	  fi
       else

@@ -99,6 +99,8 @@ createbuilduser
 
 echo Copying source file
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
+executehooks "D"
+
 echo Extracting source
 if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; chown $BUILDUSERNAME:$BUILDUSERNAME ../buildd *; $SUTOUSER /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then
     echo "pbuilder: Failed extracting the source" >&2 

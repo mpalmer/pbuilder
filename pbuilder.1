@@ -222,6 +222,11 @@ successfully, before copying back the build result.
 .B "C<digit><digit><whatever-else-you-want>"
 is executed after build fails, before cleanup.
 
+.B "D<digit><digit><whatever-else-you-want>"
+is executed before unpacking the source inside the chroot,
+after setting up the chroot environment.
+Create $TMP, and $TMPDIR if necessary.
+
 .TP
 .BI "--debemail [" "email-address" "]"
 

@@ -97,6 +97,10 @@ but not
 nor 
 .B "login"
 
+.B "pbuilder update" 
+will update to this distribution, if this is specified,
+unless command line option is specified to override this.
+
 .TP
 .BI "APTCACHE=" "/var/cache/pbuilder/aptcache"
 Specify the location that the packages downloaded by apt
@@ -121,13 +125,12 @@ This is overridden with the option
 
 If this is specified, hooks are searched for in
 the chroot, when running 
-.BR "pbuilder update" "."
+.BR "pbuilder" "."
 If it is not defined, or is an empty string, 
 hooks are not executed.
 
-.B "pbuilder update" 
-will update to this distribution, if this is specified,
-unless command line option is specified to override this.
+For details, see 
+.B "pbuilder.1"
 
 .TP
 .BI "DEBEMAIL=" "Mail@Address";
