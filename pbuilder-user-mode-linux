@@ -64,9 +64,9 @@ ${UML_DEBUGMODE}
 
 mount -t proc /proc /proc
 mount -t tmpfs /tmp /tmp
-if ! fsck /dev/ubd/1; then
-  echo "W: Failed to fsck /dev/ubd/1"
-fi
+#if ! fsck -p /dev/ubd/1; then
+#  echo "W: Failed to fsck /dev/ubd/1"
+#fi
 if ! mount -t ext2 /dev/ubd/1 ${UML_CHROOT_MOUNTPOINT}; then
   echo "E: Cannot mount /dev/ubd/1, is UML root image accessible as current user?"
   exit 1
@@ -248,9 +248,8 @@ while [ -n "$1" ] ; do
     esac
 done
 
-
 if ! touch "${BUILDPLACE}/touch" ; then
-    echo "E: Cannot touch ${BUILDPLACE}/touch, check BUILDPLACE" >&2
+    echo "E: Cannot touch BUILDPLACE/touch, check BUILDPLACE" >&2
     exit 1
 fi
 
