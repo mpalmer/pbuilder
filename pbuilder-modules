@@ -173,10 +173,14 @@ function recover_aptcache() {
     # recover the aptcache archive
     if [ -n "$APTCACHE" ]; then
 	echo "Obtaining the cached apt archive contents"
-	if [ "$APTCACHEHARDLINK" = "yes" ]; then
-	    ln "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
+	if ls "$APTCACHE"/*.deb > /dev/null 2> /dev/null ; then
+	    if [ "$APTCACHEHARDLINK" = "yes" ]; then
+		ln "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
+	    else
+		cp "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
+	    fi
 	else
-	    cp "$APTCACHE"/*.deb "$BUILDPLACE/var/cache/apt/archives/" || true
+	    echo "W: No cache contents yet."
 	fi
     fi
 }
@@ -187,12 +191,12 @@ function save_aptcache() {
 	echo "Copying back the cached apt archive contents"
 	mkdir -p "$APTCACHE" ;
 	for A in "$BUILDPLACE/var/cache/apt/archives/"*.deb; do
-	    if [ ! -f "$APTCACHE/"$(basename "$A") ]; then
+	    if [ ! -f "$APTCACHE/"$(basename "$A") -a -f "$A" ]; then
 		echo " -> new cache content "$(basename "$A")" added"
 		if [ "$APTCACHEHARDLINK" = "yes" ]; then
-		    ln "$A" "$APTCACHE/"
+		    ln "$A" "$APTCACHE/" || true
 		else
-		    cp "$A" "$APTCACHE/"
+		    cp "$A" "$APTCACHE/" || true
 		fi
 	    fi
 	done
