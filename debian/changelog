@@ -15,6 +15,9 @@ pbuilder (0.24.prerelease.20020313) unstable; urgency=low
     programs, such as sbuild. However, sbuild reads .dsc files, while
     pbuilder parses debian/control.
   * fixed regexp for multi-line build-*: field processing.
+  * Add "D" scripts, for after chroot setup, and before extracting
+    source packages inside the chroot, on build target. 
+    (closes: #136536)
 
  -- Junichi Uekawa <dancer@debian.org>  Tue, 12 Mar 2002 19:06:55 +0900
 
