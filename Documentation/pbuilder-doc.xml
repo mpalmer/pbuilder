@@ -510,6 +510,29 @@ export DEBIAN_BUILDGCCVER=3.2
 	in your pbuilderrc file.
       </para>
     </sect1>
+    <sect1>
+      <title>Using fakechroot</title>
+      <para>
+	It is possible to use <command>fakechroot</command> instead of being root
+	to run pbuilder; however, several things make this impractical.
+	<command>fakechroot</command> overrides library loads and tries to 
+	override default libc functions when providing the functionality of
+	virtual chroot.
+	However, some binaries do no use libc to function, or override the overriding 
+	provided by fakechroot. 
+	One example is <command>ldd</command>.
+	<command>ldd</command> outout inside <command>fakechroot</command>
+	will check the library dependency outside of chroot; which is not the 
+	expected behavior.
+      </para>
+      <para>
+	To work around the problem fakechroot provides a patch for debootstrap.
+	Use that, so that ldd and ldconfig are overridden.
+      </para>
+      <para>
+	Make sure you have set your path correctly, as described in <filename>/usr/share/doc/fakechroot/README.Debian</filename>
+      </para>
+    </sect1>
   </chapter>
   <chapter id="otheruse">
     <title>Other uses of pbuilder</title>
