@@ -20,7 +20,7 @@ if [ ! -d "$BUILDPLACE" ]; then
 fi
 mountproc
 echo " -> running debootstrap"
-( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . )
+( cd "$BUILDPLACE" && debootstrap "$DISTRIBUTION" . "$MIRRORSITE")
 echo " -> debootstrap finished"
 mkdir -p "$BUILDPLACE/tmp/buildd"
 echo " -> copying local configuration"
