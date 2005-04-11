@@ -5,7 +5,7 @@ echo "Trying to install resulting packages and test upgrades"
 set -ex
 
 
-PKGNAMES=$(ls -1 /tmp/buildd/*.deb | sed 's/_.*$//' )
+PKGNAMES=$(cd /tmp/buildd && ls -1 *.deb | sed 's/_.*$//' )
 
 # install-remove check
 dpkg -i /tmp/buildd/*.deb
