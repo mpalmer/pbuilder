@@ -2,8 +2,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sun Feb 13 16:16:16 JST 2005
-pbuilder-time-stamp: 1108278976
+Current time: Tue Apr 12 21:57:51 JST 2005
+pbuilder-time-stamp: 1113310671
 Building the build Environment
  -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage]
  -> creating local configuration
@@ -29,14 +29,14 @@ Suggested packages:
   debconf-doc whiptail dialog gnome-utils libterm-readline-gnu-perl
   libgnome2-perl libqt-perl libnet-ldap-perl dh-make cvs gettext-doc
 Recommended packages:
-  apt-utils libmail-sendmail-perl
+  apt-utils curl wget lynx libmail-sendmail-perl libcompress-zlib-perl
 The following NEW packages will be installed:
   debconf debconf-i18n debconf-utils debhelper file gettext gettext-base
   html2text intltool-debian libdshconfig1 libdshconfig1-dev
   liblocale-gettext-perl libmagic1 libtext-charwidth-perl libtext-iconv-perl
   libtext-wrapi18n-perl po-debconf
 0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2751kB of archives.
+Need to get 2762kB of archives.
 After unpacking 11.3MB of additional disk space will be used.
 Get:1 http://ring.asahi-net.or.jp sarge/main liblocale-gettext-perl 1.01-17 [16.8kB]
 Get:2 http://ring.asahi-net.or.jp sarge/main libtext-iconv-perl 1.2-3 [12.2kB]
@@ -46,18 +46,18 @@ Get:5 http://ring.asahi-net.or.jp sarge/main debconf-i18n 1.4.30.11 [90.1kB]
 Get:6 http://ring.asahi-net.or.jp sarge/main debconf 1.4.30.11 [101kB]
 Get:7 http://ring.asahi-net.or.jp sarge/main libmagic1 4.12-1 [233kB]
 Get:8 http://ring.asahi-net.or.jp sarge/main file 4.12-1 [28.6kB]
-Get:9 http://ring.asahi-net.or.jp sarge/main gettext-base 0.14.1-7 [91.2kB]
+Get:9 http://ring.asahi-net.or.jp sarge/main gettext-base 0.14.1-10 [93.5kB]
 Get:10 http://ring.asahi-net.or.jp sarge/main debconf-utils 1.4.30.11 [33.0kB]
 Get:11 http://ring.asahi-net.or.jp sarge/main html2text 1.3.2a-1 [89.3kB]
-Get:12 http://ring.asahi-net.or.jp sarge/main gettext 0.14.1-7 [1555kB]
+Get:12 http://ring.asahi-net.or.jp sarge/main gettext 0.14.1-10 [1560kB]
 Get:13 http://ring.asahi-net.or.jp sarge/main intltool-debian 0.30+20040213 [23.5kB]
-Get:14 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.17 [73.2kB]
-Get:15 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.30 [362kB]
+Get:14 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.22 [77.3kB]
+Get:15 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.32 [362kB]
 Get:16 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:17 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2751kB in 1s (1532kB/s)
+Fetched 2762kB in 0s (3666kB/s)
 Selecting previously deselected package liblocale-gettext-perl.
-(Reading database ... 7698 files and directories currently installed.)
+(Reading database ... 7703 files and directories currently installed.)
 Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.01-17_i386.deb) ...
 Selecting previously deselected package libtext-iconv-perl.
 Unpacking libtext-iconv-perl (from .../libtext-iconv-perl_1.2-3_i386.deb) ...
@@ -74,19 +74,19 @@ Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.12-1_i386.deb) ...
 Selecting previously deselected package gettext-base.
-Unpacking gettext-base (from .../gettext-base_0.14.1-7_i386.deb) ...
+Unpacking gettext-base (from .../gettext-base_0.14.1-10_i386.deb) ...
 Selecting previously deselected package debconf-utils.
 Unpacking debconf-utils (from .../debconf-utils_1.4.30.11_all.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-1_i386.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.14.1-7_i386.deb) ...
+Unpacking gettext (from .../gettext_0.14.1-10_i386.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.30+20040213_all.deb) ...
 Selecting previously deselected package po-debconf.
-Unpacking po-debconf (from .../po-debconf_0.8.17_all.deb) ...
+Unpacking po-debconf (from .../po-debconf_0.8.22_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_4.2.30_all.deb) ...
+Unpacking debhelper (from .../debhelper_4.2.32_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_i386.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -98,14 +98,14 @@ Setting up libtext-wrapi18n-perl (0.06-1) ...
 Setting up libmagic1 (4.12-1) ...
 
 Setting up file (4.12-1) ...
-Setting up gettext-base (0.14.1-7) ...
+Setting up gettext-base (0.14.1-10) ...
 
 Setting up html2text (1.3.2a-1) ...
 
-Setting up gettext (0.14.1-7) ...
+Setting up gettext (0.14.1-10) ...
 
 Setting up intltool-debian (0.30+20040213) ...
-Setting up po-debconf (0.8.17) ...
+Setting up po-debconf (0.8.22) ...
 Setting up libdshconfig1 (0.20.11-1) ...
 
 Setting up libdshconfig1-dev (0.20.11-1) ...
@@ -114,7 +114,7 @@ Setting up debconf (1.4.30.11) ...
 
 Setting up debconf-utils (1.4.30.11) ...
 
-Setting up debhelper (4.2.30) ...
+Setting up debhelper (4.2.32) ...
  -> Finished parsing the build-deps
 Reading Package Lists...
 Building Dependency Tree...
@@ -125,25 +125,25 @@ Need to get 69.6kB of archives.
 After unpacking 262kB of additional disk space will be used.
 Get:1 http://ring.asahi-net.or.jp sarge/main fakeroot 1.2.2 [69.6kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 69.6kB in 0s (1287kB/s)
+Fetched 69.6kB in 0s (502kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 8530 files and directories currently installed.)
+(Reading database ... 8538 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.2.2_i386.deb) ...
 Setting up fakeroot (1.2.2) ...
 Copying source file
-    -> copying [testbuild/dsh_0.25.4-1.dsc]
-    -> copying [testbuild/dsh_0.25.4.orig.tar.gz]
-    -> copying [testbuild/dsh_0.25.4-1.diff.gz]
+    -> copying [testbuild/dsh_0.25.6-1.dsc]
+    -> copying [testbuild/dsh_0.25.6.orig.tar.gz]
+    -> copying [testbuild/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-source: extracting dsh in dsh-0.25.4
+dpkg-source: extracting dsh in dsh-0.25.6
  -> Building the package
 dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: source package is dsh
 dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-buildpackage: source version is 0.25.4-1
+dpkg-buildpackage: source version is 0.25.6-1
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: host architecture is i386
@@ -155,25 +155,25 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/tmp/buildd/dsh-0.25.4'
+make[1]: Entering directory `/tmp/buildd/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/tmp/buildd/dsh-0.25.4'
+make[1]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/tmp/buildd/dsh-0.25.4'
+make[1]: Entering directory `/tmp/buildd/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/tmp/buildd/dsh-0.25.4'
+make[1]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
- dpkg-source -b dsh-0.25.4
+ dpkg-source -b dsh-0.25.6
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-source: building dsh using existing dsh_0.25.4.orig.tar.gz
-dpkg-source: building dsh in dsh_0.25.4-1.diff.gz
+dpkg-source: building dsh using existing dsh_0.25.6.orig.tar.gz
+dpkg-source: building dsh in dsh_0.25.6-1.diff.gz
 dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
 dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
-dpkg-source: building dsh in dsh_0.25.4-1.dsc
+dpkg-source: building dsh in dsh_0.25.6-1.dsc
  debian/rules build
 dh_testdir
 INSTALL_PROGRAM='install -p    -o root -g root  -m  755 -s' CFLAGS='-Wall -g -O2' \
@@ -353,18 +353,18 @@ config.status: creating po/Makefile
 touch configure-stamp
 dh_testdir
 /usr/bin/make
-make[1]: Entering directory `/tmp/buildd/dsh-0.25.4'
+make[1]: Entering directory `/tmp/buildd/dsh-0.25.6'
 /usr/bin/make  all-recursive
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.4'
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.6'
 Making all in m4
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.4/m4'
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.6/m4'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.4/m4'
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6/m4'
 Making all in po
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.4/po'
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.6/po'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.4/po'
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.4'
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6/po'
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.6'
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-dsh.o -MD -MP -MF ".deps/dsh-dsh.Tpo" -c -o dsh-dsh.o `test -f 'dsh.c' || echo './'`dsh.c; \
 then mv -f ".deps/dsh-dsh.Tpo" ".deps/dsh-dsh.Po"; else rm -f ".deps/dsh-dsh.Tpo"; exit 1; fi
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-linkedlist.o -MD -MP -MF ".deps/dsh-linkedlist.Tpo" -c -o dsh-linkedlist.o `test -f 'linkedlist.c' || echo './'`linkedlist.c; \
@@ -377,26 +377,26 @@ gcc -Wall -g -O2 -o dsh dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  /usr/lib/lib
 mkdir build-man
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.5 > build-man/dsh.conf.5
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.4'
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.4'
-make[1]: Leaving directory `/tmp/buildd/dsh-0.25.4'
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6'
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6'
+make[1]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 /usr/bin/make check
-make[1]: Entering directory `/tmp/buildd/dsh-0.25.4'
+make[1]: Entering directory `/tmp/buildd/dsh-0.25.6'
 Making check in m4
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.4/m4'
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.6/m4'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.4/m4'
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6/m4'
 Making check in po
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.4/po'
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.6/po'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.4/po'
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.4'
-sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6/po'
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.6'
 /usr/bin/make  dsh
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.4'
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.4'
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.6'
+make[3]: `dsh' is up to date.
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 /usr/bin/make  check-TESTS
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.4'
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.6'
 PASS: tests/param-f.sh
 dsh: File ./tests/nonexistent.file could not be opened for read
 PASS: tests/param-f-fail.sh
@@ -415,8 +415,8 @@ PASS: tests/param-cn4.sh
 test to check that -b0 is rejected, and -b1 is accepted
 Buffer size needs to be greater than 1
 Buffer size needs to be greater than 1
-b
 a
+b
 PASS: tests/param-b-0.sh
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -432,10 +432,10 @@ success
 success
 success
 success
-d: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
-b: dsh: Failed executing ./invalid-exec-file with llexec call
 a: dsh: Failed executing ./invalid-exec-file with llexec call
+b: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -443,23 +443,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-1: 1
 2: 2
+1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun Feb 13 07:16:47 UTC 2005
-1: Using sleep as the remote shell
-1: Show machine names on output
-1: Adding machine 5,4,3,2,1 to list
-1: Setting forklimit to 3 and wait_shell to 0
-1: DUMPing parameters passed to llexec
-1: [1] 
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-DUMPing parameters passed to llexec
-[1] 
+Tue Apr 12 12:58:24 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -484,6 +472,20 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 DUMPing parameters passed to llexec
 [3] 
+1: Using sleep as the remote shell
+1: Show machine names on output
+1: Adding machine 5,4,3,2,1 to list
+1: Setting forklimit to 3 and wait_shell to 0
+1: ... Waiting for process to end with waitpid
+1: DUMPing parameters passed to llexec
+1: [1] 
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+... Waiting for process to end with waitpid
+DUMPing parameters passed to llexec
+[1] 
 4: Using sleep as the remote shell
 4: Show machine names on output
 4: Adding machine 5,4,3,2,1 to list
@@ -500,14 +502,12 @@ DUMPing parameters passed to llexec
 5: Show machine names on output
 5: Adding machine 5,4,3,2,1 to list
 5: Setting forklimit to 3 and wait_shell to 0
-5: ... Waiting for process to end with waitpid
 5: DUMPing parameters passed to llexec
 5: [5] 
 Using sleep as the remote shell
 Show machine names on output
 Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
-... Waiting for process to end with waitpid
 DUMPing parameters passed to llexec
 [5] 
 --- Terminated running
@@ -517,24 +517,24 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun Feb 13 07:16:53 UTC 2005
+Tue Apr 12 12:58:29 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-c: c
-dsh: Process terminated (before write).
-b: b
 a: a
+b: b
+c: c
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
 PASS: tests/machinelist-comment-test.sh
+PASS: tests/machinelist-order.sh
 ===================
-All 16 tests passed
+All 17 tests passed
 ===================
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.4'
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.4'
-make[1]: Leaving directory `/tmp/buildd/dsh-0.25.4'
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6'
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6'
+make[1]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 touch build-stamp
  fakeroot debian/rules binary
 dh_testdir
@@ -542,58 +542,58 @@ dh_testroot
 dh_clean -k
 dh_installdirs
 # Add here commands to install the package into debian/dsh.
-/usr/bin/make install DESTDIR=/tmp/buildd/dsh-0.25.4/debian/dsh
-make[1]: Entering directory `/tmp/buildd/dsh-0.25.4'
+/usr/bin/make install DESTDIR=/tmp/buildd/dsh-0.25.6/debian/dsh
+make[1]: Entering directory `/tmp/buildd/dsh-0.25.6'
 Making install in m4
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.4/m4'
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.4/m4'
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.6/m4'
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.6/m4'
 make[3]: Nothing to be done for `install-exec-am'.
 make[3]: Nothing to be done for `install-data-am'.
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.4/m4'
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.4/m4'
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6/m4'
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6/m4'
 Making install in po
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.4/po'
-/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /tmp/buildd/dsh-0.25.4/debian/dsh/usr/share
-mkdir -p -- /tmp/buildd/dsh-0.25.4/debian/dsh/usr/share
-mkdir -p -- /tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/locale/ja/LC_MESSAGES
-installing ja.gmo as /tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.6/po'
+/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /tmp/buildd/dsh-0.25.6/debian/dsh/usr/share
+mkdir -p -- /tmp/buildd/dsh-0.25.6/debian/dsh/usr/share
+mkdir -p -- /tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/locale/ja/LC_MESSAGES
+installing ja.gmo as /tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
 if test "dsh" = "gettext"; then \
-  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/gettext/po; \
+  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/gettext/po; \
   for file in Makefile.in.in Makevars remove-potcdate.sin   ; do \
     /usr/bin/install -c -m 644 ./$file \
-		    /tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/gettext/po/$file; \
+		    /tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/gettext/po/$file; \
   done; \
 else \
   : ; \
 fi
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.4/po'
-make[2]: Entering directory `/tmp/buildd/dsh-0.25.4'
-make[3]: Entering directory `/tmp/buildd/dsh-0.25.4'
-test -z "/usr/bin" || mkdir -p -- . "/tmp/buildd/dsh-0.25.4/debian/dsh/usr/bin"
-  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/tmp/buildd/dsh-0.25.4/debian/dsh/usr/bin/dsh'
-install -p -o root -g root -m 755 -s dsh /tmp/buildd/dsh-0.25.4/debian/dsh/usr/bin/dsh
-test -z "/etc/dsh" || mkdir -p -- . "/tmp/buildd/dsh-0.25.4/debian/dsh/etc/dsh"
- /usr/bin/install -c -m 644 'dsh.conf' '/tmp/buildd/dsh-0.25.4/debian/dsh/etc/dsh/dsh.conf'
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6/po'
+make[2]: Entering directory `/tmp/buildd/dsh-0.25.6'
+make[3]: Entering directory `/tmp/buildd/dsh-0.25.6'
+test -z "/usr/bin" || mkdir -p -- . "/tmp/buildd/dsh-0.25.6/debian/dsh/usr/bin"
+  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/tmp/buildd/dsh-0.25.6/debian/dsh/usr/bin/dsh'
+install -p -o root -g root -m 755 -s dsh /tmp/buildd/dsh-0.25.6/debian/dsh/usr/bin/dsh
+test -z "/etc/dsh" || mkdir -p -- . "/tmp/buildd/dsh-0.25.6/debian/dsh/etc/dsh"
+ /usr/bin/install -c -m 644 'dsh.conf' '/tmp/buildd/dsh-0.25.6/debian/dsh/etc/dsh/dsh.conf'
 for LANGS in ja ; do \
-	mkdir -p /tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/man/$LANGS/man1 ;\
-	mkdir -p /tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/man/$LANGS/man5 ;\
+	mkdir -p /tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man1 ;\
+	mkdir -p /tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man5 ;\
 	sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.$LANGS.1 \
-		> /tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
+		> /tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
 	sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.$LANGS.5 \
-		> /tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
+		> /tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
 done
-test -z "/usr/share/man/man1" || mkdir -p -- . "/tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/man/man1"
- /usr/bin/install -c -m 644 './build-man/dsh.1' '/tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/man/man1/dsh.1'
-test -z "/usr/share/man/man5" || mkdir -p -- . "/tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/man/man5"
- /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/tmp/buildd/dsh-0.25.4/debian/dsh/usr/share/man/man5/dsh.conf.5'
-make[3]: Leaving directory `/tmp/buildd/dsh-0.25.4'
-make[2]: Leaving directory `/tmp/buildd/dsh-0.25.4'
-make[1]: Leaving directory `/tmp/buildd/dsh-0.25.4'
-cp /tmp/buildd/dsh-0.25.4/debian/machines.list /tmp/buildd/dsh-0.25.4/debian/dsh/etc/dsh/machines.list
-cp /tmp/buildd/dsh-0.25.4/dsh.conf /tmp/buildd/dsh-0.25.4/debian/dsh/etc/dsh/dsh.conf
-ln -s ../machines.list /tmp/buildd/dsh-0.25.4/debian/dsh/etc/dsh/group/all
-install -d /tmp/buildd/dsh-0.25.4/debian/dsh/usr/lib/update-cluster
-install -m 755 /tmp/buildd/dsh-0.25.4/debian/dsh.updatelist /tmp/buildd/dsh-0.25.4/debian/dsh/usr/lib/update-cluster/
+test -z "/usr/share/man/man1" || mkdir -p -- . "/tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/man/man1"
+ /usr/bin/install -c -m 644 './build-man/dsh.1' '/tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/man/man1/dsh.1'
+test -z "/usr/share/man/man5" || mkdir -p -- . "/tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/man/man5"
+ /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/tmp/buildd/dsh-0.25.6/debian/dsh/usr/share/man/man5/dsh.conf.5'
+make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6'
+make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6'
+make[1]: Leaving directory `/tmp/buildd/dsh-0.25.6'
+cp /tmp/buildd/dsh-0.25.6/debian/machines.list /tmp/buildd/dsh-0.25.6/debian/dsh/etc/dsh/machines.list
+cp /tmp/buildd/dsh-0.25.6/dsh.conf /tmp/buildd/dsh-0.25.6/debian/dsh/etc/dsh/dsh.conf
+ln -s ../machines.list /tmp/buildd/dsh-0.25.6/debian/dsh/etc/dsh/group/all
+install -d /tmp/buildd/dsh-0.25.6/debian/dsh/usr/lib/update-cluster
+install -m 755 /tmp/buildd/dsh-0.25.6/debian/dsh.updatelist /tmp/buildd/dsh-0.25.6/debian/dsh/usr/lib/update-cluster/
 dh_testdir
 dh_testroot
 dh_installdocs NEWS
@@ -618,7 +618,7 @@ debian: warning: no utmp entry available and LOGNAME not defined; using uid of p
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dh_md5sums
 dh_builddeb
-dpkg-deb: building package `dsh' in `../dsh_0.25.4-1_i386.deb'.
+dpkg-deb: building package `dsh' in `../dsh_0.25.6-1_i386.deb'.
  dpkg-genchanges -mJunichi Uekawa <dancer@debian.org>
 dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
@@ -628,9 +628,9 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> unmounting dev/pts filesystem
-/usr/lib/pbuilder/pbuilder-modules: line 83: 17692 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+/usr/lib/pbuilder/pbuilder-modules: line 85:  4887 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting proc filesystem
-Current time: Sun Feb 13 16:16:55 JST 2005
-pbuilder-time-stamp: 1108279015
+Current time: Tue Apr 12 21:58:31 JST 2005
+pbuilder-time-stamp: 1113310711
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/17358 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/4397 and its subdirectories
