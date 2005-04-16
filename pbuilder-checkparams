@@ -183,6 +183,10 @@ while [ -n "$1" ]; do
 	    AUTO_DEBSIGN="yes"
 	    shift;
 	    ;;
+	--debsign-k)
+	    DEBSIGN_KEYID="$2"
+	    shift; shift; 
+	    ;;
 	--buildsourceroot*)
 	    BUILDSOURCEROOTCMD="$2";
 	    shift; shift;

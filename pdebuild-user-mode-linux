@@ -49,6 +49,12 @@ else
     pbuilder-user-mode-linux build "$@" --buildresult "${UML_BUILDRESULT}" --debbuildopts "${DEBBUILDOPTS}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
 fi
 
+# do signing with optional key specifier
 if [ "${AUTO_DEBSIGN}" = "yes" ]; then
-    debsign "${UML_BUILDRESULT}/${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.changes"
+    unset DEBSIGN_PARAM || true
+    if [ -n "${DEBSIGN_KEYID}" ]; then
+	DEBSIGN_PARAM[1]="-k${DEBSIGN_KEYID}"
+    fi
+    DEBSIGN_PARAM[2]="${UML_BUILDRESULT}/${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.changes"
+    debsign "${DEBSIGN_PARAM[@]}"
 fi

@@ -981,6 +981,29 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	inside your chroot.
       </para>
     </sect1>
+    <sect1 id="sponsor">
+      <title>Using pdebuild to sponsor package</title>
+      <para>
+	To sign a package marking for sponsorship, 
+	it is possible to use<command><option> --auto-debsign</option></command> and 
+	<command><option>--debsign-k</option></command> options of pdebuild.
+      </para>
+      <screen>
+	<command>pdebuild  <option>--auto-debsign </option> <option>--debsign-k </option><parameter>XXXXXXXX</parameter></command>
+      </screen>
+    </sect1>
+    <sect1 id="sourcechanges">
+      <title>Why is there a source.changes file in ../?</title>
+      <para>
+	When running pdebuild, pbuilder will run dpkg-buildpackage to create a 
+	Debian source package to pass it on to pbuilder.
+	File named XXXX_YYY_source.changes is what remains from that process.
+	It is harmless unless you try to upload it to the Debian archive.
+      </para>
+      <para>
+	This behavior is different when running through --use-pdebuild-internal
+      </para>
+    </sect1>
     <!-- end of FAQ -->
   </chapter>
   <chapter id="otheruse">
