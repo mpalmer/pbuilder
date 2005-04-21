@@ -306,6 +306,7 @@ function recover_aptcache() {
 
 function save_aptcache() {
     # save the current aptcache archive
+    # it is safe to call this function several times.
     local doit
     if [ -n "$APTCACHE" ]; then
 	echo "Copying back the cached apt archive contents"

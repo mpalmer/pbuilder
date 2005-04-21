@@ -1,8 +1,10 @@
-pbuilder (0.127) UNRELEASED; urgency=low
+pbuilder (0.127) unstable; urgency=low
 
   * pdebuild.1, pdebuild-user-mode-linux.1: --debsign-k requires key-id.
+  * save apt cache after running B hook in build target; so that 
+    we don't keep redownloading lintian/linda . (closes: #296999)
 
- -- Junichi Uekawa <dancer@debian.org>  Sat, 16 Apr 2005 23:50:55 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Fri, 22 Apr 2005 07:38:16 +0900
 
 pbuilder (0.126) unstable; urgency=low
 

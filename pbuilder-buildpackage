@@ -127,6 +127,7 @@ fi
 
 trap umountproc_cleanbuildplace exit
 executehooks "B"
+save_aptcache
 trap cleanbuildplace exit
 umountproc
 
