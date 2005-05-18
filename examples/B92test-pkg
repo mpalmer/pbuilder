@@ -1,0 +1,30 @@
+#!/bin/bash
+# run tests
+set -e 
+
+dpkg -i /tmp/buildd/*.deb
+chmod a+x /tmp/buildd/*/debian/pbuilder-test/*
+SUCCESS=0
+COUNT=0
+unset FAIL || true
+NOFAIL=1
+
+for SCRIPT in $(run-parts --test /tmp/buildd/*/debian/pbuilder-test) ; do
+    echo "--- BEGIN test: ${SCRIPT##*/}"
+    if "${SCRIPT}"; then
+    	echo SUCCESS
+	((SUCCESS=SUCCESS+1))
+    else
+    	echo FAIL
+	FAIL[${#FAIL[@]}]="${SCRIPT##*/}"
+	NOFAIL=0
+    fi
+    echo "--- END test: ${SCRIPT##*/}"
+    ((COUNT=COUNT+1))
+done
+
+echo "Summary:"
+echo "=== $SUCCESS out of $COUNT tests passed"
+echo "${FAIL[@]/#/ failed }"
+echo "-- end of testsuite."
+
