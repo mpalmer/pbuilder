@@ -1,6 +1,6 @@
 #!/bin/sh
 # script from Jamin W. Collins  BTS: #255165
-# name this script 'pbuilder-woody', 'pbuilder-sid', 'pbuilder-sarge' etc.
+# name this script 'pbuilder-woody', 'pbuilder-sid', 'pbuilder-sarge', 'pbuilder-experimental' etc.
 
 OPERATION=$1
 DISTRIBUTION=`basename $0 | cut -f2 -d '-'`

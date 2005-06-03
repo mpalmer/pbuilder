@@ -252,6 +252,14 @@ if [ -z "${CHROOTEXEC}" ]; then
     CHROOTEXEC="chroot $BUILDPLACE "
 fi
 
+# handle 'experimental' specially.
+if [ "$DISTRIBUTION" = "experimental" ]; then
+    DISTRIBUTION="sid"
+    EXPERIMENTAL="true"
+else 
+    EXPERIMENTAL=
+fi
+
 case "$PBCURRENTCOMMANDLINEOPERATION" in 
     login|execute|pdebuild)
 	# don't do anything if it is "login", or pdebuild
