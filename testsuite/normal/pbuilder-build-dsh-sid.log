@@ -1,8 +1,8 @@
 pbuilder-buildpackage/powerpc $Id$
 $Id$
 
-Current time: Fri Jun  3 19:53:39 JST 2005
-pbuilder-time-stamp: 1117796019
+Current time: Sat Jun  4 04:37:50 JST 2005
+pbuilder-time-stamp: 1117827470
 Building the build Environment
  -> extracting base tarball [/home/dancer/cvscheckout/whole/pbuilder/testsuite/testimage]
  -> creating local configuration
@@ -13,7 +13,7 @@ Building the build Environment
  -> created buildresult dir :/var/cache/pbuilder/result/
 Obtaining the cached apt archive contents
 Installing the build-deps
- -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.18 2003/04/20 03:40:36 dancer Exp $
+ -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.19 2005/06/03 12:07:39 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
    -> Trying debhelper
  -> Considering  libdshconfig1-dev (>= 0.20.11-1)
@@ -36,26 +36,8 @@ The following NEW packages will be installed:
   liblocale-gettext-perl libmagic1 libtext-charwidth-perl libtext-iconv-perl
   libtext-wrapi18n-perl po-debconf
 0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3017kB of archives.
+Need to get 0B/3017kB of archives.
 After unpacking 12.4MB of additional disk space will be used.
-Get:1 http://ring.asahi-net.or.jp sid/main liblocale-gettext-perl 1.04-1 [21.6kB]
-Get:2 http://ring.asahi-net.or.jp sid/main libtext-iconv-perl 1.2-3 [13.7kB]
-Get:3 http://ring.asahi-net.or.jp sid/main libtext-charwidth-perl 0.04-2 [12.8kB]
-Get:4 http://ring.asahi-net.or.jp sid/main libtext-wrapi18n-perl 0.06-2 [8528B]
-Get:5 http://ring.asahi-net.or.jp sid/main debconf-i18n 1.4.50 [109kB]
-Get:6 http://ring.asahi-net.or.jp sid/main debconf 1.4.50 [107kB]
-Get:7 http://ring.asahi-net.or.jp sid/main libmagic1 4.12-1 [236kB]
-Get:8 http://ring.asahi-net.or.jp sid/main file 4.12-1 [30.5kB]
-Get:9 http://ring.asahi-net.or.jp sid/main gettext-base 0.14.4-2 [102kB]
-Get:10 http://ring.asahi-net.or.jp sid/main debconf-utils 1.4.50 [32.9kB]
-Get:11 http://ring.asahi-net.or.jp sid/main html2text 1.3.2a-2 [93.6kB]
-Get:12 http://ring.asahi-net.or.jp sid/main gettext 0.14.4-2 [1760kB]
-Get:13 http://ring.asahi-net.or.jp sid/main intltool-debian 0.30+20040213 [23.5kB]
-Get:14 http://ring.asahi-net.or.jp sid/main po-debconf 0.8.23 [78.0kB]
-Get:15 http://ring.asahi-net.or.jp sid/main debhelper 4.2.36 [363kB]
-Get:16 http://ring.asahi-net.or.jp sid/main libdshconfig1 0.20.11-1 [11.0kB]
-Get:17 http://ring.asahi-net.or.jp sid/main libdshconfig1-dev 0.20.11-1 [12.5kB]
-Fetched 3017kB in 1s (1839kB/s)
 Selecting previously deselected package liblocale-gettext-perl.
 (Reading database ... 7488 files and directories currently installed.)
 Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.04-1_powerpc.deb) ...
@@ -117,23 +99,6 @@ Setting up debconf-utils (1.4.50) ...
 Setting up debhelper (4.2.36) ...
  -> Finished parsing the build-deps
 Copying back the cached apt archive contents
- -> new cache content liblocale-gettext-perl_1.04-1_powerpc.deb added
- -> new cache content libtext-iconv-perl_1.2-3_powerpc.deb added
- -> new cache content libtext-charwidth-perl_0.04-2_powerpc.deb added
- -> new cache content libtext-wrapi18n-perl_0.06-2_all.deb added
- -> new cache content debconf-i18n_1.4.50_all.deb added
- -> new cache content debconf_1.4.50_all.deb added
- -> new cache content libmagic1_4.12-1_powerpc.deb added
- -> new cache content file_4.12-1_powerpc.deb added
- -> new cache content gettext-base_0.14.4-2_powerpc.deb added
- -> new cache content debconf-utils_1.4.50_all.deb added
- -> new cache content html2text_1.3.2a-2_powerpc.deb added
- -> new cache content gettext_0.14.4-2_powerpc.deb added
- -> new cache content intltool-debian_0.30+20040213_all.deb added
- -> new cache content po-debconf_0.8.23_all.deb added
- -> new cache content debhelper_4.2.36_all.deb added
- -> new cache content libdshconfig1_0.20.11-1_powerpc.deb added
- -> new cache content libdshconfig1-dev_0.20.11-1_powerpc.deb added
 Copying source file
     -> copying [testbuild/dsh_0.25.6-1.dsc]
     -> copying [testbuild/dsh_0.25.6.orig.tar.gz]
@@ -438,8 +403,8 @@ success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -451,7 +416,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Jun  3 10:54:44 UTC 2005
+Fri Jun  3 19:39:13 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -521,7 +486,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Fri Jun  3 10:54:49 UTC 2005
+Fri Jun  3 19:39:19 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -634,7 +599,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Fri Jun  3 19:54:55 JST 2005
-pbuilder-time-stamp: 1117796095
+Current time: Sat Jun  4 04:39:25 JST 2005
+pbuilder-time-stamp: 1117827565
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/whole/pbuilder/testsuite/testbuild/23174 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/whole/pbuilder/testsuite/testbuild/23832 and its subdirectories

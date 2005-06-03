@@ -460,6 +460,15 @@ and
 .B exec
 session.
 
+
+.TP
+.BI "--autocleanaptcache"
+Clean apt cache automatically, to run apt-get autoclean to only 
+keep the packages which are required for the version of Debian.
+This is useful when you keep a aptcache directory for each distribution
+and want to keep the size of the aptcache down.
+
+
 .SH "FILES"
 .TP
 .I "/etc/pbuilderrc"

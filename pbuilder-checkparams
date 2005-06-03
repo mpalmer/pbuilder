@@ -34,6 +34,7 @@ PRESERVE_BUILDPLACE="no"
 unset EXTRA_CONFIGFILE || true
 PBUILDER_DEBUGMODE=
 SAVE_AFTER_LOGIN=
+AUTOCLEANAPTCACHE=
 
 #option for user-mode-linux only.
 IGNORE_UMOUNT=""
@@ -104,6 +105,10 @@ while [ -n "$1" ]; do
 		APTCACHE=
 	    fi
 	    shift; shift;
+	    ;;
+	--autocleanaptcache)
+	    AUTOCLEANAPTCACHE=yes
+	    shift;
 	    ;;
 	--removepackages)
 	    REMOVEPACKAGES="$2";

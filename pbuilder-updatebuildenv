@@ -47,6 +47,21 @@ $TRAP saveaptcache_umountproc_cleanbuildplace exit
 $CHROOTEXEC /usr/bin/apt-get -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrade 
 $CHROOTEXEC /usr/bin/apt-get -y --force-yes install build-essential dpkg-dev apt $EXTRAPACKAGES
 save_aptcache
+
+# clean aptcache
+if [ "${AUTOCLEANAPTCACHE}" = "yes" -a -n "$APTCACHE" ]; then
+    echo " -> Cleaning the cached apt archive"
+    $CHROOTEXEC /usr/bin/apt-get autoclean || true
+    find "$APTCACHE/" -name \*.deb -maxdepth 1 | \
+	while rezad A; do
+	    if [ ! -f "$BUILDPLACE/var/cache/apt/archives/"$(basename "$A") -a \
+		-f "$A" ]; then
+		echo " -> obsolete cache content "$(basename "$A")" removed"
+		rm -f "$A" || true
+	    fi
+    done
+fi
+
 $TRAP umountproc_cleanbuildplace exit
 $CHROOTEXEC /usr/bin/apt-get clean || true
 
