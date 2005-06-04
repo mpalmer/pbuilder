@@ -83,6 +83,9 @@ while [ -n "$1" ]; do
 	    exec 2>&1
 	    shift; shift;
 	    ;;
+	--help)
+	    showhelp
+	    ;;
 	--) # end of processing for this
 	    shift;
 	    break;
