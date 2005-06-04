@@ -34,12 +34,48 @@ apt-get install -y pbuilder
 # I'm not going to have the same LOGNAME as outside, I'm root.
 export LOGNAME=root
 
-if [ "$2" = "--debbuildopts" ]; then
-    echo "Setting DEBBUILDOPTS=$3"
-    DEBBUILDOPTS="$3"
-fi
-
 cd "$1"
+shift;
+
+while [ -n "$1" ]; do 
+    case "$1" in 
+	--debbuildopts)
+	    echo "Setting DEBBUILDOPTS=$2"
+	    DEBBUILDOPTS="$2"
+	    shift; shift;
+	    ;;
+	--uid)
+	    BUILDRESULTUID=$2
+	    shift; shift;
+	    ;;
+	--gid)
+	    BUILDRESULTGID=$2
+	    shift; shift;
+	    ;;
+	--debug)
+	    PBUILDER_DEBUGMODE=yes
+	    set -x
+	    shift;
+	    ;;
+	--*)
+	    echo "Error: Unknown option [$1] was specified " >&2 
+	    exit 1;
+	    ;;
+	*)
+	    break;
+	    ;;
+    esac
+done
+
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
 /usr/lib/pbuilder/pbuilder-satisfydepends
-/usr/bin/dpkg-buildpackage -us -uc ${DEBBUILDOPTS}
+apt-get install -y --force-yes fakeroot
+
+# create the user similar to that used outside 
+groupadd -g "${BUILDRESULTGID}" -o pbgroup
+useradd -g pbgroup -u "${BUILDRESULTUID}" -o pbuser
+
+# what about id -G output? if other groups than the designated is used, we're stuffed.
+
+# do build with that user.
+echo /usr/bin/dpkg-buildpackage -rfakeroot -us -uc '${DEBBUILDOPTS}' | su pbuser
