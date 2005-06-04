@@ -28,7 +28,7 @@ fi;
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
 
 . /usr/lib/pbuilder/pbuilder-loadconfig
-. /usr/lib/pbuilder/pbuilder-uml-checkparams
+. /usr/lib/pbuilder/pdebuild-uml-checkparams
 
 PKG_SOURCENAME=$(dpkg-parsechangelog|sed -n 's/^Source: //p')
 PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')

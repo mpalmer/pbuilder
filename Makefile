@@ -19,6 +19,7 @@ SHELLCODES=pbuilder-buildpackage \
 	pbuilder-user-mode-linux \
 	pbuilder \
 	pdebuild \
+	pdebuild-checkparams \
 	pdebuild-user-mode-linux \
 	pdebuild-internal
 
@@ -59,7 +60,9 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-loadconfig $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-runhooks $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-checkparams $(DESTDIR)/usr/lib/pbuilder/
+	$(INSTALL_EXECUTABLE) pdebuild-checkparams $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-uml-checkparams $(DESTDIR)/usr/lib/pbuilder/
+	$(INSTALL_EXECUTABLE) pdebuild-uml-checkparams $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-modules $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder $(DESTDIR)/usr/sbin
 	$(INSTALL_EXECUTABLE) pdebuild $(DESTDIR)/usr/bin

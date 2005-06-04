@@ -183,27 +183,6 @@ while [ -n "$1" ]; do
 	    DEBOOTSTRAPOPTS[${#DEBOOTSTRAPOPTS[@]}]="$2";
 	    shift; shift;
 	    ;;
-	## pdebuild option
-	--auto-debsign)
-	    AUTO_DEBSIGN="yes"
-	    shift;
-	    ;;
-	--debsign-k)
-	    DEBSIGN_KEYID="$2"
-	    shift; shift; 
-	    ;;
-	--buildsourceroot*)
-	    BUILDSOURCEROOTCMD="$2";
-	    shift; shift;
-	    ;;
-	--pbuilderroot*)
-	    PBUILDERROOTCMD="$2";
-	    shift; shift;
-	    ;;
-	--use-pdebuild-internal)
-	    USE_PDEBUILD_INTERNAL=yes;
-	    shift;
-	    ;;
 	--save-after-login|--save-after-exec)
 	    SAVE_AFTER_LOGIN=yes;
 	    shift;
@@ -257,7 +236,7 @@ if [ -z "${CHROOTEXEC}" ]; then
     CHROOTEXEC="chroot $BUILDPLACE "
 fi
 
-# handle 'experimental' specially.
+# handle 'experimental' specially. -- required for raw pbuilder (create/update) only.
 if [ "$DISTRIBUTION" = "experimental" ]; then
     DISTRIBUTION="sid"
     EXPERIMENTAL="true"

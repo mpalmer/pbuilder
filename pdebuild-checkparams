@@ -1,0 +1,110 @@
+#! /bin/bash 
+# this is sourced from pbuilder packages to process the optional parameters.
+#   pbuilder -- personal Debian package builder
+#   Copyright (C) 2005 Junichi Uekawa
+#
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+# This code is called for pdebuild
+
+. /usr/lib/pbuilder/pbuilder-loadconfig
+. /usr/lib/pbuilder/pbuilder-modules
+
+while [ -n "$1" ]; do 
+    case "$1" in 
+	    # pbuilder-shared options.
+	--buildresult)
+	    if [ -n "$2" ]; then
+		if [ -d "$2" ]; then
+		    BUILDRESULT=$(readlink -f "$2");
+		else
+		    echo "E: Directory $2 does not exist" >&2 
+		    exit 1
+		fi
+	    else
+		BUILDRESULT=
+	    fi
+	    shift; shift;
+	    ;;
+	--debbuildopts)
+	    DEBBUILDOPTS="$2";
+	    shift; shift;
+	    ;;
+	--configfile)
+	    if [ ! -f "$2" ]; then
+		echo "E: Config file $2 does not exist" >&2
+		exit 1
+	    fi
+	    . "$2";
+	    EXTRA_CONFIGFILE[${#EXTRA_CONFIGFILE[@]}]="$2";
+	    shift; shift; 
+	    ;;
+	    # pdebuild specific options.
+	--auto-debsign)
+	    AUTO_DEBSIGN="yes"
+	    shift;
+	    ;;
+	--debsign-k)
+	    DEBSIGN_KEYID="$2"
+	    shift; shift; 
+	    ;;
+	--buildsourceroot*)
+	    BUILDSOURCEROOTCMD="$2";
+	    shift; shift;
+	    ;;
+	--pbuilderroot*)
+	    PBUILDERROOTCMD="$2";
+	    shift; shift;
+	    ;;
+	--use-pdebuild-internal)
+	    USE_PDEBUILD_INTERNAL=yes;
+	    shift;
+	    ;;
+	--debug)
+	    PBUILDER_DEBUGMODE=yes
+	    set -x
+	    shift;
+	    ;;
+	--logfile)
+	    echo "  -> Logging to $2"
+	    exec > "$2";
+	    exec 2>&1
+	    shift; shift;
+	    ;;
+	--) # end of processing for this
+	    shift;
+	    break;
+	    ;;
+	--*)
+	    echo "Error: Unknown option [$1] was specified " >&2 
+	    exit 1;
+	    ;;
+	*)
+	    break;
+	    ;;
+  esac
+done
+
+BUILDPLACE=${BUILDPLACE?"Build root directory is not defined"}
+
+# the default is to add a PID in the buildplace specified in the config file.
+BASEBUILDPLACE="$BUILDPLACE"
+if [ "${INTERNAL_BUILD_UML}" != "yes" -a "${PRESERVE_BUILDPLACE}" != "yes" ]; then
+    BUILDPLACE="$BUILDPLACE/$$"
+fi
+if [ -z "${CHROOTEXEC}" ]; then
+    CHROOTEXEC="chroot $BUILDPLACE "
+fi
+

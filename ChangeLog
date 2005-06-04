@@ -1,5 +1,26 @@
 2005-06-04  Junichi Uekawa  <dancer@debian.org>
 
+	* debian/pbuilder-uml.files: move to uml.
+	* Makefile: install
+	* pdebuild-user-mode-linux: use pdebuild-uml-checkparams
+
+	* pdebuild-uml-checkparams: add --debsign-k
+
+	* pbuilder-uml-checkparams: pdebuild options remove.
+
+	* pdebuild-uml-checkparams: --buildresult
+
+	* pdebuild.1: add --logfile option to documentation.
+
+	* pdebuild-checkparams: --logfile option implemented for pdebuild.
+
+	* Makefile (install): install
+
+	* pdebuild: use pdebuild-checkparams instead.
+
+	* pbuilder-checkparams: split 
+	* pdebuild-checkparams: new file.
+	
 	* pbuilder-updatebuildenv: fix typo
 
 	* pbuilder.8: document --autocleanaptcache
