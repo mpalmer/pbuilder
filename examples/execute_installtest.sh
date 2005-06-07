@@ -14,7 +14,7 @@ set -ex
 
 # practically, killing is not enough, do a reboot here instead.
 echo 'nobody@nowhere' > /etc/mailname
-echo '$Id'
+echo '$Id$'
 INSTALLTESTPID=$$
 ( sleep 1h ; kill $INSTALLTESTPID ) &
 KILLPID=$!
