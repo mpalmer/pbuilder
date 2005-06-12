@@ -1,4 +1,4 @@
-.TH "pbuilder-user-mode-linux" 1 "2005 Jun 3" "Debian" "pbuilder"
+.TH "pbuilder-user-mode-linux" 1 "2005 Jun 12" "Debian" "pbuilder"
 .SH NAME
 pbuilder-user-mode-linux \- personal package builder in UML
 .SH SYNOPSIS
@@ -206,13 +206,33 @@ will most probably fail.
 The non-US mirror, specified like the 
 .B "--mirror"
 option
+.TP
+.BI "--othermirror [" "deb http://xxx/xxx/ ./ " "|" " other deb lines... " "]"
+The lines which is added to the sources.list, delimited with 
+.B "|"
+Like 
+.B "deb http://local/mirror stable main|deb file:/usr/local/mirror ./"
+
+The deb lines here are the ones that will appear at the top of the 
+.B "sources.list"
+inside the chroot.
+Be sure to follow the syntax rules of
+.RI "sources.list (" 5 ")."
+These lines appear at the beginning of the
+constructed sources file, so this is the place to list your
+.B "local"
+mirror sites; apt will then use them in preference to the ones 
+listed in 
+.B "--mirror"
+and
+.B "--nonusmirror".
 
 These options are only valid when
 .B "--override-config"
 option is specified in 
 .B "update"
 target, or when
-.B "pbuilder-user-mode-linux create"
+.B "pbuilder create"
 is being called.
 
 \" copied from pbuilder.8
