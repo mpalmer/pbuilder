@@ -65,17 +65,20 @@ Specify the mirror site which contains
 distribution.
 
 .TP
-.BI "OTHERMIRROR=" """deb http://www.home.com/updates/ ./"""
-Add other lines which you want to have added to
-.B "/etc/apt/sources.list" 
-here.
-The contents of this variable are inserted into the
-.B "/etc/apt/sources.list" 
-verbatim inside the chroot, so be sure to follow the syntax rules of
+.BI "OTHERMIRROR=" "deb http://xxx/xxx/ ./ " "[|" " other deb lines... " "]"
+The lines which is added to the sources.list, delimited with 
+.B "|"
+Like 
+.B "deb http://local/mirror stable main|deb file:/usr/local/mirror ./"
+
+The deb lines here are the ones that will appear at the top of the 
+.B "sources.list"
+inside the chroot.
+Be sure to follow the syntax rules of
 .RI "sources.list (" 5 ")."
 These lines appear at the beginning of the
 constructed sources file, so this is the place to list your
-.B local
+.B "local"
 mirror sites; apt will then use them in preference to the ones 
 listed in 
 .B "MIRRORSITE"
