@@ -185,8 +185,8 @@ function clean_subdirectories () {
       return;
   fi
   echo "    -> removing directory $1 and its subdirectories"
-  find "$1" \( \! -type d \) -a -xdev -print0 |xargs -0 rm -f
-  find "$1"  -type d -xdev -depth -print0 | \
+  find "$1" -xdev \( \! -type d \) -print0 |xargs -0 rm -f
+  find "$1" -xdev -depth -type d -print0 | \
       (xargs -0 rmdir || true)
 }
 

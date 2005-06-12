@@ -1,3 +1,14 @@
+2005-06-12  Junichi Uekawa  <dancer@debian.org>
+
+	* testsuite/test-pdebuild.sh: add a sample command-line that should
+	work.
+
+	* pbuilder-modules (pbuilder-options): 
+	find '-xdev' is an option, not an evaluation, and so moved it around
+	since newer find now complains.
+	Marc Dequènes (Duck) <Duck@DuckCorp.org> and "Artur R. Czechowski" <arturcz@hell.pl>
+	#312913
+
 2005-06-08  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuildd/install-test.sh: imported from pbuilder-buildd tree.
