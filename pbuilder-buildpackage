@@ -87,7 +87,6 @@ if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; chown $BUILDUSERNAME:$BUILDUSERN
 fi
 
 echo " -> Building the package"
-export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 
 executehooks "A"
 
