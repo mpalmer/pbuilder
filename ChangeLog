@@ -1,3 +1,10 @@
+2005-06-25  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-user-mode-linux: use configured PATH instead of hard-coded PATH.
+
+	* pbuilder-buildpackage: preserve PATH in su,
+	pass -p option. This fixes the problem with env-var preservation.
+
 2005-06-20  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilderrc: set PATH in the configuration file.

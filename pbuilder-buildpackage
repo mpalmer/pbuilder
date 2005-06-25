@@ -32,7 +32,7 @@ if [ ! -f "$PACKAGENAME" ]; then
 fi;
 
 if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
-    SUTOUSER="su $BUILDUSERNAME -- "
+    SUTOUSER="su -p $BUILDUSERNAME -- "
     DEBBUILDOPTS="$DEBBUILDOPTS -rfakeroot"
     EXTRAPACKAGES="${EXTRAPACKAGES} fakeroot"
     echo "I: using fakeroot in build."
