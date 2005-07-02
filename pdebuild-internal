@@ -29,7 +29,7 @@ set -e
 echo "Using: $Id$"
 
 # I am probably running as root; make sure I have pbuilder installed here.
-apt-get install -y pbuilder 
+apt-get install -y --force-yes pbuilder 
 
 # I'm not going to have the same LOGNAME as outside, I'm root.
 export LOGNAME=root

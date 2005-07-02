@@ -1,4 +1,4 @@
-pbuilder (0.128) UNRELEASED; urgency=low
+pbuilder (0.128) unstable; urgency=low
 
   * Add example framework to test package inside chroot
   - B92test-pkg
@@ -9,6 +9,8 @@ pbuilder (0.128) UNRELEASED; urgency=low
   * Support '--distribution experimental'. 
     "pbuilder: Please add support for experimental", thanks to
     Emanuele Rocca (Closes: #308813).
+    and also support working with new apt-get by using --force-yes.
+    (closes: 316281).
   * Feature enhancement: "pbuilder: Clean apt cache ", thanks to Daniel Schepler
     implement --autocleanaptcache option.
     (Closes: #185227).
@@ -21,8 +23,11 @@ pbuilder (0.128) UNRELEASED; urgency=low
     thanks to Roberto C. Sanchez (Closes: #312153).
   * Bug fix: "pbuilder: Support for preserving environment PATH", thanks
     to Brian Nelson (Closes: #306448).
+  * work around debootstrap 3.0.0 bug which fails to build sid chroot
+    with --variant=buildd, by not passing --variant=buildd,
+    see 314858
 
- -- Junichi Uekawa <dancer@debian.org>  Sat, 25 Jun 2005 15:27:08 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat,  2 Jul 2005 13:20:23 +0900
 
 pbuilder (0.127) unstable; urgency=low
 

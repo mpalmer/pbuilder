@@ -51,8 +51,9 @@ BUILDUSERID=1234
 BINDMOUNTS=""
 
 # Set the debootstrap variant to 'buildd' type.
-DEBOOTSTRAPOPTS[0]='--variant=buildd'
-# unset DEBOOTSTRAPOPTS
+# DEBOOTSTRAPOPTS[0]='--variant=buildd'
+# or work around bug in debootstrap 3.0.0 (314858)
+unset DEBOOTSTRAPOPTS
 
 # Set the PATH I am going to use inside pbuilder: default is "/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
