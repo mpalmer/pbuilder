@@ -6,14 +6,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.6
@@ -29,10 +29,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sat Jul  2 13:54:27 JST 2005
-pbuilder-time-stamp: 1120280067
+Current time: Sun Jul  3 20:38:34 JST 2005
+pbuilder-time-stamp: 1120390714
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -61,9 +61,6 @@ The following NEW packages will be installed:
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
 Need to get 2642kB of archives.
 After unpacking 8380kB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  libmagic1 file debconf-utils html2text gettext intltool-debian po-debconf
-  debhelper libdshconfig1 libdshconfig1-dev
 Get:1 http://ring.asahi-net.or.jp sid/main libmagic1 4.12-1 [233kB]
 Get:2 http://ring.asahi-net.or.jp sid/main file 4.12-1 [28.6kB]
 Get:3 http://ring.asahi-net.or.jp sid/main debconf-utils 1.4.51 [33.0kB]
@@ -74,9 +71,9 @@ Get:7 http://ring.asahi-net.or.jp sid/main po-debconf 0.8.23 [78.0kB]
 Get:8 http://ring.asahi-net.or.jp sid/main debhelper 4.9.3 [363kB]
 Get:9 http://ring.asahi-net.or.jp sid/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:10 http://ring.asahi-net.or.jp sid/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2642kB in 0s (5803kB/s)
+Fetched 2642kB in 0s (4819kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 10817 files and directories currently installed.)
+(Reading database ... 10969 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.12-1_i386.deb) ...
@@ -119,14 +116,12 @@ The following NEW packages will be installed:
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
 Need to get 71.1kB of archives.
 After unpacking 201kB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  fakeroot
-Get:1 http://ring.asahi-net.or.jp sid/main fakeroot 1.4 [71.1kB]
-Fetched 71.1kB in 0s (2242kB/s)
+Get:1 http://ring.asahi-net.or.jp sid/main fakeroot 1.4.1 [71.1kB]
+Fetched 71.1kB in 0s (1007kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11360 files and directories currently installed.)
-Unpacking fakeroot (from .../archives/fakeroot_1.4_i386.deb) ...
-Setting up fakeroot (1.4) ...
+(Reading database ... 11512 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.4.1_i386.deb) ...
+Setting up fakeroot (1.4.1) ...
 
 Copying source file
     -> copying [../dsh_0.25.6-1.dsc]
@@ -411,7 +406,6 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
-dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -446,11 +440,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-1: 1
 2: 2
+1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Jul  2 04:55:06 UTC 2005
+Sun Jul  3 11:39:13 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -520,14 +514,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Jul  2 04:55:11 UTC 2005
+Sun Jul  3 11:39:18 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 dsh: Process terminated (before write).
-c: c
 b: b
+c: c
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -632,9 +626,9 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> unmounting dev/pts filesystem
-/usr/lib/pbuilder/pbuilder-modules: line 88: 15658 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting proc filesystem
-Current time: Sat Jul  2 13:55:13 JST 2005
-pbuilder-time-stamp: 1120280113
+/usr/lib/pbuilder/pbuilder-buildpackage: line 143: 24215 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+Current time: Sun Jul  3 20:39:20 JST 2005
+pbuilder-time-stamp: 1120390760
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild2/15367 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/dir2/23892 and its subdirectories

@@ -2,10 +2,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sat Jul  2 13:53:29 JST 2005
-pbuilder-time-stamp: 1120280009
+Current time: Sun Jul  3 20:37:44 JST 2005
+pbuilder-time-stamp: 1120390664
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -34,9 +34,6 @@ The following NEW packages will be installed:
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
 Need to get 2642kB of archives.
 After unpacking 8380kB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  libmagic1 file debconf-utils html2text gettext intltool-debian po-debconf
-  debhelper libdshconfig1 libdshconfig1-dev
 Get:1 http://ring.asahi-net.or.jp sid/main libmagic1 4.12-1 [233kB]
 Get:2 http://ring.asahi-net.or.jp sid/main file 4.12-1 [28.6kB]
 Get:3 http://ring.asahi-net.or.jp sid/main debconf-utils 1.4.51 [33.0kB]
@@ -47,9 +44,9 @@ Get:7 http://ring.asahi-net.or.jp sid/main po-debconf 0.8.23 [78.0kB]
 Get:8 http://ring.asahi-net.or.jp sid/main debhelper 4.9.3 [363kB]
 Get:9 http://ring.asahi-net.or.jp sid/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:10 http://ring.asahi-net.or.jp sid/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2642kB in 0s (5159kB/s)
+Fetched 2642kB in 1s (1568kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 10817 files and directories currently installed.)
+(Reading database ... 10969 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.12-1_i386.deb) ...
@@ -92,19 +89,17 @@ The following NEW packages will be installed:
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
 Need to get 71.1kB of archives.
 After unpacking 201kB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  fakeroot
-Get:1 http://ring.asahi-net.or.jp sid/main fakeroot 1.4 [71.1kB]
-Fetched 71.1kB in 0s (2198kB/s)
+Get:1 http://ring.asahi-net.or.jp sid/main fakeroot 1.4.1 [71.1kB]
+Fetched 71.1kB in 0s (1907kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11360 files and directories currently installed.)
-Unpacking fakeroot (from .../archives/fakeroot_1.4_i386.deb) ...
-Setting up fakeroot (1.4) ...
+(Reading database ... 11512 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.4.1_i386.deb) ...
+Setting up fakeroot (1.4.1) ...
 
 Copying source file
-    -> copying [testbuild/dsh_0.25.6-1.dsc]
-    -> copying [testbuild/dsh_0.25.6.orig.tar.gz]
-    -> copying [testbuild/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: extracting dsh in dsh-0.25.6
@@ -420,7 +415,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Jul  2 04:54:15 UTC 2005
+Sun Jul  3 11:38:22 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -490,11 +485,12 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Jul  2 04:54:20 UTC 2005
+Sun Jul  3 11:38:27 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
+dsh: Process terminated (before write).
 b: b
 c: c
 PASS: tests/segv-catcher.sh
@@ -600,10 +596,10 @@ debian: warning: no utmp entry available and LOGNAME not defined; using uid of p
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
-/usr/lib/pbuilder/pbuilder-buildpackage: line 126:  9153 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+/usr/lib/pbuilder/pbuilder-buildpackage: line 126: 17395 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Sat Jul  2 13:54:22 JST 2005
-pbuilder-time-stamp: 1120280062
+Current time: Sun Jul  3 20:38:30 JST 2005
+pbuilder-time-stamp: 1120390710
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/testbuild/8235 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.LdgXZ5/dir1/16527 and its subdirectories
