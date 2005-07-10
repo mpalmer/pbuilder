@@ -222,7 +222,9 @@ in
 .TP
 .BI "BUILDUSERID=" "1234"
 The uid to be used inside chroot.
-It should not collide with user-id outside the chroot.
+It should ideally not collide with user-id outside the chroot,
+to avoid user inside chroot having access to 
+processes owned by the user id outside the chroot.
 
 .TP
 .BI "BUILDUSERNAME=" "pbuilder"
