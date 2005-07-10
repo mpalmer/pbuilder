@@ -1,12 +1,12 @@
-.TH "pdebuild-user-mode-linux" 1 "2004 Jul 29" "Debian" "pbuilder"
+.TH "pdebuild\-user\-mode\-linux" 1 "2005 Jul 10" "Debian" "pbuilder"
 .SH NAME
-pdebuild-user-mode-linux \- pbuilder-user-mode-linux way of doing debuild
+pdebuild\-user\-mode\-linux \- pbuilder\-user\-mode\-linux way of doing debuild
 .SH SYNOPSIS
-.BI "pdebuild-user-mode-linux [" "pdebuild-user-mode-linux options" "] -- [" "pbuilder-user-mode-linux options" "]"
+.BI "pdebuild\-user\-mode\-linux [" "pdebuild\-user\-mode\-linux options" "] \-\- [" "pbuilder\-user\-mode\-linux options" "]"
 .PP
 .SH "DESCRIPTION"
 A convenience program for 
-.B pbuilder-user-mode-linux
+.B pbuilder\-user\-mode\-linux
 which invokes pbuilder after obtaining appropriate root privilate 
 in a Debian source directory.
 One must be inside the source tree containing the
@@ -16,46 +16,46 @@ directory, in order to make it work.
 .SH "PDEBUILD OPTIONS"
 .TP
 
-.BI "--buildsourceroot [" "fakeroot" "]"
+.BI "\-\-buildsourceroot [" "fakeroot" "]"
 The command used to gain root privilege for 
 invoking dpkg-buildpackage
 
 .TP
-.BI "--auto-debsign"
+.BI "\-\-auto\-debsign"
 
 Invoke debsign at the end of pdebuild process.
 
 .TP
-.BI "--debsign-k [" "key-id" "]"
+.BI "\-\-debsign\-k [" "key-id" "]"
 
 Pass 
-.B -k
+.B "\-k"
 option to debsign to specify which keyid to sign.
 
 .TP
-.BI "--buildresult [" "Directory for build results" "]"
+.BI "\-\-buildresult [" "Directory for build results" "]"
 
 The place which build result is stored.
 
 .TP
-.BI "--configfile [" "Extra config file to use" "]"
+.BI "\-\-configfile [" "Extra config file to use" "]"
 
 The configuration file is used, but not passed on to 
-.BR "pbuilder-user-mode-linux" .
+.BR "pbuilder\-user\-mode\-linux" .
 
 .TP
-.BI "--debbuildopts [" "options to pass to dpkg-buildpackage" "]"
+.BI "\-\-debbuildopts [" "options to pass to dpkg\-buildpackage" "]"
 
-The space-delimited list of options are passed to dpkg-buildpackage.
+The space-delimited list of options are passed to dpkg\-buildpackage.
 This option overrides pbuilder option 
-.B "--debbuildopts"
+.B "\-\-debbuildopts"
 
 .TP
-.BI "--use-pdebuild-internal"
+.BI "\-\-use\-pdebuild\-internal"
 Uses a different implementation of pdebuild, which calls clean and build inside 
 the chroot, using bind-mounts.
 
-.B "pdebuild-internal"
+.B "pdebuild\-internal"
 tries to run debian/rules clean inside the chroot.
 To achieve the goal, the working directory is passed on inside the chroot,
 in the form of bind-mounting and
@@ -66,32 +66,32 @@ This option will not protect the working directory and its parent directories
 from the build scripts.
 
 .TP
-.BI "-- [" "pbuilder options" "]"
+.BI "\-\- [" "pbuilder options" "]"
 
 After the 
-.B "--"
+.B "\-\-"
 symbol, an arbitrary number of pbuilder options can be specified.
 See pbuilder-user-mode-linux.1 for full list of options.
 
 
 There is an exception that
-.B "--buildresult"
+.B "\-\-buildresult"
 needs to be specified as pdebuild option before the 
-.B "--"
+.B "\-\-"
 to be effective.
 
 .SH "FILES"
 .TP
 .I "/etc/pbuilderrc"
-The configuration file for pbuilder-user-mode-linux, used in pdebuild-user-mode-linux.
+The configuration file for pbuilder\-user\-mode\-linux, used in pdebuild\-user\-mode\-linux.
 
 .TP
 .I "/usr/share/pbuilder/pbuilderrc"
-The default configuration file for pbuilder-user-mode-linux, used in pdebuild-user-mode-linux.
+The default configuration file for pbuilder\-user\-mode\-linux, used in pdebuild\-user\-mode\-linux.
 
 .TP
 .I "${HOME}/.pbuilderrc"
-Configuration file for pbuilder-user-mode-linux, used in pdebuild-user-mode-linux,
+Configuration file for pbuilder\-user\-mode\-linux, used in pdebuild\-user\-mode\-linux,
 overrides what is written in
 .B /etc/pbuilderrc
 
@@ -103,6 +103,6 @@ The homepage is available at
 .B "\%http://www.netfort.gr.jp/~dancer/software/pbuilder.html"
 
 .SH "SEE ALSO"
-.RI "pbuilder-user-mode-linux (" 1 "), "
+.RI "pbuilder\-user\-mode\-linux (" 1 "), "
 .RI "pbuilderrc (" 5 "), "
-.RI "pbuilder-uml.conf (" 5 ") "
+.RI "pbuilder\-uml.conf (" 5 ") "

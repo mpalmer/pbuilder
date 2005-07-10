@@ -1,8 +1,8 @@
-.TH "pdebuild" 1 "2002 Sep 25" "Debian" "pbuilder"
+.TH "pdebuild" 1 "2005 Jul 10" "Debian" "pbuilder"
 .SH NAME
 pdebuild \- pbuilder way of doing debuild
 .SH SYNOPSIS
-.BI "pdebuild [" "pdebuild options" "] -- [" "pbuilder options" "]"
+.BI "pdebuild [" "pdebuild options" "] \-\- [" "pbuilder options" "]"
 .PP
 .SH DESCRIPTION
 A convenience program for 
@@ -15,28 +15,28 @@ directory, in order to make it work.
 
 .SH "PDEBUILD OPTIONS"
 .TP
-.BI "--buildsourceroot [" "fakeroot" "]"
+.BI "\-\-buildsourceroot [" "fakeroot" "]"
 The command used to gain root privilege for 
 invoking dpkg-buildpackage
 
 .TP
-.BI "--pbuilderroot [" "sudo" "]"
+.BI "\-\-pbuilderroot [" "sudo" "]"
 The command used to gain root privilege for 
 invoking pbuilder.
 
 .TP
-.BI "--auto-debsign"
+.BI "\-\-auto\-debsign"
 
 Invoke debsign at the end of pdebuild process.
 
 .TP
-.BI "--debsign-k [" "key-id" "]"
+.BI "\-\-debsign\-k [" "key\-id" "]"
 Pass 
-.B -k
+.B \-k
 option to debsign to specify which keyid to sign.
 
 .TP
-.BI "--buildresult [" "Directory for build results" "]"
+.BI "\-\-buildresult [" "Directory for build results" "]"
 
 The place which build result is stored.
 
@@ -44,24 +44,24 @@ Note that for pdebuild, the setting for buildresult needs to be specified
 here in the command-line.
 
 .TP
-.BI "--configfile [" "Extra config file to use" "]"
+.BI "\-\-configfile [" "Extra config file to use" "]"
 
 The configuration file is used, and passed on to 
 .BR "pbuilder" .
 
 .TP
-.BI "--debbuildopts [" "options to pass to dpkg-buildpackage" "]"
+.BI "\-\-debbuildopts [" "options to pass to dpkg-buildpackage" "]"
 
 The space-delimited list of options are passed to dpkg-buildpackage.
 This option overrides pbuilder option 
-.B "--debbuildopts"
+.B "\-\-debbuildopts"
 
 .TP
-.BI "--use-pdebuild-internal"
+.BI "\-\-use\-pdebuild\-internal"
 Uses a different implementation of pdebuild, which calls clean and build inside 
 the chroot, using bind-mounts.
 
-.B "pdebuild-internal"
+.B "pdebuild\-internal"
 tries to run debian/rules clean inside the chroot.
 To achieve the goal, the working directory is passed on inside the chroot,
 in the form of bind-mounting and
@@ -72,30 +72,30 @@ This option will not protect the working directory and its parent directories
 from the build scripts.
 
 .TP
-.BI "--logfile [" "file to log" "]"
+.BI "\-\-logfile [" "file to log" "]"
 Specifies the logfile to create. 
 The messages generated during execution will be written to the file, 
 instead of messages coming to the 
 standard output.
 
 .TP
-.BI "--help"
+.BI "\-\-help"
 
 Show a brief help message.
 
 .TP
-.BI "-- [" "pbuilder options" "]"
+.BI "\-\- [" "pbuilder options" "]"
 
 After the 
-.B "--"
+.B "\-\-"
 symbol, an arbitrary number of pbuilder options can be specified.
 See pbuilder.8 for full list of options.
 
 
 There is an exception that
-.B "--buildresult"
+.B "\-\-buildresult"
 needs to be specified as pdebuild option before the 
-.B "--"
+.B "\-\-"
 to be effective.
 
 .SH "FILES"

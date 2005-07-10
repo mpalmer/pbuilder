@@ -1,16 +1,16 @@
-.TH "pbuilder-user-mode-linux" 1 "2005 Jun 12" "Debian" "pbuilder"
+.TH "pbuilder\-user\-mode\-linux" 1 "2005 Jun 12" "Debian" "pbuilder"
 .SH NAME
-pbuilder-user-mode-linux \- personal package builder in UML
+pbuilder\-user\-mode\-linux \- personal package builder in UML
 .SH SYNOPSIS
-.BI "pbuilder-user-mode-linux create [" "options" "]"
+.BI "pbuilder\-user\-mode\-linux create [" "options" "]"
 .PP
-.BI "pbuilder-user-mode-linux update [" "options" "]"
+.BI "pbuilder\-user\-mode\-linux update [" "options" "]"
 .PP
-.BI "pbuilder-user-mode-linux build [" "options" "] " ".dsc-file"
+.BI "pbuilder\-user\-mode\-linux build [" "options" "] " ".dsc-file"
 .PP
-.BI "pbuilder-user-mode-linux execute [" "options" "] " "script"
+.BI "pbuilder\-user\-mode\-linux execute [" "options" "] " "script"
 .PP
-.BI "pbuilder-user-mode-linux login [" "options" "]"
+.BI "pbuilder-user\-mode\-linux login [" "options" "]"
 .SH DESCRIPTION
 Front end program to the 
 .B "pbuilder"
@@ -20,7 +20,7 @@ environment.
 
 Unlike 
 .B "pbuilder", 
-.B "pbuilder-user-mode-linux"
+.B "pbuilder\-user\-mode\-linux"
 does not require root privilege to run.
 It should be ran under a normal user.
 
@@ -38,7 +38,7 @@ Updates the
 user-mode-linux root image
 for the specified distribution.
 Also, by specifying the 
-.B "--distribution"
+.B "\-\-distribution"
 option, it is possible to switch the distribution.
 Specify a dummy distribution value 
 even for custom apt config files.
@@ -67,110 +67,110 @@ and run it.
 The remaining command-line arguments are passed on to the script.
 
 .TP
-.BI "--uml-image [" "UML image" "]"
+.BI "\-\-uml\-image [" "UML image" "]"
 Specify the UML image to use.
 
 .TP
-.BI "--eth0 [" "uml option for eth0" "]"
+.BI "\-\-eth0 [" "uml option for eth0" "]"
 Specify this option as parameter to UML.
 
 Specify
-.B "--eth0=slirp,12345,/usr/bin/slirp-fullbolt"
+.B "\-\-eth0=slirp,12345,/usr/bin/slirp\-fullbolt"
 to use the slirp connection.
 
 .TP
-.BI "--uml-ip [" "IP inside UML" "]"
+.BI "\-\-uml\-ip [" "IP inside UML" "]"
 Specify this to set the IP inside UML.
 
 .TP
-.BI "--uml-netmask [" "netmask" "]"
+.BI "\-\-uml\-netmask [" "netmask" "]"
 The netmask.
 
 .TP
-.BI "--uml-network [" "network" "]"
+.BI "\-\-uml\-network [" "network" "]"
 The network address.
 
 .TP
-.BI "--uml-broadcast [" "broadcast" "]"
+.BI "\-\-uml\-broadcast [" "broadcast" "]"
 The broadcast address.
 
 .TP
-.BI "--uml-gateway [" "gateway" "]"
+.BI "\-\-uml\-gateway [" "gateway" "]"
 The gateway address.
 
 .TP
-.BI "--mount-tmpfs [" "yes" "]"
+.BI "\-\-mount\-tmpfs [" "yes" "]"
 Specify whether to mount tmpfs inside UML chroot.
 
 .TP
-.BI "--uml-hostname [" "uml-host" "]"
+.BI "\-\-uml\-hostname [" "uml-host" "]"
 The hostname inside uml.
 
 .TP
-.BI "--distribution [" "sid" "]"
+.BI "\-\-distribution [" "sid" "]"
 Specify the distribution.
 see pbuilder.8
 
 .TP
-.BI "--binary-arch"
+.BI "\-\-binary-arch"
 Specify only to build binary-arch targets.
 see pbuilder.8
 
 .TP
-.BI "--timeout " "timeouttime"
+.BI "\-\-timeout " "timeouttime"
 Timeout build after specified time.
 see pbuilder.8
 
 .TP
-.BI "--configfile " "config file to read"
+.BI "\-\-configfile " "config file to read"
 Makes pbuilder to read the config file inside UML.
 pbuilder-user-mode-linux itself would be affected by the contents of the 
 config file.
 
 .TP
-.BI "--hookdir " "location of hooks"
+.BI "\-\-hookdir " "location of hooks"
 Makes pbuilder use the specified hookdir inside UML.
 
 .TP
-.BI "--aptconfdir " "apt configuretion directory"
+.BI "\-\-aptconfdir " "apt configuretion directory"
 Makes pbuilder to use specified apt configuration directory instead of 
 other settings. See pbuilder.8
 
 .TP 
-.BI "--override-config"
+.BI "\-\-override\-config"
 Specify this option along with
-.B --distribution 
+.B \-\-distribution 
 to switch distribution using 
-.B "pbuilder-user-mode-linux update"
+.B "pbuilder\-user\-mode\-linux update"
 
 .TP 
-.BI "--logfile " "logfilename"
+.BI "\-\-logfile " "logfilename"
 Specify this option to make the output go to 
 .I logfilename
 instead of standard output.
 
 .TP 
-.BI "--buildresult " "/dir/to/build/result"
+.BI "\-\-buildresult " "/dir/to/build/result"
 The directory where build result is placed to
 
 .TP
-.BI "--uml-debugmode"
-Enable tracing of shell scripts used by pbuilder-user-mode-linux.
+.BI "\-\-uml\-debugmode"
+Enable tracing of shell scripts used by pbuilder\-user\-mode\-linux.
 
 .TP 
-.BI "--bindmounts " "/dir/to/bind-mount"
+.BI "\-\-bindmounts " "/dir/to/bind-mount"
 Bind-mount the directory inside the chroot inside the user-mode-linux.
 
 .TP
-.BI "--buildplace " "place-to-put-COW-file"
+.BI "\-\-buildplace " "place-to-put-COW-file"
 Specify the directory to place the COW file.
 The user needs to be able to access that directory,
 and the directory must exist.
 
 .TP
-.BI "--uml-login-nocow"
+.BI "\-\-uml\-login\-nocow"
 Do not use COW filesystem when using 
-.B "pbuilder-user-mode-linux login"
+.B "pbuilder\-user\-mode\-linux login"
 so that changes made in the log in session will persist.
 
 Effective in 
@@ -182,7 +182,7 @@ options.
 \" copied from pbuilder.8
 
 .TP
-.BI "--mirror [" "mirror location" "]"
+.BI "\-\-mirror [" "mirror location" "]"
 Specifies the url of Debian mirror to be 
 specified in 
 .B "sources.list"
@@ -202,12 +202,12 @@ the chroot, and specifying
 will most probably fail.
 
 .TP
-.BI "--nonusmirror [" "mirror location" "]"
+.BI "\-\-nonusmirror [" "mirror location" "]"
 The non-US mirror, specified like the 
-.B "--mirror"
+.B "\-\-mirror"
 option
 .TP
-.BI "--othermirror [" "deb http://xxx/xxx/ ./ " "|" " other deb lines... " "]"
+.BI "\-\-othermirror [" "deb http://xxx/xxx/ ./ " "|" " other deb lines... " "]"
 The lines which is added to the sources.list, delimited with 
 .B "|"
 Like 
@@ -223,12 +223,12 @@ constructed sources file, so this is the place to list your
 .B "local"
 mirror sites; apt will then use them in preference to the ones 
 listed in 
-.B "--mirror"
+.B "\-\-mirror"
 and
-.B "--nonusmirror".
+.B "\-\-nonusmirror".
 
 These options are only valid when
-.B "--override-config"
+.B "\-\-override\-config"
 option is specified in 
 .B "update"
 target, or when
@@ -243,10 +243,10 @@ For
 and
 .B login
 targets, 
-.B pbuider-user-mode-linux
+.B pbuider\-user\-mode\-linux
 will try to use COW devices.
 
-Inside user-mode-linux, pbuilder-uml will mount 
+Inside user-mode-linux, pbuilder-user-mode-linux will mount 
 tmpfs as 
 .B /tmp
 to avoid temporary file race conditions with outside of UML.
@@ -262,11 +262,11 @@ The default settings for pbuilder, used as fallback for all
 values that is not specified in
 .B "/etc/pbuilderrc."
 .TP
-.B "/etc/pbuilder/pbuilder-uml.conf"
+.B "/etc/pbuilder/pbuilder\-uml.conf"
 System-wide configuration file for pbuilder-uml, 
 it will take priority over pbuilder configurations.
 .TP
-.B "/usr/share/pbuilder/pbuilder-uml.conf"
+.B "/usr/share/pbuilder/pbuilder\-uml.conf"
 Software-default configuration file for pbuilder-uml.
 .TP
 .B "${HOME}/.pbuilderrc"
@@ -277,7 +277,7 @@ User-default configuration file.
 .RI "rootstrap (" 1 "), "
 .RI "linux (" 1 "), "
 .RI "pbuilderrc (" 5 "), "
-.RI "pbuilder-uml.conf (" 5 ") "
+.RI "pbuilder\-uml.conf (" 5 ") "
 
 
 
