@@ -31,14 +31,15 @@ if [ ! -f "$PACKAGENAME" ]; then
     exit 1;
 fi;
 
+# due to 
 if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
-    SUTOUSER="su -p $BUILDUSERNAME -- "
+    SUTOUSER="su -p $BUILDUSERNAME"
     DEBBUILDOPTS="$DEBBUILDOPTS -rfakeroot"
     EXTRAPACKAGES="${EXTRAPACKAGES} fakeroot"
     echo "I: using fakeroot in build."
 else
     # run the build in root
-    SUTOUSER=""
+    SUTOUSER="su "
     BUILDUSERID=0
     BUILDUSERNAME=root
 fi
@@ -81,7 +82,15 @@ echo "Copying source file"
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 
 echo "Extracting source"
-if ! $CHROOTEXEC /bin/bash -c "( cd tmp/buildd; chown $BUILDUSERNAME:$BUILDUSERNAME ../buildd *; $SUTOUSER /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )"; then
+if echo "chown $BUILDUSERNAME:$BUILDUSERNAME /tmp/buildd /tmp/buildd/*" | $CHROOTEXEC /bin/bash; then
+    : # success
+else
+    echo "pbuilder: Failed chowning to $BUILDUSERNAME:$BUILDUSERNAME" >&2 
+    exit 1;
+fi
+if echo "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )" | $CHROOTEXEC $SUTOUSER ; then
+    : # success
+else
     echo "pbuilder: Failed extracting the source" >&2 
     exit 1;
 fi
@@ -98,7 +107,7 @@ fi
 
 (
     : Build process
-    echo  "${DPKG_COMMANDLINE}" | $CHROOTEXEC $SUTOUSER /bin/bash
+    echo  "${DPKG_COMMANDLINE}" | $CHROOTEXEC $SUTOUSER
 ) &
 BUILD_PID=$!
 if [ -n "${TIMEOUT_TIME}" ]; then
