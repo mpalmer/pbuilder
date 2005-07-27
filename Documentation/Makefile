@@ -8,7 +8,8 @@
 all: pbuilder-doc.html
 
 %.html: %.xml pbuilder-doc.xsl
-	xsltproc pbuilder-doc.xsl $< > $@
+	xsltproc pbuilder-doc.xsl $< > $@.tmp
+	mv $@.tmp $@
 
 # for my homepage-publishing.
 release-netfort: pbuilder-doc.html pbuilder-doc.xml pbuilder-doc.css pbuilder-doc.xsl
