@@ -1,6 +1,6 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/whole/pbuilder/testsuite/tmp.rJ4u0j/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -17,52 +17,57 @@ Ign http://ring.asahi-net.or.jp sid Release
 Get:4 http://ring.asahi-net.or.jp ../project/experimental Release [21.6kB]
 Ign http://ring.asahi-net.or.jp ../project/experimental Release
 Hit http://ring.asahi-net.or.jp sid/main Packages
-Get:5 http://ring.asahi-net.or.jp ../project/experimental/main Packages [84.7kB]
-Fetched 141kB in 5s (26.1kB/s)
+Get:5 http://ring.asahi-net.or.jp ../project/experimental/main Packages [154kB]
+Fetched 210kB in 0s (558kB/s)
 Reading package lists...
 W: GPG error: http://ring.asahi-net.or.jp sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ring.asahi-net.or.jp ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
-Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
+The following packages have been kept back:
+  aptitude
 The following packages will be upgraded:
   diff libc6 libc6-dev makedev
-4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/7740kB of archives.
-After unpacking 1069kB of additional disk space will be used.
+4 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+Need to get 7929kB of archives.
+After unpacking 3559kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   diff libc6-dev libc6 makedev
-(Reading database ... 12084 files and directories currently installed.)
-Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_powerpc.deb) ...
+Get:1 http://ring.asahi-net.or.jp ../project/experimental/main diff 2.8.7-0.2 [241kB]
+Get:2 http://ring.asahi-net.or.jp ../project/experimental/main libc6-dev 2.3.5-2 [2672kB]
+Get:3 http://ring.asahi-net.or.jp ../project/experimental/main libc6 2.3.5-2 [4923kB]
+Get:4 http://ring.asahi-net.or.jp ../project/experimental/main makedev 3.3.8.2-0 [92.2kB]
+Fetched 7929kB in 0s (8398kB/s)
+(Reading database ... 11782 files and directories currently installed.)
+Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_i386.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-(Reading database ... 12092 files and directories currently installed.)
-Preparing to replace libc6-dev 2.3.2.ds1-22 (using .../libc6-dev_2.3.5-1_powerpc.deb) ...
+(Reading database ... 11790 files and directories currently installed.)
+Preparing to replace libc6-dev 2.3.2.ds1-22 (using .../libc6-dev_2.3.5-2_i386.deb) ...
 Unpacking replacement libc6-dev ...
-Preparing to replace libc6 2.3.2.ds1-22 (using .../libc6_2.3.5-1_powerpc.deb) ...
+Preparing to replace libc6 2.3.2.ds1-22 (using .../libc6_2.3.5-2_i386.deb) ...
 Unpacking replacement libc6 ...
-Setting up libc6 (2.3.5-1) ...
+Setting up libc6 (2.3.5-2) ...
 Current default timezone: 'UTC'.
-Local time is now:      Wed Jul 13 21:48:21 UTC 2005.
-Universal Time is now:  Wed Jul 13 21:48:21 UTC 2005.
+Local time is now:      Sun Aug  7 03:58:41 UTC 2005.
+Universal Time is now:  Sun Aug  7 03:58:41 UTC 2005.
 Run 'tzconfig' if you wish to change it.
 
-(Reading database ... 12101 files and directories currently installed.)
-Preparing to replace makedev 2.3.1-78 (using .../makedev_3.3.8.2-0_powerpc.deb) ...
+(Reading database ... 11824 files and directories currently installed.)
+Preparing to replace makedev 2.3.1-78 (using .../makedev_3.3.8.2-0_i386.deb) ...
 Unpacking replacement makedev ...
-Setting up libc6-dev (2.3.5-1) ...
+Setting up libc6-dev (2.3.5-2) ...
 Setting up makedev (3.3.8.2-0) ...
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
 dpkg-dev is already the newest version.
 apt is already the newest version.
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Copying back the cached apt archive contents
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/whole/pbuilder/testsuite/tmp.rJ4u0j/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//30189 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//28662 and its subdirectories

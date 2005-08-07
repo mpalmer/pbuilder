@@ -1,0 +1,128 @@
+Upgrading for distribution etch
+Building the build Environment
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/testimage]
+ -> creating local configuration
+ -> copying local configuration
+ -> mounting /proc filesystem
+ -> mounting /dev/pts filesystem
+ -> policy-rc.d already exists
+  -> Installing apt-lines
+Refreshing the base.tgz 
+ -> upgrading packages
+Get:1 http://ring.asahi-net.or.jp etch/main Packages [3544kB]
+Get:2 http://ring.asahi-net.or.jp etch/main Release [81B]
+Fetched 3544kB in 1s (2738kB/s)
+Reading Package Lists...
+dpkg - warning: ignoring request to remove lilo which isn't installed.
+Reading Package Lists...
+Building Dependency Tree...
+The following NEW packages will be installed:
+  libslang2
+The following packages will be upgraded:
+  adduser base-config base-files base-passwd bash binutils bsdmainutils
+  console-common cron debconf debconf-i18n debianutils exim4 exim4-base
+  exim4-config exim4-daemon-light findutils gettext-base grep groff-base
+  iptables libattr1 libgcc1 liblocale-gettext-perl liblzo1 libnewt0.51 libpcre3
+  libtasn1-2 libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl
+  login makedev man-db manpages net-tools netkit-inetd passwd perl perl-base
+  perl-modules procps psmisc setserial tasksel wget whiptail
+47 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 18.3MB of archives.
+After unpacking 3481kB of additional disk space will be used.
+Get:1 http://ring.asahi-net.or.jp etch/main base-passwd 3.5.10 [34.7kB]
+Get:2 http://ring.asahi-net.or.jp etch/main base-files 3.1.5 [34.5kB]
+Get:3 http://ring.asahi-net.or.jp etch/main libpcre3 5.0-1.1 [159kB]
+Get:4 http://ring.asahi-net.or.jp etch/main exim4-daemon-light 4.52-1 [379kB]
+Get:5 http://ring.asahi-net.or.jp etch/main debianutils 2.14.1 [43.4kB]
+Get:6 http://ring.asahi-net.or.jp etch/main perl-modules 5.8.7-3 [2326kB]
+Get:7 http://ring.asahi-net.or.jp etch/main perl 5.8.7-3 [3371kB]
+Get:8 http://ring.asahi-net.or.jp etch/main perl-base 5.8.7-3 [749kB]
+Get:9 http://ring.asahi-net.or.jp etch/main liblocale-gettext-perl 1.05-1 [19.9kB]
+Get:10 http://ring.asahi-net.or.jp etch/main libtext-iconv-perl 1.4-1 [14.9kB]
+Get:11 http://ring.asahi-net.or.jp etch/main libtext-charwidth-perl 0.04-2 [11.3kB]
+Get:12 http://ring.asahi-net.or.jp etch/main libtext-wrapi18n-perl 0.06-2 [8528B]
+Get:13 http://ring.asahi-net.or.jp etch/main debconf-i18n 1.4.52 [109kB]
+Get:14 http://ring.asahi-net.or.jp etch/main debconf 1.4.52 [109kB]
+Get:15 http://ring.asahi-net.or.jp etch/main adduser 3.64 [99.8kB]
+Get:16 http://ring.asahi-net.or.jp etch/main cron 3.0pl1-87 [58.8kB]
+Get:17 http://ring.asahi-net.or.jp etch/main exim4-config 4.52-1 [247kB]
+Get:18 http://ring.asahi-net.or.jp etch/main exim4-base 4.52-1 [834kB]
+Get:19 http://ring.asahi-net.or.jp etch/main login 1:4.0.3-35 [591kB]
+Get:20 http://ring.asahi-net.or.jp etch/main passwd 1:4.0.3-35 [533kB]
+Get:21 http://ring.asahi-net.or.jp etch/main bash 3.0-15 [793kB]
+Get:22 http://ring.asahi-net.or.jp etch/main findutils 4.2.22-2 [301kB]
+Get:23 http://ring.asahi-net.or.jp etch/main grep 2.5.1.ds1-5 [170kB]
+Get:24 http://ring.asahi-net.or.jp etch/main console-common 0.7.51 [108kB]
+Get:25 http://ring.asahi-net.or.jp etch/main libgcc1 1:4.0.0-9 [84.1kB]
+Get:26 http://ring.asahi-net.or.jp etch/main tasksel 2.25 [137kB]
+Get:27 http://ring.asahi-net.or.jp etch/main gettext-base 0.14.5-2 [101kB]
+Get:28 http://ring.asahi-net.or.jp etch/main base-config 2.65 [324kB]
+Get:29 http://ring.asahi-net.or.jp etch/main bsdmainutils 6.1.2 [170kB]
+Get:30 http://ring.asahi-net.or.jp etch/main groff-base 1.18.1.1-8 [832kB]
+Get:31 http://ring.asahi-net.or.jp etch/main iptables 1.3.1-2 [397kB]
+Get:32 http://ring.asahi-net.or.jp etch/main liblzo1 1.08-2 [48.4kB]
+Get:33 http://ring.asahi-net.or.jp etch/main libslang2 2.0.4-2 [408kB]
+Get:34 http://ring.asahi-net.or.jp etch/main libtasn1-2 0.2.10-4 [42.5kB]
+Get:35 http://ring.asahi-net.or.jp etch/main man-db 2.4.3-1 [658kB]
+Get:36 http://ring.asahi-net.or.jp etch/main manpages 2.02-2 [392kB]
+Get:37 http://ring.asahi-net.or.jp etch/main net-tools 1.60-15 [248kB]
+Get:38 http://ring.asahi-net.or.jp etch/main netkit-inetd 0.10-10.1 [30.9kB]
+Get:39 http://ring.asahi-net.or.jp etch/main wget 1.10-3+1.10.1beta1 [451kB]
+Get:40 http://ring.asahi-net.or.jp etch/main whiptail 0.51.6-26 [32.5kB]
+Get:41 http://ring.asahi-net.or.jp etch/main libnewt0.51 0.51.6-26 [57.8kB]
+Get:42 http://ring.asahi-net.or.jp etch/main libattr1 2.4.21-1.0.1 [7854B]
+Get:43 http://ring.asahi-net.or.jp etch/main makedev 2.3.1-78 [40.9kB]
+Get:44 http://ring.asahi-net.or.jp etch/main procps 1:3.2.5-1 [215kB]
+Get:45 http://ring.asahi-net.or.jp etch/main binutils 2.16.1-2 [2378kB]
+Get:46 http://ring.asahi-net.or.jp etch/main exim4 4.52-1 [1834B]
+Get:47 http://ring.asahi-net.or.jp etch/main psmisc 21.6-1 [58.9kB]
+Get:48 http://ring.asahi-net.or.jp etch/main setserial 2.17-41 [54.7kB]
+Preconfiguring packages ...
+Fetched 18.3MB in 2s (7797kB/s)
+(Reading database ... 11073 files and directories currently installed.)
+Preparing to replace base-passwd 3.5.9 (using .../base-passwd_3.5.10_i386.deb) ...
+Unpacking replacement base-passwd ...
+Setting up base-passwd (3.5.10) ...
+
+(Reading database ... 11073 files and directories currently installed.)
+Preparing to replace base-files 3.1.2 (using .../base-files_3.1.5_i386.deb) ...
+Unpacking replacement base-files ...
+Setting up base-files (3.1.5) ...
+Installing new version of config file /etc/debian_version ...
+Installing new version of config file /etc/issue ...
+Installing new version of config file /etc/issue.net ...
+
+(Reading database ... 11073 files and directories currently installed.)
+Preparing to replace libpcre3 4.5-1.2 (using .../libpcre3_5.0-1.1_i386.deb) ...
+Unpacking replacement libpcre3 ...
+Preparing to replace exim4-daemon-light 4.50-8 (using .../exim4-daemon-light_4.52-1_i386.deb) ...
+Unpacking replacement exim4-daemon-light ...
+Preparing to replace debianutils 2.8.4 (using .../debianutils_2.14.1_i386.deb) ...
+Unpacking replacement debianutils ...
+Setting up debianutils (2.14.1) ...
+
+(Reading database ... 11074 files and directories currently installed.)
+Preparing to replace perl-modules 5.8.4-8 (using .../perl-modules_5.8.7-3_all.deb) ...
+Unpacking replacement perl-modules ...
+dpkg: error processing /var/cache/apt/archives/perl-modules_5.8.7-3_all.deb (--unpack):
+ failed in buffer_write(fd) (8, ret=-1): backend dpkg-deb during `./usr/share/perl/5.8.7/unicore/EastAsianWidth.txt': No space left on device
+dpkg-deb: subprocess paste killed by signal (Broken pipe)
+Preparing to replace perl 5.8.4-8 (using .../archives/perl_5.8.7-3_i386.deb) ...
+Unpacking replacement perl ...
+dpkg: error processing /var/cache/apt/archives/perl_5.8.7-3_i386.deb (--unpack):
+ failed in buffer_write(fd) (8, ret=-1): backend dpkg-deb during `./usr/bin/perlbug': No space left on device
+dpkg-deb: subprocess paste killed by signal (Broken pipe)
+Preparing to replace perl-base 5.8.4-8 (using .../perl-base_5.8.7-3_i386.deb) ...
+Unpacking replacement perl-base ...
+dpkg: error processing /var/cache/apt/archives/perl-base_5.8.7-3_i386.deb (--unpack):
+ failed in buffer_write(fd) (8, ret=-1): backend dpkg-deb during `./usr/bin/perl': No space left on device
+Errors were encountered while processing:
+ /var/cache/apt/archives/perl-modules_5.8.7-3_all.deb
+ /var/cache/apt/archives/perl_5.8.7-3_i386.deb
+ /var/cache/apt/archives/perl-base_5.8.7-3_i386.deb
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+ -> unmounting dev/pts filesystem
+ -> unmounting proc filesystem
+ -> cleaning the build env 
+    -> removing directory /var/cache/pbuilder/build//10341 and its subdirectories
+dpkg-deb: subprocess paste killed by signal (Broken pipe)

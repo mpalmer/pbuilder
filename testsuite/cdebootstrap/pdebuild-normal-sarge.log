@@ -29,8 +29,8 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sun Aug  7 12:54:54 JST 2005
-pbuilder-time-stamp: 1123386894
+Current time: Sun Aug  7 13:03:59 JST 2005
+pbuilder-time-stamp: 1123387439
 Building the build Environment
  -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/testimage]
  -> creating local configuration
@@ -71,9 +71,9 @@ Get:7 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.23 [78.0kB]
 Get:8 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.32 [362kB]
 Get:9 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:10 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2591kB in 0s (4446kB/s)
+Fetched 2591kB in 0s (4827kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11040 files and directories currently installed.)
+(Reading database ... 11073 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.12-1_i386.deb) ...
@@ -117,9 +117,9 @@ The following NEW packages will be installed:
 Need to get 70.5kB of archives.
 After unpacking 201kB of additional disk space will be used.
 Get:1 http://ring.asahi-net.or.jp sarge/main fakeroot 1.2.10 [70.5kB]
-Fetched 70.5kB in 0s (2028kB/s)
+Fetched 70.5kB in 0s (2208kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11582 files and directories currently installed.)
+(Reading database ... 11615 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.2.10_i386.deb) ...
 Setting up fakeroot (1.2.10) ...
 
@@ -404,7 +404,6 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
-dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -439,11 +438,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun Aug  7 03:55:27 UTC 2005
+Sun Aug  7 04:04:47 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -513,12 +512,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun Aug  7 03:55:32 UTC 2005
+Sun Aug  7 04:04:52 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-b: b
 a: a
+dsh: Process terminated (before write).
+b: b
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -624,9 +624,9 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> unmounting dev/pts filesystem
+/usr/lib/pbuilder/pbuilder-modules: line 89: 30072 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting proc filesystem
-/usr/lib/pbuilder/pbuilder-buildpackage: line 152: 13492 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
-Current time: Sun Aug  7 12:55:35 JST 2005
-pbuilder-time-stamp: 1123386935
+Current time: Sun Aug  7 13:04:54 JST 2005
+pbuilder-time-stamp: 1123387494
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir2/13189 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir2/29786 and its subdirectories

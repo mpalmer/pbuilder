@@ -45,8 +45,8 @@ if [ ! -d "$BUILDPLACE" ]; then
 fi
 $TRAP cleanbuildplace exit
 
-echo " -> running debootstrap"
-DEBOOTSTRAPSCRIPT=""
+echo " -> running $DEBOOTSTRAP"
+unset DEBOOTSTRAPSCRIPT
 if [ -n "$HOOKDIR" ]; then
     if [ -f "$HOOKDIR/$DISTRIBUTION" ]; then
 	DEBOOTSTRAPSCRIPT=$(readlink -f $HOOKDIR)"/$DISTRIBUTION"
@@ -54,8 +54,8 @@ if [ -n "$HOOKDIR" ]; then
     fi
 fi
 
-if ! ( cd "$BUILDPLACE" && debootstrap "${DEBOOTSTRAPOPTS[@]}" "$DISTRIBUTION" . "$MIRRORSITE" "$DEBOOTSTRAPSCRIPT" ) ; then
-    echo "pbuilder: debootstrap failed" >&2
+if ! ( cd "$BUILDPLACE" && "${DEBOOTSTRAP}" "${DEBOOTSTRAPOPTS[@]}" "$DISTRIBUTION" . "$MIRRORSITE" $DEBOOTSTRAPSCRIPT ) ; then
+    echo "pbuilder: $DEBOOTSTRAP failed" >&2
     exit 1
 fi
 

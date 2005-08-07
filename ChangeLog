@@ -1,3 +1,27 @@
+2005-08-07  Junichi Uekawa  <dancer@debian.org>
+
+	* debian/control: allow cdebootstrap dependency.
+
+	* testsuite/run-test.sh: complicate the process by testing both
+	  cdebootstrap and debootstrap.
+
+	* pbuilder.8: document --debootstrap 
+
+	* pbuilder-checkparams: --debootstrap
+
+	* pbuilder-modules: --debootstrap
+
+	* pbuilder-createbuildenv: unset DEBOOTSTRAPSCRIPT instead of setting
+	"". The number of parameter given to cdebootstrap changes.
+	since DEBOOTSTRAPSCRIPT are not supported by cdebootstrap, 
+	Giving cdebootstrap this parameter caused it to fail.
+
+	* pbuilderrc.5: Document DEBOOTSTRAP
+
+	* pbuilderrc (DEBOOTSTRAP): new option.
+
+	* pbuilder-createbuildenv (DEBOOTSTRAPSCRIPT): call ${DEBOOTSTRAP} instead of calling debootstrap directly.
+
 2005-07-28  Junichi Uekawa  <dancer@debian.org>
 
 	* Documentation/Makefile (%.html): update make rule to successfully fail on error.

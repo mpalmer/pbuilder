@@ -5,12 +5,21 @@ pbuilder (0.129) UNRELEASED; urgency=low
   * changed manpages to use \- instead of - for dash.
   * work around su change in Debian. c.f. login:317264
     (closes: #317361)
+  * Support preliminary support for cdebootstrap.
+  - --debootstrap option.
+  - default pbuilderrc uses cdebootstrap
+  - testsuite now tests both cdebootstrap and debootstrap
+  - Depends on debootstrap or cdebootstrap.
   
   TODO for this release:
   gnupg install and new key install hooks.
   - revert back to using --variant=buildd, depends on 314858.
-  
- -- Junichi Uekawa <dancer@debian.org>  Thu, 14 Jul 2005 06:12:38 +0900
+  - save-afer-login seems to save aptcache and make a big base.tgz; 
+    do we want that?
+  - cdebootstrap doesn't really work either.
+  - select cdebootstrap if debootstrap does not exist and cdebootstrap exists.
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun,  7 Aug 2005 12:13:24 +0900
 
 pbuilder (0.128) unstable; urgency=low
 

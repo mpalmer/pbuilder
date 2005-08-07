@@ -4,10 +4,6 @@
 
 PBUILDER=/usr/sbin/pbuilder
 
-RESULTFILE="run-test.log"
-: > ${RESULTFILE}
-RESULTFILE=$(readlink -f ${RESULTFILE})
-
 log_success () {
     CODE=$?
     if [ $CODE = 0 ]; then
@@ -17,22 +13,38 @@ log_success () {
     fi
 }
 
+[ -x ${PBUILDER} ] || exit 1
+[ -x /usr/sbin/debootstrap ] || exit 1
+[ -x /usr/bin/cdebootstrap ] || exit 1
 
 
 mirror=http://ring.asahi-net.or.jp/archives/linux/debian/debian
-logdir=$(readlink -f normal/)
 
 testdir=$(TMPDIR=$(pwd) mktemp -d)
 testimage=$testdir/testimage
 testbuild=$testdir/dir1
 testbuild2=$testdir/dir2
 
-if [ -x "${PBUILDER}" ]; then
-    for distribution in sid sarge etch; do
-	sudo ${PBUILDER} create --mirror $mirror --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log 
-# --hookdir /usr/share/doc/pbuilder/examples/libc6workaround
-	log_success create-${distribution}
 
+for DEBOOTSTRAP in debootstrap cdebootstrap; do
+    case $DEBOOTSTRAP in 
+	debootstrap)
+	    logdir=$(readlink -f normal/)
+	    RESULTFILE="run-test.log"
+	    ;;
+	*)
+	    logdir=$(readlink -f $DEBOOTSTRAP)
+	    RESULTFILE="run-test-${DEBOOTSTRAP}.log"
+	    ;;
+    esac
+    : > ${RESULTFILE}
+    RESULTFILE=$(readlink -f ${RESULTFILE})
+    
+    for distribution in sid sarge etch; do
+	sudo ${PBUILDER} create --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log 
+# --hookdir /usr/share/doc/pbuilder/examples/libc6workaround
+	log_success create-${distribution}-${DEBOOTSTRAP}
+	
 	for PKG in dsh; do 
 	    ( 
 		mkdir ${testbuild}
@@ -41,7 +53,7 @@ if [ -x "${PBUILDER}" ]; then
 	    )
 	    sudo ${PBUILDER} build --debemail "Junichi Uekawa <dancer@debian.org>" --basetgz ${testimage} --buildplace ${testbuild}/ --logfile ${logdir}/pbuilder-build-${PKG}-${distribution}.log ${testbuild}/${PKG}*.dsc
 	    log_success build-${distribution}-${PKG}
-
+	    
 	    (
 		mkdir ${testbuild2}
 		cd ${testbuild2}
@@ -49,13 +61,13 @@ if [ -x "${PBUILDER}" ]; then
 		cd ${PKG}-*
 		pdebuild --logfile ${logdir}/pdebuild-normal-${distribution}.log -- --basetgz ${testimage} --buildplace ${testbuild2}
 		log_success pdebuild-${distribution}-${PKG}
-
+		
 		pdebuild --use-pdebuild-internal --logfile ${logdir}/pdebuild-internal-${distribution}.log -- --basetgz ${testimage} --buildplace ${testbuild2}
 		log_success pdebuild-internal-${distribution}-${PKG}
 	    )
 	done
 	sudo ${PBUILDER} execute --basetgz ${testimage} --logfile ${logdir}/pbuilder-execute-${distribution}.log ../examples/execute_paramtest.sh test1 test2 test3
-
+	
 	# upgrading testing.
 	case $distribution in 
 	    sarge)
@@ -73,9 +85,8 @@ if [ -x "${PBUILDER}" ]; then
 		log_success update-${distribution}-sid-experimental.log
 		;;
 	esac
-
 	sudo rm -rf ${testbuild} ${testbuild2} ${testimage}
     done
-fi
+done
 
 rm -r ${testdir}

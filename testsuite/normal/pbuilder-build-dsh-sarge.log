@@ -1,18 +1,17 @@
 I: using fakeroot in build.
-pbuilder-buildpackage/powerpc $Id$
+pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Thu Jul 14 06:12:45 JST 2005
-pbuilder-time-stamp: 1121289165
+Current time: Sun Aug  7 12:54:05 JST 2005
+pbuilder-time-stamp: 1123386845
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/whole/pbuilder/testsuite/tmp.rJ4u0j/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
-Obtaining the cached apt archive contents
 Installing the build-deps
  -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.19 2005/06/03 12:07:39 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
@@ -33,19 +32,30 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/2641kB of archives.
-After unpacking 8970kB of additional disk space will be used.
+Need to get 2591kB of archives.
+After unpacking 8679kB of additional disk space will be used.
+Get:1 http://ring.asahi-net.or.jp sarge/main libmagic1 4.12-1 [233kB]
+Get:2 http://ring.asahi-net.or.jp sarge/main file 4.12-1 [28.6kB]
+Get:3 http://ring.asahi-net.or.jp sarge/main debconf-utils 1.4.30.13 [33.0kB]
+Get:4 http://ring.asahi-net.or.jp sarge/main html2text 1.3.2a-2 [92.6kB]
+Get:5 http://ring.asahi-net.or.jp sarge/main gettext 0.14.4-2 [1718kB]
+Get:6 http://ring.asahi-net.or.jp sarge/main intltool-debian 0.30+20040213 [23.5kB]
+Get:7 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.23 [78.0kB]
+Get:8 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.32 [362kB]
+Get:9 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.11-1 [10.7kB]
+Get:10 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.11-1 [12.4kB]
+Fetched 2591kB in 0s (6154kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 10865 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.12-1_powerpc.deb) ...
+(Reading database ... 11040 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../file_4.12-1_powerpc.deb) ...
+Unpacking file (from .../archives/file_4.12-1_i386.deb) ...
 Selecting previously deselected package debconf-utils.
 Unpacking debconf-utils (from .../debconf-utils_1.4.30.13_all.deb) ...
 Selecting previously deselected package html2text.
-Unpacking html2text (from .../html2text_1.3.2a-2_powerpc.deb) ...
+Unpacking html2text (from .../html2text_1.3.2a-2_i386.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.14.4-2_powerpc.deb) ...
+Unpacking gettext (from .../gettext_0.14.4-2_i386.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.30+20040213_all.deb) ...
 Selecting previously deselected package po-debconf.
@@ -53,9 +63,9 @@ Unpacking po-debconf (from .../po-debconf_0.8.23_all.deb) ...
 Selecting previously deselected package debhelper.
 Unpacking debhelper (from .../debhelper_4.2.32_all.deb) ...
 Selecting previously deselected package libdshconfig1.
-Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_powerpc.deb) ...
+Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_i386.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
-Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_powerpc.deb) ...
+Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_i386.deb) ...
 Setting up libmagic1 (4.12-1) ...
 
 Setting up file (4.12-1) ...
@@ -77,18 +87,19 @@ Building Dependency Tree...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/81.8kB of archives.
-After unpacking 315kB of additional disk space will be used.
+Need to get 70.5kB of archives.
+After unpacking 201kB of additional disk space will be used.
+Get:1 http://ring.asahi-net.or.jp sarge/main fakeroot 1.2.10 [70.5kB]
+Fetched 70.5kB in 0s (776kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11407 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.2.10_powerpc.deb) ...
+(Reading database ... 11582 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.2.10_i386.deb) ...
 Setting up fakeroot (1.2.10) ...
 
-Copying back the cached apt archive contents
 Copying source file
-    -> copying [/home/dancer/cvscheckout/whole/pbuilder/testsuite/tmp.rJ4u0j/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/whole/pbuilder/testsuite/tmp.rJ4u0j/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/whole/pbuilder/testsuite/tmp.rJ4u0j/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: extracting dsh in dsh-0.25.6
@@ -101,7 +112,7 @@ debian: warning: no utmp entry available and LOGNAME not defined; using uid of p
 dpkg-buildpackage: source version is 0.25.6-1
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-buildpackage: host architecture is powerpc
+dpkg-buildpackage: host architecture is i386
 dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
@@ -166,8 +177,8 @@ checking how to run the C preprocessor... gcc -E
 checking for egrep... grep -E
 checking for ANSI C header files... yes
 checking for sys/wait.h that is POSIX.1 compatible... yes
-checking build system type... powerpc-unknown-linux-gnu
-checking host system type... powerpc-unknown-linux-gnu
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
 checking for a sed that does not truncate output... /bin/sed
 checking for ld used by gcc... /usr/bin/ld
 checking if the linker (/usr/bin/ld) is GNU ld... yes
@@ -346,9 +357,9 @@ make[2]: Entering directory `/tmp/buildd/dsh-0.25.6/po'
 make[2]: Nothing to be done for `check'.
 make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6/po'
 make[2]: Entering directory `/tmp/buildd/dsh-0.25.6'
-sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
 /usr/bin/make  dsh
 make[3]: Entering directory `/tmp/buildd/dsh-0.25.6'
+make[3]: `dsh' is up to date.
 make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 /usr/bin/make  check-TESTS
 make[3]: Entering directory `/tmp/buildd/dsh-0.25.6'
@@ -402,7 +413,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Wed Jul 13 21:16:22 UTC 2005
+Sun Aug  7 03:54:41 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -472,13 +483,12 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Wed Jul 13 21:16:27 UTC 2005
+Sun Aug  7 03:54:46 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
-dsh: Process terminated (before write).
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -574,7 +584,7 @@ debian: warning: no utmp entry available and LOGNAME not defined; using uid of p
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dh_md5sums
 dh_builddeb
-dpkg-deb: building package `dsh' in `../dsh_0.25.6-1_powerpc.deb'.
+dpkg-deb: building package `dsh' in `../dsh_0.25.6-1_i386.deb'.
  dpkg-genchanges -mJunichi Uekawa <dancer@debian.org>
 dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
@@ -582,10 +592,11 @@ dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; u
 debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
-Copying back the cached apt archive contents
+ -> Terminate timeout process
+/usr/lib/pbuilder/pbuilder-buildpackage: line 135:  7588 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Thu Jul 14 06:17:05 JST 2005
-pbuilder-time-stamp: 1121289425
+Current time: Sun Aug  7 12:54:49 JST 2005
+pbuilder-time-stamp: 1123386889
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/whole/pbuilder/testsuite/tmp.rJ4u0j/dir1/2217 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir1/7260 and its subdirectories

@@ -183,6 +183,11 @@ while [ -n "$1" ]; do
 	    DEBOOTSTRAPOPTS[${#DEBOOTSTRAPOPTS[@]}]="$2";
 	    shift; shift;
 	    ;;
+	--debootstrap)
+	    # Use this option to specify cdebootstrap
+	    DEBOOTSTRAP="$2";
+	    shift; shift;
+	    ;;
 	--save-after-login|--save-after-exec)
 	    SAVE_AFTER_LOGIN=yes;
 	    shift;
