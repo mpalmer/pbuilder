@@ -2,10 +2,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sun Aug  7 12:54:05 JST 2005
-pbuilder-time-stamp: 1123386845
+Current time: Fri Aug 12 08:39:06 JST 2005
+pbuilder-time-stamp: 1123803546
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -44,7 +44,7 @@ Get:7 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.23 [78.0kB]
 Get:8 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.32 [362kB]
 Get:9 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:10 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2591kB in 0s (6154kB/s)
+Fetched 2591kB in 0s (2983kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 11040 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
@@ -90,16 +90,16 @@ The following NEW packages will be installed:
 Need to get 70.5kB of archives.
 After unpacking 201kB of additional disk space will be used.
 Get:1 http://ring.asahi-net.or.jp sarge/main fakeroot 1.2.10 [70.5kB]
-Fetched 70.5kB in 0s (776kB/s)
+Fetched 70.5kB in 0s (1059kB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 11582 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.2.10_i386.deb) ...
 Setting up fakeroot (1.2.10) ...
 
 Copying source file
-    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: extracting dsh in dsh-0.25.6
@@ -413,7 +413,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun Aug  7 03:54:41 UTC 2005
+Thu Aug 11 23:39:53 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -483,11 +483,12 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun Aug  7 03:54:46 UTC 2005
+Thu Aug 11 23:39:58 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
+dsh: Process terminated (before write).
 b: b
 c: c
 PASS: tests/segv-catcher.sh
@@ -593,10 +594,10 @@ debian: warning: no utmp entry available and LOGNAME not defined; using uid of p
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
-/usr/lib/pbuilder/pbuilder-buildpackage: line 135:  7588 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Sun Aug  7 12:54:49 JST 2005
-pbuilder-time-stamp: 1123386889
+/usr/lib/pbuilder/pbuilder-buildpackage: line 152:  9581 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+Current time: Fri Aug 12 08:40:01 JST 2005
+pbuilder-time-stamp: 1123803601
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir1/7260 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir1/9285 and its subdirectories

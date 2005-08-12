@@ -6,14 +6,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.6
@@ -29,10 +29,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Sun Aug  7 12:54:54 JST 2005
-pbuilder-time-stamp: 1123386894
+Current time: Fri Aug 12 08:40:06 JST 2005
+pbuilder-time-stamp: 1123803606
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -71,7 +71,7 @@ Get:7 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.23 [78.0kB]
 Get:8 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.32 [362kB]
 Get:9 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:10 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2591kB in 0s (4446kB/s)
+Fetched 2591kB in 0s (7985kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 11040 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
@@ -117,7 +117,7 @@ The following NEW packages will be installed:
 Need to get 70.5kB of archives.
 After unpacking 201kB of additional disk space will be used.
 Get:1 http://ring.asahi-net.or.jp sarge/main fakeroot 1.2.10 [70.5kB]
-Fetched 70.5kB in 0s (2028kB/s)
+Fetched 70.5kB in 0s (2387kB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 11582 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.2.10_i386.deb) ...
@@ -439,11 +439,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun Aug  7 03:55:27 UTC 2005
+Thu Aug 11 23:40:40 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -513,12 +513,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun Aug  7 03:55:32 UTC 2005
+Thu Aug 11 23:40:45 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-b: b
 a: a
+dsh: Process terminated (before write).
+b: b
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -624,9 +625,9 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> unmounting dev/pts filesystem
+/usr/lib/pbuilder/pbuilder-modules: line 89: 15480 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting proc filesystem
-/usr/lib/pbuilder/pbuilder-buildpackage: line 152: 13492 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
-Current time: Sun Aug  7 12:55:35 JST 2005
-pbuilder-time-stamp: 1123386935
+Current time: Fri Aug 12 08:40:47 JST 2005
+pbuilder-time-stamp: 1123803647
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/dir2/13189 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir2/15189 and its subdirectories

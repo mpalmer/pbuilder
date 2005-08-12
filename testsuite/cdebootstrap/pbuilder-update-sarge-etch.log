@@ -1,6 +1,6 @@
 Upgrading for distribution etch
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.k8Hxv8/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -11,7 +11,7 @@ Refreshing the base.tgz
  -> upgrading packages
 Get:1 http://ring.asahi-net.or.jp etch/main Packages [3544kB]
 Get:2 http://ring.asahi-net.or.jp etch/main Release [81B]
-Fetched 3544kB in 1s (2738kB/s)
+Fetched 3544kB in 1s (2409kB/s)
 Reading Package Lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading Package Lists...
@@ -78,7 +78,7 @@ Get:46 http://ring.asahi-net.or.jp etch/main exim4 4.52-1 [1834B]
 Get:47 http://ring.asahi-net.or.jp etch/main psmisc 21.6-1 [58.9kB]
 Get:48 http://ring.asahi-net.or.jp etch/main setserial 2.17-41 [54.7kB]
 Preconfiguring packages ...
-Fetched 18.3MB in 2s (7797kB/s)
+Fetched 18.3MB in 2s (8302kB/s)
 (Reading database ... 11073 files and directories currently installed.)
 Preparing to replace base-passwd 3.5.9 (using .../base-passwd_3.5.10_i386.deb) ...
 Unpacking replacement base-passwd ...
@@ -105,17 +105,18 @@ Setting up debianutils (2.14.1) ...
 Preparing to replace perl-modules 5.8.4-8 (using .../perl-modules_5.8.7-3_all.deb) ...
 Unpacking replacement perl-modules ...
 dpkg: error processing /var/cache/apt/archives/perl-modules_5.8.7-3_all.deb (--unpack):
- failed in buffer_write(fd) (8, ret=-1): backend dpkg-deb during `./usr/share/perl/5.8.7/unicore/EastAsianWidth.txt': No space left on device
-dpkg-deb: subprocess paste killed by signal (Broken pipe)
+ failed in buffer_write(fd) (8, ret=-1): backend dpkg-deb during `./usr/share/perl/5.8.7/unicore/NamesList.txt': No space left on device
 Preparing to replace perl 5.8.4-8 (using .../archives/perl_5.8.7-3_i386.deb) ...
 Unpacking replacement perl ...
+dpkg-deb: subprocess paste killed by signal (Broken pipe)
 dpkg: error processing /var/cache/apt/archives/perl_5.8.7-3_i386.deb (--unpack):
- failed in buffer_write(fd) (8, ret=-1): backend dpkg-deb during `./usr/bin/perlbug': No space left on device
+ failed in buffer_write(fd) (8, ret=-1): backend dpkg-deb during `./usr/bin/h2ph': No space left on device
 dpkg-deb: subprocess paste killed by signal (Broken pipe)
 Preparing to replace perl-base 5.8.4-8 (using .../perl-base_5.8.7-3_i386.deb) ...
 Unpacking replacement perl-base ...
 dpkg: error processing /var/cache/apt/archives/perl-base_5.8.7-3_i386.deb (--unpack):
  failed in buffer_write(fd) (8, ret=-1): backend dpkg-deb during `./usr/bin/perl': No space left on device
+dpkg-deb: subprocess paste killed by signal (Broken pipe)
 Errors were encountered while processing:
  /var/cache/apt/archives/perl-modules_5.8.7-3_all.deb
  /var/cache/apt/archives/perl_5.8.7-3_i386.deb
@@ -124,5 +125,4 @@ E: Sub-process /usr/bin/dpkg returned an error code (1)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//10341 and its subdirectories
-dpkg-deb: subprocess paste killed by signal (Broken pipe)
+    -> removing directory /var/cache/pbuilder/build//12243 and its subdirectories
