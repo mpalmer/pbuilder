@@ -68,7 +68,7 @@ File extracted to: $BUILDPLACE
 "
 	fi
 	executehooks "F"
-	chroot "$BUILDPLACE" bin/bash
+	${CHROOTEXEC} bin/bash
 
 	save_aptcache
 	trap umountproc_cleanbuildplace exit
@@ -109,7 +109,7 @@ File extracted to: $BUILDPLACE
 	cat "$EXECPROGRAM" > "$RUNNAME"
 	chmod a+x "$RUNNAME"
 	executehooks "F"
-	chroot "$BUILDPLACE" /run "$@"
+	${CHROOTEXEC} /run "$@"
 
 	save_aptcache
 	trap umountproc_cleanbuildplace exit

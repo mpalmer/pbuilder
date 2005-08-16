@@ -1,3 +1,12 @@
+2005-08-15  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder: $CHROOTEXEC instead of direct invocation of 'chroot' 
+	  command.
+	  satisfydepends needs the CHROOTEXEC support.
+
+	  I want to support setting CHROOTEXEC so that I can hook
+	  'chroot XXX cow-shell' instead of 'chroot XXX'
+
 2005-08-07  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/control: allow cdebootstrap dependency.

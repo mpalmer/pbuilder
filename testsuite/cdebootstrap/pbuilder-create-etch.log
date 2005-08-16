@@ -121,8 +121,6 @@ P: Retrieving bsdutils
 P: Validating bsdutils
 P: Retrieving bsdmainutils
 P: Validating bsdmainutils
-P: Retrieving dselect
-P: Validating dselect
 P: Retrieving dpkg
 P: Validating dpkg
 P: Retrieving libgdbm3
@@ -177,6 +175,10 @@ P: Retrieving libsigc++-1.2-5c102
 P: Validating libsigc++-1.2-5c102
 P: Retrieving aptitude
 P: Validating aptitude
+P: Retrieving dmidecode
+P: Validating dmidecode
+P: Retrieving laptop-detect
+P: Validating laptop-detect
 P: Retrieving tasksel
 P: Validating tasksel
 P: Retrieving libconsole
@@ -237,6 +239,8 @@ P: Retrieving tar
 P: Validating tar
 P: Retrieving gzip
 P: Validating gzip
+P: Retrieving dselect
+P: Validating dselect
 P: Retrieving diff
 P: Validating diff
 P: Retrieving base-files
@@ -275,7 +279,6 @@ P: Extracting libslang2
 P: Extracting libnewt0.51
 P: Extracting sed
 P: Extracting bsdutils
-P: Extracting dselect
 P: Extracting dpkg
 P: Extracting login
 P: Extracting passwd
@@ -298,6 +301,7 @@ P: Extracting ncurses-base
 P: Extracting mawk
 P: Extracting tar
 P: Extracting gzip
+P: Extracting dselect
 P: Extracting diff
 P: Extracting base-files
 P: Extracting bash
@@ -335,7 +339,6 @@ P: Unpacking package libslang2
 P: Unpacking package libnewt0.51
 P: Unpacking package sed
 P: Unpacking package bsdutils
-P: Unpacking package dselect
 P: Unpacking package login
 P: Unpacking package passwd
 P: Unpacking package libblkid1
@@ -357,12 +360,12 @@ P: Unpacking package ncurses-base
 P: Unpacking package mawk
 P: Unpacking package tar
 P: Unpacking package gzip
+P: Unpacking package dselect
 P: Unpacking package diff
 P: Unpacking package base-files
 P: Unpacking package bash
 P: Unpacking package findutils
 P: Configuring package makedev
-P: Configuring package ncurses-base
 P: Configuring package sysv-rc
 P: Configuring package libpam-runtime
 P: Configuring package gcc-3.3-base
@@ -402,6 +405,7 @@ P: Configuring package libtext-wrapi18n-perl
 P: Configuring package coreutils
 P: Configuring package debianutils
 P: Configuring package procps
+P: Configuring package ncurses-base
 P: Configuring package ncurses-bin
 P: Configuring package libpam-modules
 P: Configuring package base-files
@@ -436,6 +440,7 @@ P: Unpacking package base-config
 P: Unpacking package bsdmainutils
 P: Unpacking package cpio
 P: Unpacking package cron
+P: Unpacking package dmidecode
 P: Unpacking package ed
 P: Unpacking package groff-base
 P: Unpacking package net-tools
@@ -445,6 +450,7 @@ P: Unpacking package iptables
 P: Unpacking package iputils-ping
 P: Unpacking package sysklogd
 P: Unpacking package klogd
+P: Unpacking package laptop-detect
 P: Unpacking package libgpg-error0
 P: Unpacking package libgcrypt11
 P: Unpacking package libgdbm3
@@ -493,6 +499,7 @@ P: Configuring package gettext-base
 P: Configuring package bsdmainutils
 P: Configuring package cpio
 P: Configuring package cron
+P: Configuring package dmidecode
 P: Configuring package ed
 P: Configuring package groff-base
 P: Configuring package net-tools
@@ -500,6 +507,7 @@ P: Configuring package ifupdown
 P: Configuring package info
 P: Configuring package iptables
 P: Configuring package iputils-ping
+P: Configuring package laptop-detect
 P: Configuring package libgpg-error0
 P: Configuring package libgcrypt11
 P: Configuring package libgdbm3
@@ -555,9 +563,9 @@ Refreshing the base.tgz
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
-Get:1 http://ring.asahi-net.or.jp etch/main Packages [3544kB]
-Get:2 http://ring.asahi-net.or.jp etch/main Release [81B]
-Fetched 3544kB in 1s (3445kB/s)
+Get:1 http://ftp.jp.debian.org etch/main Packages [3489kB]
+Get:2 http://ftp.jp.debian.org etch/main Release [81B]
+Fetched 3489kB in 2s (1544kB/s)
 Reading Package Lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading Package Lists...
@@ -567,45 +575,51 @@ Reading Package Lists...
 Building Dependency Tree...
 apt is already the newest version.
 The following extra packages will be installed:
-  binutils cpp cpp-3.3 g++ g++-3.3 gcc gcc-3.3 libc6-dev libstdc++5-3.3-dev
-  linux-kernel-headers make patch perl perl-modules
-Suggested packages:
-  binutils-doc cpp-doc gnupg debian-keyring gcc-3.3-doc manpages-dev autoconf
-  automake libtool flex bison gdb gcc-doc glibc-doc libstdc++5-3.3-doc
-  stl-manual libterm-readline-gnu-perl libterm-readline-perl-perl
-Recommended packages:
-  perl-doc
-The following NEW packages will be installed:
-  binutils build-essential cpp cpp-3.3 dpkg-dev g++ g++-3.3 gcc gcc-3.3
-  libc6-dev libstdc++5-3.3-dev linux-kernel-headers make patch perl
+  binutils cpp cpp-4.0 g++ g++-4.0 gcc gcc-4.0 gcc-4.0-base libc6-dev
+  libstdc++6 libstdc++6-4.0-dev linux-kernel-headers make patch perl
   perl-modules
-0 upgraded, 16 newly installed, 0 to remove and 0 not upgraded.
-Need to get 18.2MB of archives.
-After unpacking 63.9MB of additional disk space will be used.
-Get:1 http://ring.asahi-net.or.jp etch/main binutils 2.16.1-2 [2378kB]
-Get:2 http://ring.asahi-net.or.jp etch/main cpp-3.3 1:3.3.5-13 [1393kB]
-Get:3 http://ring.asahi-net.or.jp etch/main cpp 4:3.3.5-3 [29.6kB]
-Get:4 http://ring.asahi-net.or.jp etch/main perl-modules 5.8.7-3 [2326kB]
-Get:5 http://ring.asahi-net.or.jp etch/main perl 5.8.7-3 [3371kB]
-Get:6 http://ring.asahi-net.or.jp etch/main patch 2.5.9-2 [96.4kB]
-Get:7 http://ring.asahi-net.or.jp etch/main make 3.80-9 [366kB]
-Get:8 http://ring.asahi-net.or.jp etch/main dpkg-dev 1.10.28 [166kB]
-Get:9 http://ring.asahi-net.or.jp etch/main gcc-3.3 1:3.3.5-13 [1570kB]
-Get:10 http://ring.asahi-net.or.jp etch/main gcc 4:3.3.5-3 [4906B]
-Get:11 http://ring.asahi-net.or.jp etch/main linux-kernel-headers 2.5.999-test7-bk-17 [1377kB]
-Get:12 http://ring.asahi-net.or.jp etch/main libc6-dev 2.3.2.ds1-22 [2532kB]
-Get:13 http://ring.asahi-net.or.jp etch/main libstdc++5-3.3-dev 1:3.3.5-13 [775kB]
-Get:14 http://ring.asahi-net.or.jp etch/main g++-3.3 1:3.3.5-13 [1779kB]
-Get:15 http://ring.asahi-net.or.jp etch/main g++ 4:3.3.5-3 [1398B]
-Get:16 http://ring.asahi-net.or.jp etch/main build-essential 10.1 [6520B]
-Fetched 18.2MB in 2s (9043kB/s)
+Suggested packages:
+  binutils-doc cpp-doc gcc-4.0-locales gnupg debian-keyring gcc-4.0-doc
+  manpages-dev autoconf automake1.9 libtool flex bison gdb gcc-doc
+  amd64-libs-dev glibc-doc libstdc++6-4.0-doc stl-manual
+  libterm-readline-gnu-perl libterm-readline-perl-perl
+Recommended packages:
+  bzip2 libmudflap0-dev perl-doc
+The following NEW packages will be installed:
+  binutils build-essential cpp cpp-4.0 dpkg-dev g++ g++-4.0 gcc gcc-4.0
+  gcc-4.0-base libc6-dev libstdc++6 libstdc++6-4.0-dev linux-kernel-headers
+  make patch perl perl-modules
+0 upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
+Need to get 19.6MB of archives.
+After unpacking 69.3MB of additional disk space will be used.
+Get:1 http://ftp.jp.debian.org etch/main binutils 2.16.1-2 [2378kB]
+Get:2 http://ftp.jp.debian.org etch/main gcc-4.0-base 4.0.1-2 [174kB]
+Get:3 http://ftp.jp.debian.org etch/main cpp-4.0 4.0.1-2 [2038kB]
+Get:4 http://ftp.jp.debian.org etch/main cpp 4:4.0.1-3 [30.6kB]
+Get:5 http://ftp.jp.debian.org etch/main perl-modules 5.8.7-3 [2326kB]
+Get:6 http://ftp.jp.debian.org etch/main perl 5.8.7-3 [3371kB]
+Get:7 http://ftp.jp.debian.org etch/main patch 2.5.9-2 [96.4kB]
+Get:8 http://ftp.jp.debian.org etch/main make 3.80-9 [366kB]
+Get:9 http://ftp.jp.debian.org etch/main dpkg-dev 1.13.10 [163kB]
+Get:10 http://ftp.jp.debian.org etch/main gcc-4.0 4.0.1-2 [495kB]
+Get:11 http://ftp.jp.debian.org etch/main gcc 4:4.0.1-3 [4918B]
+Get:12 http://ftp.jp.debian.org etch/main libstdc++6 4.0.1-2 [353kB]
+Get:13 http://ftp.jp.debian.org etch/main linux-kernel-headers 2.5.999-test7-bk-17 [1377kB]
+Get:14 http://ftp.jp.debian.org etch/main libc6-dev 2.3.2.ds1-22 [2532kB]
+Get:15 http://ftp.jp.debian.org etch/main libstdc++6-4.0-dev 4.0.1-2 [1516kB]
+Get:16 http://ftp.jp.debian.org etch/main g++-4.0 4.0.1-2 [2321kB]
+Get:17 http://ftp.jp.debian.org etch/main g++ 4:4.0.1-3 [1384B]
+Get:18 http://ftp.jp.debian.org etch/main build-essential 11.1 [6834B]
+Fetched 19.6MB in 8s (2200kB/s)
 Selecting previously deselected package binutils.
-(Reading database ... 7596 files and directories currently installed.)
+(Reading database ... 7623 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1-2_i386.deb) ...
-Selecting previously deselected package cpp-3.3.
-Unpacking cpp-3.3 (from .../cpp-3.3_1%3a3.3.5-13_i386.deb) ...
+Selecting previously deselected package gcc-4.0-base.
+Unpacking gcc-4.0-base (from .../gcc-4.0-base_4.0.1-2_i386.deb) ...
+Selecting previously deselected package cpp-4.0.
+Unpacking cpp-4.0 (from .../cpp-4.0_4.0.1-2_i386.deb) ...
 Selecting previously deselected package cpp.
-Unpacking cpp (from .../cpp_4%3a3.3.5-3_i386.deb) ...
+Unpacking cpp (from .../cpp_4%3a4.0.1-3_i386.deb) ...
 Selecting previously deselected package perl-modules.
 Unpacking perl-modules (from .../perl-modules_5.8.7-3_all.deb) ...
 Selecting previously deselected package perl.
@@ -615,46 +629,51 @@ Unpacking patch (from .../patch_2.5.9-2_i386.deb) ...
 Selecting previously deselected package make.
 Unpacking make (from .../archives/make_3.80-9_i386.deb) ...
 Selecting previously deselected package dpkg-dev.
-Unpacking dpkg-dev (from .../dpkg-dev_1.10.28_all.deb) ...
-Selecting previously deselected package gcc-3.3.
-Unpacking gcc-3.3 (from .../gcc-3.3_1%3a3.3.5-13_i386.deb) ...
+Unpacking dpkg-dev (from .../dpkg-dev_1.13.10_all.deb) ...
+Selecting previously deselected package gcc-4.0.
+Unpacking gcc-4.0 (from .../gcc-4.0_4.0.1-2_i386.deb) ...
 Selecting previously deselected package gcc.
-Unpacking gcc (from .../gcc_4%3a3.3.5-3_i386.deb) ...
+Unpacking gcc (from .../gcc_4%3a4.0.1-3_i386.deb) ...
+Selecting previously deselected package libstdc++6.
+Unpacking libstdc++6 (from .../libstdc++6_4.0.1-2_i386.deb) ...
 Selecting previously deselected package linux-kernel-headers.
 Unpacking linux-kernel-headers (from .../linux-kernel-headers_2.5.999-test7-bk-17_i386.deb) ...
 Selecting previously deselected package libc6-dev.
 Unpacking libc6-dev (from .../libc6-dev_2.3.2.ds1-22_i386.deb) ...
-Selecting previously deselected package libstdc++5-3.3-dev.
-Unpacking libstdc++5-3.3-dev (from .../libstdc++5-3.3-dev_1%3a3.3.5-13_i386.deb) ...
-Selecting previously deselected package g++-3.3.
-Unpacking g++-3.3 (from .../g++-3.3_1%3a3.3.5-13_i386.deb) ...
+Selecting previously deselected package libstdc++6-4.0-dev.
+Unpacking libstdc++6-4.0-dev (from .../libstdc++6-4.0-dev_4.0.1-2_i386.deb) ...
+Selecting previously deselected package g++-4.0.
+Unpacking g++-4.0 (from .../g++-4.0_4.0.1-2_i386.deb) ...
 Selecting previously deselected package g++.
-Unpacking g++ (from .../g++_4%3a3.3.5-3_i386.deb) ...
+Unpacking g++ (from .../g++_4%3a4.0.1-3_i386.deb) ...
 Selecting previously deselected package build-essential.
-Unpacking build-essential (from .../build-essential_10.1_i386.deb) ...
+Unpacking build-essential (from .../build-essential_11.1_i386.deb) ...
 Setting up binutils (2.16.1-2) ...
 
-Setting up cpp-3.3 (3.3.5-13) ...
-Setting up cpp (3.3.5-3) ...
+Setting up gcc-4.0-base (4.0.1-2) ...
+Setting up cpp-4.0 (4.0.1-2) ...
+Setting up cpp (4.0.1-3) ...
 Setting up patch (2.5.9-2) ...
 Setting up make (3.80-9) ...
 
-Setting up gcc-3.3 (3.3.5-13) ...
-Setting up gcc (3.3.5-3) ...
+Setting up gcc-4.0 (4.0.1-2) ...
+Setting up gcc (4.0.1-3) ...
+
+Setting up libstdc++6 (4.0.1-2) ...
 
 Setting up linux-kernel-headers (2.5.999-test7-bk-17) ...
 Setting up libc6-dev (2.3.2.ds1-22) ...
 Setting up perl-modules (5.8.7-3) ...
-Setting up libstdc++5-3.3-dev (3.3.5-13) ...
+Setting up libstdc++6-4.0-dev (4.0.1-2) ...
 Setting up perl (5.8.7-3) ...
 
-Setting up dpkg-dev (1.10.28) ...
-Setting up g++-3.3 (3.3.5-13) ...
-Setting up g++ (3.3.5-3) ...
+Setting up dpkg-dev (1.13.10) ...
+Setting up g++-4.0 (4.0.1-2) ...
+Setting up g++ (4.0.1-3) ...
 
-Setting up build-essential (10.1) ...
+Setting up build-essential (11.1) ...
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.ExPwZA/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//12797 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//8018 and its subdirectories

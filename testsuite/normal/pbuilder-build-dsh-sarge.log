@@ -2,10 +2,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Fri Aug 12 08:39:06 JST 2005
-pbuilder-time-stamp: 1123803546
+Current time: Tue Aug 16 08:01:38 JST 2005
+pbuilder-time-stamp: 1124146898
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.ExPwZA/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -34,17 +34,17 @@ The following NEW packages will be installed:
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
 Need to get 2591kB of archives.
 After unpacking 8679kB of additional disk space will be used.
-Get:1 http://ring.asahi-net.or.jp sarge/main libmagic1 4.12-1 [233kB]
-Get:2 http://ring.asahi-net.or.jp sarge/main file 4.12-1 [28.6kB]
-Get:3 http://ring.asahi-net.or.jp sarge/main debconf-utils 1.4.30.13 [33.0kB]
-Get:4 http://ring.asahi-net.or.jp sarge/main html2text 1.3.2a-2 [92.6kB]
-Get:5 http://ring.asahi-net.or.jp sarge/main gettext 0.14.4-2 [1718kB]
-Get:6 http://ring.asahi-net.or.jp sarge/main intltool-debian 0.30+20040213 [23.5kB]
-Get:7 http://ring.asahi-net.or.jp sarge/main po-debconf 0.8.23 [78.0kB]
-Get:8 http://ring.asahi-net.or.jp sarge/main debhelper 4.2.32 [362kB]
-Get:9 http://ring.asahi-net.or.jp sarge/main libdshconfig1 0.20.11-1 [10.7kB]
-Get:10 http://ring.asahi-net.or.jp sarge/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2591kB in 0s (2983kB/s)
+Get:1 http://ftp.jp.debian.org sarge/main libmagic1 4.12-1 [233kB]
+Get:2 http://ftp.jp.debian.org sarge/main file 4.12-1 [28.6kB]
+Get:3 http://ftp.jp.debian.org sarge/main debconf-utils 1.4.30.13 [33.0kB]
+Get:4 http://ftp.jp.debian.org sarge/main html2text 1.3.2a-2 [92.6kB]
+Get:5 http://ftp.jp.debian.org sarge/main gettext 0.14.4-2 [1718kB]
+Get:6 http://ftp.jp.debian.org sarge/main intltool-debian 0.30+20040213 [23.5kB]
+Get:7 http://ftp.jp.debian.org sarge/main po-debconf 0.8.23 [78.0kB]
+Get:8 http://ftp.jp.debian.org sarge/main debhelper 4.2.32 [362kB]
+Get:9 http://ftp.jp.debian.org sarge/main libdshconfig1 0.20.11-1 [10.7kB]
+Get:10 http://ftp.jp.debian.org sarge/main libdshconfig1-dev 0.20.11-1 [12.4kB]
+Fetched 2591kB in 1s (1853kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 11040 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
@@ -89,17 +89,17 @@ The following NEW packages will be installed:
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
 Need to get 70.5kB of archives.
 After unpacking 201kB of additional disk space will be used.
-Get:1 http://ring.asahi-net.or.jp sarge/main fakeroot 1.2.10 [70.5kB]
-Fetched 70.5kB in 0s (1059kB/s)
+Get:1 http://ftp.jp.debian.org sarge/main fakeroot 1.2.10 [70.5kB]
+Fetched 70.5kB in 0s (536kB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 11582 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.2.10_i386.deb) ...
 Setting up fakeroot (1.2.10) ...
 
 Copying source file
-    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.ExPwZA/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.ExPwZA/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.ExPwZA/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: extracting dsh in dsh-0.25.6
@@ -374,7 +374,6 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
-dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -413,7 +412,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Thu Aug 11 23:39:53 UTC 2005
+Mon Aug 15 23:02:10 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -483,14 +482,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Thu Aug 11 23:39:58 UTC 2005
+Mon Aug 15 23:02:15 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 dsh: Process terminated (before write).
-b: b
 c: c
+b: b
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -596,8 +595,8 @@ dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-/usr/lib/pbuilder/pbuilder-buildpackage: line 152:  9581 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
-Current time: Fri Aug 12 08:40:01 JST 2005
-pbuilder-time-stamp: 1123803601
+/usr/lib/pbuilder/pbuilder-modules: line 89: 32735 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+Current time: Tue Aug 16 08:02:18 JST 2005
+pbuilder-time-stamp: 1124146938
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.YJi8Z9/dir1/9285 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.ExPwZA/dir1/32449 and its subdirectories

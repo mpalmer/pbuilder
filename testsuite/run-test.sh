@@ -18,7 +18,7 @@ log_success () {
 [ -x /usr/bin/cdebootstrap ] || exit 1
 
 
-mirror=http://ring.asahi-net.or.jp/archives/linux/debian/debian
+mirror=http://ftp.jp.debian.org/debian
 
 testdir=$(TMPDIR=$(pwd) mktemp -d)
 testimage=$testdir/testimage
