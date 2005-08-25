@@ -1,6 +1,6 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.Z2Z2PR/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -17,8 +17,8 @@ Ign http://ftp.jp.debian.org sid Release
 Get:4 http://ftp.jp.debian.org ../project/experimental Release [21.6kB]
 Ign http://ftp.jp.debian.org ../project/experimental Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Get:5 http://ftp.jp.debian.org ../project/experimental/main Packages [163kB]
-Fetched 219kB in 0s (411kB/s)
+Get:5 http://ftp.jp.debian.org ../project/experimental/main Packages [159kB]
+Fetched 215kB in 0s (306kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -29,37 +29,42 @@ Building dependency tree...
 The following packages have been kept back:
   aptitude
 The following packages will be upgraded:
-  diff login makedev passwd
-4 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
-Need to get 1336kB of archives.
-After unpacking 627kB of additional disk space will be used.
+  adduser diff login makedev passwd
+5 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+Need to get 1446kB of archives.
+After unpacking 623kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  diff login passwd makedev
+  diff login passwd adduser makedev
 Get:1 http://ftp.jp.debian.org ../project/experimental/main diff 2.8.7-0.2 [241kB]
 Get:2 http://ftp.jp.debian.org ../project/experimental/main login 1:4.0.11.1-1 [485kB]
 Get:3 http://ftp.jp.debian.org ../project/experimental/main passwd 1:4.0.11.1-1 [518kB]
-Get:4 http://ftp.jp.debian.org ../project/experimental/main makedev 3.3.8.2-0 [92.2kB]
+Get:4 http://ftp.jp.debian.org ../project/experimental/main adduser 3.68 [110kB]
+Get:5 http://ftp.jp.debian.org ../project/experimental/main makedev 3.3.8.2-0 [92.2kB]
 Preconfiguring packages ...
-Fetched 1336kB in 1s (1276kB/s)
-(Reading database ... 11472 files and directories currently installed.)
+Fetched 1446kB in 0s (1527kB/s)
+(Reading database ... 11484 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_i386.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-(Reading database ... 11480 files and directories currently installed.)
+(Reading database ... 11492 files and directories currently installed.)
 Preparing to replace login 1:4.0.3-39 (using .../login_1%3a4.0.11.1-1_i386.deb) ...
 Unpacking replacement login ...
 Setting up login (4.0.11.1-1) ...
 Installing new version of config file /etc/pam.d/su ...
 Installing new version of config file /etc/login.defs ...
 
-(Reading database ... 11486 files and directories currently installed.)
+(Reading database ... 11498 files and directories currently installed.)
 Preparing to replace passwd 1:4.0.3-39 (using .../passwd_1%3a4.0.11.1-1_i386.deb) ...
 Unpacking replacement passwd ...
 Setting up passwd (4.0.11.1-1) ...
 
-(Reading database ... 11499 files and directories currently installed.)
+(Reading database ... 11511 files and directories currently installed.)
+Preparing to replace adduser 3.67 (using .../archives/adduser_3.68_all.deb) ...
+Unpacking replacement adduser ...
 Preparing to replace makedev 2.3.1-78 (using .../makedev_3.3.8.2-0_i386.deb) ...
 Unpacking replacement makedev ...
+Setting up adduser (3.68) ...
+
 Setting up makedev (3.3.8.2-0) ...
 Reading package lists...
 Building dependency tree...
@@ -69,6 +74,6 @@ apt is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.Z2Z2PR/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//23338 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//27782 and its subdirectories

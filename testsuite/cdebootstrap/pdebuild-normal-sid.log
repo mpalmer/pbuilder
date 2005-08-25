@@ -6,14 +6,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.Z2Z2PR/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.Z2Z2PR/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.Z2Z2PR/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.Z2Z2PR/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.6
@@ -29,10 +29,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Wed Aug 17 07:48:45 JST 2005
-pbuilder-time-stamp: 1124232525
+Current time: Thu Aug 25 09:34:49 JST 2005
+pbuilder-time-stamp: 1124930089
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.Z2Z2PR/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -40,7 +40,7 @@ Building the build Environment
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result
 Installing the build-deps
- -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.19 2005/06/03 12:07:39 dancer Exp $
+ -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.20 2005/08/17 00:46:54 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
    -> Trying debhelper
  -> Considering  libdshconfig1-dev (>= 0.20.11-1)
@@ -74,9 +74,9 @@ Get:7 http://ftp.jp.debian.org sid/main po-debconf 0.8.23 [78.0kB]
 Get:8 http://ftp.jp.debian.org sid/main debhelper 4.9.5 [363kB]
 Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2650kB in 1s (2099kB/s)
+Fetched 2650kB in 1s (2088kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11461 files and directories currently installed.)
+(Reading database ... 11459 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.12-1_i386.deb) ...
@@ -117,17 +117,20 @@ Building dependency tree...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 69.5kB of archives.
+Need to get 69.6kB of archives.
 After unpacking 193kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   fakeroot
-Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.4.2 [69.5kB]
-Fetched 69.5kB in 0s (697kB/s)
+Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.4.3 [69.6kB]
+Fetched 69.6kB in 0s (671kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12004 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.4.2_i386.deb) ...
-Setting up fakeroot (1.4.2) ...
+(Reading database ... 12002 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.4.3_i386.deb) ...
+Setting up fakeroot (1.4.3) ...
 
+/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/1556/etc/passwd
+/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/1556/etc/group
+/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/1556/etc/shadow
 Copying source file
     -> copying [../dsh_0.25.6-1.dsc]
     -> copying [../dsh_0.25.6.orig.tar.gz]
@@ -450,7 +453,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue Aug 16 22:49:30 UTC 2005
+Thu Aug 25 00:36:19 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -520,14 +523,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue Aug 16 22:49:35 UTC 2005
+Thu Aug 25 00:36:24 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-c: c
-dsh: Process terminated (before write).
 a: a
+dsh: Process terminated (before write).
 b: b
+c: c
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -632,9 +635,9 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> unmounting dev/pts filesystem
-/usr/lib/pbuilder/pbuilder-modules: line 89:  1268 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+/usr/lib/pbuilder/pbuilder-modules: line 89:  1876 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting proc filesystem
-Current time: Wed Aug 17 07:49:38 JST 2005
-pbuilder-time-stamp: 1124232578
+Current time: Thu Aug 25 09:36:32 JST 2005
+pbuilder-time-stamp: 1124930192
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.Z2Z2PR/dir2/981 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/1556 and its subdirectories

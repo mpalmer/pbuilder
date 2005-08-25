@@ -3,13 +3,13 @@ Section: devel
 Priority: extra
 Maintainer: Junichi Uekawa <dancer@debian.org>
 Build-Depends: debhelper (>= 4.1.0), docbook-xsl, ldp-docbook-xsl (>= 0.0.20040321-0.1), xsltproc
-Standards-Version: 3.6.1
+Standards-Version: 3.6.2
 
 Package: pbuilder
 Architecture: all
-Depends: debootstrap (>= 0.2.29) | cdebootstrap, wget, gcc, debianutils (>= 1.13.1), coreutils (>= 4.5.8-1)
+Depends: cdebootstrap, wget, gcc, debianutils (>= 1.13.1), coreutils (>= 4.5.8-1)
 Recommends: fakeroot, sudo, devscripts
-Suggests: pbuilder-uml
+Suggests: pbuilder-uml, debootstrap
 Description: personal package builder for Debian packages
  pbuilder constructs a chroot system, and builds a package inside the
  chroot. 
