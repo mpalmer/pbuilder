@@ -1,12 +1,16 @@
-pbuilder (0.130) UNRELEASED; urgency=low
+pbuilder (0.130) unstable; urgency=low
 
   * depend on cdebootstrap, and suggest debootstrap. You may alternatively use 
     debootstrap, but the default is cdebootstrap.
     (closes: #323843, #324648)
   * cowdancer support improvement -- now passes testsuite.
   * Standards-version: 3.6.2
+  * SHELL=/bin/bash is now exported in default configuration; 
+    since setting that to 'zsh' and others will not always work
+    inside the chroot
+    (closes: #325184)
 
- -- Junichi Uekawa <dancer@debian.org>  Thu, 25 Aug 2005 10:27:14 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 28 Aug 2005 13:00:38 +0900
 
 pbuilder (0.129) unstable; urgency=low
 

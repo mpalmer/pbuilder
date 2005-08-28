@@ -58,5 +58,8 @@ unset DEBOOTSTRAPOPTS
 # Set the PATH I am going to use inside pbuilder: default is "/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 
+# SHELL variable is used inside pbuilder by commands like 'su'; and they need sane values
+export SHELL=/bin/bash
+
 # The name of debootstrap command.
 DEBOOTSTRAP="cdebootstrap"
