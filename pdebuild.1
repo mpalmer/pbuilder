@@ -14,6 +14,16 @@ One must be inside the source tree containing the
 directory, in order to make it work.
 
 .SH "PDEBUILD OPTIONS"
+
+The first option is always the operation to be done.
+It is followed by options of the form
+.BI "\-\-" "option name"
+which will modify the semantics as explained below.
+They are applied from left-to-right, and when there are 
+conflicting options, the rightmost options will have effect.
+
+
+
 .TP
 .BI "\-\-buildsourceroot [" "fakeroot" "]"
 The command used to gain root privilege for 

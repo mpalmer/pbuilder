@@ -18,7 +18,9 @@ Front end program to the
 .B "pbuilder"
 suite of programs, used for creating and maintaining chroot environment 
 and building Debian package in the chroot environment.
-.SH OPTIONS
+
+.SH "COMMANDS"
+
 .TP
 .B "create"
 Creates a 
@@ -92,6 +94,14 @@ directory in the current directory.
 This command is a convenience script, 
 and it does not accept most command-line options.
 This may change in the future.
+
+.SH "OPTIONS"
+
+The command is followed by options of the form
+.BI "\-\-" "option name"
+which will modify the semantics as explained below.
+They are applied from left-to-right, and when there are 
+conflicting options, the rightmost options will have effect.
 
 .TP
 .BI "\-\-basetgz [" "basetgz-location" "]"
