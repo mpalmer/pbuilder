@@ -4,7 +4,7 @@
   and the latest version is found in CVS repository. -->
 <book>
   <bookinfo>
-    <date>2005-05-02</date>
+    <date>2005-09-04</date>
     <title>pbuilder User's Manual</title>
     <abbrev>pbuilder-doc</abbrev>
     <subtitle>Usage and operations</subtitle>
@@ -1053,15 +1053,24 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
     <sect1 id="lvm">
       <title>Using LVM</title>
       <para>
-	LVM has a snapshot function that features Copy-on-write images.
+	LVM2 has a useful snapshot function that features Copy-on-write images.
 	That could be used for pbuilder just as it can be used for
 	the user-mode-linux pbuilder port.
 	It may prove to be faster, but it is not implemented yet,
 	and so no measurement has been made, yet.
       </para>
       <para>
-	Since user-mode-linux port seems to be more interesting,
-	this is abandoned.
+	User-mode-linux cow support has been preferred for 
+	pbuilder-uml, but the idea of using LVM is interesting.
+      </para>
+    </sect1>
+    <sect1 id="cowdancer">
+      <title>Using cowdancer</title>
+      <para>
+	cowdancer allows copy-on-write semantics on filesystem 
+	using hardlinks and hardlink-breaking-on-write tricks.
+	pbuilder using cowdancer seems to be much faster
+	and it is one ideal point for improvement.
       </para>
     </sect1>
     <sect1 id="withouttargz">
@@ -1212,10 +1221,15 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	This documentation is available from the pbuilder source tarball,
 	and from the CVS repository of pbuilder (web-based access is possible).
 	A copy of this documentation can be found on the
-	<ulink url="http://www.netfort.gr.jp/~dancer/software/pbuilder-doc/pbuilder-doc.html">Netfort page for pbuilder</ulink>.
+	<ulink url="http://pbuilder.alioth.debian.org/pbuilder-doc.html">Alioth project page for pbuilder</ulink>.
 	The homepage for pbuilder is
 	<ulink url="http://www.netfort.gr.jp/~dancer/software/pbuilder.html">
 	  http://www.netfort.gr.jp/~dancer/software/pbuilder.html
+	</ulink>
+	The project has moved its hosting to alioth project since 4 Sep 2005.
+	It is available 
+	<ulink url="http://pbuilder.alioth.debian.org/">
+	  http://pbuilder.alioth.debian.org/
 	</ulink>
       </para>
       <para>
