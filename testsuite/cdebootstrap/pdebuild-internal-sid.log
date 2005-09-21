@@ -1,39 +1,47 @@
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
--> Mounting /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2
+-> Mounting /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2
  -> policy-rc.d already exists
 Using: : pdebuild-internal,v 1.6 2005/07/02 05:39:44 dancer Exp $
 Reading package lists...
 Building dependency tree...
 The following extra packages will be installed:
-  debootstrap
+  cdebootstrap libdebian-installer-extra4 libdebian-installer4
 Suggested packages:
-  pbuilder-uml
+  pbuilder-uml debootstrap
 Recommended packages:
   fakeroot sudo devscripts
 The following NEW packages will be installed:
-  debootstrap pbuilder
-0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
-Need to get 111kB of archives.
-After unpacking 643kB of additional disk space will be used.
+  cdebootstrap libdebian-installer-extra4 libdebian-installer4 pbuilder
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 122kB of archives.
+After unpacking 700kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  debootstrap pbuilder
-Get:1 http://ftp.jp.debian.org sid/main debootstrap 0.3.1.5 [42.1kB]
-Get:2 http://ftp.jp.debian.org sid/main pbuilder 0.129 [69.1kB]
-Fetched 111kB in 0s (338kB/s)
-Selecting previously deselected package debootstrap.
-(Reading database ... 11459 files and directories currently installed.)
-Unpacking debootstrap (from .../debootstrap_0.3.1.5_all.deb) ...
+  libdebian-installer4 libdebian-installer-extra4 cdebootstrap pbuilder
+Get:1 http://ftp.jp.debian.org sid/main libdebian-installer4 0.35 [21.7kB]
+Get:2 http://ftp.jp.debian.org sid/main libdebian-installer-extra4 0.35 [8452B]
+Get:3 http://ftp.jp.debian.org sid/main cdebootstrap 0.3.8 [22.2kB]
+Get:4 http://ftp.jp.debian.org sid/main pbuilder 0.131 [70.0kB]
+Fetched 122kB in 0s (292kB/s)
+Selecting previously deselected package libdebian-installer4.
+(Reading database ... 11483 files and directories currently installed.)
+Unpacking libdebian-installer4 (from .../libdebian-installer4_0.35_i386.deb) ...
+Selecting previously deselected package libdebian-installer-extra4.
+Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.35_i386.deb) ...
+Selecting previously deselected package cdebootstrap.
+Unpacking cdebootstrap (from .../cdebootstrap_0.3.8_i386.deb) ...
 Selecting previously deselected package pbuilder.
-Unpacking pbuilder (from .../pbuilder_0.129_all.deb) ...
-Setting up debootstrap (0.3.1.5) ...
-Setting up pbuilder (0.129) ...
+Unpacking pbuilder (from .../pbuilder_0.131_all.deb) ...
+Setting up libdebian-installer4 (0.35) ...
+Setting up libdebian-installer-extra4 (0.35) ...
+Setting up cdebootstrap (0.3.8) ...
+Setting up pbuilder (0.131) ...
 Setting DEBBUILDOPTS=
- -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.19 2005/06/03 12:07:39 dancer Exp $
+ -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.20 2005/08/17 00:46:54 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
    -> Trying debhelper
  -> Considering  libdshconfig1-dev (>= 0.20.11-1)
@@ -52,39 +60,39 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2650kB of archives.
-After unpacking 8360kB of additional disk space will be used.
+Need to get 2661kB of archives.
+After unpacking 8413kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   libmagic1 file debconf-utils html2text gettext intltool-debian po-debconf
   debhelper libdshconfig1 libdshconfig1-dev
 Get:1 http://ftp.jp.debian.org sid/main libmagic1 4.12-1 [233kB]
 Get:2 http://ftp.jp.debian.org sid/main file 4.12-1 [28.6kB]
-Get:3 http://ftp.jp.debian.org sid/main debconf-utils 1.4.57 [33.0kB]
-Get:4 http://ftp.jp.debian.org sid/main html2text 1.3.2a-2 [92.6kB]
+Get:3 http://ftp.jp.debian.org sid/main debconf-utils 1.4.58 [33.0kB]
+Get:4 http://ftp.jp.debian.org sid/main html2text 1.3.2a-3 [98.9kB]
 Get:5 http://ftp.jp.debian.org sid/main gettext 0.14.5-2 [1775kB]
-Get:6 http://ftp.jp.debian.org sid/main intltool-debian 0.30+20040213 [23.5kB]
-Get:7 http://ftp.jp.debian.org sid/main po-debconf 0.8.23 [78.0kB]
-Get:8 http://ftp.jp.debian.org sid/main debhelper 4.9.5 [363kB]
+Get:6 http://ftp.jp.debian.org sid/main intltool-debian 0.34.1+20050828 [27.5kB]
+Get:7 http://ftp.jp.debian.org sid/main po-debconf 0.9.0 [78.3kB]
+Get:8 http://ftp.jp.debian.org sid/main debhelper 4.9.8 [364kB]
 Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2650kB in 1s (1813kB/s)
+Fetched 2661kB in 1s (2081kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11538 files and directories currently installed.)
+(Reading database ... 11576 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.12-1_i386.deb) ...
 Selecting previously deselected package debconf-utils.
-Unpacking debconf-utils (from .../debconf-utils_1.4.57_all.deb) ...
+Unpacking debconf-utils (from .../debconf-utils_1.4.58_all.deb) ...
 Selecting previously deselected package html2text.
-Unpacking html2text (from .../html2text_1.3.2a-2_i386.deb) ...
+Unpacking html2text (from .../html2text_1.3.2a-3_i386.deb) ...
 Selecting previously deselected package gettext.
 Unpacking gettext (from .../gettext_0.14.5-2_i386.deb) ...
 Selecting previously deselected package intltool-debian.
-Unpacking intltool-debian (from .../intltool-debian_0.30+20040213_all.deb) ...
+Unpacking intltool-debian (from .../intltool-debian_0.34.1+20050828_all.deb) ...
 Selecting previously deselected package po-debconf.
-Unpacking po-debconf (from .../po-debconf_0.8.23_all.deb) ...
+Unpacking po-debconf (from .../po-debconf_0.9.0_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_4.9.5_all.deb) ...
+Unpacking debhelper (from .../debhelper_4.9.8_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_i386.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -92,15 +100,15 @@ Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_i386.deb) ...
 Setting up libmagic1 (4.12-1) ...
 
 Setting up file (4.12-1) ...
-Setting up debconf-utils (1.4.57) ...
+Setting up debconf-utils (1.4.58) ...
 
-Setting up html2text (1.3.2a-2) ...
+Setting up html2text (1.3.2a-3) ...
 
 Setting up gettext (0.14.5-2) ...
 
-Setting up intltool-debian (0.30+20040213) ...
-Setting up po-debconf (0.8.23) ...
-Setting up debhelper (4.9.5) ...
+Setting up intltool-debian (0.34.1+20050828) ...
+Setting up po-debconf (0.9.0) ...
+Setting up debhelper (4.9.8) ...
 Setting up libdshconfig1 (0.20.11-1) ...
 
 Setting up libdshconfig1-dev (0.20.11-1) ...
@@ -110,16 +118,16 @@ Building dependency tree...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 69.6kB of archives.
+Need to get 69.7kB of archives.
 After unpacking 193kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   fakeroot
-Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.4.3 [69.6kB]
-Fetched 69.6kB in 0s (756kB/s)
+Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.5.1 [69.7kB]
+Fetched 69.7kB in 0s (754kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12081 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.4.3_i386.deb) ...
-Setting up fakeroot (1.4.3) ...
+(Reading database ... 12119 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.5.1_i386.deb) ...
+Setting up fakeroot (1.5.1) ...
 
 dpkg-buildpackage: source package is dsh
 dpkg-buildpackage: source version is 0.25.6-1
@@ -130,14 +138,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.6
@@ -325,18 +333,18 @@ config.status: creating po/Makefile
 touch configure-stamp
 dh_testdir
 /usr/bin/make
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 /usr/bin/make  all-recursive
-make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[2]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 Making all in m4
-make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/m4'
+make[3]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/m4'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/m4'
+make[3]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/m4'
 Making all in po
-make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/po'
+make[3]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/po'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/po'
-make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[3]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/po'
+make[3]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-dsh.o -MD -MP -MF ".deps/dsh-dsh.Tpo" -c -o dsh-dsh.o `test -f 'dsh.c' || echo './'`dsh.c; \
 then mv -f ".deps/dsh-dsh.Tpo" ".deps/dsh-dsh.Po"; else rm -f ".deps/dsh-dsh.Tpo"; exit 1; fi
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-linkedlist.o -MD -MP -MF ".deps/dsh-linkedlist.Tpo" -c -o dsh-linkedlist.o `test -f 'linkedlist.c' || echo './'`linkedlist.c; \
@@ -349,26 +357,26 @@ gcc -Wall -g -O2 -o dsh dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  /usr/lib/lib
 mkdir build-man
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.5 > build-man/dsh.conf.5
-make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
-make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[3]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 /usr/bin/make check
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 Making check in m4
-make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/m4'
+make[2]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/m4'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/m4'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/m4'
 Making check in po
-make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/po'
+make[2]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/po'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/po'
-make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/po'
+make[2]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 /usr/bin/make  dsh
-make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[3]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 make[3]: `dsh' is up to date.
-make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[3]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 /usr/bin/make  check-TESTS
-make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[3]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 PASS: tests/param-f.sh
 dsh: File ./tests/nonexistent.file could not be opened for read
 PASS: tests/param-f-fail.sh
@@ -380,6 +388,7 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
+dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -405,8 +414,8 @@ success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -414,11 +423,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-1: 1
 2: 2
+1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Thu Aug 25 00:38:06 UTC 2005
+Wed Sep 21 07:22:30 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -488,13 +497,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Thu Aug 25 00:38:11 UTC 2005
+Wed Sep 21 07:22:35 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-a: a
-dsh: Process terminated (before write).
 b: b
+dsh: Process terminated (before write).
+a: a
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -504,9 +513,9 @@ PASS: tests/machinelist-order.sh
 ===================
 All 17 tests passed
 ===================
-make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
-make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[3]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 touch build-stamp
  fakeroot debian/rules binary
 dh_testdir
@@ -514,58 +523,58 @@ dh_testroot
 dh_clean -k
 dh_installdirs
 # Add here commands to install the package into debian/dsh.
-/usr/bin/make install DESTDIR=/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+/usr/bin/make install DESTDIR=/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh
+make[1]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 Making install in m4
-make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/m4'
-make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/m4'
+make[2]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/m4'
+make[3]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/m4'
 make[3]: Nothing to be done for `install-exec-am'.
 make[3]: Nothing to be done for `install-data-am'.
-make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/m4'
-make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/m4'
+make[3]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/m4'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/m4'
 Making install in po
-make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/po'
-/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share
-mkdir -p -- /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share
-mkdir -p -- /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/locale/ja/LC_MESSAGES
-installing ja.gmo as /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
+make[2]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/po'
+/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share
+mkdir -p -- /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share
+mkdir -p -- /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/locale/ja/LC_MESSAGES
+installing ja.gmo as /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
 if test "dsh" = "gettext"; then \
-  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/gettext/po; \
+  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/gettext/po; \
   for file in Makefile.in.in Makevars remove-potcdate.sin   ; do \
     /usr/bin/install -c -m 644 ./$file \
-		    /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/gettext/po/$file; \
+		    /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/gettext/po/$file; \
   done; \
 else \
   : ; \
 fi
-make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/po'
-make[2]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
-make[3]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
-test -z "/usr/bin" || mkdir -p -- . "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/bin"
-  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/bin/dsh'
-install -p -o root -g root -m 755 -s dsh /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/bin/dsh
-test -z "/etc/dsh" || mkdir -p -- . "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/etc/dsh"
- /usr/bin/install -c -m 644 'dsh.conf' '/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/etc/dsh/dsh.conf'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/po'
+make[2]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
+make[3]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
+test -z "/usr/bin" || mkdir -p -- . "/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/bin"
+  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/bin/dsh'
+install -p -o root -g root -m 755 -s dsh /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/bin/dsh
+test -z "/etc/dsh" || mkdir -p -- . "/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/etc/dsh"
+ /usr/bin/install -c -m 644 'dsh.conf' '/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/etc/dsh/dsh.conf'
 for LANGS in ja ; do \
-	mkdir -p /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man1 ;\
-	mkdir -p /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man5 ;\
+	mkdir -p /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man1 ;\
+	mkdir -p /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man5 ;\
 	sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.$LANGS.1 \
-		> /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
+		> /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
 	sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.$LANGS.5 \
-		> /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
+		> /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
 done
-test -z "/usr/share/man/man1" || mkdir -p -- . "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man1"
- /usr/bin/install -c -m 644 './build-man/dsh.1' '/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man1/dsh.1'
-test -z "/usr/share/man/man5" || mkdir -p -- . "/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man5"
- /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man5/dsh.conf.5'
-make[3]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
-make[2]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
-cp /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/machines.list /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/etc/dsh/machines.list
-cp /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/dsh.conf /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/etc/dsh/dsh.conf
-ln -s ../machines.list /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/etc/dsh/group/all
-install -d /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/lib/update-cluster
-install -m 755 /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh.updatelist /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6/debian/dsh/usr/lib/update-cluster/
+test -z "/usr/share/man/man1" || mkdir -p -- . "/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man1"
+ /usr/bin/install -c -m 644 './build-man/dsh.1' '/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man1/dsh.1'
+test -z "/usr/share/man/man5" || mkdir -p -- . "/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man5"
+ /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man5/dsh.conf.5'
+make[3]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
+cp /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/machines.list /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/etc/dsh/machines.list
+cp /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/dsh.conf /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/etc/dsh/dsh.conf
+ln -s ../machines.list /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/etc/dsh/group/all
+install -d /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/lib/update-cluster
+install -m 755 /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh.updatelist /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6/debian/dsh/usr/lib/update-cluster/
 dh_testdir
 dh_testroot
 dh_installdocs NEWS
@@ -588,6 +597,6 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> unmounting /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2 filesystem
+ -> unmounting /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2 filesystem
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/7381 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/19476 and its subdirectories

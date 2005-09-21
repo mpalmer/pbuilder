@@ -6,14 +6,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.6
@@ -29,10 +29,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Thu Aug 25 09:06:32 JST 2005
-pbuilder-time-stamp: 1124928392
+Current time: Wed Sep 21 16:03:06 JST 2005
+pbuilder-time-stamp: 1127286186
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -71,7 +71,7 @@ Get:7 http://ftp.jp.debian.org sarge/main po-debconf 0.8.23 [78.0kB]
 Get:8 http://ftp.jp.debian.org sarge/main debhelper 4.2.32 [362kB]
 Get:9 http://ftp.jp.debian.org sarge/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:10 http://ftp.jp.debian.org sarge/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2591kB in 1s (1996kB/s)
+Fetched 2591kB in 1s (1921kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 11040 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
@@ -117,14 +117,14 @@ The following NEW packages will be installed:
 Need to get 70.5kB of archives.
 After unpacking 201kB of additional disk space will be used.
 Get:1 http://ftp.jp.debian.org sarge/main fakeroot 1.2.10 [70.5kB]
-Fetched 70.5kB in 0s (652kB/s)
+Fetched 70.5kB in 0s (682kB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 11582 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.2.10_i386.deb) ...
 Setting up fakeroot (1.2.10) ...
 
-/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/12224/etc/passwd
-/home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/12224/etc/group
+/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/424/etc/passwd
+/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/424/etc/group
 Copying source file
     -> copying [../dsh_0.25.6-1.dsc]
     -> copying [../dsh_0.25.6.orig.tar.gz]
@@ -406,7 +406,6 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
-dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -441,11 +440,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-1: 1
 2: 2
+1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Thu Aug 25 00:07:53 UTC 2005
+Wed Sep 21 07:03:51 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -515,7 +514,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Thu Aug 25 00:07:58 UTC 2005
+Wed Sep 21 07:03:56 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -627,9 +626,9 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
  -> unmounting dev/pts filesystem
-/usr/lib/pbuilder/pbuilder-modules: line 89: 12517 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+/usr/lib/pbuilder/pbuilder-modules: line 89:   720 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting proc filesystem
-Current time: Thu Aug 25 09:08:06 JST 2005
-pbuilder-time-stamp: 1124928486
+Current time: Wed Sep 21 16:03:59 JST 2005
+pbuilder-time-stamp: 1127286239
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/pbuilder/pbuilder/testsuite/tmp.VJ1DuI/dir2/12224 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/dir2/424 and its subdirectories
