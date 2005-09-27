@@ -165,6 +165,8 @@ P: Retrieving cpio
 P: Validating cpio
 P: Retrieving ed
 P: Validating ed
+P: Retrieving libncursesw5
+P: Validating libncursesw5
 P: Retrieving nano
 P: Validating nano
 P: Retrieving nvi
@@ -187,6 +189,8 @@ P: Retrieving tasksel
 P: Validating tasksel
 P: Retrieving libconsole
 P: Validating libconsole
+P: Retrieving libsepol1
+P: Validating libsepol1
 P: Retrieving libuuid1
 P: Validating libuuid1
 P: Retrieving slang1a-utf8
@@ -203,6 +207,10 @@ P: Retrieving libss2
 P: Validating libss2
 P: Retrieving e2fsprogs
 P: Validating e2fsprogs
+P: Retrieving ncurses-bin
+P: Validating ncurses-bin
+P: Retrieving lsb-base
+P: Validating lsb-base
 P: Retrieving initscripts
 P: Validating initscripts
 P: Retrieving sysv-rc
@@ -211,10 +219,6 @@ P: Retrieving sysvinit
 P: Validating sysvinit
 P: Retrieving console-data
 P: Validating console-data
-P: Retrieving ncurses-bin
-P: Validating ncurses-bin
-P: Retrieving lsb-base
-P: Validating lsb-base
 P: Retrieving console-common
 P: Validating console-common
 P: Retrieving console-tools
@@ -235,8 +239,6 @@ P: Retrieving hostname
 P: Validating hostname
 P: Retrieving grep
 P: Validating grep
-P: Retrieving libsepol1
-P: Validating libsepol1
 P: Retrieving ncurses-base
 P: Validating ncurses-base
 P: Retrieving mawk
@@ -258,6 +260,7 @@ P: Validating bash
 P: Retrieving findutils
 P: Validating findutils
 P: Extracting libc6
+P: Extracting libgcc1
 P: Extracting perl-base
 P: Extracting liblocale-gettext-perl
 P: Extracting libtext-iconv-perl
@@ -283,13 +286,13 @@ P: Extracting libslang2
 P: Extracting libnewt0.51
 P: Extracting sed
 P: Extracting gcc-4.0-base
-P: Extracting libgcc1
 P: Extracting libstdc++6
 P: Extracting bsdutils
 P: Extracting dpkg
 P: Extracting libselinux1
 P: Extracting login
 P: Extracting passwd
+P: Extracting libsepol1
 P: Extracting libuuid1
 P: Extracting slang1a-utf8
 P: Extracting util-linux
@@ -298,14 +301,13 @@ P: Extracting libblkid1
 P: Extracting libcomerr2
 P: Extracting libss2
 P: Extracting e2fsprogs
+P: Extracting ncurses-bin
+P: Extracting lsb-base
 P: Extracting initscripts
 P: Extracting sysv-rc
 P: Extracting sysvinit
-P: Extracting ncurses-bin
-P: Extracting lsb-base
 P: Extracting hostname
 P: Extracting grep
-P: Extracting libsepol1
 P: Extracting ncurses-base
 P: Extracting mawk
 P: Extracting tar
@@ -323,6 +325,7 @@ P: Configuring package base-passwd
 P: Unpacking package dpkg
 P: Configuring package dpkg
 P: Unpacking package libc6
+P: Unpacking package libgcc1
 P: Unpacking package perl-base
 P: Unpacking package liblocale-gettext-perl
 P: Unpacking package libtext-iconv-perl
@@ -347,12 +350,12 @@ P: Unpacking package libslang2
 P: Unpacking package libnewt0.51
 P: Unpacking package sed
 P: Unpacking package gcc-4.0-base
-P: Unpacking package libgcc1
 P: Unpacking package libstdc++6
 P: Unpacking package bsdutils
 P: Unpacking package libselinux1
 P: Unpacking package login
 P: Unpacking package passwd
+P: Unpacking package libsepol1
 P: Unpacking package libuuid1
 P: Unpacking package slang1a-utf8
 P: Unpacking package util-linux
@@ -361,14 +364,13 @@ P: Unpacking package libblkid1
 P: Unpacking package libcomerr2
 P: Unpacking package libss2
 P: Unpacking package e2fsprogs
+P: Unpacking package ncurses-bin
+P: Unpacking package lsb-base
 P: Unpacking package initscripts
 P: Unpacking package sysv-rc
 P: Unpacking package sysvinit
-P: Unpacking package ncurses-bin
-P: Unpacking package lsb-base
 P: Unpacking package hostname
 P: Unpacking package grep
-P: Unpacking package libsepol1
 P: Unpacking package ncurses-base
 P: Unpacking package mawk
 P: Unpacking package tar
@@ -430,14 +432,14 @@ P: Configuring package libpam-modules
 P: Configuring package base-files
 P: Configuring package mount
 P: Configuring package libnewt0.51
-P: Configuring package initscripts
 P: Configuring package gzip
 P: Configuring package dselect
 P: Configuring package login
 P: Configuring package lsb-base
 P: Configuring package passwd
-P: Configuring package sysvinit
+P: Configuring package initscripts
 P: Configuring package bash
+P: Configuring package sysvinit
 P: Configuring package debconf-i18n
 P: Configuring package debconf
 P: Configuring helper cdebootstrap-helper-apt
@@ -478,6 +480,7 @@ P: Unpacking package liblzo1
 P: Unpacking package libopencdk8
 P: Unpacking package libtasn1-2
 P: Unpacking package libgnutls12
+P: Unpacking package libncursesw5
 P: Unpacking package libpcre3
 P: Unpacking package libpopt0
 P: Unpacking package libssl0.9.7
@@ -535,6 +538,7 @@ P: Configuring package liblzo1
 P: Configuring package libopencdk8
 P: Configuring package libtasn1-2
 P: Configuring package libgnutls12
+P: Configuring package libncursesw5
 P: Configuring package libpcre3
 P: Configuring package libpopt0
 P: Configuring package libssl0.9.7
@@ -583,9 +587,9 @@ Refreshing the base.tgz
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
-Get:1 http://ftp.jp.debian.org etch/main Packages [3472kB]
+Get:1 http://ftp.jp.debian.org etch/main Packages [3470kB]
 Get:2 http://ftp.jp.debian.org etch/main Release [81B]
-Fetched 3472kB in 2s (1724kB/s)
+Fetched 3470kB in 1s (1765kB/s)
 Reading Package Lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading Package Lists...
@@ -627,9 +631,9 @@ Get:13 http://ftp.jp.debian.org etch/main libstdc++6-4.0-dev 4.0.1-2 [1516kB]
 Get:14 http://ftp.jp.debian.org etch/main g++-4.0 4.0.1-2 [2321kB]
 Get:15 http://ftp.jp.debian.org etch/main g++ 4:4.0.1-3 [1384B]
 Get:16 http://ftp.jp.debian.org etch/main build-essential 11.1 [6834B]
-Fetched 19.3MB in 12s (1608kB/s)
+Fetched 19.3MB in 9s (2063kB/s)
 Selecting previously deselected package binutils.
-(Reading database ... 7694 files and directories currently installed.)
+(Reading database ... 7711 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1-2_i386.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.1-2_i386.deb) ...
@@ -684,6 +688,6 @@ Setting up g++ (4.0.1-3) ...
 Setting up build-essential (11.1) ...
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.MHVAqm/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.DMcuaP/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//3041 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//28258 and its subdirectories
