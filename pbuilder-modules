@@ -310,7 +310,7 @@ function recover_aptcache() {
 	    doit=cp
 	fi
 	echo "Obtaining the cached apt archive contents"
-	find "$APTCACHE" -name \*.deb -maxdepth 1 | \
+	find "$APTCACHE" -maxdepth 1 -name \*.deb | \
 	    while read A ; do
 	    $doit "$A" "$BUILDPLACE/var/cache/apt/archives/" || true
 	done
@@ -329,7 +329,7 @@ function save_aptcache() {
 	else
 	    doit=cp
 	fi
-	find "$BUILDPLACE/var/cache/apt/archives/" -name \*.deb -maxdepth 1 | \
+	find "$BUILDPLACE/var/cache/apt/archives/" -maxdepth 1 -name \*.deb | \
 	    while read A ;do
 	    if [ ! -f "$APTCACHE/"$(basename "$A") -a -f "$A" ]; then
 		echo " -> new cache content "$(basename "$A")" added"

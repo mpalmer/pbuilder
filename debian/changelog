@@ -1,10 +1,20 @@
-pbuilder (0.132) UNRELEASED; urgency=low
+pbuilder (0.133) UNRELEASED; urgency=low
 
   [Matt Kraai]
   * Change "exec" to "execute" in the description of the --save-after-exec
     option.
 
- -- Matt Kraai <kraai@debian.org>  Wed, 28 Sep 2005 22:03:27 -0700
+ -- Junichi Uekawa <dancer@debian.org>  Fri, 30 Sep 2005 23:31:13 +0900
+
+pbuilder (0.132) unstable; urgency=low
+
+  * suppress warnings from find; it wants -maxdepth before any other 
+    argument. (closes: #330848)
+  * Documentation update patch from Osamu Aoki to clarify about 
+    configuration file priorities and issues associated with it.
+    (closes: #325318)
+
+ -- Junichi Uekawa <dancer@debian.org>  Fri, 30 Sep 2005 23:07:31 +0900
 
 pbuilder (0.131) unstable; urgency=low
 

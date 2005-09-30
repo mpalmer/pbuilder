@@ -2,10 +2,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/i386 $Id$
 $Id$
 
-Current time: Tue Sep 27 11:27:28 JST 2005
-pbuilder-time-stamp: 1127788048
+Current time: Fri Sep 30 23:16:00 JST 2005
+pbuilder-time-stamp: 1128089760
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.DMcuaP/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -44,7 +44,7 @@ Get:7 http://ftp.jp.debian.org etch/main po-debconf 0.9.0 [78.3kB]
 Get:8 http://ftp.jp.debian.org etch/main debhelper 4.9.8 [364kB]
 Get:9 http://ftp.jp.debian.org etch/main libdshconfig1 0.20.11-1 [10.7kB]
 Get:10 http://ftp.jp.debian.org etch/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2661kB in 1s (1482kB/s)
+Fetched 2661kB in 1s (1419kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 11497 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
@@ -90,19 +90,19 @@ The following NEW packages will be installed:
 Need to get 69.7kB of archives.
 After unpacking 193kB of additional disk space will be used.
 Get:1 http://ftp.jp.debian.org etch/main fakeroot 1.5.1 [69.7kB]
-Fetched 69.7kB in 0s (390kB/s)
+Fetched 69.7kB in 0s (339kB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 12040 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.5.1_i386.deb) ...
 Setting up fakeroot (1.5.1) ...
 
-/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.DMcuaP/dir1/11930/etc/passwd
-/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.DMcuaP/dir1/11930/etc/group
-/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.DMcuaP/dir1/11930/etc/shadow
+/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/14688/etc/passwd
+/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/14688/etc/group
+/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/14688/etc/shadow
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.DMcuaP/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.DMcuaP/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.DMcuaP/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: extracting dsh in dsh-0.25.6
@@ -418,7 +418,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue Sep 27 02:28:34 UTC 2005
+Fri Sep 30 14:17:04 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -488,13 +488,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue Sep 27 02:28:39 UTC 2005
+Fri Sep 30 14:17:09 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-b: b
-a: a
 c: c
+dsh: Process terminated (before write).
+a: a
+b: b
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -598,10 +599,10 @@ debian: warning: no utmp entry available and LOGNAME not defined; using uid of p
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> Terminate timeout process
-/usr/lib/pbuilder/pbuilder-buildpackage: line 135: 12231 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+/usr/lib/pbuilder/pbuilder-buildpackage: line 135: 14989 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Tue Sep 27 11:28:42 JST 2005
-pbuilder-time-stamp: 1127788122
+Current time: Fri Sep 30 23:17:12 JST 2005
+pbuilder-time-stamp: 1128089832
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.DMcuaP/dir1/11930 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/14688 and its subdirectories

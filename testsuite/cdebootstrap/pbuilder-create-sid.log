@@ -87,8 +87,10 @@ P: Retrieving zlib1g
 P: Validating zlib1g
 P: Retrieving libcap1
 P: Validating libcap1
-P: Retrieving libdb3
-P: Validating libdb3
+P: Retrieving libdb4.3
+P: Validating libdb4.3
+P: Retrieving libselinux1
+P: Validating libselinux1
 P: Retrieving libpam-modules
 P: Validating libpam-modules
 P: Retrieving procps
@@ -129,8 +131,6 @@ P: Retrieving libgdbm3
 P: Validating libgdbm3
 P: Retrieving man-db
 P: Validating man-db
-P: Retrieving libselinux1
-P: Validating libselinux1
 P: Retrieving login
 P: Validating login
 P: Retrieving passwd
@@ -229,6 +229,8 @@ P: Retrieving pciutils
 P: Validating pciutils
 P: Retrieving setserial
 P: Validating setserial
+P: Retrieving libdb3
+P: Validating libdb3
 P: Retrieving hostname
 P: Validating hostname
 P: Retrieving grep
@@ -241,10 +243,6 @@ P: Retrieving tar
 P: Validating tar
 P: Retrieving gzip
 P: Validating gzip
-P: Retrieving gcc-3.3-base
-P: Validating gcc-3.3-base
-P: Retrieving libstdc++5
-P: Validating libstdc++5
 P: Retrieving dselect
 P: Validating dselect
 P: Retrieving diff
@@ -280,7 +278,8 @@ P: Extracting libpam-runtime
 P: Extracting libpam0g
 P: Extracting zlib1g
 P: Extracting libcap1
-P: Extracting libdb3
+P: Extracting libselinux1
+P: Extracting libdb4.3
 P: Extracting libpam-modules
 P: Extracting procps
 P: Extracting base-passwd
@@ -289,7 +288,6 @@ P: Extracting libslang2
 P: Extracting libnewt0.51
 P: Extracting bsdutils
 P: Extracting dpkg
-P: Extracting libselinux1
 P: Extracting login
 P: Extracting passwd
 P: Extracting libsepol1
@@ -303,14 +301,13 @@ P: Extracting e2fsprogs
 P: Extracting initscripts
 P: Extracting sysv-rc
 P: Extracting sysvinit
+P: Extracting libdb3
 P: Extracting hostname
 P: Extracting grep
 P: Extracting ncurses-base
 P: Extracting mawk
 P: Extracting tar
 P: Extracting gzip
-P: Extracting gcc-3.3-base
-P: Extracting libstdc++5
 P: Extracting dselect
 P: Extracting diff
 P: Extracting base-files
@@ -344,14 +341,14 @@ P: Unpacking package libpam-runtime
 P: Unpacking package libpam0g
 P: Unpacking package zlib1g
 P: Unpacking package libcap1
-P: Unpacking package libdb3
+P: Unpacking package libselinux1
+P: Unpacking package libdb4.3
 P: Unpacking package libpam-modules
 P: Unpacking package procps
 P: Unpacking package makedev
 P: Unpacking package libslang2
 P: Unpacking package libnewt0.51
 P: Unpacking package bsdutils
-P: Unpacking package libselinux1
 P: Unpacking package login
 P: Unpacking package passwd
 P: Unpacking package libsepol1
@@ -365,14 +362,13 @@ P: Unpacking package e2fsprogs
 P: Unpacking package initscripts
 P: Unpacking package sysv-rc
 P: Unpacking package sysvinit
+P: Unpacking package libdb3
 P: Unpacking package hostname
 P: Unpacking package grep
 P: Unpacking package ncurses-base
 P: Unpacking package mawk
 P: Unpacking package tar
 P: Unpacking package gzip
-P: Unpacking package gcc-3.3-base
-P: Unpacking package libstdc++5
 P: Unpacking package dselect
 P: Unpacking package diff
 P: Unpacking package base-files
@@ -384,7 +380,6 @@ P: Configuring package sysv-rc
 P: Configuring package gcc-4.0-base
 P: Configuring package libpam-runtime
 P: Configuring package libc6
-P: Configuring package gcc-3.3-base
 P: Configuring package libcap1
 P: Configuring package libuuid1
 P: Configuring package libpam0g
@@ -401,6 +396,7 @@ P: Configuring package sed
 P: Configuring package e2fslibs
 P: Configuring package libcomerr2
 P: Configuring package mawk
+P: Configuring package libdb4.3
 P: Configuring package grep
 P: Configuring package hostname
 P: Configuring package libacl1
@@ -415,7 +411,6 @@ P: Configuring package libdb3
 P: Configuring package libselinux1
 P: Configuring package util-linux
 P: Configuring package libstdc++6
-P: Configuring package libstdc++5
 P: Configuring package libtext-charwidth-perl
 P: Configuring package libtext-wrapi18n-perl
 P: Configuring package coreutils
@@ -585,58 +580,15 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [34.1kB]
 Ign http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org sid/main Packages [3798kB]
-Fetched 3832kB in 2s (1759kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [3797kB]
+Fetched 3832kB in 3s (1273kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
 Building dependency tree...
-The following packages will be upgraded:
-  adduser dpkg dselect grep login passwd
-6 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3197kB of archives.
-After unpacking 525kB disk space will be freed.
-WARNING: The following packages cannot be authenticated!
-  dpkg grep login adduser passwd dselect
-Get:1 http://ftp.jp.debian.org sid/main dpkg 1.13.11.0.1 [1816kB]
-Get:2 http://ftp.jp.debian.org sid/main grep 2.5.1.ds2-1 [137kB]
-Get:3 http://ftp.jp.debian.org sid/main login 1:4.0.12-2 [489kB]
-Get:4 http://ftp.jp.debian.org sid/main adduser 3.67.1 [110kB]
-Get:5 http://ftp.jp.debian.org sid/main passwd 1:4.0.12-2 [525kB]
-Get:6 http://ftp.jp.debian.org sid/main dselect 1.13.11.0.1 [120kB]
-Preconfiguring packages ...
-Fetched 3197kB in 1s (1713kB/s)
-(Reading database ... 7675 files and directories currently installed.)
-Preparing to replace dpkg 1.13.11 (using .../dpkg_1.13.11.0.1_i386.deb) ...
-Unpacking replacement dpkg ...
-Setting up dpkg (1.13.11.0.1) ...
-
-(Reading database ... 7675 files and directories currently installed.)
-Preparing to replace grep 2.5.1.ds1-6 (using .../grep_2.5.1.ds2-1_i386.deb) ...
-Unpacking replacement grep ...
-Setting up grep (2.5.1.ds2-1) ...
-(Reading database ... 7674 files and directories currently installed.)
-Preparing to replace login 1:4.0.3-39 (using .../login_1%3a4.0.12-2_i386.deb) ...
-Unpacking replacement login ...
-Setting up login (4.0.12-2) ...
-Installing new version of config file /etc/pam.d/login ...
-Installing new version of config file /etc/login.defs ...
-
-(Reading database ... 7680 files and directories currently installed.)
-Preparing to replace adduser 3.67.0 (using .../adduser_3.67.1_all.deb) ...
-Unpacking replacement adduser ...
-Preparing to replace passwd 1:4.0.3-39 (using .../passwd_1%3a4.0.12-2_i386.deb) ...
-Unpacking replacement passwd ...
-Setting up passwd (4.0.12-2) ...
-
-(Reading database ... 7703 files and directories currently installed.)
-Preparing to replace dselect 1.13.11 (using .../dselect_1.13.11.0.1_i386.deb) ...
-Unpacking replacement dselect ...
-Setting up adduser (3.67.1) ...
-
-Setting up dselect (1.13.11.0.1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 apt is already the newest version.
@@ -676,9 +628,9 @@ Get:13 http://ftp.jp.debian.org sid/main g++ 4:4.0.1-3 [1384B]
 Get:14 http://ftp.jp.debian.org sid/main linux-kernel-headers 2.6.13+0rc3-1.1 [1544kB]
 Get:15 http://ftp.jp.debian.org sid/main libc6-dev 2.3.5-6 [2680kB]
 Get:16 http://ftp.jp.debian.org sid/main build-essential 11.1 [6834B]
-Fetched 19.5MB in 11s (1738kB/s)
+Fetched 19.5MB in 13s (1485kB/s)
 Selecting previously deselected package binutils.
-(Reading database ... 7703 files and directories currently installed.)
+(Reading database ... 7699 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20050902-1_i386.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.1-9_i386.deb) ...
@@ -733,6 +685,6 @@ Setting up dpkg-dev (1.13.11) ...
 Setting up build-essential (11.1) ...
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.DMcuaP/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//18821 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//20864 and its subdirectories

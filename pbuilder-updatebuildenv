@@ -52,7 +52,7 @@ save_aptcache
 if [ "${AUTOCLEANAPTCACHE}" = "yes" -a -n "$APTCACHE" ]; then
     echo " -> Cleaning the cached apt archive"
     $CHROOTEXEC /usr/bin/apt-get autoclean || true
-    find "$APTCACHE/" -name \*.deb -maxdepth 1 | \
+    find "$APTCACHE/" -maxdepth 1 -name \*.deb | \
 	while read A; do
 	    if [ ! -f "$BUILDPLACE/var/cache/apt/archives/"$(basename "$A") -a \
 		-f "$A" ]; then

@@ -236,6 +236,14 @@
 	configuration file  when switching between configuration files for
 	different distributions.
       </para>
+      <para>
+	Please note <filename>${HOME}/.pbuilderrc</filename> supersede system settings.  For
+	example, if you are upgrading from sarge to etch, you may need to
+	adjust some part of your local setting just like new
+	<filename>/usr/share/pbuilder/pbuilderrc</filename>, e.g., "unset DEBOOTSTRAPOPTS", to cope
+	with the use of cdebootstrap.  The same care is needed if you edited
+	old system setting in <filename>/etc/pbuilderrc</filename>.
+      </para>
     </sect1>
     <sect1 id="nonrootchroot">
       <title>Building packages as non-root inside the chroot</title>
