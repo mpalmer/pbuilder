@@ -4,7 +4,7 @@ Building the build environment
 I: Retrieving Release
 I: Retrieving Packages
 I: Validating Packages
-I: Checking component main on http://ftp.jp.debian.org/debian...
+I: Checking component main on http://ftp.jp.debian.org/debian-amd64/debian...
 I: Extracting base-files...
 I: Extracting base-passwd...
 I: Extracting bash...
@@ -322,11 +322,15 @@ Refreshing the base.tgz
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
-Get:2 http://ftp.jp.debian.org sid Release [34.1kB]
-Get:3 http://ftp.jp.debian.org sid/main Packages [3797kB]
-Fetched 3832kB in 2s (1485kB/s)
+Get:2 http://ftp.jp.debian.org sid Release [4800B]
+Ign http://ftp.jp.debian.org sid Release
+Get:3 http://ftp.jp.debian.org sid/main Packages [3698kB]
+Fetched 3703kB in 1s (1865kB/s)
 Reading package lists...
+W: GPG error: http://ftp.jp.debian.org sid Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY E415B2B4B5F5BBED
+W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
+Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
 You might want to run `apt-get -f install' to correct these.
@@ -338,4 +342,4 @@ E: Unmet dependencies. Try using -f.
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//2990 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//10774 and its subdirectories

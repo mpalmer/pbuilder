@@ -1,3 +1,5 @@
+dpkg-checkbuilddeps: Unmet build dependencies: libdshconfig1-dev (>= 0.20.11-1)
+W: Unmet build-dependency in source
 dpkg-buildpackage: source package is dsh
 dpkg-buildpackage: source version is 0.25.6-1
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
@@ -6,14 +8,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.6
@@ -25,20 +27,43 @@ dpkg-source: building dsh in dsh_0.25.6-1.dsc
  dpkg-genchanges -S
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: source only upload (original source is included)
-I: using fakeroot in build.
-pbuilder-buildpackage/i386 $Id$
+W: /home/dancer/.pbuilderrc does not exist
+pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Fri Sep 30 22:50:02 JST 2005
-pbuilder-time-stamp: 1128088202
+Current time: Sun Oct  2 14:01:24 JST 2005
+pbuilder-time-stamp: 1128229284
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result
+Obtaining the cached apt archive contents
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//binutils_2.16.1cvs20050902-1_amd64.deb' to `/var/cache/pbuilder/aptcache/binutils_2.16.1cvs20050902-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//cpp-4.0_4.0.1-6_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp-4.0_4.0.1-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//cpp_4%3a4.0.1-3_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp_4%3a4.0.1-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//perl-modules_5.8.7-4_all.deb' to `/var/cache/pbuilder/aptcache/perl-modules_5.8.7-4_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//perl_5.8.7-4_amd64.deb' to `/var/cache/pbuilder/aptcache/perl_5.8.7-4_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//patch_2.5.9-2_amd64.deb' to `/var/cache/pbuilder/aptcache/patch_2.5.9-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//make_3.80-11_amd64.deb' to `/var/cache/pbuilder/aptcache/make_3.80-11_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//dpkg-dev_1.13.11_all.deb' to `/var/cache/pbuilder/aptcache/dpkg-dev_1.13.11_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//gcc-4.0_4.0.1-6_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-4.0_4.0.1-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//gcc_4%3a4.0.1-3_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc_4%3a4.0.1-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//libstdc++6-4.0-dev_4.0.1-6_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++6-4.0-dev_4.0.1-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//g++-4.0_4.0.1-6_amd64.deb' to `/var/cache/pbuilder/aptcache/g++-4.0_4.0.1-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//g++_4%3a4.0.1-3_amd64.deb' to `/var/cache/pbuilder/aptcache/g++_4%3a4.0.1-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//linux-kernel-headers_2.6.13+0rc3-1.1_amd64.deb' to `/var/cache/pbuilder/aptcache/linux-kernel-headers_2.6.13+0rc3-1.1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//libc6-dev_2.3.5-6_amd64.deb' to `/var/cache/pbuilder/aptcache/libc6-dev_2.3.5-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//build-essential_11.1_amd64.deb' to `/var/cache/pbuilder/aptcache/build-essential_11.1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//cpp-4.0_4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp-4.0_4.0.2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//perl-modules_5.8.7-5_all.deb' to `/var/cache/pbuilder/aptcache/perl-modules_5.8.7-5_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//perl_5.8.7-5_amd64.deb' to `/var/cache/pbuilder/aptcache/perl_5.8.7-5_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//gcc-4.0_4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-4.0_4.0.2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//libstdc++6-4.0-dev_4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++6-4.0-dev_4.0.2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives//g++-4.0_4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/g++-4.0_4.0.2-1_amd64.deb': Invalid cross-device link
 Installing the build-deps
  -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.20 2005/08/17 00:46:54 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
@@ -59,33 +84,33 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2802kB of archives.
-After unpacking 8630kB of additional disk space will be used.
+Need to get 2861kB of archives.
+After unpacking 9437kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   libmagic1 file debconf-utils html2text gettext intltool-debian po-debconf
   debhelper libdshconfig1 libdshconfig1-dev
-Get:1 http://ftp.jp.debian.org sid/main libmagic1 4.12-1 [233kB]
-Get:2 http://ftp.jp.debian.org sid/main file 4.12-1 [28.6kB]
+Get:1 http://ftp.jp.debian.org sid/main libmagic1 4.12-1 [234kB]
+Get:2 http://ftp.jp.debian.org sid/main file 4.12-1 [29.2kB]
 Get:3 http://ftp.jp.debian.org sid/main debconf-utils 1.4.58 [33.0kB]
-Get:4 http://ftp.jp.debian.org sid/main html2text 1.3.2a-3 [98.9kB]
-Get:5 http://ftp.jp.debian.org sid/main gettext 0.14.5-2 [1775kB]
+Get:4 http://ftp.jp.debian.org sid/main html2text 1.3.2a-3 [115kB]
+Get:5 http://ftp.jp.debian.org sid/main gettext 0.14.5-2 [1815kB]
 Get:6 http://ftp.jp.debian.org sid/main intltool-debian 0.34.1+20050828 [27.5kB]
 Get:7 http://ftp.jp.debian.org sid/main po-debconf 0.9.0 [78.3kB]
 Get:8 http://ftp.jp.debian.org sid/main debhelper 4.9.11 [505kB]
-Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.11-1 [10.7kB]
-Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2802kB in 1s (2284kB/s)
+Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.11-1 [10.9kB]
+Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.11-1 [12.6kB]
+Fetched 2861kB in 1s (2160kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11506 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
+(Reading database ... 11269 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.12-1_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.12-1_i386.deb) ...
+Unpacking file (from .../archives/file_4.12-1_amd64.deb) ...
 Selecting previously deselected package debconf-utils.
 Unpacking debconf-utils (from .../debconf-utils_1.4.58_all.deb) ...
 Selecting previously deselected package html2text.
-Unpacking html2text (from .../html2text_1.3.2a-3_i386.deb) ...
+Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.14.5-2_i386.deb) ...
+Unpacking gettext (from .../gettext_0.14.5-2_amd64.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.34.1+20050828_all.deb) ...
 Selecting previously deselected package po-debconf.
@@ -93,9 +118,9 @@ Unpacking po-debconf (from .../po-debconf_0.9.0_all.deb) ...
 Selecting previously deselected package debhelper.
 Unpacking debhelper (from .../debhelper_4.9.11_all.deb) ...
 Selecting previously deselected package libdshconfig1.
-Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_i386.deb) ...
+Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
-Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_i386.deb) ...
+Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_amd64.deb) ...
 Setting up libmagic1 (4.12-1) ...
 
 Setting up file (4.12-1) ...
@@ -112,51 +137,56 @@ Setting up libdshconfig1 (0.20.11-1) ...
 
 Setting up libdshconfig1-dev (0.20.11-1) ...
  -> Finished parsing the build-deps
-Reading package lists...
-Building dependency tree...
-The following NEW packages will be installed:
-  fakeroot
-0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 69.7kB of archives.
-After unpacking 193kB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  fakeroot
-Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.5.1 [69.7kB]
-Fetched 69.7kB in 0s (600kB/s)
-Selecting previously deselected package fakeroot.
-(Reading database ... 12096 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.5.1_i386.deb) ...
-Setting up fakeroot (1.5.1) ...
-
-/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir2/9136/etc/passwd
-/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir2/9136/etc/group
-/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir2/9136/etc/shadow
+Copying back the cached apt archive contents
+ -> new cache content libmagic1_4.12-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libmagic1_4.12-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/libmagic1_4.12-1_amd64.deb': Invalid cross-device link
+ -> new cache content file_4.12-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///file_4.12-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/file_4.12-1_amd64.deb': Invalid cross-device link
+ -> new cache content debconf-utils_1.4.58_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///debconf-utils_1.4.58_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/debconf-utils_1.4.58_all.deb': Invalid cross-device link
+ -> new cache content html2text_1.3.2a-3_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///html2text_1.3.2a-3_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/html2text_1.3.2a-3_amd64.deb': Invalid cross-device link
+ -> new cache content gettext_0.14.5-2_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///gettext_0.14.5-2_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/gettext_0.14.5-2_amd64.deb': Invalid cross-device link
+ -> new cache content intltool-debian_0.34.1+20050828_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///intltool-debian_0.34.1+20050828_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/intltool-debian_0.34.1+20050828_all.deb': Invalid cross-device link
+ -> new cache content po-debconf_0.9.0_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///po-debconf_0.9.0_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/po-debconf_0.9.0_all.deb': Invalid cross-device link
+ -> new cache content debhelper_4.9.11_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///debhelper_4.9.11_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/debhelper_4.9.11_all.deb': Invalid cross-device link
+ -> new cache content libdshconfig1_0.20.11-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libdshconfig1_0.20.11-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/libdshconfig1_0.20.11-1_amd64.deb': Invalid cross-device link
+ -> new cache content libdshconfig1-dev_0.20.11-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libdshconfig1-dev_0.20.11-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/libdshconfig1-dev_0.20.11-1_amd64.deb': Invalid cross-device link
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/etc/group
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/etc/shadow
 Copying source file
     -> copying [../dsh_0.25.6-1.dsc]
     -> copying [../dsh_0.25.6.orig.tar.gz]
     -> copying [../dsh_0.25.6-1.diff.gz]
 Extracting source
-dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-source: extracting dsh in dsh-0.25.6
 dpkg-source: unpacking dsh_0.25.6.orig.tar.gz
 dpkg-source: applying ./dsh_0.25.6-1.diff.gz
  -> Building the package
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-buildpackage: source package is dsh
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-buildpackage: source version is 0.25.6-1
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-buildpackage: host architecture i386
-dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
- fakeroot debian/rules clean
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-buildpackage: host architecture amd64
+dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+ debian/rules clean
 dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
@@ -172,9 +202,9 @@ make[1]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.6
-dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-source: building dsh using existing dsh_0.25.6.orig.tar.gz
 dpkg-source: building dsh in dsh_0.25.6-1.diff.gz
 dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
@@ -217,8 +247,8 @@ checking how to run the C preprocessor... gcc -E
 checking for egrep... grep -E
 checking for ANSI C header files... yes
 checking for sys/wait.h that is POSIX.1 compatible... yes
-checking build system type... i686-pc-linux-gnu
-checking host system type... i686-pc-linux-gnu
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
 checking for a sed that does not truncate output... /bin/sed
 checking for ld used by gcc... /usr/bin/ld
 checking if the linker (/usr/bin/ld) is GNU ld... yes
@@ -276,7 +306,7 @@ checking if gcc supports -fno-rtti -fno-exceptions... no
 checking for gcc option to produce PIC... -fPIC
 checking if gcc PIC flag -fPIC works... yes
 checking if gcc supports -c -o file.o... yes
-checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
 checking whether -lc should be explicitly linked in... no
 checking dynamic linker characteristics... GNU/Linux ld.so
 checking how to hardcode library paths into programs... immediate
@@ -286,13 +316,13 @@ checking whether to build shared libraries... yes
 checking whether to build static libraries... yes
 configure: creating libtool
 appending configuration tag "CXX" to libtool
-checking for ld used by g++... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
-checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
 checking for g++ option to produce PIC... -fPIC
 checking if g++ PIC flag -fPIC works... yes
 checking if g++ supports -c -o file.o... yes
-checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
 checking dynamic linker characteristics... GNU/Linux ld.so
 checking how to hardcode library paths into programs... immediate
 checking whether stripping libraries is possible... yes
@@ -302,8 +332,8 @@ checking for msgfmt... /usr/bin/msgfmt
 checking for gmsgfmt... /usr/bin/msgfmt
 checking for xgettext... /usr/bin/xgettext
 checking for msgmerge... /usr/bin/msgmerge
-checking for ld used by GCC... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for ld used by GCC... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
 checking for shared library run path origin... done
 checking whether NLS is requested... yes
 checking for GNU gettext in libc... yes
@@ -439,9 +469,9 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -453,7 +483,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Sep 30 13:50:48 UTC 2005
+Sun Oct  2 05:01:48 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -523,13 +553,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Fri Sep 30 13:50:53 UTC 2005
+Sun Oct  2 05:01:53 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
 c: c
+dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -542,7 +573,7 @@ make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 make[1]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 touch build-stamp
- fakeroot debian/rules binary
+ debian/rules binary
 dh_testdir
 dh_testroot
 dh_clean -k
@@ -624,19 +655,38 @@ debian: warning: no utmp entry available and LOGNAME not defined; using uid of p
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dh_md5sums
 dh_builddeb
-dpkg-deb: building package `dsh' in `../dsh_0.25.6-1_i386.deb'.
+dpkg-deb: building package `dsh' in `../dsh_0.25.6-1_amd64.deb'.
  dpkg-genchanges
-dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
- -> Terminate timeout process
+Copying back the cached apt archive contents
+ -> new cache content libmagic1_4.12-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libmagic1_4.12-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/libmagic1_4.12-1_amd64.deb': Invalid cross-device link
+ -> new cache content file_4.12-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///file_4.12-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/file_4.12-1_amd64.deb': Invalid cross-device link
+ -> new cache content debconf-utils_1.4.58_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///debconf-utils_1.4.58_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/debconf-utils_1.4.58_all.deb': Invalid cross-device link
+ -> new cache content html2text_1.3.2a-3_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///html2text_1.3.2a-3_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/html2text_1.3.2a-3_amd64.deb': Invalid cross-device link
+ -> new cache content gettext_0.14.5-2_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///gettext_0.14.5-2_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/gettext_0.14.5-2_amd64.deb': Invalid cross-device link
+ -> new cache content intltool-debian_0.34.1+20050828_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///intltool-debian_0.34.1+20050828_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/intltool-debian_0.34.1+20050828_all.deb': Invalid cross-device link
+ -> new cache content po-debconf_0.9.0_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///po-debconf_0.9.0_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/po-debconf_0.9.0_all.deb': Invalid cross-device link
+ -> new cache content debhelper_4.9.11_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///debhelper_4.9.11_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/debhelper_4.9.11_all.deb': Invalid cross-device link
+ -> new cache content libdshconfig1_0.20.11-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libdshconfig1_0.20.11-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/libdshconfig1_0.20.11-1_amd64.deb': Invalid cross-device link
+ -> new cache content libdshconfig1-dev_0.20.11-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libdshconfig1-dev_0.20.11-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929/var/cache/apt/archives/libdshconfig1-dev_0.20.11-1_amd64.deb': Invalid cross-device link
  -> unmounting dev/pts filesystem
-/usr/lib/pbuilder/pbuilder-modules: line 89:  9444 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
  -> unmounting proc filesystem
-Current time: Fri Sep 30 22:50:55 JST 2005
-pbuilder-time-stamp: 1128088255
+Current time: Sun Oct  2 14:01:54 JST 2005
+pbuilder-time-stamp: 1128229314
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir2/9136 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir2/15929 and its subdirectories

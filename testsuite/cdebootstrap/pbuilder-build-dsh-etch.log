@@ -1,17 +1,207 @@
-I: using fakeroot in build.
-pbuilder-buildpackage/i386 $Id$
+pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Fri Sep 30 23:16:00 JST 2005
-pbuilder-time-stamp: 1128089760
+Current time: Sun Oct  2 14:13:27 JST 2005
+pbuilder-time-stamp: 1128230007
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
+Obtaining the cached apt archive contents
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//binutils_2.16.1cvs20050902-1_amd64.deb' to `/var/cache/pbuilder/aptcache/binutils_2.16.1cvs20050902-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cpp-4.0_4.0.1-6_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp-4.0_4.0.1-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cpp_4%3a4.0.1-3_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp_4%3a4.0.1-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//perl-modules_5.8.7-4_all.deb' to `/var/cache/pbuilder/aptcache/perl-modules_5.8.7-4_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//perl_5.8.7-4_amd64.deb' to `/var/cache/pbuilder/aptcache/perl_5.8.7-4_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//patch_2.5.9-2_amd64.deb' to `/var/cache/pbuilder/aptcache/patch_2.5.9-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//make_3.80-11_amd64.deb' to `/var/cache/pbuilder/aptcache/make_3.80-11_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//dpkg-dev_1.13.11_all.deb' to `/var/cache/pbuilder/aptcache/dpkg-dev_1.13.11_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc-4.0_4.0.1-6_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-4.0_4.0.1-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc_4%3a4.0.1-3_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc_4%3a4.0.1-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libstdc++6-4.0-dev_4.0.1-6_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++6-4.0-dev_4.0.1-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//g++-4.0_4.0.1-6_amd64.deb' to `/var/cache/pbuilder/aptcache/g++-4.0_4.0.1-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//g++_4%3a4.0.1-3_amd64.deb' to `/var/cache/pbuilder/aptcache/g++_4%3a4.0.1-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//linux-kernel-headers_2.6.13+0rc3-1.1_amd64.deb' to `/var/cache/pbuilder/aptcache/linux-kernel-headers_2.6.13+0rc3-1.1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libc6-dev_2.3.5-6_amd64.deb' to `/var/cache/pbuilder/aptcache/libc6-dev_2.3.5-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//build-essential_11.1_amd64.deb' to `/var/cache/pbuilder/aptcache/build-essential_11.1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cpp-4.0_4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp-4.0_4.0.2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//perl-modules_5.8.7-5_all.deb' to `/var/cache/pbuilder/aptcache/perl-modules_5.8.7-5_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//perl_5.8.7-5_amd64.deb' to `/var/cache/pbuilder/aptcache/perl_5.8.7-5_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc-4.0_4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-4.0_4.0.2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libstdc++6-4.0-dev_4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++6-4.0-dev_4.0.2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//g++-4.0_4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/g++-4.0_4.0.2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//binutils_2.15-6_amd64.deb' to `/var/cache/pbuilder/aptcache/binutils_2.15-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cpp-3.3_1%3a3.3.5-13_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp-3.3_1%3a3.3.5-13_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cpp_4%3a3.3.5-3_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp_4%3a3.3.5-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//perl-modules_5.8.4-8_all.deb' to `/var/cache/pbuilder/aptcache/perl-modules_5.8.4-8_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//perl_5.8.4-8_amd64.deb' to `/var/cache/pbuilder/aptcache/perl_5.8.4-8_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//make_3.80-9_amd64.deb' to `/var/cache/pbuilder/aptcache/make_3.80-9_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//dpkg-dev_1.10.28_all.deb' to `/var/cache/pbuilder/aptcache/dpkg-dev_1.10.28_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc-3.3_1%3a3.3.5-13_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-3.3_1%3a3.3.5-13_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc_4%3a3.3.5-3_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc_4%3a3.3.5-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//linux-kernel-headers_2.5.999-test7-bk-17_amd64.deb' to `/var/cache/pbuilder/aptcache/linux-kernel-headers_2.5.999-test7-bk-17_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libc6-dev_2.3.2.ds1-22_amd64.deb' to `/var/cache/pbuilder/aptcache/libc6-dev_2.3.2.ds1-22_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libstdc++5-3.3-dev_1%3a3.3.5-13_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++5-3.3-dev_1%3a3.3.5-13_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//g++-3.3_1%3a3.3.5-13_amd64.deb' to `/var/cache/pbuilder/aptcache/g++-3.3_1%3a3.3.5-13_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//g++_4%3a3.3.5-3_amd64.deb' to `/var/cache/pbuilder/aptcache/g++_4%3a3.3.5-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//build-essential_10.1_amd64.deb' to `/var/cache/pbuilder/aptcache/build-essential_10.1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libc6_2.3.5-6_amd64.deb' to `/var/cache/pbuilder/aptcache/libc6_2.3.5-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libncurses5_5.4-9_amd64.deb' to `/var/cache/pbuilder/aptcache/libncurses5_5.4-9_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//base-passwd_3.5.10_amd64.deb' to `/var/cache/pbuilder/aptcache/base-passwd_3.5.10_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//base-files_3.1.7_amd64.deb' to `/var/cache/pbuilder/aptcache/base-files_3.1.7_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libgpg-error0_1.1-4_amd64.deb' to `/var/cache/pbuilder/aptcache/libgpg-error0_1.1-4_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libgcrypt11_1.2.1-4_amd64.deb' to `/var/cache/pbuilder/aptcache/libgcrypt11_1.2.1-4_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//zlib1g_1%3a1.2.3-4_amd64.deb' to `/var/cache/pbuilder/aptcache/zlib1g_1%3a1.2.3-4_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libopencdk8_0.5.7-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libopencdk8_0.5.7-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libtasn1-2_0.2.13-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libtasn1-2_0.2.13-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//liblzo1_1.08-2_amd64.deb' to `/var/cache/pbuilder/aptcache/liblzo1_1.08-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libgnutls12_1.2.6-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libgnutls12_1.2.6-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libgcc1_1%3a4.0.1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libgcc1_1%3a4.0.1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc-4.0-base_4.0.1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-4.0-base_4.0.1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libstdc++6_4.0.1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++6_4.0.1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libpcre3_6.3-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libpcre3_6.3-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//exim4-daemon-light_4.52-2_amd64.deb' to `/var/cache/pbuilder/aptcache/exim4-daemon-light_4.52-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libselinux1_1.26-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libselinux1_1.26-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libpam-runtime_0.76-23_all.deb' to `/var/cache/pbuilder/aptcache/libpam-runtime_0.76-23_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libpam0g_0.76-23_amd64.deb' to `/var/cache/pbuilder/aptcache/libpam0g_0.76-23_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//debianutils_2.14.3_amd64.deb' to `/var/cache/pbuilder/aptcache/debianutils_2.14.3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//perl-modules_5.8.7-3_all.deb' to `/var/cache/pbuilder/aptcache/perl-modules_5.8.7-3_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//perl_5.8.7-3_amd64.deb' to `/var/cache/pbuilder/aptcache/perl_5.8.7-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//perl-base_5.8.7-3_amd64.deb' to `/var/cache/pbuilder/aptcache/perl-base_5.8.7-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//liblocale-gettext-perl_1.05-1_amd64.deb' to `/var/cache/pbuilder/aptcache/liblocale-gettext-perl_1.05-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libtext-iconv-perl_1.4-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libtext-iconv-perl_1.4-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libtext-charwidth-perl_0.04-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libtext-charwidth-perl_0.04-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libtext-wrapi18n-perl_0.06-2_all.deb' to `/var/cache/pbuilder/aptcache/libtext-wrapi18n-perl_0.06-2_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//debconf-i18n_1.4.58_all.deb' to `/var/cache/pbuilder/aptcache/debconf-i18n_1.4.58_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//debconf_1.4.58_all.deb' to `/var/cache/pbuilder/aptcache/debconf_1.4.58_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//adduser_3.67_all.deb' to `/var/cache/pbuilder/aptcache/adduser_3.67_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cron_3.0pl1-91_amd64.deb' to `/var/cache/pbuilder/aptcache/cron_3.0pl1-91_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//exim4-config_4.52-2_all.deb' to `/var/cache/pbuilder/aptcache/exim4-config_4.52-2_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//exim4-base_4.52-2_amd64.deb' to `/var/cache/pbuilder/aptcache/exim4-base_4.52-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libpam-modules_0.76-23_amd64.deb' to `/var/cache/pbuilder/aptcache/libpam-modules_0.76-23_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//login_1%3a4.0.3-35_amd64.deb' to `/var/cache/pbuilder/aptcache/login_1%3a4.0.3-35_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//passwd_1%3a4.0.3-35_amd64.deb' to `/var/cache/pbuilder/aptcache/passwd_1%3a4.0.3-35_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//bash_3.0-16_amd64.deb' to `/var/cache/pbuilder/aptcache/bash_3.0-16_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//coreutils_5.2.1-2.1_amd64.deb' to `/var/cache/pbuilder/aptcache/coreutils_5.2.1-2.1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//dpkg_1.13.11_amd64.deb' to `/var/cache/pbuilder/aptcache/dpkg_1.13.11_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//e2fslibs_1.38-2_amd64.deb' to `/var/cache/pbuilder/aptcache/e2fslibs_1.38-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//e2fsprogs_1.38-2_amd64.deb' to `/var/cache/pbuilder/aptcache/e2fsprogs_1.38-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//findutils_4.2.25-1_amd64.deb' to `/var/cache/pbuilder/aptcache/findutils_4.2.25-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//grep_2.5.1.ds1-6_amd64.deb' to `/var/cache/pbuilder/aptcache/grep_2.5.1.ds1-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gzip_1.3.5-12_amd64.deb' to `/var/cache/pbuilder/aptcache/gzip_1.3.5-12_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//hostname_2.91_amd64.deb' to `/var/cache/pbuilder/aptcache/hostname_2.91_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//ncurses-bin_5.4-9_amd64.deb' to `/var/cache/pbuilder/aptcache/ncurses-bin_5.4-9_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libsepol1_1.8-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libsepol1_1.8-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//sysvinit_2.86.ds1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/sysvinit_2.86.ds1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//ncurses-base_5.4-9_all.deb' to `/var/cache/pbuilder/aptcache/ncurses-base_5.4-9_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//lsb-base_3.0-5_all.deb' to `/var/cache/pbuilder/aptcache/lsb-base_3.0-5_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//console-common_0.7.53_all.deb' to `/var/cache/pbuilder/aptcache/console-common_0.7.53_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//dselect_1.13.11_amd64.deb' to `/var/cache/pbuilder/aptcache/dselect_1.13.11_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//initscripts_2.86.ds1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/initscripts_2.86.ds1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libattr1_2.4.21-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libattr1_2.4.21-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libacl1_2.2.29-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libacl1_2.2.29-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libblkid1_1.38-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libblkid1_1.38-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libcomerr2_1.38-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libcomerr2_1.38-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libss2_1.38-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libss2_1.38-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libuuid1_1.38-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libuuid1_1.38-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//sysv-rc_2.86.ds1-2_all.deb' to `/var/cache/pbuilder/aptcache/sysv-rc_2.86.ds1-2_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//binutils_2.16.1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/binutils_2.16.1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libstdc++5-3.3-dev_1%3a3.3.6-7_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++5-3.3-dev_1%3a3.3.6-7_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//g++-3.3_1%3a3.3.6-7_amd64.deb' to `/var/cache/pbuilder/aptcache/g++-3.3_1%3a3.3.6-7_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc-3.3_1%3a3.3.6-7_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-3.3_1%3a3.3.6-7_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cpp-3.3_1%3a3.3.6-7_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp-3.3_1%3a3.3.6-7_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc-3.3-base_1%3a3.3.6-7_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-3.3-base_1%3a3.3.6-7_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libstdc++5_1%3a3.3.6-7_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++5_1%3a3.3.6-7_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//dmidecode_2.7-2_amd64.deb' to `/var/cache/pbuilder/aptcache/dmidecode_2.7-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//laptop-detect_0.12.1_amd64.deb' to `/var/cache/pbuilder/aptcache/laptop-detect_0.12.1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//tasksel_2.31_all.deb' to `/var/cache/pbuilder/aptcache/tasksel_2.31_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//base-config_2.71_all.deb' to `/var/cache/pbuilder/aptcache/base-config_2.71_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cpio_2.6-5_amd64.deb' to `/var/cache/pbuilder/aptcache/cpio_2.6-5_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gettext-base_0.14.5-2_amd64.deb' to `/var/cache/pbuilder/aptcache/gettext-base_0.14.5-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//bsdmainutils_6.1.2_amd64.deb' to `/var/cache/pbuilder/aptcache/bsdmainutils_6.1.2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//groff-base_1.18.1.1-10_amd64.deb' to `/var/cache/pbuilder/aptcache/groff-base_1.18.1.1-10_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//iptables_1.3.3-2_amd64.deb' to `/var/cache/pbuilder/aptcache/iptables_1.3.3-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libncursesw5_5.4-9_amd64.deb' to `/var/cache/pbuilder/aptcache/libncursesw5_5.4-9_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libslang2_2.0.4-7_amd64.deb' to `/var/cache/pbuilder/aptcache/libslang2_2.0.4-7_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libssl0.9.7_0.9.7g-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libssl0.9.7_0.9.7g-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//logrotate_3.7.1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/logrotate_3.7.1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//man-db_2.4.3-2_amd64.deb' to `/var/cache/pbuilder/aptcache/man-db_2.4.3-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//manpages_2.02-2_all.deb' to `/var/cache/pbuilder/aptcache/manpages_2.02-2_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//module-init-tools_3.2-pre8-1_amd64.deb' to `/var/cache/pbuilder/aptcache/module-init-tools_3.2-pre8-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//modutils_2.4.27.0-3_amd64.deb' to `/var/cache/pbuilder/aptcache/modutils_2.4.27.0-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//nano_1.3.8-2_amd64.deb' to `/var/cache/pbuilder/aptcache/nano_1.3.8-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//net-tools_1.60-15_amd64.deb' to `/var/cache/pbuilder/aptcache/net-tools_1.60-15_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//netkit-inetd_0.10-10.2_amd64.deb' to `/var/cache/pbuilder/aptcache/netkit-inetd_0.10-10.2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//wget_1.10.1-1_amd64.deb' to `/var/cache/pbuilder/aptcache/wget_1.10.1-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//whiptail_0.51.6-30_amd64.deb' to `/var/cache/pbuilder/aptcache/whiptail_0.51.6-30_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libnewt0.51_0.51.6-30_amd64.deb' to `/var/cache/pbuilder/aptcache/libnewt0.51_0.51.6-30_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//makedev_2.3.1-78_all.deb' to `/var/cache/pbuilder/aptcache/makedev_2.3.1-78_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//procps_1%3a3.2.5-1_amd64.deb' to `/var/cache/pbuilder/aptcache/procps_1%3a3.2.5-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//at_3.1.9_amd64.deb' to `/var/cache/pbuilder/aptcache/at_3.1.9_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cpp-4.0_4.0.1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp-4.0_4.0.1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//exim4_4.52-2_all.deb' to `/var/cache/pbuilder/aptcache/exim4_4.52-2_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc-4.0_4.0.1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-4.0_4.0.1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libstdc++6-4.0-dev_4.0.1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++6-4.0-dev_4.0.1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//g++-4.0_4.0.1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/g++-4.0_4.0.1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//telnet_0.17-31_amd64.deb' to `/var/cache/pbuilder/aptcache/telnet_0.17-31_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//dhcp3-client_3.0.3-3_amd64.deb' to `/var/cache/pbuilder/aptcache/dhcp3-client_3.0.3-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//dhcp3-common_3.0.3-3_amd64.deb' to `/var/cache/pbuilder/aptcache/dhcp3-common_3.0.3-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//psmisc_21.6-1_amd64.deb' to `/var/cache/pbuilder/aptcache/psmisc_21.6-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libdb1-compat_2.1.3-8_amd64.deb' to `/var/cache/pbuilder/aptcache/libdb1-compat_2.1.3-8_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libdb4.2_4.2.52-19_amd64.deb' to `/var/cache/pbuilder/aptcache/libdb4.2_4.2.52-19_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libgcc1_1%3a4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libgcc1_1%3a4.0.2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc-4.0-base_4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-4.0-base_4.0.2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libstdc++6_4.0.2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++6_4.0.2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//apt-utils_0.6.41_amd64.deb' to `/var/cache/pbuilder/aptcache/apt-utils_0.6.41_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libsigc++-1.2-5c2_1.2.5-5_amd64.deb' to `/var/cache/pbuilder/aptcache/libsigc++-1.2-5c2_1.2.5-5_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//aptitude_0.2.15.9-6_amd64.deb' to `/var/cache/pbuilder/aptcache/aptitude_0.2.15.9-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//apt_0.6.41_amd64.deb' to `/var/cache/pbuilder/aptcache/apt_0.6.41_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//bsdutils_1%3a2.12p-8_amd64.deb' to `/var/cache/pbuilder/aptcache/bsdutils_1%3a2.12p-8_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//grep_2.5.1.ds2-1_amd64.deb' to `/var/cache/pbuilder/aptcache/grep_2.5.1.ds2-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libdb4.3_4.3.28-3_amd64.deb' to `/var/cache/pbuilder/aptcache/libdb4.3_4.3.28-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libpam-runtime_0.79-3_all.deb' to `/var/cache/pbuilder/aptcache/libpam-runtime_0.79-3_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libpam0g_0.79-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libpam0g_0.79-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libpam-modules_0.79-2_amd64.deb' to `/var/cache/pbuilder/aptcache/libpam-modules_0.79-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//login_1%3a4.0.12-6_amd64.deb' to `/var/cache/pbuilder/aptcache/login_1%3a4.0.12-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//mount_2.12p-8_amd64.deb' to `/var/cache/pbuilder/aptcache/mount_2.12p-8_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//perl-base_5.8.7-5_amd64.deb' to `/var/cache/pbuilder/aptcache/perl-base_5.8.7-5_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//sed_4.1.4-4_amd64.deb' to `/var/cache/pbuilder/aptcache/sed_4.1.4-4_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//sysvinit_2.86.ds1-3_amd64.deb' to `/var/cache/pbuilder/aptcache/sysvinit_2.86.ds1-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//tar_1.15.1-2_amd64.deb' to `/var/cache/pbuilder/aptcache/tar_1.15.1-2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//util-linux_2.12p-8_amd64.deb' to `/var/cache/pbuilder/aptcache/util-linux_2.12p-8_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//base-files_3.1.9_amd64.deb' to `/var/cache/pbuilder/aptcache/base-files_3.1.9_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//lsb-base_3.0-9_all.deb' to `/var/cache/pbuilder/aptcache/lsb-base_3.0-9_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//initscripts_2.86.ds1-3_amd64.deb' to `/var/cache/pbuilder/aptcache/initscripts_2.86.ds1-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//passwd_1%3a4.0.12-6_amd64.deb' to `/var/cache/pbuilder/aptcache/passwd_1%3a4.0.12-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//sysv-rc_2.86.ds1-3_all.deb' to `/var/cache/pbuilder/aptcache/sysv-rc_2.86.ds1-3_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc-3.3-base_1%3a3.3.6-10_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-3.3-base_1%3a3.3.6-10_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libstdc++5_1%3a3.3.6-10_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++5_1%3a3.3.6-10_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//adduser_3.67.2_all.deb' to `/var/cache/pbuilder/aptcache/adduser_3.67.2_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//base-config_2.72_all.deb' to `/var/cache/pbuilder/aptcache/base-config_2.72_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cpio_2.6-6_amd64.deb' to `/var/cache/pbuilder/aptcache/cpio_2.6-6_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libssl0.9.7_0.9.7g-3_amd64.deb' to `/var/cache/pbuilder/aptcache/libssl0.9.7_0.9.7g-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//man-db_2.4.3-3_amd64.deb' to `/var/cache/pbuilder/aptcache/man-db_2.4.3-3_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//module-init-tools_3.2-pre9-1_amd64.deb' to `/var/cache/pbuilder/aptcache/module-init-tools_3.2-pre9-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//netbase_4.22_all.deb' to `/var/cache/pbuilder/aptcache/netbase_4.22_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//tasksel_2.32_all.deb' to `/var/cache/pbuilder/aptcache/tasksel_2.32_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libnewt0.51_0.51.6-31_amd64.deb' to `/var/cache/pbuilder/aptcache/libnewt0.51_0.51.6-31_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//whiptail_0.51.6-31_amd64.deb' to `/var/cache/pbuilder/aptcache/whiptail_0.51.6-31_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//exim4-daemon-light_4.53-1_amd64.deb' to `/var/cache/pbuilder/aptcache/exim4-daemon-light_4.53-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//exim4-config_4.53-1_all.deb' to `/var/cache/pbuilder/aptcache/exim4-config_4.53-1_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//exim4-base_4.53-1_amd64.deb' to `/var/cache/pbuilder/aptcache/exim4-base_4.53-1_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//exim4_4.53-1_all.deb' to `/var/cache/pbuilder/aptcache/exim4_4.53-1_all.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//cpp-3.3_1%3a3.3.6-10_amd64.deb' to `/var/cache/pbuilder/aptcache/cpp-3.3_1%3a3.3.6-10_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//dhcp3-client_3.0.3-4_amd64.deb' to `/var/cache/pbuilder/aptcache/dhcp3-client_3.0.3-4_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//dhcp3-common_3.0.3-4_amd64.deb' to `/var/cache/pbuilder/aptcache/dhcp3-common_3.0.3-4_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//gcc-3.3_1%3a3.3.6-10_amd64.deb' to `/var/cache/pbuilder/aptcache/gcc-3.3_1%3a3.3.6-10_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//libstdc++5-3.3-dev_1%3a3.3.6-10_amd64.deb' to `/var/cache/pbuilder/aptcache/libstdc++5-3.3-dev_1%3a3.3.6-10_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//g++-3.3_1%3a3.3.6-10_amd64.deb' to `/var/cache/pbuilder/aptcache/g++-3.3_1%3a3.3.6-10_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//diff_2.8.7-0.2_amd64.deb' to `/var/cache/pbuilder/aptcache/diff_2.8.7-0.2_amd64.deb': Invalid cross-device link
+ln: creating hard link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives//adduser_3.69_all.deb' to `/var/cache/pbuilder/aptcache/adduser_3.69_all.deb': Invalid cross-device link
 Installing the build-deps
  -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.20 2005/08/17 00:46:54 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
@@ -32,30 +222,30 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2661kB of archives.
-After unpacking 8413kB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org etch/main libmagic1 4.12-1 [233kB]
-Get:2 http://ftp.jp.debian.org etch/main file 4.12-1 [28.6kB]
+Need to get 2719kB of archives.
+After unpacking 9220kB of additional disk space will be used.
+Get:1 http://ftp.jp.debian.org etch/main libmagic1 4.12-1 [234kB]
+Get:2 http://ftp.jp.debian.org etch/main file 4.12-1 [29.2kB]
 Get:3 http://ftp.jp.debian.org etch/main debconf-utils 1.4.58 [33.0kB]
-Get:4 http://ftp.jp.debian.org etch/main html2text 1.3.2a-3 [98.9kB]
-Get:5 http://ftp.jp.debian.org etch/main gettext 0.14.5-2 [1775kB]
+Get:4 http://ftp.jp.debian.org etch/main html2text 1.3.2a-3 [115kB]
+Get:5 http://ftp.jp.debian.org etch/main gettext 0.14.5-2 [1815kB]
 Get:6 http://ftp.jp.debian.org etch/main intltool-debian 0.34.1+20050828 [27.5kB]
 Get:7 http://ftp.jp.debian.org etch/main po-debconf 0.9.0 [78.3kB]
 Get:8 http://ftp.jp.debian.org etch/main debhelper 4.9.8 [364kB]
-Get:9 http://ftp.jp.debian.org etch/main libdshconfig1 0.20.11-1 [10.7kB]
-Get:10 http://ftp.jp.debian.org etch/main libdshconfig1-dev 0.20.11-1 [12.4kB]
-Fetched 2661kB in 1s (1419kB/s)
+Get:9 http://ftp.jp.debian.org etch/main libdshconfig1 0.20.11-1 [10.9kB]
+Get:10 http://ftp.jp.debian.org etch/main libdshconfig1-dev 0.20.11-1 [12.6kB]
+Fetched 2719kB in 6s (422kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11497 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.12-1_i386.deb) ...
+(Reading database ... 11140 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.12-1_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.12-1_i386.deb) ...
+Unpacking file (from .../archives/file_4.12-1_amd64.deb) ...
 Selecting previously deselected package debconf-utils.
 Unpacking debconf-utils (from .../debconf-utils_1.4.58_all.deb) ...
 Selecting previously deselected package html2text.
-Unpacking html2text (from .../html2text_1.3.2a-3_i386.deb) ...
+Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.14.5-2_i386.deb) ...
+Unpacking gettext (from .../gettext_0.14.5-2_amd64.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.34.1+20050828_all.deb) ...
 Selecting previously deselected package po-debconf.
@@ -63,9 +253,9 @@ Unpacking po-debconf (from .../po-debconf_0.9.0_all.deb) ...
 Selecting previously deselected package debhelper.
 Unpacking debhelper (from .../debhelper_4.9.8_all.deb) ...
 Selecting previously deselected package libdshconfig1.
-Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_i386.deb) ...
+Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
-Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_i386.deb) ...
+Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_amd64.deb) ...
 Setting up libmagic1 (4.12-1) ...
 
 Setting up file (4.12-1) ...
@@ -82,46 +272,53 @@ Setting up libdshconfig1 (0.20.11-1) ...
 
 Setting up libdshconfig1-dev (0.20.11-1) ...
  -> Finished parsing the build-deps
-Reading Package Lists...
-Building Dependency Tree...
-The following NEW packages will be installed:
-  fakeroot
-0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 69.7kB of archives.
-After unpacking 193kB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org etch/main fakeroot 1.5.1 [69.7kB]
-Fetched 69.7kB in 0s (339kB/s)
-Selecting previously deselected package fakeroot.
-(Reading database ... 12040 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.5.1_i386.deb) ...
-Setting up fakeroot (1.5.1) ...
-
-/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/14688/etc/passwd
-/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/14688/etc/group
-/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/14688/etc/shadow
+Copying back the cached apt archive contents
+ -> new cache content libmagic1_4.12-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libmagic1_4.12-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/libmagic1_4.12-1_amd64.deb': Invalid cross-device link
+ -> new cache content file_4.12-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///file_4.12-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/file_4.12-1_amd64.deb': Invalid cross-device link
+ -> new cache content debconf-utils_1.4.58_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///debconf-utils_1.4.58_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/debconf-utils_1.4.58_all.deb': Invalid cross-device link
+ -> new cache content html2text_1.3.2a-3_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///html2text_1.3.2a-3_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/html2text_1.3.2a-3_amd64.deb': Invalid cross-device link
+ -> new cache content gettext_0.14.5-2_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///gettext_0.14.5-2_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/gettext_0.14.5-2_amd64.deb': Invalid cross-device link
+ -> new cache content intltool-debian_0.34.1+20050828_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///intltool-debian_0.34.1+20050828_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/intltool-debian_0.34.1+20050828_all.deb': Invalid cross-device link
+ -> new cache content po-debconf_0.9.0_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///po-debconf_0.9.0_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/po-debconf_0.9.0_all.deb': Invalid cross-device link
+ -> new cache content debhelper_4.9.8_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///debhelper_4.9.8_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/debhelper_4.9.8_all.deb': Invalid cross-device link
+ -> new cache content libdshconfig1_0.20.11-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libdshconfig1_0.20.11-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/libdshconfig1_0.20.11-1_amd64.deb': Invalid cross-device link
+ -> new cache content libdshconfig1-dev_0.20.11-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libdshconfig1-dev_0.20.11-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/libdshconfig1-dev_0.20.11-1_amd64.deb': Invalid cross-device link
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/etc/group
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/etc/shadow
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
-dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-source: extracting dsh in dsh-0.25.6
 dpkg-source: unpacking dsh_0.25.6.orig.tar.gz
 dpkg-source: applying ./dsh_0.25.6-1.diff.gz
  -> Building the package
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-buildpackage: source package is dsh
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-buildpackage: source version is 0.25.6-1
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-buildpackage: host architecture i386
-dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
- fakeroot debian/rules clean
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-buildpackage: host architecture amd64
+dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+ debian/rules clean
 dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
@@ -137,9 +334,9 @@ make[1]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.6
-dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-source: building dsh using existing dsh_0.25.6.orig.tar.gz
 dpkg-source: building dsh in dsh_0.25.6-1.diff.gz
 dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
@@ -182,8 +379,8 @@ checking how to run the C preprocessor... gcc -E
 checking for egrep... grep -E
 checking for ANSI C header files... yes
 checking for sys/wait.h that is POSIX.1 compatible... yes
-checking build system type... i686-pc-linux-gnu
-checking host system type... i686-pc-linux-gnu
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
 checking for a sed that does not truncate output... /bin/sed
 checking for ld used by gcc... /usr/bin/ld
 checking if the linker (/usr/bin/ld) is GNU ld... yes
@@ -241,7 +438,7 @@ checking if gcc supports -fno-rtti -fno-exceptions... no
 checking for gcc option to produce PIC... -fPIC
 checking if gcc PIC flag -fPIC works... yes
 checking if gcc supports -c -o file.o... yes
-checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
 checking whether -lc should be explicitly linked in... no
 checking dynamic linker characteristics... GNU/Linux ld.so
 checking how to hardcode library paths into programs... immediate
@@ -251,13 +448,13 @@ checking whether to build shared libraries... yes
 checking whether to build static libraries... yes
 configure: creating libtool
 appending configuration tag "CXX" to libtool
-checking for ld used by g++... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
-checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
 checking for g++ option to produce PIC... -fPIC
 checking if g++ PIC flag -fPIC works... yes
 checking if g++ supports -c -o file.o... yes
-checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
 checking dynamic linker characteristics... GNU/Linux ld.so
 checking how to hardcode library paths into programs... immediate
 checking whether stripping libraries is possible... yes
@@ -267,8 +464,8 @@ checking for msgfmt... /usr/bin/msgfmt
 checking for gmsgfmt... /usr/bin/msgfmt
 checking for xgettext... /usr/bin/xgettext
 checking for msgmerge... /usr/bin/msgmerge
-checking for ld used by GCC... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for ld used by GCC... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
 checking for shared library run path origin... done
 checking whether NLS is requested... yes
 checking for GNU gettext in libc... yes
@@ -414,11 +611,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-1: 1
 2: 2
+1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Sep 30 14:17:04 UTC 2005
+Sun Oct  2 05:14:00 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -488,14 +685,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Fri Sep 30 14:17:09 UTC 2005
+Sun Oct  2 05:14:05 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-c: c
-dsh: Process terminated (before write).
 a: a
 b: b
+dsh: Process terminated (before write).
+c: c
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -508,7 +705,7 @@ make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 make[1]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 touch build-stamp
- fakeroot debian/rules binary
+ debian/rules binary
 dh_testdir
 dh_testroot
 dh_clean -k
@@ -590,19 +787,38 @@ debian: warning: no utmp entry available and LOGNAME not defined; using uid of p
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dh_md5sums
 dh_builddeb
-dpkg-deb: building package `dsh' in `../dsh_0.25.6-1_i386.deb'.
+dpkg-deb: building package `dsh' in `../dsh_0.25.6-1_amd64.deb'.
  dpkg-genchanges -mJunichi Uekawa <dancer@debian.org>
-dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
- -> Terminate timeout process
-/usr/lib/pbuilder/pbuilder-buildpackage: line 135: 14989 Terminated              ( : Timeout process; sleep "${TIMEOUT_TIME}"; echo " -> Terminating build process due to timeout "; kill ${BUILD_PID} || true )
+Copying back the cached apt archive contents
+ -> new cache content libmagic1_4.12-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libmagic1_4.12-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/libmagic1_4.12-1_amd64.deb': Invalid cross-device link
+ -> new cache content file_4.12-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///file_4.12-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/file_4.12-1_amd64.deb': Invalid cross-device link
+ -> new cache content debconf-utils_1.4.58_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///debconf-utils_1.4.58_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/debconf-utils_1.4.58_all.deb': Invalid cross-device link
+ -> new cache content html2text_1.3.2a-3_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///html2text_1.3.2a-3_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/html2text_1.3.2a-3_amd64.deb': Invalid cross-device link
+ -> new cache content gettext_0.14.5-2_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///gettext_0.14.5-2_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/gettext_0.14.5-2_amd64.deb': Invalid cross-device link
+ -> new cache content intltool-debian_0.34.1+20050828_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///intltool-debian_0.34.1+20050828_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/intltool-debian_0.34.1+20050828_all.deb': Invalid cross-device link
+ -> new cache content po-debconf_0.9.0_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///po-debconf_0.9.0_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/po-debconf_0.9.0_all.deb': Invalid cross-device link
+ -> new cache content debhelper_4.9.8_all.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///debhelper_4.9.8_all.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/debhelper_4.9.8_all.deb': Invalid cross-device link
+ -> new cache content libdshconfig1_0.20.11-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libdshconfig1_0.20.11-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/libdshconfig1_0.20.11-1_amd64.deb': Invalid cross-device link
+ -> new cache content libdshconfig1-dev_0.20.11-1_amd64.deb added
+ln: creating hard link `/var/cache/pbuilder/aptcache///libdshconfig1-dev_0.20.11-1_amd64.deb' to `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123/var/cache/apt/archives/libdshconfig1-dev_0.20.11-1_amd64.deb': Invalid cross-device link
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Fri Sep 30 23:17:12 JST 2005
-pbuilder-time-stamp: 1128089832
+Current time: Sun Oct  2 14:14:06 JST 2005
+pbuilder-time-stamp: 1128230046
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external-cvs/pbuilder/pbuilder/testsuite/tmp.CjJHbD/dir1/14688 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/dir1/18123 and its subdirectories
