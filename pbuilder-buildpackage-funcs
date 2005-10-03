@@ -67,7 +67,8 @@ function showbuildbanner () {
 }
 
 function cowprotect () {
-    # a hack for cowdancer
+    # a hack for cowdancer, used when a file is edited in-place;
+    # Copy the file to create a new i-node so that hardlinked original is intact
     for A in "$@"; do
 	if readlink -f "$A"; then
 	    A=$(readlink -f "$A")
