@@ -81,10 +81,18 @@ function cowprotect () {
 function createbuilduser () {
     # create the build user
     if [ -n "$SUTOUSER" ]; then
-	cowprotect $BUILDPLACE/etc/passwd $BUILDPLACE/etc/group $BUILDPLACE/etc/shadow
-	echo "$BUILDUSERNAME:x:$BUILDUSERID:$BUILDUSERID:,,,:/tmp/buildd:/bin/sh" >> $BUILDPLACE/etc/passwd
-	echo "$BUILDUSERNAME:*:$BUILDUSERID:" >> $BUILDPLACE/etc/group
-	echo "$BUILDUSERNAME:!:::::::" >> $BUILDPLACE/etc/shadow
+	if ! grep -q ^$BUILDUSERNAME: $BUILDPLACE/etc/passwd; then
+	    cowprotect $BUILDPLACE/etc/passwd
+	    echo "$BUILDUSERNAME:x:$BUILDUSERID:$BUILDUSERID:,,,:/tmp/buildd:/bin/sh" >> $BUILDPLACE/etc/passwd
+	fi
+	if ! grep -q ^$BUILDUSERNAME: $BUILDPLACE/etc/group; then
+	    cowprotect $BUILDPLACE/etc/group
+	    echo "$BUILDUSERNAME:*:$BUILDUSERID:" >> $BUILDPLACE/etc/group
+	fi
+	if ! grep -q ^$BUILDUSERNAME: $BUILDPLACE/etc/shadow; then
+	    cowprotect $BUILDPLACE/etc/shadow
+	    echo "$BUILDUSERNAME:!:::::::" >> $BUILDPLACE/etc/shadow
+	fi
 	unset LOGNAME || true
     else
 	unset LOGNAME || true
