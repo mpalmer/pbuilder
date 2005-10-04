@@ -1,6 +1,6 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OkgCrR/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -17,8 +17,8 @@ Ign http://ftp.jp.debian.org sid Release
 Get:4 http://ftp.jp.debian.org ../project/experimental Release [4245B]
 Ign http://ftp.jp.debian.org ../project/experimental Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Get:5 http://ftp.jp.debian.org ../project/experimental/main Packages [90.9kB]
-Fetched 100kB in 0s (130kB/s)
+Get:5 http://ftp.jp.debian.org ../project/experimental/main Packages [90.6kB]
+Fetched 100.0kB in 0s (223kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -27,15 +27,15 @@ dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
-The following packages have been kept back:
-  aptitude
+The following NEW packages will be installed:
+  libsigc++-2.0-0c2
 The following packages will be upgraded:
-  adduser diff
-2 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
-Need to get 0B/357kB of archives.
-After unpacking 299kB of additional disk space will be used.
+  adduser aptitude diff
+3 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/3023kB of archives.
+After unpacking 2007kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  diff adduser
+  diff adduser libsigc++-2.0-0c2 aptitude
 Preconfiguring packages ...
 (Reading database ... 11292 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
@@ -44,17 +44,25 @@ Setting up diff (2.8.7-0.2) ...
 (Reading database ... 11300 files and directories currently installed.)
 Preparing to replace adduser 3.67.2 (using .../archives/adduser_3.69_all.deb) ...
 Unpacking replacement adduser ...
+Selecting previously deselected package libsigc++-2.0-0c2.
+Unpacking libsigc++-2.0-0c2 (from .../libsigc++-2.0-0c2_2.0.16-1_amd64.deb) ...
+Preparing to replace aptitude 0.2.15.9-6 (using .../aptitude_0.3.4-1_amd64.deb) ...
+Unpacking replacement aptitude ...
 Setting up adduser (3.69) ...
+
+Setting up libsigc++-2.0-0c2 (2.0.16-1) ...
+
+Setting up aptitude (0.3.4-1) ...
 
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
 dpkg-dev is already the newest version.
 apt is already the newest version.
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.iwo7wb/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OkgCrR/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//5481 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//16508 and its subdirectories
