@@ -42,7 +42,7 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
     RESULTFILE=$(readlink -f ${RESULTFILE})
     
     for distribution in sid sarge etch; do
-	sudo ${PBUILDER} create --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log 
+	sudo ${PBUILDER} create --debootstrapopts "--verbose" --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log 
 # --hookdir /usr/share/doc/pbuilder/examples/libc6workaround
 	log_success create-${distribution}-${DEBOOTSTRAP}
 	
