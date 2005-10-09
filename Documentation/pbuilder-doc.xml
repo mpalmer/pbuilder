@@ -1065,6 +1065,17 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 	Testsuites are available in tests/ directory, and 
 	changes are expected not to break the testsuites.
       </para>
+      <para>
+	When making changes, the detailed description of the 
+	change should be documented in 
+	ChangeLog, and committed alongside.
+	A brief summary of the change should be documented in 
+	debian/changelog, so that users can see them.
+	The description of debian/changelog is targeted at 
+	users, and ChangeLog is targeted at developers.
+	For CVS commit messages, a cut-n-paste of 
+	ChangeLog diff would suffice.
+      </para>
     </sect1>
   </chapter>
 
