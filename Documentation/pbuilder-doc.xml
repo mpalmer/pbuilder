@@ -4,7 +4,7 @@
   and the latest version is found in CVS repository. -->
 <book>
   <bookinfo>
-    <date>2005-09-04</date>
+    <date>2005-10-08</date>
     <title>pbuilder User's Manual</title>
     <abbrev>pbuilder-doc</abbrev>
     <subtitle>Usage and operations</subtitle>
@@ -869,9 +869,8 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
     <sect1 id="woodybackport">
       <title>pbuilder backported to stable Debian releases</title>
       <para>
-	It is known that Brian May does a backport of
-	pbuilder, available at:
-	<screen>deb http://www.microcomaustralia.com.au/debian/ woody main</screen>
+	Currently stable backport to sarge is not known to be available.
+	It should hopefully soon be available.
       </para>
     </sect1>
     <sect1 id="LOGNAME">
@@ -980,6 +979,11 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	pbuilder-user-mode-linux is slower in executing the actual build system, due to the
 	usual user-mode-linux overhead for system calls. It is more friendly to the hard drive.
       </para>
+      <para>
+	pbuilder with cowdancer is under development, to allow
+	pbuilder to start up faster; when it is ready, it should 
+	be able to replace the current setup.
+      </para>
     </sect1>
     <sect1 id="chrootmemo">
       <title>Creating a chroot reminder</title>
@@ -1017,6 +1021,53 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
     </sect1>
     <!-- end of FAQ -->
   </chapter>
+
+  <chapter id="develanddebug">
+    <title>Troubleshooting and development</title>
+    <sect1 id="bugreport">
+      <title>Reporting bugs </title>
+      <para>
+	To report bugs, it would be important to have a 
+	log of what's going wrong.
+	Most of the time, adding a --debug option and re-running the 
+	session should do the trick.
+	Please send the log of such session along with your problem
+	to ease the debugging process.
+      </para>
+    </sect1>
+    <sect1 id="mailinglist">
+      <title>Mailing list</title>
+      <para>
+	There is a mailing list for pbuilder on alioth (pbuilder-maint@lists.alioth.debian.org).
+	You can subscribe through the alioth web interface.
+	<ulink url="http://alioth.debian.org/mail/?group_id=30778">
+	  http://alioth.debian.org/mail/?group_id=30778</ulink>.
+      </para>
+    </sect1>
+    <sect1 id="development">
+      <title>Development</title>
+      <para>
+	This section is a start of what I want to do
+	later.
+      </para>
+      <para>
+	pbuilder is now co-maintained at alioth.
+	There is an alioth project page at
+	<ulink url="http://alioth.debian.org/projects/pbuilder">
+	http://alioth.debian.org/projects/pbuilder</ulink>.
+	CVS Repository is available through anonymous CVS
+      </para>
+      <screen>
+cvs -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder login
+cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
+      </screen>
+      <para>
+	Testsuites are available in tests/ directory, and 
+	changes are expected not to break the testsuites.
+      </para>
+    </sect1>
+  </chapter>
+
   <chapter id="otheruse">
     <title>Other uses of pbuilder</title>
     <sect1 id="chroot">
@@ -1325,6 +1376,8 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	  for testing packages, and building packages in a pristine environment.
 	  There are other similar tools that do similar tasks, 
 	  but they do not share the exact same goal.
+	  To commemorate this fact, pbuilder is now co-maintained 
+	  with several people. 
 	</para>
       </sect2>
     </sect1>

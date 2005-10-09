@@ -43,6 +43,7 @@ if [ ! -d "$BUILDPLACE" ]; then
     echo "pbuilder: Could not make directory [$BUILDPLACE]" >&2
     exit 1
 fi
+
 $TRAP cleanbuildplace exit
 
 echo " -> running $DEBOOTSTRAP"

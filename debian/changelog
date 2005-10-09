@@ -1,10 +1,17 @@
-pbuilder (0.135) UNRELEASED; urgency=low
+pbuilder (0.135) unstable; urgency=low
 
   [Matt Kraai]
   * Don't add redundant group, passwd, and shadow entries for the build
     user.
+  
+  [Junichi Uekawa]
+  * Document that --debug option preserves build place.
+    If the following fails, the build directory will remain intact:
+    pbuilder create --distribution etch --basetgz a.tgz --debug
+    (closes: #331635)
+  * README.Debian, pbuilder-doc.xml: updated.
 
- -- Matt Kraai <kraai@debian.org>  Mon,  3 Oct 2005 06:52:07 -0700
+ -- Junichi Uekawa <dancer@debian.org>  Sat,  8 Oct 2005 17:23:32 +0900
 
 pbuilder (0.134) unstable; urgency=low
 
