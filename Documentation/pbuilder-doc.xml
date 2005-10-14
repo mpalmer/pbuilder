@@ -4,7 +4,7 @@
   and the latest version is found in CVS repository. -->
 <book>
   <bookinfo>
-    <date>2005-10-08</date>
+    <date>2005-10-14</date>
     <title>pbuilder User's Manual</title>
     <abbrev>pbuilder-doc</abbrev>
     <subtitle>Usage and operations</subtitle>
@@ -1044,6 +1044,15 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	  http://alioth.debian.org/mail/?group_id=30778</ulink>.
       </para>
     </sect1>
+    <sect1 id="IRCchannel">
+      <title>IRC Channel</title>
+      <para>
+	For coordination and communication,
+	IRC channel #pbuilder on irc.oftc.net is used.
+	Please log your intent there when you are going to 
+	start doing some changes and commiting some change.
+      </para>
+    </sect1>
     <sect1 id="development">
       <title>Development</title>
       <para>
@@ -1066,15 +1075,17 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 	changes are expected not to break the testsuites.
       </para>
       <para>
-	When making changes, the detailed description of the 
-	change should be documented in 
-	ChangeLog, and committed alongside.
-	A brief summary of the change should be documented in 
-	debian/changelog, so that users can see them.
-	The description of debian/changelog is targeted at 
-	users, and ChangeLog is targeted at developers.
+	When making changes, a description of the 
+	change targeted at developers should be documented in 
+	ChangeLog, and committed.
+	A brief summary of the change targeting end users
+	should be documented in debian/changelog, 
+	so that users can see them.
+	Note that the description of debian/changelog is 
+	targeted at users, and ChangeLog is targeted 
+	at developers.
 	For CVS commit messages, a cut-n-paste of 
-	ChangeLog diff would suffice.
+	ChangeLog diff should be enough.
       </para>
     </sect1>
   </chapter>
