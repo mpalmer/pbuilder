@@ -1,11 +1,16 @@
 TODO and possible bugs: 
 
-* save-afer-login seems to save aptcache and make a big base.tgz; 
-    do we want that?
+* dpkg does not work in woody chroot under 2.6.11 or later kernels
+   - depends-on debian-bug: 322309 dpkg: no action
+   - depends-on debian-bug: 329468 debootstrap: adam conrad has posted a patch, no action from maintainer
+   - depends-on debian-bug: 332903 cdebootstrap: no action
+
+* save-afer-login seems to save aptcache and make a big base.tgz; do we want that?
+
 * select cdebootstrap if debootstrap does not exist and cdebootstrap exists.
 
-* When 314858 is fixed, revert back to using --variant=buildd for
-   debootstrap
+* revert back to using --variant=buildd for debootstrap
+   - depends-on debian-bug: 314858
 
 * Add hooks to install gnupg package and ways to allow new keys to be
    registered into pbuilder chroots.
@@ -38,7 +43,8 @@ TODO and possible bugs:
 
 * $HOME, $TMP, $TMPDIR, etc. environment vars are set to bogus values
 
-* set LOGNAME=root ?
+* set LOGNAME=root ? 
+   - related debian-bug: 166682
 
 * check cross-compile support, maybe adding support for dpkg-cross into build-depends checker?
 
