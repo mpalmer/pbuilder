@@ -1,10 +1,10 @@
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Mon Oct 17 12:11:22 JST 2005
-pbuilder-time-stamp: 1129518682
+Current time: Wed Oct 19 13:15:38 JST 2005
+pbuilder-time-stamp: 1129695338
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.l2k7SQ/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.nMiKEb/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -72,11 +72,11 @@ Setting up libdshconfig1 (0.20.11-1) ...
 Setting up libdshconfig1-dev (0.20.11-1) ...
  -> Finished parsing the build-deps
 Copying back the cached apt archive contents
-grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.l2k7SQ/dir1/24366/etc/shadow: No such file or directory
+grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.nMiKEb/dir1/2842/etc/shadow: No such file or directory
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.l2k7SQ/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.l2k7SQ/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.l2k7SQ/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.nMiKEb/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.nMiKEb/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.nMiKEb/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-source: extracting dsh in dsh-0.25.6
@@ -377,8 +377,8 @@ success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -390,7 +390,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Oct 17 03:12:10 UTC 2005
+Wed Oct 19 04:16:07 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -403,6 +403,18 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 DUMPing parameters passed to llexec
 [2] 
+3: Using sleep as the remote shell
+3: Show machine names on output
+3: Adding machine 5,4,3,2,1 to list
+3: Setting forklimit to 3 and wait_shell to 0
+3: DUMPing parameters passed to llexec
+3: [3] 
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+DUMPing parameters passed to llexec
+[3] 
 1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
@@ -417,18 +429,6 @@ Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 DUMPing parameters passed to llexec
 [1] 
-3: Using sleep as the remote shell
-3: Show machine names on output
-3: Adding machine 5,4,3,2,1 to list
-3: Setting forklimit to 3 and wait_shell to 0
-3: DUMPing parameters passed to llexec
-3: [3] 
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-DUMPing parameters passed to llexec
-[3] 
 4: Using sleep as the remote shell
 4: Show machine names on output
 4: Adding machine 5,4,3,2,1 to list
@@ -460,14 +460,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Oct 17 03:12:15 UTC 2005
+Wed Oct 19 04:16:12 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-b: b
-c: c
-dsh: Process terminated (before write).
 a: a
+b: b
+dsh: Process terminated (before write).
+c: c
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -573,7 +573,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Mon Oct 17 12:12:17 JST 2005
-pbuilder-time-stamp: 1129518737
+Current time: Wed Oct 19 13:16:14 JST 2005
+pbuilder-time-stamp: 1129695374
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.l2k7SQ/dir1/24366 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.nMiKEb/dir1/2842 and its subdirectories

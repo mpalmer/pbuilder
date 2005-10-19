@@ -32,17 +32,25 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
 	debootstrap)
 	    logdir=$(readlink -f normal/)
 	    RESULTFILE="run-test.log"
+	    unset DEBOOTSTRAPOPTS
+	    DEBOOTSTRAPOPTS[0]="--debootstrapopts"
+	    DEBOOTSTRAPOPTS[1]="--verbose"
+	    DEBOOTSTRAPOPTS[2]="--debootstrapopts"
+	    DEBOOTSTRAPOPTS[3]="--resolve-deps"
 	    ;;
 	*)
 	    logdir=$(readlink -f $DEBOOTSTRAP)
 	    RESULTFILE="run-test-${DEBOOTSTRAP}.log"
+	    unset DEBOOTSTRAPOPTS
+	    DEBOOTSTRAPOPTS[0]="--debootstrapopts"
+	    DEBOOTSTRAPOPTS[1]="--verbose"
 	    ;;
     esac
     : > ${RESULTFILE}
     RESULTFILE=$(readlink -f ${RESULTFILE})
     
     for distribution in sid sarge etch; do
-	sudo ${PBUILDER} create --debootstrapopts "--verbose" --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log 
+	sudo ${PBUILDER} create "${DEBOOTSTRAPOPTS[@]}" --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log 
 # --hookdir /usr/share/doc/pbuilder/examples/libc6workaround
 	log_success create-${distribution}-${DEBOOTSTRAP}
 	
