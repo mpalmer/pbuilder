@@ -73,8 +73,8 @@ P: Retrieving netbase
 P: Validating netbase
 P: Retrieving telnet
 P: Validating telnet
-P: Retrieving libssl0.9.7
-P: Validating libssl0.9.7
+P: Retrieving libssl0.9.8
+P: Validating libssl0.9.8
 P: Retrieving wget
 P: Validating wget
 P: Retrieving info
@@ -315,12 +315,13 @@ O: Setting up base-passwd (3.5.10) ...
 P: Configuring package base-passwd
 O: 
 O: Selecting previously deselected package dpkg.
-O: (Reading database ... 21 files and directories currently installed.)
-O: Unpacking dpkg (from .../dpkg_1.13.11_amd64.deb) ...
-P: Unpacking package dpkg
 O: dpkg: regarding .../dpkg_1.13.11_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on libc6 (>= 2.3.5-1)
 O: dpkg: warning - ignoring pre-dependency problem !
+O: (Reading database ... 
+O: 21 files and directories currently installed.)
+O: Unpacking dpkg (from .../dpkg_1.13.11_amd64.deb) ...
+P: Unpacking package dpkg
 O: dpkg: dpkg: dependency problems, but configuring anyway as you request:
 O:  dpkg depends on libc6 (>= 2.3.5-1); however:
 O:   Package libc6 is not installed.
@@ -384,10 +385,10 @@ O: Selecting previously deselected package debconf-i18n.
 O: Unpacking debconf-i18n (from .../debconf-i18n_1.4.58_all.deb) ...
 P: Unpacking package debconf-i18n
 O: Selecting previously deselected package libattr1.
-O: Unpacking libattr1 (from .../libattr1_2.4.21-1_amd64.deb) ...
+O: Unpacking libattr1 (from .../libattr1_2.4.25-1_amd64.deb) ...
 P: Unpacking package libattr1
 O: Selecting previously deselected package libacl1.
-O: Unpacking libacl1 (from .../libacl1_2.2.29-1_amd64.deb) ...
+O: Unpacking libacl1 (from .../libacl1_2.2.32-1_amd64.deb) ...
 P: Unpacking package libacl1
 O: Selecting previously deselected package coreutils.
 O: dpkg: regarding .../coreutils_5.2.1-2.1_amd64.deb containing coreutils, pre-dependency problem:
@@ -730,7 +731,7 @@ P: Configuring package libtext-iconv-perl
 O: Setting up libncurses5 (5.4-9) ...
 P: Configuring package libncurses5
 O: 
-O: Setting up libattr1 (2.4.21-1) ...
+O: Setting up libattr1 (2.4.25-1) ...
 P: Configuring package libattr1
 O: 
 O: Setting up sed (4.1.2-8) ...
@@ -751,7 +752,7 @@ O: Setting up grep (2.5.1.ds2-1) ...
 P: Configuring package grep
 O: Setting up hostname (2.91) ...
 P: Configuring package hostname
-O: Setting up libacl1 (2.2.29-1) ...
+O: Setting up libacl1 (2.2.32-1) ...
 P: Configuring package libacl1
 O: 
 O: Setting up libslang2 (2.0.4-7) ...
@@ -875,7 +876,7 @@ O:
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [4800B]
 O: Ign bootstrap: . Release
-O: Fetched 4989B in 0s (24.2kB/s)
+O: Fetched 4989B in 0s (49.0kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -899,21 +900,22 @@ O:   console-data console-tools cpio cron dhcp3-client dhcp3-common dmidecode ed
 O:   exim4 exim4-base exim4-config exim4-daemon-light gettext-base groff-base
 O:   ifupdown info iptables iputils-ping klogd laptop-detect libconsole libdb4.2
 O:   libgcrypt11 libgdbm3 libgnutls12 libgpg-error0 liblzo1 libncursesw5
-O:   libopencdk8 libpcre3 libpopt0 libsigc++-1.2-5c2 libssl0.9.7 libtasn1-2
+O:   libopencdk8 libpcre3 libpopt0 libsigc++-1.2-5c2 libssl0.9.8 libtasn1-2
 O:   libwrap0 logrotate man-db manpages nano net-tools netbase netkit-inetd nvi
 O:   psmisc sysklogd tasksel tcpd telnet wget whiptail
 O: 0 upgraded, 57 newly installed, 0 to remove and 0 not upgraded.
-O: Need to get 14.8MB of archives.
-O: After unpacking 45.7MB of additional disk space will be used.
+O: Need to get 14.9MB of archives.
+O: After unpacking 45.9MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
 O:   console-data libconsole console-tools console-common adduser libdb4.2
 O:   apt-utils libsigc++-1.2-5c2 aptitude gettext-base base-config bsdmainutils
 O:   cpio cron dmidecode ed groff-base net-tools ifupdown info iptables
 O:   iputils-ping sysklogd klogd laptop-detect libgpg-error0 libgcrypt11 libgdbm3
-O:   liblzo1 libopencdk8 libtasn1-2 libgnutls12 libncursesw5 libpcre3 libpopt0
-O:   libssl0.9.7 libwrap0 logrotate man-db manpages nano netkit-inetd tcpd netbase
-O:   nvi tasksel wget whiptail exim4-config exim4-base exim4-daemon-light at exim4
-O:   telnet dhcp3-common dhcp3-client psmisc
+O:   liblzo1 libncursesw5 libopencdk8 libpopt0 libssl0.9.8 libtasn1-2 libwrap0
+O:   logrotate man-db manpages nano netkit-inetd tcpd netbase nvi tasksel wget
+O:   whiptail exim4-config exim4-base libgnutls12 libpcre3 exim4-daemon-light at
+O:   exim4 telnet dhcp3-common dhcp3-client psmisc
+O: debconf: delaying package configuration, since apt-utils is not installed
 O: Authentication warning overridden.
 O: Selecting previously deselected package console-data.
 O: (Reading database ... 
@@ -1004,27 +1006,21 @@ P: Unpacking package libgdbm3
 O: Selecting previously deselected package liblzo1.
 O: Unpacking liblzo1 (from .../liblzo1_1.08-2_amd64.deb) ...
 P: Unpacking package liblzo1
-O: Selecting previously deselected package libopencdk8.
-O: Unpacking libopencdk8 (from .../libopencdk8_0.5.7-2_amd64.deb) ...
-P: Unpacking package libopencdk8
-O: Selecting previously deselected package libtasn1-2.
-O: Unpacking libtasn1-2 (from .../libtasn1-2_0.2.13-1_amd64.deb) ...
-P: Unpacking package libtasn1-2
-O: Selecting previously deselected package libgnutls12.
-O: Unpacking libgnutls12 (from .../libgnutls12_1.2.6-1_amd64.deb) ...
-P: Unpacking package libgnutls12
 O: Selecting previously deselected package libncursesw5.
 O: Unpacking libncursesw5 (from .../libncursesw5_5.4-9_amd64.deb) ...
 P: Unpacking package libncursesw5
-O: Selecting previously deselected package libpcre3.
-O: Unpacking libpcre3 (from .../libpcre3_6.3-1_amd64.deb) ...
-P: Unpacking package libpcre3
+O: Selecting previously deselected package libopencdk8.
+O: Unpacking libopencdk8 (from .../libopencdk8_0.5.7-2_amd64.deb) ...
+P: Unpacking package libopencdk8
 O: Selecting previously deselected package libpopt0.
 O: Unpacking libpopt0 (from .../libpopt0_1.7-5_amd64.deb) ...
 P: Unpacking package libpopt0
-O: Selecting previously deselected package libssl0.9.7.
-O: Unpacking libssl0.9.7 (from .../libssl0.9.7_0.9.7g-2_amd64.deb) ...
-P: Unpacking package libssl0.9.7
+O: Selecting previously deselected package libssl0.9.8.
+O: Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8a-2_amd64.deb) ...
+P: Unpacking package libssl0.9.8
+O: Selecting previously deselected package libtasn1-2.
+O: Unpacking libtasn1-2 (from .../libtasn1-2_0.2.13-1_amd64.deb) ...
+P: Unpacking package libtasn1-2
 O: Selecting previously deselected package libwrap0.
 O: Unpacking libwrap0 (from .../libwrap0_7.6.dbs-8_amd64.deb) ...
 P: Unpacking package libwrap0
@@ -1056,7 +1052,7 @@ O: Selecting previously deselected package tasksel.
 O: Unpacking tasksel (from .../bootstrap/tasksel_2.32_all.deb) ...
 P: Unpacking package tasksel
 O: Selecting previously deselected package wget.
-O: Unpacking wget (from .../wget_1.10.1-1_amd64.deb) ...
+O: Unpacking wget (from .../wget_1.10.2-1_amd64.deb) ...
 P: Unpacking package wget
 O: Selecting previously deselected package whiptail.
 O: Unpacking whiptail (from .../whiptail_0.51.6-31_amd64.deb) ...
@@ -1067,6 +1063,12 @@ P: Unpacking package exim4-config
 O: Selecting previously deselected package exim4-base.
 O: Unpacking exim4-base (from .../exim4-base_4.54-1_amd64.deb) ...
 P: Unpacking package exim4-base
+O: Selecting previously deselected package libgnutls12.
+O: Unpacking libgnutls12 (from .../libgnutls12_1.2.6-1_amd64.deb) ...
+P: Unpacking package libgnutls12
+O: Selecting previously deselected package libpcre3.
+O: Unpacking libpcre3 (from .../libpcre3_6.4-1_amd64.deb) ...
+P: Unpacking package libpcre3
 O: Selecting previously deselected package exim4-daemon-light.
 O: Unpacking exim4-daemon-light (from .../exim4-daemon-light_4.54-1_amd64.deb) ...
 P: Unpacking package exim4-daemon-light
@@ -1077,7 +1079,7 @@ O: Selecting previously deselected package exim4.
 O: Unpacking exim4 (from .../bootstrap/exim4_4.54-1_all.deb) ...
 P: Unpacking package exim4
 O: Selecting previously deselected package telnet.
-O: Unpacking telnet (from .../telnet_0.17-31_amd64.deb) ...
+O: Unpacking telnet (from .../telnet_0.17-32_amd64.deb) ...
 P: Unpacking package telnet
 O: Selecting previously deselected package dhcp3-common.
 O: Unpacking dhcp3-common (from .../dhcp3-common_3.0.3-4_amd64.deb) ...
@@ -1159,26 +1161,20 @@ P: Configuring package libgdbm3
 O: Setting up liblzo1 (1.08-2) ...
 P: Configuring package liblzo1
 O: 
-O: Setting up libopencdk8 (0.5.7-2) ...
-P: Configuring package libopencdk8
-O: 
-O: Setting up libtasn1-2 (0.2.13-1) ...
-P: Configuring package libtasn1-2
-O: 
-O: Setting up libgnutls12 (1.2.6-1) ...
-P: Configuring package libgnutls12
-O: 
 O: Setting up libncursesw5 (5.4-9) ...
 P: Configuring package libncursesw5
 O: 
-O: Setting up libpcre3 (6.3-1) ...
-P: Configuring package libpcre3
+O: Setting up libopencdk8 (0.5.7-2) ...
+P: Configuring package libopencdk8
 O: 
 O: Setting up libpopt0 (1.7-5) ...
 P: Configuring package libpopt0
 O: 
-O: Setting up libssl0.9.7 (0.9.7g-2) ...
-P: Configuring package libssl0.9.7
+O: Setting up libssl0.9.8 (0.9.8a-2) ...
+P: Configuring package libssl0.9.8
+O: 
+O: Setting up libtasn1-2 (0.2.13-1) ...
+P: Configuring package libtasn1-2
 O: 
 O: Setting up libwrap0 (7.6.dbs-8) ...
 P: Configuring package libwrap0
@@ -1212,7 +1208,7 @@ O:
 O: Setting up tasksel (2.32) ...
 P: Configuring package tasksel
 O: 
-O: Setting up wget (1.10.1-1) ...
+O: Setting up wget (1.10.2-1) ...
 P: Configuring package wget
 O: 
 O: Setting up whiptail (0.51.6-31) ...
@@ -1221,12 +1217,21 @@ O: Setting up exim4-config (4.54-1) ...
 P: Configuring package exim4-config
 O: hostname: 
 O: Host name lookup failure
-O: hostname: Host name lookup failure
+O: 
+O: hostname: 
+O: Host name lookup failure
+O: 
 O: Adding system-user for exim (v4)
 O: chage: the shadow password file is not present
 O: 
 O: Setting up exim4-base (4.54-1) ...
 P: Configuring package exim4-base
+O: 
+O: Setting up libgnutls12 (1.2.6-1) ...
+P: Configuring package libgnutls12
+O: 
+O: Setting up libpcre3 (6.4-1) ...
+P: Configuring package libpcre3
 O: 
 O: Setting up exim4-daemon-light (4.54-1) ...
 P: Configuring package exim4-daemon-light
@@ -1236,7 +1241,7 @@ P: Configuring package at
 O: 
 O: Setting up exim4 (4.54-1) ...
 P: Configuring package exim4
-O: Setting up telnet (0.17-31) ...
+O: Setting up telnet (0.17-32) ...
 P: Configuring package telnet
 O: 
 O: Setting up dhcp3-common (3.0.3-4) ...
@@ -1273,18 +1278,18 @@ P: Configuring package base-config
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 7407 files and directories currently installed.)
+O: 7418 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 7406 files and directories currently installed.)
+O: 7417 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 7404 files and directories currently installed.)
+O: 7415 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1299,8 +1304,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [4800B]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [3366kB]
-Fetched 3371kB in 2s (1409kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [3368kB]
+Fetched 3373kB in 1s (1911kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1333,7 +1338,7 @@ WARNING: The following packages cannot be authenticated!
   binutils cpp-4.0 cpp perl-modules perl patch make dpkg-dev gcc-4.0 gcc
   libstdc++6-4.0-dev g++-4.0 g++ linux-kernel-headers libc6-dev build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 7404 files and directories currently installed.)
+(Reading database ... 7415 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1-2_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-2_amd64.deb) ...
@@ -1389,6 +1394,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.0hLQy2/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.uiwnkH/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//26925 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//21926 and its subdirectories
