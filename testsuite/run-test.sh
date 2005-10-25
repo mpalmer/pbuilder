@@ -35,8 +35,6 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
 	    unset DEBOOTSTRAPOPTS
 	    DEBOOTSTRAPOPTS[0]="--debootstrapopts"
 	    DEBOOTSTRAPOPTS[1]="--verbose"
-	    DEBOOTSTRAPOPTS[2]="--debootstrapopts"
-	    DEBOOTSTRAPOPTS[3]="--resolve-deps"
 	    ;;
 	*)
 	    logdir=$(readlink -f $DEBOOTSTRAP)

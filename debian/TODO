@@ -2,7 +2,7 @@ TODO and possible bugs:
 
 * dpkg does not work in woody chroot under 2.6.11 or later kernels
    - depends-on debian-bug: 322309 dpkg: no action
-   - depends-on debian-bug: 329468 debootstrap: adam conrad has posted a patch, no action from maintainer
+   - depends-on debian-bug: 329468 debootstrap: fixed in 0.3.2
    - depends-on debian-bug: 332903 cdebootstrap: no action
 
 * save-afer-login seems to save aptcache and make a big base.tgz; do we want that?
@@ -10,10 +10,9 @@ TODO and possible bugs:
 * select cdebootstrap if debootstrap does not exist and cdebootstrap exists.
 
 * revert back to using --variant=buildd for debootstrap
-   - depends-on debian-bug: 314858
+   - depends-on debian-bug: 314858 debootstrap: fixed in 0.3.2
 
-* Add hooks to install gnupg package and ways to allow new keys to be
-   registered into pbuilder chroots.
+* Add hooks to install gnupg package and ways to allow new keys to be registered into pbuilder chroots.
 
 * Use pbuilder cache in pdebuild-internal (2353237)
 
@@ -52,8 +51,7 @@ TODO and possible bugs:
 
 * Fix UML_EXTRAOPT to use arrays.
 
-* Use alternative to pbuilder-satisfydepends; apt-pkg? read elmo.txt
-   for clues.
+* Use alternative to pbuilder-satisfydepends; apt-pkg? read elmo.txt for clues.
 
 $Id$
 
