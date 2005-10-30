@@ -4,7 +4,7 @@
   and the latest version is found in CVS repository. -->
 <book>
   <bookinfo>
-    <date>2005-10-14</date>
+    <date>2005-10-28</date>
     <title>pbuilder User's Manual</title>
     <abbrev>pbuilder-doc</abbrev>
     <subtitle>Usage and operations</subtitle>
@@ -699,7 +699,7 @@ read
   </chapter>
   <chapter id="faq">
     <title>Frequently asked questions </title>
-    <!-- Start of FAQ -->
+    <!-- Start of FAQ/faq -->
     <para>
       Here, known problems and frequently asked questions are
       documented. This portion was initially available in README.Debian
@@ -1019,6 +1019,23 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	This behavior is different when running through --use-pdebuild-internal
       </para>
     </sect1>
+    <sect1 id="amd64i386">
+      <title>amd64 and i386-mode</title>
+      <para>
+	amd64 architectures are capable of running binaries in 
+	i386 mode.
+	It is possible to use pbuilder to run packages, 
+	using <command>linux32</command>
+	and <command>debootstrap <option>--arch</option></command> option.
+	Specifically, a command-line option like the following will work.
+      </para>
+      <para>
+	<screen>
+<command>pbuilder create --distribution sid --debootstrapopts "--arch=i386" --basetgz /var/cache/pbuilder/base-i386.tgz --mirror http://ftp.jp.debian.org/debian</command>
+<command>linux32 pbuilder build --basetgz /var/cache/pbuilder/base-i386.tgz</command>
+	</screen>
+      </para>
+    </sect1>
     <!-- end of FAQ -->
   </chapter>
 
@@ -1086,6 +1103,13 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 	at developers.
 	For CVS commit messages, a cut-n-paste of 
 	ChangeLog diff should be enough.
+      </para>
+      <para>
+	A TODO file is available in debian/TODO.
+	It's mostly not well-maintained, 
+	but hopefully it will be more up-to-date
+	when people start using it.
+	emacs todoo-mode is used in editing the file.
       </para>
     </sect1>
   </chapter>
