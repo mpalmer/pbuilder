@@ -1,10 +1,10 @@
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Tue Oct 25 12:20:10 JST 2005
-pbuilder-time-stamp: 1130210410
+Current time: Tue Nov  1 12:21:37 JST 2005
+pbuilder-time-stamp: 1130815297
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -38,7 +38,7 @@ WARNING: The following packages cannot be authenticated!
   libmagic1 file debconf-utils html2text gettext intltool-debian po-debconf
   debhelper libdshconfig1 libdshconfig1-dev
 Selecting previously deselected package libmagic1.
-(Reading database ... 11765 files and directories currently installed.)
+(Reading database ... 11766 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.15-2_amd64.deb) ...
@@ -53,7 +53,7 @@ Unpacking intltool-debian (from .../intltool-debian_0.34.1+20050828_all.deb) ...
 Selecting previously deselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_0.9.0_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_4.9.13_all.deb) ...
+Unpacking debhelper (from .../debhelper_4.9.15_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -69,17 +69,17 @@ Setting up gettext (0.14.5-2) ...
 
 Setting up intltool-debian (0.34.1+20050828) ...
 Setting up po-debconf (0.9.0) ...
-Setting up debhelper (4.9.13) ...
+Setting up debhelper (4.9.15) ...
 Setting up libdshconfig1 (0.20.11-1) ...
 
 Setting up libdshconfig1-dev (0.20.11-1) ...
  -> Finished parsing the build-deps
 Copying back the cached apt archive contents
-grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir1/21124/etc/shadow: No such file or directory
+grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir1/21790/etc/shadow: No such file or directory
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-source: extracting dsh in dsh-0.25.6
@@ -356,6 +356,7 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
+dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -394,7 +395,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue Oct 25 03:20:52 UTC 2005
+Tue Nov  1 03:22:20 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -464,14 +465,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue Oct 25 03:20:57 UTC 2005
+Tue Nov  1 03:22:25 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-b: b
 dsh: Process terminated (before write).
 c: c
+b: b
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -577,7 +578,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Tue Oct 25 12:20:59 JST 2005
-pbuilder-time-stamp: 1130210459
+Current time: Tue Nov  1 12:22:28 JST 2005
+pbuilder-time-stamp: 1130815348
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir1/21124 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir1/21790 and its subdirectories

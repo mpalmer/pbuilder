@@ -21,20 +21,6 @@ P: Retrieving libdb4.2
 P: Validating libdb4.2
 P: Retrieving apt-utils
 P: Validating apt-utils
-P: Retrieving perl-base
-P: Validating perl-base
-P: Retrieving liblocale-gettext-perl
-P: Validating liblocale-gettext-perl
-P: Retrieving libtext-iconv-perl
-P: Validating libtext-iconv-perl
-P: Retrieving libtext-charwidth-perl
-P: Validating libtext-charwidth-perl
-P: Retrieving libtext-wrapi18n-perl
-P: Validating libtext-wrapi18n-perl
-P: Retrieving debconf-i18n
-P: Validating debconf-i18n
-P: Retrieving debconf
-P: Validating debconf
 P: Retrieving libattr1
 P: Validating libattr1
 P: Retrieving libacl1
@@ -49,6 +35,20 @@ P: Retrieving dhcp3-client
 P: Validating dhcp3-client
 P: Retrieving net-tools
 P: Validating net-tools
+P: Retrieving perl-base
+P: Validating perl-base
+P: Retrieving liblocale-gettext-perl
+P: Validating liblocale-gettext-perl
+P: Retrieving libtext-iconv-perl
+P: Validating libtext-iconv-perl
+P: Retrieving libtext-charwidth-perl
+P: Validating libtext-charwidth-perl
+P: Retrieving libtext-wrapi18n-perl
+P: Validating libtext-wrapi18n-perl
+P: Retrieving debconf-i18n
+P: Validating debconf-i18n
+P: Retrieving debconf
+P: Validating debconf
 P: Retrieving ifupdown
 P: Validating ifupdown
 P: Retrieving iptables
@@ -247,6 +247,10 @@ P: Extracting libc6
 P: Extracting libgcc1
 P: Extracting gcc-4.0-base
 P: Extracting libstdc++6
+P: Extracting libattr1
+P: Extracting libacl1
+P: Extracting coreutils
+P: Extracting debianutils
 P: Extracting perl-base
 P: Extracting liblocale-gettext-perl
 P: Extracting libtext-iconv-perl
@@ -254,10 +258,6 @@ P: Extracting libtext-charwidth-perl
 P: Extracting libtext-wrapi18n-perl
 P: Extracting debconf
 P: Extracting debconf-i18n
-P: Extracting libattr1
-P: Extracting libacl1
-P: Extracting coreutils
-P: Extracting debianutils
 P: Extracting sed
 P: Extracting libncurses5
 P: Extracting ncurses-bin
@@ -346,12 +346,40 @@ P: Unpacking package gcc-4.0-base
 O: Selecting previously deselected package libstdc++6.
 O: Unpacking libstdc++6 (from .../libstdc++6_4.0.2-2_amd64.deb) ...
 P: Unpacking package libstdc++6
+O: Selecting previously deselected package libattr1.
+O: Unpacking libattr1 (from .../libattr1_2.4.25-1_amd64.deb) ...
+P: Unpacking package libattr1
+O: Selecting previously deselected package libacl1.
+O: Unpacking libacl1 (from .../libacl1_2.2.32-1_amd64.deb) ...
+P: Unpacking package libacl1
+O: Selecting previously deselected package coreutils.
+O: dpkg: regarding .../coreutils_5.2.1-2.1_amd64.deb containing coreutils, pre-dependency problem:
+O:  coreutils pre-depends on libacl1 (>= 2.2.11-1)
+O:   libacl1 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: dpkg: regarding .../coreutils_5.2.1-2.1_amd64.deb containing coreutils, pre-dependency problem:
+O:  coreutils pre-depends on libc6 (>= 2.3.5-1)
+O:   libc6 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking coreutils (from .../coreutils_5.2.1-2.1_amd64.deb) ...
+P: Unpacking package coreutils
+O: Selecting previously deselected package debianutils.
+O: dpkg: regarding .../debianutils_2.15_amd64.deb containing debianutils, pre-dependency problem:
+O:  debianutils pre-depends on libc6 (>= 2.3.5-1)
+O:   libc6 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: dpkg: regarding .../debianutils_2.15_amd64.deb containing debianutils, pre-dependency problem:
+O:  debianutils pre-depends on coreutils (>= 4.5.8-1)
+O:   coreutils is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking debianutils (from .../debianutils_2.15_amd64.deb) ...
+P: Unpacking package debianutils
 O: Selecting previously deselected package perl-base.
-O: dpkg: regarding .../perl-base_5.8.7-6_amd64.deb containing perl-base, pre-dependency problem:
+O: dpkg: regarding .../perl-base_5.8.7-7_amd64.deb containing perl-base, pre-dependency problem:
 O:  perl-base pre-depends on libc6 (>= 2.3.5-1)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking perl-base (from .../perl-base_5.8.7-6_amd64.deb) ...
+O: Unpacking perl-base (from .../perl-base_5.8.7-7_amd64.deb) ...
 P: Unpacking package perl-base
 O: Selecting previously deselected package liblocale-gettext-perl.
 O: dpkg: regarding .../liblocale-gettext-perl_1.05-1_amd64.deb containing liblocale-gettext-perl, pre-dependency problem:
@@ -383,34 +411,6 @@ P: Unpacking package debconf
 O: Selecting previously deselected package debconf-i18n.
 O: Unpacking debconf-i18n (from .../debconf-i18n_1.4.58_all.deb) ...
 P: Unpacking package debconf-i18n
-O: Selecting previously deselected package libattr1.
-O: Unpacking libattr1 (from .../libattr1_2.4.25-1_amd64.deb) ...
-P: Unpacking package libattr1
-O: Selecting previously deselected package libacl1.
-O: Unpacking libacl1 (from .../libacl1_2.2.32-1_amd64.deb) ...
-P: Unpacking package libacl1
-O: Selecting previously deselected package coreutils.
-O: dpkg: regarding .../coreutils_5.2.1-2.1_amd64.deb containing coreutils, pre-dependency problem:
-O:  coreutils pre-depends on libacl1 (>= 2.2.11-1)
-O:   libacl1 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../coreutils_5.2.1-2.1_amd64.deb containing coreutils, pre-dependency problem:
-O:  coreutils pre-depends on libc6 (>= 2.3.5-1)
-O:   libc6 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking coreutils (from .../coreutils_5.2.1-2.1_amd64.deb) ...
-P: Unpacking package coreutils
-O: Selecting previously deselected package debianutils.
-O: dpkg: regarding .../debianutils_2.15_amd64.deb containing debianutils, pre-dependency problem:
-O:  debianutils pre-depends on libc6 (>= 2.3.5-1)
-O:   libc6 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../debianutils_2.15_amd64.deb containing debianutils, pre-dependency problem:
-O:  debianutils pre-depends on coreutils (>= 4.5.8-1)
-O:   coreutils is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking debianutils (from .../debianutils_2.15_amd64.deb) ...
-P: Unpacking package debianutils
 O: Selecting previously deselected package sed.
 O: dpkg: regarding .../sed_4.1.2-8_amd64.deb containing sed, pre-dependency problem:
 O:  sed pre-depends on libc6 (>= 2.3.2.ds1-4)
@@ -707,7 +707,7 @@ O:
 O: Setting up bsdutils (2.12p-8) ...
 P: Configuring package bsdutils
 O: 
-O: Setting up perl-base (5.8.7-6) ...
+O: Setting up perl-base (5.8.7-7) ...
 P: Configuring package perl-base
 O: Setting up libsepol1 (1.8-1) ...
 P: Configuring package libsepol1
@@ -866,15 +866,15 @@ O:
 O: Selecting previously deselected package apt.
 O: (Reading database ... 
 O: 4521 files and directories currently installed.)
-O: Unpacking apt (from .../bootstrap/apt_0.6.41_amd64.deb) ...
+O: Unpacking apt (from .../apt_0.6.42.1_amd64.deb) ...
 P: Unpacking package apt
-O: Setting up apt (0.6.41) ...
+O: Setting up apt (0.6.42.1) ...
 P: Configuring package apt
 O: 
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [4800B]
 O: Ign bootstrap: . Release
-O: Fetched 4989B in 0s (47.0kB/s)
+O: Fetched 4989B in 0s (48.2kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -903,8 +903,8 @@ O:   libopencdk8 libpcre3 libpopt0 libsigc++-1.2-5c2 libssl0.9.8 libtasn1-2
 O:   libwrap0 logrotate man-db manpages nano net-tools netbase netkit-inetd nvi
 O:   psmisc sysklogd tasksel tcpd telnet wget whiptail
 O: 0 upgraded, 57 newly installed, 0 to remove and 0 not upgraded.
-O: Need to get 14.9MB of archives.
-O: After unpacking 45.9MB of additional disk space will be used.
+O: Need to get 14.6MB of archives.
+O: After unpacking 45.3MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
 O:   console-data libconsole console-tools console-common adduser libdb4.2
 O:   apt-utils libsigc++-1.2-5c2 aptitude gettext-base base-config bsdmainutils
@@ -936,13 +936,13 @@ O: Selecting previously deselected package libdb4.2.
 O: Unpacking libdb4.2 (from .../libdb4.2_4.2.52-18_amd64.deb) ...
 P: Unpacking package libdb4.2
 O: Selecting previously deselected package apt-utils.
-O: Unpacking apt-utils (from .../apt-utils_0.6.41_amd64.deb) ...
+O: Unpacking apt-utils (from .../apt-utils_0.6.42.1_amd64.deb) ...
 P: Unpacking package apt-utils
 O: Selecting previously deselected package libsigc++-1.2-5c2.
 O: Unpacking libsigc++-1.2-5c2 (from .../libsigc++-1.2-5c2_1.2.5-5_amd64.deb) ...
 P: Unpacking package libsigc++-1.2-5c2
 O: Selecting previously deselected package aptitude.
-O: Unpacking aptitude (from .../aptitude_0.2.15.9-6_amd64.deb) ...
+O: Unpacking aptitude (from .../aptitude_0.2.15.9-7_amd64.deb) ...
 P: Unpacking package aptitude
 O: Selecting previously deselected package gettext-base.
 O: Unpacking gettext-base (from .../gettext-base_0.14.5-2_amd64.deb) ...
@@ -954,7 +954,7 @@ O: Selecting previously deselected package bsdmainutils.
 O: Unpacking bsdmainutils (from .../bsdmainutils_6.1.2_amd64.deb) ...
 P: Unpacking package bsdmainutils
 O: Selecting previously deselected package cpio.
-O: Unpacking cpio (from .../bootstrap/cpio_2.6-6_amd64.deb) ...
+O: Unpacking cpio (from .../bootstrap/cpio_2.6-8_amd64.deb) ...
 P: Unpacking package cpio
 O: Selecting previously deselected package cron.
 O: Unpacking cron (from .../cron_3.0pl1-91_amd64.deb) ...
@@ -996,7 +996,7 @@ O: Selecting previously deselected package libgpg-error0.
 O: Unpacking libgpg-error0 (from .../libgpg-error0_1.1-4_amd64.deb) ...
 P: Unpacking package libgpg-error0
 O: Selecting previously deselected package libgcrypt11.
-O: Unpacking libgcrypt11 (from .../libgcrypt11_1.2.1-4_amd64.deb) ...
+O: Unpacking libgcrypt11 (from .../libgcrypt11_1.2.2-1_amd64.deb) ...
 P: Unpacking package libgcrypt11
 O: Selecting previously deselected package libgdbm3.
 O: Unpacking libgdbm3 (from .../libgdbm3_1.8.3-2_amd64.deb) ...
@@ -1041,7 +1041,7 @@ O: Selecting previously deselected package tcpd.
 O: Unpacking tcpd (from .../tcpd_7.6.dbs-8_amd64.deb) ...
 P: Unpacking package tcpd
 O: Selecting previously deselected package netbase.
-O: Unpacking netbase (from .../bootstrap/netbase_4.22_all.deb) ...
+O: Unpacking netbase (from .../bootstrap/netbase_4.23_all.deb) ...
 P: Unpacking package netbase
 O: Selecting previously deselected package nvi.
 O: Unpacking nvi (from .../nvi_1.79-22_amd64.deb) ...
@@ -1062,7 +1062,7 @@ O: Selecting previously deselected package exim4-base.
 O: Unpacking exim4-base (from .../exim4-base_4.54-1_amd64.deb) ...
 P: Unpacking package exim4-base
 O: Selecting previously deselected package libgnutls12.
-O: Unpacking libgnutls12 (from .../libgnutls12_1.2.6-1_amd64.deb) ...
+O: Unpacking libgnutls12 (from .../libgnutls12_1.2.8-1_amd64.deb) ...
 P: Unpacking package libgnutls12
 O: Selecting previously deselected package libpcre3.
 O: Unpacking libpcre3 (from .../libpcre3_6.4-1_amd64.deb) ...
@@ -1080,10 +1080,10 @@ O: Selecting previously deselected package telnet.
 O: Unpacking telnet (from .../telnet_0.17-32_amd64.deb) ...
 P: Unpacking package telnet
 O: Selecting previously deselected package dhcp3-common.
-O: Unpacking dhcp3-common (from .../dhcp3-common_3.0.3-4_amd64.deb) ...
+O: Unpacking dhcp3-common (from .../dhcp3-common_3.0.3-5_amd64.deb) ...
 P: Unpacking package dhcp3-common
 O: Selecting previously deselected package dhcp3-client.
-O: Unpacking dhcp3-client (from .../dhcp3-client_3.0.3-4_amd64.deb) ...
+O: Unpacking dhcp3-client (from .../dhcp3-client_3.0.3-5_amd64.deb) ...
 P: Unpacking package dhcp3-client
 O: Selecting previously deselected package psmisc.
 O: Unpacking psmisc (from .../psmisc_21.6-1_amd64.deb) ...
@@ -1096,13 +1096,13 @@ P: Configuring package adduser
 O: 
 O: Setting up libdb4.2 (4.2.52-18) ...
 P: Configuring package libdb4.2
-O: Setting up apt-utils (0.6.41) ...
+O: Setting up apt-utils (0.6.42.1) ...
 P: Configuring package apt-utils
 O: 
 O: Setting up libsigc++-1.2-5c2 (1.2.5-5) ...
 P: Configuring package libsigc++-1.2-5c2
 O: 
-O: Setting up aptitude (0.2.15.9-6) ...
+O: Setting up aptitude (0.2.15.9-7) ...
 P: Configuring package aptitude
 O: 
 O: Setting up gettext-base (0.14.5-2) ...
@@ -1111,7 +1111,7 @@ O:
 O: Setting up bsdmainutils (6.1.2) ...
 P: Configuring package bsdmainutils
 O: 
-O: Setting up cpio (2.6-6) ...
+O: Setting up cpio (2.6-8) ...
 P: Configuring package cpio
 O: 
 O: Setting up cron (3.0pl1-91) ...
@@ -1151,7 +1151,7 @@ P: Configuring package laptop-detect
 O: Setting up libgpg-error0 (1.1-4) ...
 P: Configuring package libgpg-error0
 O: 
-O: Setting up libgcrypt11 (1.2.1-4) ...
+O: Setting up libgcrypt11 (1.2.2-1) ...
 P: Configuring package libgcrypt11
 O: 
 O: Setting up libgdbm3 (1.8.3-2) ...
@@ -1197,7 +1197,7 @@ O:
 O: Setting up tcpd (7.6.dbs-8) ...
 P: Configuring package tcpd
 O: 
-O: Setting up netbase (4.22) ...
+O: Setting up netbase (4.23) ...
 P: Configuring package netbase
 O: 
 O: Setting up nvi (1.79-22) ...
@@ -1225,7 +1225,7 @@ O:
 O: Setting up exim4-base (4.54-1) ...
 P: Configuring package exim4-base
 O: 
-O: Setting up libgnutls12 (1.2.6-1) ...
+O: Setting up libgnutls12 (1.2.8-1) ...
 P: Configuring package libgnutls12
 O: 
 O: Setting up libpcre3 (6.4-1) ...
@@ -1242,9 +1242,9 @@ P: Configuring package exim4
 O: Setting up telnet (0.17-32) ...
 P: Configuring package telnet
 O: 
-O: Setting up dhcp3-common (3.0.3-4) ...
+O: Setting up dhcp3-common (3.0.3-5) ...
 P: Configuring package dhcp3-common
-O: Setting up dhcp3-client (3.0.3-4) ...
+O: Setting up dhcp3-client (3.0.3-5) ...
 P: Configuring package dhcp3-client
 O: 
 O: Setting up psmisc (21.6-1) ...
@@ -1302,8 +1302,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [4800B]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [3368kB]
-Fetched 3373kB in 1s (1885kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [3375kB]
+Fetched 3380kB in 1s (1937kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1320,8 +1320,8 @@ The following extra packages will be installed:
   linux-kernel-headers make patch perl perl-modules
 Suggested packages:
   binutils-doc cpp-doc gcc-4.0-locales gnupg debian-keyring gcc-4.0-doc
-  lib32stdc++6 manpages-dev autoconf automake1.9 libtool flex bison gdb gcc-doc
-  libc6-dev-i386 ia32-libs-dev lib32gcc1 glibc-doc libstdc++6-4.0-doc
+  lib32stdc++6 manpages-dev autoconf automake1.9 libtool flex bison gdb
+  gcc-doc libc6-dev-i386 ia32-libs-dev lib32gcc1 glibc-doc libstdc++6-4.0-doc
   stl-manual libterm-readline-gnu-perl libterm-readline-perl-perl
 Recommended packages:
   bzip2 libmudflap0-dev perl-doc
@@ -1330,11 +1330,12 @@ The following NEW packages will be installed:
   libc6-dev libstdc++6-4.0-dev linux-kernel-headers make patch perl
   perl-modules
 0 upgraded, 16 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/20.3MB of archives.
-After unpacking 79.3MB of additional disk space will be used.
+Need to get 0B/20.4MB of archives.
+After unpacking 81.7MB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   binutils cpp-4.0 cpp perl-modules perl patch make dpkg-dev gcc-4.0 gcc
-  libstdc++6-4.0-dev g++-4.0 g++ linux-kernel-headers libc6-dev build-essential
+  libstdc++6-4.0-dev g++-4.0 g++ linux-kernel-headers libc6-dev
+  build-essential
 Selecting previously deselected package binutils.
 (Reading database ... 7417 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1-2_amd64.deb) ...
@@ -1343,9 +1344,9 @@ Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-2_amd64.deb) ...
 Selecting previously deselected package cpp.
 Unpacking cpp (from .../cpp_4%3a4.0.2-1_amd64.deb) ...
 Selecting previously deselected package perl-modules.
-Unpacking perl-modules (from .../perl-modules_5.8.7-6_all.deb) ...
+Unpacking perl-modules (from .../perl-modules_5.8.7-7_all.deb) ...
 Selecting previously deselected package perl.
-Unpacking perl (from .../perl_5.8.7-6_amd64.deb) ...
+Unpacking perl (from .../perl_5.8.7-7_amd64.deb) ...
 Selecting previously deselected package patch.
 Unpacking patch (from .../patch_2.5.9-2_amd64.deb) ...
 Selecting previously deselected package make.
@@ -1363,7 +1364,7 @@ Unpacking g++-4.0 (from .../g++-4.0_4.0.2-2_amd64.deb) ...
 Selecting previously deselected package g++.
 Unpacking g++ (from .../g++_4%3a4.0.2-1_amd64.deb) ...
 Selecting previously deselected package linux-kernel-headers.
-Unpacking linux-kernel-headers (from .../linux-kernel-headers_2.6.13+0rc3-1.1_amd64.deb) ...
+Unpacking linux-kernel-headers (from .../linux-kernel-headers_2.6.13+0rc3-2_amd64.deb) ...
 Selecting previously deselected package libc6-dev.
 Unpacking libc6-dev (from .../libc6-dev_2.3.5-6_amd64.deb) ...
 Selecting previously deselected package build-essential.
@@ -1378,20 +1379,20 @@ Setting up make (3.80-11) ...
 Setting up gcc-4.0 (4.0.2-2) ...
 Setting up gcc (4.0.2-1) ...
 
-Setting up linux-kernel-headers (2.6.13+0rc3-1.1) ...
+Setting up linux-kernel-headers (2.6.13+0rc3-2) ...
 Setting up libc6-dev (2.3.5-6) ...
 Setting up libstdc++6-4.0-dev (4.0.2-2) ...
-Setting up perl-modules (5.8.7-6) ...
+Setting up perl-modules (5.8.7-7) ...
 Setting up g++-4.0 (4.0.2-2) ...
 Setting up g++ (4.0.2-1) ...
 
-Setting up perl (5.8.7-6) ...
+Setting up perl (5.8.7-7) ...
 
 Setting up dpkg-dev (1.13.11) ...
 Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//23444 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//24447 and its subdirectories

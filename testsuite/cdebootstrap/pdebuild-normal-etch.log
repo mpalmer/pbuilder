@@ -8,14 +8,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.6
@@ -31,10 +31,10 @@ W: /home/dancer/.pbuilderrc does not exist
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Tue Oct 25 12:34:19 JST 2005
-pbuilder-time-stamp: 1130211259
+Current time: Tue Nov  1 12:36:56 JST 2005
+pbuilder-time-stamp: 1130816216
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -62,16 +62,16 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/2860kB of archives.
-After unpacking 9437kB of additional disk space will be used.
+Need to get 0B/2890kB of archives.
+After unpacking 9572kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   libmagic1 file debconf-utils html2text gettext intltool-debian po-debconf
   debhelper libdshconfig1 libdshconfig1-dev
 Selecting previously deselected package libmagic1.
-(Reading database ... 11280 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.12-1_amd64.deb) ...
+(Reading database ... 11767 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.12-1_amd64.deb) ...
+Unpacking file (from .../archives/file_4.15-2_amd64.deb) ...
 Selecting previously deselected package debconf-utils.
 Unpacking debconf-utils (from .../debconf-utils_1.4.58_all.deb) ...
 Selecting previously deselected package html2text.
@@ -88,9 +88,9 @@ Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
 Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_amd64.deb) ...
-Setting up libmagic1 (4.12-1) ...
+Setting up libmagic1 (4.15-2) ...
 
-Setting up file (4.12-1) ...
+Setting up file (4.15-2) ...
 Setting up debconf-utils (1.4.58) ...
 
 Setting up html2text (1.3.2a-3) ...
@@ -105,7 +105,7 @@ Setting up libdshconfig1 (0.20.11-1) ...
 Setting up libdshconfig1-dev (0.20.11-1) ...
  -> Finished parsing the build-deps
 Copying back the cached apt archive contents
-grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir2/14014/etc/shadow: No such file or directory
+grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir2/15110/etc/shadow: No such file or directory
 Copying source file
     -> copying [../dsh_0.25.6-1.dsc]
     -> copying [../dsh_0.25.6.orig.tar.gz]
@@ -428,7 +428,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue Oct 25 03:35:00 UTC 2005
+Tue Nov  1 03:37:36 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -498,14 +498,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue Oct 25 03:35:05 UTC 2005
+Tue Nov  1 03:37:41 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-a: a
-dsh: Process terminated (before write).
-c: c
 b: b
+c: c
+dsh: Process terminated (before write).
+a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -611,7 +611,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Tue Oct 25 12:35:07 JST 2005
-pbuilder-time-stamp: 1130211307
+Current time: Tue Nov  1 12:37:43 JST 2005
+pbuilder-time-stamp: 1130816263
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXa4vQ/dir2/14014 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/dir2/15110 and its subdirectories
