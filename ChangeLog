@@ -1,5 +1,8 @@
 2005-11-02  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-modules: ln -s is protected with ||true, 
+	since /etc/mtab may already exist.
+
 	* debian/TODO: update TODO.
 
 2005-10-28  Junichi Uekawa  <dancer@debian.org>

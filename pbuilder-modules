@@ -139,7 +139,7 @@ function mountproc () {
 	echo " -> mounting /proc filesystem"
 	mkdir -p $BUILDPLACE/proc
 	mount -t proc /proc "$BUILDPLACE/proc"
-	ln -s ../proc/mounts $BUILDPLACE/etc/mtab
+	ln -s ../proc/mounts $BUILDPLACE/etc/mtab || true
     fi
     if [ "$USEDEVFS" = "yes" ]; then
 	echo " -> mounting /dev filesystem"

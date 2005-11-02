@@ -554,16 +554,14 @@ I: Base system installed successfully.
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
+ln: `/var/cache/pbuilder/build//23798/etc/mtab': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Hit http://ftp.jp.debian.org sid Release
-Ign http://ftp.jp.debian.org sid Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Fetched 189B in 0s (2921B/s)
+Fetched 189B in 0s (2054B/s)
 Reading package lists...
-W: GPG error: http://ftp.jp.debian.org sid Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY E415B2B4B5F5BBED
-W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
 Reading package lists...
@@ -589,12 +587,8 @@ The following NEW packages will be installed:
 0 upgraded, 16 newly installed, 0 to remove and 0 not upgraded.
 Need to get 0B/20.6MB of archives.
 After unpacking 82.1MB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  binutils cpp-4.0 cpp perl-modules perl patch make dpkg-dev gcc-4.0 gcc
-  libstdc++6-4.0-dev g++-4.0 g++ linux-kernel-headers libc6-dev
-  build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 7457 files and directories currently installed.)
+(Reading database ... 7462 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20050902-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-2_amd64.deb) ...
@@ -650,6 +644,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Ar4B6q/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//30695 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//23798 and its subdirectories

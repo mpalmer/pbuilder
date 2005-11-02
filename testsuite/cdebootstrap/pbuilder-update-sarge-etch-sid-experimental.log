@@ -1,9 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Ar4B6q/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
+ln: `/var/cache/pbuilder/build//25444/etc/mtab': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -17,8 +18,8 @@ Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org ../project/experimental Release [4245B]
 Ign http://ftp.jp.debian.org ../project/experimental Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [128kB]
-Fetched 133kB in 0s (334kB/s)
+Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [129kB]
+Fetched 133kB in 0s (343kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -27,37 +28,27 @@ dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
-The following packages will be REMOVED:
-  aptitude tasksel
 The following NEW packages will be installed:
   libsigc++-2.0-0c2
 The following packages will be upgraded:
-  apt apt-utils diff
-3 upgraded, 1 newly installed, 2 to remove and 0 not upgraded.
-Need to get 0B/1738kB of archives.
-After unpacking 6701kB disk space will be freed.
+  aptitude diff
+2 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/2668kB of archives.
+After unpacking 2036kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  diff apt-utils apt libsigc++-2.0-0c2
-(Reading database ... 12220 files and directories currently installed.)
-Removing tasksel ...
-Removing aptitude ...
-(Reading database ... 12037 files and directories currently installed.)
+  diff libsigc++-2.0-0c2 aptitude
+(Reading database ... 12225 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-(Reading database ... 12045 files and directories currently installed.)
-Preparing to replace apt-utils 0.6.42.1 (using .../apt-utils_0.6.42.1exp1_amd64.deb) ...
-Unpacking replacement apt-utils ...
-Preparing to replace apt 0.6.42.1 (using .../apt_0.6.42.1exp1_amd64.deb) ...
-Unpacking replacement apt ...
-Setting up apt (0.6.42.1exp1) ...
-
 Selecting previously deselected package libsigc++-2.0-0c2.
-(Reading database ... 12046 files and directories currently installed.)
+(Reading database ... 12233 files and directories currently installed.)
 Unpacking libsigc++-2.0-0c2 (from .../libsigc++-2.0-0c2_2.0.16-1_amd64.deb) ...
-Setting up apt-utils (0.6.42.1exp1) ...
-
+Preparing to replace aptitude 0.2.15.9-7 (using .../aptitude_0.3.5.1-2_amd64.deb) ...
+Unpacking replacement aptitude ...
 Setting up libsigc++-2.0-0c2 (2.0.16-1) ...
+
+Setting up aptitude (0.3.5.1-2) ...
 
 Reading package lists...
 Building dependency tree...
@@ -68,6 +59,6 @@ apt is already the newest version.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wX4Lty/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Ar4B6q/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//23411 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//25444 and its subdirectories
