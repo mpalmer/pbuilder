@@ -1,6 +1,7 @@
 Distribution is etch.
 Building the build environment
  -> running debootstrap
+/usr/sbin/debootstrap
 I: Retrieving Release
 I: Retrieving Packages
 I: Validating Packages
@@ -559,17 +560,14 @@ I: Base system installed successfully.
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
-ln: `/var/cache/pbuilder/build//5641/etc/mtab': File exists
+ln: `/var/cache/pbuilder/build//29607/etc/mtab': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Hit http://ftp.jp.debian.org etch Release
-Ign http://ftp.jp.debian.org etch Release
 Hit http://ftp.jp.debian.org etch/main Packages
-Fetched 189B in 0s (1104B/s)
+Fetched 189B in 0s (1467B/s)
 Reading package lists...
-W: GPG error: http://ftp.jp.debian.org etch Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY E415B2B4B5F5BBED
-W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
 Reading package lists...
@@ -595,10 +593,6 @@ The following NEW packages will be installed:
 0 upgraded, 16 newly installed, 0 to remove and 0 not upgraded.
 Need to get 0B/20.4MB of archives.
 After unpacking 81.7MB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  binutils cpp-4.0 cpp perl-modules perl patch make dpkg-dev gcc-4.0 gcc
-  libstdc++6-4.0-dev g++-4.0 g++ linux-kernel-headers libc6-dev
-  build-essential
 Selecting previously deselected package binutils.
 (Reading database ... 7466 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1-2_amd64.deb) ...
@@ -656,6 +650,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Ar4B6q/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXvrvy/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//5641 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//29607 and its subdirectories

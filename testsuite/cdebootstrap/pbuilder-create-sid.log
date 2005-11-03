@@ -1,6 +1,7 @@
 Distribution is sid.
 Building the build environment
  -> running cdebootstrap
+/usr/bin/cdebootstrap
 P: Retrieving Release.gpg
 P: Retrieving Release
 P: Parsing Release
@@ -73,6 +74,8 @@ P: Retrieving netbase
 P: Validating netbase
 P: Retrieving telnet
 P: Validating telnet
+P: Retrieving zlib1g
+P: Validating zlib1g
 P: Retrieving libssl0.9.8
 P: Validating libssl0.9.8
 P: Retrieving wget
@@ -123,8 +126,6 @@ P: Retrieving libgcrypt11
 P: Validating libgcrypt11
 P: Retrieving liblzo1
 P: Validating liblzo1
-P: Retrieving zlib1g
-P: Validating zlib1g
 P: Retrieving libopencdk8
 P: Validating libopencdk8
 P: Retrieving libtasn1-2
@@ -260,6 +261,7 @@ P: Extracting sed
 P: Extracting libncurses5
 P: Extracting ncurses-bin
 P: Extracting lsb-base
+P: Extracting zlib1g
 P: Extracting bsdutils
 P: Extracting dpkg
 P: Extracting libpam-runtime
@@ -270,7 +272,6 @@ P: Extracting libdb4.3
 P: Extracting libpam-modules
 P: Extracting login
 P: Extracting passwd
-P: Extracting zlib1g
 P: Extracting libslang2
 P: Extracting libnewt0.51
 P: Extracting libsepol1
@@ -301,7 +302,8 @@ P: Extracting bash
 P: Extracting findutils
 P: Extracting makedev
 O: Selecting previously deselected package base-passwd.
-O: (Reading database ... 0 files and directories currently installed.)
+O: (Reading database ... 
+O: 0 files and directories currently installed.)
 O: Unpacking base-passwd (from .../base-passwd_3.5.10_amd64.deb) ...
 P: Unpacking package base-passwd
 O: dpkg: base-passwd: dependency problems, but configuring anyway as you request:
@@ -432,6 +434,9 @@ P: Unpacking package ncurses-bin
 O: Selecting previously deselected package lsb-base.
 O: Unpacking lsb-base (from .../lsb-base_3.0-11_all.deb) ...
 P: Unpacking package lsb-base
+O: Selecting previously deselected package zlib1g.
+O: Unpacking zlib1g (from .../zlib1g_1.2.3-6_amd64.deb) ...
+P: Unpacking package zlib1g
 O: Selecting previously deselected package bsdutils.
 O: dpkg: regarding .../bsdutils_2.12p-8_amd64.deb containing bsdutils, pre-dependency problem:
 O:  bsdutils pre-depends on libc6 (>= 2.3.5-1)
@@ -458,26 +463,23 @@ O: Selecting previously deselected package libpam-modules.
 O: Unpacking libpam-modules (from .../libpam-modules_0.79-3_amd64.deb) ...
 P: Unpacking package libpam-modules
 O: Selecting previously deselected package login.
-O: dpkg: regarding .../login_4.0.13-3_amd64.deb containing login, pre-dependency problem:
+O: dpkg: regarding .../login_4.0.13-4_amd64.deb containing login, pre-dependency problem:
 O:  login pre-depends on libc6 (>= 2.3.5-1)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../login_4.0.13-3_amd64.deb containing login, pre-dependency problem:
+O: dpkg: regarding .../login_4.0.13-4_amd64.deb containing login, pre-dependency problem:
 O:  login pre-depends on libpam0g (>= 0.76)
 O:   libpam0g is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../login_4.0.13-3_amd64.deb containing login, pre-dependency problem:
+O: dpkg: regarding .../login_4.0.13-4_amd64.deb containing login, pre-dependency problem:
 O:  login pre-depends on libpam-runtime (>= 0.76-14)
 O:   libpam-runtime is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking login (from .../login_4.0.13-3_amd64.deb) ...
+O: Unpacking login (from .../login_4.0.13-4_amd64.deb) ...
 P: Unpacking package login
 O: Selecting previously deselected package passwd.
-O: Unpacking passwd (from .../passwd_4.0.13-3_amd64.deb) ...
+O: Unpacking passwd (from .../passwd_4.0.13-4_amd64.deb) ...
 P: Unpacking package passwd
-O: Selecting previously deselected package zlib1g.
-O: Unpacking zlib1g (from .../zlib1g_1.2.3-6_amd64.deb) ...
-P: Unpacking package zlib1g
 O: Selecting previously deselected package libslang2.
 O: Unpacking libslang2 (from .../libslang2_2.0.4-7_amd64.deb) ...
 P: Unpacking package libslang2
@@ -582,7 +584,7 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking sysvinit (from .../sysvinit_2.86.ds1-4_amd64.deb) ...
 P: Unpacking package sysvinit
 O: Selecting previously deselected package procps.
-O: Unpacking procps (from .../procps_3.2.5-1_amd64.deb) ...
+O: Unpacking procps (from .../procps_3.2.6-1_amd64.deb) ...
 P: Unpacking package procps
 O: Selecting previously deselected package libdb3.
 O: Unpacking libdb3 (from .../libdb3_3.2.9-23_amd64.deb) ...
@@ -786,7 +788,7 @@ O:
 O: Setting up debianutils (2.15) ...
 P: Configuring package debianutils
 O: 
-O: Setting up procps (3.2.5-1) ...
+O: Setting up procps (3.2.6-1) ...
 P: Configuring package procps
 O: 
 O: Setting up ncurses-base (5.5-1) ...
@@ -810,12 +812,12 @@ P: Configuring package gzip
 O: 
 O: Setting up dselect (1.13.11) ...
 P: Configuring package dselect
-O: Setting up login (4.0.13-3) ...
+O: Setting up login (4.0.13-4) ...
 P: Configuring package login
 O: 
 O: Setting up lsb-base (3.0-11) ...
 P: Configuring package lsb-base
-O: Setting up passwd (4.0.13-3) ...
+O: Setting up passwd (4.0.13-4) ...
 P: Configuring package passwd
 O: 
 O: Setting up initscripts (2.86.ds1-4) ...
@@ -838,13 +840,13 @@ O:
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
 O: (Reading database ... 
-O: 4510 files and directories currently installed.)
+O: 4509 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
 O: (Reading database ... 
-O: 4513 files and directories currently installed.)
+O: 4512 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
@@ -852,13 +854,13 @@ O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
 O: (Reading database ... 
-O: 4515 files and directories currently installed.)
+O: 4514 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
 O: Selecting previously deselected package apt.
 O: (Reading database ... 
-O: 4515 files and directories currently installed.)
+O: 4514 files and directories currently installed.)
 O: Unpacking apt (from .../apt_0.6.42.2_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.42.2) ...
@@ -867,7 +869,7 @@ O:
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [4800B]
 O: Ign bootstrap: . Release
-O: Fetched 4989B in 0s (41.1kB/s)
+O: Fetched 4989B in 0s (45.0kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -910,7 +912,7 @@ O: debconf: delaying package configuration, since apt-utils is not installed
 O: Authentication warning overridden.
 O: Selecting previously deselected package console-data.
 O: (Reading database ... 
-O: 4681 files and directories currently installed.)
+O: 4680 files and directories currently installed.)
 O: Unpacking console-data (from .../console-data_2002.12.04dbs-49_all.deb) ...
 P: Unpacking package console-data
 O: Selecting previously deselected package libconsole.
@@ -1007,7 +1009,7 @@ O: Selecting previously deselected package libpopt0.
 O: Unpacking libpopt0 (from .../libpopt0_1.7-5_amd64.deb) ...
 P: Unpacking package libpopt0
 O: Selecting previously deselected package libssl0.9.8.
-O: Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8a-2_amd64.deb) ...
+O: Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8a-3_amd64.deb) ...
 P: Unpacking package libssl0.9.8
 O: Selecting previously deselected package libtasn1-2.
 O: Unpacking libtasn1-2 (from .../libtasn1-2_0.2.13-1_amd64.deb) ...
@@ -1161,7 +1163,7 @@ O:
 O: Setting up libpopt0 (1.7-5) ...
 P: Configuring package libpopt0
 O: 
-O: Setting up libssl0.9.8 (0.9.8a-2) ...
+O: Setting up libssl0.9.8 (0.9.8a-3) ...
 P: Configuring package libssl0.9.8
 O: 
 O: Setting up libtasn1-2 (0.2.13-1) ...
@@ -1296,7 +1298,7 @@ Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [4800B]
 Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org sid/main Packages [3714kB]
-Fetched 3719kB in 2s (1775kB/s)
+Fetched 3719kB in 1s (1909kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1386,6 +1388,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Ar4B6q/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXvrvy/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//7330 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//31420 and its subdirectories

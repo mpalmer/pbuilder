@@ -1,13 +1,24 @@
-pbuilder (0.137) UNRELEASED; urgency=low
+pbuilder (0.137) unstable; urgency=low
 
   [Junichi Uekawa]
-  * pbuilder-doc.xml: Document amd64-i386 usage in FAQ. (closes: #332737)
+  * pbuilder-doc.xml
+  - Document amd64-i386 usage in FAQ. (closes: #332737)
+  - typo fix
+  - document /etc/mtab inside chroot is a symbollic link.
+  
   * update TODO file.
+  
+  * allow debootstrap or cdebootstrap as dependency.
+  - check for debootstrap installation, and output meaningful error.
+    This is a follow-up to (#323843, #324648)
+    rationale: debootstrap has some more features and cdebootstrap, sometimes;
+    and cdebootstrap is not ported to all architectures.
+  
   [Matt Kraai]
   * If /proc is mounted, create a symbolic link from /etc/mtab to
     /proc/mounts.
 
- -- Junichi Uekawa <dancer@debian.org>  Fri, 28 Oct 2005 15:39:21 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Thu,  3 Nov 2005 10:06:58 +0900
 
 pbuilder (0.136) unstable; urgency=low
 
@@ -46,7 +57,7 @@ pbuilder (0.133) unstable; urgency=low
   * Change "exec" to "execute" in the description of the --save-after-exec
     option.
   [Junichi Uekawa]
-  * Change maintaners field to point to pbuilder-maint mailing list, and 
+  * Change maintainers field to point to pbuilder-maint mailing list, and 
     switch to using uploaders field.
 
  -- Junichi Uekawa <dancer@debian.org>  Sat,  1 Oct 2005 13:27:44 +0900

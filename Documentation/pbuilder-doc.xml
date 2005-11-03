@@ -4,7 +4,7 @@
   and the latest version is found in CVS repository. -->
 <book>
   <bookinfo>
-    <date>2005-10-28</date>
+    <date>2005-11-03</date>
     <title>pbuilder User's Manual</title>
     <abbrev>pbuilder-doc</abbrev>
     <subtitle>Usage and operations</subtitle>
@@ -1269,7 +1269,7 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
     <sect1 id="dirstructinside">
       <title>Directory structure inside the chroot</title>
       <table>
-	<title>Directory Structure outside the chroot </title>
+	<title>Directory Structure inside the chroot </title>
 	<tgroup cols="2">
 	  <thead>
 	    <row>
@@ -1278,6 +1278,12 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 	    </row>
 	  </thead>
 	  <tbody>
+	    <row>
+	      <entry><filename>/etc/mtab</filename></entry>
+	      <entry>
+		symlink to <filename>/proc/mounts</filename>.
+	      </entry>
+	    </row>
 	    <row>
 	      <entry><filename>/tmp/buildd</filename></entry>
 	      <entry>Default place used in pbuilder to place the Debian package to be processed.

@@ -40,7 +40,7 @@ cleanbuildplace
 echo "Building the build environment"
 mkdir -p "$BUILDPLACE"
 if [ ! -d "$BUILDPLACE" ]; then
-    echo "pbuilder: Could not make directory [$BUILDPLACE]" >&2
+    echo "E: Could not make directory [$BUILDPLACE]" >&2
     exit 1
 fi
 
@@ -53,6 +53,13 @@ if [ -n "$HOOKDIR" ]; then
 	DEBOOTSTRAPSCRIPT=$(readlink -f $HOOKDIR)"/$DISTRIBUTION"
 	echo "  -> Applying user distribution dist build script $DEBOOTSTRAPSCRIPT"
     fi
+fi
+
+if which "${DEBOOTSTRAP}"; then
+    : # debootstrap exists
+else
+    echo "E: ${DEBOOTSTRAP} does not exist, install or change DEBOOTSTRAP option" >&2
+    exit 1
 fi
 
 if ! ( cd "$BUILDPLACE" && "${DEBOOTSTRAP}" "${DEBOOTSTRAPOPTS[@]}" "$DISTRIBUTION" . "$MIRRORSITE" $DEBOOTSTRAPSCRIPT ) ; then

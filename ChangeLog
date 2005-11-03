@@ -1,3 +1,21 @@
+2005-11-03  Junichi Uekawa  <dancer@debian.org>
+
+	* testsuite/run-test-experimental.sh:
+	* testsuite/run-test-experimental.log: experimental test no longer
+	works since apt with gpg checking is default, remove it.
+	
+	* debian/TODO: remove todo item on /etc/mtab documentation.
+
+	* Documentation/pbuilder-doc.xml: document /etc/mtab is a 
+	symlink to /proc/mounts
+	spellcheck.
+
+	* debian/control (Depends): cdebootstrap or debootstrap
+
+	* pbuilder-createbuildenv: change inconsistent error message
+	Check and report error state when debootstrap specified in DEBOOTSTRAP option
+	does not exist.
+
 2005-11-02  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/TODO: update.

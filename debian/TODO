@@ -1,12 +1,5 @@
 TODO and possible bugs: 
 
-* /etc/mtab is now symlink to /proc/mounts
-   - document in pbuilder-doc.xml
-   - mount(1)
-mount(1) manual page states it will break "users" and make 'loop'
-   mount inconvenient.
-Check it out and document.
-
 * Need to test: amd64-x86 cross build with cowdancer 
 Need to test.
 
@@ -24,8 +17,6 @@ Cowdancer is not yet functional.
 
 * save-afer-login seems to save aptcache and make a big base.tgz.
    we don't want it, clean aptcache before save test it is functional.
-
-* select cdebootstrap if debootstrap does not exist and cdebootstrap exists.
 
 * revert back to using --variant=buildd for debootstrap
    - depends-on debian-bug: 314858 debootstrap: fixed in 0.3.2
