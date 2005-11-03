@@ -55,6 +55,7 @@ test
 
 * set LOGNAME=root ? 
    - related debian-bug: 166682
+   - perl spits out warning every time it starts up if LOGNAME is unset.
 
 * check cross-compile support, maybe adding support for dpkg-cross into build-depends checker?
 
@@ -64,6 +65,5 @@ test
 This should change semantics; and how do we pass this thing to inside UML?
 
 * Use alternative to pbuilder-satisfydepends; apt-pkg? read elmo.txt for clues.
-
 
 $Id$
