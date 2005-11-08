@@ -74,6 +74,8 @@ P: Retrieving netbase
 P: Validating netbase
 P: Retrieving telnet
 P: Validating telnet
+P: Retrieving zlib1g
+P: Validating zlib1g
 P: Retrieving libssl0.9.8
 P: Validating libssl0.9.8
 P: Retrieving wget
@@ -124,8 +126,6 @@ P: Retrieving libgcrypt11
 P: Validating libgcrypt11
 P: Retrieving liblzo1
 P: Validating liblzo1
-P: Retrieving zlib1g
-P: Validating zlib1g
 P: Retrieving libopencdk8
 P: Validating libopencdk8
 P: Retrieving libtasn1-2
@@ -263,6 +263,7 @@ P: Extracting sed
 P: Extracting libncurses5
 P: Extracting ncurses-bin
 P: Extracting lsb-base
+P: Extracting zlib1g
 P: Extracting bsdutils
 P: Extracting dpkg
 P: Extracting libpam-runtime
@@ -273,7 +274,6 @@ P: Extracting libdb4.3
 P: Extracting libpam-modules
 P: Extracting login
 P: Extracting passwd
-P: Extracting zlib1g
 P: Extracting libslang2
 P: Extracting libnewt0.51
 P: Extracting libsepol1
@@ -305,7 +305,8 @@ P: Extracting bash
 P: Extracting findutils
 P: Extracting makedev
 O: Selecting previously deselected package base-passwd.
-O: (Reading database ... 0 files and directories currently installed.)
+O: (Reading database ... 
+O: 0 files and directories currently installed.)
 O: Unpacking base-passwd (from .../base-passwd_3.5.10_amd64.deb) ...
 P: Unpacking package base-passwd
 O: dpkg: base-passwd: dependency problems, but configuring anyway as you request:
@@ -436,6 +437,9 @@ P: Unpacking package ncurses-bin
 O: Selecting previously deselected package lsb-base.
 O: Unpacking lsb-base (from .../lsb-base_3.0-9_all.deb) ...
 P: Unpacking package lsb-base
+O: Selecting previously deselected package zlib1g.
+O: Unpacking zlib1g (from .../zlib1g_1.2.3-4_amd64.deb) ...
+P: Unpacking package zlib1g
 O: Selecting previously deselected package bsdutils.
 O: dpkg: regarding .../bsdutils_2.12p-8_amd64.deb containing bsdutils, pre-dependency problem:
 O:  bsdutils pre-depends on libc6 (>= 2.3.5-1)
@@ -479,9 +483,6 @@ P: Unpacking package login
 O: Selecting previously deselected package passwd.
 O: Unpacking passwd (from .../passwd_4.0.13-1_amd64.deb) ...
 P: Unpacking package passwd
-O: Selecting previously deselected package zlib1g.
-O: Unpacking zlib1g (from .../zlib1g_1.2.3-4_amd64.deb) ...
-P: Unpacking package zlib1g
 O: Selecting previously deselected package libslang2.
 O: Unpacking libslang2 (from .../libslang2_2.0.4-7_amd64.deb) ...
 P: Unpacking package libslang2
@@ -599,11 +600,11 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking hostname (from .../hostname_2.91_amd64.deb) ...
 P: Unpacking package hostname
 O: Selecting previously deselected package grep.
-O: dpkg: regarding .../grep_2.5.1.ds2-1_amd64.deb containing grep, pre-dependency problem:
+O: dpkg: regarding .../grep_2.5.1.ds2-2_amd64.deb containing grep, pre-dependency problem:
 O:  grep pre-depends on libc6 (>= 2.3.5-1)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking grep (from .../grep_2.5.1.ds2-1_amd64.deb) ...
+O: Unpacking grep (from .../grep_2.5.1.ds2-2_amd64.deb) ...
 P: Unpacking package grep
 O: Selecting previously deselected package slang1a-utf8.
 O: Unpacking slang1a-utf8 (from .../slang1a-utf8_1.4.9dbs-8_amd64.deb) ...
@@ -619,11 +620,11 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking mawk (from .../mawk_1.3.3-11_amd64.deb) ...
 P: Unpacking package mawk
 O: Selecting previously deselected package tar.
-O: dpkg: regarding .../bootstrap/tar_1.14-2_amd64.deb containing tar, pre-dependency problem:
-O:  tar pre-depends on libc6 (>= 2.3.2.ds1-4)
+O: dpkg: regarding .../tar_1.15.1-2_amd64.deb containing tar, pre-dependency problem:
+O:  tar pre-depends on libc6 (>= 2.3.2.ds1-21)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking tar (from .../bootstrap/tar_1.14-2_amd64.deb) ...
+O: Unpacking tar (from .../tar_1.15.1-2_amd64.deb) ...
 P: Unpacking package tar
 O: Selecting previously deselected package gzip.
 O: dpkg: regarding .../gzip_1.3.5-12_amd64.deb containing gzip, pre-dependency problem:
@@ -713,7 +714,7 @@ P: Configuring package perl-base
 O: Setting up libsepol1 (1.8-1) ...
 P: Configuring package libsepol1
 O: 
-O: Setting up tar (1.14-2) ...
+O: Setting up tar (1.15.1-2) ...
 P: Configuring package tar
 O: install-info(/usr/share/info/tar.info.gz): no backup file /var/backups/infodir.bak available, retrieving default file.
 O: 
@@ -748,8 +749,9 @@ P: Configuring package mawk
 O: 
 O: Setting up libdb4.3 (4.3.28-2) ...
 P: Configuring package libdb4.3
-O: Setting up grep (2.5.1.ds2-1) ...
+O: Setting up grep (2.5.1.ds2-2) ...
 P: Configuring package grep
+O: 
 O: Setting up hostname (2.91) ...
 P: Configuring package hostname
 O: Setting up libacl1 (2.2.32-1) ...
@@ -846,26 +848,26 @@ P: Configuring package debconf
 O: 
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
-O: (Reading database ... 4516 files and directories currently installed.)
+O: (Reading database ... 
+O: 4520 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
-O: (Reading database ... 4519 files and directories currently installed.)
+O: (Reading database ... 
+O: 4523 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
-O: (Reading database ... 
-O: 4521 files and directories currently installed.)
+O: (Reading database ... 4525 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
 O: Selecting previously deselected package apt.
-O: (Reading database ... 
-O: 4521 files and directories currently installed.)
+O: (Reading database ... 4525 files and directories currently installed.)
 O: Unpacking apt (from .../apt_0.6.42.2_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.42.2) ...
@@ -874,7 +876,7 @@ O:
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [4800B]
 O: Ign bootstrap: . Release
-O: Fetched 4989B in 0s (48.7kB/s)
+O: Fetched 4989B in 0s (45.7kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -884,7 +886,6 @@ O: W:
 O: You may want to run apt-get update to correct these problems
 O: 
 O: Reading package lists...
-O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -918,7 +919,7 @@ O: debconf: delaying package configuration, since apt-utils is not installed
 O: Authentication warning overridden.
 O: Selecting previously deselected package console-data.
 O: (Reading database ... 
-O: 4687 files and directories currently installed.)
+O: 4691 files and directories currently installed.)
 O: Unpacking console-data (from .../console-data_2002.12.04dbs-49_all.deb) ...
 P: Unpacking package console-data
 O: Selecting previously deselected package libconsole.
@@ -931,7 +932,7 @@ O: Selecting previously deselected package console-common.
 O: Unpacking console-common (from .../console-common_0.7.54_all.deb) ...
 P: Unpacking package console-common
 O: Selecting previously deselected package adduser.
-O: Unpacking adduser (from .../adduser_3.67.2_all.deb) ...
+O: Unpacking adduser (from .../bootstrap/adduser_3.77_all.deb) ...
 P: Unpacking package adduser
 O: Selecting previously deselected package libdb4.2.
 O: Unpacking libdb4.2 (from .../libdb4.2_4.2.52-18_amd64.deb) ...
@@ -955,7 +956,7 @@ O: Selecting previously deselected package bsdmainutils.
 O: Unpacking bsdmainutils (from .../bsdmainutils_6.1.2_amd64.deb) ...
 P: Unpacking package bsdmainutils
 O: Selecting previously deselected package cpio.
-O: Unpacking cpio (from .../bootstrap/cpio_2.6-8_amd64.deb) ...
+O: Unpacking cpio (from .../bootstrap/cpio_2.6-9_amd64.deb) ...
 P: Unpacking package cpio
 O: Selecting previously deselected package cron.
 O: Unpacking cron (from .../cron_3.0pl1-91_amd64.deb) ...
@@ -970,7 +971,7 @@ O: Selecting previously deselected package groff-base.
 O: Unpacking groff-base (from .../groff-base_1.18.1.1-10_amd64.deb) ...
 P: Unpacking package groff-base
 O: Selecting previously deselected package net-tools.
-O: Unpacking net-tools (from .../net-tools_1.60-15_amd64.deb) ...
+O: Unpacking net-tools (from .../net-tools_1.60-16_amd64.deb) ...
 P: Unpacking package net-tools
 O: Selecting previously deselected package ifupdown.
 O: Unpacking ifupdown (from .../ifupdown_0.6.7_amd64.deb) ...
@@ -982,7 +983,7 @@ O: Selecting previously deselected package iptables.
 O: Unpacking iptables (from .../iptables_1.3.3-2_amd64.deb) ...
 P: Unpacking package iptables
 O: Selecting previously deselected package iputils-ping.
-O: Unpacking iputils-ping (from .../iputils-ping_20020927-2_amd64.deb) ...
+O: Unpacking iputils-ping (from .../iputils-ping_20020927-3_amd64.deb) ...
 P: Unpacking package iputils-ping
 O: Selecting previously deselected package sysklogd.
 O: Unpacking sysklogd (from .../sysklogd_1.4.1-17_amd64.deb) ...
@@ -1015,7 +1016,7 @@ O: Selecting previously deselected package libpopt0.
 O: Unpacking libpopt0 (from .../libpopt0_1.7-5_amd64.deb) ...
 P: Unpacking package libpopt0
 O: Selecting previously deselected package libssl0.9.8.
-O: Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8a-2_amd64.deb) ...
+O: Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8a-3_amd64.deb) ...
 P: Unpacking package libssl0.9.8
 O: Selecting previously deselected package libtasn1-2.
 O: Unpacking libtasn1-2 (from .../libtasn1-2_0.2.13-1_amd64.deb) ...
@@ -1092,7 +1093,7 @@ P: Unpacking package psmisc
 O: Setting up libconsole (0.2.3dbs-57) ...
 P: Configuring package libconsole
 O: 
-O: Setting up adduser (3.67.2) ...
+O: Setting up adduser (3.77) ...
 P: Configuring package adduser
 O: 
 O: Setting up libdb4.2 (4.2.52-18) ...
@@ -1112,7 +1113,7 @@ O:
 O: Setting up bsdmainutils (6.1.2) ...
 P: Configuring package bsdmainutils
 O: 
-O: Setting up cpio (2.6-8) ...
+O: Setting up cpio (2.6-9) ...
 P: Configuring package cpio
 O: 
 O: Setting up cron (3.0pl1-91) ...
@@ -1128,7 +1129,7 @@ O:
 O: Setting up groff-base (1.18.1.1-10) ...
 P: Configuring package groff-base
 O: 
-O: Setting up net-tools (1.60-15) ...
+O: Setting up net-tools (1.60-16) ...
 P: Configuring package net-tools
 O: Setting up ifupdown (0.6.7) ...
 P: Configuring package ifupdown
@@ -1145,7 +1146,7 @@ O:
 O: Setting up iptables (1.3.3-2) ...
 P: Configuring package iptables
 O: 
-O: Setting up iputils-ping (20020927-2) ...
+O: Setting up iputils-ping (20020927-3) ...
 P: Configuring package iputils-ping
 O: Setting up laptop-detect (0.12.1) ...
 P: Configuring package laptop-detect
@@ -1169,7 +1170,7 @@ O:
 O: Setting up libpopt0 (1.7-5) ...
 P: Configuring package libpopt0
 O: 
-O: Setting up libssl0.9.8 (0.9.8a-2) ...
+O: Setting up libssl0.9.8 (0.9.8a-3) ...
 P: Configuring package libssl0.9.8
 O: 
 O: Setting up libtasn1-2 (0.2.13-1) ...
@@ -1303,8 +1304,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [4800B]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [3409kB]
-Fetched 3414kB in 1s (1907kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [3432kB]
+Fetched 3437kB in 1s (1943kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1394,6 +1395,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXvrvy/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//18476 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//32402 and its subdirectories

@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXvrvy/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: `/var/cache/pbuilder/build//27769/etc/mtab': File exists
+ln: `/var/cache/pbuilder/build//8397/etc/mtab': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -18,8 +18,8 @@ Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org ../project/experimental Release [4245B]
 Ign http://ftp.jp.debian.org ../project/experimental Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [126kB]
-Fetched 131kB in 0s (267kB/s)
+Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [125kB]
+Fetched 130kB in 0s (231kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -28,28 +28,17 @@ dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
-The following NEW packages will be installed:
-  libsigc++-2.0-0c2
 The following packages will be upgraded:
-  aptitude diff
-2 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/2668kB of archives.
-After unpacking 2036kB of additional disk space will be used.
+  diff
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/246kB of archives.
+After unpacking 303kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  diff libsigc++-2.0-0c2 aptitude
-(Reading database ... 11782 files and directories currently installed.)
+  diff
+(Reading database ... 11793 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-Selecting previously deselected package libsigc++-2.0-0c2.
-(Reading database ... 11790 files and directories currently installed.)
-Unpacking libsigc++-2.0-0c2 (from .../libsigc++-2.0-0c2_2.0.16-1_amd64.deb) ...
-Preparing to replace aptitude 0.2.15.9-7 (using .../aptitude_0.3.5.1-2_amd64.deb) ...
-Unpacking replacement aptitude ...
-Setting up libsigc++-2.0-0c2 (2.0.16-1) ...
-
-Setting up aptitude (0.3.5.1-2) ...
-
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
@@ -59,6 +48,6 @@ apt is already the newest version.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.EXvrvy/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//27769 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//8397 and its subdirectories
