@@ -1,14 +1,14 @@
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Tue Nov  8 15:21:21 JST 2005
-pbuilder-time-stamp: 1131430881
+Current time: Wed Nov  9 12:47:25 JST 2005
+pbuilder-time-stamp: 1131508045
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/7927/etc/mtab': File exists
+ln: `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/31593/etc/mtab': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
@@ -33,17 +33,8 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2600kB/2623kB of archives.
+Need to get 0B/2623kB of archives.
 After unpacking 8978kB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org sarge/main libmagic1 4.12-1 [234kB]
-Get:2 http://ftp.jp.debian.org sarge/main file 4.12-1 [29.2kB]
-Get:3 http://ftp.jp.debian.org sarge/main debconf-utils 1.4.30.13 [33.0kB]
-Get:4 http://ftp.jp.debian.org sarge/main html2text 1.3.2a-2 [92.8kB]
-Get:5 http://ftp.jp.debian.org sarge/main gettext 0.14.4-2 [1747kB]
-Get:6 http://ftp.jp.debian.org sarge/main intltool-debian 0.30+20040213 [23.5kB]
-Get:7 http://ftp.jp.debian.org sarge/main po-debconf 0.8.23 [78.0kB]
-Get:8 http://ftp.jp.debian.org sarge/main debhelper 4.2.32 [362kB]
-Fetched 2600kB in 1s (1466kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 10950 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_amd64.deb) ...
@@ -82,19 +73,11 @@ Setting up libdshconfig1 (0.20.11-1) ...
 Setting up libdshconfig1-dev (0.20.11-1) ...
  -> Finished parsing the build-deps
 Copying back the cached apt archive contents
- -> new cache content libmagic1_4.12-1_amd64.deb added
- -> new cache content file_4.12-1_amd64.deb added
- -> new cache content debconf-utils_1.4.30.13_all.deb added
- -> new cache content html2text_1.3.2a-2_amd64.deb added
- -> new cache content gettext_0.14.4-2_amd64.deb added
- -> new cache content intltool-debian_0.30+20040213_all.deb added
- -> new cache content po-debconf_0.8.23_all.deb added
- -> new cache content debhelper_4.2.32_all.deb added
-grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/7927/etc/shadow: No such file or directory
+grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/31593/etc/shadow: No such file or directory
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-source: extracting dsh in dsh-0.25.6
@@ -395,8 +378,8 @@ success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -404,11 +387,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-1: 1
 2: 2
+1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue Nov  8 06:21:51 UTC 2005
+Wed Nov  9 03:47:56 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -478,14 +461,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue Nov  8 06:21:56 UTC 2005
+Wed Nov  9 03:48:01 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
-c: c
 dsh: Process terminated (before write).
+c: c
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -591,7 +574,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Tue Nov  8 15:21:58 JST 2005
-pbuilder-time-stamp: 1131430918
+Current time: Wed Nov  9 12:48:03 JST 2005
+pbuilder-time-stamp: 1131508083
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/7927 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/31593 and its subdirectories

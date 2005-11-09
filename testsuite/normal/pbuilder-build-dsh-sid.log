@@ -1,14 +1,14 @@
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Tue Nov  8 15:16:58 JST 2005
-pbuilder-time-stamp: 1131430618
+Current time: Wed Nov  9 12:42:51 JST 2005
+pbuilder-time-stamp: 1131507771
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/10122/etc/mtab': File exists
+ln: `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/32080/etc/mtab': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
@@ -33,22 +33,18 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2246kB/2891kB of archives.
+Need to get 540kB/2891kB of archives.
 After unpacking 9572kB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org sid/main libmagic1 4.15-2 [262kB]
-Get:2 http://ftp.jp.debian.org sid/main file 4.15-2 [30.8kB]
-Get:3 http://ftp.jp.debian.org sid/main html2text 1.3.2a-3 [115kB]
-Get:4 http://ftp.jp.debian.org sid/main gettext 0.14.5-2 [1815kB]
-Get:5 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.11-1 [10.9kB]
-Get:6 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.11-1 [12.6kB]
-Fetched 2246kB in 1s (1558kB/s)
+Get:1 http://ftp.jp.debian.org sid/main debconf-utils 1.4.59 [33.0kB]
+Get:2 http://ftp.jp.debian.org sid/main debhelper 5.0.3 [507kB]
+Fetched 540kB in 0s (1286kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11827 files and directories currently installed.)
+(Reading database ... 11831 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.15-2_amd64.deb) ...
 Selecting previously deselected package debconf-utils.
-Unpacking debconf-utils (from .../debconf-utils_1.4.58_all.deb) ...
+Unpacking debconf-utils (from .../debconf-utils_1.4.59_all.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
 Selecting previously deselected package gettext.
@@ -58,7 +54,7 @@ Unpacking intltool-debian (from .../intltool-debian_0.34.1+20050828_all.deb) ...
 Selecting previously deselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_0.9.0_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_5.0.2_all.deb) ...
+Unpacking debhelper (from .../debhelper_5.0.3_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -66,7 +62,7 @@ Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_amd64.deb) ...
 Setting up libmagic1 (4.15-2) ...
 
 Setting up file (4.15-2) ...
-Setting up debconf-utils (1.4.58) ...
+Setting up debconf-utils (1.4.59) ...
 
 Setting up html2text (1.3.2a-3) ...
 
@@ -74,23 +70,19 @@ Setting up gettext (0.14.5-2) ...
 
 Setting up intltool-debian (0.34.1+20050828) ...
 Setting up po-debconf (0.9.0) ...
-Setting up debhelper (5.0.2) ...
+Setting up debhelper (5.0.3) ...
 Setting up libdshconfig1 (0.20.11-1) ...
 
 Setting up libdshconfig1-dev (0.20.11-1) ...
  -> Finished parsing the build-deps
 Copying back the cached apt archive contents
- -> new cache content libmagic1_4.15-2_amd64.deb added
- -> new cache content file_4.15-2_amd64.deb added
- -> new cache content html2text_1.3.2a-3_amd64.deb added
- -> new cache content gettext_0.14.5-2_amd64.deb added
- -> new cache content libdshconfig1_0.20.11-1_amd64.deb added
- -> new cache content libdshconfig1-dev_0.20.11-1_amd64.deb added
-grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/10122/etc/shadow: No such file or directory
+ -> new cache content debconf-utils_1.4.59_all.deb added
+ -> new cache content debhelper_5.0.3_all.deb added
+grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/32080/etc/shadow: No such file or directory
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-source: extracting dsh in dsh-0.25.6
@@ -407,7 +399,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue Nov  8 06:17:36 UTC 2005
+Wed Nov  9 03:43:31 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -477,7 +469,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue Nov  8 06:17:41 UTC 2005
+Wed Nov  9 03:43:36 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -606,7 +598,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Tue Nov  8 15:17:44 JST 2005
-pbuilder-time-stamp: 1131430664
+Current time: Wed Nov  9 12:43:38 JST 2005
+pbuilder-time-stamp: 1131507818
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a9DRGI/dir1/10122 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.aQA00W/dir1/32080 and its subdirectories
