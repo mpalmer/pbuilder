@@ -6,16 +6,17 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
+dh_clean: Compatibility levels before 4 are deprecated.
  dpkg-source -b dsh-0.25.6
 dpkg-source: building dsh using existing dsh_0.25.6.orig.tar.gz
 dpkg-source: building dsh in dsh_0.25.6-1.diff.gz
@@ -29,14 +30,14 @@ W: /home/dancer/.pbuilderrc does not exist
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Thu Nov 10 12:37:06 JST 2005
-pbuilder-time-stamp: 1131593826
+Current time: Fri Nov 11 09:29:32 JST 2005
+pbuilder-time-stamp: 1131668972
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/dir2/14273/etc/mtab': File exists
+ln: `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/dir2/18365/etc/mtab': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result
@@ -104,7 +105,7 @@ Setting up libdshconfig1 (0.20.11-1) ...
 Setting up libdshconfig1-dev (0.20.11-1) ...
  -> Finished parsing the build-deps
 Copying back the cached apt archive contents
-grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/dir2/14273/etc/shadow: No such file or directory
+grep: /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/dir2/18365/etc/shadow: No such file or directory
 Copying source file
     -> copying [../dsh_0.25.6-1.dsc]
     -> copying [../dsh_0.25.6.orig.tar.gz]
@@ -388,6 +389,7 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
+dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -426,7 +428,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Thu Nov 10 03:37:47 UTC 2005
+Fri Nov 11 00:30:17 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -496,14 +498,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Thu Nov 10 03:37:52 UTC 2005
+Fri Nov 11 00:30:22 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
-dsh: Process terminated (before write).
 c: c
+dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -609,7 +611,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Thu Nov 10 12:37:54 JST 2005
-pbuilder-time-stamp: 1131593874
+Current time: Fri Nov 11 09:30:24 JST 2005
+pbuilder-time-stamp: 1131669024
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/dir2/14273 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/dir2/18365 and its subdirectories

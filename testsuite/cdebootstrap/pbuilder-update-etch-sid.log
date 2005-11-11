@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: `/var/cache/pbuilder/build//28450/etc/mtab': File exists
+ln: `/var/cache/pbuilder/build//420/etc/mtab': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -14,7 +14,7 @@ Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [4800B]
 Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org sid/main Packages [3729kB]
-Fetched 3734kB in 4s (876kB/s)
+Fetched 3734kB in 2s (1623kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -29,16 +29,17 @@ The following packages will be upgraded:
   debianutils exim4 exim4-base exim4-config exim4-daemon-light info libc6
   libc6-dev libconsole libdb3 libdb4.2 libdb4.3 libncurses5 libncursesw5
   libslang2 login makedev manpages nano ncurses-base ncurses-bin passwd procps
-  psmisc sed zlib1g
-32 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/20.6MB of archives.
-After unpacking 2601kB of additional disk space will be used.
+  psmisc sed tasksel zlib1g
+33 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/20.7MB of archives.
+After unpacking 2671kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   debianutils login ncurses-bin sed libc6-dev libc6 libncurses5 ncurses-base
   debconf-i18n debconf libslang2 passwd zlib1g libncursesw5 libsigc++-2.0-0c2
   aptitude console-data console-tools libconsole info libdb4.2 manpages nano
-  libdb3 libdb4.3 makedev procps binutils exim4-config exim4-base
+  tasksel libdb3 libdb4.3 makedev procps binutils exim4-config exim4-base
   exim4-daemon-light exim4 psmisc
+Preconfiguring packages ...
 (Reading database ... 11767 files and directories currently installed.)
 Preparing to replace debianutils 2.15 (using .../debianutils_2.15.1_amd64.deb) ...
 Unpacking replacement debianutils ...
@@ -67,8 +68,8 @@ Unpacking replacement libc6 ...
 Setting up libc6 (2.3.5-7) ...
 Installing new version of config file /etc/init.d/glibc.sh ...
 Current default timezone: 'UTC'.
-Local time is now:      Thu Nov 10 03:39:52 UTC 2005.
-Universal Time is now:  Thu Nov 10 03:39:52 UTC 2005.
+Local time is now:      Fri Nov 11 00:33:10 UTC 2005.
+Universal Time is now:  Fri Nov 11 00:33:10 UTC 2005.
 Run 'tzconfig' if you wish to change it.
 
 (Reading database ... 11768 files and directories currently installed.)
@@ -120,6 +121,8 @@ Preparing to replace manpages 2.02-2 (using .../manpages_2.03-1_all.deb) ...
 Unpacking replacement manpages ...
 Preparing to replace nano 1.3.8-2 (using .../nano_1.3.9-1_amd64.deb) ...
 Unpacking replacement nano ...
+Preparing to replace tasksel 2.32 (using .../archives/tasksel_2.33_all.deb) ...
+Unpacking replacement tasksel ...
 Preparing to replace libdb3 3.2.9-22 (using .../libdb3_3.2.9-23_amd64.deb) ...
 Unpacking replacement libdb3 ...
 Preparing to replace libdb4.3 4.3.28-2 (using .../libdb4.3_4.3.29-1_amd64.deb) ...
@@ -178,6 +181,8 @@ NONE
 
 Setting up console-tools (0.2.3dbs-58) ...
 
+Setting up tasksel (2.33) ...
+
 Setting up exim4-config (4.54-2) ...
 Installing new version of config file /etc/exim4/conf.d/router/200_exim4-config_primary ...
 Installing new version of config file /etc/exim4/conf.d/auth/30_exim4-config_examples ...
@@ -197,6 +202,6 @@ apt is already the newest version.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//28450 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//420 and its subdirectories

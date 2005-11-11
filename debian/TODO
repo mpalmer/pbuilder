@@ -1,11 +1,20 @@
 TODO and possible bugs: 
 
+* xvfb:x11-common
+   - debian-bug: 337541: fixed in 0.138
+/etc/init.d/x11-common needs to be ran; policy-rc.d is now patched.
+Remaining problem is the upgrade case, and when base.tgz already 
+contains xvfb.
+
+Maybe document the limitation.
+
 * Need to test: amd64-x86 cross build with cowdancer 
 Need to test.
 
 * cowdancer support
 Cowdancer is not yet functional.
    - depends-on debian-bug: 329383: now partially resolved.
+0.6 is released.
 
 * use arrays for debbuildopts
    - current --debbuildopts usages will break, how do we support it?

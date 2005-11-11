@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: `/var/cache/pbuilder/build//29209/etc/mtab': File exists
+ln: `/var/cache/pbuilder/build//31086/etc/mtab': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -13,7 +13,7 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [4800B]
 Get:3 http://ftp.jp.debian.org sid/main Packages [3729kB]
-Fetched 3734kB in 2s (1642kB/s)
+Fetched 3734kB in 2s (1768kB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
@@ -26,10 +26,11 @@ The following packages will be upgraded:
   debianutils gnupg info libc6 libc6-dev libconsole libdb3 libdb4.2 libdb4.3
   libncurses5 libncursesw5 libsasl2 libslang2 libusb-0.1-4 login makedev
   manpages module-init-tools nano ncurses-base ncurses-bin passwd procps sed
-  zlib1g
-31 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/21.4MB of archives.
-After unpacking 2765kB of additional disk space will be used.
+  tasksel zlib1g
+Preconfiguring packages ...
+32 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/21.6MB of archives.
+After unpacking 2834kB of additional disk space will be used.
 (Reading database ... 11816 files and directories currently installed.)
 Preparing to replace debianutils 2.15 (using .../debianutils_2.15.1_amd64.deb) ...
 Unpacking replacement debianutils ...
@@ -58,8 +59,8 @@ Unpacking replacement libc6 ...
 Setting up libc6 (2.3.5-7) ...
 Installing new version of config file /etc/init.d/glibc.sh ...
 Current default timezone: 'UTC'.
-Local time is now:      Thu Nov 10 03:17:52 UTC 2005.
-Universal Time is now:  Thu Nov 10 03:17:52 UTC 2005.
+Local time is now:      Fri Nov 11 00:09:15 UTC 2005.
+Universal Time is now:  Fri Nov 11 00:09:15 UTC 2005.
 Run 'tzconfig' if you wish to change it.
 
 (Reading database ... 11817 files and directories currently installed.)
@@ -121,6 +122,8 @@ Preparing to replace module-init-tools 3.2-pre9-2 (using .../module-init-tools_3
 Unpacking replacement module-init-tools ...
 Preparing to replace nano 1.3.8-2 (using .../nano_1.3.9-1_amd64.deb) ...
 Unpacking replacement nano ...
+Preparing to replace tasksel 2.32 (using .../archives/tasksel_2.33_all.deb) ...
+Unpacking replacement tasksel ...
 Preparing to replace libdb3 3.2.9-22 (using .../libdb3_3.2.9-23_amd64.deb) ...
 Unpacking replacement libdb3 ...
 Preparing to replace libdb4.3 4.3.28-2 (using .../libdb4.3_4.3.29-1_amd64.deb) ...
@@ -173,6 +176,8 @@ NONE
 
 Setting up console-tools (0.2.3dbs-58) ...
 
+Setting up tasksel (2.33) ...
+
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
@@ -182,6 +187,6 @@ apt is already the newest version.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ghHlb1/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.9XQtaj/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//29209 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//31086 and its subdirectories
