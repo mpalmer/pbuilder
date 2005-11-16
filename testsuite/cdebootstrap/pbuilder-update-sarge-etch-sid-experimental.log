@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.jKvntF/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.PLvRy7/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: `/var/cache/pbuilder/build//25856/etc/mtab': File exists
+ln: `/var/cache/pbuilder/build//17962/etc/mtab': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -18,8 +18,8 @@ Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org ../project/experimental Release [4245B]
 Ign http://ftp.jp.debian.org ../project/experimental Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [120kB]
-Fetched 125kB in 0s (202kB/s)
+Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [125kB]
+Fetched 130kB in 0s (460kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -28,17 +28,31 @@ dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
+The following packages will be REMOVED:
+  aptitude tasksel
 The following packages will be upgraded:
-  diff
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/246kB of archives.
-After unpacking 303kB of additional disk space will be used.
+  apt apt-utils diff
+3 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
+Need to get 0B/1713kB of archives.
+After unpacking 8729kB disk space will be freed.
 WARNING: The following packages cannot be authenticated!
-  diff
-(Reading database ... 12234 files and directories currently installed.)
+  diff apt-utils apt
+(Reading database ... 12246 files and directories currently installed.)
+Removing tasksel ...
+Removing aptitude ...
+(Reading database ... 12056 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
+(Reading database ... 12064 files and directories currently installed.)
+Preparing to replace apt-utils 0.6.42.3 (using .../apt-utils_0.6.42.3exp1_amd64.deb) ...
+Unpacking replacement apt-utils ...
+Preparing to replace apt 0.6.42.3 (using .../apt_0.6.42.3exp1_amd64.deb) ...
+Unpacking replacement apt ...
+Setting up apt (0.6.42.3exp1) ...
+
+Setting up apt-utils (0.6.42.3exp1) ...
+
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
@@ -48,6 +62,6 @@ apt is already the newest version.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.jKvntF/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.PLvRy7/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//25856 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//17962 and its subdirectories

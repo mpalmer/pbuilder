@@ -365,15 +365,15 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking coreutils (from .../coreutils_5.2.1-2.1_amd64.deb) ...
 P: Unpacking package coreutils
 O: Selecting previously deselected package debianutils.
-O: dpkg: regarding .../debianutils_2.15_amd64.deb containing debianutils, pre-dependency problem:
+O: dpkg: regarding .../debianutils_2.15.1_amd64.deb containing debianutils, pre-dependency problem:
 O:  debianutils pre-depends on libc6 (>= 2.3.5-1)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../debianutils_2.15_amd64.deb containing debianutils, pre-dependency problem:
+O: dpkg: regarding .../debianutils_2.15.1_amd64.deb containing debianutils, pre-dependency problem:
 O:  debianutils pre-depends on coreutils (>= 4.5.8-1)
 O:   coreutils is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking debianutils (from .../debianutils_2.15_amd64.deb) ...
+O: Unpacking debianutils (from .../debianutils_2.15.1_amd64.deb) ...
 P: Unpacking package debianutils
 O: Selecting previously deselected package perl-base.
 O: dpkg: regarding .../perl-base_5.8.7-7_amd64.deb containing perl-base, pre-dependency problem:
@@ -793,7 +793,7 @@ P: Configuring package libtext-wrapi18n-perl
 O: Setting up coreutils (5.2.1-2.1) ...
 P: Configuring package coreutils
 O: 
-O: Setting up debianutils (2.15) ...
+O: Setting up debianutils (2.15.1) ...
 P: Configuring package debianutils
 O: 
 O: Setting up procps (3.2.5-1) ...
@@ -847,12 +847,14 @@ P: Configuring package debconf
 O: 
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
-O: (Reading database ... 4520 files and directories currently installed.)
+O: (Reading database ... 
+O: 4520 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
-O: (Reading database ... 4523 files and directories currently installed.)
+O: (Reading database ... 
+O: 4523 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
@@ -865,17 +867,16 @@ O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.d
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
 O: Selecting previously deselected package apt.
-O: (Reading database ... 
-O: 4525 files and directories currently installed.)
+O: (Reading database ... 4525 files and directories currently installed.)
 O: Unpacking apt (from .../apt_0.6.42.2_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.42.2) ...
 P: Configuring package apt
 O: 
 O: Get:1 bootstrap: . Release.gpg [189B]
-O: Get:2 bootstrap: . Release [4800B]
+O: Get:2 bootstrap: . Release [4972B]
 O: Ign bootstrap: . Release
-O: Fetched 4989B in 0s (49.0kB/s)
+O: Fetched 5161B in 0s (50.0kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -885,7 +886,6 @@ O: W:
 O: You may want to run apt-get update to correct these problems
 O: 
 O: Reading package lists...
-O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -915,6 +915,7 @@ O:   liblzo1 libncursesw5 libopencdk8 libpopt0 libssl0.9.8 libtasn1-2 libwrap0
 O:   logrotate man-db manpages nano netkit-inetd tcpd netbase nvi tasksel wget
 O:   whiptail exim4-config exim4-base libgnutls12 libpcre3 exim4-daemon-light at
 O:   exim4 telnet dhcp3-common dhcp3-client psmisc
+O: debconf: delaying package configuration, since apt-utils is not installed
 O: Authentication warning overridden.
 O: Selecting previously deselected package console-data.
 O: (Reading database ... 
@@ -1057,10 +1058,10 @@ O: Selecting previously deselected package whiptail.
 O: Unpacking whiptail (from .../whiptail_0.51.6-31_amd64.deb) ...
 P: Unpacking package whiptail
 O: Selecting previously deselected package exim4-config.
-O: Unpacking exim4-config (from .../exim4-config_4.54-1_all.deb) ...
+O: Unpacking exim4-config (from .../exim4-config_4.54-2_all.deb) ...
 P: Unpacking package exim4-config
 O: Selecting previously deselected package exim4-base.
-O: Unpacking exim4-base (from .../exim4-base_4.54-1_amd64.deb) ...
+O: Unpacking exim4-base (from .../exim4-base_4.54-2_amd64.deb) ...
 P: Unpacking package exim4-base
 O: Selecting previously deselected package libgnutls12.
 O: Unpacking libgnutls12 (from .../libgnutls12_1.2.8-1_amd64.deb) ...
@@ -1069,13 +1070,13 @@ O: Selecting previously deselected package libpcre3.
 O: Unpacking libpcre3 (from .../libpcre3_6.4-1_amd64.deb) ...
 P: Unpacking package libpcre3
 O: Selecting previously deselected package exim4-daemon-light.
-O: Unpacking exim4-daemon-light (from .../exim4-daemon-light_4.54-1_amd64.deb) ...
+O: Unpacking exim4-daemon-light (from .../exim4-daemon-light_4.54-2_amd64.deb) ...
 P: Unpacking package exim4-daemon-light
 O: Selecting previously deselected package at.
 O: Unpacking at (from .../bootstrap/at_3.1.9_amd64.deb) ...
 P: Unpacking package at
 O: Selecting previously deselected package exim4.
-O: Unpacking exim4 (from .../bootstrap/exim4_4.54-1_all.deb) ...
+O: Unpacking exim4 (from .../bootstrap/exim4_4.54-2_all.deb) ...
 P: Unpacking package exim4
 O: Selecting previously deselected package telnet.
 O: Unpacking telnet (from .../telnet_0.17-32_amd64.deb) ...
@@ -1212,7 +1213,7 @@ P: Configuring package wget
 O: 
 O: Setting up whiptail (0.51.6-31) ...
 P: Configuring package whiptail
-O: Setting up exim4-config (4.54-1) ...
+O: Setting up exim4-config (4.54-2) ...
 P: Configuring package exim4-config
 O: hostname: 
 O: Host name lookup failure
@@ -1223,7 +1224,7 @@ O:
 O: Adding system-user for exim (v4)
 O: chage: the shadow password file is not present
 O: 
-O: Setting up exim4-base (4.54-1) ...
+O: Setting up exim4-base (4.54-2) ...
 P: Configuring package exim4-base
 O: 
 O: Setting up libgnutls12 (1.2.8-1) ...
@@ -1232,13 +1233,13 @@ O:
 O: Setting up libpcre3 (6.4-1) ...
 P: Configuring package libpcre3
 O: 
-O: Setting up exim4-daemon-light (4.54-1) ...
+O: Setting up exim4-daemon-light (4.54-2) ...
 P: Configuring package exim4-daemon-light
 O: 
 O: Setting up at (3.1.9) ...
 P: Configuring package at
 O: 
-O: Setting up exim4 (4.54-1) ...
+O: Setting up exim4 (4.54-2) ...
 P: Configuring package exim4
 O: Setting up telnet (0.17-32) ...
 P: Configuring package telnet
@@ -1277,18 +1278,18 @@ P: Configuring package base-config
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 7425 files and directories currently installed.)
+O: 7422 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 7424 files and directories currently installed.)
+O: 7421 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 7422 files and directories currently installed.)
+O: 7419 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1301,10 +1302,10 @@ Refreshing the base.tgz
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
-Get:2 http://ftp.jp.debian.org etch Release [4800B]
+Get:2 http://ftp.jp.debian.org etch Release [4972B]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [3441kB]
-Fetched 3446kB in 1s (1866kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [3448kB]
+Fetched 3454kB in 1s (1931kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1338,7 +1339,7 @@ WARNING: The following packages cannot be authenticated!
   libstdc++6-4.0-dev g++-4.0 g++ linux-kernel-headers libc6-dev
   build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 7422 files and directories currently installed.)
+(Reading database ... 7419 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1-2_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-2_amd64.deb) ...
@@ -1394,6 +1395,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.jKvntF/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.PLvRy7/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//26888 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//19087 and its subdirectories

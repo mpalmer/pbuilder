@@ -90,7 +90,7 @@ function createbuilduser () {
 	    cowprotect $BUILDPLACE/etc/group
 	    echo "$BUILDUSERNAME:*:$BUILDUSERID:" >> $BUILDPLACE/etc/group
 	fi
-	if [ -e ! $BUILDPLACE/etc/shadow ] && grep -q ^$BUILDUSERNAME: $BUILDPLACE/etc/shadow; then
+	if [ -e $BUILDPLACE/etc/shadow ] && ! grep -q ^$BUILDUSERNAME: $BUILDPLACE/etc/shadow; then
 	    cowprotect $BUILDPLACE/etc/shadow
 	    echo "$BUILDUSERNAME:!:::::::" >> $BUILDPLACE/etc/shadow
 	fi
