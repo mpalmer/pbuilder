@@ -1,3 +1,11 @@
+2005-11-28  Junichi Uekawa  <dancer@debian.org>
+
+	* testsuite/run-test.sh: run pdebuild-internal on one directory 
+	and use another directory for build place.
+	I don't know why but it's started to fail running since 28 Nov..?
+	pdebuild internal sid fails to umount the bind-mount. -- this was
+	fixed in 29 Nov run. Strange.
+
 2005-11-16  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-buildpackage-funcs: test if /etc/shadow already exists

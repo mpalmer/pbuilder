@@ -25,7 +25,7 @@ testdir=$(TMPDIR=$(pwd) mktemp -d)
 testimage=$testdir/testimage
 testbuild=$testdir/dir1
 testbuild2=$testdir/dir2
-
+testbuild3=$testdir/dir3
 
 for DEBOOTSTRAP in debootstrap cdebootstrap; do
     case $DEBOOTSTRAP in 
@@ -63,13 +63,14 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
 	    
 	    (
 		mkdir ${testbuild2}
+		mkdir ${testbuild3}
 		cd ${testbuild2}
 		apt-get source ${PKG}
 		cd ${PKG}-*
-		pdebuild --logfile ${logdir}/pdebuild-normal-${distribution}.log -- --basetgz ${testimage} --buildplace ${testbuild2}
+		pdebuild --logfile ${logdir}/pdebuild-normal-${distribution}.log -- --basetgz ${testimage} --buildplace ${testbuild3}
 		log_success pdebuild-${distribution}-${PKG}
 		
-		pdebuild --use-pdebuild-internal --logfile ${logdir}/pdebuild-internal-${distribution}.log -- --basetgz ${testimage} --buildplace ${testbuild2}
+		pdebuild --use-pdebuild-internal --logfile ${logdir}/pdebuild-internal-${distribution}.log -- --basetgz ${testimage} --buildplace ${testbuild3}
 		log_success pdebuild-internal-${distribution}-${PKG}
 	    )
 	done
@@ -92,7 +93,7 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
 		log_success update-${distribution}-sid-experimental.log
 		;;
 	esac
-	sudo rm -rf ${testbuild} ${testbuild2} ${testimage}
+	sudo rm -rf ${testbuild} ${testbuild2} ${testimage} ${testbuild3}
     done
 done
 
