@@ -309,13 +309,12 @@ O: Setting up base-passwd (3.5.10) ...
 P: Configuring package base-passwd
 O: 
 O: Selecting previously deselected package dpkg.
+O: (Reading database ... 21 files and directories currently installed.)
+O: Unpacking dpkg (from .../dpkg_1.13.11_amd64.deb) ...
+P: Unpacking package dpkg
 O: dpkg: regarding .../dpkg_1.13.11_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on libc6 (>= 2.3.5-1)
 O: dpkg: warning - ignoring pre-dependency problem !
-O: (Reading database ... 
-O: 21 files and directories currently installed.)
-O: Unpacking dpkg (from .../dpkg_1.13.11_amd64.deb) ...
-P: Unpacking package dpkg
 O: dpkg: dpkg: dependency problems, but configuring anyway as you request:
 O:  dpkg depends on libc6 (>= 2.3.5-1); however:
 O:   Package libc6 is not installed.
@@ -326,7 +325,8 @@ O: Setting up dpkg (1.13.11) ...
 P: Configuring package dpkg
 O: 
 O: Selecting previously deselected package libc6.
-O: (Reading database ... 220 files and directories currently installed.)
+O: (Reading database ... 
+O: 220 files and directories currently installed.)
 O: Unpacking libc6 (from .../libc6_2.3.5-7_amd64.deb) ...
 P: Unpacking package libc6
 O: Selecting previously deselected package libgcc1.
@@ -383,8 +383,6 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking perl-base (from .../perl-base_5.8.7-8_amd64.deb) ...
 P: Unpacking package perl-base
 O: Selecting previously deselected package liblocale-gettext-perl.
-O: Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.05-1_amd64.deb) ...
-P: Unpacking package liblocale-gettext-perl
 O: dpkg: regarding .../liblocale-gettext-perl_1.05-1_amd64.deb containing liblocale-gettext-perl, pre-dependency problem:
 O:  liblocale-gettext-perl pre-depends on perlapi-5.8.7
 O:   perl-base provides perlapi-5.8.7 but is unpacked but not configured.
@@ -393,6 +391,8 @@ O: dpkg: regarding .../liblocale-gettext-perl_1.05-1_amd64.deb containing libloc
 O:  liblocale-gettext-perl pre-depends on perl-base (>= 5.8.7-3)
 O:   perl-base is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.05-1_amd64.deb) ...
+P: Unpacking package liblocale-gettext-perl
 O: Selecting previously deselected package libtext-iconv-perl.
 O: Unpacking libtext-iconv-perl (from .../libtext-iconv-perl_1.4-2_amd64.deb) ...
 P: Unpacking package libtext-iconv-perl
@@ -406,9 +406,9 @@ O: Selecting previously deselected package debconf.
 O: dpkg: regarding .../debconf_1.4.59_all.deb containing debconf, pre-dependency problem:
 O:  debconf pre-depends on perl-base (>= 5.6.1-4)
 O:   perl-base is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking debconf (from .../debconf_1.4.59_all.deb) ...
 P: Unpacking package debconf
-O: dpkg: warning - ignoring pre-dependency problem !
 O: Selecting previously deselected package debconf-i18n.
 O: Unpacking debconf-i18n (from .../debconf-i18n_1.4.59_all.deb) ...
 P: Unpacking package debconf-i18n
@@ -462,22 +462,22 @@ O: Selecting previously deselected package libpam-modules.
 O: Unpacking libpam-modules (from .../libpam-modules_0.79-3_amd64.deb) ...
 P: Unpacking package libpam-modules
 O: Selecting previously deselected package login.
-O: dpkg: regarding .../login_4.0.13-6_amd64.deb containing login, pre-dependency problem:
+O: dpkg: regarding .../login_4.0.13-7_amd64.deb containing login, pre-dependency problem:
 O:  login pre-depends on libc6 (>= 2.3.5-1)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../login_4.0.13-6_amd64.deb containing login, pre-dependency problem:
+O: dpkg: regarding .../login_4.0.13-7_amd64.deb containing login, pre-dependency problem:
 O:  login pre-depends on libpam0g (>= 0.76)
 O:   libpam0g is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../login_4.0.13-6_amd64.deb containing login, pre-dependency problem:
+O: dpkg: regarding .../login_4.0.13-7_amd64.deb containing login, pre-dependency problem:
 O:  login pre-depends on libpam-runtime (>= 0.76-14)
 O:   libpam-runtime is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking login (from .../login_4.0.13-6_amd64.deb) ...
+O: Unpacking login (from .../login_4.0.13-7_amd64.deb) ...
 P: Unpacking package login
 O: Selecting previously deselected package passwd.
-O: Unpacking passwd (from .../passwd_4.0.13-6_amd64.deb) ...
+O: Unpacking passwd (from .../passwd_4.0.13-7_amd64.deb) ...
 P: Unpacking package passwd
 O: Selecting previously deselected package libslang2.
 O: Unpacking libslang2 (from .../libslang2_2.0.5-1_amd64.deb) ...
@@ -527,8 +527,6 @@ O: Selecting previously deselected package libss2.
 O: Unpacking libss2 (from .../libss2_1.38-2_amd64.deb) ...
 P: Unpacking package libss2
 O: Selecting previously deselected package e2fsprogs.
-O: Unpacking e2fsprogs (from .../e2fsprogs_1.38-2_amd64.deb) ...
-P: Unpacking package e2fsprogs
 O: dpkg: regarding .../e2fsprogs_1.38-2_amd64.deb containing e2fsprogs, pre-dependency problem:
 O:  e2fsprogs pre-depends on e2fslibs (= 1.38-2)
 O:   e2fslibs is unpacked, but has never been configured.
@@ -553,6 +551,8 @@ O: dpkg: regarding .../e2fsprogs_1.38-2_amd64.deb containing e2fsprogs, pre-depe
 O:  e2fsprogs pre-depends on libuuid1 (>= 1.34-1)
 O:   libuuid1 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking e2fsprogs (from .../e2fsprogs_1.38-2_amd64.deb) ...
+P: Unpacking package e2fsprogs
 O: Selecting previously deselected package initscripts.
 O: Unpacking initscripts (from .../initscripts_2.86.ds1-6_amd64.deb) ...
 P: Unpacking package initscripts
@@ -593,12 +593,12 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking hostname (from .../hostname_2.91_amd64.deb) ...
 P: Unpacking package hostname
 O: Selecting previously deselected package grep.
-O: Unpacking grep (from .../grep_2.5.1.ds2-4_amd64.deb) ...
-P: Unpacking package grep
 O: dpkg: regarding .../grep_2.5.1.ds2-4_amd64.deb containing grep, pre-dependency problem:
 O:  grep pre-depends on libc6 (>= 2.3.5-1)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking grep (from .../grep_2.5.1.ds2-4_amd64.deb) ...
+P: Unpacking package grep
 O: Selecting previously deselected package ncurses-base.
 O: Unpacking ncurses-base (from .../ncurses-base_5.5-1_all.deb) ...
 P: Unpacking package ncurses-base
@@ -805,12 +805,12 @@ P: Configuring package gzip
 O: 
 O: Setting up dselect (1.13.11) ...
 P: Configuring package dselect
-O: Setting up login (4.0.13-6) ...
+O: Setting up login (4.0.13-7) ...
 P: Configuring package login
 O: 
 O: Setting up lsb-base (3.0-11) ...
 P: Configuring package lsb-base
-O: Setting up passwd (4.0.13-6) ...
+O: Setting up passwd (4.0.13-7) ...
 P: Configuring package passwd
 O: 
 O: Setting up initscripts (2.86.ds1-6) ...
@@ -832,20 +832,21 @@ P: Configuring package debconf
 O: 
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
-O: (Reading database ... 
-O: 4520 files and directories currently installed.)
+O: (Reading database ... 4520 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
-O: (Reading database ... 4523 files and directories currently installed.)
+O: (Reading database ... 
+O: 4523 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
-O: (Reading database ... 4525 files and directories currently installed.)
+O: (Reading database ... 
+O: 4525 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
@@ -860,7 +861,7 @@ O:
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [5722B]
 O: Ign bootstrap: . Release
-O: Fetched 5911B in 0s (11.7kB/s)
+O: Fetched 5911B in 0s (50.4kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -914,7 +915,7 @@ O: Selecting previously deselected package console-tools.
 O: Unpacking console-tools (from .../console-tools_0.2.3dbs-58_amd64.deb) ...
 P: Unpacking package console-tools
 O: Selecting previously deselected package console-common.
-O: Unpacking console-common (from .../console-common_0.7.54_all.deb) ...
+O: Unpacking console-common (from .../console-common_0.7.55_all.deb) ...
 P: Unpacking package console-common
 O: Selecting previously deselected package adduser.
 O: Unpacking adduser (from .../bootstrap/adduser_3.79_all.deb) ...
@@ -1016,7 +1017,7 @@ O: Selecting previously deselected package man-db.
 O: Unpacking man-db (from .../man-db_2.4.3-3_amd64.deb) ...
 P: Unpacking package man-db
 O: Selecting previously deselected package manpages.
-O: Unpacking manpages (from .../manpages_2.08-1_all.deb) ...
+O: Unpacking manpages (from .../manpages_2.10-1_all.deb) ...
 P: Unpacking package manpages
 O: Selecting previously deselected package nano.
 O: Unpacking nano (from .../nano_1.3.9-1_amd64.deb) ...
@@ -1170,14 +1171,15 @@ O: Setting up man-db (2.4.3-3) ...
 P: Configuring package man-db
 O: Building database of manual pages ...
 O: 
-O: Setting up manpages (2.08-1) ...
+O: Setting up manpages (2.10-1) ...
 P: Configuring package manpages
 O: Setting up nano (1.3.9-1) ...
 P: Configuring package nano
 O: 
 O: Setting up netkit-inetd (0.10-10.2) ...
 P: Configuring package netkit-inetd
-O: Starting internet superserver: inetd
+O: Starting internet superserver:
+O:  inetd
 O: .
 O: 
 O: Setting up tcpd (7.6.dbs-8) ...
@@ -1244,7 +1246,7 @@ O:
 O: Setting up sysklogd (1.4.1-17) ...
 P: Configuring package sysklogd
 O: 
-O: Setting up console-common (0.7.54) ...
+O: Setting up console-common (0.7.55) ...
 P: Configuring package console-common
 O: Looking for keymap to install:
 O: NONE
@@ -1262,18 +1264,18 @@ P: Configuring package base-config
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 7424 files and directories currently installed.)
+O: 7425 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 7423 files and directories currently installed.)
+O: 7424 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 7421 files and directories currently installed.)
+O: 7422 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1288,8 +1290,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org sid/main Packages [3801kB]
-Fetched 3807kB in 2s (1591kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [3820kB]
+Fetched 3826kB in 2s (1829kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1323,7 +1325,7 @@ WARNING: The following packages cannot be authenticated!
   linux-kernel-headers libc6-dev libstdc++6-4.0-dev g++-4.0 g++
   build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 7421 files and directories currently installed.)
+(Reading database ... 7422 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20051117-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-4_amd64.deb) ...
@@ -1379,6 +1381,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.C2R93w/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.lFagFs/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//2314 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//27894 and its subdirectories

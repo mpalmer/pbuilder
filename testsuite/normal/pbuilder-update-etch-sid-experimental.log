@@ -1,60 +1,8 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.C2R93w/testimage]
- -> creating local configuration
- -> copying local configuration
- -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//31406/etc/mtab' to `../proc/mounts': File exists
- -> mounting /dev/pts filesystem
- -> policy-rc.d already exists
-  -> Installing apt-lines
-  -> Installing apt-lines and pinning for experimental
-Refreshing the base.tgz 
- -> upgrading packages
-Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
-Get:2 http://ftp.jp.debian.org ../project/experimental Release.gpg [189B]
-Hit http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org ../project/experimental Release [4245B]
-Hit http://ftp.jp.debian.org sid/main Packages
-Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [131kB]
-Fetched 135kB in 1s (131kB/s)
-Reading package lists...
-dpkg - warning: ignoring request to remove lilo which isn't installed.
-Obtaining the cached apt archive contents
-Reading package lists...
-Building dependency tree...
-The following packages will be REMOVED:
-  aptitude tasksel
-The following packages will be upgraded:
-  apt apt-utils diff
-3 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
-Need to get 0B/1713kB of archives.
-After unpacking 8729kB disk space will be freed.
-(Reading database ... 11842 files and directories currently installed.)
-Removing tasksel ...
-Removing aptitude ...
-(Reading database ... 11652 files and directories currently installed.)
-Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
-Unpacking replacement diff ...
-Setting up diff (2.8.7-0.2) ...
-(Reading database ... 11660 files and directories currently installed.)
-Preparing to replace apt-utils 0.6.42.3 (using .../apt-utils_0.6.42.3exp1_amd64.deb) ...
-Unpacking replacement apt-utils ...
-Preparing to replace apt 0.6.42.3 (using .../apt_0.6.42.3exp1_amd64.deb) ...
-Unpacking replacement apt ...
-Setting up apt (0.6.42.3exp1) ...
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.lFagFs/testimage]
 
-Setting up apt-utils (0.6.42.3exp1) ...
-
-Reading package lists...
-Building dependency tree...
-build-essential is already the newest version.
-dpkg-dev is already the newest version.
-apt is already the newest version.
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Copying back the cached apt archive contents
- -> unmounting dev/pts filesystem
- -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.C2R93w/testimage]
- -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//31406 and its subdirectories
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error exit delayed from previous errors
+E: failed to extract /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.lFagFs/testimage to /var/cache/pbuilder/build//27881
