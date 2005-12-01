@@ -39,7 +39,7 @@ if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
     echo "I: using fakeroot in build."
 else
     # run the build in root
-    SUTOUSER="su "
+    SUTOUSER="su -p "
     BUILDUSERID=0
     BUILDUSERNAME=root
 fi
