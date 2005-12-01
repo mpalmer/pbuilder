@@ -1036,6 +1036,23 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	</screen>
       </para>
     </sect1>
+    <sect1 id="ccache">
+      <title>How to use ccache</title>
+      <para>
+	To use ccache with pbuilder, use the following for configuration.
+      </para>
+      <screen>
+export CCACHE_DIR="/var/cache/pbuilder/ccache"
+export PATH="/usr/lib/ccache:${PATH}"
+
+EXTRAPACKAGES=ccache
+BINDMOUNTS="${CCACHE_DIR}"
+      </screen>
+      <para>
+	<ulink url="http://web.glandium.org/blog/?p=55">This entry created thanks to a blog posting.
+	</ulink>
+      </para>
+    </sect1>
     <!-- end of FAQ -->
   </chapter>
 
