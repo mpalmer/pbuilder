@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.lFagFs/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dsFaGI/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//19228/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//15350/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -13,13 +13,13 @@ Refreshing the base.tgz
  -> upgrading packages
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org ../project/experimental Release.gpg [189B]
-Get:3 http://ftp.jp.debian.org sid Release [5722B]
+Hit http://ftp.jp.debian.org sid Release
 Ign http://ftp.jp.debian.org sid Release
-Get:4 http://ftp.jp.debian.org ../project/experimental Release [4245B]
+Get:3 http://ftp.jp.debian.org ../project/experimental Release [4245B]
 Ign http://ftp.jp.debian.org ../project/experimental Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Get:5 http://ftp.jp.debian.org ../project/experimental/main Packages [132kB]
-Fetched 143kB in 0s (193kB/s)
+Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [134kB]
+Fetched 138kB in 0s (421kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -28,31 +28,17 @@ dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
-The following packages will be REMOVED:
-  aptitude tasksel
 The following packages will be upgraded:
-  apt apt-utils diff
-3 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
-Need to get 0B/1713kB of archives.
-After unpacking 8729kB disk space will be freed.
+  diff
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/246kB of archives.
+After unpacking 303kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  diff apt-utils apt
-(Reading database ... 12241 files and directories currently installed.)
-Removing tasksel ...
-Removing aptitude ...
-(Reading database ... 12051 files and directories currently installed.)
+  diff
+(Reading database ... 12064 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-(Reading database ... 12059 files and directories currently installed.)
-Preparing to replace apt-utils 0.6.42.3 (using .../apt-utils_0.6.42.3exp1_amd64.deb) ...
-Unpacking replacement apt-utils ...
-Preparing to replace apt 0.6.42.3 (using .../apt_0.6.42.3exp1_amd64.deb) ...
-Unpacking replacement apt ...
-Setting up apt (0.6.42.3exp1) ...
-
-Setting up apt-utils (0.6.42.3exp1) ...
-
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
@@ -62,6 +48,6 @@ apt is already the newest version.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.lFagFs/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dsFaGI/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//19228 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//15350 and its subdirectories
