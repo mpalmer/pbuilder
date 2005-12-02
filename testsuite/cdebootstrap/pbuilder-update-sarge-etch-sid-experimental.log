@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dsFaGI/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//15350/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//22500/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -18,8 +18,8 @@ Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org ../project/experimental Release [4245B]
 Ign http://ftp.jp.debian.org ../project/experimental Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [134kB]
-Fetched 138kB in 0s (421kB/s)
+Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [138kB]
+Fetched 142kB in 0s (314kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -29,16 +29,26 @@ Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
 The following packages will be upgraded:
-  diff
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/246kB of archives.
-After unpacking 303kB of additional disk space will be used.
+  apt apt-utils diff
+3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/1680kB of archives.
+After unpacking 381kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  diff
-(Reading database ... 12064 files and directories currently installed.)
+  diff apt apt-utils
+(Reading database ... 12255 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
+(Reading database ... 12263 files and directories currently installed.)
+Preparing to replace apt 0.6.43 (using .../apt_0.6.43exp1_amd64.deb) ...
+Unpacking replacement apt ...
+Setting up apt (0.6.43exp1) ...
+
+(Reading database ... 12264 files and directories currently installed.)
+Preparing to replace apt-utils 0.6.43 (using .../apt-utils_0.6.43exp1_amd64.deb) ...
+Unpacking replacement apt-utils ...
+Setting up apt-utils (0.6.43exp1) ...
+
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
@@ -48,6 +58,6 @@ apt is already the newest version.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dsFaGI/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//15350 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//22500 and its subdirectories

@@ -1,8 +1,598 @@
 W: /home/dancer/.pbuilderrc does not exist
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dsFaGI/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/testimage]
+ -> creating local configuration
+ -> copying local configuration
+ -> mounting /proc filesystem
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir3/14307/etc/mtab' to `../proc/mounts': File exists
+ -> mounting /dev/pts filesystem
+-> Mounting /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2
+ -> policy-rc.d already exists
+Obtaining the cached apt archive contents
+Using: : pdebuild-internal,v 1.6 2005/07/02 05:39:44 dancer Exp $
+Reading package lists...
+Building dependency tree...
+The following extra packages will be installed:
+  cdebootstrap libdebian-installer-extra4 libdebian-installer4
+Suggested packages:
+  pbuilder-uml
+Recommended packages:
+  fakeroot sudo devscripts
+The following NEW packages will be installed:
+  cdebootstrap libdebian-installer-extra4 libdebian-installer4 pbuilder
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/134kB of archives.
+After unpacking 741kB of additional disk space will be used.
+Selecting previously deselected package libdebian-installer4.
+(Reading database ... 11862 files and directories currently installed.)
+Unpacking libdebian-installer4 (from .../libdebian-installer4_0.36_amd64.deb) ...
+Selecting previously deselected package libdebian-installer-extra4.
+Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.36_amd64.deb) ...
+Selecting previously deselected package cdebootstrap.
+Unpacking cdebootstrap (from .../cdebootstrap_0.3.9_amd64.deb) ...
+Selecting previously deselected package pbuilder.
+Unpacking pbuilder (from .../pbuilder_0.139_all.deb) ...
+Setting up libdebian-installer4 (0.36) ...
+Setting up libdebian-installer-extra4 (0.36) ...
+Setting up cdebootstrap (0.3.9) ...
+Setting up pbuilder (0.139) ...
+Setting DEBBUILDOPTS=
+ -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.20 2005/08/17 00:46:54 dancer Exp $
+ -> Considering  debhelper (>> 3.0.0)
+   -> Trying debhelper
+ -> Considering  libdshconfig1-dev (>= 0.20.11-1)
+   -> Trying libdshconfig1-dev
+ -> Installing  debhelper libdshconfig1-dev
+Reading package lists...
+Building dependency tree...
+The following extra packages will be installed:
+  debconf-utils file gettext html2text intltool-debian libdshconfig1 libmagic1
+  po-debconf
+Suggested packages:
+  dh-make cvs gettext-doc
+Recommended packages:
+  curl libmail-sendmail-perl libcompress-zlib-perl
+The following NEW packages will be installed:
+  debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
+  libdshconfig1-dev libmagic1 po-debconf
+0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/2892kB of archives.
+After unpacking 9572kB of additional disk space will be used.
+Selecting previously deselected package libmagic1.
+(Reading database ... 11956 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
+Selecting previously deselected package file.
+Unpacking file (from .../archives/file_4.15-2_amd64.deb) ...
+Selecting previously deselected package debconf-utils.
+Unpacking debconf-utils (from .../debconf-utils_1.4.59_all.deb) ...
+Selecting previously deselected package html2text.
+Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
+Selecting previously deselected package gettext.
+Unpacking gettext (from .../gettext_0.14.5-2_amd64.deb) ...
+Selecting previously deselected package intltool-debian.
+Unpacking intltool-debian (from .../intltool-debian_0.34.1+20050828_all.deb) ...
+Selecting previously deselected package po-debconf.
+Unpacking po-debconf (from .../po-debconf_0.9.0_all.deb) ...
+Selecting previously deselected package debhelper.
+Unpacking debhelper (from .../debhelper_5.0.7_all.deb) ...
+Selecting previously deselected package libdshconfig1.
+Unpacking libdshconfig1 (from .../libdshconfig1_0.20.11-1_amd64.deb) ...
+Selecting previously deselected package libdshconfig1-dev.
+Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.11-1_amd64.deb) ...
+Setting up libmagic1 (4.15-2) ...
 
-gzip: stdin: unexpected end of file
-tar: Child returned status 1
-tar: Error exit delayed from previous errors
-E: failed to extract /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dsFaGI/testimage to /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dsFaGI/dir3/31946
+Setting up file (4.15-2) ...
+Setting up debconf-utils (1.4.59) ...
+
+Setting up html2text (1.3.2a-3) ...
+
+Setting up gettext (0.14.5-2) ...
+
+Setting up intltool-debian (0.34.1+20050828) ...
+Setting up po-debconf (0.9.0) ...
+Setting up debhelper (5.0.7) ...
+Setting up libdshconfig1 (0.20.11-1) ...
+
+Setting up libdshconfig1-dev (0.20.11-1) ...
+ -> Finished parsing the build-deps
+Reading package lists...
+Building dependency tree...
+The following NEW packages will be installed:
+  fakeroot
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/94.3kB of archives.
+After unpacking 360kB of additional disk space will be used.
+Selecting previously deselected package fakeroot.
+(Reading database ... 12547 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.5.5_amd64.deb) ...
+Setting up fakeroot (1.5.5) ...
+
+dpkg-buildpackage: source package is dsh
+dpkg-buildpackage: source version is 0.25.6-1
+dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp configure-stamp
+/usr/bin/make clean
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make[1]: *** No rule to make target `clean'.  Stop.
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make: [clean] Error 2 (ignored)
+/usr/bin/make distclean
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make[1]: *** No rule to make target `distclean'.  Stop.
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make: [clean] Error 2 (ignored)
+dh_clean
+dh_clean: Compatibility levels before 4 are deprecated.
+ dpkg-source -b dsh-0.25.6
+dpkg-source: building dsh using existing dsh_0.25.6.orig.tar.gz
+dpkg-source: building dsh in dsh_0.25.6-1.diff.gz
+dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
+dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
+dpkg-source: building dsh in dsh_0.25.6-1.dsc
+ debian/rules build
+dh_testdir
+INSTALL_PROGRAM='install -p    -o root -g root  -m  755 -s' CFLAGS='-Wall -g -O2' \
+ ./configure --prefix=/usr --sysconfdir=/etc/dsh --mandir=/usr/share/man
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking dependency style of gcc... gcc3
+checking for library containing strerror... none required
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ANSI C... (cached) none needed
+checking dependency style of gcc... (cached) gcc3
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ANSI C... (cached) none needed
+checking dependency style of gcc... (cached) gcc3
+checking whether make sets $(MAKE)... (cached) yes
+checking how to run the C preprocessor... gcc -E
+checking for egrep... grep -E
+checking for ANSI C header files... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for a sed that does not truncate output... /bin/sed
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking whether ln -s works... yes
+checking how to recognise dependent libraries... pass_all
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for g77... no
+checking for f77... no
+checking for xlf... no
+checking for frt... no
+checking for pgf77... no
+checking for fort77... no
+checking for fl32... no
+checking for af77... no
+checking for f90... no
+checking for xlf90... no
+checking for pgf90... no
+checking for epcf90... no
+checking for f95... no
+checking for fort... no
+checking for xlf95... no
+checking for ifc... no
+checking for efc... no
+checking for pgf95... no
+checking for lf95... no
+checking for gfortran... no
+checking whether we are using the GNU Fortran 77 compiler... no
+checking whether  accepts -g... no
+checking the maximum length of command line arguments... 32768
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking if gcc static flag  works... yes
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC
+checking if gcc PIC flag -fPIC works... yes
+checking if gcc supports -c -o file.o... yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+configure: creating libtool
+appending configuration tag "CXX" to libtool
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC
+checking if g++ PIC flag -fPIC works... yes
+checking if g++ supports -c -o file.o... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+appending configuration tag "F77" to libtool
+checking for an ANSI C-conforming const... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking for shared library run path origin... done
+checking whether NLS is requested... yes
+checking for GNU gettext in libc... yes
+checking for gettext... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking libintl.h usability... yes
+checking libintl.h presence... yes
+checking for libintl.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for stdlib.h... (cached) yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking netgroup.h usability... no
+checking netgroup.h presence... no
+checking for netgroup.h... no
+checking signal.h usability... yes
+checking signal.h presence... yes
+checking for signal.h... yes
+checking for libdshconfig.h ... yes
+checking for asprintf... yes
+checking for strdup... yes
+checking for getopt_long... yes
+checking for getline... yes
+checking for dup2... yes
+checking for setlocale... yes
+checking for strcasecmp... yes
+checking for strchr... yes
+checking for setnetgrent... yes
+checking for getnetgrent... yes
+checking for endnetgrent... yes
+checking for open_dshconfig in -ldshconfig... yes
+checking netdb.h has setnetgrent that returns void... no
+checking getopt with a GNU option reordering extention... yes, disabling
+configure: creating ./config.status
+config.status: creating po/Makefile.in
+config.status: creating m4/Makefile
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+touch configure-stamp
+dh_testdir
+/usr/bin/make
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+/usr/bin/make  all-recursive
+make[2]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+Making all in m4
+make[3]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/m4'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/m4'
+Making all in po
+make[3]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/po'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/po'
+make[3]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-dsh.o -MD -MP -MF ".deps/dsh-dsh.Tpo" -c -o dsh-dsh.o `test -f 'dsh.c' || echo './'`dsh.c; \
+then mv -f ".deps/dsh-dsh.Tpo" ".deps/dsh-dsh.Po"; else rm -f ".deps/dsh-dsh.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-linkedlist.o -MD -MP -MF ".deps/dsh-linkedlist.Tpo" -c -o dsh-linkedlist.o `test -f 'linkedlist.c' || echo './'`linkedlist.c; \
+then mv -f ".deps/dsh-linkedlist.Tpo" ".deps/dsh-linkedlist.Po"; else rm -f ".deps/dsh-linkedlist.Tpo"; exit 1; fi
+if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-parameter.o -MD -MP -MF ".deps/dsh-parameter.Tpo" -c -o dsh-parameter.o `test -f 'parameter.c' || echo './'`parameter.c; \
+then mv -f ".deps/dsh-parameter.Tpo" ".deps/dsh-parameter.Po"; else rm -f ".deps/dsh-parameter.Tpo"; exit 1; fi
+/bin/sh ./libtool --mode=link gcc  -Wall -g -O2   -o dsh  dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  -ldshconfig 
+mkdir .libs
+gcc -Wall -g -O2 -o dsh dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  /usr/lib/libdshconfig.so
+mkdir build-man
+sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
+sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.5 > build-man/dsh.conf.5
+make[3]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+/usr/bin/make check
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+Making check in m4
+make[2]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/m4'
+make[2]: Nothing to be done for `check'.
+make[2]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/m4'
+Making check in po
+make[2]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/po'
+make[2]: Nothing to be done for `check'.
+make[2]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/po'
+make[2]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+/usr/bin/make  dsh
+make[3]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make[3]: `dsh' is up to date.
+make[3]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+/usr/bin/make  check-TESTS
+make[3]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+PASS: tests/param-f.sh
+dsh: File ./tests/nonexistent.file could not be opened for read
+PASS: tests/param-f-fail.sh
+PASS: tests/param-f-with-space.sh
+PASS: tests/param-m.sh
+test to check that unknown parameter checking is right.
+./dsh: unrecognized option `--unknown-parameter'
+./dsh: invalid option -- u
+PASS: tests/param-unknown.sh
+test1
+test2
+dsh: Process terminated (before write).
+PASS: tests/param-i.sh
+Check that cn4 option is working.
+PASS: tests/param-cn4.sh
+test to check that -b0 is rejected, and -b1 is accepted
+Buffer size needs to be greater than 1
+Buffer size needs to be greater than 1
+a
+b
+PASS: tests/param-b-0.sh
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+success
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+success
+success
+success
+success
+success
+b: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
+a: dsh: Failed executing ./invalid-exec-file with llexec call
+success
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+dsh: Failed executing ./invalid-exec-file with llexec call
+success
+PASS: tests/param-r-invalid.sh
+1: 1
+2: 2
+dsh: fork limit and wait shell cannot be specified at the same time
+PASS: tests/param-F-invalid.sh
+Fri Dec  2 03:05:10 UTC 2005
+2: Using sleep as the remote shell
+2: Show machine names on output
+2: Adding machine 5,4,3,2,1 to list
+2: Setting forklimit to 3 and wait_shell to 0
+2: DUMPing parameters passed to llexec
+2: [2] 
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+DUMPing parameters passed to llexec
+[2] 
+3: Using sleep as the remote shell
+3: Show machine names on output
+3: Adding machine 5,4,3,2,1 to list
+3: Setting forklimit to 3 and wait_shell to 0
+3: DUMPing parameters passed to llexec
+3: [3] 
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+DUMPing parameters passed to llexec
+[3] 
+1: Using sleep as the remote shell
+1: Show machine names on output
+1: Adding machine 5,4,3,2,1 to list
+1: Setting forklimit to 3 and wait_shell to 0
+1: ... Waiting for process to end with waitpid
+1: DUMPing parameters passed to llexec
+1: [1] 
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+... Waiting for process to end with waitpid
+DUMPing parameters passed to llexec
+[1] 
+4: Using sleep as the remote shell
+4: Show machine names on output
+4: Adding machine 5,4,3,2,1 to list
+4: Setting forklimit to 3 and wait_shell to 0
+4: DUMPing parameters passed to llexec
+4: [4] 
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+DUMPing parameters passed to llexec
+[4] 
+5: Using sleep as the remote shell
+5: Show machine names on output
+5: Adding machine 5,4,3,2,1 to list
+5: Setting forklimit to 3 and wait_shell to 0
+5: DUMPing parameters passed to llexec
+5: [5] 
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+DUMPing parameters passed to llexec
+[5] 
+--- Terminated running
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+... Waiting for process to end with waitpid
+... Waiting for process to end with waitpid
+Fri Dec  2 03:05:15 UTC 2005
+PASS: tests/param-F-forklimit.sh
+PASS: tests/param-gnu-getopt.sh
+PASS: tests/news-okay.sh
+b: b
+c: c
+dsh: Process terminated (before write).
+a: a
+PASS: tests/segv-catcher.sh
+l w
+PASS: tests/test-bufferoverflow.sh
+PASS: tests/machinelist-comment-test.sh
+PASS: tests/machinelist-order.sh
+===================
+All 17 tests passed
+===================
+make[3]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+touch build-stamp
+ fakeroot debian/rules binary
+dh_testdir
+dh_testroot
+dh_clean -k
+dh_clean: Compatibility levels before 4 are deprecated.
+dh_installdirs
+dh_installdirs: Compatibility levels before 4 are deprecated.
+# Add here commands to install the package into debian/dsh.
+/usr/bin/make install DESTDIR=/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+Making install in m4
+make[2]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/m4'
+make[3]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/m4'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/m4'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/m4'
+Making install in po
+make[2]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/po'
+/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share
+mkdir -p -- /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share
+mkdir -p -- /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/locale/ja/LC_MESSAGES
+installing ja.gmo as /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
+if test "dsh" = "gettext"; then \
+  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/gettext/po; \
+  for file in Makefile.in.in Makevars remove-potcdate.sin   ; do \
+    /usr/bin/install -c -m 644 ./$file \
+		    /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[2]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/po'
+make[2]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make[3]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+test -z "/usr/bin" || mkdir -p -- . "/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/bin"
+  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/bin/dsh'
+install -p -o root -g root -m 755 -s dsh /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/bin/dsh
+test -z "/etc/dsh" || mkdir -p -- . "/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/etc/dsh"
+ /usr/bin/install -c -m 644 'dsh.conf' '/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/etc/dsh/dsh.conf'
+for LANGS in ja ; do \
+	mkdir -p /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man1 ;\
+	mkdir -p /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man5 ;\
+	sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.$LANGS.1 \
+		> /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
+	sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.$LANGS.5 \
+		> /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
+done
+test -z "/usr/share/man/man1" || mkdir -p -- . "/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man1"
+ /usr/bin/install -c -m 644 './build-man/dsh.1' '/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man1/dsh.1'
+test -z "/usr/share/man/man5" || mkdir -p -- . "/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man5"
+ /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/share/man/man5/dsh.conf.5'
+make[3]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make[2]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6'
+cp /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/machines.list /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/etc/dsh/machines.list
+cp /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/dsh.conf /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/etc/dsh/dsh.conf
+ln -s ../machines.list /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/etc/dsh/group/all
+install -d /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/lib/update-cluster
+install -m 755 /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh.updatelist /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2/dsh-0.25.6/debian/dsh/usr/lib/update-cluster/
+dh_testdir
+dh_testroot
+dh_installdocs NEWS
+dh_installdocs: Compatibility levels before 4 are deprecated.
+dh_installexamples
+dh_installexamples: Compatibility levels before 4 are deprecated.
+dh_installmenu
+dh_installmenu: Compatibility levels before 4 are deprecated.
+dh_installman
+dh_installman: Compatibility levels before 4 are deprecated.
+dh_installchangelogs ChangeLog 
+dh_installchangelogs: Compatibility levels before 4 are deprecated.
+dh_link
+dh_link: Compatibility levels before 4 are deprecated.
+dh_strip
+dh_strip: Compatibility levels before 4 are deprecated.
+dh_shlibdeps
+dh_shlibdeps: Compatibility levels before 4 are deprecated.
+dh_compress
+dh_compress: Compatibility levels before 4 are deprecated.
+dh_fixperms
+dh_fixperms: Compatibility levels before 4 are deprecated.
+dh_installdeb
+dh_installdeb: Compatibility levels before 4 are deprecated.
+dh_gencontrol
+dh_gencontrol: Compatibility levels before 4 are deprecated.
+dh_md5sums
+dh_md5sums: Compatibility levels before 4 are deprecated.
+dh_builddeb
+dh_builddeb: Compatibility levels before 4 are deprecated.
+dpkg-deb: building package `dsh' in `../dsh_0.25.6-1_amd64.deb'.
+ dpkg-genchanges
+dpkg-genchanges: including full source code in upload
+dpkg-buildpackage: full upload (original source is included)
+Copying back the cached apt archive contents
+ -> unmounting dev/pts filesystem
+ -> unmounting proc filesystem
+ -> unmounting /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir2 filesystem
+ -> cleaning the build env 
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/dir3/14307 and its subdirectories
