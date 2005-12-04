@@ -16,11 +16,11 @@ dpkg -i /tmp/buildd/*.deb
 dpkg --purge $PKGNAMES
 
 # upgrade-remove check
-apt-get install -y --allow-unauthenticated  $PKGNAMES || true
+apt-get install -y --force-yes  $PKGNAMES || true
 dpkg -i /tmp/buildd/*.deb
 dpkg --remove $PKGNAMES
 
 # upgrade-purge check
-apt-get install -y --allow-unauthenticated $PKGNAMES || true
+apt-get install -y --force-yes $PKGNAMES || true
 dpkg -i /tmp/buildd/*.deb
 dpkg --purge $PKGNAMES

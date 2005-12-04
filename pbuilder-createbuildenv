@@ -84,8 +84,8 @@ if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
 fi
 recover_aptcache
-$CHROOTEXEC /usr/bin/apt-get -y --allow-unauthenticated dist-upgrade
-$CHROOTEXEC /usr/bin/apt-get -y --allow-unauthenticated install build-essential dpkg-dev apt $EXTRAPACKAGES
+$CHROOTEXEC /usr/bin/apt-get -y --force-yes dist-upgrade
+$CHROOTEXEC /usr/bin/apt-get -y --force-yes install build-essential dpkg-dev apt $EXTRAPACKAGES
 save_aptcache
 $CHROOTEXEC /usr/bin/apt-get clean
 

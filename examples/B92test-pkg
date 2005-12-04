@@ -5,7 +5,7 @@ set -e
 
 echo "Installing the prerequisites"
 for PKG in $(ls /tmp/buildd/*.deb | sed -e's,.*/,,;s,_.*,,' ); do
-    apt-get install -y  --allow-unauthenticated "$PKG"
+    apt-get install -y --force-yes "$PKG"
     apt-get remove -y "$PKG"
 done
 

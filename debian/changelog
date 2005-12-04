@@ -5,11 +5,9 @@ pbuilder (0.140) UNRELEASED; urgency=low
     BUILDUSERNAME isn't set", thanks to Mike Hommey (Closes: #341453).
   * pbuilder-doc.xml: Document ccache support in FAQ (Closes: #178350).
   * Bug fix: "/usr/share/doc/pbuilder/examples/B90linda missing
-    --allow-unauthenticated option", thanks to qfunk (Closes: #340715).
-  - fixed other scripts to use --allow-unauthenticated option rather than --force-yes.
-  
-  ... this breaks sarge chroots. We'll probably need to postpone this change to after etch release.
-  
+    --force-yes option", thanks to qfunk (Closes: #340715).
+    Note: --allow-unauthenticated is probably a better option here, but 
+    apt-get in sarge does not support it, we will revisit it after etch.
   * debconf compatibility level 4
   * Bug fix: "pbuilder-buildpackage-funcs check for createbuilduser for
     SUTOUSER is bogus", thanks to Brian Nelson (Closes: #338976).
