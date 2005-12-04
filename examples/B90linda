@@ -1,4 +1,4 @@
 #!/bin/bash
 # run linda on generated deb files
-apt-get install -y linda
+apt-get install -y --allow-unauthenticated linda
 linda /tmp/buildd/*.deb

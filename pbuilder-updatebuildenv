@@ -44,8 +44,8 @@ fi
 recover_aptcache
 
 $TRAP saveaptcache_umountproc_cleanbuildplace exit
-$CHROOTEXEC /usr/bin/apt-get -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrade 
-$CHROOTEXEC /usr/bin/apt-get -y --force-yes install build-essential dpkg-dev apt $EXTRAPACKAGES
+$CHROOTEXEC /usr/bin/apt-get -y --allow-unauthenticated "${FORCE_CONFNEW[@]}" dist-upgrade 
+$CHROOTEXEC /usr/bin/apt-get -y --allow-unauthenticated install build-essential dpkg-dev apt $EXTRAPACKAGES
 save_aptcache
 
 # optionally auto-clean apt-cache

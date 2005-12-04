@@ -19,7 +19,7 @@ INSTALLTESTPID=$$
 ( sleep 1h ; kill $INSTALLTESTPID ) &
 KILLPID=$!
 
-apt-get install -y "$1" < /dev/null
+apt-get install  -y --allow-unauthenticated "$1" < /dev/null
 
 kill $KILLPID
 

@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//27394/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//27155/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -13,8 +13,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org sid/main Packages [3837kB]
-Fetched 3842kB in 2s (1649kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [3839kB]
+Fetched 3845kB in 7s (504kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -26,23 +26,23 @@ The following NEW packages will be installed:
   libsigc++-2.0-0c2a
 The following packages will be upgraded:
   adduser apt apt-utils aptitude base-config binutils console-common
-  console-data console-tools coreutils cpp-3.3 cpp-4.0 dhcp-client exim4
-  exim4-base exim4-config exim4-daemon-light g++-3.3 g++-4.0 gcc-3.3
-  gcc-3.3-base gcc-4.0 gcc-4.0-base initscripts libconsole libdb4.2 libdb4.3
-  libgcc1 libpcre3 libperl5.8 libssl0.9.8 libstdc++5 libstdc++5-3.3-dev
-  libstdc++6 libstdc++6-4.0-dev lsb-base manpages nano perl perl-base
-  perl-modules procps sed sysv-rc sysvinit
-45 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/37.8MB of archives.
+  console-data console-tools coreutils cpp-3.3 cpp-4.0 debconf debconf-i18n
+  dhcp-client exim4 exim4-base exim4-config exim4-daemon-light g++-3.3 g++-4.0
+  gcc-3.3 gcc-3.3-base gcc-4.0 gcc-4.0-base initscripts libconsole libdb4.2
+  libdb4.3 libgcc1 libpcre3 libperl5.8 libssl0.9.8 libstdc++5
+  libstdc++5-3.3-dev libstdc++6 libstdc++6-4.0-dev lsb-base manpages nano perl
+  perl-base perl-modules procps sed sysv-rc sysvinit
+47 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/38.0MB of archives.
 After unpacking 2712kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   coreutils perl-modules libdb4.3 perl libperl5.8 perl-base sed sysvinit
-  console-data console-tools libconsole lsb-base console-common
-  libstdc++6-4.0-dev g++-4.0 gcc-4.0 cpp-4.0 libgcc1 binutils gcc-4.0-base
-  libstdc++6 apt-utils libsigc++-2.0-0c2a aptitude apt initscripts sysv-rc
-  adduser base-config dhcp-client libssl0.9.8 manpages nano procps libdb4.2
-  libpcre3 exim4-daemon-light exim4-config exim4-base exim4 gcc-3.3-base
-  cpp-3.3 gcc-3.3 libstdc++5 libstdc++5-3.3-dev g++-3.3
+  debconf-i18n debconf console-data console-tools libconsole lsb-base
+  console-common libstdc++6-4.0-dev g++-4.0 gcc-4.0 cpp-4.0 libgcc1 binutils
+  gcc-4.0-base libstdc++6 apt-utils libsigc++-2.0-0c2a aptitude apt
+  initscripts sysv-rc adduser base-config dhcp-client libssl0.9.8 manpages
+  nano procps libdb4.2 libpcre3 exim4-daemon-light exim4-config exim4-base
+  exim4 gcc-3.3-base cpp-3.3 gcc-3.3 libstdc++5 libstdc++5-3.3-dev g++-3.3
 (Reading database ... 12446 files and directories currently installed.)
 Preparing to replace coreutils 5.2.1-2.1 (using .../coreutils_5.93-5_amd64.deb) ...
 Removing `local diversion of /usr/share/man/man1/md5sum.textutils.1.gz to /usr/share/man/man1/md5sum.1.gz'
@@ -74,6 +74,10 @@ Setting up sysvinit (2.86.ds1-6) ...
 init: timeout opening/writing control channel /dev/initctl
 
 (Reading database ... 12459 files and directories currently installed.)
+Preparing to replace debconf-i18n 1.4.59 (using .../debconf-i18n_1.4.61_all.deb) ...
+Unpacking replacement debconf-i18n ...
+Preparing to replace debconf 1.4.59 (using .../debconf_1.4.61_all.deb) ...
+Unpacking replacement debconf ...
 Preparing to replace console-data 2002.12.04dbs-50 (using .../console-data_2002.12.04dbs-52_all.deb) ...
 Unpacking replacement console-data ...
 Preparing to replace console-tools 1:0.2.3dbs-58 (using .../console-tools_1%3a0.2.3dbs-60_amd64.deb) ...
@@ -82,6 +86,10 @@ Preparing to replace libconsole 1:0.2.3dbs-58 (using .../libconsole_1%3a0.2.3dbs
 Unpacking replacement libconsole ...
 Preparing to replace lsb-base 3.0-11 (using .../lsb-base_3.0-12_all.deb) ...
 Unpacking replacement lsb-base ...
+Setting up debconf-i18n (1.4.61) ...
+Setting up debconf (1.4.61) ...
+
+(Reading database ... 12459 files and directories currently installed.)
 Preparing to replace console-common 0.7.54 (using .../console-common_0.7.55_all.deb) ...
 Unpacking replacement console-common ...
 Preparing to replace libstdc++6-4.0-dev 4.0.2-2 (using .../libstdc++6-4.0-dev_4.0.2-4_amd64.deb) ...
@@ -263,6 +271,6 @@ apt is already the newest version.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Lo3p8y/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//27394 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//27155 and its subdirectories
