@@ -7,6 +7,9 @@ pbuilder (0.140) UNRELEASED; urgency=low
   * Bug fix: "/usr/share/doc/pbuilder/examples/B90linda missing
     --allow-unauthenticated option", thanks to qfunk (Closes: #340715).
   - fixed other scripts to use --allow-unauthenticated option rather than --force-yes.
+  
+  ... this breaks sarge chroots. We'll probably need to postpone this change to after etch release.
+  
   * debconf compatibility level 4
   * Bug fix: "pbuilder-buildpackage-funcs check for createbuilduser for
     SUTOUSER is bogus", thanks to Brian Nelson (Closes: #338976).
