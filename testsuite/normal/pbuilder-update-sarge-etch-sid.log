@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//27155/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//22189/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -14,7 +14,7 @@ Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org sid/main Packages [3839kB]
-Fetched 3845kB in 7s (504kB/s)
+Fetched 3845kB in 2s (1505kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -43,6 +43,8 @@ WARNING: The following packages cannot be authenticated!
   initscripts sysv-rc adduser base-config dhcp-client libssl0.9.8 manpages
   nano procps libdb4.2 libpcre3 exim4-daemon-light exim4-config exim4-base
   exim4 gcc-3.3-base cpp-3.3 gcc-3.3 libstdc++5 libstdc++5-3.3-dev g++-3.3
+Extracting templates from packages: 62%Extracting templates from packages: 100%
+Preconfiguring packages ...
 (Reading database ... 12446 files and directories currently installed.)
 Preparing to replace coreutils 5.2.1-2.1 (using .../coreutils_5.93-5_amd64.deb) ...
 Removing `local diversion of /usr/share/man/man1/md5sum.textutils.1.gz to /usr/share/man/man1/md5sum.1.gz'
@@ -271,6 +273,6 @@ apt is already the newest version.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//27155 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//22189 and its subdirectories

@@ -1,20 +1,20 @@
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Sun Dec  4 12:02:37 JST 2005
-pbuilder-time-stamp: 1133665357
+Current time: Sun Dec  4 14:19:46 JST 2005
+pbuilder-time-stamp: 1133673586
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/dir1/32005/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir1/26794/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
 Obtaining the cached apt archive contents
 Installing the build-deps
- -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.20 2005/08/17 00:46:54 dancer Exp $
+ -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.22 2005/12/04 05:16:40 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
    -> Trying debhelper
  -> Considering  libdshconfig1-dev (>= 0.20.11-1)
@@ -33,10 +33,8 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 33.0kB/2892kB of archives.
+Need to get 0B/2892kB of archives.
 After unpacking 9572kB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org sid/main debconf-utils 1.4.61 [33.0kB]
-Fetched 33.0kB in 0s (147kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 11862 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
@@ -75,11 +73,10 @@ Setting up libdshconfig1 (0.20.11-1) ...
 Setting up libdshconfig1-dev (0.20.11-1) ...
  -> Finished parsing the build-deps
 Copying back the cached apt archive contents
- -> new cache content debconf-utils_1.4.61_all.deb added
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dpkg-source: extracting dsh in dsh-0.25.6
@@ -383,8 +380,8 @@ success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -396,7 +393,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun Dec  4 03:03:36 UTC 2005
+Sun Dec  4 05:20:37 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -466,13 +463,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun Dec  4 03:03:41 UTC 2005
+Sun Dec  4 05:20:42 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-b: b
-dsh: Process terminated (before write).
 a: a
+dsh: Process terminated (before write).
+b: b
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -595,7 +592,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Sun Dec  4 12:03:43 JST 2005
-pbuilder-time-stamp: 1133665423
+Current time: Sun Dec  4 14:20:44 JST 2005
+pbuilder-time-stamp: 1133673644
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/dir1/32005 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir1/26794 and its subdirectories

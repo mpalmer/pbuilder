@@ -309,12 +309,13 @@ O: Setting up base-passwd (3.5.10) ...
 P: Configuring package base-passwd
 O: 
 O: Selecting previously deselected package dpkg.
-O: (Reading database ... 21 files and directories currently installed.)
-O: Unpacking dpkg (from .../dpkg_1.13.11_amd64.deb) ...
-P: Unpacking package dpkg
 O: dpkg: regarding .../dpkg_1.13.11_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on libc6 (>= 2.3.5-1)
 O: dpkg: warning - ignoring pre-dependency problem !
+O: (Reading database ... 
+O: 21 files and directories currently installed.)
+O: Unpacking dpkg (from .../dpkg_1.13.11_amd64.deb) ...
+P: Unpacking package dpkg
 O: dpkg: dpkg: dependency problems, but configuring anyway as you request:
 O:  dpkg depends on libc6 (>= 2.3.5-1); however:
 O:   Package libc6 is not installed.
@@ -838,7 +839,8 @@ O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
-O: (Reading database ... 4525 files and directories currently installed.)
+O: (Reading database ... 
+O: 4525 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
@@ -861,7 +863,7 @@ O:
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [5722B]
 O: Ign bootstrap: . Release
-O: Fetched 5911B in 0s (43.7kB/s)
+O: Fetched 5911B in 0s (51.6kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -871,7 +873,6 @@ O: W:
 O: You may want to run apt-get update to correct these problems
 O: 
 O: Reading package lists...
-O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -902,6 +903,7 @@ O:   libgdbm3 liblzo1 libopencdk8 libpopt0 libssl0.9.8 libtasn1-2 libwrap0
 O:   logrotate man-db manpages nano netkit-inetd tcpd netbase nvi tasksel wget
 O:   whiptail libdb4.2 exim4-config exim4-base libgnutls12 libpcre3
 O:   exim4-daemon-light at exim4 telnet dhcp3-common dhcp3-client psmisc
+O: debconf: delaying package configuration, since apt-utils is not installed
 O: Authentication warning overridden.
 O: Selecting previously deselected package console-data.
 O: (Reading database ... 
@@ -1291,7 +1293,7 @@ Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org sid/main Packages [3839kB]
-Fetched 3845kB in 2s (1861kB/s)
+Fetched 3845kB in 1s (1928kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1381,6 +1383,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.JlWkCi/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//1831 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//28032 and its subdirectories
