@@ -80,8 +80,8 @@ function cowprotect () {
 }
 
 function createbuilduser () {
-    # create the build user
-    if [ -n "$SUTOUSER" ]; then
+    # create the build user, if it is necessary and specified.
+    if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
 	if ! grep -q ^$BUILDUSERNAME: $BUILDPLACE/etc/passwd; then
 	    cowprotect $BUILDPLACE/etc/passwd
 	    echo "$BUILDUSERNAME:x:$BUILDUSERID:$BUILDUSERID:,,,:/tmp/buildd:/bin/sh" >> $BUILDPLACE/etc/passwd

@@ -1,11 +1,16 @@
 2005-12-04  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-createbuildenv: implement --no-targz for pbuilder create.
+
+	* pbuilder-buildpackage-funcs: #338976; SUTOUSER check is bogus.
+	Only add a user when there is a user to add.
+
 	* pdebuild-internal: use --allow-unauthenticated option rather than --force-yes to apt-get install
 	* pbuilder-updatebuildenv: 
 	* pbuilder-satisfydepends: 
 	* pbuilder-createbuildenv: 
 	* pbuilder-buildpackage-funcs: 
-	
+
 	* examples/execute_installtest.sh: --allow-unauthenticated option to apt-get install
 	* examples/B92test-pkg: 
 	* examples/B91dpkg-i:

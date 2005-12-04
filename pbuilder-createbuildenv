@@ -95,7 +95,10 @@ unloadhooks
 umountproc
 $TRAP cleanbuildplace exit
 
-create_basetgz
+# Internal_build_uml is set when --no-targz is set, this code is actually never called from pbuilder-user-mode-linux
+if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
+    create_basetgz
+fi
 if [ "${PRESERVE_BUILDPLACE}" = "yes" ]; then
     trap exit
 fi

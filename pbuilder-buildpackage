@@ -31,7 +31,6 @@ if [ ! -f "$PACKAGENAME" ]; then
     exit 1;
 fi;
 
-# due to 
 if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
     SUTOUSER="su -p $BUILDUSERNAME"
     DEBBUILDOPTS="$DEBBUILDOPTS -rfakeroot"
