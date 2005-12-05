@@ -61,7 +61,7 @@ if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
 	PBUILDER_BUILD_LOGFILE="${BUILDRESULT}/"$(basename "${PACKAGENAME}" .dsc)
 	exec > "${PBUILDER_BUILD_LOGFILE}"
 	exec 2>&1
-	PBUILDER_BUILD_LOGFILE=$(readlink -f "${PBUILDER_BUILD_LOGFILE}")
+	PBUILDER_BUILD_LOGFILE=$(readlink -e "${PBUILDER_BUILD_LOGFILE}")
 	echo "I: Using pkgname logfile"
 	showbuildbanner '$Id$'
 	echobacktime

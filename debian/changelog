@@ -1,9 +1,11 @@
 pbuilder (0.142) UNRELEASED; urgency=low
 
   [Junichi Uekawa]
-  * 
+  * Bug fix: "readlink -f/-e", thanks to Brian Nelson (Closes: #342117).
+    Use readlink -e instead of readlink -f, readlink -f does not fail if
+    the file symlink points to does not exist.
 
- -- Junichi Uekawa <dancer@debian.org>  Mon,  5 Dec 2005 21:25:03 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Mon,  5 Dec 2005 23:23:31 +0900
 
 pbuilder (0.141) unstable; urgency=low
 

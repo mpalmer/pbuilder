@@ -1,7 +1,24 @@
 2005-12-05  Junichi Uekawa  <dancer@debian.org>
 
-	* pbuilder-buildpackage-funcs: 'install' was missing from apt-get for EXTRAPACKAGES handling. Fix.
+	* pdebuild-user-mode-linux:
+	* pdebuild-uml-checkparams:
+	* pdebuild-checkparams: 
+	* pdebuild: readlink -e instead of readlink -f 
+
+	* pbuilder-uml-checkparams: readlink -e  instead of readlink -f
+
+	* pbuilder-modules: readlink -e instead of readlink -f
+
+	* pbuilder-createbuildenv: quote HOOKDIR and readlink -e instead of readlink -f.
+
+	* pbuilder-checkparams:
+	* pbuilder-buildpackage: use readlink -e here.
 	
+	* pbuilder-buildpackage-funcs:	use readlink -e  instead of readlink -f. 338976, reopened as 342117
+	thanks to Markus Kolb
+	
+	* pbuilder-buildpackage-funcs: 'install' was missing from apt-get for EXTRAPACKAGES handling. Fix.
+
 	* pbuilderrc: make fakeroot default.
 
 	* Documentation/pbuilder-doc.xml: update a note on pdebuild-internal is ran as the outside user uid.

@@ -28,7 +28,7 @@ while [ -n "$1" ]; do
 	--buildresult)
 	    if [ -n "$2" ]; then
 		if [ -d "$2" ]; then
-		    BUILDRESULT=$(readlink -f "$2");
+		    BUILDRESULT=$(readlink -e "$2");
 		else
 		    echo "E: Directory $2 does not exist" >&2 
 		    exit 1

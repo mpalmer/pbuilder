@@ -56,7 +56,7 @@ while [ -n "$1" ]; do
 		echo "E: Directory $2 does not exist" >&2 
 		exit 1
 	    fi
-	    BUILDPLACE=$(readlink -f "$2");
+	    BUILDPLACE=$(readlink -e "$2");
 	    shift; shift;
 	    ;;
 	--mirror)
@@ -82,7 +82,7 @@ while [ -n "$1" ]; do
 	--buildresult)
 	    if [ -n "$2" ]; then
 		if [ -d "$2" ]; then
-		    BUILDRESULT=$(readlink -f "$2");
+		    BUILDRESULT=$(readlink -e "$2");
 		else
 		    echo "E: Directory $2 does not exist" >&2 
 		    exit 1
@@ -95,7 +95,7 @@ while [ -n "$1" ]; do
 	--aptcache)
 	    if [ -n "$2" ]; then
 		if [ -d "$2" ]; then
-		    APTCACHE=$(readlink -f "$2");
+		    APTCACHE=$(readlink -e "$2");
 		else
 		    echo "E: Directory $2 does not exist" >&2 
 		    exit 1
@@ -142,7 +142,7 @@ while [ -n "$1" ]; do
 	    echo "  -> Logging to $2"
 	    exec > "$2";
 	    exec 2>&1
-	    PBUILDER_BUILD_LOGFILE=$(readlink -f "$2")
+	    PBUILDER_BUILD_LOGFILE=$(readlink -e "$2")
 	    shift; shift;
 	    ;;
 	--pkgname-logfile)
