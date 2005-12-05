@@ -24,6 +24,8 @@
 # Will take longer if your package does not successfully run 'debian/rules clean'
 # 
 
+# This script is running inside 'pbuilder execute' as root.
+
 set -e
 
 echo "Using: $Id$"

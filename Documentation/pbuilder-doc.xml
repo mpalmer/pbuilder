@@ -188,14 +188,18 @@
 	however, it is possible to change the behavior to run it
 	inside the chroot with
 	the <command><option>--use-pdebuild-internal</option></command>.
-	<!-- FIXME: name of option is misleading, change it?
-	 maybe when it's more useful.
-	-->
 	It will try to bind mount the working directory inside chroot,
 	and run <command>dpkg-buildpackage</command> inside.
-	It has the following characteristics, and thus cannot be made default.
+	It has the following characteristics, and is not yet the 
+	default mode of operation.
       </para>
       <itemizedlist>
+	<listitem>
+	  <para>
+	    Satisfies build-dependency inside the chroot before creating source package.
+	    (which is a good point that current pdebuild cannot do).
+	  </para>
+	</listitem>
 	<listitem>
 	  <para>The working directory is modified
 	  from inside the chroot.</para>
@@ -207,15 +211,18 @@
 	<listitem>
 	  <para>If making the source package fails,
 	  the session using the chroot is wasted
-	  (chroot creation takes a bit of time).</para>
+	  (chroot creation takes a bit of time, which should be improved with cowdancer).</para>
 	</listitem>
 	<listitem>
 	  <para>Does not work in the same manner as it used to;
 	  for example, <command><option>--buildresult</option></command>
 	  does not have any effect.</para>
 	</listitem>
+	<listitem>
+	  <para>The build inside chroot is ran with the current user outside chroot.
+	  </para>
+	</listitem>
       </itemizedlist>
-
     </sect1>
     <sect1 id="configfile">
       <title>Configuration Files</title>

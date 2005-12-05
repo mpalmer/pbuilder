@@ -6,14 +6,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
 dh_clean: Compatibility levels before 4 are deprecated.
@@ -27,17 +27,18 @@ dpkg-source: building dsh in dsh_0.25.6-1.dsc
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: source only upload (original source is included)
 W: /home/dancer/.pbuilderrc does not exist
+I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Sun Dec  4 15:02:27 JST 2005
-pbuilder-time-stamp: 1133676147
+Current time: Mon Dec  5 19:28:22 JST 2005
+pbuilder-time-stamp: 1133778502
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir3/13247/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir3/24220/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result
@@ -68,7 +69,7 @@ WARNING: The following packages cannot be authenticated!
   libmagic1 file debconf-utils html2text gettext intltool-debian po-debconf
   debhelper libdshconfig1 libdshconfig1-dev
 Selecting previously deselected package libmagic1.
-(Reading database ... 11779 files and directories currently installed.)
+(Reading database ... 11781 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.15-2_amd64.deb) ...
@@ -104,33 +105,53 @@ Setting up libdshconfig1 (0.20.11-1) ...
 
 Setting up libdshconfig1-dev (0.20.11-1) ...
  -> Finished parsing the build-deps
+Reading package lists...
+Building dependency tree...
+The following NEW packages will be installed:
+  fakeroot
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/94.3kB of archives.
+After unpacking 360kB of additional disk space will be used.
+WARNING: The following packages cannot be authenticated!
+  fakeroot
+Selecting previously deselected package fakeroot.
+(Reading database ... 12372 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.5.5_amd64.deb) ...
+Setting up fakeroot (1.5.5) ...
+
 Copying back the cached apt archive contents
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir3/24220/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir3/24220/etc/group
 Copying source file
     -> copying [../dsh_0.25.6-1.dsc]
     -> copying [../dsh_0.25.6.orig.tar.gz]
     -> copying [../dsh_0.25.6-1.diff.gz]
 Extracting source
-dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+su: Authentication service cannot retrieve authentication info.
+(Ignored)
+dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: extracting dsh in dsh-0.25.6
 dpkg-source: unpacking dsh_0.25.6.orig.tar.gz
 dpkg-source: applying ./dsh_0.25.6-1.diff.gz
  -> Building the package
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+su: Authentication service cannot retrieve authentication info.
+(Ignored)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: source package is dsh
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: source version is 0.25.6-1
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: host architecture amd64
-dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
- debian/rules clean
+dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+ fakeroot debian/rules clean
 dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
@@ -147,9 +168,9 @@ make: [clean] Error 2 (ignored)
 dh_clean
 dh_clean: Compatibility levels before 4 are deprecated.
  dpkg-source -b dsh-0.25.6
-dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: building dsh using existing dsh_0.25.6.orig.tar.gz
 dpkg-source: building dsh in dsh_0.25.6-1.diff.gz
 dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
@@ -415,8 +436,8 @@ success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -428,7 +449,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun Dec  4 06:03:19 UTC 2005
+Mon Dec  5 10:29:13 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -498,14 +519,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun Dec  4 06:03:24 UTC 2005
+Mon Dec  5 10:29:18 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
-dsh: Process terminated (before write).
 c: c
+dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -518,7 +539,7 @@ make[3]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 make[2]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 make[1]: Leaving directory `/tmp/buildd/dsh-0.25.6'
 touch build-stamp
- debian/rules binary
+ fakeroot debian/rules binary
 dh_testdir
 dh_testroot
 dh_clean -k
@@ -618,16 +639,16 @@ dh_builddeb
 dh_builddeb: Compatibility levels before 4 are deprecated.
 dpkg-deb: building package `dsh' in `../dsh_0.25.6-1_amd64.deb'.
  dpkg-genchanges
-dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
+dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
+debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Sun Dec  4 15:03:26 JST 2005
-pbuilder-time-stamp: 1133676206
+Current time: Mon Dec  5 19:29:20 JST 2005
+pbuilder-time-stamp: 1133778560
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.afMItQ/dir3/13247 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir3/24220 and its subdirectories

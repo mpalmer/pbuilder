@@ -50,7 +50,7 @@ function checkbuilddep () {
     fi
     # install extra packages to the chroot
     if [ -n "$EXTRAPACKAGES" ]; then 
-	$CHROOTEXEC usr/bin/apt-get -y --force-yes ${EXTRAPACKAGES}
+	$CHROOTEXEC usr/bin/apt-get -y --force-yes install ${EXTRAPACKAGES}
     fi
 }
 
