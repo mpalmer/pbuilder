@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.i9bAmE/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//6749/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//9807/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -13,8 +13,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org sid/main Packages [3839kB]
-Fetched 3845kB in 2s (1768kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [3840kB]
+Fetched 3846kB in 3s (1271kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -29,20 +29,18 @@ The following packages will be upgraded:
   console-data console-tools coreutils cpp-4.0 debconf debconf-i18n exim4
   exim4-base exim4-config exim4-daemon-light findutils g++-4.0 gcc-4.0
   gcc-4.0-base initscripts libconsole libdb4.2 libdb4.3 libgcc1 libpcre3
-  libssl0.9.8 libstdc++6 libstdc++6-4.0-dev lsb-base nano perl perl-base
-  perl-modules procps sed sysv-rc sysvinit tasksel
-40 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/31.7MB of archives.
+  libssl0.9.8 libstdc++6 libstdc++6-4.0-dev lsb-base nano net-tools perl
+  perl-base perl-modules procps sed sysv-rc sysvinit tasksel
+41 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/32.0MB of archives.
 After unpacking 2974kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   coreutils findutils perl-modules libdb4.3 perl perl-base sed sysvinit
   debconf-i18n debconf console-data console-tools libconsole lsb-base
   console-common libstdc++6-4.0-dev g++-4.0 gcc-4.0 cpp-4.0 libgcc1 binutils
   gcc-4.0-base libstdc++6 apt-utils libsigc++-2.0-0c2a aptitude apt
-  initscripts sysv-rc adduser base-config libssl0.9.8 nano tasksel procps
-  libdb4.2 libpcre3 exim4-daemon-light exim4-config exim4-base exim4
-Extracting templates from packages: 73%Extracting templates from packages: 100%
-Preconfiguring packages ...
+  initscripts sysv-rc adduser base-config libssl0.9.8 nano net-tools tasksel
+  procps libdb4.2 libpcre3 exim4-daemon-light exim4-config exim4-base exim4
 (Reading database ... 11781 files and directories currently installed.)
 Preparing to replace coreutils 5.2.1-2.1 (using .../coreutils_5.93-5_amd64.deb) ...
 Removing `local diversion of /usr/share/man/man1/md5sum.textutils.1.gz to /usr/share/man/man1/md5sum.1.gz'
@@ -167,6 +165,8 @@ Preparing to replace libssl0.9.8 0.9.8a-3 (using .../libssl0.9.8_0.9.8a-4_amd64.
 Unpacking replacement libssl0.9.8 ...
 Preparing to replace nano 1.3.8-2 (using .../nano_1.3.9-1_amd64.deb) ...
 Unpacking replacement nano ...
+Preparing to replace net-tools 1.60-16 (using .../net-tools_1.60-17_amd64.deb) ...
+Unpacking replacement net-tools ...
 Preparing to replace tasksel 2.33 (using .../archives/tasksel_2.34_all.deb) ...
 Unpacking replacement tasksel ...
 Preparing to replace procps 1:3.2.5-1 (using .../procps_1%3a3.2.6-2_amd64.deb) ...
@@ -206,6 +206,7 @@ Setting up libssl0.9.8 (0.9.8a-4) ...
 
 Setting up nano (1.3.9-1) ...
 
+Setting up net-tools (1.60-17) ...
 Setting up tasksel (2.34) ...
 
 Setting up procps (3.2.6-2) ...
@@ -250,6 +251,6 @@ apt is already the newest version.
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.i9bAmE/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//6749 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//9807 and its subdirectories

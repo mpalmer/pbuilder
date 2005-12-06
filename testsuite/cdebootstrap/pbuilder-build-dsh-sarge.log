@@ -2,14 +2,14 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Mon Dec  5 19:17:02 JST 2005
-pbuilder-time-stamp: 1133777822
+Current time: Tue Dec  6 12:37:39 JST 2005
+pbuilder-time-stamp: 1133840259
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.i9bAmE/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir1/31223/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.i9bAmE/dir1/31899/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
@@ -86,12 +86,12 @@ Unpacking fakeroot (from .../fakeroot_1.2.10_amd64.deb) ...
 Setting up fakeroot (1.2.10) ...
 
 Copying back the cached apt archive contents
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir1/31223/etc/passwd
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir1/31223/etc/group
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.i9bAmE/dir1/31899/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.i9bAmE/dir1/31899/etc/group
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.i9bAmE/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.i9bAmE/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.i9bAmE/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 su: Authentication service cannot retrieve authentication info.
 (Ignored)
@@ -370,6 +370,7 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
+dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -395,8 +396,8 @@ success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -408,7 +409,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Dec  5 10:17:48 UTC 2005
+Tue Dec  6 03:38:36 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -478,7 +479,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Dec  5 10:17:53 UTC 2005
+Tue Dec  6 03:38:41 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -591,7 +592,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Mon Dec  5 19:17:56 JST 2005
-pbuilder-time-stamp: 1133777876
+Current time: Tue Dec  6 12:38:43 JST 2005
+pbuilder-time-stamp: 1133840323
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.dhvmAM/dir1/31223 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.i9bAmE/dir1/31899 and its subdirectories
