@@ -1047,6 +1047,9 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
       <title>How to use ccache</title>
       <para>
 	To use ccache with pbuilder, use the following for configuration.
+	Note that the directory used for CCACHE_DIR needs to exist, and 
+	be writable by user within chroot.
+	The default user within chroot is uid=1234.
       </para>
       <screen>
 export CCACHE_DIR="/var/cache/pbuilder/ccache"

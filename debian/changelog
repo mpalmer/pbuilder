@@ -4,8 +4,10 @@ pbuilder (0.142) UNRELEASED; urgency=low
   * Bug fix: "readlink -f/-e", thanks to Brian Nelson (Closes: #342117).
     Use readlink -e instead of readlink -f, readlink -f does not fail if
     the file symlink points to does not exist.
+  * Document that ccache setting requires target directory to be writable
+    by user within chroot. (Closes: #342665).
 
- -- Junichi Uekawa <dancer@debian.org>  Mon,  5 Dec 2005 23:23:31 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Mon, 12 Dec 2005 09:31:45 +0900
 
 pbuilder (0.141) unstable; urgency=low
 
