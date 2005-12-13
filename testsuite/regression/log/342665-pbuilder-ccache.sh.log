@@ -2,16 +2,16 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Mon Dec 12 09:28:12 JST 2005
-pbuilder-time-stamp: 1134347292
+Current time: Mon Dec 12 17:11:15 JST 2005
+pbuilder-time-stamp: 1134375075
 Building the build Environment
  -> extracting base tarball [/var/cache/pbuilder/base.tgz]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//25718/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//7711/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
--> Mounting /tmp/ccache
+-> Mounting /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/regression/work/ccache
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
 Obtaining the cached apt archive contents
@@ -97,8 +97,8 @@ Setting up ccache (2.4-4) ...
 Setting up fakeroot (1.5.5) ...
 
 Copying back the cached apt archive contents
-/var/cache/pbuilder/build/25718/etc/passwd
-/var/cache/pbuilder/build/25718/etc/group
+/var/cache/pbuilder/build/7711/etc/passwd
+/var/cache/pbuilder/build/7711/etc/group
 Copying source file
     -> copying [work/dsh_0.25.6-1.dsc]
     -> copying [work/dsh_0.25.6.orig.tar.gz]
@@ -426,7 +426,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Dec 12 00:28:34 UTC 2005
+Mon Dec 12 08:11:46 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -496,13 +496,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Dec 12 00:28:39 UTC 2005
+Mon Dec 12 08:11:51 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-b: b
 dsh: Process terminated (before write).
+b: b
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -625,8 +625,171 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> unmounting /tmp/ccache filesystem
-Current time: Mon Dec 12 09:28:40 JST 2005
-pbuilder-time-stamp: 1134347320
+ -> unmounting /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/regression/work/ccache filesystem
+Current time: Mon Dec 12 17:11:53 JST 2005
+pbuilder-time-stamp: 1134375113
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//25718 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//7711 and its subdirectories
+work/ccache
+work/ccache/stats
+work/ccache/4
+work/ccache/4/3
+work/ccache/4/stats
+work/ccache/4/5
+work/ccache/4/5/4fb01b71f12bf90bfb73751d890ef4-79302
+work/ccache/4/5/4fb01b71f12bf90bfb73751d890ef4-79302.stderr
+work/ccache/4/d
+work/ccache/4/d/4caa2c65213a195f2e3aee219cfc68-99600
+work/ccache/4/d/4caa2c65213a195f2e3aee219cfc68-99600.stderr
+work/ccache/4/4
+work/ccache/4/4/3d4a0c0bb5fcfb63a7a2c50b5e9009-78444
+work/ccache/4/4/3d4a0c0bb5fcfb63a7a2c50b5e9009-78444.stderr
+work/ccache/b
+work/ccache/b/1
+work/ccache/b/1/9f74d1542bc17a111a161a41fd3f31-255
+work/ccache/b/1/9f74d1542bc17a111a161a41fd3f31-255.stderr
+work/ccache/b/stats
+work/ccache/f
+work/ccache/f/6
+work/ccache/f/6/1fa5537b057ba88820448ea3499560-175
+work/ccache/f/6/1fa5537b057ba88820448ea3499560-175.stderr
+work/ccache/f/stats
+work/ccache/f/7
+work/ccache/f/7/5ea57c98cf001dabe84ece42d5e73f-167
+work/ccache/f/7/5ea57c98cf001dabe84ece42d5e73f-167.stderr
+work/ccache/f/d
+work/ccache/f/d/d143b0380388222165e89fb9edc0ef-46254
+work/ccache/f/d/d143b0380388222165e89fb9edc0ef-46254.stderr
+work/ccache/f/d/a2fb6f6b8526825315a4cca3c1a0a6-28963
+work/ccache/f/d/a2fb6f6b8526825315a4cca3c1a0a6-28963.stderr
+work/ccache/f/9
+work/ccache/f/9/fea2d63544c5721256b183825d0c3e-46235
+work/ccache/f/9/fea2d63544c5721256b183825d0c3e-46235.stderr
+work/ccache/e
+work/ccache/e/f
+work/ccache/e/f/920a217d1b9ec85c02bfe846a9e385-178
+work/ccache/e/f/920a217d1b9ec85c02bfe846a9e385-178.stderr
+work/ccache/e/stats
+work/ccache/e/1
+work/ccache/e/1/390ea3bb84929bf44de8f96b5fb680-20351
+work/ccache/e/1/390ea3bb84929bf44de8f96b5fb680-20351.stderr
+work/ccache/e/0
+work/ccache/e/0/9b6c6eeac1209c093ece6ad7a64dd5-175962
+work/ccache/e/0/9b6c6eeac1209c093ece6ad7a64dd5-175962.stderr
+work/ccache/d
+work/ccache/d/f
+work/ccache/d/f/38397b36c8231cb04ff890b22598a9-30114
+work/ccache/d/f/38397b36c8231cb04ff890b22598a9-30114.stderr
+work/ccache/d/stats
+work/ccache/d/e
+work/ccache/d/e/261d308f45be95d93fa2a751cbedea-58118
+work/ccache/d/e/261d308f45be95d93fa2a751cbedea-58118.stderr
+work/ccache/5
+work/ccache/5/e
+work/ccache/5/stats
+work/ccache/5/7
+work/ccache/5/7/b6146e672f42be93634a44d0241b52-131
+work/ccache/5/7/b6146e672f42be93634a44d0241b52-131.stderr
+work/ccache/5/5
+work/ccache/5/5/cca164ffa3051b98583922faf8583e-81871
+work/ccache/5/5/cca164ffa3051b98583922faf8583e-81871.stderr
+work/ccache/6
+work/ccache/6/7
+work/ccache/6/7/d32dfd003b9f9d9fdc30660ede604d-409
+work/ccache/6/7/d32dfd003b9f9d9fdc30660ede604d-409.stderr
+work/ccache/6/stats
+work/ccache/6/8
+work/ccache/6/8/73d8e444108e9d23b6af34df8f88c5-78455
+work/ccache/6/8/73d8e444108e9d23b6af34df8f88c5-78455.stderr
+work/ccache/6/e
+work/ccache/6/e/a528bbac42b07eabf12dfecee92868-28904
+work/ccache/6/e/a528bbac42b07eabf12dfecee92868-28904.stderr
+work/ccache/7
+work/ccache/7/b
+work/ccache/7/b/dc4883c7b92566a17d41a5385ce71c-38189
+work/ccache/7/b/dc4883c7b92566a17d41a5385ce71c-38189.stderr
+work/ccache/7/b/26566ebcd601877cdd38d3144590a0-79911
+work/ccache/7/b/26566ebcd601877cdd38d3144590a0-79911.stderr
+work/ccache/7/stats
+work/ccache/7/0
+work/ccache/7/0/b34631aca200ce2b8ccff16e6cb074-243
+work/ccache/7/0/b34631aca200ce2b8ccff16e6cb074-243.stderr
+work/ccache/a
+work/ccache/a/c
+work/ccache/a/c/5c36ed63acedc4487af3ec6584441f-23878
+work/ccache/a/c/5c36ed63acedc4487af3ec6584441f-23878.stderr
+work/ccache/a/stats
+work/ccache/a/d
+work/ccache/a/d/5af4b86aadb3d1a4851031a7584358-58190
+work/ccache/a/d/5af4b86aadb3d1a4851031a7584358-58190.stderr
+work/ccache/a/5
+work/ccache/a/5/3eafff1be69613ecea8149453a53cb-141
+work/ccache/a/5/3eafff1be69613ecea8149453a53cb-141.stderr
+work/ccache/a/6
+work/ccache/a/6/69b79c932f0d960adabd6abd900f2a-171
+work/ccache/a/6/69b79c932f0d960adabd6abd900f2a-171.stderr
+work/ccache/a/7
+work/ccache/a/7/1a61486b923875415f0718a10ccaf8-409
+work/ccache/a/7/1a61486b923875415f0718a10ccaf8-409.stderr
+work/ccache/a/8
+work/ccache/a/8/30e091bac9df70e1f3aff43de8f01f-152
+work/ccache/a/8/30e091bac9df70e1f3aff43de8f01f-152.stderr
+work/ccache/a/a
+work/ccache/a/a/a43aff1657e35225a7ca2444e93054-156
+work/ccache/a/a/a43aff1657e35225a7ca2444e93054-156.stderr
+work/ccache/a/2
+work/ccache/a/2/794be3d4a0bff4204b8468478ec6d7-187
+work/ccache/a/2/794be3d4a0bff4204b8468478ec6d7-187.stderr
+work/ccache/a/b
+work/ccache/a/b/2fe1e8d86d263542c84606fc196a9b-130814
+work/ccache/a/b/2fe1e8d86d263542c84606fc196a9b-130814.stderr
+work/ccache/2
+work/ccache/2/1
+work/ccache/2/1/4b8696a3c76e05c3ec4bbff4936264-42692
+work/ccache/2/1/4b8696a3c76e05c3ec4bbff4936264-42692.stderr
+work/ccache/2/1/bd3cf1d45eb8885fdc3090779268ff-79207
+work/ccache/2/1/bd3cf1d45eb8885fdc3090779268ff-79207.stderr
+work/ccache/2/stats
+work/ccache/2/4
+work/ccache/2/4/469d97612966a55931e94f6cae2332-61818
+work/ccache/2/4/469d97612966a55931e94f6cae2332-61818.stderr
+work/ccache/2/3
+work/ccache/2/3/5c64071b1f5e8938980a976c41f3a0-147
+work/ccache/2/3/5c64071b1f5e8938980a976c41f3a0-147.stderr
+work/ccache/2/2
+work/ccache/2/2/e4ce99dc772262ce14e344a2bc450f-88784
+work/ccache/2/2/e4ce99dc772262ce14e344a2bc450f-88784.stderr
+work/ccache/9
+work/ccache/9/a
+work/ccache/9/a/8b210ea511db0f1b24013012932143-58191
+work/ccache/9/a/8b210ea511db0f1b24013012932143-58191.stderr
+work/ccache/9/stats
+work/ccache/9/7
+work/ccache/9/7/0977397cb6288ecd8d00988be17d57-792
+work/ccache/9/7/0977397cb6288ecd8d00988be17d57-792.stderr
+work/ccache/8
+work/ccache/8/a
+work/ccache/8/a/cd7eb0d2579ce156ff55762165115e-61802
+work/ccache/8/a/cd7eb0d2579ce156ff55762165115e-61802.stderr
+work/ccache/8/stats
+work/ccache/8/4
+work/ccache/8/4/51a08ddc61fbeb93ec31da73398bbb-224
+work/ccache/8/4/51a08ddc61fbeb93ec31da73398bbb-224.stderr
+work/ccache/8/8
+work/ccache/8/8/03c44938e66fc35ce7a9fcff43de1e-48260
+work/ccache/8/8/03c44938e66fc35ce7a9fcff43de1e-48260.stderr
+work/ccache/3
+work/ccache/3/3
+work/ccache/3/3/9f981c68fb8961e86fc62370b68ed6-150
+work/ccache/3/3/9f981c68fb8961e86fc62370b68ed6-150.stderr
+work/ccache/3/stats
+work/ccache/0
+work/ccache/0/8
+work/ccache/0/8/633a66d5fb53356874340d43ccf659-154
+work/ccache/0/8/633a66d5fb53356874340d43ccf659-154.stderr
+work/ccache/0/stats
+work/ccache/c
+work/ccache/c/f
+work/ccache/c/f/da64964471f473b97068a9c8b09b01-79401
+work/ccache/c/f/da64964471f473b97068a9c8b09b01-79401.stderr
+work/ccache/c/stats

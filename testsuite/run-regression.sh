@@ -28,4 +28,4 @@ RESULTFILE=$(readlink -f ${RESULTFILE})
     done
 )
 
-rm -r regression/work/
+sudo rm -rf regression/work/
