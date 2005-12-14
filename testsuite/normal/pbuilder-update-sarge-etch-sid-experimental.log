@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w6uwRC/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.O4g2U4/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//26705/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//18345/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -18,8 +18,8 @@ Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org ../project/experimental Release [4245B]
 Ign http://ftp.jp.debian.org ../project/experimental Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [115kB]
-Fetched 120kB in 0s (283kB/s)
+Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [121kB]
+Fetched 126kB in 0s (385kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -30,21 +30,40 @@ Reading package lists...
 Building dependency tree...
 The following packages will be REMOVED:
   aptitude tasksel
+The following NEW packages will be installed:
+  gcc-4.1-base
 The following packages will be upgraded:
-  apt apt-utils diff
-3 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
-Need to get 0B/1679kB of archives.
-After unpacking 8610kB disk space will be freed.
+  apt apt-utils diff libgcc1 libstdc++6
+5 upgraded, 1 newly installed, 2 to remove and 0 not upgraded.
+Need to get 574kB/2253kB of archives.
+After unpacking 8958kB disk space will be freed.
 WARNING: The following packages cannot be authenticated!
-  diff apt-utils apt
-(Reading database ... 12512 files and directories currently installed.)
+  diff gcc-4.1-base libgcc1 libstdc++6 apt-utils apt
+Get:1 http://ftp.jp.debian.org ../project/experimental/main gcc-4.1-base 4.1-0exp4 [183kB]
+Get:2 http://ftp.jp.debian.org ../project/experimental/main libgcc1 1:4.1-0exp4 [98.9kB]
+Get:3 http://ftp.jp.debian.org ../project/experimental/main libstdc++6 4.1-0exp4 [292kB]
+Fetched 574kB in 0s (1216kB/s)
+(Reading database ... 12520 files and directories currently installed.)
 Removing tasksel ...
 Removing aptitude ...
-(Reading database ... 12321 files and directories currently installed.)
+(Reading database ... 12329 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-(Reading database ... 12329 files and directories currently installed.)
+Selecting previously deselected package gcc-4.1-base.
+(Reading database ... 12337 files and directories currently installed.)
+Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1-0exp4_amd64.deb) ...
+Preparing to replace libgcc1 1:4.0.2-5 (using .../libgcc1_1%3a4.1-0exp4_amd64.deb) ...
+Unpacking replacement libgcc1 ...
+Setting up gcc-4.1-base (4.1-0exp4) ...
+Setting up libgcc1 (4.1-0exp4) ...
+
+(Reading database ... 12343 files and directories currently installed.)
+Preparing to replace libstdc++6 4.0.2-5 (using .../libstdc++6_4.1-0exp4_amd64.deb) ...
+Unpacking replacement libstdc++6 ...
+Setting up libstdc++6 (4.1-0exp4) ...
+
+(Reading database ... 12340 files and directories currently installed.)
 Preparing to replace apt-utils 0.6.43 (using .../apt-utils_0.6.43exp2_amd64.deb) ...
 Unpacking replacement apt-utils ...
 Preparing to replace apt 0.6.43 (using .../apt_0.6.43exp2_amd64.deb) ...
@@ -60,8 +79,11 @@ dpkg-dev is already the newest version.
 apt is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Copying back the cached apt archive contents
+ -> new cache content gcc-4.1-base_4.1-0exp4_amd64.deb added
+ -> new cache content libgcc1_1%3a4.1-0exp4_amd64.deb added
+ -> new cache content libstdc++6_4.1-0exp4_amd64.deb added
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w6uwRC/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.O4g2U4/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//26705 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//18345 and its subdirectories
