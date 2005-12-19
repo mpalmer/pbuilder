@@ -1315,6 +1315,7 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 	      <entry><filename>/tmp/buildd</filename></entry>
 	      <entry>Default place used in pbuilder to place the Debian package to be processed.
 		/tmp/buildd/packagename-version/ will be the root directory of the package being processed.
+		HOME environment variable is set to this value inside chroot by pbuilder-buildpackage
 	      </entry>
 	    </row>
 	    <row>

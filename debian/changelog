@@ -6,8 +6,10 @@ pbuilder (0.142) UNRELEASED; urgency=low
     the file symlink points to does not exist.
   * Document that ccache setting requires target directory to be writable
     by user within chroot. (Closes: #342665).
+  * Document HOME=/tmp/buildd inside chroot.
+  * set HOME=$(pwd)/../ in pdebuid-internal to match pdebuild.
 
- -- Junichi Uekawa <dancer@debian.org>  Mon, 12 Dec 2005 09:31:45 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Mon, 19 Dec 2005 23:29:48 +0900
 
 pbuilder (0.141) unstable; urgency=low
 

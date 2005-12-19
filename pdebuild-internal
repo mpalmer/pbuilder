@@ -24,7 +24,7 @@
 # Will take longer if your package does not successfully run 'debian/rules clean'
 # 
 
-# This script is running inside 'pbuilder execute' as root.
+# This script is running inside chroot under 'pbuilder execute' as root.
 
 set -e
 
@@ -78,6 +78,8 @@ groupadd -g "${BUILDRESULTGID}" -o pbgroup
 useradd -g pbgroup -u "${BUILDRESULTUID}" -o pbuser
 
 # what about id -G output? if other groups than the designated is used, we're stuffed.
+
+export HOME=$(pwd)/../
 
 # do build with that user.
 echo /usr/bin/dpkg-buildpackage -rfakeroot -us -uc '${DEBBUILDOPTS}' | su pbuser
