@@ -27,6 +27,8 @@ testbuild=$testdir/dir1
 testbuild2=$testdir/dir2
 testbuild3=$testdir/dir3
 
+HOOKOPTION=" --hookdir /usr/share/doc/pbuilder/examples/344089"
+
 for DEBOOTSTRAP in debootstrap cdebootstrap; do
     case $DEBOOTSTRAP in 
 	debootstrap)
@@ -49,7 +51,7 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
     
     for distribution in sid sarge etch; do
 	sudo ${PBUILDER} create "${DEBOOTSTRAPOPTS[@]}" --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log 
-# --hookdir /usr/share/doc/pbuilder/examples/libc6workaround
+
 	log_success create-${distribution}-${DEBOOTSTRAP}
 	
 	for PKG in dsh; do 
@@ -79,22 +81,25 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
 	# upgrading testing.
 	case $distribution in 
 	    sarge)
-		sudo ${PBUILDER} update --basetgz ${testimage} --distribution etch --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch.log 
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution etch --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch.log 
 		log_success update-${distribution}-etch.log
-		sudo ${PBUILDER} update --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch-sid.log 
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch-sid.log 
 		log_success update-${distribution}-etch-sid.log
-		sudo ${PBUILDER} update --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch-sid-experimental.log 
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch-sid-experimental.log 
 		log_success update-${distribution}-etch-sid-experimental.log
 		;;
 	    etch)
-		sudo ${PBUILDER} update --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid.log 
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid.log 
 		log_success update-${distribution}-sid.log
-		sudo ${PBUILDER} update --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid-experimental.log 
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid-experimental.log 
 		log_success update-${distribution}-sid-experimental.log
 		;;
 	esac
 	sudo rm -rf ${testbuild} ${testbuild2} ${testimage} ${testbuild3}
     done
+
+    echo '### RESULT: ###'
+    cat "${RESULTFILE}"
 done
 
 rm -r ${testdir}

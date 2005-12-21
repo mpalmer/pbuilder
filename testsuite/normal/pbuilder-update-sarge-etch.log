@@ -1,18 +1,18 @@
 Upgrading for distribution etch
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.PKaADs/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.KGtFtK/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//13949/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//4429/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
 Refreshing the base.tgz 
  -> upgrading packages
-Get:1 http://ftp.jp.debian.org etch/main Packages [3540kB]
+Get:1 http://ftp.jp.debian.org etch/main Packages [3552kB]
 Get:2 http://ftp.jp.debian.org etch/main Release [96B]
-Fetched 3540kB in 1s (1870kB/s)
+Fetched 3552kB in 2s (1734kB/s)
 Reading Package Lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
@@ -41,6 +41,7 @@ The following packages will be upgraded:
   modutils mount nano ncurses-base ncurses-bin net-tools netbase netkit-inetd
   passwd pciutils perl perl-base perl-modules pppoeconf procps psmisc sysv-rc
   sysvinit tar tasksel telnet util-linux wget whiptail zlib1g
+Preconfiguring packages ...
 115 upgraded, 17 newly installed, 1 to remove and 0 not upgraded.
 Need to get 0B/62.0MB of archives.
 After unpacking 34.6MB of additional disk space will be used.
@@ -74,8 +75,8 @@ Unpacking replacement libc6 ...
 Setting up libc6 (2.3.5-8.1) ...
 Checking for services that may need to be restarted...done.
 Current default timezone: 'UTC'.
-Local time is now:      Mon Dec 19 03:08:50 UTC 2005.
-Universal Time is now:  Mon Dec 19 03:08:50 UTC 2005.
+Local time is now:      Wed Dec 21 11:01:10 UTC 2005.
+Universal Time is now:  Wed Dec 21 11:01:10 UTC 2005.
 Run 'tzconfig' if you wish to change it.
 
 (Reading database ... 11284 files and directories currently installed.)
@@ -737,8 +738,16 @@ dpkg-dev is already the newest version.
 apt is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Copying back the cached apt archive contents
+umount: sysfs: not found
+umount: /sys: not mounted
+umount: sysfs: not found
+umount: /sys: not mounted
+umount: /run: not found
+umount: /proc/bus/usb: not mounted
+umount: /dev/shm: not mounted
+ -> user script /var/cache/pbuilder/build//4429/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.PKaADs/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.KGtFtK/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//13949 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//4429 and its subdirectories

@@ -331,8 +331,7 @@ O: Adding `local diversion of /usr/bin/md5sum.textutils to /usr/bin/md5sum'
 O: Adding `local diversion of /usr/share/man/man1/md5sum.textutils.1.gz to /usr/share/man/man1/md5sum.1.gz'
 O: 
 O: Selecting previously deselected package libc6.
-O: (Reading database ... 
-O: 224 files and directories currently installed.)
+O: (Reading database ... 224 files and directories currently installed.)
 O: Unpacking libc6 (from .../libc6_2.3.5-8.1_amd64.deb) ...
 P: Unpacking package libc6
 O: Selecting previously deselected package libgcc1.
@@ -362,6 +361,8 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking coreutils (from .../coreutils_5.2.1-2.1_amd64.deb) ...
 P: Unpacking package coreutils
 O: Selecting previously deselected package debianutils.
+O: Unpacking debianutils (from .../debianutils_2.15.1_amd64.deb) ...
+P: Unpacking package debianutils
 O: dpkg: regarding .../debianutils_2.15.1_amd64.deb containing debianutils, pre-dependency problem:
 O:  debianutils pre-depends on libc6 (>= 2.3.5-1)
 O:   libc6 is unpacked, but has never been configured.
@@ -370,8 +371,6 @@ O: dpkg: regarding .../debianutils_2.15.1_amd64.deb containing debianutils, pre-
 O:  debianutils pre-depends on coreutils (>= 4.5.8-1)
 O:   coreutils is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking debianutils (from .../debianutils_2.15.1_amd64.deb) ...
-P: Unpacking package debianutils
 O: Selecting previously deselected package perl-base.
 O: dpkg: regarding .../perl-base_5.8.7-9_amd64.deb containing perl-base, pre-dependency problem:
 O:  perl-base pre-depends on libc6 (>= 2.3.5-1)
@@ -838,7 +837,8 @@ P: Configuring package debconf
 O: 
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
-O: (Reading database ... 4521 files and directories currently installed.)
+O: (Reading database ... 
+O: 4521 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 P: Configuring helper cdebootstrap-helper-diverts
@@ -857,8 +857,7 @@ O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.d
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
 O: Selecting previously deselected package apt.
-O: (Reading database ... 
-O: 4526 files and directories currently installed.)
+O: (Reading database ... 4526 files and directories currently installed.)
 O: Unpacking apt (from .../apt_0.6.42.2_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.42.2) ...
@@ -867,7 +866,7 @@ O:
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [5902B]
 O: Ign bootstrap: . Release
-O: Fetched 6091B in 0s (57.9kB/s)
+O: Fetched 6091B in 0s (56.0kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -877,7 +876,6 @@ O: W:
 O: You may want to run apt-get update to correct these problems
 O: 
 O: Reading package lists...
-O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -907,6 +905,7 @@ O:   liblzo1 libncursesw5 libopencdk8 libpopt0 libssl0.9.8 libtasn1-2 libwrap0
 O:   logrotate man-db manpages nano netkit-inetd tcpd netbase nvi tasksel wget
 O:   whiptail exim4-config exim4-base libgnutls12 libpcre3 exim4-daemon-light at
 O:   exim4 telnet dhcp3-common dhcp3-client psmisc
+O: debconf: delaying package configuration, since apt-utils is not installed
 O: Authentication warning overridden.
 O: Selecting previously deselected package console-data.
 O: (Reading database ... 
@@ -1295,8 +1294,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [5902B]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [3540kB]
-Fetched 3546kB in 1s (2055kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [3552kB]
+Fetched 3558kB in 1s (2073kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1387,6 +1386,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.PKaADs/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.KGtFtK/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//11021 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//13648 and its subdirectories

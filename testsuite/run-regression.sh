@@ -1,4 +1,6 @@
 #!/bin/bash
+# requires /var/cache/pbuilder/base-sarge.tgz
+
 
 log_success () {
     CODE=$?
@@ -22,10 +24,12 @@ RESULTFILE=$(readlink -f ${RESULTFILE})
 
 (
     cd regression && \
-	for A in *.sh; do 
+	for A in $(ls -1 *.sh | sort -n); do 
 	    OUTPUT_LOGNAME=log/$A.log bash $A 
 	    log_success $A
     done
 )
 
 sudo rm -rf regression/work/
+echo '### RESULT: ###'
+cat "${RESULTFILE}"

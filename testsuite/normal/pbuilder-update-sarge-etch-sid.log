@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.PKaADs/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.KGtFtK/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//18914/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//9922/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -13,8 +13,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org sid/main Packages [3823kB]
-Fetched 3829kB in 1s (1928kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [3826kB]
+Fetched 3832kB in 2s (1672kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -27,22 +27,22 @@ The following NEW packages will be installed:
 The following packages will be upgraded:
   apt apt-utils aptitude base-config base-passwd bash binutils bsdutils
   console-data coreutils debianutils dhcp-client e2fslibs e2fsprogs groff-base
-  initscripts libblkid1 libcomerr2 libdb4.2 libdb4.3 libperl5.8 libss2
-  libssl0.9.8 libuuid1 make manpages mount nano pciutils perl perl-base
-  perl-modules ppp procps psmisc sed sysv-rc sysvinit util-linux
-39 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
-Need to get 66.7kB/26.2MB of archives.
+  initscripts libblkid1 libc6 libc6-dev libcomerr2 libdb4.2 libdb4.3
+  libperl5.8 libss2 libssl0.9.8 libuuid1 make manpages mount nano pciutils
+  perl perl-base perl-modules ppp procps psmisc sed sysv-rc sysvinit
+  util-linux
+41 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/33.0MB of archives.
 After unpacking 3822kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  debianutils bash bsdutils coreutils e2fslibs e2fsprogs mount perl-modules
-  libdb4.3 perl libperl5.8 perl-base sed sysvinit util-linux base-passwd
-  apt-utils libsigc++-2.0-0c2a aptitude apt initscripts libblkid1 libcomerr2
-  libss2 libuuid1 sysv-rc console-data base-config dhcp-client groff-base
-  libssl0.9.8 manpages nano procps binutils make libdb4.2 libpcap0.8 pciutils
-  ppp psmisc
-Get:1 http://ftp.jp.debian.org sid/main libperl5.8 5.8.7-10 [1010B]
-Get:2 http://ftp.jp.debian.org sid/main psmisc 21.9-1 [65.7kB]
-Fetched 66.7kB in 0s (439kB/s)
+  debianutils bash bsdutils coreutils libc6-dev libc6 e2fslibs e2fsprogs mount
+  perl-modules libdb4.3 perl libperl5.8 perl-base sed sysvinit util-linux
+  base-passwd apt-utils libsigc++-2.0-0c2a aptitude apt initscripts libblkid1
+  libcomerr2 libss2 libuuid1 sysv-rc console-data base-config dhcp-client
+  groff-base libssl0.9.8 manpages nano procps binutils make libdb4.2
+  libpcap0.8 pciutils ppp psmisc
+Extracting templates from packages: 69%Extracting templates from packages: 100%
+Preconfiguring packages ...
 (Reading database ... 12490 files and directories currently installed.)
 Preparing to replace debianutils 2.15.1 (using .../debianutils_2.15.2_amd64.deb) ...
 Unpacking replacement debianutils ...
@@ -65,6 +65,17 @@ Removing `local diversion of /usr/share/man/man1/md5sum.textutils.1.gz to /usr/s
 Removing `local diversion of /usr/bin/md5sum.textutils to /usr/bin/md5sum'
 Unpacking replacement coreutils ...
 Setting up coreutils (5.93-5) ...
+
+(Reading database ... 12506 files and directories currently installed.)
+Preparing to replace libc6-dev 2.3.5-8.1 (using .../libc6-dev_2.3.5-9_amd64.deb) ...
+Unpacking replacement libc6-dev ...
+Preparing to replace libc6 2.3.5-8.1 (using .../libc6_2.3.5-9_amd64.deb) ...
+Unpacking replacement libc6 ...
+Setting up libc6 (2.3.5-9) ...
+Current default timezone: 'UTC'.
+Local time is now:      Wed Dec 21 11:03:03 UTC 2005.
+Universal Time is now:  Wed Dec 21 11:03:03 UTC 2005.
+Run 'tzconfig' if you wish to change it.
 
 (Reading database ... 12506 files and directories currently installed.)
 Preparing to replace e2fslibs 1.38-2 (using .../e2fslibs_1.38+1.39-WIP-2005.12.10-1_amd64.deb) ...
@@ -205,6 +216,7 @@ Preparing to replace ppp 2.4.3-20050321+2 (using .../ppp_2.4.4b1-1_amd64.deb) ..
 Unpacking replacement ppp ...
 Preparing to replace psmisc 21.8-1 (using .../psmisc_21.9-1_amd64.deb) ...
 Unpacking replacement psmisc ...
+Setting up libc6-dev (2.3.5-9) ...
 Setting up libdb4.3 (4.3.29-3) ...
 Setting up libperl5.8 (5.8.7-10) ...
 
@@ -258,10 +270,14 @@ dpkg-dev is already the newest version.
 apt is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Copying back the cached apt archive contents
- -> new cache content libperl5.8_5.8.7-10_amd64.deb added
- -> new cache content psmisc_21.9-1_amd64.deb added
+umount: /sys: not mounted
+umount: /run: not found
+umount: /proc/bus/usb: not mounted
+umount: /dev/shm: not mounted
+tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh: line 13: kill: (7600) - No such process
+ -> user script /var/cache/pbuilder/build//9922/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.PKaADs/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.KGtFtK/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//18914 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//9922 and its subdirectories

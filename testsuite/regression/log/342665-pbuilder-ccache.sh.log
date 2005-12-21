@@ -2,14 +2,14 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Mon Dec 12 17:11:15 JST 2005
-pbuilder-time-stamp: 1134375075
+Current time: Wed Dec 21 19:40:43 JST 2005
+pbuilder-time-stamp: 1135161643
 Building the build Environment
  -> extracting base tarball [/var/cache/pbuilder/base.tgz]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//7711/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//19935/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
 -> Mounting /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/regression/work/ccache
  -> policy-rc.d already exists
@@ -41,7 +41,7 @@ WARNING: The following packages cannot be authenticated!
   libmagic1 file debconf-utils html2text gettext intltool-debian po-debconf
   debhelper libdshconfig1 libdshconfig1-dev
 Selecting previously deselected package libmagic1.
-(Reading database ... 11825 files and directories currently installed.)
+(Reading database ... 11828 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.15-2_amd64.deb) ...
@@ -84,21 +84,21 @@ Suggested packages:
 The following NEW packages will be installed:
   ccache fakeroot
 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/124kB of archives.
-After unpacking 475kB of additional disk space will be used.
+Need to get 0B/127kB of archives.
+After unpacking 520kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   ccache fakeroot
 Selecting previously deselected package ccache.
-(Reading database ... 12421 files and directories currently installed.)
+(Reading database ... 12424 files and directories currently installed.)
 Unpacking ccache (from .../ccache_2.4-4_amd64.deb) ...
 Selecting previously deselected package fakeroot.
-Unpacking fakeroot (from .../fakeroot_1.5.5_amd64.deb) ...
+Unpacking fakeroot (from .../fakeroot_1.5.6_amd64.deb) ...
 Setting up ccache (2.4-4) ...
-Setting up fakeroot (1.5.5) ...
+Setting up fakeroot (1.5.6) ...
 
 Copying back the cached apt archive contents
-/var/cache/pbuilder/build/7711/etc/passwd
-/var/cache/pbuilder/build/7711/etc/group
+/var/cache/pbuilder/build/19935/etc/passwd
+/var/cache/pbuilder/build/19935/etc/group
 Copying source file
     -> copying [work/dsh_0.25.6-1.dsc]
     -> copying [work/dsh_0.25.6.orig.tar.gz]
@@ -426,7 +426,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Dec 12 08:11:46 UTC 2005
+Wed Dec 21 10:41:33 UTC 2005
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -496,7 +496,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Dec 12 08:11:51 UTC 2005
+Wed Dec 21 10:41:38 UTC 2005
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -626,29 +626,12 @@ Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
  -> unmounting /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/regression/work/ccache filesystem
-Current time: Mon Dec 12 17:11:53 JST 2005
-pbuilder-time-stamp: 1134375113
+Current time: Wed Dec 21 19:41:40 JST 2005
+pbuilder-time-stamp: 1135161700
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//7711 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//19935 and its subdirectories
 work/ccache
 work/ccache/stats
-work/ccache/4
-work/ccache/4/3
-work/ccache/4/stats
-work/ccache/4/5
-work/ccache/4/5/4fb01b71f12bf90bfb73751d890ef4-79302
-work/ccache/4/5/4fb01b71f12bf90bfb73751d890ef4-79302.stderr
-work/ccache/4/d
-work/ccache/4/d/4caa2c65213a195f2e3aee219cfc68-99600
-work/ccache/4/d/4caa2c65213a195f2e3aee219cfc68-99600.stderr
-work/ccache/4/4
-work/ccache/4/4/3d4a0c0bb5fcfb63a7a2c50b5e9009-78444
-work/ccache/4/4/3d4a0c0bb5fcfb63a7a2c50b5e9009-78444.stderr
-work/ccache/b
-work/ccache/b/1
-work/ccache/b/1/9f74d1542bc17a111a161a41fd3f31-255
-work/ccache/b/1/9f74d1542bc17a111a161a41fd3f31-255.stderr
-work/ccache/b/stats
 work/ccache/f
 work/ccache/f/6
 work/ccache/f/6/1fa5537b057ba88820448ea3499560-175
@@ -778,6 +761,23 @@ work/ccache/8/4/51a08ddc61fbeb93ec31da73398bbb-224.stderr
 work/ccache/8/8
 work/ccache/8/8/03c44938e66fc35ce7a9fcff43de1e-48260
 work/ccache/8/8/03c44938e66fc35ce7a9fcff43de1e-48260.stderr
+work/ccache/4
+work/ccache/4/3
+work/ccache/4/stats
+work/ccache/4/5
+work/ccache/4/5/4fb01b71f12bf90bfb73751d890ef4-79302
+work/ccache/4/5/4fb01b71f12bf90bfb73751d890ef4-79302.stderr
+work/ccache/4/d
+work/ccache/4/d/4caa2c65213a195f2e3aee219cfc68-99600
+work/ccache/4/d/4caa2c65213a195f2e3aee219cfc68-99600.stderr
+work/ccache/4/4
+work/ccache/4/4/3d4a0c0bb5fcfb63a7a2c50b5e9009-78444
+work/ccache/4/4/3d4a0c0bb5fcfb63a7a2c50b5e9009-78444.stderr
+work/ccache/b
+work/ccache/b/1
+work/ccache/b/1/9f74d1542bc17a111a161a41fd3f31-255
+work/ccache/b/1/9f74d1542bc17a111a161a41fd3f31-255.stderr
+work/ccache/b/stats
 work/ccache/3
 work/ccache/3/3
 work/ccache/3/3/9f981c68fb8961e86fc62370b68ed6-150

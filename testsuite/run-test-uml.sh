@@ -58,4 +58,5 @@ fi
 
 kill ${TCPPROXY}
 
-
+echo '### RESULT: ###'
+cat "${RESULTFILE}"
