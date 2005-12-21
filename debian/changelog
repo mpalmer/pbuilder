@@ -1,9 +1,12 @@
 pbuilder (0.143) UNRELEASED; urgency=low
 
   [Junichi Uekawa]
-  * 
-
- -- Junichi Uekawa <dancer@debian.org>  Mon, 19 Dec 2005 23:42:10 +0900
+  * remove libc6 workaround from examples directory, since the problem is
+    already fixed, and install workaround for initscripts 2.86.ds1-7.
+    Also add a workaround for a running inetd after upgrade.
+    Use --hookdir /usr/share/doc/pbuilder/examples/344089 for the timebeing.
+  
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 21 Dec 2005 19:47:04 +0900
 
 pbuilder (0.142) unstable; urgency=low
 

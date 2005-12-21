@@ -86,9 +86,11 @@ install:
 	$(INSTALL_EXECUTABLE) examples/execute_paramtest.sh $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/pbuilder-distribution.sh $(DESTDIR)/usr/share/doc/pbuilder/examples
 
-	# install workaround for libc6 -- 2004-03-13
-	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/libc6workaround
-	$(INSTALL_EXECUTABLE) examples/E50-libc2.3.2.ds1-11-workaround $(DESTDIR)/usr/share/doc/pbuilder/examples/libc6workaround
+	# install workaround for initscripts -- 2005-12-21
+	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/344089
+	$(INSTALL_EXECUTABLE) examples/E50-initscripts-2.86.ds1-7.workaround.sh $(DESTDIR)/usr/share/doc/pbuilder/examples/344089
+
+
 
 	cd pbuildd; make install DESTDIR=$(DESTDIR)
 	cd Documentation; make install DESTDIR=$(DESTDIR)

@@ -11,6 +11,11 @@ I think I just need to add hacks to copy stuff.
 
 pbuilder support for signatures will hopefully come
 
+   - support readlink -e usage instead of readlink -f.
+
+This is too trivial, but anyway. Debian 3.1 does not support 
+'readlink -e'.
+
 * xvfb:x11-common
    - debian-bug: 337541: fixed in 0.138
 /etc/init.d/x11-common needs to be ran; policy-rc.d is now patched.

@@ -1,3 +1,25 @@
+2005-12-21  Junichi Uekawa  <dancer@debian.org>
+
+	* testsuite/run-regression.sh: add results display.
+
+	* testsuite/run-test.sh: add results display
+
+	* testsuite/run-test-uml.sh: add results display.
+
+	* testsuite/run-regression.sh: run tests in numerical order of bug reports.
+
+	* testsuite/regression/344089-workaround-check.sh: create a regression test
+
+	* testsuite/run-test.sh: use
+	/usr/share/doc/pbuilder/examples/344089 for hookdir.
+
+	* Makefile: no longer install libc6 workaround which is outdated,
+	and install the initscripts workaround to 
+	/usr/share/doc/pbuilder/examples/344089
+
+	* examples/E50-initscripts-2.86.ds1-7.workaround.sh: add a
+	workaround for #344089, and #262627
+
 2005-12-19  Junichi Uekawa  <dancer@debian.org>
 
 	* pdebuild-internal: export HOME with a decent value.

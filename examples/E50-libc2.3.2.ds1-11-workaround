@@ -1,5 +1,7 @@
 #!/bin/sh
 # work around libc6 postinst which mounts /sys etc.
+# Bug#230008
+
 set +e
 umount /sys
 umount /proc/bus/usb
