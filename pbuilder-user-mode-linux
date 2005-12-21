@@ -146,7 +146,7 @@ EOF
 
 
 
-BUILDING_DSC_FILE=$(readlink -e "$1") || true # ignore failure here
+BUILDING_DSC_FILE=$(readlink -f "$1") || true # ignore failure here
 EXTRACLEANUP=
 UML_EXITCODE=1
 case "${OPERATION}" in

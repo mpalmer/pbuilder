@@ -50,7 +50,7 @@ echo " -> running $DEBOOTSTRAP"
 unset DEBOOTSTRAPSCRIPT
 if [ -n "$HOOKDIR" ]; then
     if [ -f "$HOOKDIR/$DISTRIBUTION" ]; then
-	DEBOOTSTRAPSCRIPT=$(readlink -e "$HOOKDIR")"/$DISTRIBUTION"
+	DEBOOTSTRAPSCRIPT=$(readlink -f "$HOOKDIR")"/$DISTRIBUTION"
 	echo "  -> Applying user distribution dist build script $DEBOOTSTRAPSCRIPT"
     fi
 fi

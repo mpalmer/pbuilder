@@ -68,7 +68,7 @@ while [ -n "$1" ] ; do
 	--buildresult)
 	    # ignore buildresult
 	    if [ -d "$2" ]; then
-		UML_BUILDRESULT=$(readlink -e "$2")
+		UML_BUILDRESULT=$(readlink -f "$2")
 	    else
 		echo "E: Directory $2 does not exist" >&2
 		exit 1

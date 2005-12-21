@@ -3,10 +3,14 @@ pbuilder (0.143) UNRELEASED; urgency=low
   [Junichi Uekawa]
   * remove libc6 workaround from examples directory, since the problem is
     already fixed, and install workaround for initscripts 2.86.ds1-7.
-    Also add a workaround for a running inetd after upgrade.
-    Use --hookdir /usr/share/doc/pbuilder/examples/344089 for the timebeing.
-  
- -- Junichi Uekawa <dancer@debian.org>  Wed, 21 Dec 2005 19:47:04 +0900
+    Also add a workaround for a running inetd after upgrade.  Use
+    --hookdir /usr/share/doc/pbuilder/examples/344089 for the time being.
+  * use readlink -f instead of readlink -e, since readlink -e is not
+    supported on Debian 3.1 coreutils.  thanks to Adrian
+    'Dagurashibanipal' von Bidder (Closes: #344119).
+  * Add scripts contributed from q-funk. (Closes: #343894).
+
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 21 Dec 2005 20:55:01 +0900
 
 pbuilder (0.142) unstable; urgency=low
 

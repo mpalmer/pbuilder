@@ -266,7 +266,7 @@ function copy_local_configuration () {
 	if [ ! -f "/etc/$a" ]; then
 	    echo "E: /etc/$a does not exist, your setup is insane. fix it" >&2
 	fi
-	cp $( readlink -e "/etc/$a" ) "$BUILDPLACE/etc/$a";
+	cp $( readlink -f "/etc/$a" ) "$BUILDPLACE/etc/$a";
     done
 }
 
