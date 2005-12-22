@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.KGtFtK/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Pp9jFn/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//9922/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//14245/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -14,7 +14,7 @@ Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org sid/main Packages [3826kB]
-Fetched 3832kB in 2s (1672kB/s)
+Fetched 3832kB in 2s (1830kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -26,23 +26,21 @@ The following NEW packages will be installed:
   libpcap0.8 libsigc++-2.0-0c2a
 The following packages will be upgraded:
   apt apt-utils aptitude base-config base-passwd bash binutils bsdutils
-  console-data coreutils debianutils dhcp-client e2fslibs e2fsprogs groff-base
-  initscripts libblkid1 libc6 libc6-dev libcomerr2 libdb4.2 libdb4.3
-  libperl5.8 libss2 libssl0.9.8 libuuid1 make manpages mount nano pciutils
-  perl perl-base perl-modules ppp procps psmisc sed sysv-rc sysvinit
-  util-linux
-41 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/33.0MB of archives.
+  console-data coreutils cpio debianutils dhcp-client e2fslibs e2fsprogs
+  groff-base initscripts libblkid1 libc6 libc6-dev libcomerr2 libdb4.2
+  libdb4.3 libperl5.8 libss2 libssl0.9.8 libuuid1 make manpages mount nano
+  pciutils perl perl-base perl-modules ppp procps psmisc sed sysv-rc sysvinit
+  util-linux zlib1g
+43 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/33.2MB of archives.
 After unpacking 3822kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   debianutils bash bsdutils coreutils libc6-dev libc6 e2fslibs e2fsprogs mount
   perl-modules libdb4.3 perl libperl5.8 perl-base sed sysvinit util-linux
   base-passwd apt-utils libsigc++-2.0-0c2a aptitude apt initscripts libblkid1
-  libcomerr2 libss2 libuuid1 sysv-rc console-data base-config dhcp-client
-  groff-base libssl0.9.8 manpages nano procps binutils make libdb4.2
-  libpcap0.8 pciutils ppp psmisc
-Extracting templates from packages: 69%Extracting templates from packages: 100%
-Preconfiguring packages ...
+  libcomerr2 libss2 libuuid1 sysv-rc zlib1g console-data base-config cpio
+  dhcp-client groff-base libssl0.9.8 manpages nano procps binutils make
+  libdb4.2 libpcap0.8 pciutils ppp psmisc
 (Reading database ... 12490 files and directories currently installed.)
 Preparing to replace debianutils 2.15.1 (using .../debianutils_2.15.2_amd64.deb) ...
 Unpacking replacement debianutils ...
@@ -73,8 +71,8 @@ Preparing to replace libc6 2.3.5-8.1 (using .../libc6_2.3.5-9_amd64.deb) ...
 Unpacking replacement libc6 ...
 Setting up libc6 (2.3.5-9) ...
 Current default timezone: 'UTC'.
-Local time is now:      Wed Dec 21 11:03:03 UTC 2005.
-Universal Time is now:  Wed Dec 21 11:03:03 UTC 2005.
+Local time is now:      Thu Dec 22 03:12:09 UTC 2005.
+Universal Time is now:  Thu Dec 22 03:12:09 UTC 2005.
 Run 'tzconfig' if you wish to change it.
 
 (Reading database ... 12506 files and directories currently installed.)
@@ -186,10 +184,17 @@ Unpacking replacement sysv-rc ...
 Setting up sysv-rc (2.86.ds1-6) ...
 
 (Reading database ... 12523 files and directories currently installed.)
+Preparing to replace zlib1g 1:1.2.3-8 (using .../zlib1g_1%3a1.2.3-9_amd64.deb) ...
+Unpacking replacement zlib1g ...
+Setting up zlib1g (1.2.3-9) ...
+
+(Reading database ... 12523 files and directories currently installed.)
 Preparing to replace console-data 2002.12.04dbs-50 (using .../console-data_2002.12.04dbs-52_all.deb) ...
 Unpacking replacement console-data ...
 Preparing to replace base-config 2.73 (using .../base-config_2.74_all.deb) ...
 Unpacking replacement base-config ...
+Preparing to replace cpio 2.6-9 (using .../archives/cpio_2.6-10_amd64.deb) ...
+Unpacking replacement cpio ...
 Preparing to replace dhcp-client 2.0pl5-19.1 (using .../dhcp-client_2.0pl5-19.4_amd64.deb) ...
 Unpacking replacement dhcp-client ...
 Preparing to replace groff-base 1.18.1.1-10 (using .../groff-base_1.18.1.1-11_amd64.deb) ...
@@ -231,6 +236,8 @@ Looking for keymap to install:
 NONE
 
 Setting up base-config (2.74) ...
+
+Setting up cpio (2.6-10) ...
 
 Setting up dhcp-client (2.0pl5-19.4) ...
 Installing new version of config file /etc/dhclient-script ...
@@ -274,10 +281,10 @@ umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
-tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh: line 13: kill: (7600) - No such process
- -> user script /var/cache/pbuilder/build//9922/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh: line 14: kill: (11920) - No such process
+ -> user script /var/cache/pbuilder/build//14245/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.KGtFtK/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Pp9jFn/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//9922 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//14245 and its subdirectories
