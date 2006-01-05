@@ -26,6 +26,8 @@ P: Retrieving libattr1
 P: Validating libattr1
 P: Retrieving libacl1
 P: Validating libacl1
+P: Retrieving libsepol1
+P: Validating libsepol1
 P: Retrieving libselinux1
 P: Validating libselinux1
 P: Retrieving coreutils
@@ -172,38 +174,6 @@ P: Retrieving libpopt0
 P: Validating libpopt0
 P: Retrieving whiptail
 P: Validating whiptail
-P: Retrieving console-data
-P: Validating console-data
-P: Retrieving libconsole
-P: Validating libconsole
-P: Retrieving libsepol1
-P: Validating libsepol1
-P: Retrieving libuuid1
-P: Validating libuuid1
-P: Retrieving util-linux
-P: Validating util-linux
-P: Retrieving e2fslibs
-P: Validating e2fslibs
-P: Retrieving libblkid1
-P: Validating libblkid1
-P: Retrieving libcomerr2
-P: Validating libcomerr2
-P: Retrieving libss2
-P: Validating libss2
-P: Retrieving e2fsprogs
-P: Validating e2fsprogs
-P: Retrieving initscripts
-P: Validating initscripts
-P: Retrieving sysv-rc
-P: Validating sysv-rc
-P: Retrieving sysvinit
-P: Validating sysvinit
-P: Retrieving console-common
-P: Validating console-common
-P: Retrieving console-tools
-P: Validating console-tools
-P: Retrieving gettext-base
-P: Validating gettext-base
 P: Retrieving base-config
 P: Validating base-config
 P: Retrieving exim4
@@ -216,20 +186,40 @@ P: Retrieving procps
 P: Validating procps
 P: Retrieving hostname
 P: Validating hostname
+P: Retrieving libuuid1
+P: Validating libuuid1
+P: Retrieving util-linux
+P: Validating util-linux
 P: Retrieving grep
 P: Validating grep
+P: Retrieving libcomerr2
+P: Validating libcomerr2
 P: Retrieving ncurses-base
 P: Validating ncurses-base
 P: Retrieving mawk
 P: Validating mawk
 P: Retrieving tar
 P: Validating tar
+P: Retrieving e2fslibs
+P: Validating e2fslibs
 P: Retrieving gzip
 P: Validating gzip
+P: Retrieving libss2
+P: Validating libss2
 P: Retrieving dselect
 P: Validating dselect
 P: Retrieving diff
 P: Validating diff
+P: Retrieving libblkid1
+P: Validating libblkid1
+P: Retrieving e2fsprogs
+P: Validating e2fsprogs
+P: Retrieving initscripts
+P: Validating initscripts
+P: Retrieving sysv-rc
+P: Validating sysv-rc
+P: Retrieving sysvinit
+P: Validating sysvinit
 P: Retrieving base-files
 P: Validating base-files
 P: Retrieving mount
@@ -247,6 +237,7 @@ P: Extracting libstdc++6
 P: Extracting libdb4.3
 P: Extracting libattr1
 P: Extracting libacl1
+P: Extracting libsepol1
 P: Extracting libselinux1
 P: Extracting coreutils
 P: Extracting debianutils
@@ -272,27 +263,26 @@ P: Extracting login
 P: Extracting passwd
 P: Extracting libslang2
 P: Extracting libnewt0.51
-P: Extracting libsepol1
+P: Extracting base-passwd
+P: Extracting procps
+P: Extracting hostname
 P: Extracting libuuid1
 P: Extracting util-linux
-P: Extracting e2fslibs
-P: Extracting libblkid1
+P: Extracting grep
 P: Extracting libcomerr2
+P: Extracting ncurses-base
+P: Extracting mawk
+P: Extracting tar
+P: Extracting e2fslibs
+P: Extracting gzip
 P: Extracting libss2
+P: Extracting dselect
+P: Extracting diff
+P: Extracting libblkid1
 P: Extracting e2fsprogs
 P: Extracting initscripts
 P: Extracting sysv-rc
 P: Extracting sysvinit
-P: Extracting base-passwd
-P: Extracting procps
-P: Extracting hostname
-P: Extracting grep
-P: Extracting ncurses-base
-P: Extracting mawk
-P: Extracting tar
-P: Extracting gzip
-P: Extracting dselect
-P: Extracting diff
 P: Extracting base-files
 P: Extracting mount
 P: Extracting bash
@@ -328,7 +318,7 @@ O:
 O: Selecting previously deselected package libc6.
 O: (Reading database ... 
 O: 221 files and directories currently installed.)
-O: Unpacking libc6 (from .../libc6_2.3.5-9_amd64.deb) ...
+O: Unpacking libc6 (from .../libc6_2.3.5-11_amd64.deb) ...
 P: Unpacking package libc6
 O: Selecting previously deselected package libgcc1.
 O: Unpacking libgcc1 (from .../libgcc1_4.0.2-5_amd64.deb) ...
@@ -348,8 +338,11 @@ P: Unpacking package libattr1
 O: Selecting previously deselected package libacl1.
 O: Unpacking libacl1 (from .../libacl1_2.2.34-1_amd64.deb) ...
 P: Unpacking package libacl1
+O: Selecting previously deselected package libsepol1.
+O: Unpacking libsepol1 (from .../libsepol1_1.10-1_amd64.deb) ...
+P: Unpacking package libsepol1
 O: Selecting previously deselected package libselinux1.
-O: Unpacking libselinux1 (from .../libselinux1_1.26-1_amd64.deb) ...
+O: Unpacking libselinux1 (from .../libselinux1_1.28-2_amd64.deb) ...
 P: Unpacking package libselinux1
 O: Selecting previously deselected package coreutils.
 O: dpkg: regarding .../coreutils_5.93-5_amd64.deb containing coreutils, pre-dependency problem:
@@ -407,14 +400,14 @@ O: Selecting previously deselected package libtext-wrapi18n-perl.
 O: Unpacking libtext-wrapi18n-perl (from .../libtext-wrapi18n-perl_0.06-4_all.deb) ...
 P: Unpacking package libtext-wrapi18n-perl
 O: Selecting previously deselected package debconf.
-O: dpkg: regarding .../debconf_1.4.62_all.deb containing debconf, pre-dependency problem:
+O: dpkg: regarding .../debconf_1.4.67_all.deb containing debconf, pre-dependency problem:
 O:  debconf pre-depends on perl-base (>= 5.6.1-4)
 O:   perl-base is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking debconf (from .../debconf_1.4.62_all.deb) ...
+O: Unpacking debconf (from .../debconf_1.4.67_all.deb) ...
 P: Unpacking package debconf
 O: Selecting previously deselected package debconf-i18n.
-O: Unpacking debconf-i18n (from .../debconf-i18n_1.4.62_all.deb) ...
+O: Unpacking debconf-i18n (from .../debconf-i18n_1.4.67_all.deb) ...
 P: Unpacking package debconf-i18n
 O: Selecting previously deselected package sed.
 O: dpkg: regarding .../sed_4.1.4-5_amd64.deb containing sed, pre-dependency problem:
@@ -438,7 +431,7 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking ncurses-bin (from .../ncurses-bin_5.5-1_amd64.deb) ...
 P: Unpacking package ncurses-bin
 O: Selecting previously deselected package lsb-base.
-O: Unpacking lsb-base (from .../lsb-base_3.0-12_all.deb) ...
+O: Unpacking lsb-base (from .../lsb-base_3.0-13_all.deb) ...
 P: Unpacking package lsb-base
 O: Selecting previously deselected package zlib1g.
 O: Unpacking zlib1g (from .../zlib1g_1.2.3-9_amd64.deb) ...
@@ -486,9 +479,16 @@ P: Unpacking package libslang2
 O: Selecting previously deselected package libnewt0.51.
 O: Unpacking libnewt0.51 (from .../libnewt0.51_0.51.6-31_amd64.deb) ...
 P: Unpacking package libnewt0.51
-O: Selecting previously deselected package libsepol1.
-O: Unpacking libsepol1 (from .../libsepol1_1.8-1_amd64.deb) ...
-P: Unpacking package libsepol1
+O: Selecting previously deselected package procps.
+O: Unpacking procps (from .../procps_3.2.6-2_amd64.deb) ...
+P: Unpacking package procps
+O: Selecting previously deselected package hostname.
+O: dpkg: regarding .../hostname_2.91_amd64.deb containing hostname, pre-dependency problem:
+O:  hostname pre-depends on libc6 (>= 2.3.5-1)
+O:   libc6 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking hostname (from .../hostname_2.91_amd64.deb) ...
+P: Unpacking package hostname
 O: Selecting previously deselected package libuuid1.
 O: Unpacking libuuid1 (from .../libuuid1_1.38+1.39-WIP-2005.12.10-1_amd64.deb) ...
 P: Unpacking package libuuid1
@@ -515,18 +515,59 @@ O:   zlib1g is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking util-linux (from .../util-linux_2.12r-2_amd64.deb) ...
 P: Unpacking package util-linux
-O: Selecting previously deselected package e2fslibs.
-O: Unpacking e2fslibs (from .../e2fslibs_1.38+1.39-WIP-2005.12.10-1_amd64.deb) ...
-P: Unpacking package e2fslibs
-O: Selecting previously deselected package libblkid1.
-O: Unpacking libblkid1 (from .../libblkid1_1.38+1.39-WIP-2005.12.10-1_amd64.deb) ...
-P: Unpacking package libblkid1
+O: Selecting previously deselected package grep.
+O: dpkg: regarding .../grep_2.5.1.ds2-4_amd64.deb containing grep, pre-dependency problem:
+O:  grep pre-depends on libc6 (>= 2.3.5-1)
+O:   libc6 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking grep (from .../grep_2.5.1.ds2-4_amd64.deb) ...
+P: Unpacking package grep
 O: Selecting previously deselected package libcomerr2.
 O: Unpacking libcomerr2 (from .../libcomerr2_1.38+1.39-WIP-2005.12.10-1_amd64.deb) ...
 P: Unpacking package libcomerr2
+O: Selecting previously deselected package ncurses-base.
+O: Unpacking ncurses-base (from .../ncurses-base_5.5-1_all.deb) ...
+P: Unpacking package ncurses-base
+O: Selecting previously deselected package mawk.
+O: dpkg: regarding .../mawk_1.3.3-11_amd64.deb containing mawk, pre-dependency problem:
+O:  mawk pre-depends on libc6 (>= 2.3.2.ds1-4)
+O:   libc6 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking mawk (from .../mawk_1.3.3-11_amd64.deb) ...
+P: Unpacking package mawk
+O: Selecting previously deselected package tar.
+O: dpkg: regarding .../tar_1.15.1-2_amd64.deb containing tar, pre-dependency problem:
+O:  tar pre-depends on libc6 (>= 2.3.2.ds1-21)
+O:   libc6 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking tar (from .../tar_1.15.1-2_amd64.deb) ...
+P: Unpacking package tar
+O: Selecting previously deselected package e2fslibs.
+O: Unpacking e2fslibs (from .../e2fslibs_1.38+1.39-WIP-2005.12.10-1_amd64.deb) ...
+P: Unpacking package e2fslibs
+O: Selecting previously deselected package gzip.
+O: dpkg: regarding .../gzip_1.3.5-12_amd64.deb containing gzip, pre-dependency problem:
+O:  gzip pre-depends on libc6 (>= 2.3.2.ds1-21)
+O:   libc6 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking gzip (from .../gzip_1.3.5-12_amd64.deb) ...
+P: Unpacking package gzip
 O: Selecting previously deselected package libss2.
 O: Unpacking libss2 (from .../libss2_1.38+1.39-WIP-2005.12.10-1_amd64.deb) ...
 P: Unpacking package libss2
+O: Selecting previously deselected package dselect.
+O: Unpacking dselect (from .../dselect_1.13.11_amd64.deb) ...
+P: Unpacking package dselect
+O: Selecting previously deselected package diff.
+O: dpkg: regarding .../diff_2.8.1-11_amd64.deb containing diff, pre-dependency problem:
+O:  diff pre-depends on libc6 (>= 2.3.2.ds1-4)
+O:   libc6 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking diff (from .../diff_2.8.1-11_amd64.deb) ...
+P: Unpacking package diff
+O: Selecting previously deselected package libblkid1.
+O: Unpacking libblkid1 (from .../libblkid1_1.38+1.39-WIP-2005.12.10-1_amd64.deb) ...
+P: Unpacking package libblkid1
 O: Selecting previously deselected package e2fsprogs.
 O: dpkg: regarding .../e2fsprogs_1.38+1.39-WIP-2005.12.10-1_amd64.deb containing e2fsprogs, pre-dependency problem:
 O:  e2fsprogs pre-depends on e2fslibs (= 1.38+1.39-WIP-2005.12.10-1)
@@ -583,57 +624,6 @@ O:   sysv-rc is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking sysvinit (from .../sysvinit_2.86.ds1-6_amd64.deb) ...
 P: Unpacking package sysvinit
-O: Selecting previously deselected package procps.
-O: Unpacking procps (from .../procps_3.2.6-2_amd64.deb) ...
-P: Unpacking package procps
-O: Selecting previously deselected package hostname.
-O: dpkg: regarding .../hostname_2.91_amd64.deb containing hostname, pre-dependency problem:
-O:  hostname pre-depends on libc6 (>= 2.3.5-1)
-O:   libc6 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking hostname (from .../hostname_2.91_amd64.deb) ...
-P: Unpacking package hostname
-O: Selecting previously deselected package grep.
-O: dpkg: regarding .../grep_2.5.1.ds2-4_amd64.deb containing grep, pre-dependency problem:
-O:  grep pre-depends on libc6 (>= 2.3.5-1)
-O:   libc6 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking grep (from .../grep_2.5.1.ds2-4_amd64.deb) ...
-P: Unpacking package grep
-O: Selecting previously deselected package ncurses-base.
-O: Unpacking ncurses-base (from .../ncurses-base_5.5-1_all.deb) ...
-P: Unpacking package ncurses-base
-O: Selecting previously deselected package mawk.
-O: dpkg: regarding .../mawk_1.3.3-11_amd64.deb containing mawk, pre-dependency problem:
-O:  mawk pre-depends on libc6 (>= 2.3.2.ds1-4)
-O:   libc6 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking mawk (from .../mawk_1.3.3-11_amd64.deb) ...
-P: Unpacking package mawk
-O: Selecting previously deselected package tar.
-O: dpkg: regarding .../tar_1.15.1-2_amd64.deb containing tar, pre-dependency problem:
-O:  tar pre-depends on libc6 (>= 2.3.2.ds1-21)
-O:   libc6 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking tar (from .../tar_1.15.1-2_amd64.deb) ...
-P: Unpacking package tar
-O: Selecting previously deselected package gzip.
-O: dpkg: regarding .../gzip_1.3.5-12_amd64.deb containing gzip, pre-dependency problem:
-O:  gzip pre-depends on libc6 (>= 2.3.2.ds1-21)
-O:   libc6 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking gzip (from .../gzip_1.3.5-12_amd64.deb) ...
-P: Unpacking package gzip
-O: Selecting previously deselected package dselect.
-O: Unpacking dselect (from .../dselect_1.13.11_amd64.deb) ...
-P: Unpacking package dselect
-O: Selecting previously deselected package diff.
-O: dpkg: regarding .../diff_2.8.1-11_amd64.deb containing diff, pre-dependency problem:
-O:  diff pre-depends on libc6 (>= 2.3.2.ds1-4)
-O:   libc6 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking diff (from .../diff_2.8.1-11_amd64.deb) ...
-P: Unpacking package diff
 O: Selecting previously deselected package base-files.
 O: Unpacking base-files (from .../base-files_3.1.9_amd64.deb) ...
 P: Unpacking package base-files
@@ -684,7 +674,7 @@ P: Configuring package gcc-4.0-base
 O: Setting up libpam-runtime (0.79-3) ...
 P: Configuring package libpam-runtime
 O: 
-O: Setting up libc6 (2.3.5-9) ...
+O: Setting up libc6 (2.3.5-11) ...
 P: Configuring package libc6
 O: Non-interactive mode, setting timezone to UTC.  Run tzconfig to change.
 O: 
@@ -702,7 +692,7 @@ P: Configuring package bsdutils
 O: 
 O: Setting up perl-base (5.8.7-10) ...
 P: Configuring package perl-base
-O: Setting up libsepol1 (1.8-1) ...
+O: Setting up libsepol1 (1.10-1) ...
 P: Configuring package libsepol1
 O: 
 O: Setting up tar (1.15.1-2) ...
@@ -763,7 +753,7 @@ O: Setting up liblocale-gettext-perl (1.05-1) ...
 P: Configuring package liblocale-gettext-perl
 O: Setting up diff (2.8.1-11) ...
 P: Configuring package diff
-O: Setting up libselinux1 (1.26-1) ...
+O: Setting up libselinux1 (1.28-2) ...
 P: Configuring package libselinux1
 O: 
 O: Setting up util-linux (2.12r-2) ...
@@ -812,7 +802,7 @@ O:
 O: Setting up login (4.0.13-7) ...
 P: Configuring package login
 O: 
-O: Setting up lsb-base (3.0-12) ...
+O: Setting up lsb-base (3.0-13) ...
 P: Configuring package lsb-base
 O: Setting up passwd (4.0.13-7) ...
 P: Configuring package passwd
@@ -826,33 +816,34 @@ O: sysvinit: creating /dev/initctl
 O: init: 
 O: timeout opening/writing control channel /dev/initctl
 O: 
-O: Setting up debconf-i18n (1.4.62) ...
+O: Setting up debconf-i18n (1.4.67) ...
 P: Configuring package debconf-i18n
-O: Setting up debconf (1.4.62) ...
+O: Setting up debconf (1.4.67) ...
 P: Configuring package debconf
 O: 
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
 O: (Reading database ... 
-O: 4528 files and directories currently installed.)
+O: 4529 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
 O: (Reading database ... 
-O: 4531 files and directories currently installed.)
+O: 4532 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
-O: (Reading database ... 4533 files and directories currently installed.)
+O: (Reading database ... 
+O: 4534 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
 O: Selecting previously deselected package apt.
-O: (Reading database ... 4533 files and directories currently installed.)
+O: (Reading database ... 4534 files and directories currently installed.)
 O: Unpacking apt (from .../bootstrap/apt_0.6.43_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.43) ...
@@ -861,7 +852,7 @@ O:
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [5722B]
 O: Ign bootstrap: . Release
-O: Fetched 5911B in 0s (51.5kB/s)
+O: Fetched 5911B in 0s (51.6kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -875,48 +866,35 @@ O: Building dependency tree...
 O: 
 O: Suggested packages:
 O:   perl-modules libparse-debianchangelog-perl debtags cpp wenglish wordlist
-O:   whois vacation kbd-compat anacron lockfile-progs checksecurity resolvconf
-O:   mail-reader eximon4 exim4-doc-html exim4-doc-info gnutls-bin groff iproute
-O:   ppp rng-tools less www-browser spell
+O:   whois vacation anacron lockfile-progs checksecurity resolvconf mail-reader
+O:   eximon4 exim4-doc-html exim4-doc-info gnutls-bin groff iproute ppp rng-tools
+O:   less www-browser spell
 O: Recommended packages:
 O:   aptitude-doc-en aptitude-doc libgpmg1 libtasn1-2-bin mailx
 O: The following NEW packages will be installed:
-O:   adduser apt-utils aptitude at base-config bsdmainutils console-common
-O:   console-data console-tools cpio cron dhcp3-client dhcp3-common dmidecode ed
-O:   exim4 exim4-base exim4-config exim4-daemon-light gettext-base groff-base
-O:   ifupdown info iptables iputils-ping klogd laptop-detect libconsole libdb4.2
-O:   libgcrypt11 libgdbm3 libgnutls12 libgpg-error0 liblzo1 libncursesw5
-O:   libopencdk8 libpcre3 libpopt0 libsigc++-2.0-0c2a libssl0.9.8 libtasn1-2
-O:   libwrap0 logrotate man-db manpages nano net-tools netbase netkit-inetd nvi
-O:   psmisc sysklogd tasksel tcpd telnet wget whiptail
-O: 0 upgraded, 57 newly installed, 0 to remove and 0 not upgraded.
-O: Need to get 15.4MB of archives.
-O: After unpacking 47.5MB of additional disk space will be used.
+O:   adduser apt-utils aptitude at base-config bsdmainutils cpio cron
+O:   dhcp3-client dhcp3-common dmidecode ed exim4 exim4-base exim4-config
+O:   exim4-daemon-light groff-base ifupdown info iptables iputils-ping klogd
+O:   laptop-detect libdb4.2 libgcrypt11 libgdbm3 libgnutls12 libgpg-error0
+O:   liblzo1 libncursesw5 libopencdk8 libpcre3 libpopt0 libsigc++-2.0-0c2a
+O:   libssl0.9.8 libtasn1-2 libwrap0 logrotate man-db manpages nano net-tools
+O:   netbase netkit-inetd nvi psmisc sysklogd tasksel tcpd telnet wget whiptail
+O: 0 upgraded, 52 newly installed, 0 to remove and 0 not upgraded.
+O: Need to get 13.6MB of archives.
+O: After unpacking 39.4MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
-O:   console-data libconsole console-tools console-common adduser apt-utils
-O:   libncursesw5 libsigc++-2.0-0c2a aptitude gettext-base base-config
+O:   adduser apt-utils libncursesw5 libsigc++-2.0-0c2a aptitude base-config
 O:   bsdmainutils cpio cron dmidecode ed groff-base net-tools ifupdown info
 O:   iptables iputils-ping sysklogd klogd laptop-detect libgpg-error0 libgcrypt11
 O:   libgdbm3 liblzo1 libopencdk8 libpopt0 libssl0.9.8 libtasn1-2 libwrap0
 O:   logrotate man-db manpages nano netkit-inetd tcpd netbase nvi tasksel wget
 O:   whiptail libdb4.2 exim4-config exim4-base libgnutls12 libpcre3
 O:   exim4-daemon-light at exim4 telnet dhcp3-common dhcp3-client psmisc
+O: debconf: delaying package configuration, since apt-utils is not installed
 O: Authentication warning overridden.
-O: Selecting previously deselected package console-data.
-O: (Reading database ... 
-O: 4699 files and directories currently installed.)
-O: Unpacking console-data (from .../console-data_2002.12.04dbs-52_all.deb) ...
-P: Unpacking package console-data
-O: Selecting previously deselected package libconsole.
-O: Unpacking libconsole (from .../libconsole_0.2.3dbs-60_amd64.deb) ...
-P: Unpacking package libconsole
-O: Selecting previously deselected package console-tools.
-O: Unpacking console-tools (from .../console-tools_0.2.3dbs-60_amd64.deb) ...
-P: Unpacking package console-tools
-O: Selecting previously deselected package console-common.
-O: Unpacking console-common (from .../console-common_0.7.55_all.deb) ...
-P: Unpacking package console-common
 O: Selecting previously deselected package adduser.
+O: (Reading database ... 
+O: 4700 files and directories currently installed.)
 O: Unpacking adduser (from .../bootstrap/adduser_3.80_all.deb) ...
 P: Unpacking package adduser
 O: Selecting previously deselected package apt-utils.
@@ -931,14 +909,11 @@ P: Unpacking package libsigc++-2.0-0c2a
 O: Selecting previously deselected package aptitude.
 O: Unpacking aptitude (from .../aptitude_0.4.1-1_amd64.deb) ...
 P: Unpacking package aptitude
-O: Selecting previously deselected package gettext-base.
-O: Unpacking gettext-base (from .../gettext-base_0.14.5-2_amd64.deb) ...
-P: Unpacking package gettext-base
 O: Selecting previously deselected package base-config.
-O: Unpacking base-config (from .../base-config_2.74_all.deb) ...
+O: Unpacking base-config (from .../base-config_2.76_all.deb) ...
 P: Unpacking package base-config
 O: Selecting previously deselected package bsdmainutils.
-O: Unpacking bsdmainutils (from .../bsdmainutils_6.1.2_amd64.deb) ...
+O: Unpacking bsdmainutils (from .../bsdmainutils_6.1.3_amd64.deb) ...
 P: Unpacking package bsdmainutils
 O: Selecting previously deselected package cpio.
 O: Unpacking cpio (from .../cpio_2.6-10_amd64.deb) ...
@@ -1013,10 +988,10 @@ O: Selecting previously deselected package man-db.
 O: Unpacking man-db (from .../man-db_2.4.3-3_amd64.deb) ...
 P: Unpacking package man-db
 O: Selecting previously deselected package manpages.
-O: Unpacking manpages (from .../manpages_2.16-1_all.deb) ...
+O: Unpacking manpages (from .../manpages_2.17-1_all.deb) ...
 P: Unpacking package manpages
 O: Selecting previously deselected package nano.
-O: Unpacking nano (from .../nano_1.3.9-1_amd64.deb) ...
+O: Unpacking nano (from .../nano_1.3.10-1_amd64.deb) ...
 P: Unpacking package nano
 O: Selecting previously deselected package netkit-inetd.
 O: Unpacking netkit-inetd (from .../netkit-inetd_0.10-10.2_amd64.deb) ...
@@ -1025,13 +1000,13 @@ O: Selecting previously deselected package tcpd.
 O: Unpacking tcpd (from .../tcpd_7.6.dbs-8_amd64.deb) ...
 P: Unpacking package tcpd
 O: Selecting previously deselected package netbase.
-O: Unpacking netbase (from .../bootstrap/netbase_4.23_all.deb) ...
+O: Unpacking netbase (from .../bootstrap/netbase_4.24_all.deb) ...
 P: Unpacking package netbase
 O: Selecting previously deselected package nvi.
 O: Unpacking nvi (from .../nvi_1.79-22_amd64.deb) ...
 P: Unpacking package nvi
 O: Selecting previously deselected package tasksel.
-O: Unpacking tasksel (from .../bootstrap/tasksel_2.37_all.deb) ...
+O: Unpacking tasksel (from .../bootstrap/tasksel_2.38_all.deb) ...
 P: Unpacking package tasksel
 O: Selecting previously deselected package wget.
 O: Unpacking wget (from .../wget_1.10.2-1_amd64.deb) ...
@@ -1058,7 +1033,7 @@ O: Selecting previously deselected package exim4-daemon-light.
 O: Unpacking exim4-daemon-light (from .../exim4-daemon-light_4.60-1_amd64.deb) ...
 P: Unpacking package exim4-daemon-light
 O: Selecting previously deselected package at.
-O: Unpacking at (from .../bootstrap/at_3.1.9_amd64.deb) ...
+O: Unpacking at (from .../bootstrap/at_3.1.10_amd64.deb) ...
 P: Unpacking package at
 O: Selecting previously deselected package exim4.
 O: Unpacking exim4 (from .../bootstrap/exim4_4.60-1_all.deb) ...
@@ -1067,22 +1042,14 @@ O: Selecting previously deselected package telnet.
 O: Unpacking telnet (from .../telnet_0.17-32_amd64.deb) ...
 P: Unpacking package telnet
 O: Selecting previously deselected package dhcp3-common.
-O: Unpacking dhcp3-common (from .../dhcp3-common_3.0.3-5_amd64.deb) ...
+O: Unpacking dhcp3-common (from .../dhcp3-common_3.0.3-6_amd64.deb) ...
 P: Unpacking package dhcp3-common
 O: Selecting previously deselected package dhcp3-client.
-O: Unpacking dhcp3-client (from .../dhcp3-client_3.0.3-5_amd64.deb) ...
+O: Unpacking dhcp3-client (from .../dhcp3-client_3.0.3-6_amd64.deb) ...
 P: Unpacking package dhcp3-client
 O: Selecting previously deselected package psmisc.
 O: Unpacking psmisc (from .../psmisc_21.9-1_amd64.deb) ...
 P: Unpacking package psmisc
-O: Setting up console-data (2002.12.04dbs-52) ...
-P: Configuring package console-data
-O: Looking for keymap to install:
-O: NONE
-O: 
-O: Setting up libconsole (0.2.3dbs-60) ...
-P: Configuring package libconsole
-O: 
 O: Setting up adduser (3.80) ...
 P: Configuring package adduser
 O: 
@@ -1098,10 +1065,10 @@ O:
 O: Setting up aptitude (0.4.1-1) ...
 P: Configuring package aptitude
 O: 
-O: Setting up gettext-base (0.14.5-2) ...
-P: Configuring package gettext-base
+O: Setting up base-config (2.76) ...
+P: Configuring package base-config
 O: 
-O: Setting up bsdmainutils (6.1.2) ...
+O: Setting up bsdmainutils (6.1.3) ...
 P: Configuring package bsdmainutils
 O: 
 O: Setting up cpio (2.6-10) ...
@@ -1173,9 +1140,9 @@ O: Setting up man-db (2.4.3-3) ...
 P: Configuring package man-db
 O: Building database of manual pages ...
 O: 
-O: Setting up manpages (2.16-1) ...
+O: Setting up manpages (2.17-1) ...
 P: Configuring package manpages
-O: Setting up nano (1.3.9-1) ...
+O: Setting up nano (1.3.10-1) ...
 P: Configuring package nano
 O: 
 O: Setting up netkit-inetd (0.10-10.2) ...
@@ -1187,13 +1154,13 @@ O:
 O: Setting up tcpd (7.6.dbs-8) ...
 P: Configuring package tcpd
 O: 
-O: Setting up netbase (4.23) ...
+O: Setting up netbase (4.24) ...
 P: Configuring package netbase
 O: 
 O: Setting up nvi (1.79-22) ...
 P: Configuring package nvi
 O: 
-O: Setting up tasksel (2.37) ...
+O: Setting up tasksel (2.38) ...
 P: Configuring package tasksel
 O: 
 O: Setting up wget (1.10.2-1) ...
@@ -1226,7 +1193,7 @@ O:
 O: Setting up exim4-daemon-light (4.60-1) ...
 P: Configuring package exim4-daemon-light
 O: 
-O: Setting up at (3.1.9) ...
+O: Setting up at (3.1.10) ...
 P: Configuring package at
 O: 
 O: Setting up exim4 (4.60-1) ...
@@ -1234,47 +1201,36 @@ P: Configuring package exim4
 O: Setting up telnet (0.17-32) ...
 P: Configuring package telnet
 O: 
-O: Setting up dhcp3-common (3.0.3-5) ...
+O: Setting up dhcp3-common (3.0.3-6) ...
 P: Configuring package dhcp3-common
-O: Setting up dhcp3-client (3.0.3-5) ...
+O: Setting up dhcp3-client (3.0.3-6) ...
 P: Configuring package dhcp3-client
 O: 
 O: Setting up psmisc (21.9-1) ...
 P: Configuring package psmisc
+O: 
+O: Setting up sysklogd (1.4.1-17) ...
+P: Configuring package sysklogd
 O: 
 O: Setting up klogd (1.4.1-17) ...
 P: Configuring package klogd
 O: Stopping kernel log daemon: klogd
 O: .
 O: 
-O: Setting up sysklogd (1.4.1-17) ...
-P: Configuring package sysklogd
-O: 
-O: Setting up console-tools (0.2.3dbs-60) ...
-P: Configuring package console-tools
-O: 
-O: Setting up base-config (2.74) ...
-P: Configuring package base-config
-O: 
-O: Setting up console-common (0.7.55) ...
-P: Configuring package console-common
-O: Looking for keymap to install:
-O: NONE
-O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 7445 files and directories currently installed.)
+O: 6564 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 7444 files and directories currently installed.)
+O: 6563 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 7442 files and directories currently installed.)
+O: 6561 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1289,8 +1245,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org sid/main Packages [3826kB]
-Fetched 3832kB in 1s (1957kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [3856kB]
+Fetched 3862kB in 1s (2121kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1324,7 +1280,7 @@ WARNING: The following packages cannot be authenticated!
   linux-kernel-headers libc6-dev libstdc++6-4.0-dev g++-4.0 g++
   build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 7442 files and directories currently installed.)
+(Reading database ... 6561 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20051214-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-5_amd64.deb) ...
@@ -1347,7 +1303,7 @@ Unpacking gcc (from .../gcc_4%3a4.0.2-2_amd64.deb) ...
 Selecting previously deselected package linux-kernel-headers.
 Unpacking linux-kernel-headers (from .../linux-kernel-headers_2.6.13+0rc3-2_amd64.deb) ...
 Selecting previously deselected package libc6-dev.
-Unpacking libc6-dev (from .../libc6-dev_2.3.5-9_amd64.deb) ...
+Unpacking libc6-dev (from .../libc6-dev_2.3.5-11_amd64.deb) ...
 Selecting previously deselected package libstdc++6-4.0-dev.
 Unpacking libstdc++6-4.0-dev (from .../libstdc++6-4.0-dev_4.0.2-5_amd64.deb) ...
 Selecting previously deselected package g++-4.0.
@@ -1368,7 +1324,7 @@ Setting up gcc-4.0 (4.0.2-5) ...
 Setting up gcc (4.0.2-2) ...
 
 Setting up linux-kernel-headers (2.6.13+0rc3-2) ...
-Setting up libc6-dev (2.3.5-9) ...
+Setting up libc6-dev (2.3.5-11) ...
 Setting up perl-modules (5.8.7-10) ...
 Setting up libstdc++6-4.0-dev (4.0.2-5) ...
 Setting up perl (5.8.7-10) ...
@@ -1381,6 +1337,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.Pp9jFn/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.yWMjrJ/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//21424 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//1481 and its subdirectories
