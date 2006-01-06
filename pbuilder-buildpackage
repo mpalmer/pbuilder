@@ -138,10 +138,11 @@ save_aptcache
 trap cleanbuildplace exit
 umountproc
 
+BUILDRESULTUID="${BUILDRESULTUID:-${SUDO_UID:-0}}"
+BUILDRESULTGID="${BUILDRESULTGID:-${SUDO_GID:-0}}"
+
 if [ -d "${BUILDRESULT}" ]; then
-    BUILDRESULTUID="${BUILDRESULTUID:-${SUDO_UID:-0}}"
     chown "${BUILDRESULTUID}:${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
-    BUILDRESULTGID="${BUILDRESULTGID:-${SUDO_GID:-0}}"
     chgrp "${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
     cp -p "${BUILDPLACE}"/tmp/buildd/* "${BUILDRESULT}" 2>/dev/null || true
 else
