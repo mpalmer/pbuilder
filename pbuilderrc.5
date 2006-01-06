@@ -273,6 +273,14 @@ They probably need to be set to numeric UID values,
 so that it works the same inside the chroot and outside the 
 chroot.
 
+If sudo is used, the values specified by sudo is used.
+They are 
+.BR "SUDO_UID" ", and"
+.BR "SUDO_GID" ". "
+The default value is 
+.B "0"
+
+
 .TP
 .BI "AUTO_DEBSIGN=" "yes"
 When this value is set to yes, 
