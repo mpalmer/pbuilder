@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.yWMjrJ/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//28312/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//24075/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -18,8 +18,8 @@ Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org ../project/experimental Release [4245B]
 Ign http://ftp.jp.debian.org ../project/experimental Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [185kB]
-Fetched 189kB in 0s (575kB/s)
+Get:4 http://ftp.jp.debian.org ../project/experimental/main Packages [187kB]
+Fetched 192kB in 0s (410kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -38,35 +38,29 @@ The following packages will be upgraded:
   aptitude console-data diff initscripts libgcc1 libstdc++6 sysv-rc sysvinit
   whiptail
 9 upgraded, 2 newly installed, 1 to remove and 2 not upgraded.
-Need to get 2827kB/5044kB of archives.
-After unpacking 1561kB of additional disk space will be used.
+Need to get 0B/5044kB of archives.
+After unpacking 1667kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   whiptail libnewt0.52 diff sysvinit initscripts gcc-4.1-base libgcc1
   libstdc++6 sysv-rc aptitude console-data
-Get:1 http://ftp.jp.debian.org ../project/experimental/main sysvinit 2.86.ds1-8 [125kB]
-Get:2 http://ftp.jp.debian.org ../project/experimental/main initscripts 2.86.ds1-8 [42.5kB]
-Get:3 http://ftp.jp.debian.org ../project/experimental/main sysv-rc 2.86.ds1-8 [42.3kB]
-Get:4 http://ftp.jp.debian.org ../project/experimental/main aptitude 0.4.1-1experimental1 [2616kB]
-Preconfiguring packages ...
-Fetched 2827kB in 1s (2040kB/s)
-(Reading database ... 12444 files and directories currently installed.)
+(Reading database ... 12438 files and directories currently installed.)
 Preparing to replace whiptail 0.51.6-31 (using .../whiptail_0.52.1-3_amd64.deb) ...
 Unpacking replacement whiptail ...
-(Reading database ... 12443 files and directories currently installed.)
+(Reading database ... 12437 files and directories currently installed.)
 Removing libnewt0.51 ...
 Selecting previously deselected package libnewt0.52.
-(Reading database ... 12378 files and directories currently installed.)
+(Reading database ... 12372 files and directories currently installed.)
 Unpacking libnewt0.52 (from .../libnewt0.52_0.52.1-3_amd64.deb) ...
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-(Reading database ... 12456 files and directories currently installed.)
+(Reading database ... 12450 files and directories currently installed.)
 Preparing to replace sysvinit 2.86.ds1-6 (using .../sysvinit_2.86.ds1-8_amd64.deb) ...
 Unpacking replacement sysvinit ...
 Setting up sysvinit (2.86.ds1-8) ...
 init: timeout opening/writing control channel /dev/initctl
 
-(Reading database ... 12459 files and directories currently installed.)
+(Reading database ... 12453 files and directories currently installed.)
 Preparing to replace initscripts 2.86.ds1-6 (using .../initscripts_2.86.ds1-8_amd64.deb) ...
 Unpacking replacement initscripts ...
 Setting up initscripts (2.86.ds1-8) ...
@@ -91,24 +85,24 @@ Installing new version of config file /etc/init.d/urandom ...
 Installing new version of config file /etc/default/tmpfs ...
 
 Selecting previously deselected package gcc-4.1-base.
-(Reading database ... 12467 files and directories currently installed.)
+(Reading database ... 12461 files and directories currently installed.)
 Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1-0exp4_amd64.deb) ...
-Preparing to replace libgcc1 1:4.0.2-5 (using .../libgcc1_1%3a4.1-0exp4_amd64.deb) ...
+Preparing to replace libgcc1 1:4.0.2-6 (using .../libgcc1_1%3a4.1-0exp4_amd64.deb) ...
 Unpacking replacement libgcc1 ...
 Setting up gcc-4.1-base (4.1-0exp4) ...
 Setting up libgcc1 (4.1-0exp4) ...
 
-(Reading database ... 12473 files and directories currently installed.)
-Preparing to replace libstdc++6 4.0.2-5 (using .../libstdc++6_4.1-0exp4_amd64.deb) ...
+(Reading database ... 12467 files and directories currently installed.)
+Preparing to replace libstdc++6 4.0.2-6 (using .../libstdc++6_4.1-0exp4_amd64.deb) ...
 Unpacking replacement libstdc++6 ...
 Setting up libstdc++6 (4.1-0exp4) ...
 
-(Reading database ... 12470 files and directories currently installed.)
+(Reading database ... 12467 files and directories currently installed.)
 Preparing to replace sysv-rc 2.86.ds1-6 (using .../sysv-rc_2.86.ds1-8_all.deb) ...
 Unpacking replacement sysv-rc ...
 Setting up sysv-rc (2.86.ds1-8) ...
 
-(Reading database ... 12471 files and directories currently installed.)
+(Reading database ... 12468 files and directories currently installed.)
 Preparing to replace aptitude 0.4.1-1 (using .../aptitude_0.4.1-1experimental1_amd64.deb) ...
 Unpacking replacement aptitude ...
 Preparing to replace console-data 2002.12.04dbs-52 (using .../console-data_20051214_all.deb) ...
@@ -139,10 +133,10 @@ Need to get 0B/1432kB of archives.
 After unpacking 9429kB disk space will be freed.
 WARNING: The following packages cannot be authenticated!
   apt-utils apt
-(Reading database ... 12442 files and directories currently installed.)
+(Reading database ... 12439 files and directories currently installed.)
 Removing tasksel ...
 Removing aptitude ...
-(Reading database ... 12251 files and directories currently installed.)
+(Reading database ... 12248 files and directories currently installed.)
 Preparing to replace apt-utils 0.6.43 (using .../apt-utils_0.6.43exp2_amd64.deb) ...
 Unpacking replacement apt-utils ...
 Preparing to replace apt 0.6.43 (using .../apt_0.6.43exp2_amd64.deb) ...
@@ -152,18 +146,14 @@ Setting up apt (0.6.43exp2) ...
 Setting up apt-utils (0.6.43exp2) ...
 
 Copying back the cached apt archive contents
- -> new cache content sysvinit_2.86.ds1-8_amd64.deb added
- -> new cache content initscripts_2.86.ds1-8_amd64.deb added
- -> new cache content sysv-rc_2.86.ds1-8_all.deb added
- -> new cache content aptitude_0.4.1-1experimental1_amd64.deb added
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
-tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh: line 14: kill: (24013) - No such process
- -> user script /var/cache/pbuilder/build//28312/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh: line 14: kill: (17778) - No such process
+ -> user script /var/cache/pbuilder/build//24075/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.yWMjrJ/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//28312 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//24075 and its subdirectories
