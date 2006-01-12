@@ -250,8 +250,8 @@ EOF
     if [ -n "$EXPERIMENTAL" ]; then
 	echo "  -> Installing apt-lines and pinning for experimental"
 	if [ -n "$MIRRORSITE" ] ; then
-	    echo "deb $MIRRORSITE ../project/experimental main" >> "$BUILDPLACE"/etc/apt/sources.list
-	    echo "#deb-src $MIRRORSITE ../project/experimental main" >> "$BUILDPLACE"/etc/apt/sources.list
+	    echo "deb $MIRRORSITE experimental main" >> "$BUILDPLACE"/etc/apt/sources.list
+	    echo "#deb-src $MIRRORSITE experimental main" >> "$BUILDPLACE"/etc/apt/sources.list
 	fi
 	cat >> "$BUILDPLACE"/etc/apt/apt.conf << EOF
 APT::Default-Release "experimental";
