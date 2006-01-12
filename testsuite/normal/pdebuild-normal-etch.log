@@ -6,14 +6,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
 dh_clean: Compatibility levels before 4 are deprecated.
@@ -31,14 +31,14 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Sat Jan  7 12:24:21 JST 2006
-pbuilder-time-stamp: 1136604261
+Current time: Thu Jan 12 12:18:16 JST 2006
+pbuilder-time-stamp: 1137035896
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/dir3/15069/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/dir3/7376/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result
@@ -66,7 +66,7 @@ The following NEW packages will be installed:
 Need to get 0B/2917kB of archives.
 After unpacking 9617kB of additional disk space will be used.
 Selecting previously deselected package libmagic1.
-(Reading database ... 11900 files and directories currently installed.)
+(Reading database ... 11903 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.15-2_amd64.deb) ...
@@ -110,13 +110,13 @@ The following NEW packages will be installed:
 Need to get 0B/97.9kB of archives.
 After unpacking 406kB of additional disk space will be used.
 Selecting previously deselected package fakeroot.
-(Reading database ... 12496 files and directories currently installed.)
+(Reading database ... 12499 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.5.6_amd64.deb) ...
 Setting up fakeroot (1.5.6) ...
 
 Copying back the cached apt archive contents
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/dir3/15069/etc/passwd
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/dir3/15069/etc/group
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/dir3/7376/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/dir3/7376/etc/group
 Copying source file
     -> copying [../dsh_0.25.6-1.dsc]
     -> copying [../dsh_0.25.6.orig.tar.gz]
@@ -405,6 +405,7 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
+dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -429,9 +430,9 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -443,7 +444,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Jan  7 03:25:24 UTC 2006
+Thu Jan 12 03:19:02 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -456,18 +457,6 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 DUMPing parameters passed to llexec
 [2] 
-3: Using sleep as the remote shell
-3: Show machine names on output
-3: Adding machine 5,4,3,2,1 to list
-3: Setting forklimit to 3 and wait_shell to 0
-3: DUMPing parameters passed to llexec
-3: [3] 
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-DUMPing parameters passed to llexec
-[3] 
 1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
@@ -482,6 +471,18 @@ Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 DUMPing parameters passed to llexec
 [1] 
+3: Using sleep as the remote shell
+3: Show machine names on output
+3: Adding machine 5,4,3,2,1 to list
+3: Setting forklimit to 3 and wait_shell to 0
+3: DUMPing parameters passed to llexec
+3: [3] 
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+DUMPing parameters passed to llexec
+[3] 
 4: Using sleep as the remote shell
 4: Show machine names on output
 4: Adding machine 5,4,3,2,1 to list
@@ -513,14 +514,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Jan  7 03:25:29 UTC 2006
+Thu Jan 12 03:19:07 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-dsh: Process terminated (before write).
 b: b
 c: c
+dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -642,7 +643,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Sat Jan  7 12:25:32 JST 2006
-pbuilder-time-stamp: 1136604332
+Current time: Thu Jan 12 12:19:10 JST 2006
+pbuilder-time-stamp: 1137035950
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.w9RwVy/dir3/15069 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/dir3/7376 and its subdirectories
