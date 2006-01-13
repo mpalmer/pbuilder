@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.fUr6UL/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//19968/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//12704/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -12,17 +12,17 @@ ln: creating symbolic link `/var/cache/pbuilder/build//19968/etc/mtab' to `../pr
 Refreshing the base.tgz 
  -> upgrading packages
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
-Get:2 http://ftp.jp.debian.org ../project/experimental Release.gpg [189B]
+Get:2 http://ftp.jp.debian.org experimental Release.gpg [189B]
 Hit http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org ../project/experimental Release [4245B]
-Ign http://ftp.jp.debian.org ../project/experimental Release
+Get:3 http://ftp.jp.debian.org experimental Release [4245B]
+Ign http://ftp.jp.debian.org experimental Release
 Get:4 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
-Get:5 http://ftp.jp.debian.org ../project/experimental/main Packages [122kB]
+Get:5 http://ftp.jp.debian.org experimental/main Packages [122kB]
 Hit http://ftp.jp.debian.org sid/main Packages
-Fetched 132kB in 0s (201kB/s)
+Fetched 132kB in 0s (366kB/s)
 Reading package lists...
-W: GPG error: http://ftp.jp.debian.org ../project/experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
+W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
@@ -37,14 +37,11 @@ The following packages will be upgraded:
   aptitude console-data diff initscripts libgcc1 libstdc++6 sysv-rc sysvinit
   whiptail
 9 upgraded, 2 newly installed, 1 to remove and 0 not upgraded.
-Need to get 170kB/5051kB of archives.
-After unpacking 1688kB of additional disk space will be used.
+Need to get 0B/5051kB of archives.
+After unpacking 1757kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   whiptail libnewt0.52 diff sysvinit initscripts gcc-4.1-base libgcc1
   libstdc++6 sysv-rc aptitude console-data
-Get:1 http://ftp.jp.debian.org ../project/experimental/main sysvinit 2.86.ds1-9 [126kB]
-Get:2 http://ftp.jp.debian.org ../project/experimental/main initscripts 2.86.ds1-9 [44.0kB]
-Fetched 170kB in 0s (270kB/s)
 (Reading database ... 12535 files and directories currently installed.)
 Preparing to replace whiptail 0.51.6-31 (using .../whiptail_0.52.1-3_amd64.deb) ...
 Unpacking replacement whiptail ...
@@ -107,7 +104,7 @@ Setting up sysv-rc (2.86.ds1-9) ...
 (Reading database ... 12572 files and directories currently installed.)
 Preparing to replace aptitude 0.4.1-1 (using .../aptitude_0.4.1-1experimental1_amd64.deb) ...
 Unpacking replacement aptitude ...
-Preparing to replace console-data 2002.12.04dbs-52 (using .../console-data_20051214_all.deb) ...
+Preparing to replace console-data 2002.12.04dbs-52.1 (using .../console-data_20051214_all.deb) ...
 Unpacking replacement console-data ...
 Setting up libnewt0.52 (0.52.1-3) ...
 
@@ -125,16 +122,14 @@ dpkg-dev is already the newest version.
 apt is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Copying back the cached apt archive contents
- -> new cache content sysvinit_2.86.ds1-9_amd64.deb added
- -> new cache content initscripts_2.86.ds1-9_amd64.deb added
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
-tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh: line 14: kill: (15254) - No such process
- -> user script /var/cache/pbuilder/build//19968/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh: line 14: kill: (7737) - No such process
+ -> user script /var/cache/pbuilder/build//12704/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.VUXWQ2/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.fUr6UL/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//19968 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//12704 and its subdirectories

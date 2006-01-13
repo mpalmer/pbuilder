@@ -1117,6 +1117,10 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
       <para>
 	Testsuites are available in tests/ directory, and 
 	changes are expected not to break the testsuites.
+	<filename>./run-test.sh</filename> is a basic testsuite, which puts a summary in 
+	<filename>run-test.log</filename>, and <filename>run-test-cdebootstrap.log</filename>.
+	<filename>./run-test-regression.sh</filename> is a regression testsuite,
+	which puts the result in <filename>run-test-regression.log</filename>
       </para>
       <para>
 	When making changes, a description of the 
@@ -1138,9 +1142,13 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 	when people start using it.
 	emacs todoo-mode is used in editing the file.
       </para>
+      <para>
+	When releasing a new version of pbuilder,
+	the version is tagged with 
+	<command>(shell-command "cd ../ ; cvs tag $(dpkg-parsechangelog | sed -n 's/\./_/;s/^Version: /release/p' )")</command>
+      </para>
     </sect1>
   </chapter>
-
   <chapter id="otheruse">
     <title>Other uses of pbuilder</title>
     <sect1 id="chroot">
