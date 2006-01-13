@@ -1145,7 +1145,7 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
       <para>
 	When releasing a new version of pbuilder,
 	the version is tagged with 
-	<command>(shell-command "cd ../ ; cvs tag $(dpkg-parsechangelog | sed -n 's/\./_/;s/^Version: /release/p' )")</command>
+	<command>(shell-command "cd ../ && cvs tag $(dpkg-parsechangelog | sed -n 's/\\./_/;s/^Version: /release/p' )")</command>
       </para>
     </sect1>
   </chapter>
