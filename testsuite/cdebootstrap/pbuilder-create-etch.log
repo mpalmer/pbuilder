@@ -102,6 +102,8 @@ P: Retrieving libpam0g
 P: Validating libpam0g
 P: Retrieving libdb4.2
 P: Validating libdb4.2
+P: Retrieving libsepol1
+P: Validating libsepol1
 P: Retrieving libselinux1
 P: Validating libselinux1
 P: Retrieving libcap1
@@ -176,8 +178,6 @@ P: Retrieving console-data
 P: Validating console-data
 P: Retrieving libconsole
 P: Validating libconsole
-P: Retrieving libsepol1
-P: Validating libsepol1
 P: Retrieving libuuid1
 P: Validating libuuid1
 P: Retrieving util-linux
@@ -265,6 +265,7 @@ P: Extracting bsdutils
 P: Extracting dpkg
 P: Extracting libpam-runtime
 P: Extracting libpam0g
+P: Extracting libsepol1
 P: Extracting libselinux1
 P: Extracting libcap1
 P: Extracting libpam-modules
@@ -272,7 +273,6 @@ P: Extracting login
 P: Extracting passwd
 P: Extracting libslang2
 P: Extracting libnewt0.51
-P: Extracting libsepol1
 P: Extracting libuuid1
 P: Extracting util-linux
 P: Extracting e2fslibs
@@ -400,14 +400,14 @@ O: Selecting previously deselected package libtext-wrapi18n-perl.
 O: Unpacking libtext-wrapi18n-perl (from .../libtext-wrapi18n-perl_0.06-4_all.deb) ...
 P: Unpacking package libtext-wrapi18n-perl
 O: Selecting previously deselected package debconf.
-O: dpkg: regarding .../debconf_1.4.66_all.deb containing debconf, pre-dependency problem:
+O: dpkg: regarding .../debconf_1.4.67_all.deb containing debconf, pre-dependency problem:
 O:  debconf pre-depends on perl-base (>= 5.6.1-4)
 O:   perl-base is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking debconf (from .../debconf_1.4.66_all.deb) ...
+O: Unpacking debconf (from .../debconf_1.4.67_all.deb) ...
 P: Unpacking package debconf
 O: Selecting previously deselected package debconf-i18n.
-O: Unpacking debconf-i18n (from .../debconf-i18n_1.4.66_all.deb) ...
+O: Unpacking debconf-i18n (from .../debconf-i18n_1.4.67_all.deb) ...
 P: Unpacking package debconf-i18n
 O: Selecting previously deselected package sed.
 O: dpkg: regarding .../sed_4.1.2-8_amd64.deb containing sed, pre-dependency problem:
@@ -449,8 +449,11 @@ P: Unpacking package libpam-runtime
 O: Selecting previously deselected package libpam0g.
 O: Unpacking libpam0g (from .../libpam0g_0.79-3_amd64.deb) ...
 P: Unpacking package libpam0g
+O: Selecting previously deselected package libsepol1.
+O: Unpacking libsepol1 (from .../libsepol1_1.10-1_amd64.deb) ...
+P: Unpacking package libsepol1
 O: Selecting previously deselected package libselinux1.
-O: Unpacking libselinux1 (from .../libselinux1_1.26-1_amd64.deb) ...
+O: Unpacking libselinux1 (from .../libselinux1_1.28-2_amd64.deb) ...
 P: Unpacking package libselinux1
 O: Selecting previously deselected package libcap1.
 O: Unpacking libcap1 (from .../libcap1_1.10-14_amd64.deb) ...
@@ -482,9 +485,6 @@ P: Unpacking package libslang2
 O: Selecting previously deselected package libnewt0.51.
 O: Unpacking libnewt0.51 (from .../libnewt0.51_0.51.6-31_amd64.deb) ...
 P: Unpacking package libnewt0.51
-O: Selecting previously deselected package libsepol1.
-O: Unpacking libsepol1 (from .../libsepol1_1.10-1_amd64.deb) ...
-P: Unpacking package libsepol1
 O: Selecting previously deselected package libuuid1.
 O: Unpacking libuuid1 (from .../libuuid1_1.38+1.39-WIP-2005.12.10-1_amd64.deb) ...
 P: Unpacking package libuuid1
@@ -660,11 +660,11 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking bash (from .../bootstrap/bash_3.1-1_amd64.deb) ...
 P: Unpacking package bash
 O: Selecting previously deselected package findutils.
-O: dpkg: regarding .../findutils_4.2.26-2_amd64.deb containing findutils, pre-dependency problem:
+O: dpkg: regarding .../findutils_4.2.27-1_amd64.deb containing findutils, pre-dependency problem:
 O:  findutils pre-depends on libc6 (>= 2.3.5-1)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking findutils (from .../findutils_4.2.26-2_amd64.deb) ...
+O: Unpacking findutils (from .../findutils_4.2.27-1_amd64.deb) ...
 P: Unpacking package findutils
 O: Selecting previously deselected package makedev.
 O: Unpacking makedev (from .../makedev_2.3.1-79_all.deb) ...
@@ -750,7 +750,7 @@ O:
 O: Setting up libss2 (1.38+1.39-WIP-2005.12.10-1) ...
 P: Configuring package libss2
 O: 
-O: Setting up findutils (4.2.26-2) ...
+O: Setting up findutils (4.2.27-1) ...
 P: Configuring package findutils
 O: 
 O: Setting up e2fsprogs (1.38+1.39-WIP-2005.12.10-1) ...
@@ -759,7 +759,7 @@ O: Setting up liblocale-gettext-perl (1.05-1) ...
 P: Configuring package liblocale-gettext-perl
 O: Setting up diff (2.8.1-11) ...
 P: Configuring package diff
-O: Setting up libselinux1 (1.26-1) ...
+O: Setting up libselinux1 (1.28-2) ...
 P: Configuring package libselinux1
 O: 
 O: Setting up util-linux (2.12p-8) ...
@@ -822,20 +822,20 @@ O: sysvinit: creating /dev/initctl
 O: init: 
 O: timeout opening/writing control channel /dev/initctl
 O: 
-O: Setting up debconf-i18n (1.4.66) ...
+O: Setting up debconf-i18n (1.4.67) ...
 P: Configuring package debconf-i18n
-O: Setting up debconf (1.4.66) ...
+O: Setting up debconf (1.4.67) ...
 P: Configuring package debconf
 O: 
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
-O: (Reading database ... 4513 files and directories currently installed.)
+O: (Reading database ... 4514 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
 O: (Reading database ... 
-O: 4516 files and directories currently installed.)
+O: 4517 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
@@ -843,13 +843,13 @@ O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
 O: (Reading database ... 
-O: 4518 files and directories currently installed.)
+O: 4519 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
 O: Selecting previously deselected package apt.
 O: (Reading database ... 
-O: 4518 files and directories currently installed.)
+O: 4519 files and directories currently installed.)
 O: Unpacking apt (from .../apt_0.6.43.1_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.43.1) ...
@@ -858,7 +858,7 @@ O:
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [5902B]
 O: Ign bootstrap: . Release
-O: Fetched 6091B in 0s (57.3kB/s)
+O: Fetched 6091B in 0s (56.3kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -888,8 +888,8 @@ O:   libopencdk8 libpcre3 libpopt0 libsigc++-2.0-0c2a libssl0.9.8 libtasn1-2
 O:   libwrap0 logrotate man-db manpages nano net-tools netbase netkit-inetd nvi
 O:   psmisc sysklogd tasksel tcpd telnet wget whiptail
 O: 0 upgraded, 57 newly installed, 0 to remove and 0 not upgraded.
-O: Need to get 15.5MB of archives.
-O: After unpacking 47.9MB of additional disk space will be used.
+O: Need to get 15.6MB of archives.
+O: After unpacking 48.1MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
 O:   console-data libconsole console-tools console-common adduser apt-utils
 O:   libncursesw5 libsigc++-2.0-0c2a aptitude gettext-base base-config
@@ -902,7 +902,7 @@ O:   exim4-daemon-light at exim4 telnet dhcp3-common dhcp3-client psmisc
 O: Authentication warning overridden.
 O: Selecting previously deselected package console-data.
 O: (Reading database ... 
-O: 4687 files and directories currently installed.)
+O: 4688 files and directories currently installed.)
 O: Unpacking console-data (from .../console-data_2002.12.04dbs-52_all.deb) ...
 P: Unpacking package console-data
 O: Selecting previously deselected package libconsole.
@@ -1014,7 +1014,7 @@ O: Selecting previously deselected package manpages.
 O: Unpacking manpages (from .../manpages_2.17-1_all.deb) ...
 P: Unpacking package manpages
 O: Selecting previously deselected package nano.
-O: Unpacking nano (from .../nano_1.3.8-2_amd64.deb) ...
+O: Unpacking nano (from .../nano_1.3.10-1_amd64.deb) ...
 P: Unpacking package nano
 O: Selecting previously deselected package netkit-inetd.
 O: Unpacking netkit-inetd (from .../netkit-inetd_0.10-10.2_amd64.deb) ...
@@ -1056,7 +1056,7 @@ O: Selecting previously deselected package exim4-daemon-light.
 O: Unpacking exim4-daemon-light (from .../exim4-daemon-light_4.60-1_amd64.deb) ...
 P: Unpacking package exim4-daemon-light
 O: Selecting previously deselected package at.
-O: Unpacking at (from .../bootstrap/at_3.1.9_amd64.deb) ...
+O: Unpacking at (from .../bootstrap/at_3.1.10_amd64.deb) ...
 P: Unpacking package at
 O: Selecting previously deselected package exim4.
 O: Unpacking exim4 (from .../bootstrap/exim4_4.60-1_all.deb) ...
@@ -1173,7 +1173,7 @@ O: Building database of manual pages ...
 O: 
 O: Setting up manpages (2.17-1) ...
 P: Configuring package manpages
-O: Setting up nano (1.3.8-2) ...
+O: Setting up nano (1.3.10-1) ...
 P: Configuring package nano
 O: 
 O: Setting up netkit-inetd (0.10-10.2) ...
@@ -1224,7 +1224,7 @@ O:
 O: Setting up exim4-daemon-light (4.60-1) ...
 P: Configuring package exim4-daemon-light
 O: 
-O: Setting up at (3.1.9) ...
+O: Setting up at (3.1.10) ...
 P: Configuring package at
 O: 
 O: Setting up exim4 (4.60-1) ...
@@ -1261,18 +1261,18 @@ O: NONE
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 7452 files and directories currently installed.)
+O: 7455 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 7451 files and directories currently installed.)
+O: 7454 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 7449 files and directories currently installed.)
+O: 7452 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1287,8 +1287,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [5902B]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [3595kB]
-Fetched 3601kB in 1s (1947kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [3598kB]
+Fetched 3604kB in 1s (2057kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1322,7 +1322,7 @@ WARNING: The following packages cannot be authenticated!
   linux-kernel-headers libc6-dev libstdc++6-4.0-dev g++-4.0 g++
   build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 7449 files and directories currently installed.)
+(Reading database ... 7452 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20051214-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-5_amd64.deb) ...
@@ -1379,6 +1379,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.fUr6UL/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.eb5lQm/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//17125 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//22536 and its subdirectories

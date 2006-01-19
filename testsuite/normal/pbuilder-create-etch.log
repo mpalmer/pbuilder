@@ -4,6 +4,9 @@ Building the build environment
 /usr/sbin/debootstrap
 I: Retrieving Release
 I: Retrieving Packages
+W: Retrying failed download of http://ftp.jp.debian.org/debian-amd64/debian/dists/etch/main/binary-amd64/Packages.bz2
+W: Retrying failed download of http://ftp.jp.debian.org/debian-amd64/debian/dists/etch/main/binary-amd64/Packages.bz2
+W: Retrying failed download of http://ftp.jp.debian.org/debian-amd64/debian/dists/etch/main/binary-amd64/Packages.bz2
 I: Validating Packages
 I: Resolving dependencies of required packages...
 I: Resolving dependencies of base packages...
@@ -559,13 +562,13 @@ I: Base system installed successfully.
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//14399/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//28814/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Hit http://ftp.jp.debian.org etch Release
 Hit http://ftp.jp.debian.org etch/main Packages
-Fetched 189B in 0s (1667B/s)
+Fetched 189B in 0s (1934B/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
@@ -593,7 +596,7 @@ The following NEW packages will be installed:
 Need to get 0B/20.9MB of archives.
 After unpacking 82.9MB of additional disk space will be used.
 Selecting previously deselected package binutils.
-(Reading database ... 7517 files and directories currently installed.)
+(Reading database ... 7520 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20051214-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-5_amd64.deb) ...
@@ -650,6 +653,6 @@ Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.fUr6UL/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.eb5lQm/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//14399 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//28814 and its subdirectories
