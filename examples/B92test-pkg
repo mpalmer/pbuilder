@@ -5,9 +5,10 @@ set -e
 
 echo "Installing the prerequisites"
 for PKG in $(ls /tmp/buildd/*.deb | sed -e's,.*/,,;s,_.*,,' ); do
-    apt-get install -y --force-yes "$PKG"
-    apt-get remove -y "$PKG"
+    apt-get install -y --force-yes "$PKG" || true 
+    apt-get remove -y "$PKG" || true 
 done
+# ignore the failures since they are not the prime interest
 
 dpkg -i /tmp/buildd/*.deb
 
@@ -16,6 +17,9 @@ SUCCESS=0
 COUNT=0
 unset FAIL || true
 NOFAIL=1
+
+# make current directory a better place to live.
+cd /tmp/buildd/*/debian/..
 
 for SCRIPT in $(run-parts --test /tmp/buildd/*/debian/pbuilder-test) ; do
     echo "--- BEGIN test: ${SCRIPT##*/}"
