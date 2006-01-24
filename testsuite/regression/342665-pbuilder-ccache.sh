@@ -1,5 +1,6 @@
 #!/bin/bash
 # test pbuilder operation with ccache.
+set -e 
 
 mkdir work/ccache
 chmod 1777 work/ccache
