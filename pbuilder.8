@@ -329,6 +329,14 @@ or
 .B execute
 target.
 
+.B "G<digit><digit><whatever-else-you-want>"
+is executed just after debootstrap finishes,
+and configuration is loaded, and pbuilder starts mounting /proc and invoking 
+.B "apt-get install"
+in 
+.B create
+target.
+
 \" End of hookdir description
 
 

@@ -70,10 +70,13 @@ fi
 echo " -> debootstrap finished"
 loadhooks
 
+
 mkdir -p "$BUILDPLACE/tmp/buildd"
 
 copy_local_configuration
 installaptlines
+
+executehooks "G"
 
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"

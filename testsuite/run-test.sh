@@ -27,7 +27,7 @@ testbuild=$testdir/dir1
 testbuild2=$testdir/dir2
 testbuild3=$testdir/dir3
 
-HOOKOPTION=" --hookdir /usr/share/doc/pbuilder/examples/344089"
+HOOKOPTION=" --hookdir /usr/share/doc/pbuilder/examples/workaround"
 
 for DEBOOTSTRAP in debootstrap cdebootstrap; do
     case $DEBOOTSTRAP in 
