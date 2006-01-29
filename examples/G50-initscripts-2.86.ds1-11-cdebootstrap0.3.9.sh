@@ -5,8 +5,9 @@
 set +e
 
 umount /sys
-umount /run
 umount /proc/bus/usb
 umount /dev/shm
+umount /proc
+umount /dev/pts
 
 exit 0;
