@@ -50,7 +50,7 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
     RESULTFILE=$(readlink -f ${RESULTFILE})
     
     for distribution in sid sarge etch; do
-	sudo ${PBUILDER} create "${DEBOOTSTRAPOPTS[@]}" --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log 
+	sudo ${PBUILDER} create $HOOKOPTION "${DEBOOTSTRAPOPTS[@]}" --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log 
 
 	log_success create-${distribution}-${DEBOOTSTRAP}
 	

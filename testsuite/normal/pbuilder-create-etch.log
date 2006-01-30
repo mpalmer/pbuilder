@@ -556,16 +556,26 @@ I: Base system installed successfully.
  -> debootstrap finished
  -> copying local configuration
   -> Installing apt-lines
+umount: sysfs: not found
+umount: /sys: not mounted
+umount: sysfs: not found
+umount: /sys: not mounted
+umount: /proc/bus/usb: not found
+umount: /dev/shm: not mounted
+umount: proc: not mounted
+umount: proc: not mounted
+umount: /dev/pts: not mounted
+ -> user script /var/cache/pbuilder/build//22021/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//31274/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//22021/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Hit http://ftp.jp.debian.org etch Release
 Hit http://ftp.jp.debian.org etch/main Packages
-Fetched 189B in 0s (2852B/s)
+Fetched 189B in 0s (2228B/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
@@ -593,7 +603,7 @@ The following NEW packages will be installed:
 Need to get 0B/20.9MB of archives.
 After unpacking 82.9MB of additional disk space will be used.
 Selecting previously deselected package binutils.
-(Reading database ... 7520 files and directories currently installed.)
+(Reading database ... 7618 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20051214-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-5_amd64.deb) ...
@@ -648,8 +658,15 @@ Setting up g++ (4.0.2-2) ...
 
 Setting up build-essential (11.1) ...
 Copying back the cached apt archive contents
+umount: /sys: not mounted
+umount: /run: not found
+umount: /proc/bus/usb: not mounted
+umount: /dev/shm: not mounted
+cat: /var/run/inetd.pid: No such file or directory
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+ -> user script /var/cache/pbuilder/build//22021/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.UKJFLi/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//31274 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//22021 and its subdirectories
