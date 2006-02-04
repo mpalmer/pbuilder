@@ -2,14 +2,14 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Mon Jan 30 12:58:15 JST 2006
-pbuilder-time-stamp: 1138593495
+Current time: Fri Feb  3 12:34:30 JST 2006
+pbuilder-time-stamp: 1138937670
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/601/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/26912/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
@@ -91,12 +91,12 @@ Unpacking fakeroot (from .../fakeroot_1.5.6_amd64.deb) ...
 Setting up fakeroot (1.5.6) ...
 
 Copying back the cached apt archive contents
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/601/etc/passwd
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/601/etc/group
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/26912/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/26912/etc/group
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 su: Authentication service cannot retrieve authentication info.
 (Ignored)
@@ -378,6 +378,7 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
+dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -416,7 +417,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Jan 30 03:59:21 UTC 2006
+Fri Feb  3 03:35:12 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -486,14 +487,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Jan 30 03:59:26 UTC 2006
+Fri Feb  3 03:35:17 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-a: a
 b: b
-dsh: Process terminated (before write).
 c: c
+dsh: Process terminated (before write).
+a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -615,7 +616,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Mon Jan 30 12:59:29 JST 2006
-pbuilder-time-stamp: 1138593569
+Current time: Fri Feb  3 12:35:19 JST 2006
+pbuilder-time-stamp: 1138937719
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/601 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/26912 and its subdirectories

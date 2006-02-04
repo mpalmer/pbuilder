@@ -2,14 +2,14 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Mon Jan 30 12:02:45 JST 2006
-pbuilder-time-stamp: 1138590165
+Current time: Fri Feb  3 12:02:22 JST 2006
+pbuilder-time-stamp: 1138935742
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/15254/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/1511/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
@@ -42,7 +42,7 @@ Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.15-2_amd64.deb) ...
 Selecting previously deselected package debconf-utils.
-Unpacking debconf-utils (from .../debconf-utils_1.4.69_all.deb) ...
+Unpacking debconf-utils (from .../debconf-utils_1.4.70_all.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
 Selecting previously deselected package gettext.
@@ -60,7 +60,7 @@ Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.12-1_amd64.deb) ...
 Setting up libmagic1 (4.15-2) ...
 
 Setting up file (4.15-2) ...
-Setting up debconf-utils (1.4.69) ...
+Setting up debconf-utils (1.4.70) ...
 
 Setting up html2text (1.3.2a-3) ...
 
@@ -82,16 +82,16 @@ Need to get 0B/97.9kB of archives.
 After unpacking 406kB of additional disk space will be used.
 Selecting previously deselected package fakeroot.
 (Reading database ... 11849 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.5.6_amd64.deb) ...
-Setting up fakeroot (1.5.6) ...
+Unpacking fakeroot (from .../fakeroot_1.5.7_amd64.deb) ...
+Setting up fakeroot (1.5.7) ...
 
 Copying back the cached apt archive contents
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/15254/etc/passwd
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/15254/etc/group
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/1511/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/1511/etc/group
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 su: Authentication service cannot retrieve authentication info.
 (Ignored)
@@ -402,10 +402,10 @@ success
 success
 success
 success
-c: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -417,7 +417,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Jan 30 03:03:50 UTC 2006
+Fri Feb  3 03:03:08 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -487,14 +487,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Jan 30 03:03:55 UTC 2006
+Fri Feb  3 03:03:13 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-a: a
 b: b
-c: c
 dsh: Process terminated (before write).
+a: a
+c: c
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -617,7 +617,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Mon Jan 30 12:03:58 JST 2006
-pbuilder-time-stamp: 1138590238
+Current time: Fri Feb  3 12:03:15 JST 2006
+pbuilder-time-stamp: 1138935795
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ZTEyFN/dir1/15254 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.OqAMaa/dir1/1511 and its subdirectories
