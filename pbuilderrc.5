@@ -1,4 +1,4 @@
-.TH "pbuilderrc" 5 "2002 Sep 25" "Debian" "pbuilder"
+.TH "pbuilderrc" 5 "2006 Feb 11" "Debian" "pbuilder"
 .SH NAME
 pbuilderrc \- configuration files for personal package builder
 .SH DESCRIPTION
@@ -17,10 +17,11 @@ chroot image to be created and used.
 This is overridden with the option 
 .BR "--basetgz" "."
 .TP
-.BI "EXTRAPACKAGES=" "gcc3.0-athlon-builder"
+.BI "EXTRAPACKAGES=" """ccache linda XXX"""
 Specifies extra packages which the system should install
 in the chroot on 
 .BR "pbuilder create" "."
+This is a space-delimited list.
 Also this is installed on
 .B "pbuilder build"
 

@@ -71,6 +71,8 @@ File extracted to: $BUILDPLACE
 	${CHROOTEXEC} bin/bash
 
 	save_aptcache
+	${CHROOTEXEC} /usr/bin/apt-get clean
+
 	trap umountproc_cleanbuildplace exit
 
 	# saving the place afterwards
@@ -112,6 +114,8 @@ File extracted to: $BUILDPLACE
 	${CHROOTEXEC} /run "$@"
 
 	save_aptcache
+	${CHROOTEXEC} /usr/bin/apt-get clean
+
 	trap umountproc_cleanbuildplace exit
 
 	# saving the place afterwards
