@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.nkINpS/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.vexCXB/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//21240/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//8329/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -13,17 +13,16 @@ Refreshing the base.tgz
  -> upgrading packages
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org experimental Release.gpg [189B]
-Hit http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org experimental Release [4245B]
-Ign http://ftp.jp.debian.org experimental Release
-Get:4 http://ftp.jp.debian.org sid Release [5722B]
+Get:3 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
-Get:5 http://ftp.jp.debian.org experimental/main Packages [125kB]
-Hit http://ftp.jp.debian.org sid/main Packages
-Fetched 136kB in 0s (400kB/s)
+Get:4 http://ftp.jp.debian.org experimental Release [4245B]
+Ign http://ftp.jp.debian.org experimental Release
+Get:5 http://ftp.jp.debian.org sid/main Packages [3919kB]
+Get:6 http://ftp.jp.debian.org experimental/main Packages [125kB]
+Fetched 4055kB in 1s (2103kB/s)
 Reading package lists...
-W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
+W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
@@ -32,99 +31,99 @@ Building dependency tree...
 The following packages will be REMOVED:
   libnewt0.51
 The following NEW packages will be installed:
-  gcc-4.1-base libnewt0.52
+  gcc-4.1-base libdb4.4 libnewt0.52
 The following packages have been kept back:
   apt apt-utils
 The following packages will be upgraded:
-  aptitude console-data diff gettext-base libgcc1 libstdc++6 whiptail
-7 upgraded, 2 newly installed, 1 to remove and 2 not upgraded.
-Need to get 0B/4938kB of archives.
-After unpacking 1610kB of additional disk space will be used.
+  adduser aptitude base-config console-common console-data coreutils cpp-3.3
+  diff g++-3.3 gcc-3.3 gcc-3.3-base gettext-base initscripts klogd libgcc1
+  libpam-modules libpam-runtime libpam0g libperl5.8 libselinux1
+  libsigc++-2.0-0c2a libstdc++5 libstdc++5-3.3-dev libstdc++6 modutils nano
+  netkit-inetd perl perl-base perl-modules procps sed sysklogd sysv-rc
+  sysvinit whiptail
+36 upgraded, 3 newly installed, 1 to remove and 2 not upgraded.
+Need to get 0B/24.5MB of archives.
+After unpacking 2253kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  whiptail libnewt0.52 diff gcc-4.1-base libgcc1 libstdc++6 aptitude
-  gettext-base console-data
-(Reading database ... 12576 files and directories currently installed.)
+  whiptail libnewt0.52 coreutils diff perl-modules libdb4.4 libperl5.8
+  perl-base perl sed libselinux1 sysvinit console-data console-common
+  initscripts gcc-4.1-base libgcc1 libpam-runtime libpam0g libpam-modules
+  libstdc++6 sysv-rc adduser libsigc++-2.0-0c2a aptitude base-config
+  gettext-base sysklogd klogd modutils nano netkit-inetd procps g++-3.3
+  gcc-3.3 cpp-3.3 gcc-3.3-base libstdc++5 libstdc++5-3.3-dev
+Extracting templates from packages: 76%Extracting templates from packages: 100%
+Preconfiguring packages ...
+(Reading database ... 12640 files and directories currently installed.)
 Preparing to replace whiptail 0.51.6-31 (using .../whiptail_0.52.2-1_amd64.deb) ...
 Unpacking replacement whiptail ...
-(Reading database ... 12575 files and directories currently installed.)
+(Reading database ... 12639 files and directories currently installed.)
 Removing libnewt0.51 ...
 Selecting previously deselected package libnewt0.52.
-(Reading database ... 12510 files and directories currently installed.)
+(Reading database ... 12574 files and directories currently installed.)
 Unpacking libnewt0.52 (from .../libnewt0.52_0.52.2-1_amd64.deb) ...
+Preparing to replace coreutils 5.2.1-2.1 (using .../coreutils_5.93-5_amd64.deb) ...
+Removing `local diversion of /usr/share/man/man1/md5sum.textutils.1.gz to /usr/share/man/man1/md5sum.1.gz'
+Removing `local diversion of /usr/bin/md5sum.textutils to /usr/bin/md5sum'
+Unpacking replacement coreutils ...
+Setting up coreutils (5.93-5) ...
+
+(Reading database ... 12652 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-Selecting previously deselected package gcc-4.1-base.
-(Reading database ... 12582 files and directories currently installed.)
-Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1-0exp7_amd64.deb) ...
-Preparing to replace libgcc1 1:4.0.2-8 (using .../libgcc1_1%3a4.1-0exp7_amd64.deb) ...
-Unpacking replacement libgcc1 ...
-Setting up gcc-4.1-base (4.1-0exp7) ...
-Setting up libgcc1 (4.1-0exp7) ...
+(Reading database ... 12660 files and directories currently installed.)
+Preparing to replace perl-modules 5.8.7-10 (using .../perl-modules_5.8.8-2_all.deb) ...
+Unpacking replacement perl-modules ...
+Selecting previously deselected package libdb4.4.
+Unpacking libdb4.4 (from .../libdb4.4_4.4.20-1_amd64.deb) ...
+Preparing to replace libperl5.8 5.8.7-10 (using .../libperl5.8_5.8.8-1_amd64.deb) ...
+Unpacking replacement libperl5.8 ...
+Preparing to replace perl-base 5.8.7-10 (using .../perl-base_5.8.8-1_amd64.deb) ...
+Unpacking replacement perl-base ...
+Setting up perl-base (5.8.8-1) ...
+(Reading database ... 12668 files and directories currently installed.)
+Preparing to replace perl 5.8.7-10 (using .../perl_5.8.8-1_amd64.deb) ...
+Unpacking replacement perl ...
+Preparing to replace sed 4.1.2-8 (using .../archives/sed_4.1.4-5_amd64.deb) ...
+Unpacking replacement sed ...
+Setting up sed (4.1.4-5) ...
 
-(Reading database ... 12588 files and directories currently installed.)
-Preparing to replace libstdc++6 4.0.2-8 (using .../libstdc++6_4.1-0exp7_amd64.deb) ...
-Unpacking replacement libstdc++6 ...
-Setting up libstdc++6 (4.1-0exp7) ...
+(Reading database ... 12670 files and directories currently installed.)
+Preparing to replace libselinux1 1.28-2 (using .../libselinux1_1.28-4_amd64.deb) ...
+Unpacking replacement libselinux1 ...
+Setting up libselinux1 (1.28-4) ...
 
-(Reading database ... 12588 files and directories currently installed.)
-Preparing to replace aptitude 0.4.1-1 (using .../aptitude_0.4.1-1experimental1_amd64.deb) ...
-Unpacking replacement aptitude ...
-Preparing to replace gettext-base 0.14.5-2 (using .../gettext-base_0.14.5-2.csharp.1_amd64.deb) ...
-Unpacking replacement gettext-base ...
+(Reading database ... 12670 files and directories currently installed.)
+Preparing to replace sysvinit 2.86.ds1-4 (using .../sysvinit_2.86.ds1-11_amd64.deb) ...
+Unpacking replacement sysvinit ...
+Setting up sysvinit (2.86.ds1-11) ...
+init: timeout opening/writing control channel /dev/initctl
+
+(Reading database ... 12671 files and directories currently installed.)
 Preparing to replace console-data 2002.12.04dbs-52.2 (using .../console-data_20051214_all.deb) ...
 Unpacking replacement console-data ...
-Setting up libnewt0.52 (0.52.2-1) ...
-
-Setting up whiptail (0.52.2-1) ...
-Setting up aptitude (0.4.1-1experimental1) ...
-
-Setting up gettext-base (0.14.5-2.csharp.1) ...
-
-Setting up console-data (20051214) ...
-Looking for keymap to install:
-NONE
-
-Reading package lists...
-Building dependency tree...
-build-essential is already the newest version.
-dpkg-dev is already the newest version.
-The following extra packages will be installed:
-  apt-utils
-Suggested packages:
-  apt-doc bzip2 gnupg
-Recommended packages:
-  debian-archive-keyring
-The following packages will be REMOVED:
-  aptitude tasksel
-The following packages will be upgraded:
-  apt apt-utils
-2 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
-Need to get 0B/1501kB of archives.
-After unpacking 9462kB disk space will be freed.
-WARNING: The following packages cannot be authenticated!
-  apt-utils apt
-(Reading database ... 12559 files and directories currently installed.)
-Removing tasksel ...
-Removing aptitude ...
-(Reading database ... 12367 files and directories currently installed.)
-Preparing to replace apt-utils 0.6.43.2 (using .../apt-utils_0.6.43.2exp1_amd64.deb) ...
-Unpacking replacement apt-utils ...
-Preparing to replace apt 0.6.43.2 (using .../apt_0.6.43.2exp1_amd64.deb) ...
-Unpacking replacement apt ...
-Setting up apt (0.6.43.2exp1) ...
-
-Setting up apt-utils (0.6.43.2exp1) ...
-
+Preparing to replace console-common 0.7.55 (using .../console-common_0.7.55.1_all.deb) ...
+Can't locate overload.pm in @INC (@INC contains: /etc/perl /usr/local/lib/perl/5.8.8 /usr/local/share/perl/5.8.8 /usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.8 /usr/share/perl/5.8 /usr/local/lib/site_perl .) at /usr/share/perl5/Debconf/Template.pm line 331.
+BEGIN failed--compilation aborted at /usr/share/perl5/Debconf/Template.pm line 331.
+Compilation failed in require at /usr/share/perl5/Debconf/Question.pm line 8.
+BEGIN failed--compilation aborted at /usr/share/perl5/Debconf/Question.pm line 8.
+Compilation failed in require at /usr/share/perl5/Debconf/Config.pm line 7.
+BEGIN failed--compilation aborted at /usr/share/perl5/Debconf/Config.pm line 7.
+Compilation failed in require at /usr/share/perl5/Debconf/Log.pm line 10.
+Compilation failed in require at /usr/share/perl5/Debconf/Db.pm line 7.
+BEGIN failed--compilation aborted at /usr/share/perl5/Debconf/Db.pm line 7.
+Compilation failed in require at /usr/share/debconf/frontend line 6.
+BEGIN failed--compilation aborted at /usr/share/debconf/frontend line 6.
+dpkg: error processing /var/cache/apt/archives/console-common_0.7.55.1_all.deb (--unpack):
+ subprocess pre-installation script returned error exit status 2
+Preparing to replace initscripts 2.86.ds1-4 (using .../initscripts_2.86.ds1-11_amd64.deb) ...
+Unmodified conffile '/etc/init.d/bootclean.sh' obsolete; removed `/etc/init.d/bootclean.sh'
+Unpacking replacement initscripts ...
+Errors were encountered while processing:
+ /var/cache/apt/archives/console-common_0.7.55.1_all.deb
+E: Sub-process /usr/bin/dpkg returned an error code (1)
 Copying back the cached apt archive contents
-umount: /sys: not mounted
-umount: /run: not found
-umount: /proc/bus/usb: not mounted
-umount: /dev/shm: not mounted
-tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh: line 14: kill: (17538) - No such process
- -> user script /var/cache/pbuilder/build//21240/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.nkINpS/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//21240 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//8329 and its subdirectories
