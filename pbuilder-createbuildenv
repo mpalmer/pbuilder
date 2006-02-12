@@ -90,12 +90,12 @@ recover_aptcache
 $CHROOTEXEC /usr/bin/apt-get -y --force-yes dist-upgrade
 $CHROOTEXEC /usr/bin/apt-get -y --force-yes install build-essential dpkg-dev apt $EXTRAPACKAGES
 save_aptcache
-$CHROOTEXEC /usr/bin/apt-get clean
 
 executehooks "E"
 unloadhooks
-
 umountproc
+$CHROOTEXEC /usr/bin/apt-get clean || true
+
 $TRAP cleanbuildplace exit
 
 # Internal_build_uml is set when --no-targz is set, this code is actually never called from pbuilder-user-mode-linux

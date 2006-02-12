@@ -71,7 +71,6 @@ File extracted to: $BUILDPLACE
 	${CHROOTEXEC} bin/bash
 
 	save_aptcache
-	${CHROOTEXEC} /usr/bin/apt-get clean
 
 	trap umountproc_cleanbuildplace exit
 
@@ -84,6 +83,7 @@ File extracted to: $BUILDPLACE
 		unloadhooks
 		umountproc
 		trap cleanbuildplace exit
+		${CHROOTEXEC} /usr/bin/apt-get clean || true
 		create_basetgz
 	    fi
 	fi
@@ -114,8 +114,6 @@ File extracted to: $BUILDPLACE
 	${CHROOTEXEC} /run "$@"
 
 	save_aptcache
-	${CHROOTEXEC} /usr/bin/apt-get clean
-
 	trap umountproc_cleanbuildplace exit
 
 	# saving the place afterwards
@@ -127,6 +125,7 @@ File extracted to: $BUILDPLACE
 		unloadhooks
 		umountproc
 		trap cleanbuildplace exit
+		${CHROOTEXEC} /usr/bin/apt-get clean || true
 		create_basetgz
 	    fi
 	fi
