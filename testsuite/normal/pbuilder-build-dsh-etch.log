@@ -2,14 +2,14 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Sun Feb 12 14:03:18 JST 2006
-pbuilder-time-stamp: 1139720598
+Current time: Tue Feb 14 12:16:18 JST 2006
+pbuilder-time-stamp: 1139886978
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.vexCXB/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.vexCXB/dir1/17718/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/dir1/764/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
@@ -37,7 +37,7 @@ The following NEW packages will be installed:
 Need to get 0B/2932kB of archives.
 After unpacking 9728kB of additional disk space will be used.
 Selecting previously deselected package libmagic1.
-(Reading database ... 11145 files and directories currently installed.)
+(Reading database ... 11150 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.15-2_amd64.deb) ...
@@ -81,17 +81,17 @@ The following NEW packages will be installed:
 Need to get 0B/97.9kB of archives.
 After unpacking 406kB of additional disk space will be used.
 Selecting previously deselected package fakeroot.
-(Reading database ... 11755 files and directories currently installed.)
+(Reading database ... 11760 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.5.7_amd64.deb) ...
 Setting up fakeroot (1.5.7) ...
 
 Copying back the cached apt archive contents
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.vexCXB/dir1/17718/etc/passwd
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.vexCXB/dir1/17718/etc/group
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/dir1/764/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/dir1/764/etc/group
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.vexCXB/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.vexCXB/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.vexCXB/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 su: Authentication service cannot retrieve authentication info.
 (Ignored)
@@ -378,7 +378,6 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
-dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -413,11 +412,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun Feb 12 05:04:03 UTC 2006
+Tue Feb 14 03:17:01 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -487,13 +486,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun Feb 12 05:04:08 UTC 2006
+Tue Feb 14 03:17:06 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-a: a
-dsh: Process terminated (before write).
 b: b
+dsh: Process terminated (before write).
+a: a
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -617,7 +616,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Sun Feb 12 14:04:11 JST 2006
-pbuilder-time-stamp: 1139720651
+Current time: Tue Feb 14 12:17:08 JST 2006
+pbuilder-time-stamp: 1139887028
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.vexCXB/dir1/17718 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/dir1/764 and its subdirectories

@@ -8,7 +8,6 @@ P: Parsing Release
 P: Retrieving Packages.gz
 P: Validating Packages
 P: Parsing Packages
-W: resolver (base-config): package doesn't exist
 P: Retrieving libc6
 P: Validating libc6
 P: Retrieving gcc-4.0-base
@@ -175,6 +174,8 @@ P: Retrieving libpopt0
 P: Validating libpopt0
 P: Retrieving whiptail
 P: Validating whiptail
+P: Retrieving base-config
+P: Validating base-config
 P: Retrieving exim4
 P: Validating exim4
 P: Retrieving base-passwd
@@ -304,7 +305,8 @@ O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by c
 O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
-O: (Reading database ... 29 files and directories currently installed.)
+O: (Reading database ... 
+O: 29 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
@@ -822,7 +824,8 @@ O: Setting up debconf (1.4.70) ...
 P: Configuring package debconf
 O: 
 O: Selecting previously deselected package apt.
-O: (Reading database ... 4570 files and directories currently installed.)
+O: (Reading database ... 
+O: 4570 files and directories currently installed.)
 O: Unpacking apt (from .../apt_0.6.43.2_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.43.2) ...
@@ -837,7 +840,7 @@ O: Setting up cdebootstrap-helper-apt (1) ...
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [5902B]
 O: Ign bootstrap: . Release
-O: Fetched 6091B in 0s (43.0kB/s)
+O: Fetched 6091B in 0s (55.4kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -857,25 +860,24 @@ O:   less www-browser spell
 O: Recommended packages:
 O:   aptitude-doc-en aptitude-doc libgpmg1 libtasn1-2-bin mailx
 O: The following NEW packages will be installed:
-O:   adduser apt-utils aptitude at bsdmainutils cpio cron dhcp3-client
-O:   dhcp3-common dmidecode ed exim4 exim4-base exim4-config exim4-daemon-light
-O:   groff-base ifupdown info iptables iputils-ping klogd laptop-detect libdb4.2
-O:   libgcrypt11 libgdbm3 libgnutls12 libgpg-error0 liblzo1 libncursesw5
-O:   libopencdk8 libpcre3 libpopt0 libsigc++-2.0-0c2a libssl0.9.8 libtasn1-2
-O:   libwrap0 logrotate man-db manpages nano net-tools netbase netkit-inetd nvi
-O:   psmisc sysklogd tasksel tcpd telnet wget whiptail
-O: 0 upgraded, 51 newly installed, 0 to remove and 0 not upgraded.
-O: Need to get 13.5MB of archives.
-O: After unpacking 39.4MB of additional disk space will be used.
+O:   adduser apt-utils aptitude at base-config bsdmainutils cpio cron
+O:   dhcp3-client dhcp3-common dmidecode ed exim4 exim4-base exim4-config
+O:   exim4-daemon-light groff-base ifupdown info iptables iputils-ping klogd
+O:   laptop-detect libdb4.2 libgcrypt11 libgdbm3 libgnutls12 libgpg-error0
+O:   liblzo1 libncursesw5 libopencdk8 libpcre3 libpopt0 libsigc++-2.0-0c2a
+O:   libssl0.9.8 libtasn1-2 libwrap0 logrotate man-db manpages nano net-tools
+O:   netbase netkit-inetd nvi psmisc sysklogd tasksel tcpd telnet wget whiptail
+O: 0 upgraded, 52 newly installed, 0 to remove and 0 not upgraded.
+O: Need to get 13.6MB of archives.
+O: After unpacking 39.5MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
-O:   adduser apt-utils libncursesw5 libsigc++-2.0-0c2a aptitude bsdmainutils cpio
-O:   cron dmidecode ed groff-base net-tools ifupdown info iptables iputils-ping
-O:   sysklogd klogd laptop-detect libgpg-error0 libgcrypt11 libgdbm3 liblzo1
-O:   libopencdk8 libpopt0 libssl0.9.8 libtasn1-2 libwrap0 logrotate man-db
-O:   manpages nano netkit-inetd tcpd netbase nvi tasksel wget whiptail libdb4.2
-O:   exim4-config exim4-base libgnutls12 libpcre3 exim4-daemon-light at exim4
-O:   telnet dhcp3-common dhcp3-client psmisc
-O: debconf: delaying package configuration, since apt-utils is not installed
+O:   adduser apt-utils libncursesw5 libsigc++-2.0-0c2a aptitude base-config
+O:   bsdmainutils cpio cron dmidecode ed groff-base net-tools ifupdown info
+O:   iptables iputils-ping sysklogd klogd laptop-detect libgpg-error0 libgcrypt11
+O:   libgdbm3 liblzo1 libopencdk8 libpopt0 libssl0.9.8 libtasn1-2 libwrap0
+O:   logrotate man-db manpages nano netkit-inetd tcpd netbase nvi tasksel wget
+O:   whiptail libdb4.2 exim4-config exim4-base libgnutls12 libpcre3
+O:   exim4-daemon-light at exim4 telnet dhcp3-common dhcp3-client psmisc
 O: Authentication warning overridden.
 O: Selecting previously deselected package adduser.
 O: (Reading database ... 
@@ -894,6 +896,9 @@ P: Unpacking package libsigc++-2.0-0c2a
 O: Selecting previously deselected package aptitude.
 O: Unpacking aptitude (from .../aptitude_0.4.1-1_amd64.deb) ...
 P: Unpacking package aptitude
+O: Selecting previously deselected package base-config.
+O: Unpacking base-config (from .../base-config_2.76_all.deb) ...
+P: Unpacking package base-config
 O: Selecting previously deselected package bsdmainutils.
 O: Unpacking bsdmainutils (from .../bsdmainutils_6.1.3_amd64.deb) ...
 P: Unpacking package bsdmainutils
@@ -955,7 +960,7 @@ O: Selecting previously deselected package libpopt0.
 O: Unpacking libpopt0 (from .../libpopt0_1.7-5_amd64.deb) ...
 P: Unpacking package libpopt0
 O: Selecting previously deselected package libssl0.9.8.
-O: Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8a-6_amd64.deb) ...
+O: Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8a-7_amd64.deb) ...
 P: Unpacking package libssl0.9.8
 O: Selecting previously deselected package libtasn1-2.
 O: Unpacking libtasn1-2 (from .../libtasn1-2_0.2.17-1_amd64.deb) ...
@@ -1047,6 +1052,9 @@ O:
 O: Setting up aptitude (0.4.1-1) ...
 P: Configuring package aptitude
 O: 
+O: Setting up base-config (2.76) ...
+P: Configuring package base-config
+O: 
 O: Setting up bsdmainutils (6.1.3) ...
 P: Configuring package bsdmainutils
 O: 
@@ -1104,7 +1112,7 @@ O:
 O: Setting up libpopt0 (1.7-5) ...
 P: Configuring package libpopt0
 O: 
-O: Setting up libssl0.9.8 (0.9.8a-6) ...
+O: Setting up libssl0.9.8 (0.9.8a-7) ...
 P: Configuring package libssl0.9.8
 O: 
 O: Setting up libtasn1-2 (0.2.17-1) ...
@@ -1198,18 +1206,18 @@ O: .
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 6603 files and directories currently installed.)
+O: 6608 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 6602 files and directories currently installed.)
+O: 6607 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 6600 files and directories currently installed.)
+O: 6605 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1222,18 +1230,18 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//14153/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//17986/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//14153/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//17986/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [5902B]
 Ign http://ftp.jp.debian.org etch Release
 Get:3 http://ftp.jp.debian.org etch/main Packages [3639kB]
-Fetched 3645kB in 1s (1848kB/s)
+Fetched 3645kB in 1s (2093kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1267,7 +1275,7 @@ WARNING: The following packages cannot be authenticated!
   linux-kernel-headers libc6-dev libstdc++6-4.0-dev g++-4.0 g++
   build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 6600 files and directories currently installed.)
+(Reading database ... 6605 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20060117-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-8_amd64.deb) ...
@@ -1328,9 +1336,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//14153/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//17986/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.vexCXB/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//14153 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//17986 and its subdirectories
