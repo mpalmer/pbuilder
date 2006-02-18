@@ -557,17 +557,17 @@ umount: /dev/shm: not mounted
 umount: proc: not mounted
 umount: proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//23462/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//31322/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//23462/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//31322/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Hit http://ftp.jp.debian.org sid Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Fetched 189B in 0s (2255B/s)
+Fetched 189B in 0s (1687B/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
@@ -592,17 +592,10 @@ The following NEW packages will be installed:
   libc6-dev libdb4.4 libstdc++6-4.0-dev linux-kernel-headers make patch perl
   perl-modules
 0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
-Need to get 13.4MB/21.3MB of archives.
-After unpacking 84.2MB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org sid/main cpp-4.0 4.0.2-9 [2261kB]
-Get:2 http://ftp.jp.debian.org sid/main perl 5.8.8-2 [4254kB]
-Get:3 http://ftp.jp.debian.org sid/main gcc-4.0 4.0.2-9 [523kB]
-Get:4 http://ftp.jp.debian.org sid/main libc6-dev 2.3.6-1 [2319kB]
-Get:5 http://ftp.jp.debian.org sid/main libstdc++6-4.0-dev 4.0.2-9 [1481kB]
-Get:6 http://ftp.jp.debian.org sid/main g++-4.0 4.0.2-9 [2581kB]
-Fetched 13.4MB in 5s (2361kB/s)
+Need to get 0B/21.2MB of archives.
+After unpacking 84.1MB of additional disk space will be used.
 Selecting previously deselected package binutils.
-(Reading database ... 6821 files and directories currently installed.)
+(Reading database ... 6792 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20060117-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-9_amd64.deb) ...
@@ -619,7 +612,7 @@ Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
 Selecting previously deselected package make.
 Unpacking make (from .../make_3.80+3.81.b4-1_amd64.deb) ...
 Selecting previously deselected package dpkg-dev.
-Unpacking dpkg-dev (from .../dpkg-dev_1.13.13_all.deb) ...
+Unpacking dpkg-dev (from .../dpkg-dev_1.13.15_all.deb) ...
 Selecting previously deselected package gcc-4.0.
 Unpacking gcc-4.0 (from .../gcc-4.0_4.0.2-9_amd64.deb) ...
 Selecting previously deselected package gcc.
@@ -654,40 +647,21 @@ Setting up perl-modules (5.8.8-2) ...
 Setting up libstdc++6-4.0-dev (4.0.2-9) ...
 Setting up perl (5.8.8-2) ...
 
-Setting up dpkg-dev (1.13.13) ...
+Setting up dpkg-dev (1.13.15) ...
 Setting up g++-4.0 (4.0.2-9) ...
 Setting up g++ (4.0.2-2) ...
 
 Setting up build-essential (11.2) ...
 Copying back the cached apt archive contents
- -> new cache content adduser_3.83_all.deb added
- -> new cache content base-files_3.1.10_amd64.deb added
- -> new cache content dmidecode_2.8-1_amd64.deb added
- -> new cache content gcc-4.0-base_4.0.2-9_amd64.deb added
- -> new cache content initscripts_2.86.ds1-12_amd64.deb added
- -> new cache content libc6_2.3.6-1_amd64.deb added
- -> new cache content libgcc1_1%3a4.0.2-9_amd64.deb added
- -> new cache content libssl0.9.8_0.9.8a-7_amd64.deb added
- -> new cache content libstdc++6_4.0.2-9_amd64.deb added
- -> new cache content login_1%3a4.0.14-6_amd64.deb added
- -> new cache content passwd_1%3a4.0.14-6_amd64.deb added
- -> new cache content perl-base_5.8.8-2_amd64.deb added
- -> new cache content sysvinit_2.86.ds1-12_amd64.deb added
- -> new cache content cpp-4.0_4.0.2-9_amd64.deb added
- -> new cache content perl_5.8.8-2_amd64.deb added
- -> new cache content gcc-4.0_4.0.2-9_amd64.deb added
- -> new cache content libc6-dev_2.3.6-1_amd64.deb added
- -> new cache content libstdc++6-4.0-dev_4.0.2-9_amd64.deb added
- -> new cache content g++-4.0_4.0.2-9_amd64.deb added
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//23462/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//31322/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a4LqWt/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//23462 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//31322 and its subdirectories

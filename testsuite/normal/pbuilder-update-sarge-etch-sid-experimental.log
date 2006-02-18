@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a4LqWt/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//24219/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//644/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -18,9 +18,9 @@ Get:3 http://ftp.jp.debian.org experimental Release [4245B]
 Ign http://ftp.jp.debian.org experimental Release
 Get:4 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
-Get:5 http://ftp.jp.debian.org experimental/main Packages [125kB]
+Get:5 http://ftp.jp.debian.org experimental/main Packages [126kB]
 Hit http://ftp.jp.debian.org sid/main Packages
-Fetched 136kB in 0s (273kB/s)
+Fetched 136kB in 0s (367kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -36,46 +36,42 @@ The following NEW packages will be installed:
 The following packages have been kept back:
   apt apt-utils
 The following packages will be upgraded:
-  aptitude console-data diff dpkg-dev gettext-base libgcc1 libstdc++6 whiptail
-8 upgraded, 2 newly installed, 1 to remove and 2 not upgraded.
-Need to get 92.2kB/5030kB of archives.
-After unpacking 1487kB of additional disk space will be used.
+  aptitude console-data diff gettext-base libgcc1 libstdc++6 whiptail
+7 upgraded, 2 newly installed, 1 to remove and 2 not upgraded.
+Need to get 0B/4938kB of archives.
+After unpacking 1610kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   whiptail libnewt0.52 diff gcc-4.1-base libgcc1 libstdc++6 aptitude
-  gettext-base dpkg-dev console-data
-Get:1 http://ftp.jp.debian.org experimental/main dpkg-dev 1.13.14 [92.2kB]
-Fetched 92.2kB in 0s (622kB/s)
-(Reading database ... 12561 files and directories currently installed.)
+  gettext-base console-data
+(Reading database ... 12515 files and directories currently installed.)
 Preparing to replace whiptail 0.51.6-31 (using .../whiptail_0.52.2-1_amd64.deb) ...
 Unpacking replacement whiptail ...
-(Reading database ... 12560 files and directories currently installed.)
+(Reading database ... 12514 files and directories currently installed.)
 Removing libnewt0.51 ...
 Selecting previously deselected package libnewt0.52.
-(Reading database ... 12495 files and directories currently installed.)
+(Reading database ... 12449 files and directories currently installed.)
 Unpacking libnewt0.52 (from .../libnewt0.52_0.52.2-1_amd64.deb) ...
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
 Selecting previously deselected package gcc-4.1-base.
-(Reading database ... 12567 files and directories currently installed.)
+(Reading database ... 12521 files and directories currently installed.)
 Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1-0exp7_amd64.deb) ...
 Preparing to replace libgcc1 1:4.0.2-9 (using .../libgcc1_1%3a4.1-0exp7_amd64.deb) ...
 Unpacking replacement libgcc1 ...
 Setting up gcc-4.1-base (4.1-0exp7) ...
 Setting up libgcc1 (4.1-0exp7) ...
 
-(Reading database ... 12573 files and directories currently installed.)
+(Reading database ... 12527 files and directories currently installed.)
 Preparing to replace libstdc++6 4.0.2-9 (using .../libstdc++6_4.1-0exp7_amd64.deb) ...
 Unpacking replacement libstdc++6 ...
 Setting up libstdc++6 (4.1-0exp7) ...
 
-(Reading database ... 12573 files and directories currently installed.)
+(Reading database ... 12527 files and directories currently installed.)
 Preparing to replace aptitude 0.4.1-1 (using .../aptitude_0.4.1-1experimental1_amd64.deb) ...
 Unpacking replacement aptitude ...
 Preparing to replace gettext-base 0.14.5-2 (using .../gettext-base_0.14.5-2.csharp.1_amd64.deb) ...
 Unpacking replacement gettext-base ...
-Preparing to replace dpkg-dev 1.13.13 (using .../dpkg-dev_1.13.14_all.deb) ...
-Unpacking replacement dpkg-dev ...
 Preparing to replace console-data 2002.12.04dbs-52.2 (using .../console-data_20051214_all.deb) ...
 Unpacking replacement console-data ...
 Setting up libnewt0.52 (0.52.2-1) ...
@@ -85,7 +81,6 @@ Setting up aptitude (0.4.1-1experimental1) ...
 
 Setting up gettext-base (0.14.5-2.csharp.1) ...
 
-Setting up dpkg-dev (1.13.14) ...
 Setting up console-data (20051214) ...
 Looking for keymap to install:
 NONE
@@ -109,10 +104,10 @@ Need to get 0B/1501kB of archives.
 After unpacking 9462kB disk space will be freed.
 WARNING: The following packages cannot be authenticated!
   apt-utils apt
-(Reading database ... 12526 files and directories currently installed.)
+(Reading database ... 12498 files and directories currently installed.)
 Removing tasksel ...
 Removing aptitude ...
-(Reading database ... 12334 files and directories currently installed.)
+(Reading database ... 12306 files and directories currently installed.)
 Preparing to replace apt-utils 0.6.43.2 (using .../apt-utils_0.6.43.2exp1_amd64.deb) ...
 Unpacking replacement apt-utils ...
 Preparing to replace apt 0.6.43.2 (using .../apt_0.6.43.2exp1_amd64.deb) ...
@@ -122,15 +117,14 @@ Setting up apt (0.6.43.2exp1) ...
 Setting up apt-utils (0.6.43.2exp1) ...
 
 Copying back the cached apt archive contents
- -> new cache content dpkg-dev_1.13.14_all.deb added
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
-tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh: line 14: kill: (21188) - No such process
- -> user script /var/cache/pbuilder/build//24219/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh: line 14: kill: (29913) - No such process
+ -> user script /var/cache/pbuilder/build//644/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a4LqWt/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//24219 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//644 and its subdirectories

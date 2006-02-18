@@ -313,12 +313,12 @@ O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.d
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
 O: Selecting previously deselected package dpkg.
-O: dpkg: regarding .../dpkg_1.13.13_amd64.deb containing dpkg, pre-dependency problem:
+O: dpkg: regarding .../dpkg_1.13.15_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on libc6 (>= 2.3.5-1)
 O: dpkg: warning - ignoring pre-dependency problem !
 O: (Reading database ... 
 O: 29 files and directories currently installed.)
-O: Unpacking dpkg (from .../dpkg_1.13.13_amd64.deb) ...
+O: Unpacking dpkg (from .../dpkg_1.13.15_amd64.deb) ...
 P: Unpacking package dpkg
 O: dpkg: dpkg: dependency problems, but configuring anyway as you request:
 O:  dpkg depends on libc6 (>= 2.3.5-1); however:
@@ -326,12 +326,12 @@ O:   Package libc6 is not installed.
 O:  dpkg depends on coreutils | textutils (>= 2.0-3); however:
 O:   Package coreutils is not installed.
 O:   Package textutils is not installed.
-O: Setting up dpkg (1.13.13) ...
+O: Setting up dpkg (1.13.15) ...
 P: Configuring package dpkg
 O: 
 O: Selecting previously deselected package libc6.
 O: (Reading database ... 
-O: 224 files and directories currently installed.)
+O: 189 files and directories currently installed.)
 O: Unpacking libc6 (from .../libc6_2.3.6-1_amd64.deb) ...
 P: Unpacking package libc6
 O: Selecting previously deselected package gcc-4.0-base.
@@ -570,7 +570,7 @@ O: Selecting previously deselected package libss2.
 O: Unpacking libss2 (from .../libss2_1.38+1.39-WIP-2005.12.31-1_amd64.deb) ...
 P: Unpacking package libss2
 O: Selecting previously deselected package dselect.
-O: Unpacking dselect (from .../dselect_1.13.13_amd64.deb) ...
+O: Unpacking dselect (from .../dselect_1.13.15_amd64.deb) ...
 P: Unpacking package dselect
 O: Selecting previously deselected package diff.
 O: dpkg: regarding .../diff_2.8.1-11_amd64.deb containing diff, pre-dependency problem:
@@ -793,7 +793,7 @@ O:
 O: Setting up gzip (1.3.5-12) ...
 P: Configuring package gzip
 O: 
-O: Setting up dselect (1.13.13) ...
+O: Setting up dselect (1.13.15) ...
 P: Configuring package dselect
 O: Setting up bash (3.1-2) ...
 P: Configuring package bash
@@ -824,7 +824,8 @@ O: Setting up debconf (1.4.70) ...
 P: Configuring package debconf
 O: 
 O: Selecting previously deselected package apt.
-O: (Reading database ... 4626 files and directories currently installed.)
+O: (Reading database ... 
+O: 4596 files and directories currently installed.)
 O: Unpacking apt (from .../apt_0.6.43.2_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.43.2) ...
@@ -833,13 +834,13 @@ O:
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
 O: (Reading database ... 
-O: 4796 files and directories currently installed.)
+O: 4766 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [5722B]
 O: Ign bootstrap: . Release
-O: Fetched 5911B in 0s (50.2kB/s)
+O: Fetched 5911B in 0s (48.9kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -881,7 +882,7 @@ O:   exim4-daemon-light at exim4 telnet dhcp3-common dhcp3-client psmisc
 O: Authentication warning overridden.
 O: Selecting previously deselected package adduser.
 O: (Reading database ... 
-O: 4797 files and directories currently installed.)
+O: 4767 files and directories currently installed.)
 O: Unpacking adduser (from .../bootstrap/adduser_3.83_all.deb) ...
 P: Unpacking package adduser
 O: Selecting previously deselected package apt-utils.
@@ -1204,18 +1205,18 @@ O: .
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 6664 files and directories currently installed.)
+O: 6635 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 6663 files and directories currently installed.)
+O: 6634 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 6661 files and directories currently installed.)
+O: 6632 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1228,18 +1229,18 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//25112/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//2055/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//25112/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//2055/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org sid/main Packages [3924kB]
-Fetched 3930kB in 1s (2131kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [3926kB]
+Fetched 3932kB in 2s (1539kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1266,14 +1267,14 @@ The following NEW packages will be installed:
   libc6-dev libdb4.4 libstdc++6-4.0-dev linux-kernel-headers make patch perl
   perl-modules
 0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/21.3MB of archives.
-After unpacking 84.2MB of additional disk space will be used.
+Need to get 0B/21.2MB of archives.
+After unpacking 84.1MB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   binutils cpp-4.0 cpp perl-modules libdb4.4 perl patch make dpkg-dev gcc-4.0
   gcc linux-kernel-headers libc6-dev libstdc++6-4.0-dev g++-4.0 g++
   build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 6661 files and directories currently installed.)
+(Reading database ... 6632 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20060117-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-9_amd64.deb) ...
@@ -1290,7 +1291,7 @@ Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
 Selecting previously deselected package make.
 Unpacking make (from .../make_3.80+3.81.b4-1_amd64.deb) ...
 Selecting previously deselected package dpkg-dev.
-Unpacking dpkg-dev (from .../dpkg-dev_1.13.13_all.deb) ...
+Unpacking dpkg-dev (from .../dpkg-dev_1.13.15_all.deb) ...
 Selecting previously deselected package gcc-4.0.
 Unpacking gcc-4.0 (from .../gcc-4.0_4.0.2-9_amd64.deb) ...
 Selecting previously deselected package gcc.
@@ -1325,7 +1326,7 @@ Setting up perl-modules (5.8.8-2) ...
 Setting up libstdc++6-4.0-dev (4.0.2-9) ...
 Setting up perl (5.8.8-2) ...
 
-Setting up dpkg-dev (1.13.13) ...
+Setting up dpkg-dev (1.13.15) ...
 Setting up g++-4.0 (4.0.2-9) ...
 Setting up g++ (4.0.2-2) ...
 
@@ -1337,9 +1338,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//25112/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//2055/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a4LqWt/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//25112 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//2055 and its subdirectories

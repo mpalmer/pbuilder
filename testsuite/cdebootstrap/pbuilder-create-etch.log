@@ -297,16 +297,14 @@ P: Configuring package base-passwd
 O: 
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
-O: (Reading database ... 
-O: 24 files and directories currently installed.)
+O: (Reading database ... 24 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
-O: (Reading database ... 
-O: 29 files and directories currently installed.)
+O: (Reading database ... 29 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
@@ -630,7 +628,7 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking sysvinit (from .../sysvinit_2.86.ds1-4_amd64.deb) ...
 P: Unpacking package sysvinit
 O: Selecting previously deselected package base-files.
-O: Unpacking base-files (from .../base-files_3.1.9_amd64.deb) ...
+O: Unpacking base-files (from .../base-files_3.1.10_amd64.deb) ...
 P: Unpacking package base-files
 O: Selecting previously deselected package mount.
 O: dpkg: regarding .../mount_2.12r-6_amd64.deb containing mount, pre-dependency problem:
@@ -781,7 +779,7 @@ P: Configuring package ncurses-bin
 O: Setting up libpam-modules (0.79-3) ...
 P: Configuring package libpam-modules
 O: 
-O: Setting up base-files (3.1.9) ...
+O: Setting up base-files (3.1.10) ...
 P: Configuring package base-files
 O: 
 O: Setting up mount (2.12r-6) ...
@@ -840,7 +838,7 @@ O: Setting up cdebootstrap-helper-apt (1) ...
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [5902B]
 O: Ign bootstrap: . Release
-O: Fetched 6091B in 0s (55.4kB/s)
+O: Fetched 6091B in 0s (55.0kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -850,6 +848,7 @@ O: W:
 O: You may want to run apt-get update to correct these problems
 O: 
 O: Reading package lists...
+O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -891,7 +890,7 @@ O: Selecting previously deselected package libncursesw5.
 O: Unpacking libncursesw5 (from .../libncursesw5_5.5-1_amd64.deb) ...
 P: Unpacking package libncursesw5
 O: Selecting previously deselected package libsigc++-2.0-0c2a.
-O: Unpacking libsigc++-2.0-0c2a (from .../libsigc++-2.0-0c2a_2.0.16-2_amd64.deb) ...
+O: Unpacking libsigc++-2.0-0c2a (from .../libsigc++-2.0-0c2a_2.0.16-3_amd64.deb) ...
 P: Unpacking package libsigc++-2.0-0c2a
 O: Selecting previously deselected package aptitude.
 O: Unpacking aptitude (from .../aptitude_0.4.1-1_amd64.deb) ...
@@ -1046,7 +1045,7 @@ O:
 O: Setting up libncursesw5 (5.5-1) ...
 P: Configuring package libncursesw5
 O: 
-O: Setting up libsigc++-2.0-0c2a (2.0.16-2) ...
+O: Setting up libsigc++-2.0-0c2a (2.0.16-3) ...
 P: Configuring package libsigc++-2.0-0c2a
 O: 
 O: Setting up aptitude (0.4.1-1) ...
@@ -1230,18 +1229,18 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//17986/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//28364/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//17986/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//28364/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [5902B]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [3639kB]
-Fetched 3645kB in 1s (2093kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [3640kB]
+Fetched 3646kB in 1s (2082kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1336,9 +1335,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//17986/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//28364/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a4LqWt/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//17986 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//28364 and its subdirectories

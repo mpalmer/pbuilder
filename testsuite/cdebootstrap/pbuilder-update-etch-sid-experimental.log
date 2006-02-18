@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a4LqWt/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//13635/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//24557/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -18,9 +18,9 @@ Get:3 http://ftp.jp.debian.org experimental Release [4245B]
 Ign http://ftp.jp.debian.org experimental Release
 Get:4 http://ftp.jp.debian.org sid Release [5722B]
 Ign http://ftp.jp.debian.org sid Release
-Get:5 http://ftp.jp.debian.org experimental/main Packages [125kB]
+Get:5 http://ftp.jp.debian.org experimental/main Packages [126kB]
 Hit http://ftp.jp.debian.org sid/main Packages
-Fetched 136kB in 0s (528kB/s)
+Fetched 136kB in 0s (332kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -36,47 +36,44 @@ The following NEW packages will be installed:
 The following packages have been kept back:
   apt apt-utils
 The following packages will be upgraded:
-  aptitude diff dpkg-dev libgcc1 libstdc++6 whiptail
-6 upgraded, 2 newly installed, 1 to remove and 2 not upgraded.
-Need to get 0B/3629kB of archives.
-After unpacking 434kB of additional disk space will be used.
+  aptitude diff libgcc1 libstdc++6 whiptail
+5 upgraded, 2 newly installed, 1 to remove and 2 not upgraded.
+Need to get 0B/3537kB of archives.
+After unpacking 557kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  whiptail libnewt0.52 diff gcc-4.1-base libgcc1 libstdc++6 aptitude dpkg-dev
-(Reading database ... 11014 files and directories currently installed.)
+  whiptail libnewt0.52 diff gcc-4.1-base libgcc1 libstdc++6 aptitude
+(Reading database ... 10968 files and directories currently installed.)
 Preparing to replace whiptail 0.51.6-31 (using .../whiptail_0.52.2-1_amd64.deb) ...
 Unpacking replacement whiptail ...
-(Reading database ... 11013 files and directories currently installed.)
+(Reading database ... 10967 files and directories currently installed.)
 Removing libnewt0.51 ...
 Selecting previously deselected package libnewt0.52.
-(Reading database ... 10948 files and directories currently installed.)
+(Reading database ... 10902 files and directories currently installed.)
 Unpacking libnewt0.52 (from .../libnewt0.52_0.52.2-1_amd64.deb) ...
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
 Selecting previously deselected package gcc-4.1-base.
-(Reading database ... 11020 files and directories currently installed.)
+(Reading database ... 10974 files and directories currently installed.)
 Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1-0exp7_amd64.deb) ...
 Preparing to replace libgcc1 1:4.0.2-9 (using .../libgcc1_1%3a4.1-0exp7_amd64.deb) ...
 Unpacking replacement libgcc1 ...
 Setting up gcc-4.1-base (4.1-0exp7) ...
 Setting up libgcc1 (4.1-0exp7) ...
 
-(Reading database ... 11026 files and directories currently installed.)
+(Reading database ... 10980 files and directories currently installed.)
 Preparing to replace libstdc++6 4.0.2-9 (using .../libstdc++6_4.1-0exp7_amd64.deb) ...
 Unpacking replacement libstdc++6 ...
 Setting up libstdc++6 (4.1-0exp7) ...
 
-(Reading database ... 11026 files and directories currently installed.)
+(Reading database ... 10980 files and directories currently installed.)
 Preparing to replace aptitude 0.4.1-1 (using .../aptitude_0.4.1-1experimental1_amd64.deb) ...
 Unpacking replacement aptitude ...
-Preparing to replace dpkg-dev 1.13.13 (using .../dpkg-dev_1.13.14_all.deb) ...
-Unpacking replacement dpkg-dev ...
 Setting up libnewt0.52 (0.52.2-1) ...
 
 Setting up whiptail (0.52.2-1) ...
 Setting up aptitude (0.4.1-1experimental1) ...
 
-Setting up dpkg-dev (1.13.14) ...
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
@@ -96,10 +93,10 @@ Need to get 0B/1501kB of archives.
 After unpacking 9462kB disk space will be freed.
 WARNING: The following packages cannot be authenticated!
   apt-utils apt
-(Reading database ... 11008 files and directories currently installed.)
+(Reading database ... 10980 files and directories currently installed.)
 Removing tasksel ...
 Removing aptitude ...
-(Reading database ... 10816 files and directories currently installed.)
+(Reading database ... 10788 files and directories currently installed.)
 Preparing to replace apt-utils 0.6.43.2 (using .../apt-utils_0.6.43.2exp1_amd64.deb) ...
 Unpacking replacement apt-utils ...
 Preparing to replace apt 0.6.43.2 (using .../apt_0.6.43.2exp1_amd64.deb) ...
@@ -115,9 +112,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//13635/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//24557/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.91xqi0/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.a4LqWt/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//13635 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//24557 and its subdirectories
