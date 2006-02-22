@@ -202,11 +202,6 @@ the chroot, and specifying
 will most probably fail.
 
 .TP
-.BI "\-\-nonusmirror [" "mirror location" "]"
-The non-US mirror, specified like the 
-.B "\-\-mirror"
-option
-.TP
 .BI "\-\-othermirror [" "deb http://xxx/xxx/ ./ " "|" " other deb lines... " "]"
 The lines which is added to the sources.list, delimited with 
 .B "|"
@@ -223,9 +218,7 @@ constructed sources file, so this is the place to list your
 .B "local"
 mirror sites; apt will then use them in preference to the ones 
 listed in 
-.B "\-\-mirror"
-and
-.B "\-\-nonusmirror".
+.B "\-\-mirror".
 
 These options are only valid when
 .B "\-\-override\-config"

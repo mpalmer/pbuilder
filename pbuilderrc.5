@@ -60,12 +60,6 @@ kind of URL, because the location needs to be accessible from within
 the chroot.
 
 .TP
-.BI "NONUSMIRRORSITE=" "http://www.jp.debian.org/debian-non-US"
-Specify the mirror site which contains
-.B "non-US"
-distribution.
-
-.TP
 .BI "OTHERMIRROR=" "deb http://xxx/xxx/ ./ " "[|" " other deb lines... " "]"
 The lines which is added to the sources.list, delimited with 
 .B "|"
@@ -82,9 +76,7 @@ constructed sources file, so this is the place to list your
 .B "local"
 mirror sites; apt will then use them in preference to the ones 
 listed in 
-.B "MIRRORSITE"
-and
-.B "NONUSMIRRORSITE".
+.B "MIRRORSITE".
 
 To make changes on mirror site effective on 
 .B update

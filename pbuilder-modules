@@ -50,7 +50,6 @@ pbuilder-options:
  --basetgz [base.tgz location]
  --buildplace [location of build]
  --mirror [mirror location]
- --nonusmirror [non-US mirror location]
  --othermirror [other mirror location in apt deb-line format, delimited with | signs]
  --http-proxy [proxy]
  --distribution [distribution(potato|woody|sarge|sid|etch|experimental)]
@@ -234,12 +233,6 @@ function installaptlines (){
 	cat >> "$BUILDPLACE"/etc/apt/sources.list << EOF
 deb $MIRRORSITE $DISTRIBUTION main 
 #deb-src $MIRRORSITE $DISTRIBUTION main
-EOF
-    fi
-    if [ -n "$NONUSMIRRORSITE" ]; then 
-	cat  >> "$BUILDPLACE"/etc/apt/sources.list << EOF
-deb $NONUSMIRRORSITE $DISTRIBUTION/non-US main 
-#deb-src $NONUSMIRRORSITE $DISTRIBUTION/non-US main
 EOF
     fi
     if [ -n "$APTCONFDIR" ]; then
