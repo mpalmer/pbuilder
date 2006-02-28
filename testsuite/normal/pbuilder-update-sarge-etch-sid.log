@@ -1,20 +1,20 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.HFjvsP/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.D8mHHK/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//19438/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//20560/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
 Refreshing the base.tgz 
  -> upgrading packages
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
-Get:2 http://ftp.jp.debian.org sid Release [5722B]
+Get:2 http://ftp.jp.debian.org sid Release [5902B]
 Ign http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org sid/main Packages [3937kB]
-Fetched 3943kB in 1s (1979kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [3939kB]
+Fetched 3945kB in 1s (2084kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -25,10 +25,10 @@ Building dependency tree...
 The following packages will be upgraded:
   adduser apt apt-utils bsdutils coreutils cpp-3.3 debconf debconf-i18n dpkg
   dpkg-dev dselect exim4 exim4-base exim4-config exim4-daemon-light g++-3.3
-  gcc-3.3 gcc-3.3-base hostname info klogd libattr1 libc6 libc6-dev
-  libdb1-compat libdb4.4 libstdc++5 libstdc++5-3.3-dev login make modutils
-  mount passwd procps sed sysklogd tasksel util-linux
-38 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+  gcc-3.3 gcc-3.3-base hostname info klogd libattr1 libc6 libc6-dev libdb4.4
+  libstdc++5 libstdc++5-3.3-dev login make modutils mount passwd procps sed
+  sysklogd tasksel util-linux
+37 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Need to get 0B/26.1MB of archives.
 After unpacking 1073kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
@@ -36,7 +36,7 @@ WARNING: The following packages cannot be authenticated!
   debconf libc6-dev libc6 apt passwd adduser apt-utils info sysklogd klogd
   modutils tasksel dselect libattr1 procps make dpkg-dev exim4-config
   exim4-base exim4-daemon-light exim4 libdb4.4 g++-3.3 gcc-3.3 cpp-3.3
-  gcc-3.3-base libstdc++5 libstdc++5-3.3-dev libdb1-compat
+  gcc-3.3-base libstdc++5 libstdc++5-3.3-dev
 (Reading database ... 12574 files and directories currently installed.)
 Preparing to replace bsdutils 1:2.12r-6 (using .../bsdutils_1%3a2.12r-8_amd64.deb) ...
 Unpacking replacement bsdutils ...
@@ -90,8 +90,8 @@ Preparing to replace libc6 2.3.5-13 (using .../libc6_2.3.6-1_amd64.deb) ...
 Unpacking replacement libc6 ...
 Setting up libc6 (2.3.6-1) ...
 Current default timezone: 'UTC'.
-Local time is now:      Mon Feb 27 03:14:25 UTC 2006.
-Universal Time is now:  Mon Feb 27 03:14:25 UTC 2006.
+Local time is now:      Tue Feb 28 03:14:29 UTC 2006.
+Universal Time is now:  Tue Feb 28 03:14:29 UTC 2006.
 Run 'tzconfig' if you wish to change it.
 
 (Reading database ... 12538 files and directories currently installed.)
@@ -148,8 +148,6 @@ Preparing to replace libstdc++5 1:3.3.6-10 (using .../libstdc++5_1%3a3.3.6-12_am
 Unpacking replacement libstdc++5 ...
 Preparing to replace libstdc++5-3.3-dev 1:3.3.6-10 (using .../libstdc++5-3.3-dev_1%3a3.3.6-12_amd64.deb) ...
 Unpacking replacement libstdc++5-3.3-dev ...
-Preparing to replace libdb1-compat 2.1.3-8 (using .../libdb1-compat_2.1.3-9_amd64.deb) ...
-Unpacking replacement libdb1-compat ...
 Setting up libc6-dev (2.3.6-1) ...
 Setting up passwd (4.0.14-7) ...
 
@@ -176,8 +174,7 @@ Setting up cpp-3.3 (3.3.6-12) ...
 Setting up gcc-3.3 (3.3.6-12) ...
 Setting up libstdc++5 (3.3.6-12) ...
 
-Setting up libdb1-compat (2.1.3-9) ...
-
+Setting up debconf-i18n (1.4.71) ...
 Setting up klogd (1.4.1-17.1) ...
 Installing new version of config file /etc/init.d/klogd ...
 Stopping kernel log daemon: klogd.
@@ -185,8 +182,6 @@ Stopping kernel log daemon: klogd.
 Setting up sysklogd (1.4.1-17.1) ...
 
 Setting up g++-3.3 (3.3.6-12) ...
-Setting up debconf-i18n (1.4.71) ...
-Setting up libstdc++5-3.3-dev (3.3.6-12) ...
 Setting up debconf (1.4.71) ...
 
 Setting up adduser (3.84) ...
@@ -210,6 +205,7 @@ Installing new version of config file /etc/init.d/exim4 ...
 Setting up exim4-daemon-light (4.60-4) ...
 
 Setting up exim4 (4.60-4) ...
+Setting up libstdc++5-3.3-dev (3.3.6-12) ...
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
@@ -223,9 +219,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//19438/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//20560/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.HFjvsP/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.D8mHHK/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//19438 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//20560 and its subdirectories
