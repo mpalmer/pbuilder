@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AdxvNb/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//12344/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//17433/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -18,9 +18,9 @@ Get:3 http://ftp.jp.debian.org experimental Release [4245B]
 Ign http://ftp.jp.debian.org experimental Release
 Get:4 http://ftp.jp.debian.org sid Release [5902B]
 Ign http://ftp.jp.debian.org sid Release
-Get:5 http://ftp.jp.debian.org experimental/main Packages [134kB]
+Get:5 http://ftp.jp.debian.org experimental/main Packages [136kB]
 Hit http://ftp.jp.debian.org sid/main Packages
-Fetched 145kB in 0s (238kB/s)
+Fetched 147kB in 0s (282kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -38,36 +38,46 @@ The following packages have been kept back:
 The following packages will be upgraded:
   aptitude console-data diff gettext-base libgcc1 libstdc++6 whiptail
 7 upgraded, 2 newly installed, 1 to remove and 2 not upgraded.
-Need to get 0B/4863kB of archives.
-After unpacking 1503kB of additional disk space will be used.
+Need to get 4864kB of archives.
+After unpacking 1606kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   whiptail libnewt0.52 diff gcc-4.1-base libgcc1 libstdc++6 aptitude
   gettext-base console-data
-(Reading database ... 12565 files and directories currently installed.)
+Get:1 http://ftp.jp.debian.org experimental/main whiptail 0.52.2-1 [34.3kB]
+Get:2 http://ftp.jp.debian.org experimental/main libnewt0.52 0.52.2-1 [63.4kB]
+Get:3 http://ftp.jp.debian.org experimental/main diff 2.8.7-0.2 [246kB]
+Get:4 http://ftp.jp.debian.org experimental/main gcc-4.1-base 4.1.0-0 [185kB]
+Get:5 http://ftp.jp.debian.org experimental/main libgcc1 1:4.1.0-0 [24.6kB]
+Get:6 http://ftp.jp.debian.org experimental/main libstdc++6 4.1.0-0 [293kB]
+Get:7 http://ftp.jp.debian.org experimental/main aptitude 0.4.1-1experimental1 [2616kB]
+Get:8 http://ftp.jp.debian.org experimental/main gettext-base 0.14.5-2.csharp.1 [103kB]
+Get:9 http://ftp.jp.debian.org experimental/main console-data 20051214 [1298kB]
+Fetched 4864kB in 2s (2297kB/s)
+(Reading database ... 12583 files and directories currently installed.)
 Preparing to replace whiptail 0.51.6-31 (using .../whiptail_0.52.2-1_amd64.deb) ...
 Unpacking replacement whiptail ...
-(Reading database ... 12564 files and directories currently installed.)
+(Reading database ... 12582 files and directories currently installed.)
 Removing libnewt0.51 ...
 Selecting previously deselected package libnewt0.52.
-(Reading database ... 12503 files and directories currently installed.)
+(Reading database ... 12521 files and directories currently installed.)
 Unpacking libnewt0.52 (from .../libnewt0.52_0.52.2-1_amd64.deb) ...
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
 Selecting previously deselected package gcc-4.1-base.
-(Reading database ... 12571 files and directories currently installed.)
-Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1-0exp9_amd64.deb) ...
-Preparing to replace libgcc1 1:4.0.2-9 (using .../libgcc1_1%3a4.1-0exp9_amd64.deb) ...
+(Reading database ... 12589 files and directories currently installed.)
+Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1.0-0_amd64.deb) ...
+Preparing to replace libgcc1 1:4.0.2-10 (using .../libgcc1_1%3a4.1.0-0_amd64.deb) ...
 Unpacking replacement libgcc1 ...
-Setting up gcc-4.1-base (4.1-0exp9) ...
-Setting up libgcc1 (4.1-0exp9) ...
+Setting up gcc-4.1-base (4.1.0-0) ...
+Setting up libgcc1 (4.1.0-0) ...
 
-(Reading database ... 12575 files and directories currently installed.)
-Preparing to replace libstdc++6 4.0.2-9 (using .../libstdc++6_4.1-0exp9_amd64.deb) ...
+(Reading database ... 12595 files and directories currently installed.)
+Preparing to replace libstdc++6 4.0.2-10 (using .../libstdc++6_4.1.0-0_amd64.deb) ...
 Unpacking replacement libstdc++6 ...
-Setting up libstdc++6 (4.1-0exp9) ...
+Setting up libstdc++6 (4.1.0-0) ...
 
-(Reading database ... 12575 files and directories currently installed.)
+(Reading database ... 12595 files and directories currently installed.)
 Preparing to replace aptitude 0.4.1-1 (using .../aptitude_0.4.1-1experimental1_amd64.deb) ...
 Unpacking replacement aptitude ...
 Preparing to replace gettext-base 0.14.5-2 (using .../gettext-base_0.14.5-2.csharp.1_amd64.deb) ...
@@ -100,14 +110,17 @@ The following packages will be REMOVED:
 The following packages will be upgraded:
   apt apt-utils
 2 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
-Need to get 0B/1535kB of archives.
+Need to get 1535kB of archives.
 After unpacking 9683kB disk space will be freed.
 WARNING: The following packages cannot be authenticated!
   apt-utils apt
-(Reading database ... 12546 files and directories currently installed.)
+Get:1 http://ftp.jp.debian.org experimental/main apt-utils 0.6.43.3exp1 [196kB]
+Get:2 http://ftp.jp.debian.org experimental/main apt 0.6.43.3exp1 [1339kB]
+Fetched 1535kB in 0s (2315kB/s)
+(Reading database ... 12566 files and directories currently installed.)
 Removing tasksel ...
 Removing aptitude ...
-(Reading database ... 12343 files and directories currently installed.)
+(Reading database ... 12363 files and directories currently installed.)
 Preparing to replace apt-utils 0.6.43.3 (using .../apt-utils_0.6.43.3exp1_amd64.deb) ...
 Unpacking replacement apt-utils ...
 Preparing to replace apt 0.6.43.3 (using .../apt_0.6.43.3exp1_amd64.deb) ...
@@ -117,15 +130,26 @@ Setting up apt (0.6.43.3exp1) ...
 Setting up apt-utils (0.6.43.3exp1) ...
 
 Copying back the cached apt archive contents
+ -> new cache content whiptail_0.52.2-1_amd64.deb added
+ -> new cache content libnewt0.52_0.52.2-1_amd64.deb added
+ -> new cache content diff_2.8.7-0.2_amd64.deb added
+ -> new cache content gcc-4.1-base_4.1.0-0_amd64.deb added
+ -> new cache content libgcc1_1%3a4.1.0-0_amd64.deb added
+ -> new cache content libstdc++6_4.1.0-0_amd64.deb added
+ -> new cache content aptitude_0.4.1-1experimental1_amd64.deb added
+ -> new cache content gettext-base_0.14.5-2.csharp.1_amd64.deb added
+ -> new cache content console-data_20051214_all.deb added
+ -> new cache content apt-utils_0.6.43.3exp1_amd64.deb added
+ -> new cache content apt_0.6.43.3exp1_amd64.deb added
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//12344/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//17433/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AdxvNb/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//12344 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//17433 and its subdirectories

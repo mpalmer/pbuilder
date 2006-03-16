@@ -2,14 +2,14 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Sat Mar  4 12:13:52 JST 2006
-pbuilder-time-stamp: 1141442032
+Current time: Thu Mar 16 12:07:08 JST 2006
+pbuilder-time-stamp: 1142478428
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AdxvNb/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AdxvNb/dir1/14017/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir1/23927/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
@@ -34,8 +34,19 @@ The following NEW packages will be installed:
   debconf-utils debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/2623kB of archives.
+Need to get 2623kB of archives.
 After unpacking 8978kB of additional disk space will be used.
+Get:1 http://ftp.jp.debian.org sarge/main libmagic1 4.12-1 [234kB]
+Get:2 http://ftp.jp.debian.org sarge/main file 4.12-1 [29.2kB]
+Get:3 http://ftp.jp.debian.org sarge/main debconf-utils 1.4.30.13 [33.0kB]
+Get:4 http://ftp.jp.debian.org sarge/main html2text 1.3.2a-2 [92.8kB]
+Get:5 http://ftp.jp.debian.org sarge/main gettext 0.14.4-2 [1747kB]
+Get:6 http://ftp.jp.debian.org sarge/main intltool-debian 0.30+20040213 [23.5kB]
+Get:7 http://ftp.jp.debian.org sarge/main po-debconf 0.8.23 [78.0kB]
+Get:8 http://ftp.jp.debian.org sarge/main debhelper 4.2.32 [362kB]
+Get:9 http://ftp.jp.debian.org sarge/main libdshconfig1 0.20.11-1 [10.9kB]
+Get:10 http://ftp.jp.debian.org sarge/main libdshconfig1-dev 0.20.11-1 [12.6kB]
+Fetched 2623kB in 1s (1799kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 10950 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.12-1_amd64.deb) ...
@@ -78,20 +89,33 @@ Building Dependency Tree...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/78.0kB of archives.
+Need to get 78.0kB of archives.
 After unpacking 299kB of additional disk space will be used.
+Get:1 http://ftp.jp.debian.org sarge/main fakeroot 1.2.10 [78.0kB]
+Fetched 78.0kB in 0s (566kB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 11492 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.2.10_amd64.deb) ...
 Setting up fakeroot (1.2.10) ...
 
 Copying back the cached apt archive contents
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AdxvNb/dir1/14017/etc/passwd
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AdxvNb/dir1/14017/etc/group
+ -> new cache content libmagic1_4.12-1_amd64.deb added
+ -> new cache content file_4.12-1_amd64.deb added
+ -> new cache content debconf-utils_1.4.30.13_all.deb added
+ -> new cache content html2text_1.3.2a-2_amd64.deb added
+ -> new cache content gettext_0.14.4-2_amd64.deb added
+ -> new cache content intltool-debian_0.30+20040213_all.deb added
+ -> new cache content po-debconf_0.8.23_all.deb added
+ -> new cache content debhelper_4.2.32_all.deb added
+ -> new cache content libdshconfig1_0.20.11-1_amd64.deb added
+ -> new cache content libdshconfig1-dev_0.20.11-1_amd64.deb added
+ -> new cache content fakeroot_1.2.10_amd64.deb added
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir1/23927/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir1/23927/etc/group
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AdxvNb/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AdxvNb/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AdxvNb/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 su: Authentication service cannot retrieve authentication info.
 (Ignored)
@@ -395,8 +419,8 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -405,11 +429,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-1: 1
 2: 2
+1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Mar  4 03:15:02 UTC 2006
+Thu Mar 16 03:07:47 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -479,14 +503,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Mar  4 03:15:07 UTC 2006
+Thu Mar 16 03:07:52 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
+a: a
+dsh: Process terminated (before write).
 b: b
 c: c
-dsh: Process terminated (before write).
-a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -592,7 +616,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Sat Mar  4 12:15:09 JST 2006
-pbuilder-time-stamp: 1141442109
+Current time: Thu Mar 16 12:07:54 JST 2006
+pbuilder-time-stamp: 1142478474
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AdxvNb/dir1/14017 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir1/23927 and its subdirectories
