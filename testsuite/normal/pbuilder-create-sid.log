@@ -561,17 +561,17 @@ umount: /dev/shm: not mounted
 umount: proc: not mounted
 umount: proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//21357/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//6199/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//21357/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//6199/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Hit http://ftp.jp.debian.org sid Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Fetched 189B in 0s (2516B/s)
+Fetched 189B in 0s (1481B/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
@@ -596,39 +596,29 @@ The following NEW packages will be installed:
   libc6-dev libdb4.4 libstdc++6-4.0-dev linux-kernel-headers make patch perl
   perl-modules
 0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
-Need to get 21.0MB of archives.
-After unpacking 83.4MB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org sid/main binutils 2.16.1cvs20060117-1 [2602kB]
-Get:2 http://ftp.jp.debian.org sid/main cpp-4.0 4.0.2-10 [2262kB]
-Get:3 http://ftp.jp.debian.org sid/main cpp 4:4.0.2-2 [30.8kB]
-Get:4 http://ftp.jp.debian.org sid/main perl-modules 5.8.8-2 [2319kB]
-Get:5 http://ftp.jp.debian.org sid/main libdb4.4 4.4.20-3 [478kB]
-Get:6 http://ftp.jp.debian.org sid/main perl 5.8.8-2 [4254kB]
-Get:7 http://ftp.jp.debian.org sid/main patch 2.5.9-4 [98.7kB]
-Get:8 http://ftp.jp.debian.org sid/main make 3.80+3.81.rc1-1 [541kB]
-Get:9 http://ftp.jp.debian.org sid/main dpkg-dev 1.13.16 [92.3kB]
-Get:10 http://ftp.jp.debian.org sid/main gcc-4.0 4.0.2-10 [526kB]
-Get:11 http://ftp.jp.debian.org sid/main gcc 4:4.0.2-2 [5044B]
-Get:12 http://ftp.jp.debian.org sid/main linux-kernel-headers 2.6.13+0rc3-2 [1643kB]
-Get:13 http://ftp.jp.debian.org sid/main libc6-dev 2.3.6-3 [2117kB]
-Get:14 http://ftp.jp.debian.org sid/main libstdc++6-4.0-dev 4.0.2-10 [1481kB]
-Get:15 http://ftp.jp.debian.org sid/main g++-4.0 4.0.2-10 [2584kB]
-Get:16 http://ftp.jp.debian.org sid/main g++ 4:4.0.2-2 [1392B]
-Get:17 http://ftp.jp.debian.org sid/main build-essential 11.2 [6758B]
-Fetched 21.0MB in 8s (2418kB/s)
+Need to get 15.1MB/21.1MB of archives.
+After unpacking 83.2MB of additional disk space will be used.
+Get:1 http://ftp.jp.debian.org sid/main cpp-4.0 4.0.3-1 [2260kB]
+Get:2 http://ftp.jp.debian.org sid/main perl-modules 5.8.8-3 [2319kB]
+Get:3 http://ftp.jp.debian.org sid/main perl 5.8.8-3 [4254kB]
+Get:4 http://ftp.jp.debian.org sid/main gcc-4.0 4.0.3-1 [530kB]
+Get:5 http://ftp.jp.debian.org sid/main linux-kernel-headers 2.6.13+0rc3-2.1 [1686kB]
+Get:6 http://ftp.jp.debian.org sid/main libstdc++6-4.0-dev 4.0.3-1 [1486kB]
+Get:7 http://ftp.jp.debian.org sid/main g++-4.0 4.0.3-1 [2585kB]
+Fetched 15.1MB in 10s (1472kB/s)
 Selecting previously deselected package binutils.
-(Reading database ... 6873 files and directories currently installed.)
+(Reading database ... 6878 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20060117-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
-Unpacking cpp-4.0 (from .../cpp-4.0_4.0.2-10_amd64.deb) ...
+Unpacking cpp-4.0 (from .../cpp-4.0_4.0.3-1_amd64.deb) ...
 Selecting previously deselected package cpp.
 Unpacking cpp (from .../cpp_4%3a4.0.2-2_amd64.deb) ...
 Selecting previously deselected package perl-modules.
-Unpacking perl-modules (from .../perl-modules_5.8.8-2_all.deb) ...
+Unpacking perl-modules (from .../perl-modules_5.8.8-3_all.deb) ...
 Selecting previously deselected package libdb4.4.
 Unpacking libdb4.4 (from .../libdb4.4_4.4.20-3_amd64.deb) ...
 Selecting previously deselected package perl.
-Unpacking perl (from .../perl_5.8.8-2_amd64.deb) ...
+Unpacking perl (from .../perl_5.8.8-3_amd64.deb) ...
 Selecting previously deselected package patch.
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
 Selecting previously deselected package make.
@@ -636,190 +626,81 @@ Unpacking make (from .../make_3.80+3.81.rc1-1_amd64.deb) ...
 Selecting previously deselected package dpkg-dev.
 Unpacking dpkg-dev (from .../dpkg-dev_1.13.16_all.deb) ...
 Selecting previously deselected package gcc-4.0.
-Unpacking gcc-4.0 (from .../gcc-4.0_4.0.2-10_amd64.deb) ...
+Unpacking gcc-4.0 (from .../gcc-4.0_4.0.3-1_amd64.deb) ...
 Selecting previously deselected package gcc.
 Unpacking gcc (from .../gcc_4%3a4.0.2-2_amd64.deb) ...
 Selecting previously deselected package linux-kernel-headers.
-Unpacking linux-kernel-headers (from .../linux-kernel-headers_2.6.13+0rc3-2_amd64.deb) ...
+Unpacking linux-kernel-headers (from .../linux-kernel-headers_2.6.13+0rc3-2.1_amd64.deb) ...
 Selecting previously deselected package libc6-dev.
 Unpacking libc6-dev (from .../libc6-dev_2.3.6-3_amd64.deb) ...
 Selecting previously deselected package libstdc++6-4.0-dev.
-Unpacking libstdc++6-4.0-dev (from .../libstdc++6-4.0-dev_4.0.2-10_amd64.deb) ...
+Unpacking libstdc++6-4.0-dev (from .../libstdc++6-4.0-dev_4.0.3-1_amd64.deb) ...
 Selecting previously deselected package g++-4.0.
-Unpacking g++-4.0 (from .../g++-4.0_4.0.2-10_amd64.deb) ...
+Unpacking g++-4.0 (from .../g++-4.0_4.0.3-1_amd64.deb) ...
 Selecting previously deselected package g++.
 Unpacking g++ (from .../g++_4%3a4.0.2-2_amd64.deb) ...
 Selecting previously deselected package build-essential.
 Unpacking build-essential (from .../build-essential_11.2_amd64.deb) ...
 Setting up binutils (2.16.1cvs20060117-1) ...
 
-Setting up cpp-4.0 (4.0.2-10) ...
+Setting up cpp-4.0 (4.0.3-1) ...
 Setting up cpp (4.0.2-2) ...
 
 Setting up libdb4.4 (4.4.20-3) ...
 Setting up patch (2.5.9-4) ...
 Setting up make (3.80+3.81.rc1-1) ...
 
-Setting up gcc-4.0 (4.0.2-10) ...
+Setting up gcc-4.0 (4.0.3-1) ...
 Setting up gcc (4.0.2-2) ...
 
-Setting up linux-kernel-headers (2.6.13+0rc3-2) ...
+Setting up linux-kernel-headers (2.6.13+0rc3-2.1) ...
 Setting up libc6-dev (2.3.6-3) ...
-Setting up perl-modules (5.8.8-2) ...
-Setting up libstdc++6-4.0-dev (4.0.2-10) ...
-Setting up perl (5.8.8-2) ...
+Setting up perl-modules (5.8.8-3) ...
+Setting up g++-4.0 (4.0.3-1) ...
+Setting up libstdc++6-4.0-dev (4.0.3-1) ...
 
-Setting up dpkg-dev (1.13.16) ...
-Setting up g++-4.0 (4.0.2-10) ...
 Setting up g++ (4.0.2-2) ...
 
+Setting up perl (5.8.8-3) ...
+
+Setting up dpkg-dev (1.13.16) ...
 Setting up build-essential (11.2) ...
 Copying back the cached apt archive contents
- -> new cache content adduser_3.85_all.deb added
- -> new cache content apt_0.6.43.3_amd64.deb added
- -> new cache content apt-utils_0.6.43.3_amd64.deb added
- -> new cache content aptitude_0.4.1-1_amd64.deb added
- -> new cache content base-config_2.76_all.deb added
- -> new cache content base-files_3.1.11_amd64.deb added
- -> new cache content base-passwd_3.5.11_amd64.deb added
- -> new cache content bash_3.1-3_amd64.deb added
- -> new cache content bsdmainutils_6.1.3_amd64.deb added
- -> new cache content bsdutils_1%3a2.12r-8_amd64.deb added
- -> new cache content coreutils_5.94-1_amd64.deb added
- -> new cache content cpio_2.6-10_amd64.deb added
- -> new cache content cron_3.0pl1-93_amd64.deb added
- -> new cache content debconf_1.4.71_all.deb added
- -> new cache content debconf-i18n_1.4.71_all.deb added
- -> new cache content debianutils_2.15.3_amd64.deb added
- -> new cache content dhcp-client_2.0pl5-19.4_amd64.deb added
- -> new cache content diff_2.8.1-11_amd64.deb added
- -> new cache content dmidecode_2.8-1_amd64.deb added
- -> new cache content dpkg_1.13.16_amd64.deb added
- -> new cache content dselect_1.13.16_amd64.deb added
- -> new cache content e2fslibs_1.38+1.39-WIP-2005.12.31-1_amd64.deb added
- -> new cache content e2fsprogs_1.38+1.39-WIP-2005.12.31-1_amd64.deb added
- -> new cache content ed_0.2-20_amd64.deb added
- -> new cache content findutils_4.2.27-1_amd64.deb added
- -> new cache content gcc-4.0-base_4.0.2-10_amd64.deb added
- -> new cache content gettext-base_0.14.5-2_amd64.deb added
- -> new cache content gnupg_1.4.2-2_amd64.deb added
- -> new cache content grep_2.5.1.ds2-4_amd64.deb added
- -> new cache content groff-base_1.18.1.1-11_amd64.deb added
- -> new cache content gzip_1.3.5-12_amd64.deb added
- -> new cache content hostname_2.92_amd64.deb added
- -> new cache content ifupdown_0.6.7_amd64.deb added
- -> new cache content info_4.8-6_amd64.deb added
- -> new cache content initscripts_2.86.ds1-12_amd64.deb added
- -> new cache content iptables_1.3.3-2_amd64.deb added
- -> new cache content iputils-ping_3%3a20020927-3_amd64.deb added
- -> new cache content klogd_1.4.1-17.1_amd64.deb added
- -> new cache content laptop-detect_0.12.1_amd64.deb added
- -> new cache content libacl1_2.2.35-1_amd64.deb added
- -> new cache content libattr1_2.4.31-1_amd64.deb added
- -> new cache content libblkid1_1.38+1.39-WIP-2005.12.31-1_amd64.deb added
- -> new cache content libbz2-1.0_1.0.3-2_amd64.deb added
- -> new cache content libc6_2.3.6-3_amd64.deb added
- -> new cache content libcap1_1%3a1.10-14_amd64.deb added
- -> new cache content libcomerr2_1.38+1.39-WIP-2005.12.31-1_amd64.deb added
- -> new cache content libconsole_1%3a0.2.3dbs-60_amd64.deb added
- -> new cache content libdb4.2_4.2.52-23.1_amd64.deb added
- -> new cache content libdb4.3_4.3.29-4.1_amd64.deb added
- -> new cache content libgcc1_1%3a4.0.2-10_amd64.deb added
- -> new cache content libgcrypt11_1.2.2-1_amd64.deb added
- -> new cache content libgdbm3_1.8.3-2_amd64.deb added
- -> new cache content libgnutls11_1.0.16-14_amd64.deb added
- -> new cache content libgnutls12_1.2.9-2_amd64.deb added
- -> new cache content libgpg-error0_1.2-1_amd64.deb added
- -> new cache content libldap2_2.1.30-13_amd64.deb added
- -> new cache content liblocale-gettext-perl_1.05-1_amd64.deb added
- -> new cache content liblzo1_1.08-3_amd64.deb added
- -> new cache content liblzo2-2_2.02-2_amd64.deb added
- -> new cache content libncurses5_5.5-1_amd64.deb added
- -> new cache content libncursesw5_5.5-1_amd64.deb added
- -> new cache content libnewt0.51_0.51.6-31_amd64.deb added
- -> new cache content libopencdk8_0.5.7-2_amd64.deb added
- -> new cache content libpam-modules_0.79-3.1_amd64.deb added
- -> new cache content libpam-runtime_0.79-3.1_all.deb added
- -> new cache content libpam0g_0.79-3.1_amd64.deb added
- -> new cache content libpopt0_1.7-5_amd64.deb added
- -> new cache content libreadline5_5.1-6_amd64.deb added
- -> new cache content libsasl2_2.1.19-1.9_amd64.deb added
- -> new cache content libselinux1_1.28-4_amd64.deb added
- -> new cache content libsepol1_1.10-2_amd64.deb added
- -> new cache content libsigc++-1.2-5c2_1.2.7-2_amd64.deb added
- -> new cache content libsigc++-2.0-0c2a_2.0.16-3_amd64.deb added
- -> new cache content libslang2_2.0.5-3_amd64.deb added
- -> new cache content libss2_1.38+1.39-WIP-2005.12.31-1_amd64.deb added
- -> new cache content libssl0.9.8_0.9.8a-7_amd64.deb added
- -> new cache content libstdc++6_4.0.2-10_amd64.deb added
- -> new cache content libtasn1-2_0.2.17-1_amd64.deb added
- -> new cache content libtasn1-2-bin_0.2.17-1_amd64.deb added
- -> new cache content libtext-charwidth-perl_0.04-3_amd64.deb added
- -> new cache content libtext-iconv-perl_1.4-2_amd64.deb added
- -> new cache content libtext-wrapi18n-perl_0.06-4_all.deb added
- -> new cache content libusb-0.1-4_2%3a0.1.11-5_amd64.deb added
- -> new cache content libuuid1_1.38+1.39-WIP-2005.12.31-1_amd64.deb added
- -> new cache content libwrap0_7.6.dbs-9_amd64.deb added
- -> new cache content login_1%3a4.0.14-7_amd64.deb added
- -> new cache content logrotate_3.7.1-2_amd64.deb added
- -> new cache content lsb-base_3.0-15_all.deb added
- -> new cache content makedev_2.3.1-80_all.deb added
- -> new cache content man-db_2.4.3-3_amd64.deb added
- -> new cache content manpages_2.17-1_all.deb added
- -> new cache content mawk_1.3.3-11_amd64.deb added
- -> new cache content module-init-tools_3.2.2-2_amd64.deb added
- -> new cache content modutils_2.4.27.0-4_amd64.deb added
- -> new cache content mount_2.12r-8_amd64.deb added
- -> new cache content nano_1.3.10-2_amd64.deb added
- -> new cache content ncurses-base_5.5-1_all.deb added
- -> new cache content ncurses-bin_5.5-1_amd64.deb added
- -> new cache content net-tools_1.60-17_amd64.deb added
- -> new cache content netbase_4.24_all.deb added
- -> new cache content netcat_1.10-30_amd64.deb added
- -> new cache content netkit-inetd_0.10-10.3_amd64.deb added
- -> new cache content nvi_1.79-22_amd64.deb added
- -> new cache content passwd_1%3a4.0.14-7_amd64.deb added
- -> new cache content perl-base_5.8.8-2_amd64.deb added
- -> new cache content procps_1%3a3.2.6-2.1_amd64.deb added
- -> new cache content sed_4.1.4-5_amd64.deb added
- -> new cache content readline-common_5.1-6_all.deb added
- -> new cache content sysklogd_1.4.1-17.1_amd64.deb added
- -> new cache content sysv-rc_2.86.ds1-12_all.deb added
- -> new cache content sysvinit_2.86.ds1-12_amd64.deb added
- -> new cache content tar_1.15.1-4_amd64.deb added
- -> new cache content tasksel_2.41_all.deb added
- -> new cache content tcpd_7.6.dbs-9_amd64.deb added
- -> new cache content traceroute_1.4a12-20_amd64.deb added
- -> new cache content util-linux_2.12r-8_amd64.deb added
- -> new cache content wget_1.10.2-1_amd64.deb added
- -> new cache content whiptail_0.51.6-31_amd64.deb added
- -> new cache content zlib1g_1%3a1.2.3-10_amd64.deb added
- -> new cache content binutils_2.16.1cvs20060117-1_amd64.deb added
- -> new cache content cpp-4.0_4.0.2-10_amd64.deb added
- -> new cache content cpp_4%3a4.0.2-2_amd64.deb added
- -> new cache content perl-modules_5.8.8-2_all.deb added
- -> new cache content libdb4.4_4.4.20-3_amd64.deb added
- -> new cache content perl_5.8.8-2_amd64.deb added
- -> new cache content patch_2.5.9-4_amd64.deb added
- -> new cache content make_3.80+3.81.rc1-1_amd64.deb added
- -> new cache content dpkg-dev_1.13.16_all.deb added
- -> new cache content gcc-4.0_4.0.2-10_amd64.deb added
- -> new cache content gcc_4%3a4.0.2-2_amd64.deb added
- -> new cache content linux-kernel-headers_2.6.13+0rc3-2_amd64.deb added
- -> new cache content libc6-dev_2.3.6-3_amd64.deb added
- -> new cache content libstdc++6-4.0-dev_4.0.2-10_amd64.deb added
- -> new cache content g++-4.0_4.0.2-10_amd64.deb added
- -> new cache content g++_4%3a4.0.2-2_amd64.deb added
- -> new cache content build-essential_11.2_amd64.deb added
+ -> new cache content cpio_2.6-11_amd64.deb added
+ -> new cache content debconf_1.4.72_all.deb added
+ -> new cache content debconf-i18n_1.4.72_all.deb added
+ -> new cache content gcc-4.0-base_4.0.3-1_amd64.deb added
+ -> new cache content gnupg_1.4.2.2-1_amd64.deb added
+ -> new cache content info_4.8-7_amd64.deb added
+ -> new cache content libgcc1_1%3a4.0.3-1_amd64.deb added
+ -> new cache content libslang2_2.0.6-2_amd64.deb added
+ -> new cache content libssl0.9.8_0.9.8a-8_amd64.deb added
+ -> new cache content libstdc++6_4.0.3-1_amd64.deb added
+ -> new cache content libusb-0.1-4_2%3a0.1.11-6_amd64.deb added
+ -> new cache content login_1%3a4.0.14-9_amd64.deb added
+ -> new cache content lsb-base_3.0-16_all.deb added
+ -> new cache content manpages_2.22-1_all.deb added
+ -> new cache content modutils_2.4.27.0-5_amd64.deb added
+ -> new cache content netcat_1.10-31_amd64.deb added
+ -> new cache content passwd_1%3a4.0.14-9_amd64.deb added
+ -> new cache content perl-base_5.8.8-3_amd64.deb added
+ -> new cache content zlib1g_1%3a1.2.3-11_amd64.deb added
+ -> new cache content cpp-4.0_4.0.3-1_amd64.deb added
+ -> new cache content perl-modules_5.8.8-3_all.deb added
+ -> new cache content perl_5.8.8-3_amd64.deb added
+ -> new cache content gcc-4.0_4.0.3-1_amd64.deb added
+ -> new cache content linux-kernel-headers_2.6.13+0rc3-2.1_amd64.deb added
+ -> new cache content libstdc++6-4.0-dev_4.0.3-1_amd64.deb added
+ -> new cache content g++-4.0_4.0.3-1_amd64.deb added
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//21357/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//6199/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.f8PsuK/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//21357 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//6199 and its subdirectories

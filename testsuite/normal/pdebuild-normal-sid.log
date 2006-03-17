@@ -6,14 +6,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.f8PsuK/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.f8PsuK/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.f8PsuK/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.f8PsuK/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
 dh_clean: Compatibility levels before 4 are deprecated.
@@ -31,14 +31,14 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Thu Mar 16 12:03:23 JST 2006
-pbuilder-time-stamp: 1142478203
+Current time: Fri Mar 17 12:03:51 JST 2006
+pbuilder-time-stamp: 1142564631
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.f8PsuK/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir3/2856/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.f8PsuK/dir3/21380/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result
@@ -62,13 +62,13 @@ The following NEW packages will be installed:
   debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 9 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/2901kB of archives.
-After unpacking 9617kB of additional disk space will be used.
+Need to get 0B/2917kB of archives.
+After unpacking 9708kB of additional disk space will be used.
 Selecting previously deselected package libmagic1.
-(Reading database ... 11259 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.15-2_amd64.deb) ...
+(Reading database ... 11244 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.17-1_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.15-2_amd64.deb) ...
+Unpacking file (from .../archives/file_4.17-1_amd64.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
 Selecting previously deselected package gettext.
@@ -83,9 +83,9 @@ Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.12-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
 Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.12-1_amd64.deb) ...
-Setting up libmagic1 (4.15-2) ...
+Setting up libmagic1 (4.17-1) ...
 
-Setting up file (4.15-2) ...
+Setting up file (4.17-1) ...
 Setting up html2text (1.3.2a-3) ...
 
 Setting up gettext (0.14.5-2) ...
@@ -105,13 +105,13 @@ The following NEW packages will be installed:
 Need to get 0B/97.9kB of archives.
 After unpacking 406kB of additional disk space will be used.
 Selecting previously deselected package fakeroot.
-(Reading database ... 11857 files and directories currently installed.)
+(Reading database ... 11842 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.5.7_amd64.deb) ...
 Setting up fakeroot (1.5.7) ...
 
 Copying back the cached apt archive contents
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir3/2856/etc/passwd
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir3/2856/etc/group
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.f8PsuK/dir3/21380/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.f8PsuK/dir3/21380/etc/group
 Copying source file
     -> copying [../dsh_0.25.6-1.dsc]
     -> copying [../dsh_0.25.6.orig.tar.gz]
@@ -402,7 +402,6 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
-dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -441,7 +440,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Thu Mar 16 03:04:04 UTC 2006
+Fri Mar 17 03:04:42 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -511,13 +510,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Thu Mar 16 03:04:09 UTC 2006
+Fri Mar 17 03:04:47 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-b: b
 dsh: Process terminated (before write).
+b: b
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -641,7 +640,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Thu Mar 16 12:04:10 JST 2006
-pbuilder-time-stamp: 1142478250
+Current time: Fri Mar 17 12:04:49 JST 2006
+pbuilder-time-stamp: 1142564689
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.V1FjSW/dir3/2856 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.f8PsuK/dir3/21380 and its subdirectories
