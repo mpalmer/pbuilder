@@ -24,7 +24,6 @@ set -e
 . /usr/lib/pbuilder/pbuilder-runhooks
 . /usr/lib/pbuilder/pbuilder-buildpackage-funcs
 
-
 PACKAGENAME="$1"
 if [ ! -f "$PACKAGENAME" ]; then
     echo "Command line parameter [$PACKAGENAME] is not a valid .dsc file name" >&2
@@ -43,6 +42,11 @@ else
     BUILDUSERNAME=root
 fi
 
+
+# created files should have these UID/GIDs outside of chroot.
+BUILDRESULTUID="${BUILDRESULTUID:-${SUDO_UID:-0}}"
+BUILDRESULTGID="${BUILDRESULTGID:-${SUDO_GID:-0}}"
+
 export HOME="/tmp/buildd"
 
 showbuildbanner '$Id$'
@@ -58,7 +62,7 @@ fi
 
 if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
     if [ "${USE_PKGNAME_LOGFILE}" = "yes" ]; then
-	PBUILDER_BUILD_LOGFILE="${BUILDRESULT}/"$(basename "${PACKAGENAME}" .dsc)
+	PBUILDER_BUILD_LOGFILE="${BUILDRESULT}/"$(basename "${PACKAGENAME}" .dsc)"${PKGNAME_LOGFILE_EXTENTION}"
 	exec > "${PBUILDER_BUILD_LOGFILE}"
 	exec 2>&1
 	PBUILDER_BUILD_LOGFILE=$(readlink -f "${PBUILDER_BUILD_LOGFILE}")
@@ -67,6 +71,13 @@ if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
 	echobacktime
     fi
 fi
+
+# make logfile have the permissions, logfiles should already be created in all cases
+if [ -f "${PBUILDER_BUILD_LOGFILE}" ]; then
+    chown "${BUILDRESULTUID}:${BUILDRESULTGID}" "${PBUILDER_BUILD_LOGFILE}"
+    chgrp "${BUILDRESULTGID}" "${PBUILDER_BUILD_LOGFILE}"
+fi
+
 
 recover_aptcache
 echo "Installing the build-deps"
@@ -138,9 +149,6 @@ save_aptcache
 trap cleanbuildplace exit
 umountproc
 
-# FIXME: this should be included in pbuilder-checkparams, really.
-BUILDRESULTUID="${BUILDRESULTUID:-${SUDO_UID:-0}}"
-BUILDRESULTGID="${BUILDRESULTGID:-${SUDO_GID:-0}}"
 
 if [ -d "${BUILDRESULT}" ]; then
     chown "${BUILDRESULTUID}:${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
@@ -148,12 +156,6 @@ if [ -d "${BUILDRESULT}" ]; then
     cp -p "${BUILDPLACE}"/tmp/buildd/* "${BUILDRESULT}" 2>/dev/null || true
 else
     echo "E: BUILDRESULT=[$BUILDRESULT] is not a directory." >&2
-fi
-
-# chown/chgrp -- FIXME: this should be higher up, doesn't chmod/chown on failure cases.
-if [ -f "${PBUILDER_BUILD_LOGFILE}" ]; then
-    chown "${BUILDRESULTUID}:${BUILDRESULTGID}" "${PBUILDER_BUILD_LOGFILE}"
-    chgrp "${BUILDRESULTGID}" "${PBUILDER_BUILD_LOGFILE}"
 fi
 
 echobacktime
