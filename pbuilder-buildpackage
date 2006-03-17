@@ -138,6 +138,7 @@ save_aptcache
 trap cleanbuildplace exit
 umountproc
 
+# FIXME: this should be included in pbuilder-checkparams, really.
 BUILDRESULTUID="${BUILDRESULTUID:-${SUDO_UID:-0}}"
 BUILDRESULTGID="${BUILDRESULTGID:-${SUDO_GID:-0}}"
 
@@ -149,5 +150,10 @@ else
     echo "E: BUILDRESULT=[$BUILDRESULT] is not a directory." >&2
 fi
 
-echobacktime
+# chown/chgrp -- FIXME: this should be higher up, doesn't chmod/chown on failure cases.
+if [ -f "${PBUILDER_BUILD_LOGFILE}" ]; then
+    chown "${BUILDRESULTUID}:${BUILDRESULTGID}" "${PBUILDER_BUILD_LOGFILE}"
+    chgrp "${BUILDRESULTGID}" "${PBUILDER_BUILD_LOGFILE}"
+fi
 
+echobacktime
