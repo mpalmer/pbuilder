@@ -1,13 +1,13 @@
-pbuilder (0.150) UNRELEASED; urgency=low
+pbuilder (0.150) unstable; urgency=low
 
-  * Bug fix: "pbuilder: Please add option to pdebuild to create .build
-    files automatically", thanks to Daniel Leidert (Closes: #341553).
+  * chown logfiles so that logfiles are not owned by root all the time 
+    (Closes: #341553).
   * Bug fix: "[changes default behavior] Fix logfile name to have .log
     appended if using --pkg-logfile", thanks to Christian Hammers
     (Closes: #287477).
     Note that the default is changed to '_{ARCH}.build' to match debuild.
 
- -- Junichi Uekawa <dancer@debian.org>  Sat, 18 Mar 2006 07:14:09 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Mon, 20 Mar 2006 23:31:26 +0900
 
 pbuilder (0.149) unstable; urgency=low
 
