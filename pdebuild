@@ -17,6 +17,9 @@
 #   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 set -e
 
+export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
+. /usr/lib/pbuilder/pdebuild-checkparams
+
 while ! test -d ./debian -o "$(pwd)" = "/" ; do
     cd ..;
 done
@@ -25,9 +28,6 @@ if test ! -d ./debian; then
     echo "Cannot find ./debian dir"
     exit 1
 fi;
-
-export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
-. /usr/lib/pbuilder/pdebuild-checkparams
 
 PKG_SOURCENAME=$(dpkg-parsechangelog|sed -n 's/^Source: //p')
 PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')
