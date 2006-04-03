@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.tQtcio/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.c0ynuA/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//11451/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//25918/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -18,9 +18,9 @@ Get:3 http://ftp.jp.debian.org experimental Release [4245B]
 Ign http://ftp.jp.debian.org experimental Release
 Get:4 http://ftp.jp.debian.org sid Release [5902B]
 Ign http://ftp.jp.debian.org sid Release
-Get:5 http://ftp.jp.debian.org experimental/main Packages [154kB]
+Get:5 http://ftp.jp.debian.org experimental/main Packages [158kB]
 Hit http://ftp.jp.debian.org sid/main Packages
-Fetched 164kB in 0s (674kB/s)
+Fetched 169kB in 0s (777kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
@@ -29,35 +29,24 @@ dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
-The following NEW packages will be installed:
-  gcc-4.1-base
 The following packages have been kept back:
   apt apt-utils
 The following packages will be upgraded:
-  aptitude diff libgcc1 libstdc++6
-4 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.
-Need to get 0B/3365kB of archives.
-After unpacking 565kB of additional disk space will be used.
+  aptitude diff lsb-base
+3 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
+Need to get 0B/2876kB of archives.
+After unpacking 303kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  diff gcc-4.1-base libgcc1 libstdc++6 aptitude
-(Reading database ... 11083 files and directories currently installed.)
+  diff lsb-base aptitude
+(Reading database ... 11090 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-Selecting previously deselected package gcc-4.1-base.
-(Reading database ... 11091 files and directories currently installed.)
-Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1.0-0_amd64.deb) ...
-Preparing to replace libgcc1 1:4.0.3-1 (using .../libgcc1_1%3a4.1.0-0_amd64.deb) ...
-Unpacking replacement libgcc1 ...
-Setting up gcc-4.1-base (4.1.0-0) ...
-Setting up libgcc1 (4.1.0-0) ...
-
-(Reading database ... 11097 files and directories currently installed.)
-Preparing to replace libstdc++6 4.0.3-1 (using .../libstdc++6_4.1.0-0_amd64.deb) ...
-Unpacking replacement libstdc++6 ...
-Setting up libstdc++6 (4.1.0-0) ...
-
-(Reading database ... 11097 files and directories currently installed.)
+(Reading database ... 11098 files and directories currently installed.)
+Preparing to replace lsb-base 3.0-16 (using .../lsb-base_3.1-1_all.deb) ...
+Unpacking replacement lsb-base ...
+Setting up lsb-base (3.1-1) ...
+(Reading database ... 11098 files and directories currently installed.)
 Preparing to replace aptitude 0.4.1-1 (using .../aptitude_0.4.1-1experimental1_amd64.deb) ...
 Unpacking replacement aptitude ...
 Setting up aptitude (0.4.1-1experimental1) ...
@@ -81,10 +70,10 @@ Need to get 0B/1535kB of archives.
 After unpacking 9683kB disk space will be freed.
 WARNING: The following packages cannot be authenticated!
   apt-utils apt
-(Reading database ... 11097 files and directories currently installed.)
+(Reading database ... 11098 files and directories currently installed.)
 Removing tasksel ...
 Removing aptitude ...
-(Reading database ... 10892 files and directories currently installed.)
+(Reading database ... 10893 files and directories currently installed.)
 Preparing to replace apt-utils 0.6.43.3 (using .../apt-utils_0.6.43.3exp1_amd64.deb) ...
 Unpacking replacement apt-utils ...
 Preparing to replace apt 0.6.43.3 (using .../apt_0.6.43.3exp1_amd64.deb) ...
@@ -100,9 +89,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//11451/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//25918/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.tQtcio/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.c0ynuA/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//11451 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//25918 and its subdirectories

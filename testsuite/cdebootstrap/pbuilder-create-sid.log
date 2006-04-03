@@ -10,8 +10,8 @@ P: Validating Packages
 P: Parsing Packages
 P: Retrieving libc6
 P: Validating libc6
-P: Retrieving gcc-4.0-base
-P: Validating gcc-4.0-base
+P: Retrieving gcc-4.1-base
+P: Validating gcc-4.1-base
 P: Retrieving libgcc1
 P: Validating libgcc1
 P: Retrieving libstdc++6
@@ -190,8 +190,12 @@ P: Retrieving base-files
 P: Validating base-files
 P: Retrieving bash
 P: Validating bash
+P: Retrieving gcc-4.0-base
+P: Validating gcc-4.0-base
 P: Retrieving grep
 P: Validating grep
+P: Retrieving libdevmapper1.02
+P: Validating libdevmapper1.02
 P: Retrieving procps
 P: Validating procps
 P: Retrieving libcomerr2
@@ -231,7 +235,7 @@ P: Validating findutils
 P: Retrieving util-linux
 P: Validating util-linux
 P: Extracting libc6
-P: Extracting gcc-4.0-base
+P: Extracting gcc-4.1-base
 P: Extracting libgcc1
 P: Extracting libstdc++6
 P: Extracting libdb4.3
@@ -268,7 +272,9 @@ P: Extracting hostname
 P: Extracting mawk
 P: Extracting base-files
 P: Extracting bash
+P: Extracting gcc-4.0-base
 P: Extracting grep
+P: Extracting libdevmapper1.02
 P: Extracting procps
 P: Extracting libcomerr2
 P: Extracting dselect
@@ -335,14 +341,14 @@ O: (Reading database ...
 O: 192 files and directories currently installed.)
 O: Unpacking libc6 (from .../libc6_2.3.6-4_amd64.deb) ...
 P: Unpacking package libc6
-O: Selecting previously deselected package gcc-4.0-base.
-O: Unpacking gcc-4.0-base (from .../gcc-4.0-base_4.0.3-1_amd64.deb) ...
-P: Unpacking package gcc-4.0-base
+O: Selecting previously deselected package gcc-4.1-base.
+O: Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1.0-1_amd64.deb) ...
+P: Unpacking package gcc-4.1-base
 O: Selecting previously deselected package libgcc1.
-O: Unpacking libgcc1 (from .../libgcc1_4.0.3-1_amd64.deb) ...
+O: Unpacking libgcc1 (from .../libgcc1_4.1.0-1_amd64.deb) ...
 P: Unpacking package libgcc1
 O: Selecting previously deselected package libstdc++6.
-O: Unpacking libstdc++6 (from .../libstdc++6_4.0.3-1_amd64.deb) ...
+O: Unpacking libstdc++6 (from .../libstdc++6_4.1.0-1_amd64.deb) ...
 P: Unpacking package libstdc++6
 O: Selecting previously deselected package libdb4.3.
 O: Unpacking libdb4.3 (from .../libdb4.3_4.3.29-5_amd64.deb) ...
@@ -522,6 +528,9 @@ O:   libncurses5 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking bash (from .../bootstrap/bash_3.1-4_amd64.deb) ...
 P: Unpacking package bash
+O: Selecting previously deselected package gcc-4.0-base.
+O: Unpacking gcc-4.0-base (from .../gcc-4.0-base_4.0.3-1_amd64.deb) ...
+P: Unpacking package gcc-4.0-base
 O: Selecting previously deselected package grep.
 O: dpkg: regarding .../grep_2.5.1.ds2-4_amd64.deb containing grep, pre-dependency problem:
 O:  grep pre-depends on libc6 (>= 2.3.5-1)
@@ -529,6 +538,9 @@ O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking grep (from .../grep_2.5.1.ds2-4_amd64.deb) ...
 P: Unpacking package grep
+O: Selecting previously deselected package libdevmapper1.02.
+O: Unpacking libdevmapper1.02 (from .../libdevmapper1.02_1.02.03-1_amd64.deb) ...
+P: Unpacking package libdevmapper1.02
 O: Selecting previously deselected package procps.
 O: Unpacking procps (from .../procps_3.2.6-2.1_amd64.deb) ...
 P: Unpacking package procps
@@ -675,6 +687,9 @@ O:
 O: Setting up gcc-4.0-base (4.0.3-1) ...
 P: Configuring package gcc-4.0-base
 O: 
+O: Setting up gcc-4.1-base (4.1.0-1) ...
+P: Configuring package gcc-4.1-base
+O: 
 O: Setting up libpam-runtime (0.79-3.1) ...
 P: Configuring package libpam-runtime
 O: 
@@ -706,7 +721,7 @@ O:
 O: Setting up zlib1g (1.2.3-11) ...
 P: Configuring package zlib1g
 O: 
-O: Setting up libgcc1 (4.0.3-1) ...
+O: Setting up libgcc1 (4.1.0-1) ...
 P: Configuring package libgcc1
 O: 
 O: Setting up libtext-iconv-perl (1.4-2) ...
@@ -760,8 +775,11 @@ P: Configuring package diff
 O: Setting up libselinux1 (1.30-1) ...
 P: Configuring package libselinux1
 O: 
-O: Setting up libstdc++6 (4.0.3-1) ...
+O: Setting up libstdc++6 (4.1.0-1) ...
 P: Configuring package libstdc++6
+O: 
+O: Setting up libdevmapper1.02 (1.02.03-1) ...
+P: Configuring package libdevmapper1.02
 O: 
 O: Setting up libtext-charwidth-perl (0.04-3) ...
 P: Configuring package libtext-charwidth-perl
@@ -817,8 +835,7 @@ O:
 O: Setting up sysvinit (2.86.ds1-14) ...
 P: Configuring package sysvinit
 O: sysvinit: creating /dev/initctl
-O: init: 
-O: timeout opening/writing control channel /dev/initctl
+O: init: timeout opening/writing control channel /dev/initctl
 O: 
 O: Setting up debconf-i18n (1.4.72) ...
 P: Configuring package debconf-i18n
@@ -827,7 +844,7 @@ P: Configuring package debconf
 O: 
 O: Selecting previously deselected package apt.
 O: (Reading database ... 
-O: 4660 files and directories currently installed.)
+O: 4674 files and directories currently installed.)
 O: Unpacking apt (from .../apt_0.6.43.3_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.43.3) ...
@@ -836,13 +853,13 @@ O:
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
 O: (Reading database ... 
-O: 4834 files and directories currently installed.)
+O: 4848 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [5902B]
 O: Ign bootstrap: . Release
-O: Fetched 6091B in 0s (38.0kB/s)
+O: Fetched 6091B in 0s (47.2kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -852,9 +869,7 @@ O: W:
 O: You may want to run apt-get update to correct these problems
 O: 
 O: Reading package lists...
-O: 
 O: Building dependency tree...
-O: 
 O: Suggested packages:
 O:   perl-modules libparse-debianchangelog-perl debtags cpp wenglish wordlist
 O:   whois vacation anacron lockfile-progs checksecurity resolvconf mail-reader
@@ -884,7 +899,7 @@ O:   telnet dhcp3-common dhcp3-client psmisc
 O: Authentication warning overridden.
 O: Selecting previously deselected package adduser.
 O: (Reading database ... 
-O: 4835 files and directories currently installed.)
+O: 4849 files and directories currently installed.)
 O: Unpacking adduser (from .../bootstrap/adduser_3.85_all.deb) ...
 P: Unpacking package adduser
 O: Selecting previously deselected package apt-utils.
@@ -975,7 +990,7 @@ O: Selecting previously deselected package man-db.
 O: Unpacking man-db (from .../man-db_2.4.3-3_amd64.deb) ...
 P: Unpacking package man-db
 O: Selecting previously deselected package manpages.
-O: Unpacking manpages (from .../manpages_2.22-1_all.deb) ...
+O: Unpacking manpages (from .../manpages_2.23-1_all.deb) ...
 P: Unpacking package manpages
 O: Selecting previously deselected package nano.
 O: Unpacking nano (from .../nano_1.3.11-1_amd64.deb) ...
@@ -1124,7 +1139,7 @@ O: Setting up man-db (2.4.3-3) ...
 P: Configuring package man-db
 O: Building database of manual pages ...
 O: 
-O: Setting up manpages (2.22-1) ...
+O: Setting up manpages (2.23-1) ...
 P: Configuring package manpages
 O: Setting up nano (1.3.11-1) ...
 P: Configuring package nano
@@ -1201,18 +1216,18 @@ P: Configuring package telnet
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 6719 files and directories currently installed.)
+O: 6735 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 6718 files and directories currently installed.)
+O: 6734 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 6716 files and directories currently installed.)
+O: 6732 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1225,18 +1240,18 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//24027/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//26078/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//24027/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//26078/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [5902B]
 Ign http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org sid/main Packages [4015kB]
-Fetched 4021kB in 1s (2036kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [4028kB]
+Fetched 4034kB in 33s (121kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1270,7 +1285,7 @@ WARNING: The following packages cannot be authenticated!
   gcc linux-kernel-headers libc6-dev libstdc++6-4.0-dev g++-4.0 g++
   build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 6716 files and directories currently installed.)
+(Reading database ... 6732 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20060117-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.3-1_amd64.deb) ...
@@ -1334,9 +1349,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//24027/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//26078/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.tQtcio/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.c0ynuA/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//24027 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//26078 and its subdirectories
