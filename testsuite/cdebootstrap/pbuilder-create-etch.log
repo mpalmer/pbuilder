@@ -11,8 +11,8 @@ P: Parsing Packages
 W: can't find package: base-config
 P: Retrieving libc6
 P: Validating libc6
-P: Retrieving gcc-4.0-base
-P: Validating gcc-4.0-base
+P: Retrieving gcc-4.1-base
+P: Validating gcc-4.1-base
 P: Retrieving libgcc1
 P: Validating libgcc1
 P: Retrieving libstdc++6
@@ -183,6 +183,8 @@ P: Retrieving logrotate
 P: Validating logrotate
 P: Retrieving procps
 P: Validating procps
+P: Retrieving gcc-4.0-base
+P: Validating gcc-4.0-base
 P: Retrieving hostname
 P: Validating hostname
 P: Retrieving libuuid1
@@ -230,7 +232,7 @@ P: Validating findutils
 P: Retrieving makedev
 P: Validating makedev
 P: Extracting libc6
-P: Extracting gcc-4.0-base
+P: Extracting gcc-4.1-base
 P: Extracting libgcc1
 P: Extracting libstdc++6
 P: Extracting libdb4.3
@@ -263,6 +265,7 @@ P: Extracting passwd
 P: Extracting libslang2
 P: Extracting base-passwd
 P: Extracting procps
+P: Extracting gcc-4.0-base
 P: Extracting hostname
 P: Extracting libuuid1
 P: Extracting util-linux
@@ -298,14 +301,16 @@ P: Configuring package base-passwd
 O: 
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
-O: (Reading database ... 24 files and directories currently installed.)
+O: (Reading database ... 
+O: 24 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
-O: (Reading database ... 29 files and directories currently installed.)
+O: (Reading database ... 
+O: 29 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
@@ -333,14 +338,14 @@ O: (Reading database ...
 O: 196 files and directories currently installed.)
 O: Unpacking libc6 (from .../libc6_2.3.6-3_amd64.deb) ...
 P: Unpacking package libc6
-O: Selecting previously deselected package gcc-4.0-base.
-O: Unpacking gcc-4.0-base (from .../gcc-4.0-base_4.0.3-1_amd64.deb) ...
-P: Unpacking package gcc-4.0-base
+O: Selecting previously deselected package gcc-4.1-base.
+O: Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1.0-1_amd64.deb) ...
+P: Unpacking package gcc-4.1-base
 O: Selecting previously deselected package libgcc1.
-O: Unpacking libgcc1 (from .../libgcc1_4.0.3-1_amd64.deb) ...
+O: Unpacking libgcc1 (from .../libgcc1_4.1.0-1_amd64.deb) ...
 P: Unpacking package libgcc1
 O: Selecting previously deselected package libstdc++6.
-O: Unpacking libstdc++6 (from .../libstdc++6_4.0.3-1_amd64.deb) ...
+O: Unpacking libstdc++6 (from .../libstdc++6_4.1.0-1_amd64.deb) ...
 P: Unpacking package libstdc++6
 O: Selecting previously deselected package libdb4.3.
 O: Unpacking libdb4.3 (from .../libdb4.3_4.3.29-4.1_amd64.deb) ...
@@ -451,10 +456,10 @@ O: Selecting previously deselected package libpam0g.
 O: Unpacking libpam0g (from .../libpam0g_0.79-3.1_amd64.deb) ...
 P: Unpacking package libpam0g
 O: Selecting previously deselected package libsepol1.
-O: Unpacking libsepol1 (from .../libsepol1_1.10-2_amd64.deb) ...
+O: Unpacking libsepol1 (from .../libsepol1_1.12-1_amd64.deb) ...
 P: Unpacking package libsepol1
 O: Selecting previously deselected package libselinux1.
-O: Unpacking libselinux1 (from .../libselinux1_1.28-4_amd64.deb) ...
+O: Unpacking libselinux1 (from .../libselinux1_1.30-1_amd64.deb) ...
 P: Unpacking package libselinux1
 O: Selecting previously deselected package libcap1.
 O: Unpacking libcap1 (from .../libcap1_1.10-14_amd64.deb) ...
@@ -486,6 +491,9 @@ P: Unpacking package libslang2
 O: Selecting previously deselected package procps.
 O: Unpacking procps (from .../procps_3.2.6-2.1_amd64.deb) ...
 P: Unpacking package procps
+O: Selecting previously deselected package gcc-4.0-base.
+O: Unpacking gcc-4.0-base (from .../gcc-4.0-base_4.0.3-1_amd64.deb) ...
+P: Unpacking package gcc-4.0-base
 O: Selecting previously deselected package hostname.
 O: dpkg: regarding .../hostname_2.92_amd64.deb containing hostname, pre-dependency problem:
 O:  hostname pre-depends on libc6 (>= 2.3.5-1)
@@ -615,21 +623,21 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking e2fsprogs (from .../e2fsprogs_1.38+1.39-WIP-2005.12.31-1_amd64.deb) ...
 P: Unpacking package e2fsprogs
 O: Selecting previously deselected package initscripts.
-O: Unpacking initscripts (from .../initscripts_2.86.ds1-13_amd64.deb) ...
+O: Unpacking initscripts (from .../initscripts_2.86.ds1-14_amd64.deb) ...
 P: Unpacking package initscripts
 O: Selecting previously deselected package sysv-rc.
-O: Unpacking sysv-rc (from .../sysv-rc_2.86.ds1-13_all.deb) ...
+O: Unpacking sysv-rc (from .../sysv-rc_2.86.ds1-14_all.deb) ...
 P: Unpacking package sysv-rc
 O: Selecting previously deselected package sysvinit.
-O: dpkg: regarding .../sysvinit_2.86.ds1-13_amd64.deb containing sysvinit, pre-dependency problem:
+O: dpkg: regarding .../sysvinit_2.86.ds1-14_amd64.deb containing sysvinit, pre-dependency problem:
 O:  sysvinit pre-depends on initscripts
 O:   initscripts is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../sysvinit_2.86.ds1-13_amd64.deb containing sysvinit, pre-dependency problem:
+O: dpkg: regarding .../sysvinit_2.86.ds1-14_amd64.deb containing sysvinit, pre-dependency problem:
 O:  sysvinit pre-depends on sysv-rc (>= 2.86.ds1-1.2) | file-rc (>> 0.7.0)
 O:   sysv-rc is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking sysvinit (from .../sysvinit_2.86.ds1-13_amd64.deb) ...
+O: Unpacking sysvinit (from .../sysvinit_2.86.ds1-14_amd64.deb) ...
 P: Unpacking package sysvinit
 O: Selecting previously deselected package base-files.
 O: Unpacking base-files (from .../base-files_3.1.11_amd64.deb) ...
@@ -658,11 +666,14 @@ P: Unpacking package makedev
 O: Setting up makedev (2.3.1-80) ...
 P: Configuring package makedev
 O: 
-O: Setting up sysv-rc (2.86.ds1-13) ...
+O: Setting up sysv-rc (2.86.ds1-14) ...
 P: Configuring package sysv-rc
 O: 
 O: Setting up gcc-4.0-base (4.0.3-1) ...
 P: Configuring package gcc-4.0-base
+O: 
+O: Setting up gcc-4.1-base (4.1.0-1) ...
+P: Configuring package gcc-4.1-base
 O: 
 O: Setting up libpam-runtime (0.79-3.1) ...
 P: Configuring package libpam-runtime
@@ -685,7 +696,7 @@ P: Configuring package bsdutils
 O: 
 O: Setting up perl-base (5.8.8-3) ...
 P: Configuring package perl-base
-O: Setting up libsepol1 (1.10-2) ...
+O: Setting up libsepol1 (1.12-1) ...
 P: Configuring package libsepol1
 O: 
 O: Setting up tar (1.15.1-6) ...
@@ -695,7 +706,7 @@ O:
 O: Setting up zlib1g (1.2.3-11) ...
 P: Configuring package zlib1g
 O: 
-O: Setting up libgcc1 (4.0.3-1) ...
+O: Setting up libgcc1 (4.1.0-1) ...
 P: Configuring package libgcc1
 O: 
 O: Setting up libtext-iconv-perl (1.4-2) ...
@@ -746,10 +757,10 @@ O: Setting up liblocale-gettext-perl (1.05-1) ...
 P: Configuring package liblocale-gettext-perl
 O: Setting up diff (2.8.1-11) ...
 P: Configuring package diff
-O: Setting up libselinux1 (1.28-4) ...
+O: Setting up libselinux1 (1.30-1) ...
 P: Configuring package libselinux1
 O: 
-O: Setting up libstdc++6 (4.0.3-1) ...
+O: Setting up libstdc++6 (4.1.0-1) ...
 P: Configuring package libstdc++6
 O: 
 O: Setting up libtext-charwidth-perl (0.04-3) ...
@@ -794,13 +805,13 @@ P: Configuring package lsb-base
 O: Setting up passwd (4.0.14-9) ...
 P: Configuring package passwd
 O: 
-O: Setting up initscripts (2.86.ds1-13) ...
+O: Setting up initscripts (2.86.ds1-14) ...
 P: Configuring package initscripts
 O: 
 O: Setting up util-linux (2.12r-8) ...
 P: Configuring package util-linux
 O: 
-O: Setting up sysvinit (2.86.ds1-13) ...
+O: Setting up sysvinit (2.86.ds1-14) ...
 P: Configuring package sysvinit
 O: sysvinit: creating /dev/initctl
 O: init: timeout opening/writing control channel /dev/initctl
@@ -812,7 +823,7 @@ P: Configuring package debconf
 O: 
 O: Selecting previously deselected package apt.
 O: (Reading database ... 
-O: 4549 files and directories currently installed.)
+O: 4557 files and directories currently installed.)
 O: Unpacking apt (from .../apt_0.6.43.3_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.43.3) ...
@@ -821,13 +832,13 @@ O:
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
 O: (Reading database ... 
-O: 4725 files and directories currently installed.)
+O: 4733 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [5902B]
 O: Ign bootstrap: . Release
-O: Fetched 6091B in 0s (50.5kB/s)
+O: Fetched 6091B in 0s (49.7kB/s)
 O: Reading package lists...
 O: 
 O: W: 
@@ -869,7 +880,7 @@ O:   exim4-daemon-light at exim4 telnet dhcp3-common dhcp3-client psmisc
 O: Authentication warning overridden.
 O: Selecting previously deselected package adduser.
 O: (Reading database ... 
-O: 4726 files and directories currently installed.)
+O: 4734 files and directories currently installed.)
 O: Unpacking adduser (from .../bootstrap/adduser_3.85_all.deb) ...
 P: Unpacking package adduser
 O: Selecting previously deselected package apt-utils.
@@ -909,7 +920,7 @@ O: Selecting previously deselected package ifupdown.
 O: Unpacking ifupdown (from .../ifupdown_0.6.7_amd64.deb) ...
 P: Unpacking package ifupdown
 O: Selecting previously deselected package info.
-O: Unpacking info (from .../bootstrap/info_4.8-6_amd64.deb) ...
+O: Unpacking info (from .../bootstrap/info_4.8-8_amd64.deb) ...
 P: Unpacking package info
 O: Selecting previously deselected package iptables.
 O: Unpacking iptables (from .../iptables_1.3.3-2_amd64.deb) ...
@@ -1070,7 +1081,7 @@ O:
 O: ifupdown.postinst: Warning: No 'iface lo' definition found in /etc/network/interfaces
 O: ifupdown.postinst: Warning: No 'auto lo' statement found in /etc/network/interfaces
 O: 
-O: Setting up info (4.8-6) ...
+O: Setting up info (4.8-8) ...
 P: Configuring package info
 O: 
 O: Setting up iptables (1.3.3-2) ...
@@ -1192,18 +1203,18 @@ P: Configuring package telnet
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 6679 files and directories currently installed.)
+O: 6687 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 6678 files and directories currently installed.)
+O: 6686 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 6676 files and directories currently installed.)
+O: 6684 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1216,18 +1227,18 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//16569/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//13287/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//16569/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//13287/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [5902B]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [3730kB]
-Fetched 3736kB in 1s (2021kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [3738kB]
+Fetched 3744kB in 1s (1886kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1261,7 +1272,7 @@ WARNING: The following packages cannot be authenticated!
   gcc linux-kernel-headers libc6-dev libstdc++6-4.0-dev g++-4.0 g++
   build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 6676 files and directories currently installed.)
+(Reading database ... 6684 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20060117-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.0.
 Unpacking cpp-4.0 (from .../cpp-4.0_4.0.3-1_amd64.deb) ...
@@ -1325,9 +1336,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//16569/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//13287/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.c0ynuA/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//16569 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//13287 and its subdirectories
