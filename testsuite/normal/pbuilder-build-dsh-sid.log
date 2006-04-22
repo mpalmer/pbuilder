@@ -2,14 +2,14 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Sat Apr  8 12:02:40 JST 2006
-pbuilder-time-stamp: 1144465360
+Current time: Sat Apr 22 12:02:24 JST 2006
+pbuilder-time-stamp: 1145674944
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/dir1/24112/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/dir1/13798/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
  -> created buildresult dir :/var/cache/pbuilder/result/
@@ -33,10 +33,10 @@ The following NEW packages will be installed:
   debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 9 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/2911kB of archives.
+Need to get 0B/2912kB of archives.
 After unpacking 9699kB of additional disk space will be used.
 Selecting previously deselected package libmagic1.
-(Reading database ... 11285 files and directories currently installed.)
+(Reading database ... 11341 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.17-1_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.17-1_amd64.deb) ...
@@ -45,11 +45,11 @@ Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
 Selecting previously deselected package gettext.
 Unpacking gettext (from .../gettext_0.14.5-2_amd64.deb) ...
 Selecting previously deselected package intltool-debian.
-Unpacking intltool-debian (from .../intltool-debian_0.34.2+20060322_all.deb) ...
+Unpacking intltool-debian (from .../intltool-debian_0.34.2+20060415_all.deb) ...
 Selecting previously deselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_1.0_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_5.0.27_all.deb) ...
+Unpacking debhelper (from .../debhelper_5.0.32_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.12-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -61,9 +61,9 @@ Setting up html2text (1.3.2a-3) ...
 
 Setting up gettext (0.14.5-2) ...
 
-Setting up intltool-debian (0.34.2+20060322) ...
+Setting up intltool-debian (0.34.2+20060415) ...
 Setting up po-debconf (1.0) ...
-Setting up debhelper (5.0.27) ...
+Setting up debhelper (5.0.32) ...
 Setting up libdshconfig1 (0.20.12-1) ...
 
 Setting up libdshconfig1-dev (0.20.12-1) ...
@@ -76,17 +76,17 @@ The following NEW packages will be installed:
 Need to get 0B/96.2kB of archives.
 After unpacking 401kB of additional disk space will be used.
 Selecting previously deselected package fakeroot.
-(Reading database ... 11879 files and directories currently installed.)
+(Reading database ... 11935 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.5.8_amd64.deb) ...
 Setting up fakeroot (1.5.8) ...
 
 Copying back the cached apt archive contents
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/dir1/24112/etc/passwd
-/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/dir1/24112/etc/group
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/dir1/13798/etc/passwd
+/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/dir1/13798/etc/group
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 su: Authentication service cannot retrieve authentication info.
 (Ignored)
@@ -110,6 +110,7 @@ dpkg-buildpackage: source version is 0.25.6-1
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: host architecture amd64
+dpkg-buildpackage: source version without epoch 0.25.6-1
 dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
@@ -399,8 +400,8 @@ success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -408,11 +409,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Apr  8 03:03:47 UTC 2006
+Sat Apr 22 03:03:49 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -482,14 +483,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Apr  8 03:03:52 UTC 2006
+Sat Apr 22 03:03:54 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-a: a
 b: b
-dsh: Process terminated (before write).
 c: c
+dsh: Process terminated (before write).
+a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -583,7 +584,7 @@ dh_strip: Compatibility levels before 4 are deprecated.
 dh_shlibdeps
 dh_shlibdeps: Compatibility levels before 4 are deprecated.
 dpkg-shlibdeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-couldn't open /etc/ld.so.conf: No such file or directory at /usr/bin/dpkg-shlibdeps line 120.
+couldn't open /etc/ld.so.conf: No such file or directory at /usr/bin/dpkg-shlibdeps line 137.
 dh_compress
 dh_compress: Compatibility levels before 4 are deprecated.
 dh_fixperms
@@ -612,7 +613,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Sat Apr  8 12:03:56 JST 2006
-pbuilder-time-stamp: 1144465436
+Current time: Sat Apr 22 12:03:57 JST 2006
+pbuilder-time-stamp: 1145675037
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/dir1/24112 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/dir1/13798 and its subdirectories

@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//20356/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//17878/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -13,17 +13,16 @@ Refreshing the base.tgz
  -> upgrading packages
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org experimental Release.gpg [189B]
-Hit http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org experimental Release [4245B]
-Ign http://ftp.jp.debian.org experimental Release
-Get:4 http://ftp.jp.debian.org sid Release [5902B]
+Get:3 http://ftp.jp.debian.org sid Release [5902B]
 Ign http://ftp.jp.debian.org sid Release
-Get:5 http://ftp.jp.debian.org experimental/main Packages [162kB]
+Get:4 http://ftp.jp.debian.org experimental Release [4245B]
+Ign http://ftp.jp.debian.org experimental Release
 Hit http://ftp.jp.debian.org sid/main Packages
-Fetched 172kB in 0s (466kB/s)
+Get:5 http://ftp.jp.debian.org experimental/main Packages [112kB]
+Fetched 122kB in 0s (310kB/s)
 Reading package lists...
-W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
+W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
@@ -32,21 +31,17 @@ Building dependency tree...
 The following packages have been kept back:
   apt apt-utils
 The following packages will be upgraded:
-  aptitude diff gettext-base lsb-base
-4 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
-Need to get 0B/2979kB of archives.
+  aptitude diff gettext-base
+3 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
+Need to get 0B/2966kB of archives.
 After unpacking 315kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  diff lsb-base aptitude gettext-base
-(Reading database ... 12602 files and directories currently installed.)
+  diff aptitude gettext-base
+(Reading database ... 12748 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-(Reading database ... 12610 files and directories currently installed.)
-Preparing to replace lsb-base 3.0-16 (using .../lsb-base_3.1-1_all.deb) ...
-Unpacking replacement lsb-base ...
-Setting up lsb-base (3.1-1) ...
-(Reading database ... 12610 files and directories currently installed.)
+(Reading database ... 12756 files and directories currently installed.)
 Preparing to replace aptitude 0.4.1-1 (using .../aptitude_0.4.1-1experimental1_amd64.deb) ...
 Unpacking replacement aptitude ...
 Preparing to replace gettext-base 0.14.5-2 (using .../gettext-base_0.14.5-2.csharp.1_amd64.deb) ...
@@ -71,13 +66,13 @@ The following packages will be upgraded:
   apt apt-utils
 2 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
 Need to get 0B/1535kB of archives.
-After unpacking 9683kB disk space will be freed.
+After unpacking 9712kB disk space will be freed.
 WARNING: The following packages cannot be authenticated!
   apt-utils apt
-(Reading database ... 12610 files and directories currently installed.)
+(Reading database ... 12756 files and directories currently installed.)
 Removing tasksel ...
 Removing aptitude ...
-(Reading database ... 12405 files and directories currently installed.)
+(Reading database ... 12553 files and directories currently installed.)
 Preparing to replace apt-utils 0.6.43.3 (using .../apt-utils_0.6.43.3exp1_amd64.deb) ...
 Unpacking replacement apt-utils ...
 Preparing to replace apt 0.6.43.3 (using .../apt_0.6.43.3exp1_amd64.deb) ...
@@ -93,9 +88,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//20356/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//17878/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.e6fnxW/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//20356 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//17878 and its subdirectories
