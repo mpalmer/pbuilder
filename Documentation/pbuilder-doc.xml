@@ -461,6 +461,11 @@ export DEBIAN_BUILDGCCVER=3.2
   <chapter id="pbuilder-uml">
     <title>Using User-mode-linux with pbuilder</title>
     <para>
+      NOTE that since October 2004, pbuilder for user-mode-linux is
+      not distributed, since user-mode-linux itself is broken in
+      Debian.  It will hopefully be fixed before Debian etch release.
+    </para>
+    <para>
       It is possible to use user-mode-linux
       by invoking <command>pbuilder-uml</command>
       instead of <command>pbuilder</command>.
@@ -1039,7 +1044,8 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
       </para>
       <para>
 	<screen>
-<command>pbuilder create --distribution sid --debootstrapopts --arch --debootstrapopts i386 --basetgz /var/cache/pbuilder/base-i386.tgz --mirror http://ftp.jp.debian.org/debian</command>
+<command>pbuilder create --distribution sid --debootstrapopts --arch --debootstrapopts i386 \
+  --basetgz /var/cache/pbuilder/base-i386.tgz --mirror http://ftp.jp.debian.org/debian</command>
 <command>linux32 pbuilder build --basetgz /var/cache/pbuilder/base-i386.tgz</command>
 	</screen>
       </para>
@@ -1375,6 +1381,7 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 	and from the CVS repository of pbuilder (web-based access is possible).
 	A copy of this documentation can be found on the
 	<ulink url="http://pbuilder.alioth.debian.org/pbuilder-doc.html">Alioth project page for pbuilder</ulink>.
+	<ulink url="http://pbuilder.alioth.debian.org/pbuilder-doc.pdf">There is also a PDF version</ulink>.
 	The homepage for pbuilder is
 	<ulink url="http://www.netfort.gr.jp/~dancer/software/pbuilder.html">
 	  http://www.netfort.gr.jp/~dancer/software/pbuilder.html
