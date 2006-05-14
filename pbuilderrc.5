@@ -1,4 +1,4 @@
-.TH "pbuilderrc" 5 "2006 Feb 11" "Debian" "pbuilder"
+.TH "pbuilderrc" 5 "2006 May 15" "Debian" "pbuilder"
 .SH NAME
 pbuilderrc \- configuration files for personal package builder
 .SH DESCRIPTION
@@ -113,11 +113,11 @@ being mounted.
 Specify the default directory which the build result will
 be copied over to after the building.
 
-This option is not effective for 
-.B pdebuild 
-command. Use 
+Unlike
 .B "--buildresult"
-option instead.
+command-line option.
+The path is not canonicalized, so you should specify a full-path,
+not a relative path.
 
 .TP
 .BI "DISTRIBUTION=" "sid"
@@ -338,4 +338,3 @@ The homepage is available at
 .SH "SEE ALSO"
 .RI "pbuilder (" 8 "), "
 .RI "pdebuild (" 1 ")"
-
