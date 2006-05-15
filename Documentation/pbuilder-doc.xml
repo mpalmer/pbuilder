@@ -811,7 +811,7 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
       </para>
     </sect1>
     <sect1>
-      <title>Using special apt sources lists</title>
+      <title>Using special apt sources lists, and local packages</title>
       <para>
 	If you have some very specialized requirements on your
 	apt setup inside pbuilder,
@@ -827,12 +827,41 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	<command><option>--bindmounts</option></command>
 	is a command-line option useful for such cases.
       </para>
+      <para>
+	It might be convenient to use your built packages from inside the chroot.
+	It is possible to automate the task with the following configuration.
+	First, set up pbuilderrc to bindmount your build results directory.
+      </para>
+      <para>
+	<screen>BINDMOUNTS="/var/cache/pbuilder/result"
+	</screen>
+      </para>
+      <para>
+	Then, add the following hook
+      </para>
+      <para>
+	<screen>
+# cat /var/cache/pbuilder/hooks/D70results
+#!/bin/sh
+cd /var/cache/pbuilder/result/
+/usr/bin/dpkg-scanpackages . /dev/null &gt; /var/cache/pbuilder/result/Packages
+/usr/bin/apt-get update
+	</screen>
+      </para>
+      <para>
+	This way, you can use <filename>deb file:/var/cache/pbuilder/result</filename>
+      </para>
     </sect1>
     <sect1>
       <title>How to get pbuilder to run apt-get update before trying to satisfy build-dependency</title>
       <para>
 	You can use hook scripts for this.
 	D scripts are run before satisfying build-dependency.
+      </para>
+      <para>
+	<url link="http://lists.debian.org/debian-devel/2006/05/msg00550.html">
+	  This snippet comes from Ondrej Sury.
+	</url>
       </para>
     </sect1>
     <sect1>
