@@ -343,9 +343,10 @@
 	</listitem>
       </itemizedlist>
       <para>
-	But most of these problems are now getting solved.
-	Only about 10% of Debian now fails to build from source (29 Dec 2002).
-	<!-- TODO: update for 2004/2005 time frame? -->
+	Most of the initial bugs have been resolved in the pbuilder
+	sweep done around 2002, but these transitional problems which
+	affect a large portion of Debian Archive do arise from time to
+	time.  Regression tests have their values.
       </para>
       <para>
 	A script that was used by Junichi Uekawa is now included in
@@ -463,7 +464,9 @@ export DEBIAN_BUILDGCCVER=3.2
     <para>
       NOTE that since October 2004, pbuilder for user-mode-linux is
       not distributed, since user-mode-linux itself is broken in
-      Debian.  It will hopefully be fixed before Debian etch release.
+      Debian.  A functional user-mode-linux will hopefully be fixed
+      before Debian etch release, but it is not quite determined yet
+      if pbuilder-uml will be ready for etch.
     </para>
     <para>
       It is possible to use user-mode-linux
@@ -859,9 +862,9 @@ cd /var/cache/pbuilder/result/
 	D scripts are run before satisfying build-dependency.
       </para>
       <para>
-	<url link="http://lists.debian.org/debian-devel/2006/05/msg00550.html">
+	<ulink url="http://lists.debian.org/debian-devel/2006/05/msg00550.html">
 	  This snippet comes from Ondrej Sury.
-	</url>
+	</ulink>
       </para>
     </sect1>
     <sect1>
@@ -1467,9 +1470,9 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
       <sect2 id="birth">
 	<title>Birth of pbuilder</title>
 	<para>
-	  wanna-build (sbuild) was (at the time of year 2001) quite difficult to
-	  set up, and it was never a Debian package. dbuild was something that predated
-	  Build-Depends.
+	  wanna-build (sbuild) was (at the time of year 2001) quite
+	  difficult to set up, and it was never a Debian
+	  package. dbuild was something that predated Build-Depends.
 	</para>
 	<para>
 	  Building packages from source using Build-Depends
@@ -1491,23 +1494,30 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
       <sect2 id="secondyear">
 	<title>And the second year of its life</title>
 	<para>
-	  Someone wanted pbuilder to not run as root,
-	  and as User-mode-linux has become more useful as time passed,
-	  I've started experimenting with pbuilder-uml.
-	  pbuilder-uml has not been able to run as often as it should,
-	  and bootstrapping user-mode-linux environment has been
-	  pretty hard.
+	  Someone wanted pbuilder to not run as root, and as
+	  User-mode-linux has become more useful as time passed, I've
+	  started experimenting with pbuilder-uml.  pbuilder-uml has
+	  not been able to run as often as it should, and
+	  bootstrapping user-mode-linux environment has been pretty
+	  hard.
 	</para>
       </sect2>
       <sect2 id="fifthyear">
 	<title>Fifth year of pbuilder</title>
 	<para>
 	  pbuilder is now widely adopted as a 'almost standard' tool
-	  for testing packages, and building packages in a pristine environment.
-	  There are other similar tools that do similar tasks, 
-	  but they do not share the exact same goal.
-	  To commemorate this fact, pbuilder is now co-maintained 
-	  with several people. 
+	  for testing packages, and building packages in a pristine
+	  environment.  There are other similar tools that do similar
+	  tasks, but they do not share the exact same goal.  To
+	  commemorate this fact, pbuilder is now co-maintained with
+	  several people.
+	</para>
+	<para>
+	  sbuild is now a well-maintained Debian package within
+	  Debian, and with pbuilder being such a slow monstor, some
+	  people prefer the approach of sbuild.  Development to use
+	  LVM-snapshots, cowloop, or cowdancer is hoped to improve the
+	  situation somewhat.
 	</para>
       </sect2>
     </sect1>
