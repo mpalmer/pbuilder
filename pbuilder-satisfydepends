@@ -43,6 +43,12 @@ function checkbuilddep_versiondeps () {
 function expand_arch () {
     local ARCH="$1"
     local EXPANDED_ARCH
+    
+    # just keep the original behavior.
+    echo "$ARCH"
+    return
+
+    # the following may be used if dpkg change is set to stone.
     if echo "$ARCH" | grep "-" > /dev/null; then
         EXPANDED_ARCH=$ARCH
     else
