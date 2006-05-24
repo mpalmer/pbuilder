@@ -1,4 +1,4 @@
-.TH "pbuilderrc" 5 "2006 May 15" "Debian" "pbuilder"
+.TH "pbuilderrc" 5 "2006 May 24" "Debian" "pbuilder"
 .SH NAME
 pbuilderrc \- configuration files for personal package builder
 .SH DESCRIPTION
@@ -325,6 +325,14 @@ and
 .BI "PKGNAME_LOGFILE_EXTENTION=" ".build"
 The extension of filename used in pkgname-logfile option.
 
+.TP
+.BI "PDEBUILD_PBUILDER=" "pbuilder"
+Specify what pbuilder implementation to use for pdebuild.
+The currently possible values are
+.B "pbuilder"
+and 
+.B "cowbuilder"
+
 .SH "AUTHOR"
 Initial coding, and main maintenance is done by 
 Junichi Uekawa <dancer@debian.org>.
@@ -338,3 +346,6 @@ The homepage is available at
 .SH "SEE ALSO"
 .RI "pbuilder (" 8 "), "
 .RI "pdebuild (" 1 ")"
+
+\"  LocalWords:  interactiveness noninteractive pdebuild pbuilder buildd
+\"  LocalWords:  pbuilderrc

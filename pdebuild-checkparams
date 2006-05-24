@@ -83,6 +83,11 @@ while [ -n "$1" ]; do
 	    exec 2>&1
 	    shift; shift;
 	    ;;
+	--pbuilder)
+	    echo "  -> using $2 as pbuilder"
+	    PDEBUILD_PBUILDER="$2"
+	    shift; shift;
+	    ;;
 	--help)
 	    showhelp
 	    ;;
@@ -109,4 +114,8 @@ if [ "${INTERNAL_BUILD_UML}" != "yes" -a "${PRESERVE_BUILDPLACE}" != "yes" ]; th
 fi
 if [ -z "${CHROOTEXEC}" ]; then
     CHROOTEXEC="chroot $BUILDPLACE "
+fi
+
+if [ -z "${PDEBUILD_PBUILDER}" ]; then
+    PDEBUILD_PBUILDER="pbuilder"
 fi

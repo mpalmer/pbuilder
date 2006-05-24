@@ -26,19 +26,19 @@ export PBCURRENTCOMMANDLINEOPERATION="$1"
 umask 0022
 
 case "$1" in
-    create)
+    --create|create)
 	shift;
 	/usr/lib/pbuilder/pbuilder-createbuildenv "$@"
 	;;
-    update)
+    --update|update)
 	shift ;
 	/usr/lib/pbuilder/pbuilder-updatebuildenv "$@"
 	;;
-    build)
+    --build|build)
 	shift ;
 	/usr/lib/pbuilder/pbuilder-buildpackage "$@"
 	;;
-    clean)
+    --clean|clean)
 	shift;
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	if [ -n "$BASEBUILDPLACE" ]; then 
@@ -50,7 +50,7 @@ case "$1" in
 	    clean_subdirectories "$APTCACHE" || true
 	fi
 	;;
-    login)
+    --login|login)
 	shift 
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	. /usr/lib/pbuilder/pbuilder-runhooks
@@ -88,7 +88,7 @@ File extracted to: $BUILDPLACE
 	    fi
 	fi
 	;;
-    execute)
+    --execute|execute)
 	# try to execute arbitrary program.
 	shift
 	. /usr/lib/pbuilder/pbuilder-checkparams
@@ -130,7 +130,7 @@ File extracted to: $BUILDPLACE
 	    fi
 	fi
 	;;
-    dumpconfig)
+    --dumpconfig|dumpconfig)
 	shift
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	. /usr/lib/pbuilder/pbuilder-runhooks
@@ -145,7 +145,7 @@ File extracted to: $BUILDPLACE
 	env;
 	echo " -> end dump config"
 	;;
-    debuild)
+    --debuild|debuild)
 	shift
 	"$0" execute "$@" /usr/lib/pbuilder/pdebuild-internal
 	;;

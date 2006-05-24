@@ -1,4 +1,4 @@
-.TH "pdebuild" 1 "2006 May 15" "Debian" "pbuilder"
+.TH "pdebuild" 1 "2006 May 24" "Debian" "pbuilder"
 .SH NAME
 pdebuild \- pbuilder way of doing debuild
 .SH SYNOPSIS
@@ -7,7 +7,7 @@ pdebuild \- pbuilder way of doing debuild
 .SH DESCRIPTION
 A convenience program for 
 .B pbuilder
-which invokes pbuilder after obtaining appropriate root privilate 
+which invokes pbuilder after obtaining appropriate root privilege 
 in a Debian source directory.
 One must be inside the source tree containing the
 .B debian
@@ -43,7 +43,7 @@ Invoke debsign at the end of pdebuild process.
 .BI "\-\-debsign\-k [" "key\-id" "]"
 Pass 
 .B \-k
-option to debsign to specify which keyid to sign.
+option to debsign to specify which key-id to sign.
 
 .TP
 .BI "\-\-buildresult [" "Directory for build results" "]"
@@ -87,6 +87,10 @@ Specifies the logfile to create.
 The messages generated during execution will be written to the file, 
 instead of messages coming to the 
 standard output.
+
+.TP
+.BI "\-\-pbuilder [" "pbuilder" "]"
+Specifies which command to invoke as pbuilder.
 
 .TP
 .BI "\-\-help"
@@ -139,3 +143,5 @@ The homepage is available at
 .SH "SEE ALSO"
 .RI "pbuilder (" 8 "), "
 .RI "pbuilderrc (" 5 ") "
+
+\"  LocalWords:  pdebuild pbuilder debuild debian debsign pdebuid

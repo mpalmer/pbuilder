@@ -1,3 +1,52 @@
+2006-05-24  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-buildpackage-funcs: quiet down cowprotect, it's giving
+	out useless output, like the following:
+
+	Copying back the cached apt archive contents
+	/var/cache/pbuilder/build/cow.12278/etc/passwd
+	/var/cache/pbuilder/build/cow.12278/etc/group
+	Copying source file
+
+	
+	* pbuilder.8: fix pbuilder execute command-line specification to
+	reflect that script can receive command-line parameters.
+
+	* pdebuild: add a in invocation to pbuilder execute "--", to avoid
+	reorder in cowbuilder, and still work with pbuilder.
+
+	* pdebuild.1: document --pbuilder option.
+
+	* pbuilderrc.5: document the new option
+
+	* pdebuild-checkparams: --pbuilder option. Use pbuilder as default.
+	It is possible to use cowbuilder.
+
+	* pbuilder: add --XXX options as compatibility options for cowbuilder.
+
+	* pdebuild (ARCHITECTURE): use PDEBUILD_PBUILDER instead of calling pbuilder directly,
+	and use cowdancer-compatible command-line options.
+
+	* Documentation/pbuilder-doc.xml: generally spellcheck, and revise.
+
+	* pdebuild.1: spellcheck
+
+	* pdebuild-user-mode-linux.1: spellcheck
+
+	* pbuilderrc.5: spellcheck
+
+	* pbuilder-modules: remove mention of potato/woody, since they
+	probably don't work
+	(pbuilder-options): remove potato/woody.
+
+	* pbuilder.8: remove woody from supported list of distributions,
+	we know dpkg from then doesn't really work with modern kernel.
+	(well, they do, but I don't want this documented/advertised)
+	
+	* pbuilder-user-mode-linux.1: spellcheck
+
+	* pbuilder.8: spellcheck
+
 2006-05-22  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/TODO: update TODO, amd64-x86 cross build is documented and functional.
