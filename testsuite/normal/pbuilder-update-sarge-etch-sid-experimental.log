@@ -1,10 +1,10 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.gJnQ6H/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/var/cache/pbuilder/build//17878/etc/mtab' to `../proc/mounts': File exists
+ln: creating symbolic link `/var/cache/pbuilder/build//20579/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
   -> Installing apt-lines
@@ -13,39 +13,53 @@ Refreshing the base.tgz
  -> upgrading packages
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org experimental Release.gpg [189B]
-Get:3 http://ftp.jp.debian.org sid Release [5902B]
-Ign http://ftp.jp.debian.org sid Release
-Get:4 http://ftp.jp.debian.org experimental Release [4245B]
+Hit http://ftp.jp.debian.org sid Release
+Get:3 http://ftp.jp.debian.org experimental Release [4245B]
 Ign http://ftp.jp.debian.org experimental Release
-Hit http://ftp.jp.debian.org sid/main Packages
-Get:5 http://ftp.jp.debian.org experimental/main Packages [112kB]
-Fetched 122kB in 0s (310kB/s)
+Get:4 http://ftp.jp.debian.org sid Release [5902B]
+Ign http://ftp.jp.debian.org sid Release
+Get:5 http://ftp.jp.debian.org experimental/main Packages [114kB]
+Get:6 http://ftp.jp.debian.org sid/main Packages/DiffIndex [12.6kB]
+Fetched 138kB in 0s (258kB/s)
 Reading package lists...
-W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
-W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute /usr/bin/gpgv to verify signature (is gnupg installed?)
+W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
+W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
-The following packages have been kept back:
-  apt apt-utils
+The following NEW packages will be installed:
+  libc-bin
 The following packages will be upgraded:
-  aptitude diff gettext-base
-3 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
-Need to get 0B/2966kB of archives.
-After unpacking 315kB of additional disk space will be used.
+  aptitude diff gettext-base libc6 libc6-dev
+5 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/9510kB of archives.
+After unpacking 1765kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  diff aptitude gettext-base
-(Reading database ... 12748 files and directories currently installed.)
+  diff libc-bin libc6-dev libc6 aptitude gettext-base
+(Reading database ... 12828 files and directories currently installed.)
 Preparing to replace diff 2.8.1-11 (using .../diff_2.8.7-0.2_amd64.deb) ...
 Unpacking replacement diff ...
 Setting up diff (2.8.7-0.2) ...
-(Reading database ... 12756 files and directories currently installed.)
+Selecting previously deselected package libc-bin.
+(Reading database ... 12836 files and directories currently installed.)
+Unpacking libc-bin (from .../libc-bin_2.3.999.1-2_amd64.deb) ...
+Replacing files in old package libc6 ...
+Preparing to replace libc6-dev 2.3.6-7 (using .../libc6-dev_2.3.999.1-2_amd64.deb) ...
+Unpacking replacement libc6-dev ...
+Preparing to replace libc6 2.3.6-7 (using .../libc6_2.3.999.1-2_amd64.deb) ...
+Unpacking replacement libc6 ...
+Setting up libc6 (2.3.999.1-2) ...
+
+Setting up libc-bin (2.3.999.1-2) ...
+
+(Reading database ... 12885 files and directories currently installed.)
 Preparing to replace aptitude 0.4.1-1 (using .../aptitude_0.4.1-1experimental1_amd64.deb) ...
 Unpacking replacement aptitude ...
 Preparing to replace gettext-base 0.14.5-2 (using .../gettext-base_0.14.5-2.csharp.1_amd64.deb) ...
 Unpacking replacement gettext-base ...
+Setting up libc6-dev (2.3.999.1-2) ...
 Setting up aptitude (0.4.1-1experimental1) ...
 
 Setting up gettext-base (0.14.5-2.csharp.1) ...
@@ -54,33 +68,8 @@ Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
 dpkg-dev is already the newest version.
-The following extra packages will be installed:
-  apt-utils
-Suggested packages:
-  apt-doc bzip2 gnupg
-Recommended packages:
-  debian-archive-keyring
-The following packages will be REMOVED:
-  aptitude tasksel
-The following packages will be upgraded:
-  apt apt-utils
-2 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
-Need to get 0B/1535kB of archives.
-After unpacking 9712kB disk space will be freed.
-WARNING: The following packages cannot be authenticated!
-  apt-utils apt
-(Reading database ... 12756 files and directories currently installed.)
-Removing tasksel ...
-Removing aptitude ...
-(Reading database ... 12553 files and directories currently installed.)
-Preparing to replace apt-utils 0.6.43.3 (using .../apt-utils_0.6.43.3exp1_amd64.deb) ...
-Unpacking replacement apt-utils ...
-Preparing to replace apt 0.6.43.3 (using .../apt_0.6.43.3exp1_amd64.deb) ...
-Unpacking replacement apt ...
-Setting up apt (0.6.43.3exp1) ...
-
-Setting up apt-utils (0.6.43.3exp1) ...
-
+apt is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Copying back the cached apt archive contents
 umount: /sys: not mounted
 umount: /run: not found
@@ -88,9 +77,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//17878/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//20579/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.x00LZN/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.gJnQ6H/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//17878 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//20579 and its subdirectories
