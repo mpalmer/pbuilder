@@ -6,11 +6,11 @@ pdebuild \- pbuilder way of doing debuild
 .PP
 .SH DESCRIPTION
 A convenience program for 
-.B pbuilder
+.B "pbuilder"
 which invokes pbuilder after obtaining appropriate root privilege 
 in a Debian source directory.
 One must be inside the source tree containing the
-.B debian
+.B "debian"
 directory, in order to make it work.
 
 .SH "PDEBUILD OPTIONS"
@@ -21,8 +21,6 @@ It is followed by options of the form
 which will modify the semantics as explained below.
 They are applied from left-to-right, and when there are 
 conflicting options, the rightmost options will have effect.
-
-
 
 .TP
 .BI "\-\-buildsourceroot [" "fakeroot" "]"
@@ -53,10 +51,16 @@ The place which build result is stored.
 Note that for pdebuild, buildresult needs to be specified as pdebuild
 option in the command-line, not as pbuilder option.
 
+Note that the default value for buildresult is what is defined for
+pbuilder,
+.B "/var/cache/pbuilder/result"
+and not 
+.B ".."
+
 .TP
 .BI "\-\-configfile [" "Extra config file to use" "]"
 
-The configuration file is used, and passed on to 
+The configuration file is used, and passed on to
 .BR "pbuilder" .
 
 .TP
@@ -128,10 +132,10 @@ overrides what is written in
 .B /etc/pbuilderrc
 
 .SH "BUGS"
-pdebuid will accept all options that pbuilder accepts as 
-pdebuild option.
-However, unless the option is documented in the manual page, it 
-may be ignored.
+
+pdebuid will accept all options that pbuilder accepts as pdebuild
+option.  However, unless the option is documented in the manual page,
+it may be ignored.
 
 .SH "AUTHOR"
 Initial coding, and main maintenance is done by 
@@ -144,4 +148,4 @@ The homepage is available at
 .RI "pbuilder (" 8 "), "
 .RI "pbuilderrc (" 5 ") "
 
-\"  LocalWords:  pdebuild pbuilder debuild debian debsign pdebuid
+\"  LocalWords:  pdebuild pbuilder debuild debian debsign pdebuid buildresult

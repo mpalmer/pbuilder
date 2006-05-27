@@ -132,13 +132,15 @@ is copied there.
 Note that the default value is not the current directory,
 or 
 .B ".."
-but somewhere else entirely. This is to avoid
+but another place, 
+.B "/var/cache/pbuilder/result"
+This is to avoid
 overwriting already existing deb files with
 the newly generated ones.
 
 .TP
 .BI "\-\-mirror [" "mirror location" "]"
-Specifies the url of Debian mirror to be 
+Specifies the URL of Debian mirror to be 
 specified in 
 .B "sources.list"
 inside the chroot.
@@ -185,7 +187,7 @@ is being called.
 
 .TP
 .BI "\-\-http\-proxy [" "proxy" "]"
-Specifies the http proxy url. Something like
+Specifies the http proxy URL. Something like
 .B "http://xxx.xxx.xxx.xxx:8080/"
 should do. 
 .TP
@@ -544,3 +546,5 @@ The homepage is available at
 .RI "pdebuild (" 1 "), "
 .RI "pbuilderrc (" 5 ") "
 
+
+\"  LocalWords:  buildresult
