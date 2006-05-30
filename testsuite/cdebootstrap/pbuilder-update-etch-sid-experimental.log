@@ -1,8 +1,65 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.gJnQ6H/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qofXtZ8467/testimage]
+ -> creating local configuration
+ -> copying local configuration
+ -> mounting /proc filesystem
+ln: creating symbolic link `/var/cache/pbuilder/build//27790/etc/mtab' to `../proc/mounts': File exists
+ -> mounting /dev/pts filesystem
+ -> policy-rc.d already exists
+  -> Installing apt-lines
+  -> Installing apt-lines and pinning for experimental
+Refreshing the base.tgz 
+ -> upgrading packages
+Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
+Get:2 http://ftp.jp.debian.org experimental Release.gpg [189B]
+Hit http://ftp.jp.debian.org sid Release
+Get:3 http://ftp.jp.debian.org experimental Release [26.7kB]
+Ign http://ftp.jp.debian.org experimental Release
+Get:4 http://ftp.jp.debian.org sid Release [38.3kB]
+Ign http://ftp.jp.debian.org sid Release
+Get:5 http://ftp.jp.debian.org experimental/main Packages [59.0kB]
+Get:6 http://ftp.jp.debian.org sid/main Packages/DiffIndex [12.6kB]
+Fetched 137kB in 0s (324kB/s)
+Reading package lists...
+W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
+W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
+W: You may want to run apt-get update to correct these problems
+dpkg - warning: ignoring request to remove lilo which isn't installed.
+Obtaining the cached apt archive contents
+Reading package lists...
+Building dependency tree...
+The following packages will be upgraded:
+  libc6 libc6-dev
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/6847kB of archives.
+After unpacking 1798kB of additional disk space will be used.
+WARNING: The following packages cannot be authenticated!
+  libc6-dev libc6
+(Reading database ... 11166 files and directories currently installed.)
+Preparing to replace libc6-dev 2.3.6-10 (using .../libc6-dev_2.3.999.2-2_amd64.deb) ...
+Unpacking replacement libc6-dev ...
+Preparing to replace libc6 2.3.6-10 (using .../libc6_2.3.999.2-2_amd64.deb) ...
+Unpacking replacement libc6 ...
+Setting up libc6 (2.3.999.2-2) ...
 
-gzip: stdin: unexpected end of file
-tar: Child returned status 1
-tar: Error exit delayed from previous errors
-E: failed to extract /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.gJnQ6H/testimage to /var/cache/pbuilder/build//16786
+Setting up libc6-dev (2.3.999.2-2) ...
+Reading package lists...
+Building dependency tree...
+build-essential is already the newest version.
+dpkg-dev is already the newest version.
+apt is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Copying back the cached apt archive contents
+umount: /sys: not mounted
+umount: /run: not found
+umount: /proc/bus/usb: not mounted
+umount: /dev/shm: not mounted
+cat: /var/run/inetd.pid: No such file or directory
+kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+ -> user script /var/cache/pbuilder/build//27790/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> unmounting dev/pts filesystem
+ -> unmounting proc filesystem
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qofXtZ8467/testimage]
+ -> cleaning the build env 
+    -> removing directory /var/cache/pbuilder/build//27790 and its subdirectories
