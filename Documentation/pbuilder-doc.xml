@@ -1121,6 +1121,15 @@ BINDMOUNTS="${CCACHE_DIR}"
 	</ulink>
       </para>
     </sect1>
+    <sect1 id="tmpfsforpbuilder">
+      <title>Using tmpfs for buildplace</title>
+      <para>
+	To improve speed of operation, it is possible to use tmpfs for
+	pbuilder build location.  Mount tmpfs to
+	<filename>/var/cache/pbuilder/build</filename>, and set
+	<screen>APTCACHEHARDLINK=no</screen>.
+      </para>
+    </sect1>
     <!-- end of FAQ -->
   </chapter>
 
@@ -1612,5 +1621,5 @@ $ pdebuild --pbuilder cowdancer
  -->
 <!--  LocalWords:  DocBook PSGML wysidocbookxml dbuild Wirzenius debbuild Troup
  -->
-<!--  LocalWords:  perl Ronan Hodek buildd Yay cowloop
+<!--  LocalWords:  perl Ronan Hodek buildd Yay cowloop buildplace
  -->

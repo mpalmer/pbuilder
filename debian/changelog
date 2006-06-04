@@ -2,8 +2,9 @@ pbuilder (0.155) UNRELEASED; urgency=low
 
   [Junichi Uekawa]
   * silence /etc/mtab symlink warning (Closes: #367135).
+  * document tmpfs support for pbuilder buildplace.
 
- -- Junichi Uekawa <dancer@debian.org>  Thu,  1 Jun 2006 09:03:08 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun,  4 Jun 2006 14:00:27 +0900
 
 pbuilder (0.154) unstable; urgency=low
 
@@ -140,7 +141,7 @@ pbuilder (0.142) unstable; urgency=low
   * Document that ccache setting requires target directory to be writable
     by user within chroot. (Closes: #342665).
   * Document HOME=/tmp/buildd inside chroot.
-  * set HOME=$(pwd)/../ in pdebuid-internal to match pdebuild.
+  * set HOME=$(pwd)/../ in pdebuild-internal to match pdebuild.
 
  -- Junichi Uekawa <dancer@debian.org>  Mon, 19 Dec 2005 23:35:08 +0900
 
@@ -998,14 +999,14 @@ pbuilder (0.59) unstable; urgency=low
   buildpackage didn't work otherwise.
   * Fixed pbuilder-uml so that it actually works.
   * Document how to add extra apt sources in the documentation FAQ section.
-  * pbuider-uml now works, and document how to set it up in the documentation
+  * pbuilder-uml now works, and document how to set it up in the documentation
     (closes: #175583)
 
  -- Junichi Uekawa <dancer@debian.org>  Tue,  7 Jan 2003 17:34:33 +0900
 
 pbuilder (0.58) unstable; urgency=low
 
-  * Fix Suggests to pbuider-uml. (closes: #175158)
+  * Fix Suggests to pbuilder-uml. (closes: #175158)
   * Sign changes file instead of dsc file in pdebuild
     (closes: #175432)
   thanks to Andrew Lau <netsnipe@debianplanet.org> for
