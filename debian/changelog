@@ -6,8 +6,11 @@ pbuilder (0.155) UNRELEASED; urgency=low
   * Bug fix: "pbuilder: pdebuild-internal doesn't honor dpkg-buildpackage
     options", thanks to William Steve Applegate (Closes: #366327).
     call su with '-p'
+  * Bug fix: "pbuilder: should create BUILDRESULT if not existent", thanks
+    to Daniel Leidert (Closes: #335523), there was a wrong condition
+    check, it should do that now.
 
- -- Junichi Uekawa <dancer@debian.org>  Mon,  5 Jun 2006 20:37:32 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 11 Jun 2006 00:03:27 +0900
 
 pbuilder (0.154) unstable; urgency=low
 

@@ -56,8 +56,8 @@ extractbuildplace
 trap umountproc_cleanbuildplace exit
 loadhooks
 
-if [ -n "${BUILDRESULT}" ]; then
-    echo " -> created buildresult dir :${BUILDRESULT}"
+if [ ! -d "${BUILDRESULT}" ]; then
+    echo " -> created buildresult dir: ${BUILDRESULT}"
     mkdir -p "${BUILDRESULT}"
 fi
 
