@@ -57,8 +57,15 @@ trap umountproc_cleanbuildplace exit
 loadhooks
 
 if [ ! -d "${BUILDRESULT}" ]; then
-    echo " -> created buildresult dir: ${BUILDRESULT}"
-    mkdir -p "${BUILDRESULT}"
+    if [ -n "${BUILDRESULT}" ] ; then
+	mkdir -p "${BUILDRESULT}"
+    fi
+    if [ -d "${BUILDRESULT}" ]; then
+	echo " -> created buildresult dir: ${BUILDRESULT}"
+    else
+	echo "E: failed creating buildresult dir: ${BUILDRESULT}"
+	exit 1
+    fi
 fi
 
 if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
