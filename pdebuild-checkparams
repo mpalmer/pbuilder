@@ -30,6 +30,7 @@ while [ -n "$1" ]; do
 		if [ -d "$2" ]; then
 		    BUILDRESULT=$(readlink -f "$2");
 		else
+		    BUILDRESULT="$2"
 		    echo "W: Build-result Directory $2 does not exist" >&2 
 		    # warn, but make it progress.
 		fi
