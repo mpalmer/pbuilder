@@ -2,20 +2,18 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Tue May 30 12:22:24 JST 2006
-pbuilder-time-stamp: 1148959344
+Current time: Mon Jun 12 12:22:00 JST 2006
+pbuilder-time-stamp: 1150082520
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qofXtZ8467/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AuOSD29991/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
-ln: creating symbolic link `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qofXtZ8467/dir1/4639/etc/mtab' to `../proc/mounts': File exists
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
- -> created buildresult dir :/var/cache/pbuilder/result/
 Obtaining the cached apt archive contents
 Installing the build-deps
- -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.27 2006/05/22 02:18:00 dancer Exp $
+ -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.28 2006/05/30 23:45:45 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
    -> Trying debhelper
  -> Considering  libdshconfig1-dev (>= 0.20.11-1)
@@ -34,19 +32,13 @@ The following NEW packages will be installed:
   debhelper file gettext gettext-base html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 438kB/3010kB of archives.
+Need to get 0B/3020kB of archives.
 After unpacking 10.6MB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   gettext-base libmagic1 file html2text gettext intltool-debian po-debconf
   debhelper libdshconfig1 libdshconfig1-dev
-Get:1 http://ftp.jp.debian.org etch/main libmagic1 4.17-1 [277kB]
-Get:2 http://ftp.jp.debian.org etch/main file 4.17-1 [31.4kB]
-Get:3 http://ftp.jp.debian.org etch/main html2text 1.3.2a-3 [92.7kB]
-Get:4 http://ftp.jp.debian.org etch/main libdshconfig1 0.20.12-1 [10.9kB]
-Get:5 http://ftp.jp.debian.org etch/main libdshconfig1-dev 0.20.12-1 [26.2kB]
-Fetched 438kB in 0s (1091kB/s)
 Selecting previously deselected package gettext-base.
-(Reading database ... 11151 files and directories currently installed.)
+(Reading database ... 11162 files and directories currently installed.)
 Unpacking gettext-base (from .../gettext-base_0.14.5-4_amd64.deb) ...
 Selecting previously deselected package libmagic1.
 Unpacking libmagic1 (from .../libmagic1_4.17-1_amd64.deb) ...
@@ -59,7 +51,7 @@ Unpacking gettext (from .../gettext_0.14.5-4_amd64.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.34.2+20060512_all.deb) ...
 Selecting previously deselected package po-debconf.
-Unpacking po-debconf (from .../po-debconf_1.0.1_all.deb) ...
+Unpacking po-debconf (from .../po-debconf_1.0.2_all.deb) ...
 Selecting previously deselected package debhelper.
 Unpacking debhelper (from .../debhelper_5.0.35_all.deb) ...
 Selecting previously deselected package libdshconfig1.
@@ -76,7 +68,7 @@ Setting up html2text (1.3.2a-3) ...
 Setting up gettext (0.14.5-4) ...
 
 Setting up intltool-debian (0.34.2+20060512) ...
-Setting up po-debconf (1.0.1) ...
+Setting up po-debconf (1.0.2) ...
 Setting up debhelper (5.0.35) ...
 Setting up libdshconfig1 (0.20.12-1) ...
 
@@ -87,22 +79,20 @@ Building dependency tree...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 96.2kB of archives.
+Need to get 0B/96.2kB of archives.
 After unpacking 401kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   fakeroot
-Get:1 http://ftp.jp.debian.org etch/main fakeroot 1.5.8 [96.2kB]
-Fetched 96.2kB in 0s (711kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11808 files and directories currently installed.)
+(Reading database ... 11820 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.5.8_amd64.deb) ...
 Setting up fakeroot (1.5.8) ...
 
 Copying back the cached apt archive contents
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qofXtZ8467/dir1/dsh_0.25.6-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qofXtZ8467/dir1/dsh_0.25.6.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qofXtZ8467/dir1/dsh_0.25.6-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AuOSD29991/dir1/dsh_0.25.6-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AuOSD29991/dir1/dsh_0.25.6.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AuOSD29991/dir1/dsh_0.25.6-1.diff.gz]
 Extracting source
 su: Authentication service cannot retrieve authentication info.
 (Ignored)
@@ -426,7 +416,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue May 30 03:23:19 UTC 2006
+Mon Jun 12 03:22:57 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -496,7 +486,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue May 30 03:23:24 UTC 2006
+Mon Jun 12 03:23:02 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -626,7 +616,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Tue May 30 12:23:26 JST 2006
-pbuilder-time-stamp: 1148959406
+Current time: Mon Jun 12 12:23:04 JST 2006
+pbuilder-time-stamp: 1150082584
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qofXtZ8467/dir1/4639 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AuOSD29991/dir1/18026 and its subdirectories
