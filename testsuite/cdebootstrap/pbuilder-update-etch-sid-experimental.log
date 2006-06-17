@@ -1,6 +1,6 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.mfYCi18165/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.MjKyB21584/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -17,9 +17,9 @@ Get:3 http://ftp.jp.debian.org experimental Release [26.7kB]
 Ign http://ftp.jp.debian.org experimental Release
 Get:4 http://ftp.jp.debian.org sid Release [38.3kB]
 Ign http://ftp.jp.debian.org sid Release
-Get:5 http://ftp.jp.debian.org experimental/main Packages [63.7kB]
+Get:5 http://ftp.jp.debian.org experimental/main Packages [63.2kB]
 Get:6 http://ftp.jp.debian.org sid/main Packages/DiffIndex [12.6kB]
-Fetched 142kB in 0s (206kB/s)
+Fetched 141kB in 0s (210kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
@@ -29,20 +29,25 @@ Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
 The following packages will be upgraded:
-  libc6 libc6-dev
-2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/6852kB of archives.
-After unpacking 1782kB of additional disk space will be used.
+  adduser libc6 libc6-dev
+3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/7013kB of archives.
+After unpacking 1798kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
-  libc6-dev libc6
-(Reading database ... 11913 files and directories currently installed.)
+  libc6-dev libc6 adduser
+(Reading database ... 11914 files and directories currently installed.)
 Preparing to replace libc6-dev 2.3.6-15 (using .../libc6-dev_2.3.999.2-6_amd64.deb) ...
 Unpacking replacement libc6-dev ...
 Preparing to replace libc6 2.3.6-15 (using .../libc6_2.3.999.2-6_amd64.deb) ...
 Unpacking replacement libc6 ...
 Setting up libc6 (2.3.999.2-6) ...
 
+(Reading database ... 11975 files and directories currently installed.)
+Preparing to replace adduser 3.87 (using .../archives/adduser_3.88_all.deb) ...
+Unpacking replacement adduser ...
 Setting up libc6-dev (2.3.999.2-6) ...
+Setting up adduser (3.88) ...
+
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
@@ -56,9 +61,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//27099/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//1608/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.mfYCi18165/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.MjKyB21584/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//27099 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//1608 and its subdirectories
