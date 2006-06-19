@@ -877,9 +877,14 @@ O: Get:2 bootstrap: . Release [35.4kB]
 O: Ign bootstrap: . Release
 O: Reading package lists...
 O: 
-O: W: GPG error: bootstrap: . Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
-O: W: You may want to run apt-get update to correct these problems
+O: W: 
+O: GPG error: bootstrap: . Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
+O: 
+O: W: 
+O: You may want to run apt-get update to correct these problems
+O: 
 O: Reading package lists...
+O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -1056,10 +1061,10 @@ O: Selecting previously deselected package telnet.
 O: Unpacking telnet (from .../telnet_0.17-32_amd64.deb) ...
 P: Unpacking package telnet
 O: Selecting previously deselected package dhcp3-common.
-O: Unpacking dhcp3-common (from .../dhcp3-common_3.0.4-2_amd64.deb) ...
+O: Unpacking dhcp3-common (from .../dhcp3-common_3.0.4-5_amd64.deb) ...
 P: Unpacking package dhcp3-common
 O: Selecting previously deselected package dhcp3-client.
-O: Unpacking dhcp3-client (from .../dhcp3-client_3.0.4-2_amd64.deb) ...
+O: Unpacking dhcp3-client (from .../dhcp3-client_3.0.4-5_amd64.deb) ...
 P: Unpacking package dhcp3-client
 O: Selecting previously deselected package psmisc.
 O: Unpacking psmisc (from .../psmisc_22.2-1_amd64.deb) ...
@@ -1186,9 +1191,9 @@ O:
 O: Setting up libpcre3 (6.4-2) ...
 P: Configuring package libpcre3
 O: 
-O: Setting up dhcp3-common (3.0.4-2) ...
+O: Setting up dhcp3-common (3.0.4-5) ...
 P: Configuring package dhcp3-common
-O: Setting up dhcp3-client (3.0.4-2) ...
+O: Setting up dhcp3-client (3.0.4-5) ...
 P: Configuring package dhcp3-client
 O: 
 O: Setting up psmisc (22.2-1) ...
@@ -1229,18 +1234,18 @@ P: Configuring package telnet
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 6780 files and directories currently installed.)
+O: 6781 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 6779 files and directories currently installed.)
+O: 6780 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 6777 files and directories currently installed.)
+O: 6778 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1253,7 +1258,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//26175/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//10425/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1262,8 +1267,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [35.4kB]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [3718kB]
-Fetched 3754kB in 2s (1776kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [3771kB]
+Fetched 3807kB in 2s (1561kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1298,7 +1303,7 @@ WARNING: The following packages cannot be authenticated!
   dpkg-dev gcc-4.0 gcc linux-kernel-headers libc6-dev libstdc++6-4.0-dev
   g++-4.0 g++ build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 6777 files and directories currently installed.)
+(Reading database ... 6778 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20060413-1_amd64.deb) ...
 Selecting previously deselected package gcc-4.0-base.
 Unpacking gcc-4.0-base (from .../gcc-4.0-base_4.0.3-3_amd64.deb) ...
@@ -1366,9 +1371,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//26175/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//10425/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.MjKyB21584/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.zkAkoJ4979/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//26175 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//10425 and its subdirectories

@@ -133,6 +133,8 @@ P: Retrieving liblzo1
 P: Validating liblzo1
 P: Retrieving libopencdk8
 P: Validating libopencdk8
+P: Retrieving libtasn1-3
+P: Validating libtasn1-3
 P: Retrieving libgnutls13
 P: Validating libgnutls13
 P: Retrieving libpcre3
@@ -294,8 +296,7 @@ P: Extracting ncurses-base
 P: Extracting findutils
 P: Extracting util-linux
 O: Selecting previously deselected package base-passwd.
-O: (Reading database ... 
-O: 0 files and directories currently installed.)
+O: (Reading database ... 0 files and directories currently installed.)
 O: Unpacking base-passwd (from .../base-passwd_3.5.11_amd64.deb) ...
 P: Unpacking package base-passwd
 O: Setting up base-passwd (3.5.11) ...
@@ -893,26 +894,26 @@ O:   whois vacation anacron lockfile-progs checksecurity resolvconf mail-reader
 O:   eximon4 exim4-doc-html exim4-doc-info gnutls-bin groff iproute ppp rng-tools
 O:   less www-browser spell
 O: Recommended packages:
-O:   aptitude-doc-en aptitude-doc libgpmg1 libfribidi0 mailx
+O:   aptitude-doc-en aptitude-doc libgpmg1 libfribidi0 libtasn1-3-bin mailx
 O: The following NEW packages will be installed:
 O:   adduser apt-utils aptitude at bsdmainutils cpio cron dhcp3-client
 O:   dhcp3-common dmidecode ed exim4 exim4-base exim4-config exim4-daemon-light
 O:   groff-base ifupdown info iptables iputils-ping klogd laptop-detect
 O:   libgcrypt11 libgdbm3 libgnutls13 libgpg-error0 liblzo1 libncursesw5
 O:   libnewt0.52 libopencdk8 libpcre3 libpopt0 libsigc++-2.0-0c2a libssl0.9.8
-O:   libwrap0 logrotate man-db manpages nano net-tools netbase nvi openbsd-inetd
-O:   psmisc sysklogd tasksel tasksel-data tcpd telnet wget whiptail
-O: 0 upgraded, 51 newly installed, 0 to remove and 0 not upgraded.
+O:   libtasn1-3 libwrap0 logrotate man-db manpages nano net-tools netbase nvi
+O:   openbsd-inetd psmisc sysklogd tasksel tasksel-data tcpd telnet wget whiptail
+O: 0 upgraded, 52 newly installed, 0 to remove and 0 not upgraded.
 O: Need to get 13.1MB of archives.
 O: After unpacking 39.9MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
 O:   adduser apt-utils libncursesw5 libsigc++-2.0-0c2a aptitude bsdmainutils cpio
 O:   cron dmidecode ed groff-base net-tools ifupdown info iptables iputils-ping
 O:   sysklogd klogd laptop-detect libgpg-error0 libgcrypt11 libgdbm3 liblzo1
-O:   libopencdk8 libgnutls13 libpopt0 libssl0.9.8 libwrap0 logrotate man-db
-O:   manpages nano openbsd-inetd tcpd netbase nvi tasksel-data tasksel wget
-O:   libnewt0.52 whiptail exim4-config exim4-base libpcre3 exim4-daemon-light at
-O:   exim4 telnet dhcp3-common dhcp3-client psmisc
+O:   libopencdk8 libtasn1-3 libgnutls13 libpopt0 libssl0.9.8 libwrap0 logrotate
+O:   man-db manpages nano openbsd-inetd tcpd netbase nvi tasksel-data tasksel
+O:   wget libnewt0.52 whiptail exim4-config exim4-base libpcre3
+O:   exim4-daemon-light at exim4 telnet dhcp3-common dhcp3-client psmisc
 O: Authentication warning overridden.
 O: Selecting previously deselected package adduser.
 O: (Reading database ... 
@@ -935,7 +936,7 @@ O: Selecting previously deselected package bsdmainutils.
 O: Unpacking bsdmainutils (from .../bsdmainutils_6.1.3_amd64.deb) ...
 P: Unpacking package bsdmainutils
 O: Selecting previously deselected package cpio.
-O: Unpacking cpio (from .../cpio_2.6-12_amd64.deb) ...
+O: Unpacking cpio (from .../cpio_2.6-13_amd64.deb) ...
 P: Unpacking package cpio
 O: Selecting previously deselected package cron.
 O: Unpacking cron (from .../cron_3.0pl1-94_amd64.deb) ...
@@ -988,8 +989,11 @@ P: Unpacking package liblzo1
 O: Selecting previously deselected package libopencdk8.
 O: Unpacking libopencdk8 (from .../libopencdk8_0.5.7-2_amd64.deb) ...
 P: Unpacking package libopencdk8
+O: Selecting previously deselected package libtasn1-3.
+O: Unpacking libtasn1-3 (from .../libtasn1-3_0.3.4-2_amd64.deb) ...
+P: Unpacking package libtasn1-3
 O: Selecting previously deselected package libgnutls13.
-O: Unpacking libgnutls13 (from .../libgnutls13_1.3.5-1.1_amd64.deb) ...
+O: Unpacking libgnutls13 (from .../libgnutls13_1.4.0-2_amd64.deb) ...
 P: Unpacking package libgnutls13
 O: Selecting previously deselected package libpopt0.
 O: Unpacking libpopt0 (from .../libpopt0_1.10-2_amd64.deb) ...
@@ -1087,7 +1091,7 @@ O:
 O: Setting up bsdmainutils (6.1.3) ...
 P: Configuring package bsdmainutils
 O: 
-O: Setting up cpio (2.6-12) ...
+O: Setting up cpio (2.6-13) ...
 P: Configuring package cpio
 O: 
 O: Setting up cron (3.0pl1-94) ...
@@ -1139,7 +1143,10 @@ O:
 O: Setting up libopencdk8 (0.5.7-2) ...
 P: Configuring package libopencdk8
 O: 
-O: Setting up libgnutls13 (1.3.5-1.1) ...
+O: Setting up libtasn1-3 (0.3.4-2) ...
+P: Configuring package libtasn1-3
+O: 
+O: Setting up libgnutls13 (1.4.0-2) ...
 P: Configuring package libgnutls13
 O: 
 O: Setting up libpopt0 (1.10-2) ...
@@ -1234,18 +1241,18 @@ P: Configuring package telnet
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 6780 files and directories currently installed.)
+O: 6790 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 6779 files and directories currently installed.)
+O: 6789 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 6777 files and directories currently installed.)
+O: 6787 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1258,7 +1265,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//19161/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//3170/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1267,8 +1274,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [38.3kB]
 Ign http://ftp.jp.debian.org sid Release
-Get:3 http://ftp.jp.debian.org sid/main Packages [4064kB]
-Fetched 4102kB in 2s (1777kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [4051kB]
+Fetched 4089kB in 2s (1679kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1303,7 +1310,7 @@ WARNING: The following packages cannot be authenticated!
   gcc linux-kernel-headers libc6-dev libstdc++6-4.1-dev g++-4.1 g++
   build-essential
 Selecting previously deselected package binutils.
-(Reading database ... 6777 files and directories currently installed.)
+(Reading database ... 6787 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.16.1cvs20060413-1_amd64.deb) ...
 Selecting previously deselected package cpp-4.1.
 Unpacking cpp-4.1 (from .../cpp-4.1_4.1.1-5_amd64.deb) ...
@@ -1366,9 +1373,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//19161/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//3170/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.MjKyB21584/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.zkAkoJ4979/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//19161 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//3170 and its subdirectories
