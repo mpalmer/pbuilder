@@ -82,4 +82,5 @@ useradd -g pbgroup -u "${BUILDRESULTUID}" -o pbuser
 export HOME=$(pwd)/../
 
 # do build with that user.
+export DEBBUILDOPTS
 echo /usr/bin/dpkg-buildpackage -rfakeroot -us -uc '${DEBBUILDOPTS}' | su -p pbuser
