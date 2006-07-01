@@ -1,6 +1,6 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.zkAkoJ4979/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.yQEFo28874/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -15,34 +15,27 @@ Get:2 http://ftp.jp.debian.org experimental Release.gpg [189B]
 Hit http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org experimental Release [26.7kB]
 Get:4 http://ftp.jp.debian.org sid/main Packages/DiffIndex [12.6kB]
-Get:5 http://ftp.jp.debian.org experimental/main Packages [41.6kB]
-Fetched 81.1kB in 0s (198kB/s)
+Get:5 http://ftp.jp.debian.org experimental/main Packages [61.4kB]
+Fetched 101kB in 0s (106kB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
 The following packages will be upgraded:
-  adduser libc6 libc6-dev
-3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 6849kB/7010kB of archives.
-After unpacking 1794kB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org experimental/main libc6-dev 2.3.999.2-7 [2143kB]
-Get:2 http://ftp.jp.debian.org experimental/main libc6 2.3.999.2-7 [4706kB]
-Fetched 6849kB in 3s (1872kB/s)
-(Reading database ... 12152 files and directories currently installed.)
-Preparing to replace libc6-dev 2.3.6-15 (using .../libc6-dev_2.3.999.2-7_amd64.deb) ...
+  libc6 libc6-dev
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0B/6849kB of archives.
+After unpacking 1778kB of additional disk space will be used.
+(Reading database ... 12185 files and directories currently installed.)
+Preparing to replace libc6-dev 2.3.6-15 (using .../libc6-dev_2.3.999.2-8_amd64.deb) ...
 Unpacking replacement libc6-dev ...
-Preparing to replace libc6 2.3.6-15 (using .../libc6_2.3.999.2-7_amd64.deb) ...
+Preparing to replace libc6 2.3.6-15 (using .../libc6_2.3.999.2-8_amd64.deb) ...
 Unpacking replacement libc6 ...
-Setting up libc6 (2.3.999.2-7) ...
+Setting up libc6 (2.3.999.2-8) ...
+init: timeout opening/writing control channel /dev/initctl
 
-(Reading database ... 12212 files and directories currently installed.)
-Preparing to replace adduser 3.87 (using .../archives/adduser_3.88_all.deb) ...
-Unpacking replacement adduser ...
-Setting up libc6-dev (2.3.999.2-7) ...
-Setting up adduser (3.88) ...
-
+Setting up libc6-dev (2.3.999.2-8) ...
 Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
@@ -50,17 +43,15 @@ dpkg-dev is already the newest version.
 apt is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Copying back the cached apt archive contents
- -> new cache content libc6-dev_2.3.999.2-7_amd64.deb added
- -> new cache content libc6_2.3.999.2-7_amd64.deb added
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//2261/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//27499/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.zkAkoJ4979/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.yQEFo28874/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//2261 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//27499 and its subdirectories
