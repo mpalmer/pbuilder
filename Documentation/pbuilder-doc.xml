@@ -986,11 +986,13 @@ cd /var/cache/pbuilder/result/
 	not the expected behaviour.
       </para>
       <para>
-	To work around the problem, fakechroot provides a patch for debootstrap.
-	Use that, so that ldd and ldconfig are overridden.
+	To work around the problem, debootstrap has a
+	<option>--variant fakechroot</option> option.  Use that, so
+	that ldd and ldconfig are overridden.
       </para>
       <para>
-	Make sure you have set your path correctly, as described in <filename>/usr/share/doc/fakechroot/README.Debian</filename>
+	Make sure you have set your LD_PRELOAD path correctly, as described in
+	the fakechroot manpage.
       </para>
     </sect1>
     <sect1 id="debconfinsidepbuilder">
