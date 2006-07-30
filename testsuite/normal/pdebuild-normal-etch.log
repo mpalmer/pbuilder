@@ -7,14 +7,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.FURYo31548/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qenVx24920/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.FURYo31548/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qenVx24920/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.FURYo31548/dir2/dsh-0.25.6'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qenVx24920/dir2/dsh-0.25.6'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.FURYo31548/dir2/dsh-0.25.6'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qenVx24920/dir2/dsh-0.25.6'
 make: [clean] Error 2 (ignored)
 dh_clean
 dh_clean: Compatibility levels before 4 are deprecated.
@@ -32,10 +32,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Tue Jul 25 12:08:27 JST 2006
-pbuilder-time-stamp: 1153796907
+Current time: Sun Jul 30 12:09:44 JST 2006
+pbuilder-time-stamp: 1154228984
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.FURYo31548/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qenVx24920/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -64,7 +64,7 @@ The following NEW packages will be installed:
 Need to get 0B/2913kB of archives.
 After unpacking 9646kB of additional disk space will be used.
 Selecting previously deselected package libmagic1.
-(Reading database ... 11581 files and directories currently installed.)
+(Reading database ... 11586 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.17-2_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.17-2_amd64.deb) ...
@@ -104,7 +104,7 @@ The following NEW packages will be installed:
 Need to get 0B/96.5kB of archives.
 After unpacking 401kB of additional disk space will be used.
 Selecting previously deselected package fakeroot.
-(Reading database ... 12178 files and directories currently installed.)
+(Reading database ... 12183 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.5.9_amd64.deb) ...
 Setting up fakeroot (1.5.9) ...
 
@@ -114,16 +114,12 @@ Copying source file
     -> copying [../dsh_0.25.6.orig.tar.gz]
     -> copying [../dsh_0.25.6-1.diff.gz]
 Extracting source
-su: Authentication service cannot retrieve authentication info.
-(Ignored)
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: warning: extracting unsigned source package (./dsh_0.25.6-1.dsc)
 dpkg-source: extracting dsh in dsh-0.25.6
 dpkg-source: unpacking dsh_0.25.6.orig.tar.gz
 dpkg-source: applying ./dsh_0.25.6-1.diff.gz
  -> Building the package
-su: Authentication service cannot retrieve authentication info.
-(Ignored)
 dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: source package is dsh
@@ -424,10 +420,10 @@ success
 success
 success
 success
-a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
+a: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -435,11 +431,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue Jul 25 03:08:57 UTC 2006
+Sun Jul 30 03:10:40 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -509,7 +505,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue Jul 25 03:09:02 UTC 2006
+Sun Jul 30 03:10:45 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -639,7 +635,7 @@ dpkg-buildpackage: full upload (original source is included)
 Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Tue Jul 25 12:09:04 JST 2006
-pbuilder-time-stamp: 1153796944
+Current time: Sun Jul 30 12:10:48 JST 2006
+pbuilder-time-stamp: 1154229048
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.FURYo31548/dir3/17247 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.qenVx24920/dir3/10967 and its subdirectories
