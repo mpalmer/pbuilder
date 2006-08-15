@@ -30,7 +30,6 @@ CHROOTEXEC=""
 OVERRIDE_APTLINES="no"
 BINARY_ARCH="no"
 PBUILDER_BUILD_LOGFILE=
-USE_PKGNAME_LOGFILE=""
 PRESERVE_BUILDPLACE="no"
 unset EXTRA_CONFIGFILE || true
 PBUILDER_DEBUGMODE=
@@ -144,7 +143,7 @@ while [ -n "$1" ]; do
 	    shift; shift;
 	    ;;
 	--pkgname-logfile)
-	    USE_PKGNAME_LOGFILE="yes"
+	    PKGNAME_LOGFILE="yes"
 	    shift; 
 	    ;;
 	--aptconfdir)

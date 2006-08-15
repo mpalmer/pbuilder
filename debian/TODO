@@ -1,5 +1,9 @@
 TODO and possible bugs: 
 
+* /etc/pbuilderrc
+I want to not make it a conffile, but removing the file is a problem,
+   since I already have /etc/pbuilder/pbuilderrc symlink.
+
 * pdebuild-internal
    - hooks should be supported (342613)
    - Use pbuilder cache in pdebuild-internal (235237)
@@ -23,19 +27,6 @@ Remaining problem is the upgrade case, and when base.tgz already
 contains xvfb.
 
 Maybe document the limitation.
-
-* cowdancer support
-   - depends-on debian-bug: 329383: now partially resolved.
-0.6 is released.
-cowdancer is mostly functional now. 
-Where to put cowbuilder
-should pbuilder be extended or cowbuilder developed further?
-
-cowdancer 0.9 is released and most bugs are fixed, a post is posted to
-debian-devel. There might be latent bugs, it might be about time to
-get wider testing?
-
-cowdancer 0.14 should be released with cowbuilder.
 
 * use arrays for debbuildopts
    - current --debbuildopts usages will break, how do we support it?
