@@ -126,7 +126,13 @@ function umountproc () {
 	fi
 	umount_one "proc"
     fi
+    # push arguments on a stack to reverse direction.
+    local reversed
+    reversed=
     for mnt in $BINDMOUNTS; do
+	reversed="$mnt $reversed"
+    done
+    for mnt in $reversed; do
 	umount_one "$mnt"
     done
 }

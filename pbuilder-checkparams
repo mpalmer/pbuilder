@@ -263,3 +263,5 @@ case "$PBCURRENTCOMMANDLINEOPERATION" in
 	;;
 esac
 
+# sort BINDMOUNTS to ensure that deeper directories are mounted last
+BINDMOUNTS="$(for i in $BINDMOUNTS; do echo $i; done | sort -u)"
