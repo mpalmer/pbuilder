@@ -586,7 +586,7 @@ umount: /dev/shm: not mounted
 umount: proc: not mounted
 umount: proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//4923/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//9344/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -595,7 +595,7 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Hit http://ftp.jp.debian.org sid Release
 Get:2 http://ftp.jp.debian.org sid/main Packages/DiffIndex [12.6kB]
-Fetched 12.8kB in 0s (33.1kB/s)
+Fetched 12.8kB in 0s (35.9kB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Obtaining the cached apt archive contents
@@ -621,10 +621,13 @@ The following NEW packages will be installed:
   libc6-dev libdb4.4 libssp0 libstdc++6-4.1-dev linux-kernel-headers make
   patch perl perl-modules
 0 upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/21.5MB of archives.
+Need to get 3927kB/21.5MB of archives.
 After unpacking 86.9MB of additional disk space will be used.
+Get:1 http://ftp.jp.debian.org sid/main linux-kernel-headers 2.6.17.10-1 [1820kB]
+Get:2 http://ftp.jp.debian.org sid/main libc6-dev 2.3.6.ds1-3 [2107kB]
+Fetched 3927kB in 5s (777kB/s)
 Selecting previously deselected package binutils.
-(Reading database ... 7097 files and directories currently installed.)
+(Reading database ... 7101 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.17-2_amd64.deb) ...
 Selecting previously deselected package cpp-4.1.
 Unpacking cpp-4.1 (from .../cpp-4.1_4.1.1-11_amd64.deb) ...
@@ -649,9 +652,9 @@ Unpacking gcc-4.1 (from .../gcc-4.1_4.1.1-11_amd64.deb) ...
 Selecting previously deselected package gcc.
 Unpacking gcc (from .../gcc_4%3a4.1.1-6_amd64.deb) ...
 Selecting previously deselected package linux-kernel-headers.
-Unpacking linux-kernel-headers (from .../linux-kernel-headers_2.6.17.8-1_amd64.deb) ...
+Unpacking linux-kernel-headers (from .../linux-kernel-headers_2.6.17.10-1_amd64.deb) ...
 Selecting previously deselected package libc6-dev.
-Unpacking libc6-dev (from .../libc6-dev_2.3.6.ds1-2_amd64.deb) ...
+Unpacking libc6-dev (from .../libc6-dev_2.3.6.ds1-3_amd64.deb) ...
 Selecting previously deselected package libstdc++6-4.1-dev.
 Unpacking libstdc++6-4.1-dev (from .../libstdc++6-4.1-dev_4.1.1-11_amd64.deb) ...
 Selecting previously deselected package g++-4.1.
@@ -673,8 +676,8 @@ Setting up libssp0 (4.1.1-11) ...
 Setting up gcc-4.1 (4.1.1-11) ...
 Setting up gcc (4.1.1-6) ...
 
-Setting up linux-kernel-headers (2.6.17.8-1) ...
-Setting up libc6-dev (2.3.6.ds1-2) ...
+Setting up linux-kernel-headers (2.6.17.10-1) ...
+Setting up libc6-dev (2.3.6.ds1-3) ...
 Setting up perl-modules (5.8.8-6.1) ...
 Setting up libstdc++6-4.1-dev (4.1.1-11) ...
 Setting up perl (5.8.8-6.1) ...
@@ -685,17 +688,19 @@ Setting up g++ (4.1.1-6) ...
 
 Setting up build-essential (11.3) ...
 Copying back the cached apt archive contents
- -> new cache content libwrap0_7.6.dbs-10_amd64.deb added
- -> new cache content tcpd_7.6.dbs-10_amd64.deb added
+ -> new cache content libbz2-1.0_1.0.3-4_amd64.deb added
+ -> new cache content libc6_2.3.6.ds1-3_amd64.deb added
+ -> new cache content linux-kernel-headers_2.6.17.10-1_amd64.deb added
+ -> new cache content libc6-dev_2.3.6.ds1-3_amd64.deb added
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//4923/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//9344/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.AuwBLI4918/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ebKcYU9339/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//4923 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//9344 and its subdirectories
