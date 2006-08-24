@@ -126,6 +126,9 @@ function umountproc () {
 	fi
 	umount_one "proc"
     fi
+    if [ -x /usr/sbin/selinuxenabled ] && /usr/sbin/selinuxenabled; then
+	umount_one "selinux"
+    fi
     # push arguments on a stack to reverse direction.
     local reversed
     reversed=
@@ -157,6 +160,11 @@ function mountproc () {
 	mkdir -p $BUILDPLACE/dev/pts || true
 	mount -t devpts /dev/pts "$BUILDPLACE/dev/pts" 
     fi
+    if [ -x /usr/sbin/selinuxenabled ] && /usr/sbin/selinuxenabled; then
+	echo " -> mounting selinux filesystem"
+	mkdir -p $BUILDPLACE/selinux
+	mount -t selinuxfs /selinux "$BUILDPLACE/selinux"
+    fi    
     for mnt in $BINDMOUNTS; do
 	echo "-> Mounting $mnt"
 	mkdir -p "$BUILDPLACE/$mnt"
