@@ -340,7 +340,8 @@ O: Setting up dpkg (1.13.21) ...
 P: Configuring package dpkg
 O: 
 O: Selecting previously deselected package tzdata.
-O: (Reading database ... 207 files and directories currently installed.)
+O: (Reading database ... 
+O: 207 files and directories currently installed.)
 O: Unpacking tzdata (from .../tzdata_2006g-2_all.deb) ...
 P: Unpacking package tzdata
 O: Selecting previously deselected package libc6.
@@ -884,13 +885,17 @@ O: Get:2 bootstrap: . Release [62.9kB]
 O: Ign bootstrap: . Release
 O: Reading package lists...
 O: 
-O: W: GPG error: bootstrap: . Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
-O: W: You may want to run apt-get update to correct these problems
+O: W: 
+O: GPG error: bootstrap: . Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
+O: 
+O: W: 
+O: You may want to run apt-get update to correct these problems
+O: 
 O: Reading package lists...
 O: Building dependency tree...
 O: 
 O: Suggested packages:
-O:   perl-modules libparse-debianchangelog-perl debtags cpp wenglish wordlist
+O:   perl-modules libparse-debianchangelog-perl debtags cpp wamerican wordlist
 O:   whois vacation anacron lockfile-progs checksecurity resolvconf mail-reader
 O:   eximon4 exim4-doc-html exim4-doc-info gnutls-bin libmail-spf-query-perl
 O:   groff iproute ppp rng-tools less www-browser spell
@@ -919,7 +924,7 @@ O: Authentication warning overridden.
 O: Selecting previously deselected package adduser.
 O: (Reading database ... 
 O: 4889 files and directories currently installed.)
-O: Unpacking adduser (from .../bootstrap/adduser_3.96_all.deb) ...
+O: Unpacking adduser (from .../bootstrap/adduser_3.97_all.deb) ...
 P: Unpacking package adduser
 O: Selecting previously deselected package apt-utils.
 O: Unpacking apt-utils (from .../apt-utils_0.6.45_amd64.deb) ...
@@ -934,7 +939,7 @@ O: Selecting previously deselected package aptitude.
 O: Unpacking aptitude (from .../aptitude_0.4.2-1_amd64.deb) ...
 P: Unpacking package aptitude
 O: Selecting previously deselected package bsdmainutils.
-O: Unpacking bsdmainutils (from .../bsdmainutils_6.1.3_amd64.deb) ...
+O: Unpacking bsdmainutils (from .../bsdmainutils_6.1.4_amd64.deb) ...
 P: Unpacking package bsdmainutils
 O: Selecting previously deselected package cpio.
 O: Unpacking cpio (from .../cpio_2.6-17_amd64.deb) ...
@@ -1012,7 +1017,7 @@ O: Selecting previously deselected package man-db.
 O: Unpacking man-db (from .../man-db_2.4.3-3_amd64.deb) ...
 P: Unpacking package man-db
 O: Selecting previously deselected package manpages.
-O: Unpacking manpages (from .../manpages_2.34-1_all.deb) ...
+O: Unpacking manpages (from .../manpages_2.39-1_all.deb) ...
 P: Unpacking package manpages
 O: Selecting previously deselected package nano.
 O: Unpacking nano (from .../nano_1.3.12-2_amd64.deb) ...
@@ -1074,7 +1079,7 @@ P: Unpacking package dhcp3-client
 O: Selecting previously deselected package psmisc.
 O: Unpacking psmisc (from .../psmisc_22.3-1_amd64.deb) ...
 P: Unpacking package psmisc
-O: Setting up adduser (3.96) ...
+O: Setting up adduser (3.97) ...
 P: Configuring package adduser
 O: 
 O: Setting up apt-utils (0.6.45) ...
@@ -1089,7 +1094,7 @@ O:
 O: Setting up aptitude (0.4.2-1) ...
 P: Configuring package aptitude
 O: 
-O: Setting up bsdmainutils (6.1.3) ...
+O: Setting up bsdmainutils (6.1.4) ...
 P: Configuring package bsdmainutils
 O: 
 O: Setting up cpio (2.6-17) ...
@@ -1165,7 +1170,7 @@ O: Setting up man-db (2.4.3-3) ...
 P: Configuring package man-db
 O: Building database of manual pages ...
 O: 
-O: Setting up manpages (2.34-1) ...
+O: Setting up manpages (2.39-1) ...
 P: Configuring package manpages
 O: Setting up nano (1.3.12-2) ...
 P: Configuring package nano
@@ -1264,7 +1269,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//18498/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//14961/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1273,8 +1278,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [62.9kB]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [5236kB]
-Fetched 5299kB in 3s (1598kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [5278kB]
+Fetched 5341kB in 2s (1882kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
@@ -1372,9 +1377,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//18498/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//14961/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.ebKcYU9339/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.bmuyvr6125/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//18498 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//14961 and its subdirectories
