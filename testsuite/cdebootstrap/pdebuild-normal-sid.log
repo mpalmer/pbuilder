@@ -7,14 +7,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.bmuyvr6125/dir2/dsh-0.25.7'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wChUk18234/dir2/dsh-0.25.7'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.bmuyvr6125/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wChUk18234/dir2/dsh-0.25.7'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.bmuyvr6125/dir2/dsh-0.25.7'
+make[1]: Entering directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wChUk18234/dir2/dsh-0.25.7'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.bmuyvr6125/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wChUk18234/dir2/dsh-0.25.7'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.7
@@ -31,16 +31,15 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Tue Aug 29 12:16:38 JST 2006
-pbuilder-time-stamp: 1156821398
+Current time: Fri Sep  1 12:28:55 JST 2006
+pbuilder-time-stamp: 1157081335
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.bmuyvr6125/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wChUk18234/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
-Obtaining the cached apt archive contents
 Installing the build-deps
  -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.28 2006/05/30 23:45:45 dancer Exp $
  -> Considering  debhelper (>> 3.0.0)
@@ -61,13 +60,24 @@ The following NEW packages will be installed:
   debhelper file gettext gettext-base html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/3209kB of archives.
+Need to get 3209kB of archives.
 After unpacking 11.1MB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   gettext-base libmagic1 file html2text gettext intltool-debian po-debconf
   debhelper libdshconfig1 libdshconfig1-dev
+Get:1 http://ftp.jp.debian.org sid/main gettext-base 0.15-1 [124kB]
+Get:2 http://ftp.jp.debian.org sid/main libmagic1 4.17-3 [277kB]
+Get:3 http://ftp.jp.debian.org sid/main file 4.17-3 [31.7kB]
+Get:4 http://ftp.jp.debian.org sid/main html2text 1.3.2a-3 [92.7kB]
+Get:5 http://ftp.jp.debian.org sid/main gettext 0.15-1 [1999kB]
+Get:6 http://ftp.jp.debian.org sid/main intltool-debian 0.35.0+20060710 [31.4kB]
+Get:7 http://ftp.jp.debian.org sid/main po-debconf 1.0.5 [109kB]
+Get:8 http://ftp.jp.debian.org sid/main debhelper 5.0.37.3 [508kB]
+Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.12-2 [10.9kB]
+Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.12-2 [25.3kB]
+Fetched 3209kB in 2s (1459kB/s)
 Selecting previously deselected package gettext-base.
-(Reading database ... 11688 files and directories currently installed.)
+(Reading database ... 11706 files and directories currently installed.)
 Unpacking gettext-base (from .../gettext-base_0.15-1_amd64.deb) ...
 Selecting previously deselected package libmagic1.
 Unpacking libmagic1 (from .../libmagic1_4.17-3_amd64.deb) ...
@@ -108,16 +118,17 @@ Building dependency tree...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/97.4kB of archives.
+Need to get 97.4kB of archives.
 After unpacking 406kB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   fakeroot
+Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.5.10 [97.4kB]
+Fetched 97.4kB in 0s (711kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12357 files and directories currently installed.)
+(Reading database ... 12375 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.5.10_amd64.deb) ...
 Setting up fakeroot (1.5.10) ...
 
-Copying back the cached apt archive contents
 Copying source file
     -> copying [../dsh_0.25.7-1.dsc]
     -> copying [../dsh_0.25.7.orig.tar.gz]
@@ -450,7 +461,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue Aug 29 03:17:24 UTC 2006
+Fri Sep  1 03:29:36 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -520,14 +531,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue Aug 29 03:17:29 UTC 2006
+Fri Sep  1 03:29:41 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-dsh: Process terminated (before write).
 b: b
 c: c
+dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -632,10 +643,9 @@ dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; u
 debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
-Copying back the cached apt archive contents
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Tue Aug 29 12:17:31 JST 2006
-pbuilder-time-stamp: 1156821451
+Current time: Fri Sep  1 12:29:43 JST 2006
+pbuilder-time-stamp: 1157081383
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.bmuyvr6125/dir3/1491 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wChUk18234/dir3/5170 and its subdirectories

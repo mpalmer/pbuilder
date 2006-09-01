@@ -342,7 +342,7 @@ O:
 O: Selecting previously deselected package tzdata.
 O: (Reading database ... 
 O: 220 files and directories currently installed.)
-O: Unpacking tzdata (from .../tzdata_2006g-2_all.deb) ...
+O: Unpacking tzdata (from .../tzdata_2006k-1_all.deb) ...
 P: Unpacking package tzdata
 O: Selecting previously deselected package libc6.
 O: Unpacking libc6 (from .../libc6_2.3.6.ds1-4_amd64.deb) ...
@@ -703,7 +703,7 @@ O:
 O: Setting up sysv-rc (2.86.ds1-15) ...
 P: Configuring package sysv-rc
 O: 
-O: Setting up tzdata (2006g-2) ...
+O: Setting up tzdata (2006k-1) ...
 P: Configuring package tzdata
 O: Non-interactive mode, setting timezone to UTC.  Run tzconfig to change.
 O: 
@@ -880,7 +880,7 @@ P: Configuring package debconf
 O: 
 O: Selecting previously deselected package apt.
 O: (Reading database ... 
-O: 4725 files and directories currently installed.)
+O: 4743 files and directories currently installed.)
 O: Unpacking apt (from .../bootstrap/apt_0.6.45_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up apt (0.6.45) ...
@@ -889,7 +889,7 @@ O:
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
 O: (Reading database ... 
-O: 4905 files and directories currently installed.)
+O: 4923 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 O: Get:1 bootstrap: . Release.gpg [189B]
@@ -935,7 +935,7 @@ O:   exim4-daemon-light at exim4 telnet dhcp3-common dhcp3-client psmisc
 O: Authentication warning overridden.
 O: Selecting previously deselected package adduser.
 O: (Reading database ... 
-O: 4906 files and directories currently installed.)
+O: 4924 files and directories currently installed.)
 O: Unpacking adduser (from .../bootstrap/adduser_3.97_all.deb) ...
 P: Unpacking package adduser
 O: Selecting previously deselected package apt-utils.
@@ -1257,18 +1257,18 @@ P: Configuring package telnet
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 6878 files and directories currently installed.)
+O: 6896 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 6877 files and directories currently installed.)
+O: 6895 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 6875 files and directories currently installed.)
+O: 6893 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1281,7 +1281,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//8714/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//13530/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1291,12 +1291,11 @@ Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [67.1kB]
 Ign http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org sid/main Packages [5515kB]
-Fetched 5582kB in 2s (1887kB/s)
+Fetched 5583kB in 3s (1665kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
 W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
-Obtaining the cached apt archive contents
 Reading package lists...
 Building dependency tree...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
@@ -1319,14 +1318,33 @@ The following NEW packages will be installed:
   libc6-dev libdb4.4 libssp0 libstdc++6-4.1-dev linux-kernel-headers make
   patch perl perl-modules
 0 upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0B/21.5MB of archives.
+Need to get 21.5MB of archives.
 After unpacking 86.9MB of additional disk space will be used.
 WARNING: The following packages cannot be authenticated!
   binutils cpp-4.1 cpp perl-modules libdb4.4 perl patch make dpkg-dev libssp0
   gcc-4.1 gcc linux-kernel-headers libc6-dev libstdc++6-4.1-dev g++-4.1 g++
   build-essential
+Get:1 http://ftp.jp.debian.org sid/main binutils 2.17-2 [2625kB]
+Get:2 http://ftp.jp.debian.org sid/main cpp-4.1 4.1.1-11 [2476kB]
+Get:3 http://ftp.jp.debian.org sid/main cpp 4:4.1.1-6 [9776B]
+Get:4 http://ftp.jp.debian.org sid/main perl-modules 5.8.8-6.1 [2309kB]
+Get:5 http://ftp.jp.debian.org sid/main libdb4.4 4.4.20-8 [474kB]
+Get:6 http://ftp.jp.debian.org sid/main perl 5.8.8-6.1 [4233kB]
+Get:7 http://ftp.jp.debian.org sid/main patch 2.5.9-4 [98.7kB]
+Get:8 http://ftp.jp.debian.org sid/main make 3.81-2 [390kB]
+Get:9 http://ftp.jp.debian.org sid/main dpkg-dev 1.13.22 [109kB]
+Get:10 http://ftp.jp.debian.org sid/main libssp0 4.1.1-11 [4968B]
+Get:11 http://ftp.jp.debian.org sid/main gcc-4.1 4.1.1-11 [458kB]
+Get:12 http://ftp.jp.debian.org sid/main gcc 4:4.1.1-6 [5046B]
+Get:13 http://ftp.jp.debian.org sid/main linux-kernel-headers 2.6.17.10-1 [1820kB]
+Get:14 http://ftp.jp.debian.org sid/main libc6-dev 2.3.6.ds1-4 [2107kB]
+Get:15 http://ftp.jp.debian.org sid/main libstdc++6-4.1-dev 4.1.1-11 [1615kB]
+Get:16 http://ftp.jp.debian.org sid/main g++-4.1 4.1.1-11 [2776kB]
+Get:17 http://ftp.jp.debian.org sid/main g++ 4:4.1.1-6 [1356B]
+Get:18 http://ftp.jp.debian.org sid/main build-essential 11.3 [6982B]
+Fetched 21.5MB in 49s (436kB/s)
 Selecting previously deselected package binutils.
-(Reading database ... 6875 files and directories currently installed.)
+(Reading database ... 6893 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.17-2_amd64.deb) ...
 Selecting previously deselected package cpp-4.1.
 Unpacking cpp-4.1 (from .../cpp-4.1_4.1.1-11_amd64.deb) ...
@@ -1386,16 +1404,15 @@ Setting up g++-4.1 (4.1.1-11) ...
 Setting up g++ (4.1.1-6) ...
 
 Setting up build-essential (11.3) ...
-Copying back the cached apt archive contents
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//8714/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//13530/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.bmuyvr6125/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.wChUk18234/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//8714 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//13530 and its subdirectories
