@@ -1,4 +1,6 @@
 #!/bin/sh
+# example file to be used with --hookdir
+#
 # work around initscripts postinst which mounts /sys with cdebootstrap.
 # Bug: #350262
 
