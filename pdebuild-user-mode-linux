@@ -47,7 +47,7 @@ else
 	echo "W: Unmet build-dependency in source"
     fi
     echo "dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} $DEBBUILDOPTS" | /bin/bash
-    pbuilder-user-mode-linux build "$@" --buildresult "${UML_BUILDRESULT}" --debbuildopts "${DEBBUILDOPTS}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
+    pbuilder-user-mode-linux build "$@" --buildresult "${UML_BUILDRESULT}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
 fi
 
 # do signing with optional key specifier

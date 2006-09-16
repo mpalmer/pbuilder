@@ -30,7 +30,6 @@ clean:
 	# Add here commands to clean up after the build process.
 	-$(MAKE) clean
 
-	rm -rf debian/pbuilder-uml/
 	dh_clean
 
 install: build
@@ -61,7 +60,20 @@ binary-indep: build install
 
 # Build architecture-dependent files here.
 binary-arch: build install
-	echo NOTE: pbuilder-uml is not built see changelog for version 0.117
+ifeq (${ARCH},i386)
+	dh_testdir -a
+	dh_testroot -a
+	dh_installdocs -a
+	dh_installman -ppbuilder-uml pbuilder-user-mode-linux.1 pbuilder-uml.conf.5 pdebuild-user-mode-linux.1
+	dh_installchangelogs -a
+	dh_link -a
+	dh_compress -a
+	dh_fixperms -a
+	dh_installdeb -a
+	dh_gencontrol  -a
+	dh_md5sums  -a
+	dh_builddeb -a
+endif
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install configure

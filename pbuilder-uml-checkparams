@@ -21,7 +21,7 @@
 # requires
 # . /usr/lib/pbuilder/pbuilder-loadconfig
 
-for SYSTEM_CONFIG in /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-uml.conf ${HOME}/.pbuilderrc; do
+for SYSTEM_CONFIG in /usr/share/pbuilder/pbuilder-uml.conf /etc/pbuilder/pbuilder-uml.conf ${HOME}/.pbuilderrc ${HOME}/.pbuilder-umlrc; do
     if [ -f ${SYSTEM_CONFIG} ]; then
 	. ${SYSTEM_CONFIG}
     fi

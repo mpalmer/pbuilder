@@ -62,13 +62,20 @@ ${UML_DEBUGMODE}
 
 mount -t proc /proc /proc
 mount -t tmpfs /tmp /tmp
-#if ! fsck -p /dev/ubd/1; then
-#  echo "W: Failed to fsck /dev/ubd/1"
+
+# create devices
+mount -t tmpfs tmpfs /dev
+mknod /dev/ubdb b 98 16
+#if ! fsck -p /dev/ubdb; then
+#  echo "W: Failed to fsck /dev/ubdb"
 #fi
-if ! mount -t ext2 /dev/ubd/1 ${UML_CHROOT_MOUNTPOINT}; then
-  echo "E: Cannot mount /dev/ubd/1, is UML root image accessible as current user?"
+if ! mount -t ext2 /dev/ubdb ${UML_CHROOT_MOUNTPOINT}; then
+  echo "E: Cannot mount /dev/ubdb, is UML root image accessible as current user?"
   exit 1
 fi
+mount --bind ${UML_CHROOT_MOUNTPOINT}/dev /dev
+
+
 export LOGNAME="${LOGNAME}"
 export HOME="${HOME}"
 hostname "${UML_HOSTNAME}"
@@ -125,6 +132,9 @@ else
 fi
 pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT[@]} --buildresult "\${BUILDRESULT}" --buildplace "${UML_CHROOT_MOUNTPOINT}" --internal-build-uml ${UML_DEBUGMODE:+--debug} ${BUILDING_DSC_FILE}  ${UML_EXECUTE_EXTRAOPT} 
 echo \$? > /proc/exitcode
+
+umount /dev
+umount ${UML_CHROOT_MOUNTPOINT}
 /sbin/halt -d -f 
 EOF
 
@@ -134,7 +144,7 @@ EOF
 	echo "W: You are uid=0. Don't run UML as uid=0, it's not supported."
     fi
 
-    echo Invoking: "linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=${PBUILDER_COW}${PBUILDER_UML_IMAGE} devfs=mount init=${INSIDE_PBUILDER} rw"
+    echo Invoking: "linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=${PBUILDER_COW}${PBUILDER_UML_IMAGE} init=${INSIDE_PBUILDER} rw"
     if linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1="${PBUILDER_COW}${PBUILDER_UML_IMAGE}" devfs=mount init=${INSIDE_PBUILDER} rw ; then
 	UML_EXITCODE=$?
 	echo " -> Successful exit from user-mode linux"

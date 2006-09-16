@@ -29,3 +29,22 @@ Description: personal package builder for Debian packages
  .
  pdebuild is a wrapper for Debian Developers, to allow running
  pbuilder just like "debuild", as a normal user.
+
+Package: pbuilder-uml
+Architecture: i386
+Depends: rootstrap (>= 0.3.9-1), user-mode-linux, pbuilder (= ${Source-Version})
+Description: user-mode-linux version of pbuilder
+ pbuilder-uml uses a User-mode-linux system, and builds Debian packages
+ inside the UML image. It is an ideal system to use to check 
+ that a package has correct build-dependencies.
+ It uses apt extensively, and a local mirror, or a fast connection
+ to a Debian mirror is ideal, but not necessary.
+ .
+ Requires user-mode-linux to function correctly
+ .
+ "pbuilder-user-mode-linux create" uses rootstrap to create UML image
+ .
+ "pbuilder-user-mode-linux update" updates the image to the current state of
+ testing/unstable/whatever
+ .
+ "pbuilder-user-mode-linux build" takes a *.dsc file and builds a binary in the UML
