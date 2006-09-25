@@ -2,10 +2,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Sat Sep 16 12:14:08 JST 2006
-pbuilder-time-stamp: 1158376448
+Current time: Mon Sep 25 12:14:41 JST 2006
+pbuilder-time-stamp: 1159154081
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.sxlcx16889/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.DAVWz17201/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -21,36 +21,29 @@ Installing the build-deps
 Reading package lists...
 Building dependency tree...
 The following extra packages will be installed:
-  file gettext gettext-base html2text intltool-debian libdshconfig1 libmagic1
-  po-debconf
+  file gettext html2text intltool-debian libdshconfig1 libmagic1 po-debconf
 Suggested packages:
   dh-make cvs gettext-doc
 Recommended packages:
-  curl libmail-sendmail-perl libcompress-zlib-perl
+  libmail-sendmail-perl libcompress-zlib-perl
 The following NEW packages will be installed:
-  debhelper file gettext gettext-base html2text intltool-debian libdshconfig1
+  debhelper file gettext html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
-0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3225kB of archives.
-After unpacking 11.1MB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  gettext-base libmagic1 file html2text gettext intltool-debian po-debconf
-  debhelper libdshconfig1 libdshconfig1-dev
-Get:1 http://ftp.jp.debian.org sid/main gettext-base 0.15-2 [127kB]
-Get:2 http://ftp.jp.debian.org sid/main libmagic1 4.17-3 [277kB]
-Get:3 http://ftp.jp.debian.org sid/main file 4.17-3 [31.7kB]
-Get:4 http://ftp.jp.debian.org sid/main html2text 1.3.2a-3 [92.7kB]
-Get:5 http://ftp.jp.debian.org sid/main gettext 0.15-2 [2012kB]
-Get:6 http://ftp.jp.debian.org sid/main intltool-debian 0.35.0+20060710 [31.4kB]
-Get:7 http://ftp.jp.debian.org sid/main po-debconf 1.0.5 [109kB]
-Get:8 http://ftp.jp.debian.org sid/main debhelper 5.0.37.3 [508kB]
-Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.12-2 [10.9kB]
-Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.12-2 [25.3kB]
-Fetched 3225kB in 3s (839kB/s)
-Selecting previously deselected package gettext-base.
-(Reading database ... 11719 files and directories currently installed.)
-Unpacking gettext-base (from .../gettext-base_0.15-2_amd64.deb) ...
+0 upgraded, 9 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3098kB of archives.
+After unpacking 10.1MB of additional disk space will be used.
+Get:1 http://ftp.jp.debian.org sid/main libmagic1 4.17-3 [277kB]
+Get:2 http://ftp.jp.debian.org sid/main file 4.17-3 [31.7kB]
+Get:3 http://ftp.jp.debian.org sid/main html2text 1.3.2a-3 [92.7kB]
+Get:4 http://ftp.jp.debian.org sid/main gettext 0.15-2 [2012kB]
+Get:5 http://ftp.jp.debian.org sid/main intltool-debian 0.35.0+20060710 [31.4kB]
+Get:6 http://ftp.jp.debian.org sid/main po-debconf 1.0.5 [109kB]
+Get:7 http://ftp.jp.debian.org sid/main debhelper 5.0.37.3 [508kB]
+Get:8 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.12-2 [10.9kB]
+Get:9 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.12-2 [25.3kB]
+Fetched 3098kB in 2s (1541kB/s)
 Selecting previously deselected package libmagic1.
+(Reading database ... 11995 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.17-3_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.17-3_amd64.deb) ...
@@ -68,8 +61,6 @@ Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.12-2_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
 Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.12-2_amd64.deb) ...
-Setting up gettext-base (0.15-2) ...
-
 Setting up libmagic1 (4.17-3) ...
 
 Setting up file (4.17-3) ...
@@ -91,22 +82,23 @@ The following NEW packages will be installed:
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
 Need to get 97.4kB of archives.
 After unpacking 406kB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  fakeroot
 Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.5.10 [97.4kB]
-Fetched 97.4kB in 0s (287kB/s)
+Fetched 97.4kB in 0s (765kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12388 files and directories currently installed.)
+(Reading database ... 12599 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.5.10_amd64.deb) ...
 Setting up fakeroot (1.5.10) ...
 
 Copying source file
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.sxlcx16889/dir1/dsh_0.25.7-1.dsc]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.sxlcx16889/dir1/dsh_0.25.7.orig.tar.gz]
-    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.sxlcx16889/dir1/dsh_0.25.7-1.diff.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.DAVWz17201/dir1/dsh_0.25.7-1.dsc]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.DAVWz17201/dir1/dsh_0.25.7.orig.tar.gz]
+    -> copying [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.DAVWz17201/dir1/dsh_0.25.7-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-source: warning: could not verify signature on ./dsh_0.25.7-1.dsc since gpg isn't installed
+gpg: new configuration file `/tmp/buildd/.gnupg/gpg.conf' created
+gpg: WARNING: options in `/tmp/buildd/.gnupg/gpg.conf' are not yet active during this run
+gpg: Signature made Fri Aug 11 14:17:58 2006 UTC using DSA key ID E81E55C1
+gpg: Can't check signature: public key not found
 dpkg-source: extracting dsh in dsh-0.25.7
 dpkg-source: unpacking dsh_0.25.7.orig.tar.gz
 dpkg-source: applying ./dsh_0.25.7-1.diff.gz
@@ -415,8 +407,8 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
-b: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+b: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -425,11 +417,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-1: 1
 2: 2
+1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Sep 16 03:14:52 UTC 2006
+Mon Sep 25 03:15:27 UTC 2006
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -499,14 +491,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Sep 16 03:14:57 UTC 2006
+Mon Sep 25 03:15:32 UTC 2006
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
+b: b
 c: c
 dsh: Process terminated (before write).
 a: a
-b: b
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -613,7 +605,7 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Sat Sep 16 12:14:59 JST 2006
-pbuilder-time-stamp: 1158376499
+Current time: Mon Sep 25 12:15:34 JST 2006
+pbuilder-time-stamp: 1159154134
  -> cleaning the build env 
-    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.sxlcx16889/dir1/392 and its subdirectories
+    -> removing directory /home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.DAVWz17201/dir1/30895 and its subdirectories

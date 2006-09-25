@@ -7,7 +7,7 @@ I: Retrieving Packages
 I: Validating Packages
 I: Resolving dependencies of required packages...
 I: Resolving dependencies of base packages...
-I: Found additional base dependencies: libdb4.2 libnewt0.52 libreadline5 libsigc++-2.0-0c2a readline-common vim-common 
+I: Found additional base dependencies: libdb4.2 libdb4.4 libnewt0.52 libreadline5 libsigc++-2.0-0c2a readline-common vim-common 
 I: Checking component main on http://ftp.jp.debian.org/debian...
 I: Retrieving adduser
 I: Validating adduser
@@ -105,6 +105,8 @@ I: Retrieving libdb4.2
 I: Validating libdb4.2
 I: Retrieving libdb4.3
 I: Validating libdb4.3
+I: Retrieving libdb4.4
+I: Validating libdb4.4
 I: Retrieving libdevmapper1.02
 I: Validating libdevmapper1.02
 I: Retrieving libgcc1
@@ -467,6 +469,7 @@ I: Unpacking laptop-detect...
 I: Unpacking libbz2-1.0...
 I: Unpacking libconsole...
 I: Unpacking libdb4.2...
+I: Unpacking libdb4.4...
 I: Unpacking libgcrypt11...
 I: Unpacking libgdbm3...
 I: Unpacking libgnutls11...
@@ -536,6 +539,7 @@ I: Configuring wget...
 I: Configuring groff-base...
 I: Configuring libnewt0.52...
 I: Configuring libdb4.2...
+I: Configuring libdb4.4...
 I: Configuring net-tools...
 I: Configuring libtasn1-3-bin...
 I: Configuring bsdmainutils...
@@ -590,7 +594,7 @@ umount: /dev/shm: not mounted
 umount: proc: not mounted
 umount: proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//16894/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//17206/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -599,7 +603,7 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Hit http://ftp.jp.debian.org sid Release
 Get:2 http://ftp.jp.debian.org sid/main Packages/DiffIndex [12.6kB]
-Fetched 12.8kB in 0s (46.2kB/s)
+Fetched 12.8kB in 0s (38.9kB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
@@ -609,7 +613,7 @@ Reading package lists...
 Building dependency tree...
 apt is already the newest version.
 The following extra packages will be installed:
-  binutils cpp cpp-4.1 g++ g++-4.1 gcc gcc-4.1 libc6-dev libdb4.4 libssp0
+  binutils cpp cpp-4.1 g++ g++-4.1 gcc gcc-4.1 libc6-dev libssp0
   libstdc++6-4.1-dev linux-kernel-headers make patch perl perl-modules
 Suggested packages:
   binutils-doc cpp-doc gcc-4.1-locales debian-keyring gcc-4.1-doc lib32stdc++6
@@ -620,32 +624,31 @@ Recommended packages:
   bzip2 libmudflap0-dev perl-doc
 The following NEW packages will be installed:
   binutils build-essential cpp cpp-4.1 dpkg-dev g++ g++-4.1 gcc gcc-4.1
-  libc6-dev libdb4.4 libssp0 libstdc++6-4.1-dev linux-kernel-headers make
-  patch perl perl-modules
-0 upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
-Need to get 21.5MB of archives.
-After unpacking 86.9MB of additional disk space will be used.
+  libc6-dev libssp0 libstdc++6-4.1-dev linux-kernel-headers make patch perl
+  perl-modules
+0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
+Need to get 21.0MB of archives.
+After unpacking 85.7MB of additional disk space will be used.
 Get:1 http://ftp.jp.debian.org sid/main binutils 2.17-2 [2625kB]
 Get:2 http://ftp.jp.debian.org sid/main cpp-4.1 4.1.1-13 [2476kB]
 Get:3 http://ftp.jp.debian.org sid/main cpp 4:4.1.1-7 [9870B]
 Get:4 http://ftp.jp.debian.org sid/main perl-modules 5.8.8-6.1 [2309kB]
-Get:5 http://ftp.jp.debian.org sid/main libdb4.4 4.4.20-8 [474kB]
-Get:6 http://ftp.jp.debian.org sid/main perl 5.8.8-6.1 [4233kB]
-Get:7 http://ftp.jp.debian.org sid/main patch 2.5.9-4 [98.7kB]
-Get:8 http://ftp.jp.debian.org sid/main make 3.81-3 [395kB]
-Get:9 http://ftp.jp.debian.org sid/main dpkg-dev 1.13.22 [109kB]
-Get:10 http://ftp.jp.debian.org sid/main libssp0 4.1.1-13 [4962B]
-Get:11 http://ftp.jp.debian.org sid/main gcc-4.1 4.1.1-13 [463kB]
-Get:12 http://ftp.jp.debian.org sid/main gcc 4:4.1.1-7 [5056B]
-Get:13 http://ftp.jp.debian.org sid/main linux-kernel-headers 2.6.17.10-3 [1777kB]
-Get:14 http://ftp.jp.debian.org sid/main libc6-dev 2.3.6.ds1-4 [2107kB]
-Get:15 http://ftp.jp.debian.org sid/main libstdc++6-4.1-dev 4.1.1-13 [1632kB]
-Get:16 http://ftp.jp.debian.org sid/main g++-4.1 4.1.1-13 [2780kB]
-Get:17 http://ftp.jp.debian.org sid/main g++ 4:4.1.1-7 [1362B]
-Get:18 http://ftp.jp.debian.org sid/main build-essential 11.3 [6982B]
-Fetched 21.5MB in 13s (1594kB/s)
+Get:5 http://ftp.jp.debian.org sid/main perl 5.8.8-6.1 [4233kB]
+Get:6 http://ftp.jp.debian.org sid/main patch 2.5.9-4 [98.7kB]
+Get:7 http://ftp.jp.debian.org sid/main make 3.81-3 [395kB]
+Get:8 http://ftp.jp.debian.org sid/main dpkg-dev 1.13.22 [109kB]
+Get:9 http://ftp.jp.debian.org sid/main libssp0 4.1.1-13 [4962B]
+Get:10 http://ftp.jp.debian.org sid/main gcc-4.1 4.1.1-13 [463kB]
+Get:11 http://ftp.jp.debian.org sid/main gcc 4:4.1.1-7 [5056B]
+Get:12 http://ftp.jp.debian.org sid/main linux-kernel-headers 2.6.17.10-3 [1777kB]
+Get:13 http://ftp.jp.debian.org sid/main libc6-dev 2.3.6.ds1-4 [2107kB]
+Get:14 http://ftp.jp.debian.org sid/main libstdc++6-4.1-dev 4.1.1-13 [1632kB]
+Get:15 http://ftp.jp.debian.org sid/main g++-4.1 4.1.1-13 [2780kB]
+Get:16 http://ftp.jp.debian.org sid/main g++ 4:4.1.1-7 [1362B]
+Get:17 http://ftp.jp.debian.org sid/main build-essential 11.3 [6982B]
+Fetched 21.0MB in 14s (1408kB/s)
 Selecting previously deselected package binutils.
-(Reading database ... 7190 files and directories currently installed.)
+(Reading database ... 7200 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.17-2_amd64.deb) ...
 Selecting previously deselected package cpp-4.1.
 Unpacking cpp-4.1 (from .../cpp-4.1_4.1.1-13_amd64.deb) ...
@@ -653,8 +656,6 @@ Selecting previously deselected package cpp.
 Unpacking cpp (from .../cpp_4%3a4.1.1-7_amd64.deb) ...
 Selecting previously deselected package perl-modules.
 Unpacking perl-modules (from .../perl-modules_5.8.8-6.1_all.deb) ...
-Selecting previously deselected package libdb4.4.
-Unpacking libdb4.4 (from .../libdb4.4_4.4.20-8_amd64.deb) ...
 Selecting previously deselected package perl.
 Unpacking perl (from .../perl_5.8.8-6.1_amd64.deb) ...
 Selecting previously deselected package patch.
@@ -686,7 +687,6 @@ Setting up binutils (2.17-2) ...
 Setting up cpp-4.1 (4.1.1-13) ...
 Setting up cpp (4.1.1-7) ...
 
-Setting up libdb4.4 (4.4.20-8) ...
 Setting up patch (2.5.9-4) ...
 Setting up make (3.81-3) ...
 Setting up libssp0 (4.1.1-13) ...
@@ -711,9 +711,9 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//16894/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//17206/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.sxlcx16889/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.DAVWz17201/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//16894 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//17206 and its subdirectories

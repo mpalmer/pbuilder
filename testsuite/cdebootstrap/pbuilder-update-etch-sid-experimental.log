@@ -1,6 +1,6 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.sxlcx16889/testimage]
+ -> extracting base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.DAVWz17201/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -14,32 +14,21 @@ Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org experimental Release.gpg [189B]
 Hit http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org experimental Release [79.3kB]
-Ign http://ftp.jp.debian.org experimental Release
-Get:4 http://ftp.jp.debian.org sid Release [79.6kB]
-Ign http://ftp.jp.debian.org sid Release
-Get:5 http://ftp.jp.debian.org experimental/main Packages [196kB]
-Get:6 http://ftp.jp.debian.org sid/main Packages/DiffIndex [12.6kB]
-Fetched 368kB in 1s (341kB/s)
+Get:4 http://ftp.jp.debian.org sid/main Packages/DiffIndex [12.6kB]
+Get:5 http://ftp.jp.debian.org experimental/main Packages [177kB]
+Fetched 270kB in 0s (281kB/s)
 Reading package lists...
-W: GPG error: http://ftp.jp.debian.org experimental Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
-W: GPG error: http://ftp.jp.debian.org sid Release: Could not execute '/usr/bin/gpgv' to verify signature (is gnupg installed?)
-W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
 Building dependency tree...
 The following NEW packages will be installed:
   gcc-4.2-base
-The following packages have been kept back:
-  apt apt-utils
 The following packages will be upgraded:
   coreutils initscripts libc6 libc6-dev libgcc1 libssp0 libstdc++6 sysv-rc
   sysvinit wget
-10 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.
+10 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
 Need to get 11.6MB of archives.
 After unpacking 2064kB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  coreutils libc6-dev libc6 sysvinit initscripts gcc-4.2-base libgcc1
-  libstdc++6 sysv-rc wget libssp0
 Get:1 http://ftp.jp.debian.org experimental/main coreutils 6.0-1 [3141kB]
 Get:2 http://ftp.jp.debian.org experimental/main libc6-dev 2.3.999.2-12 [2154kB]
 Get:3 http://ftp.jp.debian.org experimental/main libc6 2.3.999.2-12 [4859kB]
@@ -51,13 +40,13 @@ Get:8 http://ftp.jp.debian.org experimental/main libstdc++6 4.2-20060709-1 [296k
 Get:9 http://ftp.jp.debian.org experimental/main sysv-rc 2.86.ds1-21 [54.3kB]
 Get:10 http://ftp.jp.debian.org experimental/main wget 1.10.2+1.11.beta1-1 [635kB]
 Get:11 http://ftp.jp.debian.org experimental/main libssp0 4.2-20060709-1 [4968B]
-Fetched 11.6MB in 8s (1286kB/s)
-(Reading database ... 11720 files and directories currently installed.)
+Fetched 11.6MB in 8s (1290kB/s)
+(Reading database ... 11981 files and directories currently installed.)
 Preparing to replace coreutils 5.97-5 (using .../coreutils_6.0-1_amd64.deb) ...
 Unpacking replacement coreutils ...
 Setting up coreutils (6.0-1) ...
 
-(Reading database ... 11732 files and directories currently installed.)
+(Reading database ... 11993 files and directories currently installed.)
 Preparing to replace libc6-dev 2.3.6.ds1-4 (using .../libc6-dev_2.3.999.2-12_amd64.deb) ...
 Unpacking replacement libc6-dev ...
 Preparing to replace libc6 2.3.6.ds1-4 (using .../libc6_2.3.999.2-12_amd64.deb) ...
@@ -66,13 +55,13 @@ Setting up libc6 (2.3.999.2-12) ...
 Installing new version of config file /etc/init.d/glibc.sh ...
 init: timeout opening/writing control channel /dev/initctl
 
-(Reading database ... 11794 files and directories currently installed.)
+(Reading database ... 12055 files and directories currently installed.)
 Preparing to replace sysvinit 2.86.ds1-20 (using .../sysvinit_2.86.ds1-21_amd64.deb) ...
 Unpacking replacement sysvinit ...
 Setting up sysvinit (2.86.ds1-21) ...
 init: timeout opening/writing control channel /dev/initctl
 
-(Reading database ... 11794 files and directories currently installed.)
+(Reading database ... 12055 files and directories currently installed.)
 Preparing to replace initscripts 2.86.ds1-20 (using .../initscripts_2.86.ds1-21_amd64.deb) ...
 Unpacking replacement initscripts ...
 Setting up initscripts (2.86.ds1-21) ...
@@ -96,7 +85,7 @@ Installing new version of config file /etc/init.d/umountnfs.sh ...
 Installing new version of config file /etc/init.d/urandom ...
 
 Selecting previously deselected package gcc-4.2-base.
-(Reading database ... 11793 files and directories currently installed.)
+(Reading database ... 12055 files and directories currently installed.)
 Unpacking gcc-4.2-base (from .../gcc-4.2-base_4.2-20060709-1_amd64.deb) ...
 Preparing to replace libgcc1 1:4.1.1-13 (using .../libgcc1_1%3a4.2-20060709-1_amd64.deb) ...
 Unpacking replacement libgcc1 ...
@@ -104,17 +93,17 @@ Setting up gcc-4.2-base (4.2-20060709-1) ...
 
 Setting up libgcc1 (4.2-20060709-1) ...
 
-(Reading database ... 11801 files and directories currently installed.)
+(Reading database ... 12063 files and directories currently installed.)
 Preparing to replace libstdc++6 4.1.1-13 (using .../libstdc++6_4.2-20060709-1_amd64.deb) ...
 Unpacking replacement libstdc++6 ...
 Setting up libstdc++6 (4.2-20060709-1) ...
 
-(Reading database ... 11801 files and directories currently installed.)
+(Reading database ... 12063 files and directories currently installed.)
 Preparing to replace sysv-rc 2.86.ds1-20 (using .../sysv-rc_2.86.ds1-21_all.deb) ...
 Unpacking replacement sysv-rc ...
 Setting up sysv-rc (2.86.ds1-21) ...
 
-(Reading database ... 11801 files and directories currently installed.)
+(Reading database ... 12063 files and directories currently installed.)
 Preparing to replace wget 1.10.2-2 (using .../wget_1.10.2+1.11.beta1-1_amd64.deb) ...
 Unpacking replacement wget ...
 Preparing to replace libssp0 4.1.1-13 (using .../libssp0_4.2-20060709-1_amd64.deb) ...
@@ -128,46 +117,17 @@ Reading package lists...
 Building dependency tree...
 build-essential is already the newest version.
 dpkg-dev is already the newest version.
-The following extra packages will be installed:
-  apt-utils
-Suggested packages:
-  apt-doc bzip2 gnupg
-Recommended packages:
-  debian-archive-keyring
-The following packages will be REMOVED:
-  aptitude tasksel tasksel-data
-The following packages will be upgraded:
-  apt apt-utils
-2 upgraded, 0 newly installed, 3 to remove and 0 not upgraded.
-Need to get 1637kB of archives.
-After unpacking 11.1MB disk space will be freed.
-WARNING: The following packages cannot be authenticated!
-  apt-utils apt
-Get:1 http://ftp.jp.debian.org experimental/main apt-utils 0.6.45exp2 [195kB]
-Get:2 http://ftp.jp.debian.org experimental/main apt 0.6.45exp2 [1442kB]
-Fetched 1637kB in 2s (801kB/s)
-(Reading database ... 11801 files and directories currently installed.)
-Removing tasksel ...
-Removing tasksel-data ...
-Removing aptitude ...
-(Reading database ... 11590 files and directories currently installed.)
-Preparing to replace apt-utils 0.6.45 (using .../apt-utils_0.6.45exp2_amd64.deb) ...
-Unpacking replacement apt-utils ...
-Preparing to replace apt 0.6.45 (using .../apt_0.6.45exp2_amd64.deb) ...
-Unpacking replacement apt ...
-Setting up apt (0.6.45exp2) ...
-
-Setting up apt-utils (0.6.45exp2) ...
-
+apt is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//23917/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//20167/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.sxlcx16889/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.DAVWz17201/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//23917 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//20167 and its subdirectories
