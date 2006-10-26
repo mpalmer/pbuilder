@@ -1181,7 +1181,8 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 	<filename>./run-test.sh</filename> is a basic test-suite, which puts a summary in 
 	<filename>run-test.log</filename>, and <filename>run-test-cdebootstrap.log</filename>.
 	<filename>./run-test-regression.sh</filename> is a regression test-suite,
-	which puts the result in <filename>run-test-regression.log</filename>
+	which puts the result in <filename>run-test-regression.log</filename>.
+	Currently, run-test.sh is ran automatically daily to ensure that pbuilder is working.
       </para>
       <para>
 	When making changes, a description of the change targeted at
@@ -1205,7 +1206,10 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 	When releasing a new version of <command>pbuilder</command>,
 	the version is tagged with the cvs tag
 	releaseX_XXX.
-	<!-- (shell-command "cd ../ && cvs tag $(dpkg-parsechangelog | sed -n 's/\\./_/;s/^Version: /release/p' )") -->
+	<!-- 
+	If you are emacs user, eval (C-c C-e) this:
+	(shell-command "cd ../ && cvs tag $(dpkg-parsechangelog | sed -n 's/\\./_/;s/^Version: /release/p' )")
+	-->
       </para>
     </sect1>
   </chapter>
