@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+build:
+	touch debian/files
+
+clean:
+	rm -f debian/files
+
+install:
+
+binary-indep: build install
+
+binary-arch: build install
+
+binary: binary-indep binary-arch
+
+.PHONY: build clean binary-indep binary-arch binary install
