@@ -61,7 +61,7 @@ for control in satisfydepends/*.control; do
     [ -d "$package_dir" ] && rm -rf "$package_dir"
     # create package structure
     mkdir -p "$package_dir/debian"
-    cp -l satisfydepends/debian/* "$package_dir/debian"
+    cp -l satisfydepends/debian/rules "$package_dir/debian"
     cp -l $changelog "$package_dir/debian/changelog"
     cp -l $control "$package_dir/debian/control"
     log_i "Building package $package/$version as \"$PDEBUILD --buildresult $RESULT_DIR -- --pkgname-logfile\" in $package_dir"
