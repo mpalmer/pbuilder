@@ -1159,7 +1159,7 @@ BINDMOUNTS="${CCACHE_DIR}"
       </para>
     </sect1>
     <sect1 id="development">
-      <title>Development</title>
+      <title>Information for pbuilder developers</title>
       <para>
 	This section tries to document current development practices
 	and how things generally operate in development.
@@ -1176,23 +1176,83 @@ cvs -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder login
 cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
       </screen>
       <para>
-	Test-suites are available in <filename>tests/</filename> directory, and 
-	changes are expected not to break the test-suites.
+	Test-suites are available in <filename>./testsuite/</filename> directory.
+	Changes are expected not to break the test-suites.
 	<filename>./run-test.sh</filename> is a basic test-suite, which puts a summary in 
 	<filename>run-test.log</filename>, and <filename>run-test-cdebootstrap.log</filename>.
 	<filename>./run-test-regression.sh</filename> is a regression test-suite,
 	which puts the result in <filename>run-test-regression.log</filename>.
 	Currently, run-test.sh is ran automatically daily to ensure that pbuilder is working.
       </para>
+      <table>
+	<title>Directory structure of the testsuite</title>
+	<tgroup cols="2">
+	  <colspec colnum="1" colname="c1" colwidth="1*" align="left" />
+	  <colspec colnum="2" colname="c2" colwidth="1*" align="left" />
+	  <thead>
+	    <row>
+	      <entry>Directory</entry>
+	      <entry>Meaning</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry><filename>./testsuite/</filename></entry>
+	      <entry>Directory for testsuite</entry>
+	    </row>
+	    <row>
+	      <entry><filename>./testsuite/run-test.sh</filename></entry>
+	      <entry>Daily regression test to test against Debian Archive changes breaking pbuilder.</entry>
+	    </row>
+	    <row>
+	      <entry><filename>./testsuite/run-test.log</filename></entry>
+	      <entry>A summary of testsuite</entry>
+	    </row>
+	    <row>
+	      <entry><filename>./testsuite/normal/</filename></entry>
+	      <entry>Directory for testsuite results of running pbuilder with debootstrap</entry>
+	    </row>
+	    <row>
+	      <entry><filename>./testsuite/cdebootstrap/</filename></entry>
+	      <entry>Directory for testsuite results of running pbuilder with cdebootstrap</entry>
+	    </row>
+	    <row>
+	      <entry><filename>./testsuite/run-regression.sh</filename></entry>
+	      <entry>Regression testsuite, ran every time change is made to pbuilder to make sure there is no regression.</entry>
+	    </row>
+	    <row>
+	      <entry><filename>./testsuite/run-regression.log</filename></entry>
+	      <entry>Summary of test result</entry>
+	    </row>
+	    <row>
+	      <entry><filename>./testsuite/regression/BugID-*.sh</filename></entry>
+	      <entry>Regression tests, exit 0 for success, exit 1 for failure</entry>
+	    </row>
+	    <row>
+	      <entry><filename>./testsuite/regression/BugID-*</filename></entry>
+	      <entry>Files used for the regression testsuite.</entry>
+	    </row>
+	    <row>
+	      <entry><filename>./testsuite/regression/log/BugID-*.sh.log</filename></entry>
+	      <entry>Output of the regression test, output from the script is redirected by run-regression.sh</entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
       <para>
 	When making changes, a description of the change targeted at
 	developers should be documented in
-	<filename>ChangeLog</filename>, and committed.  A brief
+	<filename>ChangeLog</filename><footnote>
+	  <para>ChangeLog is edited using emacs ChangeLog mode.</para>
+	</footnote>, and committed.  A brief
 	summary of the change targeting end users should be documented
 	in <filename>debian/changelog</filename>, so that users can
-	see them.  Note that the description of
+	see them.  
+	
+	It is important to note that the description of
 	<filename>debian/changelog</filename> is targeted at users,
 	and <filename>ChangeLog</filename> is targeted at developers.
+
 	For CVS commit messages, a cut-n-paste of
 	<filename>ChangeLog</filename> diff should be enough.
       </para>
