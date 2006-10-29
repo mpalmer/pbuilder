@@ -11,8 +11,9 @@ pbuilder (0.161) UNRELEASED; urgency=low
   * Ignore umount errors of the types "umount: /foobar: not mounted" and
     "umount: /foobar: not found" as retries will be useless anyway and these
     errors shouldn't cause data loss; thanks Martin F Krafft; closes: #391390.
+  * Unmount selinux and bind mounts first.
 
- -- Loic Minier <lool@dooz.org>  Mon, 30 Oct 2006 00:45:17 +0100
+ -- Loic Minier <lool@dooz.org>  Mon, 30 Oct 2006 00:49:53 +0100
 
 pbuilder (0.160) unstable; urgency=low
 

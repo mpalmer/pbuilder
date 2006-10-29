@@ -4,6 +4,7 @@
 	umount errors of the type "umount: /foobar: not mounted" and "umount:
 	/foobar: not found" as retries will be useless anyway, and these
 	errors shouldn't cause data loss; fixes #391390.
+	* pbuilder-modules: umount selinux and bind mounts first.
 
 2006-10-29  Junichi Uekawa  <dancer@debian.org>
 
