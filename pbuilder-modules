@@ -86,6 +86,41 @@ EOF
     exit 1
 }
 
+# test whether a directory is empty
+# fails if "$*" exists but isn't a directory
+# fails and outputs garbage if "$*" doesn't actually exist
+is_empty_dir() {
+  return "$(find "$*" -maxdepth 0 -type d -empty -printf 0 -o -printf 1)"
+}
+
+# sanity checks to ensure mountpoint $1 is truly unmounted in $BUILDPLACE
+# (fails relatively often to ensure we don't "rm -rf" a bind mount)
+function seems_truly_unmounted() {
+    local mountpoint
+    mountpoint="$1"
+    if ! [ -e "$BUILDPLACE/$mountpoint" ]; then
+        echo "W: $mountpoint doesn't exist"
+        return 1
+    fi
+    if ! [ -d "$BUILDPLACE/$mountpoint" ]; then
+        echo "W: $mountpoint isn't a directory"
+        return 1
+    fi
+    if [ -r "$BUILDPLACE/proc/mounts" ] && grep -q "^[^ ]* $mountpoint " "$BUILDPLACE/proc/mounts"; then
+        echo "W: $mountpoint is mounted according to build place's /proc/mounts"
+        return 1
+    fi
+    if [ -r "/proc/mounts" ] && grep -q "^[^ ]* $BUILDPLACE/$mountpoint " "/proc/mounts"; then
+        echo "W: $mountpoint is mounted according to system's /proc/mounts"
+        return 1
+    fi
+    if ! is_empty_dir "$BUILDPLACE/$mountpoint"; then
+        echo "W: $mountpoint not empty"
+        return 1
+    fi
+    return 0
+}
+
 function umount_one () {
     if [ "${IGNORE_UMOUNT}" = "yes" ]; then
 	# support ignore umount option.
@@ -93,24 +128,45 @@ function umount_one () {
 	return
     fi
     echo " -> unmounting $1 filesystem"
-    if ! umount "$BUILDPLACE/$1"; then
-	    echo "W: Retrying to unmount $1"
+    local UMOUNT_OUTPUT
+    if ! UMOUNT_OUTPUT="$(LC_ALL=C umount "$BUILDPLACE/$1" 2>&1)"; then
+        echo "W: Could not unmount $1: $UMOUNT_OUTPUT"
+        local ignore_umount_error="no"
+        case $UMOUNT_OUTPUT in
+          "umount: "*": not found"|"umount:"*": not mounted")
+            # run an additional set of sanity checks
+            if seems_truly_unmounted "$1"; then
+                ignore_umount_error="yes"
+            else
+                echo "W: Tried ignoring error in unmount, but sanity check failed: $1 might still be mounted"
+            fi
+            ;;
+          *)
+            ;;
+        esac
+        if [ "$ignore_umount_error" != "yes" ]; then
+	    echo "W: Retrying to unmount $1 in 5s"
 	    sleep 5s
 	    while ! umount "$BUILDPLACE/$1"; do
 		sleep 5s
 		cat <<EOF
 
-  Could not unmount $1, there might be some program 
-  still using files in /proc (klogd?).
-  Please check and kill the process manually so that I can unmount $1
+  Could not unmount $1, some programs might
+  still be using files in /proc (klogd?).
+  Please check and kill these processes manually
+  so that I can unmount $1.  Last umount error was:
+$UMOUNT_OUTPUT
 
-  This error is only happens with chroot; try using user-mode-linux to 
-  avoid this message.
+  This error only affects chroots; you may want to use
+  user-mode-linux to avoid this message.
 
 EOF
 		chroot "$BUILDPLACE" bin/sh
 	    done
-	fi
+        else
+            echo "W: Ignored error in unmount"
+        fi
+    fi
 }
 
 function umountproc () {

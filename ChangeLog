@@ -1,3 +1,10 @@
+2006-10-29  Loic Minier <lool@dooz.org>
+
+	* pbuilder-modules: add sanity checks during umount_one(); ignore
+	umount errors of the type "umount: /foobar: not mounted" and "umount:
+	/foobar: not found" as retries will be useless anyway, and these
+	errors shouldn't cause data loss; fixes #391390.
+
 2006-10-29  Junichi Uekawa  <dancer@debian.org>
 
 	* Documentation/pbuilder-doc.xml: developer info is updated.

@@ -8,8 +8,11 @@ pbuilder (0.161) UNRELEASED; urgency=low
 
   [ Loic Minier ]
   * Testsuite may now test pbuilder-satisfydepends.
+  * Ignore umount errors of the types "umount: /foobar: not mounted" and
+    "umount: /foobar: not found" as retries will be useless anyway and these
+    errors shouldn't cause data loss; thanks Martin F Krafft; closes: #391390.
 
- -- Loic Minier <lool@dooz.org>  Sat, 28 Oct 2006 15:16:57 +0200
+ -- Loic Minier <lool@dooz.org>  Mon, 30 Oct 2006 00:45:17 +0100
 
 pbuilder (0.160) unstable; urgency=low
 
