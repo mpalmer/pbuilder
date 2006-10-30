@@ -1,10 +1,15 @@
-2006-10-29  Loic Minier <lool@dooz.org>
+2006-10-30  Loic Minier <lool@dooz.org>
 
 	* pbuilder-modules: add sanity checks during umount_one(); ignore
 	umount errors of the type "umount: /foobar: not mounted" and "umount:
 	/foobar: not found" as retries will be useless anyway, and these
 	errors shouldn't cause data loss; fixes #391390.
 	* pbuilder-modules: umount selinux and bind mounts first.
+	* testsuite/satisfydepends/gtk2-engines_*.changelog,
+	testsuite/satisfydepends/gtk2-engines_*.control,
+	testsuite/run-test-satisfy-depends.log,
+	testsuite/run-test-satisfy-depends.sh: move to testsuite/regression
+	and adapt to the regression suite layout.
 
 2006-10-29  Junichi Uekawa  <dancer@debian.org>
 

@@ -28,7 +28,8 @@ log_i "Starting $self at $(LC_ALL=C date)"
 
 PDEBUILD="pdebuild"
 
-RESULTFILE="$(readlink -f "$(basename "$0" .sh).log")"
+#RESULTFILE="$(readlink -f "$(basename "$0" .sh).log")"
+RESULTFILE="$OUTPUT_LOGNAME"
 log_i "Resetting result file $(basename "$RESULTFILE")"
 : > "$RESULTFILE"
 RESULTFILE="$(readlink -f "$RESULTFILE")"
