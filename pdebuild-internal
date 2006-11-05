@@ -31,7 +31,8 @@ set -e
 echo "Using: $Id$"
 
 # I am probably running as root; make sure I have pbuilder installed here.
-apt-get install -y --force-yes pbuilder 
+# passwd is needed as well because of useradd and groupadd calls.
+apt-get install -y --force-yes pbuilder passwd
 
 # I'm not going to have the same LOGNAME as outside, I'm root.
 export LOGNAME=root
@@ -73,20 +74,9 @@ export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
 /usr/lib/pbuilder/pbuilder-satisfydepends
 apt-get install -y --force-yes fakeroot
 
-# we will need "passwd" for groupadd/useradd, retain whether it was installed
-# warning: dpkg --get-selections returns true for unknown packages
-PASSWD_SELECTION="$(LC_ALL=C dpkg --get-selections passwd && true)"
-if [ -z "$PASSWD_SELECTION" ]; then
-    PASSWD_SELECTION="passwd                                          purge"
-fi
-# install passwd
-apt-get install -y --force-yes passwd
 # create the user similar to that used outside
 groupadd -g "${BUILDRESULTGID}" -o pbgroup
 useradd -g pbgroup -u "${BUILDRESULTUID}" -o pbuser
-# restore the state of the passwd package
-echo "$PASSWD_SELECTION" | LC_ALL=C dpkg --set-selections
-apt-get dselect-upgrade -u -y --force-yes
 
 # what about id -G output? if other groups than the designated is used, we're stuffed.
 
