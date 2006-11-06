@@ -55,6 +55,10 @@ while [ -n "$1" ]; do
 	    BUILDRESULTGID=$2
 	    shift; shift;
 	    ;;
+	--pbuildersatisfydepends)
+	    PBUILDERSATISFYDEPENDSCMD=$2
+	    shift; shift;
+	    ;;
 	--debug)
 	    PBUILDER_DEBUGMODE=yes
 	    set -x
@@ -71,7 +75,7 @@ while [ -n "$1" ]; do
 done
 
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
-/usr/lib/pbuilder/pbuilder-satisfydepends
+"$PBUILDERSATISFYDEPENDSCMD"
 apt-get install -y --force-yes fakeroot
 
 # create the user similar to that used outside

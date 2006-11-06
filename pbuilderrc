@@ -34,6 +34,10 @@ DEBEMAIL=""
 BUILDSOURCEROOTCMD="fakeroot"
 PBUILDERROOTCMD="sudo"
 
+# command to satisfy build-dependencies; the default is an internal shell
+# implementation which is relatively slow
+PBUILDERSATISFYDEPENDSCMD="/usr/lib/pbuilder/pbuilder-satisfydepends"
+
 #default is to build everything. Passed on to dpkg-buildpackage
 #DEBBUILDOPTS="-b"
 DEBBUILDOPTS=""

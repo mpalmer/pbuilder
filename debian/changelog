@@ -14,8 +14,11 @@ pbuilder (0.161) UNRELEASED; urgency=low
   * Unmount selinux and bind mounts first.
   * Fix usage of --pdebuild-internal: install passwd during groupadd/useradd
     in pdebuild-internal.
+  * New PBUILDERSATISFYDEPENDSCMD config option and --pbuildersatisfydepends
+    override flag to set the command to run to satisfy build dependencies;
+    default to the /usr/lib/pbuilder/pbuilder-satisfydepends helper.
 
- -- Loic Minier <lool@dooz.org>  Fri,  3 Nov 2006 18:43:49 +0100
+ -- Loic Minier <lool@dooz.org>  Mon,  6 Nov 2006 19:38:36 +0100
 
 pbuilder (0.160) unstable; urgency=low
 

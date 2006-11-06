@@ -213,6 +213,12 @@ in
 .B "pdebuild"
 
 .TP
+.BI "PBUILDERSATISFYDEPENDSCMD=" "/usr/lib/pbuilder/pbuilder-satisfydepends"
+
+This option is used by various parts of pbuilder to satisfy (i.e. install) the
+build-dependencies of a package.
+
+.TP
 .BI "BUILDUSERID=" "1234"
 The uid to be used inside chroot.
 It should ideally not collide with user-id outside the chroot,

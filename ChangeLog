@@ -1,3 +1,19 @@
+2006-11-06  Loic Minier <lool@dooz.org>
+
+	* debuild-pbuilder, pbuilder-buildpackage-funcs, pdebuild-internal:
+	use $PBUILDERSATISFYDEPENDSCMD instead of
+	/usr/lib/pbuilder/pbuilder-satisfydepends.
+	* pbuilderrc: set PBUILDERSATISFYDEPENDSCMD to
+	/usr/lib/pbuilder/pbuilder-satisfydepends by default.
+	* pbuilderrc.5: document PBUILDERSATISFYDEPENDSCMD.
+	* debian/TODO: alternatives implementation of pbuilder-satisfydepends
+	now possible.
+	* pdebuild-checkparams, pdebuild-uml-checkparams, pdebuild-internal:
+	add a new --pbuildersatisfydepends flag to override
+	PBUILDERSATISFYDEPENDSCMD
+	* pdebuild: pass --pbuildersatisfydepends to pdebuild-internal.
+	* pbuilder-modules, pdebuild.1: document --pbuildersatisfydepends.
+
 2006-11-03  Loic Minier <lool@dooz.org>
 
 	* pdebuild-internal: install the passwd package before calling

@@ -69,6 +69,10 @@ while [ -n "$1" ]; do
 	    PBUILDERROOTCMD="$2";
 	    shift; shift;
 	    ;;
+	--pbuildersatisfydepends*)
+	    PBUILDERSATISFYDEPENDSCMD="$2";
+	    shift; shift;
+	    ;;
 	--use-pdebuild-internal)
 	    USE_PDEBUILD_INTERNAL=yes;
 	    shift;
