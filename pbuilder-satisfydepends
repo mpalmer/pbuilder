@@ -104,7 +104,7 @@ tolower($0) ~ /^'"${BD_REGEXP}"':/   {p=1}
 	sed 's/^[^: ]*://' | \
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
-      echo " -> Considering $(echo "$INSTALLPKGMULTI" | tr "/" " " | awk '{print $0}' )"
+      echo " -> Considering build-dep$(echo "$INSTALLPKGMULTI" | tr "/" " " )"
       SATISFIED="no"
       for INSTALLPKG in $(echo "$INSTALLPKGMULTI" | \
 	  awk 'BEGIN{RS="|"} {print}'); do
