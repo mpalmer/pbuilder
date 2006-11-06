@@ -14,6 +14,28 @@
 	* pdebuild: pass --pbuildersatisfydepends to pdebuild-internal.
 	* pbuilder-modules, pdebuild.1: document --pbuildersatisfydepends.
 	* pbuilder-satisfydepends: drop an useless invocation of awk.
+	* pbuilder-satisfydepends-experimental, Makefile: alternate
+	implementation of pbuilder-satisfydepends which supports pulling
+	build-deps with a version on the apt-get command-line; this is derived
+	from pbuilder-satisfydepends with the following changes:
+	- Add and use new package_versions() and candidate_version() helpers;
+	  the former returns all versions of a package available via APT, the
+	  later APT's candidate version.
+	- For versionned build-deps, when building the "apt-get install"
+	  command, try APT's candidate version or all available versions
+	  available from APT in ascending order (the reverse order of
+	  apt-cache's output); checkbuilddep_versiondeps() isn't used for this
+	  part of the process anymore, but it is still used to honor
+	  build-conflicts.
+	- Recover from APT errors caused by unsufficient dependencies
+	  ("libfoo-dev Depends: bar but baz is to be installed") and missing
+	  dependencies libfoo-dev Depends: bar but it is not going to be
+	  installed", or simply "libfoo-dev Depends: bar"); this permits
+	  simply listing build-deps when uploading to experimental; achieved
+	  by moving the version matching logic in the new
+	  versioneddep_to_aptcmd() helper.
+	* pbuilderrc, pbuilderrc.5: document the availability of the alternate
+	implementation.
 
 2006-11-03  Loic Minier <lool@dooz.org>
 

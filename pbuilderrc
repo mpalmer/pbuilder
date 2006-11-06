@@ -35,7 +35,10 @@ BUILDSOURCEROOTCMD="fakeroot"
 PBUILDERROOTCMD="sudo"
 
 # command to satisfy build-dependencies; the default is an internal shell
-# implementation which is relatively slow
+# implementation which is relatively slow; there's an alternate experimental
+# implementation, "pbuilder-satisfydepends-experimental", which might be useful
+# to pull packages from experimental or from repositories with a low APT Pin
+# Priority
 PBUILDERSATISFYDEPENDSCMD="/usr/lib/pbuilder/pbuilder-satisfydepends"
 
 #default is to build everything. Passed on to dpkg-buildpackage
