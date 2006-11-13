@@ -1362,6 +1362,44 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 $ pdebuild --pbuilder cowbuilder
 	</screen>
       </para>
+      <sect2 id="sargecowdancer">
+        <title>Using cowdancer for sarge</title>
+        <para>
+          cowdancer was introduced after the release of sarge; if you want to
+          build packages for sarge with cowbuilder, you will need to workaround
+          its unavailability.
+        </para>
+        <para>
+          One way to workaround the problem is to set APTCONFDIR in pbuilderrc
+          to point to a directory with a list of sources for APT which has both
+          sarge and sarge-backports.
+        </para>
+        <para>
+          <screen>
+$ cat sources.list
+# sarge-backports
+deb     http://www.backports.org/debian sarge-backports main
+deb-src http://www.backports.org/debian sarge-backports main
+
+# sarge
+deb     http://ftp.de.debian.org/debian sarge main
+deb-src http://ftp.de.debian.org/debian sarge main
+          </screen>
+        </para>
+        <para>
+          It is recommended to "Pin" the cowdancer package appropriately in
+          this case, via the APT preferences mechanism.
+        </para>
+        <para>
+          <screen>
+$ cat preferences
+Explanation: use cowdancer from backports
+Package: cowdancer
+Pin: release a=sarge-backports
+Pin-Priority: 950
+          </screen>
+        </para>
+      </sect2>
     </sect1>
     <sect1 id="withouttargz">
       <title>Using pbuilder without tar.gz</title>
