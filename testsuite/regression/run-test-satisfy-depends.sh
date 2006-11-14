@@ -12,7 +12,7 @@ log_i() {
 }
 
 log_e() {
-    log "I: $*"
+    log "E: $*"
 }
 
 result() {
