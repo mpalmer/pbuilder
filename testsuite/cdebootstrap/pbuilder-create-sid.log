@@ -565,7 +565,7 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking ncurses-bin (from .../ncurses-bin_5.5-5_amd64.deb) ...
 P: Unpacking package ncurses-bin
 O: Selecting previously deselected package lsb-base.
-O: Unpacking lsb-base (from .../lsb-base_3.1-21_all.deb) ...
+O: Unpacking lsb-base (from .../lsb-base_3.1-22_all.deb) ...
 P: Unpacking package lsb-base
 O: Selecting previously deselected package diff.
 O: dpkg: regarding .../diff_2.8.1-11_amd64.deb containing diff, pre-dependency problem:
@@ -881,7 +881,7 @@ O:
 O: Setting up login (4.0.18.1-5) ...
 P: Configuring package login
 O: 
-O: Setting up lsb-base (3.1-21) ...
+O: Setting up lsb-base (3.1-22) ...
 P: Configuring package lsb-base
 O: Setting up procps (3.2.7-3) ...
 P: Configuring package procps
@@ -937,10 +937,10 @@ O: Selecting previously deselected package libdb4.2.
 O: Unpacking libdb4.2 (from .../libdb4.2_4.2.52+dfsg-1_amd64.deb) ...
 P: Unpacking package libdb4.2
 O: Selecting previously deselected package libsasl2-2.
-O: Unpacking libsasl2-2 (from .../libsasl2-2_2.1.22.dfsg1-2_amd64.deb) ...
+O: Unpacking libsasl2-2 (from .../libsasl2-2_2.1.22.dfsg1-3_amd64.deb) ...
 P: Unpacking package libsasl2-2
 O: Selecting previously deselected package libsasl2.
-O: Unpacking libsasl2 (from .../libsasl2_2.1.22.dfsg1-2_amd64.deb) ...
+O: Unpacking libsasl2 (from .../libsasl2_2.1.22.dfsg1-3_amd64.deb) ...
 P: Unpacking package libsasl2
 O: Selecting previously deselected package libldap2.
 O: Unpacking libldap2 (from .../libldap2_2.1.30-13.2_amd64.deb) ...
@@ -989,10 +989,10 @@ P: Configuring package libgnutls13
 O: 
 O: Setting up libdb4.2 (4.2.52+dfsg-1) ...
 P: Configuring package libdb4.2
-O: Setting up libsasl2-2 (2.1.22.dfsg1-2) ...
+O: Setting up libsasl2-2 (2.1.22.dfsg1-3) ...
 P: Configuring package libsasl2-2
 O: 
-O: Setting up libsasl2 (2.1.22.dfsg1-2) ...
+O: Setting up libsasl2 (2.1.22.dfsg1-3) ...
 P: Configuring package libsasl2
 O: Setting up libldap2 (2.1.30-13.2) ...
 P: Configuring package libldap2
@@ -1042,9 +1042,16 @@ O: (Reading database ...
 O: 5206 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
-O: Get:1 bootstrap: . Release.gpg [189B]
+O: Get:1 bootstrap: . Release.gpg [378B]
 O: Get:2 bootstrap: . Release [79.6kB]
 O: Reading package lists...
+O: 
+O: W: 
+O: There are no public key available for the following key IDs:
+O: A70DAF536070D3A1
+O: 
+O: W: 
+O: You may want to run apt-get update to correct these problems
 O: 
 O: Reading package lists...
 O: Building dependency tree...
@@ -1138,7 +1145,7 @@ O: Selecting previously deselected package info.
 O: Unpacking info (from .../info_4.8.dfsg.1-3_amd64.deb) ...
 P: Unpacking package info
 O: Selecting previously deselected package iptables.
-O: Unpacking iptables (from .../iptables_1.3.6.0debian1-3_amd64.deb) ...
+O: Unpacking iptables (from .../iptables_1.3.6.0debian1-4_amd64.deb) ...
 P: Unpacking package iptables
 O: Selecting previously deselected package iputils-ping.
 O: Unpacking iputils-ping (from .../iputils-ping_20020927-3.1_amd64.deb) ...
@@ -1293,7 +1300,7 @@ O:
 O: Setting up info (4.8.dfsg.1-3) ...
 P: Configuring package info
 O: 
-O: Setting up iptables (1.3.6.0debian1-3) ...
+O: Setting up iptables (1.3.6.0debian1-4) ...
 P: Configuring package iptables
 O: 
 O: Setting up iputils-ping (20020927-3.1) ...
@@ -1410,17 +1417,20 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//1430/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//25644/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
-Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
+Get:1 http://ftp.jp.debian.org sid Release.gpg [378B]
 Get:2 http://ftp.jp.debian.org sid Release [79.6kB]
-Get:3 http://ftp.jp.debian.org sid/main Packages [5759kB]
-Fetched 5839kB in 3s (1917kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [5765kB]
+Fetched 5845kB in 3s (1748kB/s)
 Reading package lists...
+W: There are no public key available for the following key IDs:
+A70DAF536070D3A1
+W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
 Building dependency tree...
@@ -1462,7 +1472,7 @@ Get:14 http://ftp.jp.debian.org sid/main libstdc++6-4.1-dev 4.1.1-20 [1620kB]
 Get:15 http://ftp.jp.debian.org sid/main g++-4.1 4.1.1-20 [2786kB]
 Get:16 http://ftp.jp.debian.org sid/main g++ 4:4.1.1-13 [1362B]
 Get:17 http://ftp.jp.debian.org sid/main build-essential 11.3 [6982B]
-Fetched 21.2MB in 8s (2472kB/s)
+Fetched 21.2MB in 8s (2573kB/s)
 Selecting previously deselected package binutils.
 (Reading database ... 7255 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.17-3_amd64.deb) ...
@@ -1528,9 +1538,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//1430/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//25644/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.WSQXev5282/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.mVZYu29408/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//1430 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//25644 and its subdirectories

@@ -325,8 +325,7 @@ P: Extracting procps
 P: Extracting tar
 P: Extracting util-linux
 O: Selecting previously deselected package base-passwd.
-O: (Reading database ... 
-O: 0 files and directories currently installed.)
+O: (Reading database ... 0 files and directories currently installed.)
 O: Unpacking base-passwd (from .../base-passwd_3.5.11_amd64.deb) ...
 P: Unpacking package base-passwd
 O: dpkg: base-passwd: dependency problems, but configuring anyway as you request:
@@ -1023,9 +1022,16 @@ O: (Reading database ...
 O: 5202 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
-O: Get:1 bootstrap: . Release.gpg [189B]
+O: Get:1 bootstrap: . Release.gpg [378B]
 O: Get:2 bootstrap: . Release [74.4kB]
 O: Reading package lists...
+O: 
+O: W: 
+O: There are no public key available for the following key IDs:
+O: A70DAF536070D3A1
+O: 
+O: W: 
+O: You may want to run apt-get update to correct these problems
 O: 
 O: Reading package lists...
 O: Building dependency tree...
@@ -1114,7 +1120,7 @@ O: Selecting previously deselected package info.
 O: Unpacking info (from .../info_4.8.dfsg.1-3_amd64.deb) ...
 P: Unpacking package info
 O: Selecting previously deselected package iptables.
-O: Unpacking iptables (from .../iptables_1.3.6.0debian1-2_amd64.deb) ...
+O: Unpacking iptables (from .../iptables_1.3.6.0debian1-3_amd64.deb) ...
 P: Unpacking package iptables
 O: Selecting previously deselected package iputils-ping.
 O: Unpacking iputils-ping (from .../iputils-ping_20020927-3.1_amd64.deb) ...
@@ -1172,10 +1178,10 @@ O: Selecting previously deselected package modutils.
 O: Unpacking modutils (from .../modutils_2.4.27.0-6_amd64.deb) ...
 P: Unpacking package modutils
 O: Selecting previously deselected package nano.
-O: Unpacking nano (from .../nano_1.9.99pre3-1_amd64.deb) ...
+O: Unpacking nano (from .../nano_2.0.0-1_amd64.deb) ...
 P: Unpacking package nano
 O: Selecting previously deselected package update-inetd.
-O: Unpacking update-inetd (from .../update-inetd_4.27_all.deb) ...
+O: Unpacking update-inetd (from .../update-inetd_4.27-0.2_all.deb) ...
 P: Unpacking package update-inetd
 O: Selecting previously deselected package tcpd.
 O: Unpacking tcpd (from .../tcpd_7.6.dbs-11_amd64.deb) ...
@@ -1268,7 +1274,7 @@ O:
 O: Setting up info (4.8.dfsg.1-3) ...
 P: Configuring package info
 O: 
-O: Setting up iptables (1.3.6.0debian1-2) ...
+O: Setting up iptables (1.3.6.0debian1-3) ...
 P: Configuring package iptables
 O: 
 O: Setting up iputils-ping (20020927-3.1) ...
@@ -1317,11 +1323,12 @@ O: Setting up modutils (2.4.27.0-6) ...
 P: Configuring package modutils
 O: Architecture-specific modutils configuration for x86_64 not found, using defaults
 O: 
-O: Setting up nano (1.9.99pre3-1) ...
+O: Setting up nano (2.0.0-1) ...
 P: Configuring package nano
 O: 
-O: Setting up update-inetd (4.27) ...
+O: Setting up update-inetd (4.27-0.2) ...
 P: Configuring package update-inetd
+O: 
 O: Setting up tcpd (7.6.dbs-11) ...
 P: Configuring package tcpd
 O: 
@@ -1362,18 +1369,18 @@ P: Configuring package tasksel
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 7215 files and directories currently installed.)
+O: 7216 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 7214 files and directories currently installed.)
+O: 7215 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 7212 files and directories currently installed.)
+O: 7213 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1387,17 +1394,20 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//5019/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//29121/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
-Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
+Get:1 http://ftp.jp.debian.org etch Release.gpg [378B]
 Get:2 http://ftp.jp.debian.org etch Release [74.4kB]
-Get:3 http://ftp.jp.debian.org etch/main Packages [5474kB]
-Fetched 5549kB in 3s (1758kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [5473kB]
+Fetched 5548kB in 2s (1873kB/s)
 Reading package lists...
+W: There are no public key available for the following key IDs:
+A70DAF536070D3A1
+W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
 Building dependency tree...
@@ -1440,9 +1450,9 @@ Get:14 http://ftp.jp.debian.org etch/main libstdc++6-4.1-dev 4.1.1-19 [1619kB]
 Get:15 http://ftp.jp.debian.org etch/main g++-4.1 4.1.1-19 [2785kB]
 Get:16 http://ftp.jp.debian.org etch/main g++ 4:4.1.1-13 [1362B]
 Get:17 http://ftp.jp.debian.org etch/main build-essential 11.3 [6982B]
-Fetched 21.1MB in 8s (2537kB/s)
+Fetched 21.1MB in 10s (1940kB/s)
 Selecting previously deselected package binutils.
-(Reading database ... 7212 files and directories currently installed.)
+(Reading database ... 7213 files and directories currently installed.)
 Unpacking binutils (from .../binutils_2.17-3_amd64.deb) ...
 Selecting previously deselected package cpp-4.1.
 Unpacking cpp-4.1 (from .../cpp-4.1_4.1.1-19_amd64.deb) ...
@@ -1506,9 +1516,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not found
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//5019/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//29121/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.WSQXev5282/testimage]
+ -> creating base tarball [/home/dancer/cvscheckout/external/pbuilder/pbuilder/testsuite/tmp.mVZYu29408/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//5019 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//29121 and its subdirectories
