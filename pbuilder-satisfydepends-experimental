@@ -115,9 +115,9 @@ function versioneddep_to_aptcmd () {
 	    CANDIDATE_VERSION="$( candidate_version "$PACKAGE" )"
 
 	    # try the candidate version, then all available versions (asc)
+	    COMPARESTRING="$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/')"
+	    DEPSVERSION="$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/')"
 	    for VERSION in $CANDIDATE_VERSION $PACKAGEVERSIONS; do
-		COMPARESTRING=$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/')
-		DEPSVERSION="$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/')"
 		if dpkg --compare-versions "$VERSION" "$COMPARESTRING" "$DEPSVERSION"; then
 		    if [ $VERSION != $CANDIDATE_VERSION ]; then
 			PACKAGE_WITHVERSION="$PACKAGE=$VERSION"
