@@ -112,6 +112,7 @@ File extracted to: $BUILDPLACE
 	chmod a+x "$RUNNAME"
 	executehooks "F"
 	${CHROOTEXEC} /run "$@"
+	rm -f "$RUNNAME"
 
 	save_aptcache
 	trap umountproc_cleanbuildplace exit
