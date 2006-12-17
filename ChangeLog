@@ -1,5 +1,10 @@
 2006-12-17  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-createbuildenv: use FORCE_CONFNEW in 'pbuilder create'
+	also, since dist-upgrade here may cause configuration file change
+	if enough change exists. e.g.  when OTHERMIRROR is set to
+	backports.org
+
 	* pbuilder: remove '/run' after 'execute'
 
 2006-12-09  Loic Minier <lool@dooz.org>
