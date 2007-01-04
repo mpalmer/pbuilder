@@ -338,7 +338,8 @@ function copy_local_configuration () {
 
 function extractbuildplace () {
     # after calling this function, umountproc, and cleanbuildplace
-    # needs to be called. Please trap it.
+    # needs to be called. Please trap it after calling this function.
+
     if [ "${INTERNAL_BUILD_UML}" != "yes" -a ! \( "${PRESERVE_BUILDPLACE}" = "yes" -a -d "$BUILDPLACE" \) ]; then
 	cleanbuildplace
 	echo "Building the build Environment"
@@ -359,12 +360,14 @@ function extractbuildplace () {
 	hostname -f > "$BUILDPLACE/etc/mailname"
     fi
     copy_local_configuration
-    mountproc
-    mkdir -p "$BUILDPLACE/tmp/buildd"
-    
+
+    # installaptlines may fail with exit 1, do it earlier than mountproc.
     if [ "$OVERRIDE_APTLINES" = "yes" ]; then
 	installaptlines
     fi
+
+    mountproc
+    mkdir -p "$BUILDPLACE/tmp/buildd"
 }
 
 
