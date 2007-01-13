@@ -1168,12 +1168,13 @@ BINDMOUNTS="${CCACHE_DIR}"
 	<command>pbuilder</command> is now co-maintained at alioth.
 	There is an alioth project page at
 	<ulink url="http://alioth.debian.org/projects/pbuilder">
-	http://alioth.debian.org/projects/pbuilder</ulink>.
-	CVS Repository is available through anonymous CVS
+	  http://alioth.debian.org/projects/pbuilder</ulink>.
+	git Repository is available through http, or if you have an account on alioth, 
+	ssh.
       </para>
       <screen>
-cvs -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder login
-cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
+git-clone http://git.debian.org/git/pbuilder/pbuilder.git
+git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git
       </screen>
       <para>
 	Test-suites are available in <filename>./testsuite/</filename> directory.
@@ -1253,7 +1254,7 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
 	<filename>debian/changelog</filename> is targeted at users,
 	and <filename>ChangeLog</filename> is targeted at developers.
 
-	For CVS commit messages, a cut-n-paste of
+	For git commit messages, a cut-n-paste of
 	<filename>ChangeLog</filename> diff should be enough.
       </para>
       <para>
@@ -1264,12 +1265,9 @@ cvs -z3 -d:pserver:anonymous@cvs.alioth.debian.org:/cvsroot/pbuilder co pbuilder
       </para>
       <para>
 	When releasing a new version of <command>pbuilder</command>,
-	the version is tagged with the cvs tag
-	releaseX_XXX.
-	<!-- 
-	If you are emacs user, eval (C-c C-e) this:
-	(shell-command "cd ../ && cvs tag $(dpkg-parsechangelog | sed -n 's/\\./_/;s/^Version: /release/p' )")
-	-->
+	the version is tagged with the git tag
+	X.XXX (version number).
+	This is done with <command>./git-tag.sh</command> script available in the source tree.
       </para>
     </sect1>
   </chapter>
@@ -1562,7 +1560,7 @@ Pin-Priority: 950
       </para>
       <para>
 	This documentation is available from the <command>pbuilder</command> source tar-ball,
-	and from the CVS repository of <command>pbuilder</command> (web-based access is possible).
+	and from the git repository of <command>pbuilder</command> (web-based access is possible).
 	A copy of this documentation can be found on the
 	<ulink url="http://pbuilder.alioth.debian.org/pbuilder-doc.html">Alioth project page for pbuilder</ulink>.
 	<ulink url="http://pbuilder.alioth.debian.org/pbuilder-doc.pdf">There is also a PDF version</ulink>.
