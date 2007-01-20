@@ -12,6 +12,24 @@ does Build-Dependency satisfaction.
 
 See debuild manpage for details.
 
+.SH "EXAMPLES"
+
+.TP
+.B "debuild-pbuilder"
+Satisfy build-dependency and run debuild.
+
+.nf
+$ debuild-pbuilder
+W: /home/dancer/.pbuilderrc does not exist
+ -> Attempting to parse the build-deps : pbuilder-satisfydepends,v 1.29 2006/11/06 20:20:56 lool Exp $
+ -> Considering build-dep debhelper (>= 4.1.0)
+   -> Trying debhelper
+	.
+	.
+.hy
+
+
+
 .SH "AUTHOR"
 Initial coding, and main maintenance is done by 
 Junichi Uekawa <dancer@debian.org>.

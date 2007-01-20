@@ -135,6 +135,40 @@ Configuration file for pbuilder, used in pdebuild,
 overrides what is written in
 .B /etc/pbuilderrc
 
+
+.SH "EXAMPLES"
+
+.TP
+.B "pdebuild"
+
+.nf
+$ pwd
+/home/dancer/DEBIAN/cowdancer/cowdancer
+$ ls debian/rules
+debian/rules
+$ pdebuild
+W: /home/dancer/.pbuilderrc does not exist
+dpkg-buildpackage: source package is cowdancer
+dpkg-buildpackage: source version is 0.26
+dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
+dpkg-buildpackage: source version without epoch 0.26
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp configure-stamp
+/usr/bin/make clean
+make[1]: Entering directory `/home/dancer/DEBIAN/cowdancer/cowdancer'
+rm -f *~ *.o *.lo libcowdancer.so cow-shell cowbuilder
+make[1]: Leaving directory `/home/dancer/DEBIAN/cowdancer/cowdancer'
+dh_clean
+ dpkg-source -b cowdancer
+dpkg-source: warning: source directory `./cowdancer' is not <sourcepackage>-<upstreamversion> `cowdancer-0.26'
+dpkg-source: building cowdancer in cowdancer_0.26.tar.gz
+	.
+	.
+	.
+.hy
+
 .SH "BUGS"
 
 pdebuild will accept all options that pbuilder accepts as pdebuild
