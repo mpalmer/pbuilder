@@ -1422,6 +1422,19 @@ Pin-Priority: 950
 	</screen>
       </para>
     </sect1>
+    <sect1 id="inavserver">
+      <title>Using pbuilder in a vserver</title>
+      <para>
+	It is possible to use <command>pbuilder</command> in a vserver
+	environment.  This requires either vserver-patches in version 2.1.1-rc14
+	or higher, or a Linux kernel version 2.6.16 or higher.
+      </para>
+      <para>
+	To use <command>pbuilder</command> in a vserver, you need to set the
+	<command>secure_mount</command> <command>CAPS</command> in the
+	<command>ccapabilities</command> of this vserver.
+      </para>
+    </sect1>
   </chapter>
   <chapter id="refs">
     <title>Reference materials</title>
