@@ -75,6 +75,12 @@ if ! mount -t ext2 /dev/ubdb ${UML_CHROOT_MOUNTPOINT}; then
 fi
 mount --bind ${UML_CHROOT_MOUNTPOINT}/dev /dev
 
+# mount /lib/modules on the hostfs
+kernel_modules=\$(sed -ne 's\$.*/lib/modules.*hostfs.*defaults,ro,\([^[:space:]]*\).*\$\1\$p' ${UML_CHROOT_MOUNTPOINT}/etc/fstab)
+if [ -n "\${kernel_modules}" ] ; then
+	echo " -> Mount /lib/modules on the host \${kernel_modules}"
+	mount -t hostfs -o ro,\${kernel_modules} hostfs /lib/modules
+fi
 
 export LOGNAME="${LOGNAME}"
 export HOME="${HOME}"
@@ -133,6 +139,9 @@ fi
 pbuilder "$1" ${UML_EXTRAOPT} \${EXTRAOPT[@]} --buildresult "\${BUILDRESULT}" --buildplace "${UML_CHROOT_MOUNTPOINT}" --internal-build-uml ${UML_DEBUGMODE:+--debug} ${BUILDING_DSC_FILE}  ${UML_EXECUTE_EXTRAOPT} 
 echo \$? > /proc/exitcode
 
+if [ -n "\${kernel_modules}" ] ; then
+	umount /lib/modules
+fi
 umount /dev
 umount ${UML_CHROOT_MOUNTPOINT}
 /sbin/halt -d -f 
