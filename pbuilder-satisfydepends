@@ -86,7 +86,7 @@ function checkbuilddep_provides () {
 function checkbuilddep_internal () {
 # Use this function to fulfill the dependency (almost)
 
-    local ARCH=$(dpkg-architecture -qDEB_HOST_ARCH)
+    local ARCH=$($CHROOTEXEC dpkg-architecture -qDEB_HOST_ARCH)
     local INSTALLPKG
     local INSTALLPKGLIST
     local INSTALLPKGMULTI
