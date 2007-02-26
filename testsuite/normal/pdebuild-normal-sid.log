@@ -7,14 +7,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.WTxGN22579/dir2/dsh-0.25.7'
+make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.sKLDD25503/dir2/dsh-0.25.7'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.WTxGN22579/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.sKLDD25503/dir2/dsh-0.25.7'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.WTxGN22579/dir2/dsh-0.25.7'
+make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.sKLDD25503/dir2/dsh-0.25.7'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.WTxGN22579/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.sKLDD25503/dir2/dsh-0.25.7'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.7
@@ -31,10 +31,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Thu Feb  8 12:03:40 JST 2007
-pbuilder-time-stamp: 1170903820
+Current time: Mon Feb 26 12:03:22 JST 2007
+pbuilder-time-stamp: 1172459002
 Building the build Environment
- -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.WTxGN22579/testimage]
+ -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.sKLDD25503/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -62,6 +62,9 @@ The following NEW packages will be installed:
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
 Need to get 3519kB of archives.
 After unpacking 11.9MB of additional disk space will be used.
+WARNING: The following packages cannot be authenticated!
+  libmagic1 file gettext-base html2text gettext intltool-debian po-debconf
+  debhelper libdshconfig1 libdshconfig1-dev
 Get:1 http://ftp.jp.debian.org sid/main libmagic1 4.19-1 [312kB]
 Get:2 http://ftp.jp.debian.org sid/main file 4.19-1 [33.1kB]
 Get:3 http://ftp.jp.debian.org sid/main gettext-base 0.16.1-1 [132kB]
@@ -72,7 +75,7 @@ Get:7 http://ftp.jp.debian.org sid/main po-debconf 1.0.8 [111kB]
 Get:8 http://ftp.jp.debian.org sid/main debhelper 5.0.42 [510kB]
 Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.12-2 [10.9kB]
 Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.12-2 [25.3kB]
-Fetched 3519kB in 1s (2387kB/s)
+Fetched 3519kB in 1s (2479kB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 12078 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.19-1_amd64.deb) ...
@@ -115,14 +118,16 @@ Building dependency tree...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 97.2kB of archives.
-After unpacking 406kB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.5.12 [97.2kB]
-Fetched 97.2kB in 0s (1048kB/s)
+Need to get 97.6kB of archives.
+After unpacking 410kB of additional disk space will be used.
+WARNING: The following packages cannot be authenticated!
+  fakeroot
+Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.6 [97.6kB]
+Fetched 97.6kB in 0s (965kB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 12748 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.5.12_amd64.deb) ...
-Setting up fakeroot (1.5.12) ...
+Unpacking fakeroot (from .../fakeroot_1.6_amd64.deb) ...
+Setting up fakeroot (1.6) ...
 
 Copying source file
     -> copying [../dsh_0.25.7-1.dsc]
@@ -456,7 +461,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Thu Feb  8 03:04:02 UTC 2007
+Mon Feb 26 03:03:45 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -526,7 +531,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Thu Feb  8 03:04:07 UTC 2007
+Mon Feb 26 03:03:50 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -637,7 +642,7 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Thu Feb  8 12:04:09 JST 2007
-pbuilder-time-stamp: 1170903849
+Current time: Mon Feb 26 12:03:52 JST 2007
+pbuilder-time-stamp: 1172459032
  -> cleaning the build env 
-    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.WTxGN22579/dir3/8402 and its subdirectories
+    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.sKLDD25503/dir3/11348 and its subdirectories
