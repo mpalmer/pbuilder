@@ -1,6 +1,6 @@
 Upgrading for distribution sid
 Building the build Environment
- -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.sKLDD25503/testimage]
+ -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.BPYOh30327/testimage]
  -> creating local configuration
  -> copying local configuration
   -> Installing apt-lines
@@ -14,16 +14,10 @@ Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org experimental Release.gpg [189B]
 Hit http://ftp.jp.debian.org sid Release
 Get:3 http://ftp.jp.debian.org experimental Release [79.6kB]
-Ign http://ftp.jp.debian.org experimental Release
-Get:4 http://ftp.jp.debian.org sid Release [79.6kB]
-Ign http://ftp.jp.debian.org sid Release
-Get:5 http://ftp.jp.debian.org experimental/main Packages [550kB]
-Get:6 http://ftp.jp.debian.org sid/main Packages/DiffIndex [2038B]
-Fetched 712kB in 1s (703kB/s)
+Get:4 http://ftp.jp.debian.org sid/main Packages/DiffIndex [2038B]
+Get:5 http://ftp.jp.debian.org experimental/main Packages [576kB]
+Fetched 658kB in 0s (729kB/s)
 Reading package lists...
-W: GPG error: http://ftp.jp.debian.org experimental Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY A70DAF536070D3A1
-W: GPG error: http://ftp.jp.debian.org sid Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY A70DAF536070D3A1
-W: You may want to run apt-get update to correct these problems
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
 Building dependency tree...
@@ -40,10 +34,6 @@ The following packages will be upgraded:
 18 upgraded, 1 newly installed, 1 to remove and 2 not upgraded.
 Need to get 23.4MB of archives.
 After unpacking 2982kB of additional disk space will be used.
-WARNING: The following packages cannot be authenticated!
-  gcc-4.2-base libc6-dev libc6 libgcc1 libstdc++6 libstdc++6-4.1-dev g++-4.1
-  gcc-4.1 cpp-4.1 gcc-4.1-base binutils coreutils cpio libgcrypt11 libopencdk8
-  libtasn1-3 libgnutls13 man-db wget
 Get:1 http://ftp.jp.debian.org experimental/main gcc-4.2-base 4.2-20070105-1 [203kB]
 Get:2 http://ftp.jp.debian.org experimental/main libc6-dev 2.5-0exp5 [2464kB]
 Get:3 http://ftp.jp.debian.org experimental/main libc6 2.5-0exp5 [4884kB]
@@ -64,7 +54,7 @@ Get:17 http://ftp.jp.debian.org experimental/main libgnutls13 1.6.1-1 [326kB]
 Get:18 http://ftp.jp.debian.org experimental/main man-db 2.4.4-1 [759kB]
 Get:19 http://ftp.jp.debian.org experimental/main wget 1.10.2+1.11.beta1-1 [635kB]
 Preconfiguring packages ...
-Fetched 23.4MB in 15s (1538kB/s)
+Fetched 23.4MB in 14s (1639kB/s)
 Selecting previously deselected package gcc-4.2-base.
 (Reading database ... 12078 files and directories currently installed.)
 Unpacking gcc-4.2-base (from .../gcc-4.2-base_4.2-20070105-1_amd64.deb) ...
@@ -161,29 +151,25 @@ The following packages will be upgraded:
 2 upgraded, 0 newly installed, 3 to remove and 0 not upgraded.
 Need to get 1645kB of archives.
 After unpacking 12.3MB disk space will be freed.
-WARNING: The following packages cannot be authenticated!
-  apt-utils apt
 Get:1 http://ftp.jp.debian.org experimental/main apt-utils 0.7.0 [192kB]
 Get:2 http://ftp.jp.debian.org experimental/main apt 0.7.0 [1453kB]
-Fetched 1645kB in 1s (1182kB/s)
+Fetched 1645kB in 1s (1440kB/s)
 (Reading database ... 12134 files and directories currently installed.)
 Removing tasksel ...
 Removing tasksel-data ...
 Removing aptitude ...
 (Reading database ... 11899 files and directories currently installed.)
-Preparing to replace apt-utils 0.6.46.4 (using .../apt-utils_0.7.0_amd64.deb) ...
+Preparing to replace apt-utils 0.6.46.4-0.1 (using .../apt-utils_0.7.0_amd64.deb) ...
 Unpacking replacement apt-utils ...
-Preparing to replace apt 0.6.46.4 (using .../archives/apt_0.7.0_amd64.deb) ...
+Preparing to replace apt 0.6.46.4-0.1 (using .../archives/apt_0.7.0_amd64.deb) ...
 Unpacking replacement apt ...
 Setting up apt (0.7.0) ...
 Installing new version of config file /etc/cron.daily/apt ...
 gpg: key 2D230C5F: "Debian Archive Automatic Signing Key (2006) <ftpmaster@debian.org>" not changed
-gpg: key 6070D3A1: public key "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>" imported
+gpg: key 6070D3A1: "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>" not changed
 gpg: key ADB11277: "Etch Stable Release Key <debian-release@lists.debian.org>" not changed
 gpg: Total number processed: 3
-gpg:               imported: 1
-gpg:              unchanged: 2
-gpg: no ultimately trusted keys found
+gpg:              unchanged: 3
 
 Setting up apt-utils (0.7.0) ...
 
@@ -194,9 +180,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//30285/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//3141/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.sKLDD25503/testimage]
+ -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.BPYOh30327/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//30285 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//3141 and its subdirectories

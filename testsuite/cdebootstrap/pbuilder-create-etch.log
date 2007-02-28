@@ -84,8 +84,6 @@ P: Retrieving libdb4.2
 P: Validating libdb4.2
 P: Retrieving libsasl2-2
 P: Validating libsasl2-2
-P: Retrieving libsasl2
-P: Validating libsasl2
 P: Retrieving libldap2
 P: Validating libldap2
 P: Retrieving readline-common
@@ -226,6 +224,8 @@ P: Retrieving libnewt0.52
 P: Validating libnewt0.52
 P: Retrieving libpopt0
 P: Validating libpopt0
+P: Retrieving libsasl2
+P: Validating libsasl2
 P: Retrieving libsigc++-1.2-5c2
 P: Validating libsigc++-1.2-5c2
 P: Retrieving logrotate
@@ -925,11 +925,8 @@ P: Unpacking package libdb4.2
 O: Selecting previously deselected package libsasl2-2.
 O: Unpacking libsasl2-2 (from .../libsasl2-2_2.1.22.dfsg1-8_amd64.deb) ...
 P: Unpacking package libsasl2-2
-O: Selecting previously deselected package libsasl2.
-O: Unpacking libsasl2 (from .../libsasl2_2.1.22.dfsg1-8_amd64.deb) ...
-P: Unpacking package libsasl2
 O: Selecting previously deselected package libldap2.
-O: Unpacking libldap2 (from .../libldap2_2.1.30-13.2_amd64.deb) ...
+O: Unpacking libldap2 (from .../libldap2_2.1.30-13.3_amd64.deb) ...
 P: Unpacking package libldap2
 O: Selecting previously deselected package readline-common.
 O: Unpacking readline-common (from .../readline-common_5.2-2_all.deb) ...
@@ -978,9 +975,7 @@ P: Configuring package libdb4.2
 O: Setting up libsasl2-2 (2.1.22.dfsg1-8) ...
 P: Configuring package libsasl2-2
 O: 
-O: Setting up libsasl2 (2.1.22.dfsg1-8) ...
-P: Configuring package libsasl2
-O: Setting up libldap2 (2.1.30-13.2) ...
+O: Setting up libldap2 (2.1.30-13.3) ...
 P: Configuring package libldap2
 O: 
 O: Setting up readline-common (5.2-2) ...
@@ -1037,7 +1032,7 @@ O:
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
 O: (Reading database ... 
-O: 5209 files and directories currently installed.)
+O: 5205 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 O: Get:1 bootstrap: . Release.gpg [189B]
@@ -1052,6 +1047,7 @@ O: W:
 O: You may want to run apt-get update to correct these problems
 O: 
 O: Reading package lists...
+O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -1065,27 +1061,27 @@ O: The following NEW packages will be installed:
 O:   adduser apt-utils aptitude bsdmainutils cpio cron cyrus-sasl2-doc
 O:   dhcp3-client dhcp3-common dmidecode ed groff-base ifupdown info iptables
 O:   iputils-ping klogd laptop-detect libconsole libdb4.4 libgdbm3 libldap-2.3-0
-O:   liblzo2-2 libncursesw5 libnewt0.52 libpopt0 libsigc++-1.2-5c2
+O:   liblzo2-2 libncursesw5 libnewt0.52 libpopt0 libsasl2 libsigc++-1.2-5c2
 O:   libsigc++-2.0-0c2a libssl0.9.8 libwrap0 logrotate man-db manpages
 O:   module-init-tools nano net-tools netbase netcat openbsd-inetd sysklogd
 O:   tasksel tasksel-data tcpd traceroute update-inetd vim-common vim-tiny wget
 O:   whiptail
-O: 0 upgraded, 49 newly installed, 0 to remove and 0 not upgraded.
+O: 0 upgraded, 50 newly installed, 0 to remove and 0 not upgraded.
 O: Need to get 12.8MB of archives.
-O: After unpacking 40.5MB of additional disk space will be used.
+O: After unpacking 40.6MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
 O:   adduser libdb4.4 apt-utils libncursesw5 libsigc++-2.0-0c2a aptitude
 O:   bsdmainutils cpio cron cyrus-sasl2-doc dhcp3-common dhcp3-client dmidecode
 O:   ed groff-base net-tools ifupdown info iptables iputils-ping sysklogd klogd
 O:   laptop-detect libconsole libgdbm3 libssl0.9.8 libldap-2.3-0 liblzo2-2
-O:   libnewt0.52 libpopt0 libsigc++-1.2-5c2 libwrap0 logrotate man-db manpages
-O:   module-init-tools nano update-inetd tcpd openbsd-inetd netbase netcat
-O:   tasksel-data tasksel traceroute vim-common vim-tiny wget whiptail
+O:   libnewt0.52 libpopt0 libsasl2 libsigc++-1.2-5c2 libwrap0 logrotate man-db
+O:   manpages module-init-tools nano update-inetd tcpd openbsd-inetd netbase
+O:   netcat tasksel-data tasksel traceroute vim-common vim-tiny wget whiptail
 O: debconf: delaying package configuration, since apt-utils is not installed
 O: Authentication warning overridden.
 O: Selecting previously deselected package adduser.
 O: (Reading database ... 
-O: 5210 files and directories currently installed.)
+O: 5206 files and directories currently installed.)
 O: Unpacking adduser (from .../adduser_3.102_all.deb) ...
 P: Unpacking package adduser
 O: Selecting previously deselected package libdb4.4.
@@ -1176,6 +1172,9 @@ P: Unpacking package libnewt0.52
 O: Selecting previously deselected package libpopt0.
 O: Unpacking libpopt0 (from .../libpopt0_1.10-3_amd64.deb) ...
 P: Unpacking package libpopt0
+O: Selecting previously deselected package libsasl2.
+O: Unpacking libsasl2 (from .../libsasl2_2.1.22.dfsg1-8_amd64.deb) ...
+P: Unpacking package libsasl2
 O: Selecting previously deselected package libsigc++-1.2-5c2.
 O: Unpacking libsigc++-1.2-5c2 (from .../libsigc++-1.2-5c2_1.2.7-2_amd64.deb) ...
 P: Unpacking package libsigc++-1.2-5c2
@@ -1317,6 +1316,8 @@ O:
 O: Setting up libpopt0 (1.10-3) ...
 P: Configuring package libpopt0
 O: 
+O: Setting up libsasl2 (2.1.22.dfsg1-8) ...
+P: Configuring package libsasl2
 O: Setting up libsigc++-1.2-5c2 (1.2.7-2) ...
 P: Configuring package libsigc++-1.2-5c2
 O: 
@@ -1404,7 +1405,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//25665/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//30743/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1413,8 +1414,8 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [74.4kB]
 Ign http://ftp.jp.debian.org etch Release
-Get:3 http://ftp.jp.debian.org etch/main Packages [5558kB]
-Fetched 5632kB in 3s (1851kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [5557kB]
+Fetched 5632kB in 3s (1738kB/s)
 Reading package lists...
 W: GPG error: http://ftp.jp.debian.org etch Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY A70DAF536070D3A1
 W: You may want to run apt-get update to correct these problems
@@ -1464,7 +1465,7 @@ Get:14 http://ftp.jp.debian.org etch/main g++ 4:4.1.1-15 [1358B]
 Get:15 http://ftp.jp.debian.org etch/main make 3.81-2 [390kB]
 Get:16 http://ftp.jp.debian.org etch/main dpkg-dev 1.13.25 [166kB]
 Get:17 http://ftp.jp.debian.org etch/main build-essential 11.3 [6982B]
-Fetched 21.2MB in 9s (2199kB/s)
+Fetched 21.2MB in 9s (2299kB/s)
 Selecting previously deselected package patch.
 (Reading database ... 7147 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
@@ -1530,9 +1531,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//25665/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//30743/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.sKLDD25503/testimage]
+ -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.BPYOh30327/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//25665 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//30743 and its subdirectories
