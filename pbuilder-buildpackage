@@ -88,13 +88,13 @@ fi
 
 
 recover_aptcache
+createbuilduser
 echo "Installing the build-deps"
 executehooks "D"
 trap saveaptcache_umountproc_cleanbuildplace exit
 checkbuilddep "$PACKAGENAME"
 save_aptcache
 trap umountproc_cleanbuildplace exit
-createbuilduser
 
 echo "Copying source file"
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
