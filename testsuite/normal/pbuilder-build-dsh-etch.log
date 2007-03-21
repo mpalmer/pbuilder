@@ -2,16 +2,17 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Tue Mar 20 12:08:26 JST 2007
-pbuilder-time-stamp: 1174360106
+Current time: Wed Mar 21 12:11:17 JST 2007
+pbuilder-time-stamp: 1174446677
 Building the build Environment
- -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zcoCr25572/testimage]
+ -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
 Installing the build-deps
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
  -> Attempting to parse the build-deps $
  -> Considering build-dep debhelper (>> 3.0.0)
    -> Trying debhelper
@@ -43,9 +44,9 @@ Get:7 http://ftp.jp.debian.org etch/main po-debconf 1.0.8 [111kB]
 Get:8 http://ftp.jp.debian.org etch/main debhelper 5.0.42 [510kB]
 Get:9 http://ftp.jp.debian.org etch/main libdshconfig1 0.20.12-2 [10.9kB]
 Get:10 http://ftp.jp.debian.org etch/main libdshconfig1-dev 0.20.12-2 [25.3kB]
-Fetched 3483kB in 4s (793kB/s)
+Fetched 3483kB in 4s (820kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 12062 files and directories currently installed.)
+(Reading database ... 12053 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.17-5_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.17-5_amd64.deb) ...
@@ -89,16 +90,16 @@ The following NEW packages will be installed:
 Need to get 97.4kB of archives.
 After unpacking 406kB of additional disk space will be used.
 Get:1 http://ftp.jp.debian.org etch/main fakeroot 1.5.10 [97.4kB]
-Fetched 97.4kB in 0s (479kB/s)
+Fetched 97.4kB in 0s (286kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12732 files and directories currently installed.)
+(Reading database ... 12723 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.5.10_amd64.deb) ...
 Setting up fakeroot (1.5.10) ...
 
 Copying source file
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zcoCr25572/dir1/dsh_0.25.7-1.dsc]
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zcoCr25572/dir1/dsh_0.25.7.orig.tar.gz]
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zcoCr25572/dir1/dsh_0.25.7-1.diff.gz]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/dir1/dsh_0.25.7-1.dsc]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/dir1/dsh_0.25.7.orig.tar.gz]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/dir1/dsh_0.25.7-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 gpg: can't open `/gnupg/options.skel': No such file or directory
@@ -413,8 +414,8 @@ success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -426,7 +427,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue Mar 20 03:09:04 UTC 2007
+Wed Mar 21 03:11:52 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -496,14 +497,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue Mar 20 03:09:09 UTC 2007
+Wed Mar 21 03:11:57 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
+a: a
 b: b
 c: c
-dsh: Process terminated (before write).
-a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -608,7 +608,7 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Tue Mar 20 12:09:11 JST 2007
-pbuilder-time-stamp: 1174360151
+Current time: Wed Mar 21 12:12:00 JST 2007
+pbuilder-time-stamp: 1174446720
  -> cleaning the build env 
-    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zcoCr25572/dir1/2736 and its subdirectories
+    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/dir1/466 and its subdirectories
