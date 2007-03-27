@@ -36,7 +36,7 @@ function usecow () {
     PBUILDER_COWFILENAME="${BUILDPLACE}/$$.cow"
     PBUILDER_COW="${PBUILDER_COWFILENAME},"
     if ! touch "${PBUILDER_COWFILENAME}"; then
-	echo "E: Cannot write-access to the COW file, check buildplace"
+	echo "E: Cannot write-access to the COW file, check buildplace" >&2 
 	exit 1;
     fi
     rm -f "${PBUILDER_COWFILENAME}"
@@ -70,7 +70,7 @@ mknod /dev/ubdb b 98 16
 #  echo "W: Failed to fsck /dev/ubdb"
 #fi
 if ! mount -t ext2 /dev/ubdb ${UML_CHROOT_MOUNTPOINT}; then
-  echo "E: Cannot mount /dev/ubdb, is UML root image accessible as current user?"
+  echo "E: Cannot mount /dev/ubdb, is UML root image accessible as current user?" >&2 
   exit 1
 fi
 mount --bind ${UML_CHROOT_MOUNTPOINT}/dev /dev

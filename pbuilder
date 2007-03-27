@@ -77,7 +77,7 @@ File extracted to: $BUILDPLACE
 	# saving the place afterwards
 	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
 	    if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
-		echo "E: Invalid combination of internal-build-uml and save-after-login flags"
+		echo "E: Invalid combination of internal-build-uml and save-after-login flags" >&2
 	    else
 		echo " -> Saving the results, modifications to this session will persist"
 		unloadhooks
@@ -120,7 +120,7 @@ File extracted to: $BUILDPLACE
 	# saving the place afterwards
 	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
 	    if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
-		echo "E: Invalid combination of internal-build-uml and save-after-login flags"
+		echo "E: Invalid combination of internal-build-uml and save-after-login flags" >&2 
 	    else
 		echo " -> Saving the results, modifications to this session will persist"
 		unloadhooks

@@ -23,7 +23,7 @@ while ! test -d ./debian -o "$(pwd)" = "/" ; do
 done
 
 if test ! -d ./debian; then
-    echo "E: Cannot find ./debian dir"
+    echo "E: Cannot find ./debian dir" >&2 
     exit 1
 fi;
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
@@ -38,7 +38,7 @@ ARCHITECTURE=$(dpkg-architecture -qDEB_HOST_ARCH)
 
 if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
     if [ ! readlink -f .. ]; then
-	echo "E: Cannot find .. dir from PWD=$(pwd)"
+	echo "E: Cannot find .. dir from PWD=$(pwd)" >&2 
 	exit 1
     fi
     pbuilder-user-mode-linux execute "$@" --bindmounts $(readlink -f ..) /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}"

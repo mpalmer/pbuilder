@@ -140,7 +140,7 @@ function unloadhooks () {
     if [ -d "$BUILDPLACE/$hooks" ]; then
 	rm -rf "$BUILDPLACE/$hooks"
     else
-	echo "E: Logic failure."
+	echo "E: Logic failure." >&2 
     fi
 }
 

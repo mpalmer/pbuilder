@@ -63,7 +63,7 @@ if [ ! -d "${BUILDRESULT}" ]; then
     if [ -d "${BUILDRESULT}" ]; then
 	echo " -> created buildresult dir: ${BUILDRESULT}"
     else
-	echo "E: failed creating buildresult dir: ${BUILDRESULT}"
+	echo "E: failed creating buildresult dir: ${BUILDRESULT}" >&2 
 	exit 1
     fi
 fi
@@ -103,7 +103,7 @@ echo "Extracting source"
 if echo "chown $BUILDUSERNAME:$BUILDUSERNAME /tmp/buildd /tmp/buildd/*" | $CHROOTEXEC /bin/bash; then
     : # success
 else
-    echo "pbuilder: Failed chowning to $BUILDUSERNAME:$BUILDUSERNAME" >&2 
+    echo "E: pbuilder: Failed chowning to $BUILDUSERNAME:$BUILDUSERNAME" >&2 
     exit 1;
 fi
 if echo "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )" | $CHROOTEXEC $SUTOUSER ; then
