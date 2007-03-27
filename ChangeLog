@@ -1,5 +1,13 @@
 2007-03-28  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-user-mode-linux: make more vivid notes on what is
+	executed inside the user-mode-linux
+
+	* pbuilder-modules: for pbuilder-user-mode-linux; only warn if
+	host network configuration files are not available, and assume it
+	is correct inside the chroot, and give out a W: warning.
+	From: Paul TBBle Hampson <Paul.Hampson@Pobox.com>
+
 	* debuild-pbuilder.1, pbuilder-uml.conf.5,
 	pbuilder-user-mode-linux.1, pbuilder.8, pbuilderrc.5,
 	pdebuild-user-mode-linux.1, pdebuild.1: 409135: Fix 'SEE ALSO'

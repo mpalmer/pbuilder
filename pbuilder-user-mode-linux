@@ -58,6 +58,11 @@ function operate_uml () {
 
     cat <<EOF > ${INSIDE_PBUILDER}
 #! /bin/bash
+
+###
+### BEGIN CODE EXECUTED INSIDE User-mode-linux
+###
+
 ${UML_DEBUGMODE}
 
 mount -t proc /proc /proc
@@ -145,6 +150,10 @@ fi
 umount /dev
 umount ${UML_CHROOT_MOUNTPOINT}
 /sbin/halt -d -f 
+
+###
+### END CODE EXECUTED INSIDE User-mode-linux
+###
 EOF
 
     chmod a+x ${INSIDE_PBUILDER}

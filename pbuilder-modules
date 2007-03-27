@@ -329,10 +329,12 @@ function copy_local_configuration () {
     echo " -> copying local configuration"
     for a in hosts hostname resolv.conf; do 
 	rm -f "$BUILDPLACE/etc/$a"
-	if [ ! -f "/etc/$a" ]; then
-	    echo "E: /etc/$a does not exist, your setup is insane. fix it" >&2
-	fi
-	cp $( readlink -f "/etc/$a" ) "$BUILDPLACE/etc/$a";
+	if [ -f "/etc/$a" ]; then
+		rm -f "$BUILDPLACE/etc/$a"
+		cp $( readlink -f "/etc/$a" ) "$BUILDPLACE/etc/$a";
+	else
+		echo "W: No local /etc/$a to copy, relying on $BUILDPLACE/etc/$a to be correct" >&2
+ 	fi
     done
 }
 
