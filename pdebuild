@@ -25,7 +25,7 @@ while ! test -d ./debian -o "$(pwd)" = "/" ; do
 done
 
 if test ! -d ./debian; then
-    echo "Cannot find ./debian dir"
+    echo "E: Cannot find ./debian dir" >&2
     exit 1
 fi;
 
@@ -40,16 +40,17 @@ export BUILDRESULTGID=$(id -g)
 if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
     ${PBUILDERROOTCMD} ${PDEBUILD_PBUILDER} --execute "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --bindmounts $(readlink -f ..) -- /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}" --uid "${BUILDRESULTUID}" --gid "${BUILDRESULTGID}" --pbuildersatisfydepends "$PBUILDERSATISFYDEPENDSCMD"
     if [ -d "${BUILDRESULT}" ]; then
-	for f in $(sed -rn '/^Files:/,${s/.* ([^ ]+)$/\1/p}' ../${CHANGES}); do
-	    cp -p ../$f "${BUILDRESULT}"
+	for files in $(sed -rn '/^Files:/,${s/.* ([^ ]+)$/\1/p}' ../${CHANGES}); do
+	    cp -a ../"$files" "${BUILDRESULT}"
 	done
-	cp -p ../${CHANGES} "${BUILDRESULT}"
+	cp -a ../${CHANGES} "${BUILDRESULT}"
     else
 	echo "E: BUILDRESULT=[$BUILDRESULT] is not a directory." >&2
+	exit 1
     fi
 else
     if ! dpkg-checkbuilddeps -B ; then
-	echo "W: Unmet build-dependency in source"
+	echo "W: Unmet build-dependency in source" >&2
     fi
     echo "dpkg-buildpackage -S -us -uc -r${BUILDSOURCEROOTCMD} $DEBBUILDOPTS" | perl -pe 's/(^|\s)-[bB](\s|$)/$1$2/g' | /bin/bash
     ${PBUILDERROOTCMD} ${PDEBUILD_PBUILDER} --build "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --buildresult "${BUILDRESULT}"  --debbuildopts "${DEBBUILDOPTS}" ../"${PKG_SOURCENAME}_${PKG_VERSION}".dsc
