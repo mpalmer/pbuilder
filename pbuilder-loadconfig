@@ -21,6 +21,6 @@ for RCFILE in /usr/share/pbuilder/pbuilderrc /etc/pbuilderrc ${HOME}/.pbuilderrc
     if [ -f "$RCFILE" ]; then 
 	. "$RCFILE"
     else
-	echo "W: $RCFILE does not exist" 
+	echo "W: $RCFILE does not exist" >&2
     fi
 done

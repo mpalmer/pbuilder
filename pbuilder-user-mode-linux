@@ -150,7 +150,7 @@ EOF
     chmod a+x ${INSIDE_PBUILDER}
 
     if [ $( id -u ) = 0 ]; then
-	echo "W: You are uid=0. Don't run UML as uid=0, it's not supported."
+	echo "W: You are uid=0. Don't run UML as uid=0, it's not supported." >&2 
     fi
 
     echo Invoking: "linux mem=${UML_MEM} eth0=${MY_ETH0} con0=fd:0,fd:1 con=pty root=/dev/root rootflags=/ rootfstype=hostfs ubd1=${PBUILDER_COW}${PBUILDER_UML_IMAGE} init=${INSIDE_PBUILDER} rw"

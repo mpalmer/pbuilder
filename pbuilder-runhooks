@@ -124,7 +124,7 @@ function loadhooks () {
     if [ -d "$HOOKDIR" ]; then
 	mkdir -p "$BUILDPLACE/$hooks"
 	if ! cp -a "$HOOKDIR/"* "$BUILDPLACE/$hooks"; then
-	    echo "W: no hooks found on the hookdir"
+	    echo "W: no hooks found on the hookdir" >&2 
 	fi
     fi
 }
@@ -163,13 +163,13 @@ function executehooks () {
     for fn in "$BUILDPLACE/$hooks/$prefix"[0-9][0-9]* ; do
 	case "$fn" in
 	    "$BUILDPLACE/$hooks/$prefix"'[0-9][0-9]*')
-		echo "W: no hooks of type ${prefix} found -- ignoring"
+		echo "W: no hooks of type ${prefix} found -- ignoring" >&2 
 		;;
 	    *~)
-		echo "W: skipping an editor backup file $fn"
+		echo "W: skipping an editor backup file $fn" >&2 
 		;;
 	    *.bak)
-		echo "W: skipping a backup file $fn"
+		echo "W: skipping a backup file $fn" >&2 
 		;;
 	    *)	
 		if [ -x "$fn" ]; then
@@ -178,10 +178,10 @@ function executehooks () {
 		else
 		    if [ -f "$fn" ]; then
 			filetype=$(basename "$fn" ) 
-			echo "W: execute priv not set on file $filetype, not executing."
+			echo "W: execute priv not set on file $filetype, not executing." >&2 
 		    else
 			# Should it reach here ? This case should be caught in the above case.
-			echo "W: no hooks of type ${prefix} found -- internal error in logic"
+			echo "W: no hooks of type ${prefix} found -- internal error in logic" >&2 
 		    fi
 		fi  
 	        ;;	

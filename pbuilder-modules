@@ -100,23 +100,23 @@ function seems_truly_unmounted() {
     local mountpoint
     mountpoint="$1"
     if ! [ -e "$BUILDPLACE/$mountpoint" ]; then
-        echo "W: $mountpoint doesn't exist"
+        echo "W: $mountpoint doesn't exist" >&2 
         return 1
     fi
     if ! [ -d "$BUILDPLACE/$mountpoint" ]; then
-        echo "W: $mountpoint isn't a directory"
+        echo "W: $mountpoint isn't a directory" >&2 
         return 1
     fi
     if [ -r "$BUILDPLACE/proc/mounts" ] && grep -q "^[^ ]* $mountpoint " "$BUILDPLACE/proc/mounts"; then
-        echo "W: $mountpoint is mounted according to build place's /proc/mounts"
+        echo "W: $mountpoint is mounted according to build place's /proc/mounts" >&2 
         return 1
     fi
     if [ -r "/proc/mounts" ] && grep -q "^[^ ]* $BUILDPLACE/$mountpoint " "/proc/mounts"; then
-        echo "W: $mountpoint is mounted according to system's /proc/mounts"
+        echo "W: $mountpoint is mounted according to system's /proc/mounts" >&2 
         return 1
     fi
     if ! is_empty_dir "$BUILDPLACE/$mountpoint"; then
-        echo "W: $mountpoint not empty"
+        echo "W: $mountpoint not empty" >&2 
         return 1
     fi
     return 0
@@ -131,7 +131,7 @@ function umount_one () {
     echo " -> unmounting $1 filesystem"
     local UMOUNT_OUTPUT
     if ! UMOUNT_OUTPUT="$(LC_ALL=C umount "$BUILDPLACE/$1" 2>&1)"; then
-        echo "W: Could not unmount $1: $UMOUNT_OUTPUT"
+        echo "W: Could not unmount $1: $UMOUNT_OUTPUT" >&2 
         local ignore_umount_error="no"
         case $UMOUNT_OUTPUT in
           "umount: "*": not found"|"umount:"*": not mounted")
@@ -139,7 +139,7 @@ function umount_one () {
             if seems_truly_unmounted "$1"; then
                 ignore_umount_error="yes"
             else
-                echo "W: Tried ignoring error in unmount, but sanity check failed: $1 might still be mounted"
+                echo "W: Tried ignoring error in unmount, but sanity check failed: $1 might still be mounted" >&2 
             fi
             ;;
           *)
@@ -147,7 +147,7 @@ function umount_one () {
             ;;
         esac
         if [ "$ignore_umount_error" != "yes" ]; then
-	    echo "W: Retrying to unmount $1 in 5s"
+	    echo "W: Retrying to unmount $1 in 5s" >&2 
 	    sleep 5s
 	    while ! umount "$BUILDPLACE/$1"; do
 		sleep 5s
@@ -166,7 +166,7 @@ EOF
 		chroot "$BUILDPLACE" bin/sh
 	    done
         else
-            echo "W: Ignored error in unmount"
+            echo "W: Ignored error in unmount" >&2 
         fi
     fi
 }
