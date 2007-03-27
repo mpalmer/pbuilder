@@ -32,12 +32,21 @@ fi;
 PKG_SOURCENAME=$(dpkg-parsechangelog|sed -n 's/^Source: //p')
 PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')
 ARCHITECTURE=$(dpkg-architecture -qDEB_HOST_ARCH)
+CHANGES="${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.changes"
 
 export BUILDRESULTUID=$(id -u)
 export BUILDRESULTGID=$(id -g)
 
 if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
     ${PBUILDERROOTCMD} ${PDEBUILD_PBUILDER} --execute "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --bindmounts $(readlink -f ..) -- /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}" --uid "${BUILDRESULTUID}" --gid "${BUILDRESULTGID}" --pbuildersatisfydepends "$PBUILDERSATISFYDEPENDSCMD"
+    if [ -d "${BUILDRESULT}" ]; then
+	for f in $(sed -rn '/^Files:/,${s/.* ([^ ]+)$/\1/p}' ../${CHANGES}); do
+	    cp -p ../$f "${BUILDRESULT}"
+	done
+	cp -p ../${CHANGES} "${BUILDRESULT}"
+    else
+	echo "E: BUILDRESULT=[$BUILDRESULT] is not a directory." >&2
+    fi
 else
     if ! dpkg-checkbuilddeps -B ; then
 	echo "W: Unmet build-dependency in source"
@@ -52,6 +61,6 @@ if [ "${AUTO_DEBSIGN}" = "yes" ]; then
     if [ -n "${DEBSIGN_KEYID}" ]; then
 	DEBSIGN_PARAM[1]="-k${DEBSIGN_KEYID}"
     fi
-    DEBSIGN_PARAM[2]="${BUILDRESULT}/${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.changes"
+    DEBSIGN_PARAM[2]="${BUILDRESULT}/${CHANGES}"
     debsign "${DEBSIGN_PARAM[@]}"
 fi
