@@ -325,11 +325,11 @@ O: Selecting previously deselected package base-passwd.
 O: (Reading database ... 0 files and directories currently installed.)
 O: Unpacking base-passwd (from .../base-passwd_3.5.11_amd64.deb) ...
 P: Unpacking package base-passwd
+O: Setting up base-passwd (3.5.11) ...
+P: Configuring package base-passwd
 O: dpkg: base-passwd: dependency problems, but configuring anyway as you request:
 O:  base-passwd depends on libc6 (>= 2.3.5-1); however:
 O:   Package libc6 is not installed.
-O: Setting up base-passwd (3.5.11) ...
-P: Configuring package base-passwd
 O: 
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
@@ -914,7 +914,7 @@ O: Selecting previously deselected package libgnutls13.
 O: Unpacking libgnutls13 (from .../libgnutls13_1.4.4-3_amd64.deb) ...
 P: Unpacking package libgnutls13
 O: Selecting previously deselected package libdb4.2.
-O: Unpacking libdb4.2 (from .../libdb4.2_4.2.52+dfsg-1_amd64.deb) ...
+O: Unpacking libdb4.2 (from .../libdb4.2_4.2.52+dfsg-2_amd64.deb) ...
 P: Unpacking package libdb4.2
 O: Selecting previously deselected package libsasl2-2.
 O: Unpacking libsasl2-2 (from .../libsasl2-2_2.1.22.dfsg1-8_amd64.deb) ...
@@ -932,10 +932,10 @@ O: Selecting previously deselected package libusb-0.1-4.
 O: Unpacking libusb-0.1-4 (from .../libusb-0.1-4_0.1.12-5_amd64.deb) ...
 P: Unpacking package libusb-0.1-4
 O: Selecting previously deselected package gpgv.
-O: Unpacking gpgv (from .../gpgv_1.4.6-1_amd64.deb) ...
+O: Unpacking gpgv (from .../gpgv_1.4.6-2_amd64.deb) ...
 P: Unpacking package gpgv
 O: Selecting previously deselected package gnupg.
-O: Unpacking gnupg (from .../gnupg_1.4.6-1_amd64.deb) ...
+O: Unpacking gnupg (from .../gnupg_1.4.6-2_amd64.deb) ...
 P: Unpacking package gnupg
 O: Selecting previously deselected package debian-archive-keyring.
 O: Unpacking debian-archive-keyring (from .../debian-archive-keyring_2007.02.19_all.deb) ...
@@ -964,7 +964,7 @@ O:
 O: Setting up libgnutls13 (1.4.4-3) ...
 P: Configuring package libgnutls13
 O: 
-O: Setting up libdb4.2 (4.2.52+dfsg-1) ...
+O: Setting up libdb4.2 (4.2.52+dfsg-2) ...
 P: Configuring package libdb4.2
 O: Setting up libsasl2-2 (2.1.22.dfsg1-8) ...
 P: Configuring package libsasl2-2
@@ -981,9 +981,9 @@ O:
 O: Setting up libusb-0.1-4 (0.1.12-5) ...
 P: Configuring package libusb-0.1-4
 O: 
-O: Setting up gpgv (1.4.6-1) ...
+O: Setting up gpgv (1.4.6-2) ...
 P: Configuring package gpgv
-O: Setting up gnupg (1.4.6-1) ...
+O: Setting up gnupg (1.4.6-2) ...
 P: Configuring package gnupg
 O: Setting up debian-archive-keyring (2007.02.19) ...
 P: Configuring package debian-archive-keyring
@@ -1029,15 +1029,16 @@ O: Get:2 bootstrap: . Release [74.4kB]
 O: Reading package lists...
 O: 
 O: Reading package lists...
+O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
-O:   perl-modules libparse-debianchangelog-perl debtags cpp wamerican wordlist
-O:   whois vacation anacron lockfile-progs checksecurity resolvconf avahi-autoipd
-O:   groff iproute ppp less www-browser man-browser spell
+O:   perl-modules debtags cpp wamerican wordlist whois vacation anacron
+O:   lockfile-progs checksecurity resolvconf avahi-autoipd groff iproute ppp less
+O:   www-browser man-browser spell
 O: Recommended packages:
-O:   aptitude-doc-en aptitude-doc exim4 postfix mail-transport-agent libgpmg1
-O:   libfribidi0 mailx
+O:   aptitude-doc-en aptitude-doc libparse-debianchangelog-perl exim4 postfix
+O:   mail-transport-agent libgpmg1 libfribidi0 mailx
 O: The following NEW packages will be installed:
 O:   adduser apt-utils aptitude bsdmainutils cpio cron cyrus-sasl2-doc
 O:   dhcp3-client dhcp3-common dmidecode ed groff-base ifupdown info iptables
@@ -1077,7 +1078,7 @@ O: Selecting previously deselected package libsigc++-2.0-0c2a.
 O: Unpacking libsigc++-2.0-0c2a (from .../libsigc++-2.0-0c2a_2.0.17-2_amd64.deb) ...
 P: Unpacking package libsigc++-2.0-0c2a
 O: Selecting previously deselected package aptitude.
-O: Unpacking aptitude (from .../aptitude_0.4.4-1_amd64.deb) ...
+O: Unpacking aptitude (from .../aptitude_0.4.4-4_amd64.deb) ...
 P: Unpacking package aptitude
 O: Selecting previously deselected package bsdmainutils.
 O: Unpacking bsdmainutils (from .../bsdmainutils_6.1.6_amd64.deb) ...
@@ -1167,13 +1168,13 @@ O: Selecting previously deselected package nano.
 O: Unpacking nano (from .../nano_2.0.2-1_amd64.deb) ...
 P: Unpacking package nano
 O: Selecting previously deselected package update-inetd.
-O: Unpacking update-inetd (from .../update-inetd_4.27-0.4_all.deb) ...
+O: Unpacking update-inetd (from .../update-inetd_4.27-0.5_all.deb) ...
 P: Unpacking package update-inetd
 O: Selecting previously deselected package tcpd.
 O: Unpacking tcpd (from .../tcpd_7.6.dbs-13_amd64.deb) ...
 P: Unpacking package tcpd
 O: Selecting previously deselected package openbsd-inetd.
-O: Unpacking openbsd-inetd (from .../openbsd-inetd_0.20050402-5_amd64.deb) ...
+O: Unpacking openbsd-inetd (from .../openbsd-inetd_0.20050402-6_amd64.deb) ...
 P: Unpacking package openbsd-inetd
 O: Selecting previously deselected package netbase.
 O: Unpacking netbase (from .../bootstrap/netbase_4.29_all.deb) ...
@@ -1216,7 +1217,7 @@ O:
 O: Setting up libsigc++-2.0-0c2a (2.0.17-2) ...
 P: Configuring package libsigc++-2.0-0c2a
 O: 
-O: Setting up aptitude (0.4.4-1) ...
+O: Setting up aptitude (0.4.4-4) ...
 P: Configuring package aptitude
 O: 
 O: Setting up bsdmainutils (6.1.6) ...
@@ -1299,13 +1300,13 @@ O:
 O: Setting up nano (2.0.2-1) ...
 P: Configuring package nano
 O: 
-O: Setting up update-inetd (4.27-0.4) ...
+O: Setting up update-inetd (4.27-0.5) ...
 P: Configuring package update-inetd
 O: 
 O: Setting up tcpd (7.6.dbs-13) ...
 P: Configuring package tcpd
 O: 
-O: Setting up openbsd-inetd (0.20050402-5) ...
+O: Setting up openbsd-inetd (0.20050402-6) ...
 P: Configuring package openbsd-inetd
 O: 
 O: Setting up netbase (4.29) ...
@@ -1366,7 +1367,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//27565/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//27474/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1374,8 +1375,8 @@ Refreshing the base.tgz
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [74.4kB]
-Get:3 http://ftp.jp.debian.org etch/main Packages [5555kB]
-Fetched 5630kB in 3s (1566kB/s)
+Get:3 http://ftp.jp.debian.org etch/main Packages [5552kB]
+Fetched 5627kB in 13s (431kB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
@@ -1419,7 +1420,7 @@ Get:14 http://ftp.jp.debian.org etch/main g++ 4:4.1.1-15 [1358B]
 Get:15 http://ftp.jp.debian.org etch/main make 3.81-2 [390kB]
 Get:16 http://ftp.jp.debian.org etch/main dpkg-dev 1.13.25 [166kB]
 Get:17 http://ftp.jp.debian.org etch/main build-essential 11.3 [6982B]
-Fetched 21.2MB in 15s (1373kB/s)
+Fetched 21.2MB in 1m1s (347kB/s)
 Selecting previously deselected package patch.
 (Reading database ... 7132 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
@@ -1485,9 +1486,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//27565/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//27474/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/testimage]
+ -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.QCyUf27629/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//27565 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//27474 and its subdirectories

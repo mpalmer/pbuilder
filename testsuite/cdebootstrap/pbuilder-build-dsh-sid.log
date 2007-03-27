@@ -2,10 +2,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Wed Mar 21 12:19:36 JST 2007
-pbuilder-time-stamp: 1174447176
+Current time: Tue Mar 27 12:18:15 JST 2007
+pbuilder-time-stamp: 1174965495
 Building the build Environment
- -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/testimage]
+ -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.QCyUf27629/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -44,9 +44,9 @@ Get:7 http://ftp.jp.debian.org sid/main po-debconf 1.0.8 [111kB]
 Get:8 http://ftp.jp.debian.org sid/main debhelper 5.0.42 [510kB]
 Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.12-2 [10.9kB]
 Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.12-2 [25.3kB]
-Fetched 3528kB in 1s (1883kB/s)
+Fetched 3528kB in 8s (436kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 12057 files and directories currently installed.)
+(Reading database ... 12060 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.20-1_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.20-1_amd64.deb) ...
@@ -90,16 +90,16 @@ The following NEW packages will be installed:
 Need to get 103kB of archives.
 After unpacking 430kB of additional disk space will be used.
 Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.6.5 [103kB]
-Fetched 103kB in 0s (373kB/s)
+Fetched 103kB in 0s (139kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12728 files and directories currently installed.)
+(Reading database ... 12731 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.6.5_amd64.deb) ...
 Setting up fakeroot (1.6.5) ...
 
 Copying source file
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/dir1/dsh_0.25.7-1.dsc]
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/dir1/dsh_0.25.7.orig.tar.gz]
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/dir1/dsh_0.25.7-1.diff.gz]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.QCyUf27629/dir1/dsh_0.25.7-1.dsc]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.QCyUf27629/dir1/dsh_0.25.7.orig.tar.gz]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.QCyUf27629/dir1/dsh_0.25.7-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 gpg: can't open `/gnupg/options.skel': No such file or directory
@@ -423,11 +423,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Wed Mar 21 03:20:27 UTC 2007
+Tue Mar 27 03:19:16 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -497,13 +497,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Wed Mar 21 03:20:32 UTC 2007
+Tue Mar 27 03:19:21 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
 c: c
+dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -608,7 +609,7 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Wed Mar 21 12:20:34 JST 2007
-pbuilder-time-stamp: 1174447234
+Current time: Tue Mar 27 12:19:24 JST 2007
+pbuilder-time-stamp: 1174965564
  -> cleaning the build env 
-    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.bgMUc15961/dir1/9904 and its subdirectories
+    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.QCyUf27629/dir1/9816 and its subdirectories
