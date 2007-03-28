@@ -11,8 +11,11 @@ pbuilder (0.165) UNRELEASED; urgency=low
     (closes: #409135)
   * Try to warn only if network configuration files are not found on host
     OS, not error out. (closes: #391915)
+  * support UML_IP=dhcp. (closes: #415544)
+  - user-mode-linux: do not overwrite /etc/network/interfacess when 
+    PBUILDER_COW is not set (why?)
 
- -- Junichi Uekawa <dancer@debian.org>  Wed, 28 Mar 2007 08:10:09 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 29 Mar 2007 00:05:35 +0900
 
 pbuilder (0.164) unstable; urgency=low
 

@@ -101,7 +101,8 @@ else
   chmod 1777 ${UML_CHROOT_MOUNTPOINT}/tmp
 fi
 
-cat <<IP > ${UML_CHROOT_MOUNTPOINT}/etc/network/interfaces
+if [ -n "${PBUILDER_COW}" -a "${UML_IP}" != 'dhcp']; then
+  cat <<IP > ${UML_CHROOT_MOUNTPOINT}/etc/network/interfaces
 auto lo
 iface lo inet loopback
 
@@ -115,13 +116,17 @@ iface eth0 inet static
     gateway $UML_GATEWAY
 
 IP
+fi
+
 cat <<SHELL > ${UML_CHROOT_MOUNTPOINT}/tmp/chrootshell
 #! /bin/bash
 ${UML_DEBUGMODE}
 # the shell executed inside chroot inside UML
     echo Starting network inside the chroot
+    mount -t proc /proc /proc
     /etc/init.d/networking stop
     /etc/init.d/networking start
+    umount /proc
 SHELL
 chmod a+x ${UML_CHROOT_MOUNTPOINT}/tmp/chrootshell
 chroot ${UML_CHROOT_MOUNTPOINT} /tmp/chrootshell
