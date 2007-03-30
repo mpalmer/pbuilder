@@ -136,8 +136,6 @@ P: Retrieving lsb-base
 P: Validating lsb-base
 P: Retrieving cron
 P: Validating cron
-P: Retrieving cyrus-sasl2-doc
-P: Validating cyrus-sasl2-doc
 P: Retrieving dhcp3-common
 P: Validating dhcp3-common
 P: Retrieving dhcp3-client
@@ -325,11 +323,11 @@ O: Selecting previously deselected package base-passwd.
 O: (Reading database ... 0 files and directories currently installed.)
 O: Unpacking base-passwd (from .../base-passwd_3.5.11_amd64.deb) ...
 P: Unpacking package base-passwd
-O: Setting up base-passwd (3.5.11) ...
-P: Configuring package base-passwd
 O: dpkg: base-passwd: dependency problems, but configuring anyway as you request:
 O:  base-passwd depends on libc6 (>= 2.3.5-1); however:
 O:   Package libc6 is not installed.
+O: Setting up base-passwd (3.5.11) ...
+P: Configuring package base-passwd
 O: 
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
@@ -1029,7 +1027,6 @@ O: Get:2 bootstrap: . Release [74.4kB]
 O: Reading package lists...
 O: 
 O: Reading package lists...
-O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -1040,22 +1037,22 @@ O: Recommended packages:
 O:   aptitude-doc-en aptitude-doc libparse-debianchangelog-perl exim4 postfix
 O:   mail-transport-agent libgpmg1 libfribidi0 mailx
 O: The following NEW packages will be installed:
-O:   adduser apt-utils aptitude bsdmainutils cpio cron cyrus-sasl2-doc
-O:   dhcp3-client dhcp3-common dmidecode ed groff-base ifupdown info iptables
-O:   iputils-ping klogd laptop-detect libconsole libdb4.4 libgdbm3 libncursesw5
-O:   libnewt0.52 libpopt0 libsasl2 libsigc++-2.0-0c2a libssl0.9.8 libwrap0
-O:   logrotate man-db manpages module-init-tools nano net-tools netbase netcat
-O:   openbsd-inetd sysklogd tasksel tasksel-data tcpd traceroute update-inetd
-O:   vim-common vim-tiny wget whiptail
-O: 0 upgraded, 47 newly installed, 0 to remove and 0 not upgraded.
-O: Need to get 12.5MB of archives.
-O: After unpacking 39.7MB of additional disk space will be used.
+O:   adduser apt-utils aptitude bsdmainutils cpio cron dhcp3-client dhcp3-common
+O:   dmidecode ed groff-base ifupdown info iptables iputils-ping klogd
+O:   laptop-detect libconsole libdb4.4 libgdbm3 libncursesw5 libnewt0.52 libpopt0
+O:   libsasl2 libsigc++-2.0-0c2a libssl0.9.8 libwrap0 logrotate man-db manpages
+O:   module-init-tools nano net-tools netbase netcat openbsd-inetd sysklogd
+O:   tasksel tasksel-data tcpd traceroute update-inetd vim-common vim-tiny wget
+O:   whiptail
+O: 0 upgraded, 46 newly installed, 0 to remove and 0 not upgraded.
+O: Need to get 12.4MB of archives.
+O: After unpacking 39.4MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
 O:   adduser libdb4.4 apt-utils libncursesw5 libsigc++-2.0-0c2a aptitude
-O:   bsdmainutils cpio cron cyrus-sasl2-doc dhcp3-common dhcp3-client dmidecode
-O:   ed groff-base net-tools ifupdown info iptables iputils-ping sysklogd klogd
-O:   laptop-detect libconsole libgdbm3 libnewt0.52 libpopt0 libsasl2 libssl0.9.8
-O:   libwrap0 logrotate man-db manpages module-init-tools nano update-inetd tcpd
+O:   bsdmainutils cpio cron dhcp3-common dhcp3-client dmidecode ed groff-base
+O:   net-tools ifupdown info iptables iputils-ping sysklogd klogd laptop-detect
+O:   libconsole libgdbm3 libnewt0.52 libpopt0 libsasl2 libssl0.9.8 libwrap0
+O:   logrotate man-db manpages module-init-tools nano update-inetd tcpd
 O:   openbsd-inetd netbase netcat tasksel-data tasksel traceroute vim-common
 O:   vim-tiny wget whiptail
 O: debconf: delaying package configuration, since apt-utils is not installed
@@ -1089,9 +1086,6 @@ P: Unpacking package cpio
 O: Selecting previously deselected package cron.
 O: Unpacking cron (from .../cron_3.0pl1-100_amd64.deb) ...
 P: Unpacking package cron
-O: Selecting previously deselected package cyrus-sasl2-doc.
-O: Unpacking cyrus-sasl2-doc (from .../cyrus-sasl2-doc_2.1.22.dfsg1-8_all.deb) ...
-P: Unpacking package cyrus-sasl2-doc
 O: Selecting previously deselected package dhcp3-common.
 O: Unpacking dhcp3-common (from .../dhcp3-common_3.0.4-13_amd64.deb) ...
 P: Unpacking package dhcp3-common
@@ -1231,8 +1225,6 @@ P: Configuring package cron
 O: Adding group `crontab' (GID 101) ...
 O: Done.
 O: 
-O: Setting up cyrus-sasl2-doc (2.1.22.dfsg1-8) ...
-P: Configuring package cyrus-sasl2-doc
 O: Setting up dhcp3-common (3.0.4-13) ...
 P: Configuring package dhcp3-common
 O: Setting up dhcp3-client (3.0.4-13) ...
@@ -1343,18 +1335,18 @@ P: Configuring package tasksel
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 7135 files and directories currently installed.)
+O: 7115 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 7134 files and directories currently installed.)
+O: 7114 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 7132 files and directories currently installed.)
+O: 7112 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1367,7 +1359,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//27474/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//22935/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1376,7 +1368,7 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org etch Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org etch Release [74.4kB]
 Get:3 http://ftp.jp.debian.org etch/main Packages [5552kB]
-Fetched 5627kB in 13s (431kB/s)
+Fetched 5626kB in 2s (1890kB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
@@ -1420,9 +1412,9 @@ Get:14 http://ftp.jp.debian.org etch/main g++ 4:4.1.1-15 [1358B]
 Get:15 http://ftp.jp.debian.org etch/main make 3.81-2 [390kB]
 Get:16 http://ftp.jp.debian.org etch/main dpkg-dev 1.13.25 [166kB]
 Get:17 http://ftp.jp.debian.org etch/main build-essential 11.3 [6982B]
-Fetched 21.2MB in 1m1s (347kB/s)
+Fetched 21.2MB in 19s (1090kB/s)
 Selecting previously deselected package patch.
-(Reading database ... 7132 files and directories currently installed.)
+(Reading database ... 7112 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
 Selecting previously deselected package perl-modules.
 Unpacking perl-modules (from .../perl-modules_5.8.8-7_all.deb) ...
@@ -1486,9 +1478,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//27474/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//22935/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.QCyUf27629/testimage]
+ -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.XoMpg23134/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//27474 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//22935 and its subdirectories
