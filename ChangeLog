@@ -1,3 +1,9 @@
+2007-03-30  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-user-mode-linux : '-n "${PBUILDER_COW}"' is not a good
+	 condition since it will change default behavior for pbuilder create/update.
+	Just use UML_IP=dhcp for condition.
+
 2007-03-29  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-uml.conf.5: 
