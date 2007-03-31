@@ -101,7 +101,7 @@ else
   chmod 1777 ${UML_CHROOT_MOUNTPOINT}/tmp
 fi
 
-if [ "${UML_IP}" != 'dhcp']; then
+if [ "${UML_IP}" != 'dhcp' ]; then
   cat <<IP > ${UML_CHROOT_MOUNTPOINT}/etc/network/interfaces
 auto lo
 iface lo inet loopback
