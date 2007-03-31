@@ -39,14 +39,14 @@ function filter_arch_deps() {
             while read INSTALLPKG; do
                 if echo "$INSTALLPKG" | grep -q '\['; then
                     if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
-                        continue;
+                        continue
                     fi
                 fi
-                # output the selected package, removing the arch list
-                echo "$INSTALLPKG" | sed 's/\[.*\]//'
+                # output the selected package
+                echo "$INSTALLPKG"
             done |
-            # add " | " between entries
-            sed '$,$! s/$/ |/' |
+            # remove the arch list and add " | " between entries
+            sed 's/\[.*\]//; $,$! s/$/ |/' |
             xargs --no-run-if-empty
     done |
     # add ", " between entries

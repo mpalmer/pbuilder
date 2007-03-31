@@ -15,9 +15,8 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program; if not, write to the Free Software
 #   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
-
 #
-# module to satisfy dependency.
+# module to satisfy build dependencies; default flavor
 
 set -e
 
@@ -40,46 +39,46 @@ function checkbuilddep_internal () {
       SATISFIED="no"
       for INSTALLPKG in $(echo "$INSTALLPKGMULTI" | \
 	  awk 'BEGIN{RS="|"} {print}'); do
-	CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed -e 's/^[/]*//' -e 's/[[/(].*//')
-	if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
+	CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed -e 's#^/*##' -e 's#[[/(].*##')
+	if echo "$INSTALLPKG" | grep -q '\['; then
 	    if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
 		SATISFIED="yes"
 		echo "   -> This package is not for this architecture"
-		continue;
+		continue
 	    fi
 	fi
-	if echo "$INSTALLPKG" | grep '[(]' > /dev/null; then
+	if echo "$INSTALLPKG" | grep -q '('; then
 	    #echo "Debug: $INSTALLPKG"
-	    if ! checkbuilddep_versiondeps ${CURRENTREALPKGNAME} \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/') \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/') ; then
+	    if ! checkbuilddep_versiondeps $CURRENTREALPKGNAME \
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\1/') \
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\2/') ; then
 	      echo "   -> Does not satisfy version, not trying"
-	      continue;
+	      continue
 	    fi
 	fi
-	echo "   -> Trying ${CURRENTREALPKGNAME}"
+	echo "   -> Trying $CURRENTREALPKGNAME"
 
-	if $CHROOTEXEC /usr/bin/apt-get -s install ${INSTALLPKGLIST} ${CURRENTREALPKGNAME} >& /dev/null; then
+	if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST $CURRENTREALPKGNAME >& /dev/null; then
 	    SATISFIED="yes"
-	    INSTALLPKGLIST="${INSTALLPKGLIST} ${CURRENTREALPKGNAME}"
+	    INSTALLPKGLIST="$INSTALLPKGLIST $CURRENTREALPKGNAME"
 	else
-	    echo "       -> Cannot install ${CURRENTREALPKGNAME}; apt errors follow:"
-	    if $CHROOTEXEC /usr/bin/apt-get -s install ${INSTALLPKGLIST} "${CURRENTREALPKGNAME}"; then
+	    echo "       -> Cannot install $CURRENTREALPKGNAME; apt errors follow:"
+	    if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST "$CURRENTREALPKGNAME"; then
 		:
 	    fi
 	    # package could not be found. -- looking for alternative.
 	    PROVIDED=""
-	    checkbuilddep_provides "${CURRENTREALPKGNAME}"
+	    checkbuilddep_provides "$CURRENTREALPKGNAME"
 	    if [ -n "$PROVIDED" ]; then
 		# something provides this package
 		echo "     -> Considering $PROVIDED to satisfy the dependency "
-		if $CHROOTEXEC /usr/bin/apt-get -s install ${INSTALLPKGLIST} ${PROVIDED} >& /dev/null; then
+		if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST $PROVIDED >& /dev/null; then
 		    SATISFIED="yes";
-		    INSTALLPKGLIST="${INSTALLPKGLIST} ${PROVIDED}"
+		    INSTALLPKGLIST="$INSTALLPKGLIST $PROVIDED"
 		else
 		    # show the error for diagnostic purposes
 		    echo "       -> Cannot install $PROVIDED; apt errors follow:"
-		    if $CHROOTEXEC /usr/bin/apt-get -s install ${INSTALLPKGLIST} ${PROVIDED}; then
+		    if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST $PROVIDED; then
 			:
 		    fi
 		fi
@@ -98,11 +97,11 @@ function checkbuilddep_internal () {
     done;
     
     # now actually install the packages
-    echo " -> Installing ${INSTALLPKGLIST}"
-    if ! $CHROOTEXEC apt-get -y --force-yes install ${INSTALLPKGLIST}; then
+    echo " -> Installing $INSTALLPKGLIST"
+    if ! $CHROOTEXEC apt-get -y --force-yes install $INSTALLPKGLIST; then
 	echo " -> Trying to fix apt error"
 	# Work around an apt bug which causes configure to fail.
-	if $CHROOTEXEC dpkg --configure --pending && $CHROOTEXEC apt-get -y --force-yes install ${INSTALLPKGLIST}; then
+	if $CHROOTEXEC dpkg --configure --pending && $CHROOTEXEC apt-get -y --force-yes install $INSTALLPKGLIST; then
 	    echo " -> Apt bug workaround succeeded"
 	elif [ "$CONTINUE_FAIL" != "yes" ]; then
 	    echo "E: Unrecoverable error installing build-dependencies." >&2
@@ -114,34 +113,34 @@ function checkbuilddep_internal () {
     for INSTALLPKG in $(get_control_re "$DEBIAN_CONTROL" "$BC_REGEXP" |
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
-      CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed -e 's/^[/]*//' -e 's/[[/(].*//')
-      echo " -> Considering ${CURRENTREALPKGNAME}"
+      CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed -e 's#^/*##' -e 's#[[/(].*##')
+      echo " -> Considering $CURRENTREALPKGNAME"
       
-      if echo "$INSTALLPKG" | grep '\[' > /dev/null ; then
+      if echo "$INSTALLPKG" | grep -q '\['; then
 	  # this package has arch-conflicts.
 	  if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
 	      echo "I: Ignoring other-arch"
-	      continue;
+	      continue
 	  fi
       fi
-      if echo "$INSTALLPKG" | grep '[(]' > /dev/null ; then
+      if echo "$INSTALLPKG" | grep -q '('; then
 	  # this package has version-conflicts
-	  if ! checkbuilddep_versiondeps ${CURRENTREALPKGNAME} \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/') \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/'); then
+	  if ! checkbuilddep_versiondeps $CURRENTREALPKGNAME \
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\1/') \
+		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\2/'); then
 	      echo "I: Satisfies version, not trying"
-	      continue;
+	      continue
 	  fi
       fi
 
       # if package exists, remove it.
-      if $CHROOTEXEC /usr/bin/dpkg -s $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') 2>&1 | grep ^Package: > /dev/null; then
-	  if ! $CHROOTEXEC /usr/bin/apt-get -y remove ${CURRENTREALPKGNAME} ; then
+      if $CHROOTEXEC /usr/bin/dpkg -s $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') 2>&1 | grep -q ^Package:; then
+	  if ! $CHROOTEXEC /usr/bin/apt-get -y remove $CURRENTREALPKGNAME ; then
 	      echo "E: Could not satisfy build-conflicts" >&2
 	      exit 1
 	  fi
       else
-	  echo "I: ${CURRENTREALPKGNAME} package is not installed, no need to remove"
+	  echo "I: $CURRENTREALPKGNAME package is not installed, no need to remove"
       fi
     done
     echo " -> Finished parsing the build-deps"

@@ -113,8 +113,8 @@ function versioneddep_to_aptcmd () {
 	    PACKAGEVERSIONS="$( package_versions "$PACKAGE" | tac | xargs )"
 	    CANDIDATE_VERSION="$( candidate_version "$PACKAGE" )"
 
-	    COMPARESTRING="$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\1/')"
-	    DEPSVERSION="$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*([ ]*\(<<\|<=\|>=\|=\|<\|>>\|>\)[ ]*\(.*\)).*$/\2/')"
+	    COMPARESTRING="$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\1/')"
+	    DEPSVERSION="$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\2/')"
 	    # if strictly versionned, we skip to outputting that version
 	    if [ "=" = "$COMPARESTRING" ]; then
 		PACKAGE_WITHVERSION="$PACKAGE=$DEPSVERSION"
