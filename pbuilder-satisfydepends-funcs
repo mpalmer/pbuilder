@@ -54,13 +54,15 @@ function checkbuilddep_archdeps () {
     # returns FALSE on INSTALL
     local INSTALLPKG="$1"
     local ARCH="$2"
-    if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/][!]\($ARCH\)[]/]" > /dev/null; then
-	# if !$ARCH exists in there, ERROR.
+    # architectures listed between [ and ] for this dep
+    local DEP_ARCHES="$(echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/')"
+    # check for !$ARCH in DEP_ARCHES
+    if echo "$DEP_ARCHES" | grep -q "[[/][!]\($ARCH\)[]/]"; then
 	return 0;
     fi
-    if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[!]" > /dev/null; then
-	if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]\($ARCH\)[]/]" > /dev/null; then
-	# if $ARCH does not exist, ERROR.
+    if ! echo "$DEP_ARCHES" | grep "[!]" > /dev/null; then
+        # check for arch in $ARCH in DEP_ARCHES
+	if ! echo "$DEP_ARCHES" | grep "[[/]\($ARCH\)[]/]" > /dev/null; then
 	    return 0;
 	fi
     fi
