@@ -181,57 +181,5 @@ Copyright 2002-2007  Junichi Uekawa <dancer@debian.org>
 EOF
 }
 
+. /usr/lib/pbuilder/pbuilder-satisfydepends-checkparams
 
-DEBIAN_CONTROL=debian/control
-CHROOTEXEC=""
-BD_REGEXP="build-(depends|depends-indep)"
-BC_REGEXP="build-(conflicts|conflicts-indep)"
-FORCEVERSION=""
-CONTINUE_FAIL="no"
-
-
-while [ -n "$1" ]; do
-    case "$1" in
-	--control|-c)
-	    DEBIAN_CONTROL="$2"
-	    shift; shift
-	    ;;
-	--chroot)
-	    CHROOTEXEC="chroot $2 "
-	    shift; shift
-	    ;;
-	--internal-chrootexec)
-	    CHROOTEXEC="$2"
-	    shift; shift 
-	    ;;
-	--binary-all)
-	    BD_REGEXP='build-(depends|depends-indep)'
-	    BC_REGEXP='build-(conflicts|conflicts-indep)'
-	    shift
-	    ;;
-	--binary-arch)
-	    BD_REGEXP='build-depends'
-	    BC_REGEXP='build-conflicts'
-	    shift
-	    ;;
-	--echo)
-	    CHROOTEXEC="echo $CHROOTEXEC"
-	    shift
-	    ;;
-	--continue-fail)
-	    CONTINUE_FAIL="yes"
-	    shift
-	    ;;
-	--force-version)
-	    FORCEVERSION="yes"
-	    shift;
-	    ;;
-	--help|-h|*)
-	    print_help
-	    exit 1
-	    ;;
-    esac
-done
-
-
-checkbuilddep_internal
