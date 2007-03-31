@@ -57,12 +57,12 @@ function checkbuilddep_archdeps () {
     # architectures listed between [ and ] for this dep
     local DEP_ARCHES="$(echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/')"
     # check for !$ARCH in DEP_ARCHES
-    if echo "$DEP_ARCHES" | grep -q "[[/][!]\($ARCH\)[]/]"; then
+    if echo "$DEP_ARCHES" | grep -q "[[/]\!\($ARCH\)[]/]"; then
 	return 0;
     fi
-    if ! echo "$DEP_ARCHES" | grep "[!]" > /dev/null; then
+    if ! echo "$DEP_ARCHES" | grep -q '!'; then
         # check for arch in $ARCH in DEP_ARCHES
-	if ! echo "$DEP_ARCHES" | grep "[[/]\($ARCH\)[]/]" > /dev/null; then
+	if ! echo "$DEP_ARCHES" | grep -q "[[/]\($ARCH\)[]/]"; then
 	    return 0;
 	fi
     fi
