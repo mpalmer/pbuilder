@@ -21,67 +21,7 @@
 
 set -e
 
-function checkbuilddep_versiondeps () {
-    local PACKAGE="$1"
-    local COMPARESTRING="$2"
-    local DEPSVERSION="$3"
-    local PACKAGEVERSIONS=$( ( $CHROOTEXEC /usr/bin/apt-cache show "$PACKAGE" ) | sed -n  's/^Version: \(.*\)$/\1/p' | xargs)
-    # no versioned provides.
-    if [ "${FORCEVERSION}" = "yes" ]; then
-	return 0;
-    fi
-    for PACKAGEVERSION in $PACKAGEVERSIONS ; do
-      if dpkg --compare-versions "$PACKAGEVERSION" "$COMPARESTRING" "$DEPSVERSION"; then
-	# satisfies depends
-	return 0;
-      fi
-    done
-    echo "      Tried versions: $PACKAGEVERSIONS"
-    # cannot satisfy depends
-    return 1;
-}
-
-function expand_arch () {
-    local ARCH="$1"
-    local EXPANDED_ARCH
-    
-    # just keep the original behavior.
-    echo "$ARCH"
-    return
-
-    # the following may be used if dpkg change is set to stone.
-    if echo "$ARCH" | grep "-" > /dev/null; then
-        EXPANDED_ARCH=$ARCH
-    else
-        EXPANDED_ARCH="linux-$ARCH"
-    fi
-    local WC1=$(echo $EXPANDED_ARCH | sed 's/^[^-]*/any/')
-    local WC2=$(echo $EXPANDED_ARCH | sed 's/[^-]*$/any/')
-    echo "$ARCH\\|$EXPANDED_ARCH\\|$WC1\\|$WC2"
-}
-
-function checkbuilddep_archdeps () {
-    # returns FALSE on INSTALL
-    local INSTALLPKG="$1"
-    local ARCH="$2"
-    if echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/][!]\($(expand_arch $ARCH)\)[]/]" > /dev/null; then
-	# if !$ARCH exists in there, ERROR.
-	return 0;
-    fi
-    if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[!]" > /dev/null; then
-	if ! echo "$INSTALLPKG" | sed 's/.*\(\[.*\]\)/\1/' | grep "[[/]\($(expand_arch $ARCH)\)[]/]" > /dev/null; then
-	# if $ARCH does not exist, ERROR.
-	    return 0;
-	fi
-    fi
-    return 1;
-}
-
-function checkbuilddep_provides () {
-    local PACKAGENAME="$1"
-    # PROVIDED needs to be used outside of this function.
-    PROVIDED=$($CHROOTEXEC /usr/bin/apt-cache showpkg $PACKAGENAME | awk '{p=0}/^Reverse Provides:/,/^$/{p=1}{if(p && ($0 !~ "Reverse Provides:")){PACKAGE=$1}} END{print PACKAGE}')
-}
+. /usr/lib/pbuilder/pbuilder-satisfydepends-funcs
 
 function checkbuilddep_internal () {
 # Use this function to fulfill the dependency (almost)
