@@ -1,3 +1,11 @@
+2007-03-31  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-modules: re-refix. 391915
+	"The fix for #391915 as applied in 0.165 isn't quite correct,
+	it still has an unconditional rm -f "$BUILDPLACE/etc/$a" outside
+	the check for an existing /etc/$a to copy into its place."
+	From Paul TBBle Hampson <Paul.Hampson@Pobox.com>
+
 2007-03-30  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilder-user-mode-linux : '-n "${PBUILDER_COW}"' is not a good
