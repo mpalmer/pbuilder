@@ -1,0 +1,74 @@
+#!/bin/bash
+#   pbuilder -- personal Debian package builder
+#   Copyright (C) 2001,2002,2003,2005-2007 Junichi Uekawa
+#
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+#
+# module to satisfy build dependencies; parse command line parameters
+
+
+DEBIAN_CONTROL=debian/control
+CHROOTEXEC=""
+BD_REGEXP="build-(depends|depends-indep)"
+BC_REGEXP="build-(conflicts|conflicts-indep)"
+FORCEVERSION=""
+CONTINUE_FAIL="no"
+
+
+while [ -n "$1" ]; do
+    case "$1" in
+	--control|-c)
+	    DEBIAN_CONTROL="$2"
+	    shift; shift
+	    ;;
+	--chroot)
+	    CHROOTEXEC="chroot $2 "
+	    shift; shift
+	    ;;
+	--internal-chrootexec)
+	    CHROOTEXEC="$2"
+	    shift; shift 
+	    ;;
+	--binary-all)
+	    BD_REGEXP='build-(depends|depends-indep)'
+	    BC_REGEXP='build-(conflicts|conflicts-indep)'
+	    shift
+	    ;;
+	--binary-arch)
+	    BD_REGEXP='build-depends'
+	    BC_REGEXP='build-conflicts'
+	    shift
+	    ;;
+	--echo)
+	    CHROOTEXEC="echo $CHROOTEXEC"
+	    shift
+	    ;;
+	--continue-fail)
+	    CONTINUE_FAIL="yes"
+	    shift
+	    ;;
+	--force-version)
+	    FORCEVERSION="yes"
+	    shift;
+	    ;;
+	--help|-h|*)
+	    print_help
+	    exit 1
+	    ;;
+    esac
+done
+
+
+checkbuilddep_internal
