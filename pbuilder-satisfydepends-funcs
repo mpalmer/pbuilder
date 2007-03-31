@@ -50,6 +50,21 @@ function checkbuilddep_versiondeps () {
     return 1;
 }
 
+get_control_re() {
+    control="$1"
+    re="$2"
+
+    cat "$control" |
+        awk '
+        BEGIN { source=1 }
+        /^$/ { source=0 }
+        /^Source:/ { source=1 }
+        /^[^ ]*:/ { p=0 }
+        tolower($0) ~ /^'"$re"':/ { p=1 }
+        { if (p && source) { print $0 } }' |
+        sed 's/^[^: ]*://'
+}
+
 function checkbuilddep_archdeps () {
     # returns FALSE on INSTALL
     local INSTALLPKG="$1"
