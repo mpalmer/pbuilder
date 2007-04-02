@@ -1,3 +1,10 @@
+2007-04-02  Loic Minier <lool@dooz.org>
+
+	* pbuilder-satisfydepends-aptitude: check whether the dummy
+	dependencies package was truly installed or error out; catches
+	situation where "aptitude" did not keep the dummy package but claimed
+	the installation was successful.
+
 2007-04-01  Loic Minier <lool@dooz.org>
 
 	* pbuilder-satisfydepends*:

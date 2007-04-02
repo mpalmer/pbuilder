@@ -87,6 +87,11 @@ EOF
     $CHROOTEXEC apt-get -y --force-yes install aptitude
     $CHROOTEXEC dpkg -i "$BUILD_DEP_DEB_DIR/pbuilder-satisfydepends-dummy.deb" || true
     $CHROOTEXEC aptitude -y install pbuilder-satisfydepends-dummy
+    # check whether the aptitude's resolver kept the package
+    if ! $CHROOTEXEC dpkg -l pbuilder-satisfydepends-dummy 2>/dev/null | grep -q ^ii; then
+        echo "Aptitude couldn't satisfy the build dependencies"
+        exit 1
+    fi
     echo " -> Finished parsing the build-deps"
 }
 
