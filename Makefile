@@ -15,6 +15,7 @@ SHELLCODES=pbuilder-buildpackage \
 	pbuilder-modules \
 	pbuilder-runhooks \
 	pbuilder-satisfydepends \
+	pbuilder-satisfydepends-funcs \
 	pbuilder-satisfydepends-aptitude \
 	pbuilder-satisfydepends-experimental \
 	pbuilder-updatebuildenv \
@@ -74,6 +75,7 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-aptitude $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-experimental $(DESTDIR)/usr/lib/pbuilder/
+	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-funcs $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pdebuild-internal $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/etc
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/pbuilder
