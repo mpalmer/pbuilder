@@ -28,10 +28,10 @@ pbuilder [operation] [pbuilder-options]
 pdebuild [pdebuild-options] -- [pbuilder-options]
 
 command lines:
-pbuilder create [--basetgz base.tgz-path] [--distribution sarge|etch|sid|experimental]
+pbuilder create [--basetgz base.tgz-path] [--distribution etch|lenny|sid|experimental]
   Creates a base.tgz
 
-pbuilder update [--basetgz base.tgz-path] [--distribution sarge|etch|sid|experimental]
+pbuilder update [--basetgz base.tgz-path] [--distribution etch|lenny|sid|experimental]
   Updates a base.tgz
 
 pbuilder build [--basetgz base.tgz-path] pbuilder_2.2.0-1.dsc
@@ -53,7 +53,7 @@ pbuilder-options:
  --mirror [mirror location]
  --othermirror [other mirror location in apt deb-line format, delimited with | signs]
  --http-proxy [proxy]
- --distribution [distribution(sarge|sid|etch|experimental)]
+ --distribution [distribution(sid|etch|lenny|experimental)]
  --buildresult [location-to-copy-build-result]
  --aptcache [location of retrieved package files]
  --removepackages [packages-to-remove on pbuilder create]

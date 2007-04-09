@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd"> 
 <!-- the original of this documentation is in pbuilder source tar-ball,
-  and the latest version is found in CVS repository. -->
+  and the latest version is found in git repository. -->
 <book xml:lang="en">
   <bookinfo>
-    <date>2006-5-24</date>
+    <date>2007-4-10</date>
     <title>pbuilder User's Manual</title>
     <abbrev>pbuilder-doc</abbrev>
     <subtitle>Usage and operations</subtitle>
-    <releaseinfo>documentation in progress ($Id$)</releaseinfo>
+    <releaseinfo>documentation in progress</releaseinfo>
     <authorgroup>
       <author>
 	<firstname>Junichi</firstname>
@@ -18,7 +18,7 @@
   </bookinfo>
 
   <!-- FIXME: consistent markup of commands, files, and variables -->
-  <chapter>
+  <chapter id="introduction">
     <title>Introducing pbuilder</title>
     <sect1 id="aim">
       <title>Aims of pbuilder</title>
@@ -106,7 +106,7 @@
 	See the pbuilderrc.5 manual page for details.
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="basechroot">
       <title>Updating the base chroot image</title>
       <para><command>pbuilder update</command>
 	will update the chroot image.
@@ -390,7 +390,7 @@
 	</listitem>
       </itemizedlist>
     </sect1>
-    <sect1>
+    <sect1 id="autobackport">
       <title>Auto-backporting scripts</title>
       <para>
 	There are some people who use <command>pbuilder</command> to automatically back-port
@@ -721,7 +721,7 @@ read
       documented. This portion was initially available in README.Debian
       file, but moved here.
     </para>
-    <sect1>
+    <sect1 id="pbuildercreatefail">
       <title>pbuilder create fails</title>
       <para>
 	It often happens that <command>pbuilder</command> cannot create the latest chroot.
@@ -810,11 +810,11 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	with scripts that reduce the amount of typing.  An example
 	script <filename>pbuilder-distribution.sh</filename> is
 	provided as an example.  Invoking the script as
-	<filename>pbuilder-sarge</filename> will invoke
-	<command>pbuilder</command> with a sarge chroot.
+	<filename>pbuilder-etch</filename> will invoke
+	<command>pbuilder</command> with a etch chroot.
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="usingspecialaptsources">
       <title>Using special apt sources lists, and local packages</title>
       <para>
 	If you have some very specialised requirements on your
@@ -856,7 +856,7 @@ cd /var/cache/pbuilder/result/
 	This way, you can use <filename>deb file:/var/cache/pbuilder/result</filename>
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="apt-getupdateonbuild-depend">
       <title>How to get pbuilder to run apt-get update before trying to satisfy build-dependency</title>
       <para>
 	You can use hook scripts for this.
@@ -868,7 +868,7 @@ cd /var/cache/pbuilder/result/
 	</ulink>
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="bashprompt">
       <title>Different bash prompts inside pbuilder login</title>
       <para>
 	To make distinguishing bash prompts inside
@@ -895,7 +895,7 @@ cd /var/cache/pbuilder/result/
 	export PS1="pbuild chroot 32165 # "
       </screen>
     </sect1>
-    <sect1>
+    <sect1 id="packagecachearchives">
       <title>Using /var/cache/apt/archives for the package cache</title>
       <para>
 	For the help of low-bandwidth systems, it is possible to use
@@ -949,7 +949,7 @@ cd /var/cache/pbuilder/result/
 	on people building the package.
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="lninvalidcrossdevicelink">
       <title>Avoiding the "ln: Invalid cross-device link" message</title>
       <para>
 	By default, <command>pbuilder</command> uses hard links to
@@ -960,7 +960,7 @@ cd /var/cache/pbuilder/result/
 	pbuilderrc file.
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="fakechroot">
       <title>Using fakechroot</title>
       <para>
 	It is possible to use <command>fakechroot</command> instead of
@@ -1185,7 +1185,7 @@ git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git
 	which puts the result in <filename>run-test-regression.log</filename>.
 	Currently, run-test.sh is ran automatically daily to ensure that pbuilder is working.
       </para>
-      <table>
+      <table id="dirtestsuites">
 	<title>Directory structure of the testsuite</title>
 	<tgroup cols="2">
 	  <colspec colnum="1" colname="c1" colwidth="1*" align="left" />
@@ -1291,7 +1291,7 @@ git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git
 	and mounting file systems inside it is considered harmful.
       </para>
     </sect1>
-    <sect1>
+    <sect1 id="runningprograms">
       <title>Running little programs inside the chroot</title>
       <para>
 	To facilitate using <command>pbuilder</command> for other uses,
@@ -1362,10 +1362,15 @@ $ pdebuild --pbuilder cowbuilder
       </para>
       <sect2 id="sargecowdancer">
         <title>Using cowdancer for sarge</title>
+	<para>
+	  This section is mostly obsolete now that etch is released,
+	  but left for reference, and will be removed after lenny
+	  release.
+	</para>
         <para>
-          cowdancer was introduced after the release of sarge; if you want to
-          build packages for sarge with cowbuilder, you will need to workaround
-          its unavailability.
+          cowdancer was introduced after the release of Debian sarge;
+          if you want to build packages for sarge with cowbuilder, you
+          will need to workaround its unavailability.
         </para>
         <para>
           One way to workaround the problem is to set APTCONFDIR in pbuilderrc
@@ -1416,8 +1421,8 @@ Pin-Priority: 950
 	It should be possible to create chroot images
 	for <command>dchroot</command> with the following commands:
 	<screen>
-# pbuilder create --distribution sarge --no-targz --basetgz /chroot/sarge
 # pbuilder create --distribution etch --no-targz --basetgz /chroot/etch
+# pbuilder create --distribution lenny --no-targz --basetgz /chroot/lenny
 # pbuilder create --distribution sid --no-targz --basetgz /chroot/sid
 	</screen>
       </para>
