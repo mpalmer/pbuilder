@@ -514,7 +514,7 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking mawk (from .../mawk_1.3.3-11_amd64.deb) ...
 P: Unpacking package mawk
 O: Selecting previously deselected package base-files.
-O: Unpacking base-files (from .../base-files_4_amd64.deb) ...
+O: Unpacking base-files (from .../base-files_4.0_amd64.deb) ...
 P: Unpacking package base-files
 O: Selecting previously deselected package bash.
 O: dpkg: regarding .../bash_3.1dfsg-8_amd64.deb containing bash, pre-dependency problem:
@@ -687,11 +687,11 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking sysvinit (from .../sysvinit_2.86.ds1-38_amd64.deb) ...
 P: Unpacking package sysvinit
 O: Selecting previously deselected package tar.
-O: dpkg: regarding .../bootstrap/tar_1.16-2_amd64.deb containing tar, pre-dependency problem:
+O: dpkg: regarding .../tar_1.16.1-1_amd64.deb containing tar, pre-dependency problem:
 O:  tar pre-depends on libc6 (>= 2.3.5-1)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking tar (from .../bootstrap/tar_1.16-2_amd64.deb) ...
+O: Unpacking tar (from .../tar_1.16.1-1_amd64.deb) ...
 P: Unpacking package tar
 O: Selecting previously deselected package util-linux.
 O: dpkg: regarding .../util-linux_2.12r-19_amd64.deb containing util-linux, pre-dependency problem:
@@ -757,7 +757,7 @@ P: Configuring package libsepol1
 O: telinit: 
 O: /dev/initctl: No such file or directory
 O: 
-O: Setting up tar (1.16-2) ...
+O: Setting up tar (1.16.1-1) ...
 P: Configuring package tar
 O: 
 O: Setting up zlib1g (1.2.3-13) ...
@@ -838,7 +838,7 @@ P: Configuring package ncurses-bin
 O: Setting up libpam-modules (0.79-4) ...
 P: Configuring package libpam-modules
 O: 
-O: Setting up base-files (4) ...
+O: Setting up base-files (4.0) ...
 P: Configuring package base-files
 O: 
 O: Setting up libblkid1 (1.39+1.40-WIP-2006.11.14+dfsg-2) ...
@@ -890,7 +890,7 @@ P: Configuring package debconf
 O: 
 O: Selecting previously deselected package libbz2-1.0.
 O: (Reading database ... 
-O: 4819 files and directories currently installed.)
+O: 4820 files and directories currently installed.)
 O: Unpacking libbz2-1.0 (from .../libbz2-1.0_1.0.3-6_amd64.deb) ...
 P: Unpacking package libbz2-1.0
 O: Selecting previously deselected package libgpg-error0.
@@ -1018,7 +1018,8 @@ O:              unchanged: 3
 O: 
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
-O: (Reading database ... 5221 files and directories currently installed.)
+O: (Reading database ... 
+O: 5222 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 O: Get:1 bootstrap: . Release.gpg [189B]
@@ -1026,6 +1027,7 @@ O: Get:2 bootstrap: . Release [79.6kB]
 O: Reading package lists...
 O: 
 O: Reading package lists...
+O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -1058,7 +1060,7 @@ O: debconf: delaying package configuration, since apt-utils is not installed
 O: Authentication warning overridden.
 O: Selecting previously deselected package adduser.
 O: (Reading database ... 
-O: 5222 files and directories currently installed.)
+O: 5223 files and directories currently installed.)
 O: Unpacking adduser (from .../adduser_3.102_all.deb) ...
 P: Unpacking package adduser
 O: Selecting previously deselected package libdb4.4.
@@ -1332,18 +1334,18 @@ P: Configuring package tasksel
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 7122 files and directories currently installed.)
+O: 7123 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 7121 files and directories currently installed.)
+O: 7122 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 7119 files and directories currently installed.)
+O: 7120 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 O: Reading package lists...
 O: 
@@ -1356,7 +1358,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//19278/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//17238/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1364,8 +1366,8 @@ Refreshing the base.tgz
  -> installing dummy policy-rc.d
 Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org sid Release [79.6kB]
-Get:3 http://ftp.jp.debian.org sid/main Packages [5963kB]
-Fetched 6043kB in 3s (1559kB/s)
+Get:3 http://ftp.jp.debian.org sid/main Packages [5970kB]
+Fetched 6050kB in 21s (285kB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
@@ -1408,9 +1410,9 @@ Get:14 http://ftp.jp.debian.org sid/main g++ 4:4.1.1-15 [1358B]
 Get:15 http://ftp.jp.debian.org sid/main make 3.81-3 [395kB]
 Get:16 http://ftp.jp.debian.org sid/main dpkg-dev 1.13.25 [166kB]
 Get:17 http://ftp.jp.debian.org sid/main build-essential 11.3 [6982B]
-Fetched 21.2MB in 20s (1013kB/s)
+Fetched 21.2MB in 1m30s (235kB/s)
 Selecting previously deselected package patch.
-(Reading database ... 7119 files and directories currently installed.)
+(Reading database ... 7120 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
 Selecting previously deselected package perl-modules.
 Unpacking perl-modules (from .../perl-modules_5.8.8-7_all.deb) ...
@@ -1474,9 +1476,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//19278/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//17238/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.SIsOp23010/testimage]
+ -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zZzAJ20900/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//19278 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//17238 and its subdirectories

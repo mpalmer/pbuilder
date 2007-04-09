@@ -2,10 +2,10 @@ I: using fakeroot in build.
 pbuilder-buildpackage/amd64 $Id$
 $Id$
 
-Current time: Sun Apr  1 12:17:59 JST 2007
-pbuilder-time-stamp: 1175397479
+Current time: Mon Apr  9 12:34:42 JST 2007
+pbuilder-time-stamp: 1176089682
 Building the build Environment
- -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.SIsOp23010/testimage]
+ -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zZzAJ20900/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -32,10 +32,10 @@ The following NEW packages will be installed:
   debhelper file gettext gettext-base html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3534kB of archives.
+Need to get 3539kB of archives.
 After unpacking 12.0MB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org sid/main libmagic1 4.20-3 [323kB]
-Get:2 http://ftp.jp.debian.org sid/main file 4.20-3 [38.1kB]
+Get:1 http://ftp.jp.debian.org sid/main libmagic1 4.20-4 [326kB]
+Get:2 http://ftp.jp.debian.org sid/main file 4.20-4 [38.7kB]
 Get:3 http://ftp.jp.debian.org sid/main gettext-base 0.16.1-1 [132kB]
 Get:4 http://ftp.jp.debian.org sid/main html2text 1.3.2a-3 [92.7kB]
 Get:5 http://ftp.jp.debian.org sid/main gettext 0.16.1-1 [2261kB]
@@ -44,12 +44,12 @@ Get:7 http://ftp.jp.debian.org sid/main po-debconf 1.0.8 [111kB]
 Get:8 http://ftp.jp.debian.org sid/main debhelper 5.0.42 [510kB]
 Get:9 http://ftp.jp.debian.org sid/main libdshconfig1 0.20.12-2 [10.9kB]
 Get:10 http://ftp.jp.debian.org sid/main libdshconfig1-dev 0.20.12-2 [25.3kB]
-Fetched 3534kB in 4s (820kB/s)
+Fetched 3539kB in 22s (160kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 12040 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.20-3_amd64.deb) ...
+(Reading database ... 12041 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.20-4_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.20-3_amd64.deb) ...
+Unpacking file (from .../archives/file_4.20-4_amd64.deb) ...
 Selecting previously deselected package gettext-base.
 Unpacking gettext-base (from .../gettext-base_0.16.1-1_amd64.deb) ...
 Selecting previously deselected package html2text.
@@ -66,9 +66,9 @@ Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.12-2_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
 Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.12-2_amd64.deb) ...
-Setting up libmagic1 (4.20-3) ...
+Setting up libmagic1 (4.20-4) ...
 
-Setting up file (4.20-3) ...
+Setting up file (4.20-4) ...
 Setting up gettext-base (0.16.1-1) ...
 
 Setting up html2text (1.3.2a-3) ...
@@ -90,16 +90,16 @@ The following NEW packages will be installed:
 Need to get 103kB of archives.
 After unpacking 430kB of additional disk space will be used.
 Get:1 http://ftp.jp.debian.org sid/main fakeroot 1.6.5 [103kB]
-Fetched 103kB in 0s (190kB/s)
+Fetched 103kB in 1s (75.4kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12712 files and directories currently installed.)
+(Reading database ... 12713 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.6.5_amd64.deb) ...
 Setting up fakeroot (1.6.5) ...
 
 Copying source file
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.SIsOp23010/dir1/dsh_0.25.7-1.dsc]
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.SIsOp23010/dir1/dsh_0.25.7.orig.tar.gz]
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.SIsOp23010/dir1/dsh_0.25.7-1.diff.gz]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zZzAJ20900/dir1/dsh_0.25.7-1.dsc]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zZzAJ20900/dir1/dsh_0.25.7.orig.tar.gz]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zZzAJ20900/dir1/dsh_0.25.7-1.diff.gz]
 Extracting source
 dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 gpg: can't open `/gnupg/options.skel': No such file or directory
@@ -423,11 +423,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun Apr  1 03:19:11 UTC 2007
+Mon Apr  9 03:35:46 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -497,13 +497,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun Apr  1 03:19:16 UTC 2007
+Mon Apr  9 03:35:51 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-a: a
 b: b
 c: c
+dsh: Process terminated (before write).
+a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -608,7 +609,7 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Sun Apr  1 12:19:19 JST 2007
-pbuilder-time-stamp: 1175397559
+Current time: Mon Apr  9 12:35:53 JST 2007
+pbuilder-time-stamp: 1176089753
  -> cleaning the build env 
-    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.SIsOp23010/dir1/5566 and its subdirectories
+    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.zZzAJ20900/dir1/3515 and its subdirectories
