@@ -50,7 +50,6 @@ BUILDRESULTGID="${BUILDRESULTGID:-${SUDO_GID:-0}}"
 
 export HOME="/tmp/buildd"
 
-showbuildbanner '$Id$'
 echobacktime
 extractbuildplace 
 trap umountproc_cleanbuildplace exit
@@ -75,7 +74,6 @@ if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
 	exec 2>&1
 	PBUILDER_BUILD_LOGFILE=$(readlink -f "${PBUILDER_BUILD_LOGFILE}")
 	echo "I: Using pkgname logfile"
-	showbuildbanner '$Id$'
 	echobacktime
     fi
 fi
