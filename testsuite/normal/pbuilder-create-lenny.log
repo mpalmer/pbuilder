@@ -1,4 +1,4 @@
-Distribution is sid.
+Distribution is lenny.
 Building the build environment
  -> running debootstrap
 /usr/sbin/debootstrap
@@ -112,8 +112,6 @@ I: Retrieving libdb4.4
 I: Validating libdb4.4
 I: Retrieving libdevmapper1.02
 I: Validating libdevmapper1.02
-I: Retrieving libdevmapper1.02.1
-I: Validating libdevmapper1.02.1
 I: Retrieving libgcc1
 I: Validating libgcc1
 I: Retrieving libgcrypt11
@@ -285,7 +283,6 @@ I: Extracting libcap1...
 I: Extracting libcomerr2...
 I: Extracting libdb4.3...
 I: Extracting libdevmapper1.02...
-I: Extracting libdevmapper1.02.1...
 I: Extracting libgcc1...
 I: Extracting liblocale-gettext-perl...
 I: Extracting libncurses5...
@@ -349,7 +346,6 @@ I: Unpacking libcap1...
 I: Unpacking libcomerr2...
 I: Unpacking libdb4.3...
 I: Unpacking libdevmapper1.02...
-I: Unpacking libdevmapper1.02.1...
 I: Unpacking libgcc1...
 I: Unpacking liblocale-gettext-perl...
 I: Unpacking libncurses5...
@@ -429,7 +425,6 @@ I: Configuring ncurses-base...
 I: Configuring ncurses-bin...
 I: Configuring libpam-modules...
 I: Configuring base-files...
-I: Configuring libdevmapper1.02.1...
 I: Configuring libblkid1...
 I: Configuring e2fsprogs...
 I: Configuring gzip...
@@ -588,16 +583,16 @@ umount: /dev/shm: not mounted
 umount: proc: not mounted
 umount: proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//18646/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//15813/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
-Get:1 http://ftp.jp.debian.org sid Release.gpg [189B]
-Hit http://ftp.jp.debian.org sid Release
-Get:2 http://ftp.jp.debian.org sid/main Packages/DiffIndex [2038B]
-Fetched 2227B in 3s (711B/s)
+Get:1 http://ftp.jp.debian.org lenny Release.gpg [189B]
+Hit http://ftp.jp.debian.org lenny Release
+Get:2 http://ftp.jp.debian.org lenny/main Packages/DiffIndex [926B]
+Fetched 1115B in 0s (1314B/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
@@ -623,26 +618,26 @@ The following NEW packages will be installed:
 0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
 Need to get 21.2MB of archives.
 After unpacking 86.5MB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org sid/main patch 2.5.9-4 [98.7kB]
-Get:2 http://ftp.jp.debian.org sid/main perl-modules 5.8.8-7 [2310kB]
-Get:3 http://ftp.jp.debian.org sid/main perl 5.8.8-7 [4240kB]
-Get:4 http://ftp.jp.debian.org sid/main binutils 2.17-3 [2630kB]
-Get:5 http://ftp.jp.debian.org sid/main linux-kernel-headers 2.6.18-7 [1872kB]
-Get:6 http://ftp.jp.debian.org sid/main libc6-dev 2.3.6.ds1-13 [2118kB]
-Get:7 http://ftp.jp.debian.org sid/main cpp-4.1 4.1.1-21 [2482kB]
-Get:8 http://ftp.jp.debian.org sid/main cpp 4:4.1.1-15 [11.6kB]
-Get:9 http://ftp.jp.debian.org sid/main libssp0 4.1.1-21 [4956B]
-Get:10 http://ftp.jp.debian.org sid/main gcc-4.1 4.1.1-21 [475kB]
-Get:11 http://ftp.jp.debian.org sid/main gcc 4:4.1.1-15 [5058B]
-Get:12 http://ftp.jp.debian.org sid/main libstdc++6-4.1-dev 4.1.1-21 [1643kB]
-Get:13 http://ftp.jp.debian.org sid/main g++-4.1 4.1.1-21 [2786kB]
-Get:14 http://ftp.jp.debian.org sid/main g++ 4:4.1.1-15 [1358B]
-Get:15 http://ftp.jp.debian.org sid/main make 3.81-3 [395kB]
-Get:16 http://ftp.jp.debian.org sid/main dpkg-dev 1.13.25 [166kB]
-Get:17 http://ftp.jp.debian.org sid/main build-essential 11.3 [6982B]
-Fetched 21.2MB in 46s (458kB/s)
+Get:1 http://ftp.jp.debian.org lenny/main patch 2.5.9-4 [98.7kB]
+Get:2 http://ftp.jp.debian.org lenny/main perl-modules 5.8.8-7 [2310kB]
+Get:3 http://ftp.jp.debian.org lenny/main perl 5.8.8-7 [4240kB]
+Get:4 http://ftp.jp.debian.org lenny/main binutils 2.17-3 [2630kB]
+Get:5 http://ftp.jp.debian.org lenny/main linux-kernel-headers 2.6.18-7 [1872kB]
+Get:6 http://ftp.jp.debian.org lenny/main libc6-dev 2.3.6.ds1-13 [2118kB]
+Get:7 http://ftp.jp.debian.org lenny/main cpp-4.1 4.1.1-21 [2482kB]
+Get:8 http://ftp.jp.debian.org lenny/main cpp 4:4.1.1-15 [11.6kB]
+Get:9 http://ftp.jp.debian.org lenny/main libssp0 4.1.1-21 [4956B]
+Get:10 http://ftp.jp.debian.org lenny/main gcc-4.1 4.1.1-21 [475kB]
+Get:11 http://ftp.jp.debian.org lenny/main gcc 4:4.1.1-15 [5058B]
+Get:12 http://ftp.jp.debian.org lenny/main libstdc++6-4.1-dev 4.1.1-21 [1643kB]
+Get:13 http://ftp.jp.debian.org lenny/main g++-4.1 4.1.1-21 [2786kB]
+Get:14 http://ftp.jp.debian.org lenny/main g++ 4:4.1.1-15 [1358B]
+Get:15 http://ftp.jp.debian.org lenny/main make 3.81-3 [395kB]
+Get:16 http://ftp.jp.debian.org lenny/main dpkg-dev 1.13.25 [166kB]
+Get:17 http://ftp.jp.debian.org lenny/main build-essential 11.3 [6982B]
+Fetched 21.2MB in 49s (433kB/s)
 Selecting previously deselected package patch.
-(Reading database ... 7112 files and directories currently installed.)
+(Reading database ... 7118 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
 Selecting previously deselected package perl-modules.
 Unpacking perl-modules (from .../perl-modules_5.8.8-7_all.deb) ...
@@ -706,9 +701,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//18646/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//15813/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
  -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.HagSH18641/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//18646 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//15813 and its subdirectories

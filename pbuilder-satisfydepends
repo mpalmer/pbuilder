@@ -31,7 +31,7 @@ function checkbuilddep_internal () {
     local INSTALLPKGMULTI
     local CURRENTREALPKGNAME
     local SATISFIED
-    echo " -> Attempting to parse the build-deps $Id$"
+    echo " -> Attempting to parse the build-deps "
     for INSTALLPKGMULTI in $(get_control_re "$DEBIAN_CONTROL" "$BD_REGEXP" |
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
