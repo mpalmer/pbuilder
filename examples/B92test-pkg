@@ -1,8 +1,10 @@
 #!/bin/bash
 # example file to be used with --hookdir
 #
-# run tests
-# 2005 Junichi Uekawa
+# run tests. Current directory is top of source-code.
+#
+# 2005, 2007 Junichi Uekawa
+# 
 set -e 
 
 echo "Installing the prerequisites"
@@ -20,7 +22,7 @@ COUNT=0
 unset FAIL || true
 NOFAIL=1
 
-# make current directory a better place to live.
+# The current directory is the top of the source-tree.
 cd /tmp/buildd/*/debian/..
 
 for SCRIPT in $(run-parts --test /tmp/buildd/*/debian/pbuilder-test) ; do

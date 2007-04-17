@@ -79,15 +79,15 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
 	
 	# upgrading testing.
 	case $distribution in 
-	    sarge)
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution etch --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch.log 
-		log_success update-${distribution}-etch.log
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch-sid.log 
-		log_success update-${distribution}-etch-sid.log
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch-sid-experimental.log 
-		log_success update-${distribution}-etch-sid-experimental.log
-		;;
 	    etch)
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution lenny --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch.log 
+		log_success update-${distribution}-etch.log
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid.log 
+		log_success update-${distribution}-lenny-sid.log
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-lenny-sid-experimental.log 
+		log_success update-${distribution}-sid-experimental.log
+		;;
+	    lenny)
 		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid.log 
 		log_success update-${distribution}-sid.log
 		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid-experimental.log 

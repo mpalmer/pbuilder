@@ -352,6 +352,8 @@ List of options that are passed on to dpkg-buildpackage. Overrides
 any value given in DEBBUILDOPTS as specified in
 pbuilderrc.
 
+Multiple options are delimited with spaces.
+
 .TP
 .BI "\-\-logfile [" "file to log" "]"
 Specifies the logfile to create. 
@@ -483,6 +485,11 @@ targets.
 .TP
 .BI "\-\-debootstrapopts " "\-\-variant=buildd"
 Add extra command-line options to debootstrap.
+
+Specify multiple options through multiple instance of this
+option, for example:
+
+.B "--debootstrapopts --arch=arm --debootstrapopts --variant=buildd"
 
 .TP
 .BI "\-\-debootstrap " "debootstrap"
