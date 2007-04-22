@@ -2,6 +2,14 @@
 
 	* examples/execute_installtest.sh: update install test so that it can handle more than one packages.
 
+2007-04-22  Loic Minier <lool@dooz.org>
+
+	* pbuilder-satisfydepends-aptitude: Pass
+	Aptitude::ProblemResolver::StepScore and
+	Aptitude::CmdLine::Ignore-Trust-Violations flags to aptitude to
+	help resolve complex situations relatively common in experimental and
+	support unsigned repositories like we do for apt-get.
+
 2007-04-17  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/rules: remove amd64 from build rules.

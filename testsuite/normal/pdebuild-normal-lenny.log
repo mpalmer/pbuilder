@@ -7,14 +7,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.PDwnnq3768/dir2/dsh-0.25.7'
+make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.MpDAnN9903/dir2/dsh-0.25.7'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.PDwnnq3768/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.MpDAnN9903/dir2/dsh-0.25.7'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.PDwnnq3768/dir2/dsh-0.25.7'
+make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.MpDAnN9903/dir2/dsh-0.25.7'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.PDwnnq3768/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.MpDAnN9903/dir2/dsh-0.25.7'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.7
@@ -28,10 +28,10 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: source only upload (original source is included)
 W: /home/dancer/.pbuilderrc does not exist
 I: using fakeroot in build.
-Current time: Mon Apr 16 13:16:15 JST 2007
-pbuilder-time-stamp: 1176696975
+Current time: Sun Apr 22 12:56:05 JST 2007
+pbuilder-time-stamp: 1177214165
 Building the build Environment
- -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.PDwnnq3768/testimage]
+ -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.MpDAnN9903/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -70,9 +70,9 @@ Get:7 http://ftp.jp.debian.org lenny/main po-debconf 1.0.8 [111kB]
 Get:8 http://ftp.jp.debian.org lenny/main debhelper 5.0.42 [510kB]
 Get:9 http://ftp.jp.debian.org lenny/main libdshconfig1 0.20.12-2 [10.9kB]
 Get:10 http://ftp.jp.debian.org lenny/main libdshconfig1-dev 0.20.12-2 [25.3kB]
-Fetched 3539kB in 1m11s (49.3kB/s)
+Fetched 3539kB in 34s (103kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 12040 files and directories currently installed.)
+(Reading database ... 12026 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.20-4_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.20-4_amd64.deb) ...
@@ -116,9 +116,9 @@ The following NEW packages will be installed:
 Need to get 103kB of archives.
 After unpacking 430kB of additional disk space will be used.
 Get:1 http://ftp.jp.debian.org lenny/main fakeroot 1.6.5 [103kB]
-Fetched 103kB in 3s (28.5kB/s)
+Fetched 103kB in 2s (45.8kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12712 files and directories currently installed.)
+(Reading database ... 12698 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.6.5_amd64.deb) ...
 Setting up fakeroot (1.6.5) ...
 
@@ -454,7 +454,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Apr 16 04:18:26 UTC 2007
+Sun Apr 22 03:57:43 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -524,11 +524,12 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Apr 16 04:18:31 UTC 2007
+Sun Apr 22 03:57:48 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
+dsh: Process terminated (before write).
 b: b
 c: c
 PASS: tests/segv-catcher.sh
@@ -635,7 +636,7 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Mon Apr 16 13:18:33 JST 2007
-pbuilder-time-stamp: 1176697113
+Current time: Sun Apr 22 12:57:51 JST 2007
+pbuilder-time-stamp: 1177214271
  -> cleaning the build env 
-    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.PDwnnq3768/dir3/18469 and its subdirectories
+    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.MpDAnN9903/dir3/12003 and its subdirectories
