@@ -1,14 +1,13 @@
 #!/bin/bash
 # pbuilder example script.
-# Copyright 2003 Junichi Uekawa
+# Copyright 2003, 2007 Junichi Uekawa
 #Distributed under GPL version 2 or later
 
-#before running this script, make sure you have an up-to-date system with
-# pbuilder update.
-# $Id$
+#before running this script, make sure you have an up-to-date system
+#with pbuilder update.
 
-
-# This will install a package using APT and see if that fails.
+# This will install a package using APT inside the chroot and see if
+# that fails. If it fails, it's wrong.
 
 set -ex
 
@@ -19,25 +18,7 @@ INSTALLTESTPID=$$
 ( sleep 1h ; kill $INSTALLTESTPID ) &
 KILLPID=$!
 
-apt-get install -y --force-yes "$1" < /dev/null
+apt-get install -y --force-yes "$@" < /dev/null
 
 kill $KILLPID
-
-# known bugs according to Christian Perrier.
-
-# anacron 	MQ	134017
-# Base-passwd	CP	184979
-		
-# exim		86210
-# Kernel-package		115884
-# Sendmail	CP	?
-# wvdial	CP	219151
-		
-# Nessusd	CP	191925
-# Libssl0.9.7		?
-		
-# php4		122353
-# seyon		147269
-
-
 
