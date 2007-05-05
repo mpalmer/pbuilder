@@ -37,9 +37,6 @@ build & once per package & build the Debian package inside chroot \\
 \hline
 \end{tabular}
 
-\newpage{}
-\subsection{A developer use-case in using pbuilder}
-
 Let me examine a typical sequence of events in a day of a Debian Developer.
 
 %\begin{wrapfigure}{rt}{0.4\hsize}\includegraphics[width=1\hsize]{develcycle.eps}\end{wrapfigure}
@@ -50,7 +47,9 @@ Let me examine a typical sequence of events in a day of a Debian Developer.
 
 pbuilder is built in to the process as a checking system to ensure
 package quality.  \footnote{This is an example. Some people do not build
-package locally and entirely work inside chroots.}
+package locally and entirely work inside chroots.}  This is useful for
+initial testing of Build-Dependency, and as basic regression testing
+framework.
 
 \subsection{Development structure}
 
@@ -75,18 +74,26 @@ git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git
 
 \subsection{Derivatives and their status}
 
-\subsubsection{user-mode-linux port}
+There are several derivatives of pbuilder supporting different
+'backends'. They use different methods for providing a clean-room
+environment.
 
-pbuilder-uml port exists. Apparently, it is working for most people.
-Mattia Dongili has been working on this port.
-
-base.tgz extraction is replaced with UML cow device support, and thus is
-much faster.
 
 \subsubsection{LVM port}
 
-Someone did a port to using LVM snapshot for base-management.  There was
-some mail posted, but noone really picked it up.
+Someone did a port to using LVM snapshot for base.tgz-management.  There
+was some mail posted, but noone really picked it up.  chroot is still
+used as a method for segregation. The advantage is that LVM snapshots
+are much faster than extracting a tar archive for base image.
+
+\subsubsection{user-mode-linux port}
+
+pbuilder-uml port exists. Apparently, it is working for most people.
+Mattia Dongili and others have been actively working on this port.
+
+base.tgz extraction is replaced with UML cow device support, and thus is
+faster. chroot is replaced with user-mode-linux session, which makes
+system calls a bit slower.
 
 \subsubsection{cowdancer port}
 
@@ -150,23 +157,27 @@ pbuilder currently lacks apt-key support.  Since apt-key support is
 definitely available in the current stable releases, it is about time to
 start considering supporting apt-key.
 
-\subsubsection{build-dependency}
+\subsubsection{build-dependency parser}
 
 Build-dependency parser has been somewhat old and suboptimal.  Lo\"ic
 Minier has been working on refreshing it.
 
 \subsubsection{buildd.net-like support}
 
-pbuilder creates a bunch of useful build logs, but it lacks the
-infrastructure to aggregate and put them to use.  Some projects to
-create \texttt{pbuildd} did exist, but I am not sure if it still exists
-today.
+pbuilder creates a bunch of useful build logs, but it lacks the notion
+of history. It does not have an infrastructure to aggregate and put them
+to use.  \footnote{Some projects to create \texttt{pbuildd} did exist,
+but I am not sure if it still exists today.  } Collecting past build
+logs even locally and comparing them between builds may alert problems,
+used in conjunction with tools like debdiff.
 
 \subsection{References}
 
 \begin{itemize}
  \item \url{http://pbuilder.alioth.debian.org/} or
  \url{/usr/share/doc/pbuilder/pbuilder-doc.html}: pbuilder manual
+ \item cowdancer package
+ \item piuparts package
 \end{itemize}
 
 \end{document}
