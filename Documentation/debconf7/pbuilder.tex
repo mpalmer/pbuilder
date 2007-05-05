@@ -1,5 +1,7 @@
 \documentclass[a4paper]{article}
+\usepackage{graphicx}
 \usepackage{url}
+\usepackage{wrapfig}
 
 \begin{document}
 
@@ -35,19 +37,20 @@ build & once per package & build the Debian package inside chroot \\
 \hline
 \end{tabular}
 
+\newpage{}
 \subsection{A developer use-case in using pbuilder}
 
-Here is a day in developer-life.
+Let me examine a typical sequence of events in a day of a Debian Developer.
 
-\begin{itemize}
- \item looks at bug report
- \item fixes package source
- \item builds package using debuild
- \item installs package
- \item tests package
- \item pbuilder
- \item upload
-\end{itemize}
+%\begin{wrapfigure}{rt}{0.4\hsize}\includegraphics[width=1\hsize]{develcycle.eps}\end{wrapfigure}
+
+\begin{center}
+ \includegraphics[width=0.6\hsize]{develcycle.eps}
+\end{center}
+
+pbuilder is built in to the process as a checking system to ensure
+package quality.  \footnote{This is an example. Some people do not build
+package locally and entirely work inside chroots.}
 
 \subsection{Development structure}
 
