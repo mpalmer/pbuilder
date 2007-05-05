@@ -10,6 +10,18 @@ P: Retrieving Packages.gz
 P: Validating Packages.gz
 P: Parsing Packages
 P: Can't find package libtasn1-2-bin for exclusion
+P: Retrieving liblocale-gettext-perl
+P: Validating liblocale-gettext-perl
+P: Retrieving libtext-iconv-perl
+P: Validating libtext-iconv-perl
+P: Retrieving libtext-charwidth-perl
+P: Validating libtext-charwidth-perl
+P: Retrieving libtext-wrapi18n-perl
+P: Validating libtext-wrapi18n-perl
+P: Retrieving debconf-i18n
+P: Validating debconf-i18n
+P: Retrieving debconf
+P: Validating debconf
 P: Retrieving tzdata
 P: Validating tzdata
 P: Retrieving libc6
@@ -44,18 +56,6 @@ P: Retrieving debianutils
 P: Validating debianutils
 P: Retrieving passwd
 P: Validating passwd
-P: Retrieving liblocale-gettext-perl
-P: Validating liblocale-gettext-perl
-P: Retrieving libtext-iconv-perl
-P: Validating libtext-iconv-perl
-P: Retrieving libtext-charwidth-perl
-P: Validating libtext-charwidth-perl
-P: Retrieving libtext-wrapi18n-perl
-P: Validating libtext-wrapi18n-perl
-P: Retrieving debconf-i18n
-P: Validating debconf-i18n
-P: Retrieving debconf
-P: Validating debconf
 P: Retrieving adduser
 P: Validating adduser
 P: Retrieving gcc-4.1-base
@@ -258,9 +258,15 @@ P: Retrieving wget
 P: Validating wget
 P: Retrieving whiptail
 P: Validating whiptail
+P: Extracting perl-base
+P: Extracting libtext-iconv-perl
+P: Extracting libtext-charwidth-perl
+P: Extracting libtext-wrapi18n-perl
+P: Extracting debconf-i18n
+P: Extracting debconf
 P: Extracting tzdata
 P: Extracting libc6
-P: Extracting perl-base
+P: Extracting liblocale-gettext-perl
 P: Extracting libpam-runtime
 P: Extracting libpam0g
 P: Extracting libsepol1
@@ -275,12 +281,6 @@ P: Extracting coreutils
 P: Extracting mktemp
 P: Extracting debianutils
 P: Extracting passwd
-P: Extracting liblocale-gettext-perl
-P: Extracting libtext-iconv-perl
-P: Extracting libtext-charwidth-perl
-P: Extracting libtext-wrapi18n-perl
-P: Extracting debconf
-P: Extracting debconf-i18n
 P: Extracting gcc-4.1-base
 P: Extracting libgcc1
 P: Extracting libstdc++6
@@ -323,11 +323,11 @@ O: Selecting previously deselected package base-passwd.
 O: (Reading database ... 0 files and directories currently installed.)
 O: Unpacking base-passwd (from .../base-passwd_3.5.11_amd64.deb) ...
 P: Unpacking package base-passwd
+O: Setting up base-passwd (3.5.11) ...
+P: Configuring package base-passwd
 O: dpkg: base-passwd: dependency problems, but configuring anyway as you request:
 O:  base-passwd depends on libc6 (>= 2.3.5-1); however:
 O:   Package libc6 is not installed.
-O: Setting up base-passwd (3.5.11) ...
-P: Configuring package base-passwd
 O: 
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
@@ -363,21 +363,50 @@ O:   Package coreutils is not installed.
 O: Setting up dpkg (1.13.25) ...
 P: Configuring package dpkg
 O: 
-O: Selecting previously deselected package tzdata.
+O: Selecting previously deselected package perl-base.
+O: dpkg: regarding .../perl-base_5.8.8-7_amd64.deb containing perl-base, pre-dependency problem:
+O:  perl-base pre-depends on libc6 (>= 2.3.5-1)
+O: dpkg: warning - ignoring pre-dependency problem !
 O: (Reading database ... 
 O: 254 files and directories currently installed.)
-O: Unpacking tzdata (from .../tzdata_2007d-1_all.deb) ...
+O: Unpacking perl-base (from .../perl-base_5.8.8-7_amd64.deb) ...
+P: Unpacking package perl-base
+O: Selecting previously deselected package libtext-iconv-perl.
+O: Unpacking libtext-iconv-perl (from .../libtext-iconv-perl_1.4-3_amd64.deb) ...
+P: Unpacking package libtext-iconv-perl
+O: Selecting previously deselected package libtext-charwidth-perl.
+O: Unpacking libtext-charwidth-perl (from .../libtext-charwidth-perl_0.04-4_amd64.deb) ...
+P: Unpacking package libtext-charwidth-perl
+O: Selecting previously deselected package libtext-wrapi18n-perl.
+O: Unpacking libtext-wrapi18n-perl (from .../libtext-wrapi18n-perl_0.06-5_all.deb) ...
+P: Unpacking package libtext-wrapi18n-perl
+O: Selecting previously deselected package debconf-i18n.
+O: Unpacking debconf-i18n (from .../debconf-i18n_1.5.13_all.deb) ...
+P: Unpacking package debconf-i18n
+O: Selecting previously deselected package debconf.
+O: dpkg: regarding .../debconf_1.5.13_all.deb containing debconf, pre-dependency problem:
+O:  debconf pre-depends on perl-base (>= 5.6.1-4)
+O:   perl-base is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking debconf (from .../debconf_1.5.13_all.deb) ...
+P: Unpacking package debconf
+O: Selecting previously deselected package tzdata.
+O: Unpacking tzdata (from .../tzdata_2007e-3_all.deb) ...
 P: Unpacking package tzdata
 O: Selecting previously deselected package libc6.
 O: Unpacking libc6 (from .../libc6_2.3.6.ds1-13_amd64.deb) ...
 P: Unpacking package libc6
-O: Selecting previously deselected package perl-base.
-O: dpkg: regarding .../perl-base_5.8.8-7_amd64.deb containing perl-base, pre-dependency problem:
-O:  perl-base pre-depends on libc6 (>= 2.3.5-1)
-O:   libc6 is unpacked, but has never been configured.
+O: Selecting previously deselected package liblocale-gettext-perl.
+O: dpkg: regarding .../liblocale-gettext-perl_1.05-1_amd64.deb containing liblocale-gettext-perl, pre-dependency problem:
+O:  liblocale-gettext-perl pre-depends on perl-base (>= 5.8.8-3)
+O:   perl-base is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking perl-base (from .../perl-base_5.8.8-7_amd64.deb) ...
-P: Unpacking package perl-base
+O: dpkg: regarding .../liblocale-gettext-perl_1.05-1_amd64.deb containing liblocale-gettext-perl, pre-dependency problem:
+O:  liblocale-gettext-perl pre-depends on perlapi-5.8.8
+O:   perl-base provides perlapi-5.8.8 but is unpacked but not configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.05-1_amd64.deb) ...
+P: Unpacking package liblocale-gettext-perl
 O: Selecting previously deselected package libpam-runtime.
 O: Unpacking libpam-runtime (from .../libpam-runtime_0.79-4_all.deb) ...
 P: Unpacking package libpam-runtime
@@ -458,36 +487,6 @@ P: Unpacking package debianutils
 O: Selecting previously deselected package passwd.
 O: Unpacking passwd (from .../passwd_4.0.18.1-7_amd64.deb) ...
 P: Unpacking package passwd
-O: Selecting previously deselected package liblocale-gettext-perl.
-O: dpkg: regarding .../liblocale-gettext-perl_1.05-1_amd64.deb containing liblocale-gettext-perl, pre-dependency problem:
-O:  liblocale-gettext-perl pre-depends on perl-base (>= 5.8.8-3)
-O:   perl-base is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../liblocale-gettext-perl_1.05-1_amd64.deb containing liblocale-gettext-perl, pre-dependency problem:
-O:  liblocale-gettext-perl pre-depends on perlapi-5.8.8
-O:   perl-base provides perlapi-5.8.8 but is unpacked but not configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking liblocale-gettext-perl (from .../liblocale-gettext-perl_1.05-1_amd64.deb) ...
-P: Unpacking package liblocale-gettext-perl
-O: Selecting previously deselected package libtext-iconv-perl.
-O: Unpacking libtext-iconv-perl (from .../libtext-iconv-perl_1.4-3_amd64.deb) ...
-P: Unpacking package libtext-iconv-perl
-O: Selecting previously deselected package libtext-charwidth-perl.
-O: Unpacking libtext-charwidth-perl (from .../libtext-charwidth-perl_0.04-4_amd64.deb) ...
-P: Unpacking package libtext-charwidth-perl
-O: Selecting previously deselected package libtext-wrapi18n-perl.
-O: Unpacking libtext-wrapi18n-perl (from .../libtext-wrapi18n-perl_0.06-5_all.deb) ...
-P: Unpacking package libtext-wrapi18n-perl
-O: Selecting previously deselected package debconf.
-O: dpkg: regarding .../debconf_1.5.13_all.deb containing debconf, pre-dependency problem:
-O:  debconf pre-depends on perl-base (>= 5.6.1-4)
-O:   perl-base is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking debconf (from .../debconf_1.5.13_all.deb) ...
-P: Unpacking package debconf
-O: Selecting previously deselected package debconf-i18n.
-O: Unpacking debconf-i18n (from .../debconf-i18n_1.5.13_all.deb) ...
-P: Unpacking package debconf-i18n
 O: Selecting previously deselected package gcc-4.1-base.
 O: Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1.1-21_amd64.deb) ...
 P: Unpacking package gcc-4.1-base
@@ -721,15 +720,35 @@ P: Configuring package makedev
 O: 
 O: Setting up sysv-rc (2.86.ds1-38) ...
 P: Configuring package sysv-rc
-O: Setting up tzdata (2007d-1) ...
-P: Configuring package tzdata
-O: Non-interactive mode, setting timezone to UTC.  Run tzconfig to change.
-O: 
 O: Setting up gcc-4.1-base (4.1.1-21) ...
 P: Configuring package gcc-4.1-base
 O: 
 O: Setting up libpam-runtime (0.79-4) ...
 P: Configuring package libpam-runtime
+O: 
+O: Setting up perl-base (5.8.8-7) ...
+P: Configuring package perl-base
+O: Setting up libtext-iconv-perl (1.4-3) ...
+P: Configuring package libtext-iconv-perl
+O: Setting up liblocale-gettext-perl (1.05-1) ...
+P: Configuring package liblocale-gettext-perl
+O: Setting up libtext-charwidth-perl (0.04-4) ...
+P: Configuring package libtext-charwidth-perl
+O: Setting up libtext-wrapi18n-perl (0.06-5) ...
+P: Configuring package libtext-wrapi18n-perl
+O: Setting up debconf-i18n (1.5.13) ...
+P: Configuring package debconf-i18n
+O: Setting up debconf (1.5.13) ...
+P: Configuring package debconf
+O: 
+O: Setting up tzdata (2007e-3) ...
+P: Configuring package tzdata
+O: 
+O: Current default timezone: 'Etc/UTC'
+O: Local time is now:      Sat Apr 28 04:25:51 UTC 2007.
+O: Universal Time is now:  Sat Apr 28 04:25:51 UTC 2007.
+O: Run 'dpkg-reconfigure tzdata' if you wish to change it.
+O: 
 O: 
 O: Setting up libc6 (2.3.6.ds1-13) ...
 P: Configuring package libc6
@@ -750,8 +769,6 @@ O:
 O: Setting up bsdutils (2.12r-19) ...
 P: Configuring package bsdutils
 O: 
-O: Setting up perl-base (5.8.8-7) ...
-P: Configuring package perl-base
 O: Setting up libsepol1 (1.14-3) ...
 P: Configuring package libsepol1
 O: telinit: 
@@ -766,8 +783,6 @@ O:
 O: Setting up libgcc1 (4.1.1-21) ...
 P: Configuring package libgcc1
 O: 
-O: Setting up libtext-iconv-perl (1.4-3) ...
-P: Configuring package libtext-iconv-perl
 O: Setting up libncurses5 (5.5-5) ...
 P: Configuring package libncurses5
 O: 
@@ -806,8 +821,6 @@ O:
 O: Setting up findutils (4.2.28-2) ...
 P: Configuring package findutils
 O: 
-O: Setting up liblocale-gettext-perl (1.05-1) ...
-P: Configuring package liblocale-gettext-perl
 O: Setting up diff (2.8.1-11) ...
 P: Configuring package diff
 O: Setting up libselinux1 (1.32-3) ...
@@ -821,10 +834,6 @@ O:
 O: Setting up libdevmapper1.02 (1.02.08-1) ...
 P: Configuring package libdevmapper1.02
 O: 
-O: Setting up libtext-charwidth-perl (0.04-4) ...
-P: Configuring package libtext-charwidth-perl
-O: Setting up libtext-wrapi18n-perl (0.06-5) ...
-P: Configuring package libtext-wrapi18n-perl
 O: Setting up coreutils (5.97-5.3) ...
 P: Configuring package coreutils
 O: 
@@ -882,11 +891,6 @@ P: Configuring package sysvinit
 O: sysvinit: creating /dev/initctl
 O: init: 
 O: timeout opening/writing control channel /dev/initctl
-O: 
-O: Setting up debconf-i18n (1.5.13) ...
-P: Configuring package debconf-i18n
-O: Setting up debconf (1.5.13) ...
-P: Configuring package debconf
 O: 
 O: Selecting previously deselected package libbz2-1.0.
 O: (Reading database ... 
@@ -1027,6 +1031,7 @@ O: Get:2 bootstrap: . Release [68.5kB]
 O: Reading package lists...
 O: 
 O: Reading package lists...
+O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -1359,7 +1364,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//16589/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//13567/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1368,7 +1373,7 @@ Refreshing the base.tgz
 Get:1 http://ftp.jp.debian.org lenny Release.gpg [189B]
 Get:2 http://ftp.jp.debian.org lenny Release [68.5kB]
 Get:3 http://ftp.jp.debian.org lenny/main Packages [5814kB]
-Fetched 5882kB in 34s (171kB/s)
+Fetched 5883kB in 27s (214kB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
@@ -1411,7 +1416,7 @@ Get:14 http://ftp.jp.debian.org lenny/main g++ 4:4.1.1-15 [1358B]
 Get:15 http://ftp.jp.debian.org lenny/main make 3.81-3 [395kB]
 Get:16 http://ftp.jp.debian.org lenny/main dpkg-dev 1.13.25 [166kB]
 Get:17 http://ftp.jp.debian.org lenny/main build-essential 11.3 [6982B]
-Fetched 21.2MB in 4m48s (73.7kB/s)
+Fetched 21.2MB in 2m30s (141kB/s)
 Selecting previously deselected package patch.
 (Reading database ... 7105 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
@@ -1477,9 +1482,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//16589/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//13567/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.MpDAnN9903/testimage]
+ -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.KTbaFo4603/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//16589 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//13567 and its subdirectories
