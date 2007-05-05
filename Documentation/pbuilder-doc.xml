@@ -25,7 +25,7 @@
       <para>
 	<command>pbuilder</command> stands for
 	Personal Builder, and it is an automatic Debian Package Building system
-	for personal environments.
+	for personal development workstation environments.
 	<command>pbuilder</command> aims to be an
 	easy-to-setup system
 	for auto-building Debian packages inside a clean-room
@@ -70,18 +70,31 @@
   </chapter>
   <chapter id="usingpbuilder">
     <title>Using pbuilder</title>
+    <para>
+      There are several simple commands for operation.
+      <command>pbuilder create</command>, <command>pbuilder
+      update</command>, and <command>pbuilder build</command> commands
+      are the typical commands used.  Let us look at the commands
+      one by one.
+    </para>
     <sect1 id="creatingbase">
       <title>Creating a base chroot image</title>
       <para>
 	<command>pbuilder create</command>
 	will create a base chroot image.
-	The distribution code-name needs to be specified with
-	the <command><option>--distribution</option></command>
+	All other commands will operate on the resulting base chroot image.
+
+	If the Debian release to be created within chroot is not going
+	to be "sid" (which is the default), the distribution code-name
+	needs to be specified with the
+	<command><option>--distribution</option></command>
 	command-line option.
-	Usually, "sid" is used, and the default is now sid.
       </para>
       <para>
-	<command>debootstrap</command> is used to create
+	<command>debootstrap</command> <footnote>
+	  <para>debootstrap or cdebootstrap can be chosen</para>
+	</footnote>
+	is used to create
 	the bare minimum Debian installation,
 	and then build-essential packages are installed on top
 	of the minimum installation using <command>apt-get</command>
@@ -1165,14 +1178,21 @@ BINDMOUNTS="${CCACHE_DIR}"
 	and how things generally operate in development.
       </para>
       <para>
-	<command>pbuilder</command> is now co-maintained at alioth.
-	There is an alioth project page at
+	<command>pbuilder</command> is co-maintained with resources
+	provided by Alioth.
+
+	There is an Alioth project page at
 	<ulink url="http://alioth.debian.org/projects/pbuilder">
-	  http://alioth.debian.org/projects/pbuilder</ulink>.
-	git Repository is available through http, or if you have an account on alioth, 
-	ssh.
+	  http://alioth.debian.org/projects/pbuilder</ulink>.  
+	Home page is also available, 
+	at <ulink url="http://pbuilder.alioth.debian.org/">
+	  http://alioth.debian.org/projects/pbuilder</ulink>
+	which shows this text.
+	git repository is available through http, git, or (if you have an
+	account on alioth, ) ssh.
       </para>
       <screen>
+git-clone git://git.debian.org/git/pbuilder/pbuilder.git
 git-clone http://git.debian.org/git/pbuilder/pbuilder.git
 git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git
       </screen>
