@@ -7,7 +7,7 @@ I: Retrieving Packages
 I: Validating Packages
 I: Resolving dependencies of required packages...
 I: Resolving dependencies of base packages...
-I: Checking component main on http://ftp.jp.debian.org/debian...
+I: Checking component main on http://cdn.debian.or.jp/debian...
 I: Retrieving adduser
 I: Validating adduser
 I: Retrieving apt
@@ -583,16 +583,16 @@ umount: /dev/shm: not mounted
 umount: proc: not mounted
 umount: proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//7571/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//23205/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> installing dummy policy-rc.d
-Get:1 http://ftp.jp.debian.org lenny Release.gpg [189B]
-Hit http://ftp.jp.debian.org lenny Release
-Get:2 http://ftp.jp.debian.org lenny/main Packages/DiffIndex [2038B]
-Fetched 2227B in 1s (1601B/s)
+Get:1 http://cdn.debian.or.jp lenny Release.gpg [189B]
+Hit http://cdn.debian.or.jp lenny Release
+Get:2 http://cdn.debian.or.jp lenny/main Packages/DiffIndex [2038B]
+Fetched 2227B in 3s (726B/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
@@ -618,26 +618,26 @@ The following NEW packages will be installed:
 0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
 Need to get 21.2MB of archives.
 After unpacking 86.5MB of additional disk space will be used.
-Get:1 http://ftp.jp.debian.org lenny/main patch 2.5.9-4 [98.7kB]
-Get:2 http://ftp.jp.debian.org lenny/main perl-modules 5.8.8-7 [2310kB]
-Get:3 http://ftp.jp.debian.org lenny/main perl 5.8.8-7 [4240kB]
-Get:4 http://ftp.jp.debian.org lenny/main binutils 2.17-3 [2630kB]
-Get:5 http://ftp.jp.debian.org lenny/main linux-kernel-headers 2.6.18-7 [1872kB]
-Get:6 http://ftp.jp.debian.org lenny/main libc6-dev 2.3.6.ds1-13 [2118kB]
-Get:7 http://ftp.jp.debian.org lenny/main cpp-4.1 4.1.1-21 [2482kB]
-Get:8 http://ftp.jp.debian.org lenny/main cpp 4:4.1.1-15 [11.6kB]
-Get:9 http://ftp.jp.debian.org lenny/main libssp0 4.1.1-21 [4956B]
-Get:10 http://ftp.jp.debian.org lenny/main gcc-4.1 4.1.1-21 [475kB]
-Get:11 http://ftp.jp.debian.org lenny/main gcc 4:4.1.1-15 [5058B]
-Get:12 http://ftp.jp.debian.org lenny/main libstdc++6-4.1-dev 4.1.1-21 [1643kB]
-Get:13 http://ftp.jp.debian.org lenny/main g++-4.1 4.1.1-21 [2786kB]
-Get:14 http://ftp.jp.debian.org lenny/main g++ 4:4.1.1-15 [1358B]
-Get:15 http://ftp.jp.debian.org lenny/main make 3.81-3 [395kB]
-Get:16 http://ftp.jp.debian.org lenny/main dpkg-dev 1.13.25 [166kB]
-Get:17 http://ftp.jp.debian.org lenny/main build-essential 11.3 [6982B]
-Fetched 21.2MB in 1m41s (209kB/s)
+Get:1 http://cdn.debian.or.jp lenny/main patch 2.5.9-4 [98.7kB]
+Get:2 http://cdn.debian.or.jp lenny/main perl-modules 5.8.8-7 [2310kB]
+Get:3 http://cdn.debian.or.jp lenny/main perl 5.8.8-7 [4240kB]
+Get:4 http://cdn.debian.or.jp lenny/main binutils 2.17-3 [2630kB]
+Get:5 http://cdn.debian.or.jp lenny/main linux-kernel-headers 2.6.18-7 [1872kB]
+Get:6 http://cdn.debian.or.jp lenny/main libc6-dev 2.3.6.ds1-13 [2118kB]
+Get:7 http://cdn.debian.or.jp lenny/main cpp-4.1 4.1.1-21 [2482kB]
+Get:8 http://cdn.debian.or.jp lenny/main cpp 4:4.1.1-15 [11.6kB]
+Get:9 http://cdn.debian.or.jp lenny/main libssp0 4.1.1-21 [4956B]
+Get:10 http://cdn.debian.or.jp lenny/main gcc-4.1 4.1.1-21 [475kB]
+Get:11 http://cdn.debian.or.jp lenny/main gcc 4:4.1.1-15 [5058B]
+Get:12 http://cdn.debian.or.jp lenny/main libstdc++6-4.1-dev 4.1.1-21 [1643kB]
+Get:13 http://cdn.debian.or.jp lenny/main g++-4.1 4.1.1-21 [2786kB]
+Get:14 http://cdn.debian.or.jp lenny/main g++ 4:4.1.1-15 [1358B]
+Get:15 http://cdn.debian.or.jp lenny/main make 3.81-3 [395kB]
+Get:16 http://cdn.debian.or.jp lenny/main dpkg-dev 1.13.25 [166kB]
+Get:17 http://cdn.debian.or.jp lenny/main build-essential 11.3 [6982B]
+Fetched 21.2MB in 6s (3165kB/s)
 Selecting previously deselected package patch.
-(Reading database ... 7105 files and directories currently installed.)
+(Reading database ... 7109 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
 Selecting previously deselected package perl-modules.
 Unpacking perl-modules (from .../perl-modules_5.8.8-7_all.deb) ...
@@ -701,9 +701,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//7571/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//23205/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
- -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.KTbaFo4603/testimage]
+ -> creating base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.vUTsw26504/testimage]
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//7571 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//23205 and its subdirectories
