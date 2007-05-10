@@ -438,9 +438,30 @@
 	  <para>Automatic debian-test of the package?
 	  The debian-test package has been removed from Debian.
 	  A <command>pbuilder</command> implementation can be found as 
-	  debian/pbuilder-test directory, implemented through B92pkg-test script.</para>
+	  debian/pbuilder-test directory, implemented through B92test-pkg script.</para>
 	</listitem>
-     </itemizedlist>
+      </itemizedlist>
+      <para>
+	To use B92test-pkg script, first, add it to your hook directory.
+	<footnote>
+	  <para>It is possible to specify <command>--hookdir
+	    /usr/share/doc/pbuilder/examples</command> command-line
+	    option to include all example hooks as
+	    well.</para></footnote>. 
+	The test files are shell scripts
+	placed in
+	<filename>debian/pbuilder-test/NN_name</filename> (where
+	NN is number) following run-parts standard<footnote>
+	  <para> See run-parts(8). For example, no '.' in file
+	    names!
+	  </para>
+	</footnote>
+	for file names.  After a successful build, packages are first
+	tested for installation and removal, and then each test is ran
+	inside the chroot.  The current directory is the top directory
+	of the source-code.  This means you can expect to be able to
+	use ./debian/ directory from inside your scripts.
+      </para>
     </sect1>
     <sect1 id="altcompiler">
       <title>Using pbuilder for testing builds with alternate compilers</title>
