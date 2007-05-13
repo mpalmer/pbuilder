@@ -51,10 +51,12 @@ package locally and entirely work inside chroots.}  This is useful for
 initial testing of Build-Dependency, and as basic regression testing
 framework.
 
-\subsection{Development structure}
+\subsection{pbuilder Development structure}
 
+Let me mention a little bit about how pbuilder itself is developed.
 Currently pbuilder is co-maintained with resources provided by Alioth.
-Development is done mostly by Lo\"ic Minier and Junichi Uekawa.
+Development is done mostly by Lo\"ic Minier and Junichi Uekawa, and
+occasional commits from Matt Kraai, and Mattia Dongili.
 
 Project page is available at 
 \url{http://alioth.debian.org/projects/pbuilder}
@@ -77,7 +79,7 @@ git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git
 There are several derivatives of pbuilder supporting different
 'backends'. They use different methods for providing a clean-room
 environment.
-
+Let me explain some of them.
 
 \subsubsection{LVM port}
 
