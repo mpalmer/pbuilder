@@ -5,11 +5,19 @@
 # ldp-docbook-xsl
 # xsltproc
 
-all: pbuilder-doc.html
+MASTERXML=pbuilder-doc.xml
+
+all: pbuilder-doc.html pbuilder-doc.ja.html
 
 %.html: %.xml pbuilder-doc.xsl
 	xsltproc pbuilder-doc.xsl $< > $@.tmp
 	mv $@.tmp $@
+
+pbuilder-doc.%.xml: pbuilder-doc.%.po
+	po4a-translate -f docbook -m $(MASTERXML) -p $< -l $@ -k 1
+
+pbuilder-doc.%.po: $(MASTERXML)
+	po4a-updatepo -f docbook $< $@ 
 
 %.tex: %.xml debian-latex.xsl
 	## requires db2latex-xsl and xsltproc package.
@@ -36,7 +44,6 @@ release-netfort: pbuilder-doc.html pbuilder-doc.xml pbuilder-doc.css pbuilder-do
 	cp $^ ~/public_html/netfort/software/pbuilder-doc/
 
 clean: 
-	-rm pbuilder-doc.pdf pbuilder-doc.glo pbuilder-doc.idx pbuilder-doc.log pbuilder-doc.out
-
+	-rm pbuilder-doc.pdf pbuilder-doc.glo pbuilder-doc.idx pbuilder-doc.log pbuilder-doc.out 
 
 .PHONY: preview release-netfort release clean
