@@ -32,7 +32,7 @@
 	environment, so that it is possible to verify that
 	a package can be built on most Debian installations.
 	The clean-room environment is achieved through the use of
-	a chroot image,
+	a base chroot image,
 	so that only minimal packages will be installed inside the
 	chroot.
       </para>
@@ -77,11 +77,11 @@
       one by one.
     </para>
     <sect1 id="creatingbase">
-      <title>Creating a base chroot image</title>
+      <title>Creating a base chroot image tar-ball</title>
       <para>
 	<command>pbuilder create</command>
-	will create a base chroot image.
-	All other commands will operate on the resulting base chroot image.
+	will create a base chroot image tar-ball (base.tgz).
+	All other commands will operate on the resulting base.tgz
 
 	If the Debian release to be created within chroot is not going
 	to be "sid" (which is the default), the distribution code-name
@@ -119,16 +119,16 @@
       </para>
     </sect1>
     <sect1 id="basechroot">
-      <title>Updating the base chroot image</title>
+      <title>Updating the base.tgz</title>
       <para><command>pbuilder update</command>
-	will update the chroot image.
+	will update the base.tgz.
 	It will extract the chroot, invoke <command>apt-get update</command>
 	and <command>apt-get dist-upgrade</command> inside the
-	chroot, and then recreate the base tar-ball.
+	chroot, and then recreate the base.tgz (the base tar-ball.)
       </para>
       <para>
-	It is possible to switch the distribution which the chroot
-	tar-ball is targeted at at this point.
+	It is possible to switch the distribution which the 
+	base.tgz is targeted at at this point.
 	Specify <command><option>--distribution <parameter>sid</parameter></option> <option>--override-config</option></command> to change the distribution
 	to sid.
 	<footnote>
@@ -142,13 +142,14 @@
       </para>
     </sect1>
     <sect1 id="buildpackagechroot">
-      <title>Building a package using the chroot image</title>
+      <title>Building a package using the base.tgz</title>
       <para>
 	To build a package inside the chroot, invoke
 	<command>pbuilder build <option>whatever.dsc</option></command>.
 	<command>pbuilder</command> will extract
-	the chroot image to a temporary working directory,
-	and satisfy the build-dependencies inside the chroot,
+	the base.tgz to a temporary working directory,
+	enter the directory with chroot, 
+	satisfy the build-dependencies inside chroot,
 	and build the package.
 	The built packages will be moved to a
 	directory specified with
@@ -157,11 +158,11 @@
       </para>
       <para>
 	The <command><option>--basetgz</option></command> option can be
-	used to specify which chroot image to use.
+	used to specify which base.tgz to use.
       </para>
       <para>
-	<command>pbuilder</command> will extract a fresh chroot image
-	created with <command>pbuilder build</command>
+	<command>pbuilder</command> will extract a fresh base chroot image
+	from base.tgz created with <command>pbuilder build</command>
 	and updated with <command>pbuilder update</command>,
 	and populate the chroot with build-dependencies by parsing
 	debian/control and invoking <command>apt-get</command>.
@@ -1458,7 +1459,7 @@ Pin-Priority: 950
 	<command>sbuild</command>.
       </para>
       <para>
-	It should be possible to create chroot images
+	It should be possible to create base chroot images
 	for <command>dchroot</command> with the following commands:
 	<screen>
 # pbuilder create --distribution etch --no-targz --basetgz /chroot/etch
