@@ -1,15 +1,14 @@
 I: using fakeroot in build.
-Current time: Tue May  8 12:32:58 JST 2007
-pbuilder-time-stamp: 1178595178
+Current time: Thu May 17 12:22:16 JST 2007
+pbuilder-time-stamp: 1179372136
 Building the build Environment
- -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.vUTsw26504/testimage]
+ -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
 Installing the build-deps
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
  -> Attempting to parse the build-deps 
  -> Considering build-dep debhelper (>> 3.0.0)
    -> Trying debhelper
@@ -41,9 +40,9 @@ Get:7 http://cdn.debian.or.jp sid/main po-debconf 1.0.8 [111kB]
 Get:8 http://cdn.debian.or.jp sid/main debhelper 5.0.49 [517kB]
 Get:9 http://cdn.debian.or.jp sid/main libdshconfig1 0.20.12-2 [10.9kB]
 Get:10 http://cdn.debian.or.jp sid/main libdshconfig1-dev 0.20.12-2 [25.3kB]
-Fetched 3546kB in 8s (436kB/s)
+Fetched 3546kB in 1s (3511kB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11050 files and directories currently installed.)
+(Reading database ... 11040 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.20-5_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.20-5_amd64.deb) ...
@@ -84,41 +83,32 @@ Building dependency tree...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 110kB of archives.
+Need to get 111kB of archives.
 After unpacking 451kB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.7.0.2 [110kB]
-Fetched 110kB in 1s (103kB/s)
+Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.7.1 [111kB]
+Fetched 111kB in 0s (893kB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11725 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.7.0.2_amd64.deb) ...
-Setting up fakeroot (1.7.0.2) ...
+(Reading database ... 11715 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.7.1_amd64.deb) ...
+Setting up fakeroot (1.7.1) ...
 
 Copying source file
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.vUTsw26504/dir1/dsh_0.25.7-1.dsc]
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.vUTsw26504/dir1/dsh_0.25.7.orig.tar.gz]
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.vUTsw26504/dir1/dsh_0.25.7-1.diff.gz]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir1/dsh_0.25.7-1.dsc]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir1/dsh_0.25.7.orig.tar.gz]
+    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir1/dsh_0.25.7-1.diff.gz]
 Extracting source
-dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 gpg: can't open `/gnupg/options.skel': No such file or directory
 gpg: Signature made Fri Aug 11 14:17:58 2006 UTC using DSA key ID E81E55C1
 gpg: Can't check signature: public key not found
 dpkg-source: extracting dsh in dsh-0.25.7
 dpkg-source: unpacking dsh_0.25.7.orig.tar.gz
+dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: applying ./dsh_0.25.7-1.diff.gz
  -> Building the package
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: source package is dsh
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: source version is 0.25.7-1
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-buildpackage: host architecture amd64
 dpkg-buildpackage: source version without epoch 0.25.7-1
-dpkg-checkbuilddeps: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
  fakeroot debian/rules clean
 dh_testdir
 dh_testroot
@@ -135,10 +125,6 @@ make[1]: Leaving directory `/tmp/buildd/dsh-0.25.7'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.7
-dpkg-source: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-source: building dsh using existing dsh_0.25.7.orig.tar.gz
 dpkg-source: building dsh in dsh_0.25.7-1.diff.gz
 dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
@@ -424,7 +410,7 @@ PASS: tests/param-r-invalid.sh
 1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Tue May  8 03:33:47 UTC 2007
+Thu May 17 03:23:02 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -494,13 +480,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Tue May  8 03:33:52 UTC 2007
+Thu May 17 03:23:07 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
+b: b
 a: a
 c: c
-b: b
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -578,8 +564,6 @@ dh_installexamples
 dh_installmenu
 dh_installman
 dh_installchangelogs ChangeLog 
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dh_link
 dh_strip
 dh_shlibdeps
@@ -589,23 +573,15 @@ dh_fixperms
 dh_installdeb
 dh_gencontrol
 dpkg-gencontrol: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
 dh_md5sums
 dh_builddeb
 dpkg-deb: building package `dsh' in `../dsh_0.25.7-1_amd64.deb'.
  dpkg-genchanges -mJunichi Uekawa <dancer@debian.org>
-dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-dpkg-parsechangelog: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-debian: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Tue May  8 12:33:54 JST 2007
-pbuilder-time-stamp: 1178595234
+Current time: Thu May 17 12:23:09 JST 2007
+pbuilder-time-stamp: 1179372189
  -> cleaning the build env 
-    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.vUTsw26504/dir1/8066 and its subdirectories
+    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir1/10586 and its subdirectories
