@@ -84,7 +84,7 @@ while [ -n "$1" ]; do
 	    ;;
 	--logfile)
 	    echo "  -> Logging to $2"
-	    exec > "$2";
+	    exec > >(tee "$2");
 	    exec 2>&1
 	    shift; shift;
 	    ;;
