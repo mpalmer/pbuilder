@@ -8,13 +8,14 @@ pbuilder (0.167) UNRELEASED; urgency=low
   * shut up lintian about binnmuability. Use {source:Version} instead of
     Source-Version, according to http://wiki.debian.org/binNMU
   * Use 'tee' to show output even in logged mode.
+  * trap SIGHUP as well as exit.
   
   [ Loic Minier ]
   * Tune aptitude opts in pbuilder-satisfydepends-aptitude to handle complex
     dependencies in experimental, to support unsigned APT repositories, and to
     not install Recommends.
 
- -- Junichi Uekawa <dancer@debian.org>  Thu, 17 May 2007 20:39:04 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 27 May 2007 02:51:32 +0900
 
 
 pbuilder (0.166) unstable; urgency=low

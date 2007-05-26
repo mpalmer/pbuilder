@@ -74,5 +74,5 @@ if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
     create_basetgz
 fi
 if [ "${PRESERVE_BUILDPLACE}" = "yes" ]; then
-    trap exit
+    trap exit sighup
 fi
