@@ -5,8 +5,6 @@ pbuilder (0.167) UNRELEASED; urgency=low
     as apt target.
   * Documentation/pbuilder.xml: Improve documentation wordings.
     add more pbuilder-test documentation.
-  * shut up lintian about binnmuability. Use {source:Version} instead of
-    Source-Version, according to http://wiki.debian.org/binNMU
   * Use 'tee' to show output even in logged mode.
   * trap SIGHUP as well as exit, and reorganize code around the change. 
     (Closes: #425454)
@@ -16,14 +14,17 @@ pbuilder (0.167) UNRELEASED; urgency=low
   - output is tee'd to terminal and also the logfile.
   * add C11screen example script, which starts up GNU screen after build
     failure.
-  * specify debian/compat (4) instead of DH_COMPAT in debian/rules
+
+  * shut up lintian: specify debian/compat (4) instead of DH_COMPAT in debian/rules
+  * shut up lintian about binnmuability. Use {source:Version} instead of
+    Source-Version, according to http://wiki.debian.org/binNMU
   
   [ Loic Minier ]
   * Tune aptitude opts in pbuilder-satisfydepends-aptitude to handle complex
     dependencies in experimental, to support unsigned APT repositories, and to
     not install Recommends.
 
- -- Junichi Uekawa <dancer@debian.org>  Sun, 27 May 2007 14:48:37 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 27 May 2007 14:52:51 +0900
 
 pbuilder (0.166) unstable; urgency=low
 
