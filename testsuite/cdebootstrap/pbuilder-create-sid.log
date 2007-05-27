@@ -323,20 +323,18 @@ P: Extracting tar
 P: Extracting tzdata
 P: Extracting util-linux
 O: Selecting previously deselected package base-passwd.
-O: (Reading database ... 
-O: 0 files and directories currently installed.)
+O: (Reading database ... 0 files and directories currently installed.)
 O: Unpacking base-passwd (from .../base-passwd_3.5.11_amd64.deb) ...
 P: Unpacking package base-passwd
+O: Setting up base-passwd (3.5.11) ...
+P: Configuring package base-passwd
 O: dpkg: base-passwd: dependency problems, but configuring anyway as you request:
 O:  base-passwd depends on libc6 (>= 2.3.5-1); however:
 O:   Package libc6 is not installed.
-O: Setting up base-passwd (3.5.11) ...
-P: Configuring package base-passwd
 O: 
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
-O: (Reading database ... 
-O: 24 files and directories currently installed.)
+O: (Reading database ... 24 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
@@ -368,7 +366,8 @@ O: Setting up dpkg (1.14.4) ...
 P: Configuring package dpkg
 O: 
 O: Selecting previously deselected package libc6.
-O: (Reading database ... 251 files and directories currently installed.)
+O: (Reading database ... 
+O: 251 files and directories currently installed.)
 O: Unpacking libc6 (from .../libc6_2.5-9_amd64.deb) ...
 P: Unpacking package libc6
 O: Selecting previously deselected package perl-base.
@@ -896,8 +895,8 @@ O: Setting up tzdata (2007f-4) ...
 P: Configuring package tzdata
 O: 
 O: Current default timezone: 'Etc/UTC'
-O: Local time is now:      Sun May 27 05:58:40 UTC 2007.
-O: Universal Time is now:  Sun May 27 05:58:40 UTC 2007.
+O: Local time is now:      Sun May 27 10:14:11 UTC 2007.
+O: Universal Time is now:  Sun May 27 10:14:11 UTC 2007.
 O: Run 'dpkg-reconfigure tzdata' if you wish to change it.
 O: 
 O: 
@@ -1043,6 +1042,7 @@ O: Get:2 bootstrap: . Release [79.6kB]
 O: Reading package lists...
 O: 
 O: Reading package lists...
+O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -1376,7 +1376,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//12889/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//NUM/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1385,7 +1385,7 @@ Refreshing the base.tgz
 Get:1 http://cdn.debian.or.jp sid Release.gpg [189B]
 Get:2 http://cdn.debian.or.jp sid Release [79.6kB]
 Get:3 http://cdn.debian.or.jp sid/main Packages [6219kB]
-Fetched XXkB in Xs (XXXXkB/s)
+Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
@@ -1426,7 +1426,7 @@ Get:13 http://cdn.debian.or.jp sid/main g++ 4:4.1.2-2 [1374B]
 Get:14 http://cdn.debian.or.jp sid/main make 3.81-3 [395kB]
 Get:15 http://cdn.debian.or.jp sid/main dpkg-dev 1.14.4 [178kB]
 Get:16 http://cdn.debian.or.jp sid/main build-essential 11.3 [6982B]
-Fetched 19.9MB in 17s (1134kB/s)
+Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package patch.
 (Reading database ... 7176 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
@@ -1488,10 +1488,10 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//12889/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
  -> creating base tarball [/TESTDIR/testimage]
  -> Aborting with an error
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//12889 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//NUM and its subdirectories
