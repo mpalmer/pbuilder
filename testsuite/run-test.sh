@@ -26,6 +26,8 @@ testbuild=$testdir/dir1
 testbuild2=$testdir/dir2
 testbuild3=$testdir/dir3
 
+export testdir
+
 HOOKOPTION=" --hookdir /usr/share/doc/pbuilder/examples/workaround"
 
 for DEBOOTSTRAP in debootstrap cdebootstrap; do
@@ -49,7 +51,7 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
     RESULTFILE=$(readlink -f ${RESULTFILE})
     
     for distribution in sid etch lenny; do
-	sudo ${PBUILDER} create $HOOKOPTION "${DEBOOTSTRAPOPTS[@]}" --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log 
+	sudo ${PBUILDER} create $HOOKOPTION "${DEBOOTSTRAPOPTS[@]}" --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log.orig 
 
 	log_success create-${distribution}-${DEBOOTSTRAP}
 	
@@ -59,7 +61,7 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
 		cd ${testbuild}
 		apt-get source -d ${PKG}
 	    )
-	    sudo ${PBUILDER} build --debemail "Junichi Uekawa <dancer@debian.org>" --basetgz ${testimage} --buildplace ${testbuild}/ --logfile ${logdir}/pbuilder-build-${PKG}-${distribution}.log ${testbuild}/${PKG}*.dsc
+	    sudo ${PBUILDER} build --debemail "Junichi Uekawa <dancer@debian.org>" --basetgz ${testimage} --buildplace ${testbuild}/ --logfile ${logdir}/pbuilder-build-${PKG}-${distribution}.log.orig ${testbuild}/${PKG}*.dsc
 	    log_success build-${distribution}-${PKG}
 	    
 	    (
@@ -68,33 +70,43 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
 		cd ${testbuild2}
 		apt-get source ${PKG}
 		cd ${PKG}-*
-		pdebuild --logfile ${logdir}/pdebuild-normal-${distribution}.log -- --basetgz ${testimage} --buildplace ${testbuild3}
+		pdebuild --logfile ${logdir}/pdebuild-normal-${distribution}.log.orig -- --basetgz ${testimage} --buildplace ${testbuild3}
 		log_success pdebuild-${distribution}-${PKG}
 		
-		pdebuild --use-pdebuild-internal --logfile ${logdir}/pdebuild-internal-${distribution}.log -- --basetgz ${testimage} --buildplace ${testbuild3}
+		pdebuild --use-pdebuild-internal --logfile ${logdir}/pdebuild-internal-${distribution}.log.orig -- --basetgz ${testimage} --buildplace ${testbuild3}
 		log_success pdebuild-internal-${distribution}-${PKG}
 	    )
 	done
-	sudo ${PBUILDER} execute --basetgz ${testimage} --logfile ${logdir}/pbuilder-execute-${distribution}.log ../examples/execute_paramtest.sh test1 test2 test3
+	sudo ${PBUILDER} execute --basetgz ${testimage} --logfile ${logdir}/pbuilder-execute-${distribution}.log.orig ../examples/execute_paramtest.sh test1 test2 test3
 	
 	# upgrading testing.
 	case $distribution in 
 	    etch)
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution lenny --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch.log 
-		log_success update-${distribution}-etch.log
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid.log 
-		log_success update-${distribution}-lenny-sid.log
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-lenny-sid-experimental.log 
-		log_success update-${distribution}-sid-experimental.log
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution lenny --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch.log.orig 
+		log_success update-${distribution}-etch
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid.log.orig 
+		log_success update-${distribution}-lenny-sid
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-lenny-sid-experimental.log.orig 
+		log_success update-${distribution}-sid-experimental
 		;;
 	    lenny)
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid.log 
-		log_success update-${distribution}-sid.log
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid-experimental.log 
-		log_success update-${distribution}-sid-experimental.log
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid.log.orig 
+		log_success update-${distribution}-sid
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid-experimental.log.orig 
+		log_success update-${distribution}-sid-experimental
 		;;
 	esac
 	sudo rm -rf ${testbuild} ${testbuild2} ${testimage} ${testbuild3}
+    done
+
+    for A in ${logdir}/*.log.orig; do
+	sed \
+	    -e "s,${testdir},/TESTDIR,g" \
+	    -e "s,^Current time:.*,Current time: TIME," \
+	    -e "s,^pbuilder-time-stamp: .*,pbuilder-time-stamp: XXXX," \
+	    -e "s,^Fetched .*kB in .*s (.*kB/s),Fetched XXkB in Xs (XXXXkB/s)," \
+	    < $A > ${A/.orig} && \
+	rm $A
     done
 
     echo '### RESULT: ###'
