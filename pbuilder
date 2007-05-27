@@ -55,10 +55,10 @@ case "$1" in
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	. /usr/lib/pbuilder/pbuilder-runhooks
 	extractbuildplace
-	trap umountproc_cleanbuildplace exit sighup
+	trap umountproc_cleanbuildplace_trap exit sighup
 	loadhooks
 	recover_aptcache
-	trap saveaptcache_umountproc_cleanbuildplace exit sighup
+	trap saveaptcache_umountproc_cleanbuildplace_trap exit sighup
 
 	if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
 	    echo " -> entering the shell"
@@ -72,21 +72,28 @@ File extracted to: $BUILDPLACE
 
 	save_aptcache
 
-	trap umountproc_cleanbuildplace exit sighup
+	trap umountproc_cleanbuildplace_trap exit sighup
 
 	# saving the place afterwards
 	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
 	    if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
 		echo "E: Invalid combination of internal-build-uml and save-after-login flags" >&2
+		exit 1
 	    else
 		echo " -> Saving the results, modifications to this session will persist"
 		unloadhooks
 		umountproc
-		trap cleanbuildplace exit sighup
+		trap cleanbuildplace_trap exit sighup
 		${CHROOTEXEC} /usr/bin/apt-get clean || true
 		create_basetgz
+		cleanbuildplace
+		trap exit sighup
+		exit 0
 	    fi
 	fi
+	umountproc_cleanbuildplace
+	trap exit sighup
+	exit 0
 	;;
     --execute|execute)
 	# try to execute arbitrary program.
@@ -101,11 +108,11 @@ File extracted to: $BUILDPLACE
 	fi;
 	extractbuildplace
 
-	trap umountproc_cleanbuildplace exit sighup
+	trap umountproc_cleanbuildplace_trap exit sighup
 
 	loadhooks
 	recover_aptcache
-	trap saveaptcache_umountproc_cleanbuildplace exit sighup
+	trap saveaptcache_umountproc_cleanbuildplace_trap exit sighup
 
 	RUNNAME="$BUILDPLACE/run"
 	cat "$EXECPROGRAM" > "$RUNNAME"
@@ -115,7 +122,7 @@ File extracted to: $BUILDPLACE
 	rm -f "$RUNNAME"
 
 	save_aptcache
-	trap umountproc_cleanbuildplace exit sighup
+	trap umountproc_cleanbuildplace_trap exit sighup
 
 	# saving the place afterwards
 	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
@@ -125,18 +132,24 @@ File extracted to: $BUILDPLACE
 		echo " -> Saving the results, modifications to this session will persist"
 		unloadhooks
 		umountproc
-		trap cleanbuildplace exit sighup
+		trap cleanbuildplace_trap exit sighup
 		${CHROOTEXEC} /usr/bin/apt-get clean || true
 		create_basetgz
+		cleanbuildplace
+		trap exit sighup
+		exit 0
 	    fi
 	fi
+	umountproc_cleanbuildplace
+	trap exit sighup
+	exit 0
 	;;
     --dumpconfig|dumpconfig)
 	shift
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	. /usr/lib/pbuilder/pbuilder-runhooks
 	extractbuildplace
-	trap umountproc_cleanbuildplace exit sighup
+	trap umountproc_cleanbuildplace_trap exit sighup
 	loadhooks
 	executehooks "F"
 	echo " -> start dump config"

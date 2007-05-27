@@ -21,7 +21,7 @@
 
 set -e
 
-function cleanup_function () {
+function cleanup_function_trap () {
     rm -f ${INSIDE_PBUILDER}
     ${EXTRACLEANUP}
 }
@@ -51,7 +51,7 @@ function operate_uml () {
     # opeartes on UML, and runs pbuilder $1
     # use this script file to bootstrap the pbuilder inside the UML
     INSIDE_PBUILDER=$(tempfile)
-    trap cleanup_function exit sighup
+    trap cleanup_function_trap exit sighup
     UML_CHROOT_MOUNTPOINT=/var/cache/pbuilder/pbuilder-mnt
     UML_CHROOT_BUILDRESULTMOUNTDIR=/var/cache/pbuilder/pbuilder-umlresult
 #The following script is ran inside UML as soon as it is started.

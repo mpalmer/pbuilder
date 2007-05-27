@@ -432,6 +432,24 @@ function create_basetgz() {
     )
 }
 
+# all trap hooks that should lead to 'exit'; and error exit.
+function cleanbuildplace_trap () {
+    cleanbuildplace
+    exit 1
+}
+function saveaptcache_umountproc_cleanbuildplace_trap () {
+    saveaptcache_umountproc_cleanbuildplace
+    exit 1
+}
+function umountproc_cleanbuildplace_trap () {
+    umountproc_cleanbuildplace
+    exit 1
+}
+function umountproc_trap () {
+    umountproc
+    exit 1
+}
+
 #Setting environmental variables that are really required:
 #required for some packages to install...
 export LANG=C

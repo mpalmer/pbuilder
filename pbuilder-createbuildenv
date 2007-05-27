@@ -81,7 +81,7 @@ executehooks "G"
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"
 mountproc
-$TRAP umountproc_cleanbuildplace exit sighup
+$TRAP umountproc_cleanbuildplace_trap exit sighup
 $CHROOTEXEC /usr/bin/apt-get update
 if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
@@ -95,13 +95,16 @@ executehooks "E"
 unloadhooks
 umountproc
 $CHROOTEXEC /usr/bin/apt-get clean || true
-
-$TRAP cleanbuildplace exit sighup
+$TRAP cleanbuildplace_trap exit sighup
 
 # Internal_build_uml is set when --no-targz is set, this code is actually never called from pbuilder-user-mode-linux
 if [ ! "${INTERNAL_BUILD_UML}" = "yes" ]; then
     create_basetgz
 fi
 if [ "${PRESERVE_BUILDPLACE}" = "yes" ]; then
-    trap exit sighup
+    :
+else
+    cleanbuildplace
 fi
+trap exit sighup
+exit 0
