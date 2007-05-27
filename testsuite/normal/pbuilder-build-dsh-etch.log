@@ -353,6 +353,7 @@ make[2]: Entering directory `/tmp/buildd/dsh-0.25.8/po'
 make[2]: Nothing to be done for `check'.
 make[2]: Leaving directory `/tmp/buildd/dsh-0.25.8/po'
 make[2]: Entering directory `/tmp/buildd/dsh-0.25.8'
+sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
 /usr/bin/make  dsh
 make[3]: Entering directory `/tmp/buildd/dsh-0.25.8'
 make[3]: `dsh' is up to date.
@@ -409,7 +410,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun May 27 09:58:13 UTC 2007
+Sun May 27 11:32:53 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -479,7 +480,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun May 27 09:58:18 UTC 2007
+Sun May 27 11:32:58 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh

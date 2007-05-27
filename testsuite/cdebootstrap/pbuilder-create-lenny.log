@@ -332,7 +332,8 @@ P: Configuring package base-passwd
 O: 
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
-O: (Reading database ... 24 files and directories currently installed.)
+O: (Reading database ... 
+O: 24 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
@@ -745,8 +746,8 @@ O: Setting up tzdata (2007f-3) ...
 P: Configuring package tzdata
 O: 
 O: Current default timezone: 'Etc/UTC'
-O: Local time is now:      Sun May 27 10:33:35 UTC 2007.
-O: Universal Time is now:  Sun May 27 10:33:35 UTC 2007.
+O: Local time is now:      Sun May 27 13:31:31 UTC 2007.
+O: Universal Time is now:  Sun May 27 13:31:31 UTC 2007.
 O: Run 'dpkg-reconfigure tzdata' if you wish to change it.
 O: 
 O: 
@@ -990,6 +991,8 @@ P: Configuring package gnupg
 O: Setting up debian-archive-keyring (2007.02.19) ...
 P: Configuring package debian-archive-keyring
 O: gpg: 
+O: keyring `/etc/apt/secring.gpg' created
+O: gpg: 
 O: keyring `/etc/apt/trusted.gpg' created
 O: gpg: 
 O: /etc/apt/trustdb.gpg: trustdb created
@@ -1031,7 +1034,6 @@ O: Get:2 bootstrap: . Release [68.5kB]
 O: Reading package lists...
 O: 
 O: Reading package lists...
-O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -1486,6 +1488,5 @@ kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill 
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
  -> creating base tarball [/TESTDIR/testimage]
- -> Aborting with an error
  -> cleaning the build env 
     -> removing directory /var/cache/pbuilder/build//NUM and its subdirectories
