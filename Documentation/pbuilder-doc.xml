@@ -980,7 +980,9 @@ cd /var/cache/pbuilder/result/
 	It is currently safe to ignore this warning message.  Please
 	report back if you find any problem with having LOGNAME unset.
 	Setting LOGNAME caused a few problems when invoking
-	<command>chroot</command>.
+	<command>chroot</command>. For example, dpkg requires getpwnam
+	to succeed inside chroot, which means LOGNAME and the related
+	user information have to be set up inside chroot.
       </para>
     </sect1>
     <sect1 id="nobuildconflictessential">

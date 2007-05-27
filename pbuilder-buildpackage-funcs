@@ -94,7 +94,7 @@ function createbuilduser () {
 	    cowprotect $BUILDPLACE/etc/shadow
 	    echo "$BUILDUSERNAME:!:::::::" >> $BUILDPLACE/etc/shadow
 	fi
-	unset LOGNAME || true
+	export LOGNAME="${BUILDUSERNAME}"
     else
 	unset LOGNAME || true
     fi
