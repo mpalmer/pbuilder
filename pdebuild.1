@@ -11,7 +11,7 @@ which invokes pbuilder after obtaining appropriate root privilege
 in a Debian source directory.
 One must be inside the source tree containing the
 .B "debian"
-directory, in order to make it work.
+directory.
 
 By default, build log file is stored in
 ../<package>_<version>_<arch>.build.
@@ -22,9 +22,9 @@ By default, build log file is stored in
 The first option is always the operation to be done.
 It is followed by options of the form
 .BI "\-\-" "option name"
-which will modify the semantics as explained below.
-They are applied from left-to-right, and when there are 
-conflicting options, the rightmost options will have effect.
+which modify the semantics as explained below.
+They are applied from left to right, and when
+options conflict, the rightmost options take effect.
 
 .TP
 .BI "\-\-buildsourceroot [" "fakeroot" "]"
@@ -49,18 +49,18 @@ Invoke debsign at the end of pdebuild process.
 .BI "\-\-debsign\-k [" "key\-id" "]"
 Pass 
 .B \-k
-option to debsign to specify which key-id to sign.
+option to debsign to specify which key-id to sign with.
 
 .TP
 .BI "\-\-buildresult [" "Directory for build results" "]"
 
-The place which build result is stored.
+The place where the build result is stored.
 
-Note that for pdebuild, buildresult needs to be specified as pdebuild
-option in the command-line, not as pbuilder option.
+Note that for pdebuild, buildresult needs to be specified as a pdebuild
+option on the command-line, not as a pbuilder option.
 
 Note that the default value for buildresult is what is defined for
-pbuilder,
+pbuilder, which is
 .B "/var/cache/pbuilder/result"
 and not 
 .B ".."
@@ -80,6 +80,9 @@ This option overrides pbuilder option
 
 Multiple options are delimited with spaces.
 
+Note that for pdebuild, debbuildopts needs to be specified as a pdebuild
+option in the command-line, not as a pbuilder option.
+
 .TP
 .BI "\-\-use\-pdebuild\-internal"
 Uses a different implementation of pdebuild, which calls clean and build inside 
@@ -87,7 +90,7 @@ the chroot, using bind-mounts.
 
 .B "pdebuild\-internal"
 tries to run debian/rules clean inside the chroot.
-To achieve the goal, the working directory is passed on inside the chroot,
+To do so, the working directory is passed on inside the chroot,
 in the form of bind-mounting and
 .B debuild 
 is run.
@@ -116,14 +119,16 @@ Show a brief help message.
 After the 
 .B "\-\-"
 symbol, an arbitrary number of pbuilder options can be specified.
-See pbuilder.8 for full list of options.
+See pbuilder.8 for a full list of options.
 
 
 There is an exception that
 .B "\-\-buildresult"
-needs to be specified as pdebuild option before the 
+and
+.B "\-\-debbuildopts"
+need to be specified as pdebuild options before the 
 .B "\-\-"
-to be effective.
+in order to be effective.
 
 .SH "FILES"
 .TP
@@ -136,8 +141,8 @@ The default configuration file for pbuilder, used in pdebuild.
 
 .TP
 .I "${HOME}/.pbuilderrc"
-Configuration file for pbuilder, used in pdebuild,
-overrides what is written in
+Configuration file for pbuilder, used in pdebuild.  It
+overrides
 .B /etc/pbuilderrc
 
 
@@ -181,10 +186,10 @@ option.  However, unless the option is documented in the manual page,
 it may be ignored.
 
 .SH "AUTHOR"
-Initial coding, and main maintenance is done by 
+Initial coding and main maintenance is done by 
 Junichi Uekawa <dancer@debian.org>.
 
-The homepage is available at
+The homepage is
 .B "\%http://www.netfort.gr.jp/~dancer/software/pbuilder.html"
 
 .SH "SEE ALSO"

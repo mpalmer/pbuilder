@@ -14,6 +14,8 @@ pbuilder (0.167) UNRELEASED; urgency=low
   - output is tee'd to terminal and also the logfile.
   * add C11screen example script, which starts up GNU screen after build
     failure.
+  * pdebuild.1 documentation clarification, thanks to Sanjoy Mahajan
+    (Closes: #425422).
 
   * shut up lintian: specify debian/compat (4) instead of DH_COMPAT in debian/rules
   * shut up lintian about binnmuability. Use {source:Version} instead of
@@ -24,7 +26,7 @@ pbuilder (0.167) UNRELEASED; urgency=low
     dependencies in experimental, to support unsigned APT repositories, and to
     not install Recommends.
 
- -- Junichi Uekawa <dancer@debian.org>  Sun, 27 May 2007 14:52:51 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 27 May 2007 15:41:12 +0900
 
 pbuilder (0.166) unstable; urgency=low
 
