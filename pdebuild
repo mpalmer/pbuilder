@@ -34,6 +34,13 @@ PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')
 ARCHITECTURE=$(dpkg-architecture -qDEB_HOST_ARCH)
 CHANGES="${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.changes"
 
+if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
+    PBUILDER_BUILD_LOGFILE="../${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.build"
+    exec > >(tee "${PBUILDER_BUILD_LOGFILE}");
+    exec 2>&1
+fi
+
+
 export BUILDRESULTUID=$(id -u)
 export BUILDRESULTGID=$(id -g)
 

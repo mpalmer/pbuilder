@@ -13,6 +13,10 @@ One must be inside the source tree containing the
 .B "debian"
 directory, in order to make it work.
 
+By default, build log file is stored in
+../<package>_<version>_<arch>.build.
+
+
 .SH "PDEBUILD OPTIONS"
 
 The first option is always the operation to be done.
@@ -93,7 +97,7 @@ from the build scripts.
 
 .TP
 .BI "\-\-logfile [" "file to log" "]"
-Specifies the logfile to create. 
+Specifies the build logfile to create. 
 The messages generated during execution will be written to the file, 
 as well as standard output.
 

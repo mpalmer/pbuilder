@@ -22,6 +22,8 @@
 . /usr/lib/pbuilder/pbuilder-loadconfig
 . /usr/lib/pbuilder/pbuilder-modules
 
+PBUILDER_BUILD_LOGFILE=
+
 while [ -n "$1" ]; do 
     case "$1" in 
 	    # pbuilder-shared options.
@@ -84,6 +86,7 @@ while [ -n "$1" ]; do
 	    ;;
 	--logfile)
 	    echo "  -> Logging to $2"
+	    PBUILDER_BUILD_LOGFILE=$(readlink -f $2)
 	    exec > >(tee "$2");
 	    exec 2>&1
 	    shift; shift;
