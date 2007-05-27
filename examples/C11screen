@@ -1,0 +1,8 @@
+#!/bin/bash
+# example file to be used with --hookdir
+#
+# invoke GNU screen if build fails.
+
+export debian_chroot="pbuilder"
+apt-get install -y --force-yes screen
+screen </dev/tty > /dev/tty

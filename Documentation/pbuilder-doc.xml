@@ -4,7 +4,7 @@
   and the latest version is found in git repository. -->
 <book xml:lang="en">
   <bookinfo>
-    <date>2007-4-10</date>
+    <date>2007-5-27</date>
     <title>pbuilder User's Manual</title>
     <abbrev>pbuilder-doc</abbrev>
     <subtitle>Usage and operations</subtitle>
@@ -785,6 +785,17 @@ read
 	directories such as <filename>/etc</filename> and
 	<filename>/usr</filename>.  The recommendation is to use
 	directories under the user's home directory for bind-mounts.
+      </para>
+    </sect1>
+    <sect1 id="shellafterfail">
+      <title>Logging in to pbuilder to investigate build failure</title>
+      <para>
+	It is possible to invoke a shell session after a build
+	failure.  Example hook script are provided as
+	<filename>C10shell</filename> and
+	<filename>C11screen</filename> scripts.  C10shell script will
+	start bash inside chroot, and C11screen script will start GNU
+	screen inside the chroot.
       </para>
     </sect1>
     <sect1 id="modifyupdate">
