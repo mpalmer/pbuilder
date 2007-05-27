@@ -8,18 +8,19 @@ pbuilder (0.167) UNRELEASED; urgency=low
   * shut up lintian about binnmuability. Use {source:Version} instead of
     Source-Version, according to http://wiki.debian.org/binNMU
   * Use 'tee' to show output even in logged mode.
-  * trap SIGHUP as well as exit.
+  * trap SIGHUP as well as exit, and reorganize code around the change. 
+    (Closes: #425454)
   * Improve log file support thanks to request from Russ Allbery
     (Closes: #424717).
   - pdebuild will create .build file in similar manner to debuild command
   - output is tee'd to terminal and also the logfile.
- 
+  
   [ Loic Minier ]
   * Tune aptitude opts in pbuilder-satisfydepends-aptitude to handle complex
     dependencies in experimental, to support unsigned APT repositories, and to
     not install Recommends.
 
- -- Junichi Uekawa <dancer@debian.org>  Sun, 27 May 2007 13:12:28 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 27 May 2007 13:50:46 +0900
 
 pbuilder (0.166) unstable; urgency=low
 
