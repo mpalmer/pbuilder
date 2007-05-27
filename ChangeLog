@@ -1,5 +1,28 @@
 2007-05-27  Junichi Uekawa  <dancer@debian.org>
 
+	* pbuilder-createbuildenv: pbuilder seems to always finish with 'Aborting with error', fix that.
+	* pbuilder-updatebuildenv: 
+
+	the following gives 0, 1 as output:
+	
+	function a_called()
+	{
+	        echo $?
+	}
+
+	function a ()
+	{
+	        a_called
+	}
+
+	trap a exit
+
+	false
+	:
+	a
+	exit 1
+	
+	
 	* pbuilder-buildpackage-funcs: set LOGNAME when build user is
 	created inside chroot.
 
