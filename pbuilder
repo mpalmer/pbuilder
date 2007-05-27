@@ -87,12 +87,12 @@ File extracted to: $BUILDPLACE
 		${CHROOTEXEC} /usr/bin/apt-get clean || true
 		create_basetgz
 		cleanbuildplace
-		trap exit sighup
+		trap - exit sighup
 		exit 0
 	    fi
 	fi
 	umountproc_cleanbuildplace
-	trap exit sighup
+	trap - exit sighup
 	exit 0
 	;;
     --execute|execute)
@@ -136,12 +136,12 @@ File extracted to: $BUILDPLACE
 		${CHROOTEXEC} /usr/bin/apt-get clean || true
 		create_basetgz
 		cleanbuildplace
-		trap exit sighup
+		trap - exit sighup
 		exit 0
 	    fi
 	fi
 	umountproc_cleanbuildplace
-	trap exit sighup
+	trap - exit sighup
 	exit 0
 	;;
     --dumpconfig|dumpconfig)

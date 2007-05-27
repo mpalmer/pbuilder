@@ -106,5 +106,5 @@ if [ "${PRESERVE_BUILDPLACE}" = "yes" ]; then
 else
     cleanbuildplace
 fi
-trap exit sighup
+trap - exit sighup
 exit 0
