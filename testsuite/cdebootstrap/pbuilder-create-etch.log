@@ -331,29 +331,28 @@ P: Configuring package base-passwd
 O: 
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
-O: (Reading database ... 24 files and directories currently installed.)
+O: (Reading database ... 
+O: 24 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
-O: (Reading database ... 
-O: 29 files and directories currently installed.)
+O: (Reading database ... 29 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: 
 O: Selecting previously deselected package dpkg.
+O: (Reading database ... 29 files and directories currently installed.)
+O: Unpacking dpkg (from .../dpkg_1.13.25_amd64.deb) ...
+P: Unpacking package dpkg
 O: dpkg: regarding .../dpkg_1.13.25_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on libc6 (>= 2.3.5-1)
 O: dpkg: warning - ignoring pre-dependency problem !
 O: dpkg: regarding .../dpkg_1.13.25_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on coreutils (>= 5.93-1)
 O: dpkg: warning - ignoring pre-dependency problem !
-O: (Reading database ... 
-O: 29 files and directories currently installed.)
-O: Unpacking dpkg (from .../dpkg_1.13.25_amd64.deb) ...
-P: Unpacking package dpkg
 O: dpkg: dpkg: dependency problems, but configuring anyway as you request:
 O:  dpkg depends on libc6 (>= 2.3.5-1); however:
 O:   Package libc6 is not installed.
@@ -888,7 +887,8 @@ O: Setting up debconf (1.5.11) ...
 P: Configuring package debconf
 O: 
 O: Selecting previously deselected package libbz2-1.0.
-O: (Reading database ... 4813 files and directories currently installed.)
+O: (Reading database ... 
+O: 4813 files and directories currently installed.)
 O: Unpacking libbz2-1.0 (from .../libbz2-1.0_1.0.3-6_amd64.deb) ...
 P: Unpacking package libbz2-1.0
 O: Selecting previously deselected package libgpg-error0.
@@ -1025,7 +1025,6 @@ O: Get:2 bootstrap: . Release [58.2kB]
 O: Reading package lists...
 O: 
 O: Reading package lists...
-O: 
 O: Building dependency tree...
 O: 
 O: Suggested packages:
@@ -1360,7 +1359,7 @@ umount: /proc/bus/usb: not found
 umount: /dev/shm: not mounted
 umount: /proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//4333/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+ -> user script /var/cache/pbuilder/build//2628/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
 Refreshing the base.tgz 
  -> upgrading packages
  -> mounting /proc filesystem
@@ -1413,7 +1412,7 @@ Get:14 http://cdn.debian.or.jp etch/main g++ 4:4.1.1-15 [1358B]
 Get:15 http://cdn.debian.or.jp etch/main make 3.81-2 [390kB]
 Get:16 http://cdn.debian.or.jp etch/main dpkg-dev 1.13.25 [166kB]
 Get:17 http://cdn.debian.or.jp etch/main build-essential 11.3 [6982B]
-Fetched 21.2MB in 23s (889kB/s)
+Fetched 21.2MB in 3s (6677kB/s)
 Selecting previously deselected package patch.
 (Reading database ... 7112 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
@@ -1479,9 +1478,10 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//4333/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+ -> user script /var/cache/pbuilder/build//2628/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
  -> creating base tarball [/TESTDIR/testimage]
+ -> Aborting with an error
  -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//4333 and its subdirectories
+    -> removing directory /var/cache/pbuilder/build//2628 and its subdirectories

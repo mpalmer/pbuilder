@@ -126,31 +126,31 @@ Unpacking fakeroot (from .../fakeroot_1.5.10_amd64.deb) ...
 Setting up fakeroot (1.5.10) ...
 
 dpkg-buildpackage: source package is dsh
-dpkg-buildpackage: source version is 0.25.7-1
+dpkg-buildpackage: source version is 0.25.8-1
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
 dpkg-buildpackage: host architecture amd64
-dpkg-buildpackage: source version without epoch 0.25.7-1
+dpkg-buildpackage: source version without epoch 0.25.8-1
  fakeroot debian/rules clean
 dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
 make: [clean] Error 2 (ignored)
 dh_clean
- dpkg-source -b dsh-0.25.7
-dpkg-source: building dsh using existing dsh_0.25.7.orig.tar.gz
-dpkg-source: building dsh in dsh_0.25.7-1.diff.gz
+ dpkg-source -b dsh-0.25.8
+dpkg-source: building dsh using existing dsh_0.25.8.orig.tar.gz
+dpkg-source: building dsh in dsh_0.25.8-1.diff.gz
 dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
 dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
-dpkg-source: building dsh in dsh_0.25.7-1.dsc
+dpkg-source: building dsh in dsh_0.25.8-1.dsc
  debian/rules build
 dh_testdir
 INSTALL_PROGRAM='install -p    -o root -g root  -m  755 -s' CFLAGS='-Wall -g -O2' \
@@ -172,7 +172,7 @@ checking whether we are using the GNU C compiler... yes
 checking whether gcc accepts -g... yes
 checking for gcc option to accept ISO C89... none needed
 checking dependency style of gcc... gcc3
-checking for library containing strerror... none required
+checking for strerror in -lcposix... no
 checking for gcc... (cached) gcc
 checking whether we are using the GNU C compiler... (cached) yes
 checking whether gcc accepts -g... (cached) yes
@@ -216,24 +216,24 @@ checking whether g++ accepts -g... yes
 checking dependency style of g++... gcc3
 checking how to run the C++ preprocessor... g++ -E
 checking for g77... no
-checking for f77... no
 checking for xlf... no
+checking for f77... no
 checking for frt... no
 checking for pgf77... no
 checking for cf77... no
 checking for fort77... no
 checking for fl32... no
 checking for af77... no
-checking for f90... no
 checking for xlf90... no
+checking for f90... no
 checking for pgf90... no
 checking for pghpf... no
 checking for epcf90... no
 checking for gfortran... no
 checking for g95... no
+checking for xlf95... no
 checking for f95... no
 checking for fort... no
-checking for xlf95... no
 checking for ifort... no
 checking for ifc... no
 checking for efc... no
@@ -337,18 +337,18 @@ config.status: creating po/Makefile
 touch configure-stamp
 dh_testdir
 /usr/bin/make
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
 /usr/bin/make  all-recursive
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
 Making all in m4
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/m4'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/m4'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/m4'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/m4'
 Making all in po
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/po'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/po'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/po'
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/po'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-dsh.o -MD -MP -MF ".deps/dsh-dsh.Tpo" -c -o dsh-dsh.o `test -f 'dsh.c' || echo './'`dsh.c; \
 	then mv -f ".deps/dsh-dsh.Tpo" ".deps/dsh-dsh.Po"; else rm -f ".deps/dsh-dsh.Tpo"; exit 1; fi
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-linkedlist.o -MD -MP -MF ".deps/dsh-linkedlist.Tpo" -c -o dsh-linkedlist.o `test -f 'linkedlist.c' || echo './'`linkedlist.c; \
@@ -361,26 +361,26 @@ gcc -Wall -g -O2 -o dsh dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  /usr/lib/lib
 mkdir build-man
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.5 > build-man/dsh.conf.5
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
 /usr/bin/make check
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
 Making check in m4
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/m4'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/m4'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/m4'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/m4'
 Making check in po
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/po'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/po'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/po'
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/po'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
 /usr/bin/make  dsh
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
 make[3]: `dsh' is up to date.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
 /usr/bin/make  check-TESTS
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
 PASS: tests/param-f.sh
 dsh: File ./tests/nonexistent.file could not be opened for read
 PASS: tests/param-f-fail.sh
@@ -392,7 +392,6 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
-dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -418,8 +417,8 @@ success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -427,11 +426,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun May 27 02:41:28 UTC 2007
+Sun May 27 06:23:16 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -501,14 +500,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun May 27 02:41:33 UTC 2007
+Sun May 27 06:23:21 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-b: b
-c: c
 dsh: Process terminated (before write).
+c: c
+b: b
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -517,9 +516,9 @@ PASS: tests/machinelist-order.sh
 ===================
 All 17 tests passed
 ===================
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
 touch build-stamp
  fakeroot debian/rules binary
 dh_testdir
@@ -527,58 +526,58 @@ dh_testroot
 dh_clean -k
 dh_installdirs
 # Add here commands to install the package into debian/dsh.
-/usr/bin/make install DESTDIR=/TESTDIR/dir2/dsh-0.25.7/debian/dsh
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+/usr/bin/make install DESTDIR=/TESTDIR/dir2/dsh-0.25.8/debian/dsh
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
 Making install in m4
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/m4'
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/m4'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/m4'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/m4'
 make[3]: Nothing to be done for `install-exec-am'.
 make[3]: Nothing to be done for `install-data-am'.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/m4'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/m4'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/m4'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/m4'
 Making install in po
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/po'
-/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share
-mkdir -p -- /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share
-mkdir -p -- /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/locale/ja/LC_MESSAGES
-installing ja.gmo as /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/po'
+/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share
+mkdir -p -- /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share
+mkdir -p -- /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/locale/ja/LC_MESSAGES
+installing ja.gmo as /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
 if test "dsh" = "gettext"; then \
-	  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/gettext/po; \
+	  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/gettext/po; \
 	  for file in Makefile.in.in Makevars remove-potcdate.sin   ; do \
 	    /usr/bin/install -c -m 644 ./$file \
-			    /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/gettext/po/$file; \
+			    /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/gettext/po/$file; \
 	  done; \
 	else \
 	  : ; \
 	fi
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/po'
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
-test -z "/usr/bin" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/bin"
-  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/bin/dsh'
-install -p -o root -g root -m 755 -s dsh /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/bin/dsh
-test -z "/etc/dsh" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.7/debian/dsh/etc/dsh"
- /usr/bin/install -c -m 644 'dsh.conf' '/TESTDIR/dir2/dsh-0.25.7/debian/dsh/etc/dsh/dsh.conf'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/po'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+test -z "/usr/bin" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/bin"
+  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/bin/dsh'
+install -p -o root -g root -m 755 -s dsh /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/bin/dsh
+test -z "/etc/dsh" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.8/debian/dsh/etc/dsh"
+ /usr/bin/install -c -m 644 'dsh.conf' '/TESTDIR/dir2/dsh-0.25.8/debian/dsh/etc/dsh/dsh.conf'
 for LANGS in ja ; do \
-		mkdir -p /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man1 ;\
-		mkdir -p /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man5 ;\
+		mkdir -p /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/$LANGS/man1 ;\
+		mkdir -p /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/$LANGS/man5 ;\
 		sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.$LANGS.1 \
-			> /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
+			> /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
 		sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.$LANGS.5 \
-			> /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
+			> /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
 	done
-test -z "/usr/share/man/man1" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man1"
- /usr/bin/install -c -m 644 './build-man/dsh.1' '/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man1/dsh.1'
-test -z "/usr/share/man/man5" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man5"
- /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man5/dsh.conf.5'
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
-cp /TESTDIR/dir2/dsh-0.25.7/debian/machines.list /TESTDIR/dir2/dsh-0.25.7/debian/dsh/etc/dsh/machines.list
-cp /TESTDIR/dir2/dsh-0.25.7/dsh.conf /TESTDIR/dir2/dsh-0.25.7/debian/dsh/etc/dsh/dsh.conf
-ln -s ../machines.list /TESTDIR/dir2/dsh-0.25.7/debian/dsh/etc/dsh/group/all
-install -d /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/lib/update-cluster
-install -m 755 /TESTDIR/dir2/dsh-0.25.7/debian/dsh.updatelist /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/lib/update-cluster/
+test -z "/usr/share/man/man1" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/man1"
+ /usr/bin/install -c -m 644 './build-man/dsh.1' '/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/man1/dsh.1'
+test -z "/usr/share/man/man5" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/man5"
+ /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/man5/dsh.conf.5'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+cp /TESTDIR/dir2/dsh-0.25.8/debian/machines.list /TESTDIR/dir2/dsh-0.25.8/debian/dsh/etc/dsh/machines.list
+cp /TESTDIR/dir2/dsh-0.25.8/dsh.conf /TESTDIR/dir2/dsh-0.25.8/debian/dsh/etc/dsh/dsh.conf
+ln -s ../machines.list /TESTDIR/dir2/dsh-0.25.8/debian/dsh/etc/dsh/group/all
+install -d /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/lib/update-cluster
+install -m 755 /TESTDIR/dir2/dsh-0.25.8/debian/dsh.updatelist /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/lib/update-cluster/
 dh_testdir
 dh_testroot
 dh_installdocs NEWS
@@ -595,7 +594,7 @@ dh_installdeb
 dh_gencontrol
 dh_md5sums
 dh_builddeb
-dpkg-deb: building package `dsh' in `../dsh_0.25.7-1_amd64.deb'.
+dpkg-deb: building package `dsh' in `../dsh_0.25.8-1_amd64.deb'.
  dpkg-genchanges
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
@@ -603,4 +602,4 @@ dpkg-buildpackage: full upload (original source is included)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
  -> cleaning the build env 
-    -> removing directory /TESTDIR/dir3/2917 and its subdirectories
+    -> removing directory /TESTDIR/dir3/563 and its subdirectories
