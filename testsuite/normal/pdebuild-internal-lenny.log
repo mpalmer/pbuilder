@@ -1,11 +1,11 @@
 W: /home/dancer/.pbuilderrc does not exist
 Building the build Environment
- -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/testimage]
+ -> extracting base tarball [/TESTDIR/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
--> Mounting /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2
+-> Mounting /TESTDIR/dir2
  -> policy-rc.d already exists
 Reading package lists...
 Building dependency tree...
@@ -25,7 +25,7 @@ Get:1 http://cdn.debian.or.jp lenny/main libdebian-installer4 0.50 [27.3kB]
 Get:2 http://cdn.debian.or.jp lenny/main libdebian-installer-extra4 0.50 [10.5kB]
 Get:3 http://cdn.debian.or.jp lenny/main cdebootstrap 0.3.15 [26.7kB]
 Get:4 http://cdn.debian.or.jp lenny/main pbuilder 0.161 [82.6kB]
-Fetched 147kB in 0s (536kB/s)
+Fetched XXkB in Xs (XXXXkB/s)
 Selecting previously deselected package libdebian-installer4.
 (Reading database ... 12030 files and directories currently installed.)
 Unpacking libdebian-installer4 (from .../libdebian-installer4_0.50_amd64.deb) ...
@@ -73,7 +73,7 @@ Get:7 http://cdn.debian.or.jp lenny/main po-debconf 1.0.8 [111kB]
 Get:8 http://cdn.debian.or.jp lenny/main debhelper 5.0.49 [517kB]
 Get:9 http://cdn.debian.or.jp lenny/main libdshconfig1 0.20.12-2 [10.9kB]
 Get:10 http://cdn.debian.or.jp lenny/main libdshconfig1-dev 0.20.12-2 [25.3kB]
-Fetched 3545kB in 1s (2534kB/s)
+Fetched XXkB in Xs (XXXXkB/s)
 Selecting previously deselected package libmagic1.
 (Reading database ... 12124 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.20-4_amd64.deb) ...
@@ -119,7 +119,7 @@ The following NEW packages will be installed:
 Need to get 103kB of archives.
 After unpacking 430kB of additional disk space will be used.
 Get:1 http://cdn.debian.or.jp lenny/main fakeroot 1.6.5 [103kB]
-Fetched 103kB in 0s (1538kB/s)
+Fetched XXkB in Xs (XXXXkB/s)
 Selecting previously deselected package fakeroot.
 (Reading database ... 12799 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.6.5_amd64.deb) ...
@@ -135,14 +135,14 @@ dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.7
@@ -337,18 +337,18 @@ config.status: creating po/Makefile
 touch configure-stamp
 dh_testdir
 /usr/bin/make
-make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
 /usr/bin/make  all-recursive
-make[2]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
 Making all in m4
-make[3]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/m4'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/m4'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/m4'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/m4'
 Making all in po
-make[3]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/po'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/po'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/po'
-make[3]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/po'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-dsh.o -MD -MP -MF ".deps/dsh-dsh.Tpo" -c -o dsh-dsh.o `test -f 'dsh.c' || echo './'`dsh.c; \
 	then mv -f ".deps/dsh-dsh.Tpo" ".deps/dsh-dsh.Po"; else rm -f ".deps/dsh-dsh.Tpo"; exit 1; fi
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-linkedlist.o -MD -MP -MF ".deps/dsh-linkedlist.Tpo" -c -o dsh-linkedlist.o `test -f 'linkedlist.c' || echo './'`linkedlist.c; \
@@ -361,26 +361,26 @@ gcc -Wall -g -O2 -o dsh dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  /usr/lib/lib
 mkdir build-man
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.5 > build-man/dsh.conf.5
-make[3]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
-make[2]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
-make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
 /usr/bin/make check
-make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
 Making check in m4
-make[2]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/m4'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/m4'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/m4'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/m4'
 Making check in po
-make[2]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/po'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/po'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/po'
-make[2]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/po'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
 /usr/bin/make  dsh
-make[3]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
 make[3]: `dsh' is up to date.
-make[3]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
 /usr/bin/make  check-TESTS
-make[3]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
 PASS: tests/param-f.sh
 dsh: File ./tests/nonexistent.file could not be opened for read
 PASS: tests/param-f-fail.sh
@@ -417,9 +417,9 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
-b: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
+b: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -431,7 +431,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Thu May 17 03:17:28 UTC 2007
+Sun May 27 02:24:20 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -501,12 +501,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Thu May 17 03:17:33 UTC 2007
+Sun May 27 02:24:25 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
+dsh: Process terminated (before write).
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -516,9 +517,9 @@ PASS: tests/machinelist-order.sh
 ===================
 All 17 tests passed
 ===================
-make[3]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
-make[2]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
-make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
 touch build-stamp
  fakeroot debian/rules binary
 dh_testdir
@@ -526,58 +527,58 @@ dh_testroot
 dh_clean -k
 dh_installdirs
 # Add here commands to install the package into debian/dsh.
-/usr/bin/make install DESTDIR=/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh
-make[1]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
+/usr/bin/make install DESTDIR=/TESTDIR/dir2/dsh-0.25.7/debian/dsh
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
 Making install in m4
-make[2]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/m4'
-make[3]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/m4'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/m4'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/m4'
 make[3]: Nothing to be done for `install-exec-am'.
 make[3]: Nothing to be done for `install-data-am'.
-make[3]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/m4'
-make[2]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/m4'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/m4'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/m4'
 Making install in po
-make[2]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/po'
-/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share
-mkdir -p -- /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share
-mkdir -p -- /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/locale/ja/LC_MESSAGES
-installing ja.gmo as /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7/po'
+/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share
+mkdir -p -- /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share
+mkdir -p -- /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/locale/ja/LC_MESSAGES
+installing ja.gmo as /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
 if test "dsh" = "gettext"; then \
-	  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/gettext/po; \
+	  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/gettext/po; \
 	  for file in Makefile.in.in Makevars remove-potcdate.sin   ; do \
 	    /usr/bin/install -c -m 644 ./$file \
-			    /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/gettext/po/$file; \
+			    /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/gettext/po/$file; \
 	  done; \
 	else \
 	  : ; \
 	fi
-make[2]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/po'
-make[2]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
-make[3]: Entering directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
-test -z "/usr/bin" || mkdir -p -- "/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/bin"
-  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/bin/dsh'
-install -p -o root -g root -m 755 -s dsh /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/bin/dsh
-test -z "/etc/dsh" || mkdir -p -- "/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/etc/dsh"
- /usr/bin/install -c -m 644 'dsh.conf' '/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/etc/dsh/dsh.conf'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7/po'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.7'
+test -z "/usr/bin" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/bin"
+  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/bin/dsh'
+install -p -o root -g root -m 755 -s dsh /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/bin/dsh
+test -z "/etc/dsh" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.7/debian/dsh/etc/dsh"
+ /usr/bin/install -c -m 644 'dsh.conf' '/TESTDIR/dir2/dsh-0.25.7/debian/dsh/etc/dsh/dsh.conf'
 for LANGS in ja ; do \
-		mkdir -p /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man1 ;\
-		mkdir -p /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man5 ;\
+		mkdir -p /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man1 ;\
+		mkdir -p /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man5 ;\
 		sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.$LANGS.1 \
-			> /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
+			> /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
 		sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.$LANGS.5 \
-			> /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
+			> /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
 	done
-test -z "/usr/share/man/man1" || mkdir -p -- "/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man1"
- /usr/bin/install -c -m 644 './build-man/dsh.1' '/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man1/dsh.1'
-test -z "/usr/share/man/man5" || mkdir -p -- "/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man5"
- /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man5/dsh.conf.5'
-make[3]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
-make[2]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
-make[1]: Leaving directory `/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7'
-cp /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/machines.list /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/etc/dsh/machines.list
-cp /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/dsh.conf /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/etc/dsh/dsh.conf
-ln -s ../machines.list /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/etc/dsh/group/all
-install -d /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/lib/update-cluster
-install -m 755 /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh.updatelist /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2/dsh-0.25.7/debian/dsh/usr/lib/update-cluster/
+test -z "/usr/share/man/man1" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man1"
+ /usr/bin/install -c -m 644 './build-man/dsh.1' '/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man1/dsh.1'
+test -z "/usr/share/man/man5" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man5"
+ /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/share/man/man5/dsh.conf.5'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.7'
+cp /TESTDIR/dir2/dsh-0.25.7/debian/machines.list /TESTDIR/dir2/dsh-0.25.7/debian/dsh/etc/dsh/machines.list
+cp /TESTDIR/dir2/dsh-0.25.7/dsh.conf /TESTDIR/dir2/dsh-0.25.7/debian/dsh/etc/dsh/dsh.conf
+ln -s ../machines.list /TESTDIR/dir2/dsh-0.25.7/debian/dsh/etc/dsh/group/all
+install -d /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/lib/update-cluster
+install -m 755 /TESTDIR/dir2/dsh-0.25.7/debian/dsh.updatelist /TESTDIR/dir2/dsh-0.25.7/debian/dsh/usr/lib/update-cluster/
 dh_testdir
 dh_testroot
 dh_installdocs NEWS
@@ -598,8 +599,8 @@ dpkg-deb: building package `dsh' in `../dsh_0.25.7-1_amd64.deb'.
  dpkg-genchanges
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
- -> unmounting /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir2 filesystem
+ -> unmounting /TESTDIR/dir2 filesystem
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
  -> cleaning the build env 
-    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir3/16848 and its subdirectories
+    -> removing directory /TESTDIR/dir3/18613 and its subdirectories

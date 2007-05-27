@@ -1,8 +1,8 @@
 I: using fakeroot in build.
-Current time: Thu May 17 12:22:16 JST 2007
-pbuilder-time-stamp: 1179372136
+Current time: TIME
+pbuilder-time-stamp: XXXX
 Building the build Environment
- -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/testimage]
+ -> extracting base tarball [/TESTDIR/testimage]
  -> creating local configuration
  -> copying local configuration
  -> mounting /proc filesystem
@@ -28,10 +28,10 @@ The following NEW packages will be installed:
   debhelper file gettext gettext-base html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3546kB of archives.
+Need to get 3549kB of archives.
 After unpacking 12.0MB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp sid/main libmagic1 4.20-5 [327kB]
-Get:2 http://cdn.debian.or.jp sid/main file 4.20-5 [39.2kB]
+Get:1 http://cdn.debian.or.jp sid/main libmagic1 4.20-8 [329kB]
+Get:2 http://cdn.debian.or.jp sid/main file 4.20-8 [39.6kB]
 Get:3 http://cdn.debian.or.jp sid/main gettext-base 0.16.1-1 [132kB]
 Get:4 http://cdn.debian.or.jp sid/main html2text 1.3.2a-3 [92.7kB]
 Get:5 http://cdn.debian.or.jp sid/main gettext 0.16.1-1 [2261kB]
@@ -40,12 +40,12 @@ Get:7 http://cdn.debian.or.jp sid/main po-debconf 1.0.8 [111kB]
 Get:8 http://cdn.debian.or.jp sid/main debhelper 5.0.49 [517kB]
 Get:9 http://cdn.debian.or.jp sid/main libdshconfig1 0.20.12-2 [10.9kB]
 Get:10 http://cdn.debian.or.jp sid/main libdshconfig1-dev 0.20.12-2 [25.3kB]
-Fetched 3546kB in 1s (3511kB/s)
+Fetched XXkB in Xs (XXXXkB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11040 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.20-5_amd64.deb) ...
+(Reading database ... 11070 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.20-8_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.20-5_amd64.deb) ...
+Unpacking file (from .../archives/file_4.20-8_amd64.deb) ...
 Selecting previously deselected package gettext-base.
 Unpacking gettext-base (from .../gettext-base_0.16.1-1_amd64.deb) ...
 Selecting previously deselected package html2text.
@@ -62,9 +62,9 @@ Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.12-2_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
 Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.12-2_amd64.deb) ...
-Setting up libmagic1 (4.20-5) ...
+Setting up libmagic1 (4.20-8) ...
 
-Setting up file (4.20-5) ...
+Setting up file (4.20-8) ...
 Setting up gettext-base (0.16.1-1) ...
 
 Setting up html2text (1.3.2a-3) ...
@@ -86,16 +86,16 @@ The following NEW packages will be installed:
 Need to get 111kB of archives.
 After unpacking 451kB of additional disk space will be used.
 Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.7.1 [111kB]
-Fetched 111kB in 0s (893kB/s)
+Fetched XXkB in Xs (XXXXkB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11715 files and directories currently installed.)
+(Reading database ... 11745 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.7.1_amd64.deb) ...
 Setting up fakeroot (1.7.1) ...
 
 Copying source file
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir1/dsh_0.25.7-1.dsc]
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir1/dsh_0.25.7.orig.tar.gz]
-    -> copying [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir1/dsh_0.25.7-1.diff.gz]
+    -> copying [/TESTDIR/dir1/dsh_0.25.7-1.dsc]
+    -> copying [/TESTDIR/dir1/dsh_0.25.7.orig.tar.gz]
+    -> copying [/TESTDIR/dir1/dsh_0.25.7-1.diff.gz]
 Extracting source
 gpg: can't open `/gnupg/options.skel': No such file or directory
 gpg: Signature made Fri Aug 11 14:17:58 2006 UTC using DSA key ID E81E55C1
@@ -396,9 +396,9 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
-b: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
+b: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -406,11 +406,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Thu May 17 03:23:02 UTC 2007
+Sun May 27 02:32:12 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -435,6 +435,18 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 DUMPing parameters passed to llexec
 [3] 
+4: Using sleep as the remote shell
+4: Show machine names on output
+4: Adding machine 5,4,3,2,1 to list
+4: Setting forklimit to 3 and wait_shell to 0
+4: DUMPing parameters passed to llexec
+4: [4] 
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+DUMPing parameters passed to llexec
+[4] 
 1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
@@ -449,18 +461,6 @@ Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 DUMPing parameters passed to llexec
 [1] 
-4: Using sleep as the remote shell
-4: Show machine names on output
-4: Adding machine 5,4,3,2,1 to list
-4: Setting forklimit to 3 and wait_shell to 0
-4: DUMPing parameters passed to llexec
-4: [4] 
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-DUMPing parameters passed to llexec
-[4] 
 5: Using sleep as the remote shell
 5: Show machine names on output
 5: Adding machine 5,4,3,2,1 to list
@@ -480,13 +480,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Thu May 17 03:23:07 UTC 2007
+Sun May 27 02:32:17 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-b: b
 a: a
+b: b
 c: c
+dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -581,7 +582,7 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
-Current time: Thu May 17 12:23:09 JST 2007
-pbuilder-time-stamp: 1179372189
+Current time: TIME
+pbuilder-time-stamp: XXXX
  -> cleaning the build env 
-    -> removing directory /home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.nKjau28087/dir1/10586 and its subdirectories
+    -> removing directory /TESTDIR/dir1/17760 and its subdirectories
