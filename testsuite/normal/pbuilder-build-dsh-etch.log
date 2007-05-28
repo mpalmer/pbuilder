@@ -353,7 +353,6 @@ make[2]: Entering directory `/tmp/buildd/dsh-0.25.8/po'
 make[2]: Nothing to be done for `check'.
 make[2]: Leaving directory `/tmp/buildd/dsh-0.25.8/po'
 make[2]: Entering directory `/tmp/buildd/dsh-0.25.8'
-sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
 /usr/bin/make  dsh
 make[3]: Entering directory `/tmp/buildd/dsh-0.25.8'
 make[3]: `dsh' is up to date.
@@ -396,9 +395,9 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -410,7 +409,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun May 27 11:32:53 UTC 2007
+Sun May 27 23:36:14 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -480,14 +479,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun May 27 11:32:58 UTC 2007
+Sun May 27 23:36:19 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
-c: c
 dsh: Process terminated (before write).
+c: c
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh

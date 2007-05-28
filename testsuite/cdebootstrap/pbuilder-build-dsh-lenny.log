@@ -395,9 +395,9 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -409,7 +409,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun May 27 13:41:35 UTC 2007
+Mon May 28 00:16:56 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -422,6 +422,18 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 DUMPing parameters passed to llexec
 [2] 
+3: Using sleep as the remote shell
+3: Show machine names on output
+3: Adding machine 5,4,3,2,1 to list
+3: Setting forklimit to 3 and wait_shell to 0
+3: DUMPing parameters passed to llexec
+3: [3] 
+Using sleep as the remote shell
+Show machine names on output
+Adding machine 5,4,3,2,1 to list
+Setting forklimit to 3 and wait_shell to 0
+DUMPing parameters passed to llexec
+[3] 
 1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
@@ -436,18 +448,6 @@ Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 DUMPing parameters passed to llexec
 [1] 
-3: Using sleep as the remote shell
-3: Show machine names on output
-3: Adding machine 5,4,3,2,1 to list
-3: Setting forklimit to 3 and wait_shell to 0
-3: DUMPing parameters passed to llexec
-3: [3] 
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-DUMPing parameters passed to llexec
-[3] 
 4: Using sleep as the remote shell
 4: Show machine names on output
 4: Adding machine 5,4,3,2,1 to list
@@ -479,14 +479,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun May 27 13:41:40 UTC 2007
+Mon May 28 00:17:01 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
+a: a
+dsh: Process terminated (before write).
 b: b
 c: c
-dsh: Process terminated (before write).
-a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh

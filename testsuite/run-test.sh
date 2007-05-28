@@ -107,6 +107,8 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
 	    -e "s,^Fetched .*B in .*s (.*B/s),Fetched XXXB in Xs (XXXXXB/s)," \
 	    -e "s,/var/cache/pbuilder/build//[0-9]*,/var/cache/pbuilder/build//NUM,g" \
 	    -e "s,\(/TESTDIR/dir[123]\)/[0-9]\+,\1/NUM,g" \
+	    -e "s,^Local time is now:.*,Local time is now: XXXX," \
+	    -e "s,^Universal time is now:.*,Universal time is now: XXXX," \
 	    < $A > ${A/.orig} && \
 	rm -f $A
     done
