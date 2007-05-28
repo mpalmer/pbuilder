@@ -1,6 +1,7 @@
 pbuilder (0.168) UNRELEASED; urgency=low
 
-  * set LOGNAME when build user is created within chroot.
+  * Bug fix: "Fix user/group name resolution inside chroot", thanks to
+    Anderson Lizardo (Closes: #398865).
   * do not always output 'Aborting with error' on create/update (bug
     introduced in 0.167)
   * fix man pages to have reference to pbuilder-doc.html, and fix home
@@ -9,7 +10,7 @@ pbuilder (0.168) UNRELEASED; urgency=low
   * fix C10shell script to work with the new 'tee' log mode. 
     (add '2> /dev/tty')
 
- -- Junichi Uekawa <dancer@debian.org>  Mon, 28 May 2007 20:30:07 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Mon, 28 May 2007 20:36:43 +0900
 
 pbuilder (0.167) unstable; urgency=low
 
