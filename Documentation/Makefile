@@ -5,6 +5,7 @@
 # ldp-docbook-xsl
 # xsltproc
 # po4a
+# dblatex
 
 MASTERXML=pbuilder-doc.xml
 
@@ -20,14 +21,9 @@ pbuilder-doc.%.xml: pbuilder-doc.%.po
 pbuilder-doc.%.po: $(MASTERXML)
 	po4a-updatepo -f docbook -m $< -p $@ 
 
-%.tex: %.xml debian-latex.xsl
-	## requires db2latex-xsl and xsltproc package.
-	xsltproc --nonet --novalid --xinclude debian-latex.xsl $< > $@.tmp
-	mv $@.tmp $@
-
-%.pdf: %.tex
-	pdflatex $<
-	pdflatex $<
+%.pdf: %.xml
+	# requires dblatex package.
+	dblatex $<
 
 install: pbuilder-doc.html
 	install -d -m 755 -o root -g root $(DESTDIR)/usr/share/doc/pbuilder/
