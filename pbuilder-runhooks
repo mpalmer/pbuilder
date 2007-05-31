@@ -5,9 +5,7 @@
 # Title:         pbuilder-runhooks
 # Description    User hooks for pbuilder package
 # Programmed by: Dale Amon <amon@vnl.com>
-# Date:          $Date$ 
-# Version:       $Revision$
-#
+
 # $HOOKDIR is set in /etc/pbuilderrc and contains a list of executable
 # programs or scripts. The type is only limited by what you expect will
 # be available in your chrooted environment after debootstrap has done
@@ -15,94 +13,10 @@
 # <prefex><digit><digit><descriptive name>. Currently only X is defined;
 # scripts prefixed with X will be run just before the chroot environment
 # is exited and the base.tgz file is created or updated.
-#
-# HISTORY:
-# $Log$
-# Revision 1.17  2003/12/10 23:18:48  dancer
-# +
-# +	* debuild-pbuilder.1: fix document formatting error, from Roland Stigge.
-# +
-# +	* pbuilder-runhooks (hooks): Try and detect file name non-matching case
-# +	for hooks, from Dale Amon.
-#
-# Revision 1.16  2003/11/16 07:08:54  dancer
-# +	* THANKS: add
-# +
-# +	* pbuilder-runhooks: fix warning messages to be more correct, thanks
-# +	to Daniel Martin.
-# +
-#
-# Revision 1.15  2003/03/10 10:02:11  dancer
-# +2003-03-10  Junichi Uekawa  <dancer@debian.org>
-# +
-# +	* pbuilder-satisfydepends: quote some strings... trying to be pedantic
-# +
-# +	* pbuilder-buildpackage-funcs: unset LOGNAME for when building with
-# +	real root privilage.
-# +	thanks Barak Pearlmutter <bap@cs.unm.edu>
-# +
-# +	* pbuilder.8: document X hooks which were previously undocumented.
-# +
-# +	* pbuilder-user-mode-linux (BUILDING_DSC_FILE): use readlink on real existing files.
-# +	GNU "readlink -f " exits with an exit code of 1 when the file does not
-# +	exist, debianutils readlink did not.
-# +
-# +	* pbuilder-runhooks (hooks): do not call readlink here,
-# +	  since the file may not exist.
-# +
-# +	* pbuilder-checkparams (USE_PKGNAME_LOGFILE): use readlink on real existing files.
-# +
-# +	* pbuilder-buildpackage (PACKAGENAME): use readlink on real existing files.
-# +
-#
-# Revision 1.14  2002/09/25 08:55:44  dancer
-# +	* pbuilder-runhooks (hooks): do not error out if there are no hooks in the hookdir.
-#
-# Revision 1.13  2002/02/24 12:06:55  dancer
-# release is ready, I've checked.
-#
-# Revision 1.12  2002/02/24 07:57:06  dancer
-# added hooks support for pbuilder build target.
-#
-# Revision 1.11  2001/10/21 05:03:21  dancer
-# fixing bugs related to runhooks, reported by Dale. Some serious logic disorder seems to be.
-#
-# Revision 1.10  2001/10/12 16:56:41  dancer
-# changing the error message to warning, because these messages do not stop execution
-#
-# Revision 1.9  2001/10/12 16:31:18  dancer
-# fixed my logical disorder.
-#
-# Revision 1.8  2001/10/12 15:54:32  dancer
-# diff
-#
-# Revision 1.7  2001/09/27 11:04:54  dancer
-# removing comment
-#
-# Revision 1.6  2001/09/27 11:03:56  dancer
-# removing pushd and popd.
-#
-# Revision 1.5  2001/09/27 09:16:34  dancer
-# fixing some serious typos .
-#
-# Revision 1.4  2001/09/27 08:20:58  dancer
-# changing little bits to my liking, and hopefully removing any potentially dangerous bits.
-#
-# Revision 1.3  2001/09/27 07:13:04  dancer
-# and even more reindentation.
-#
-# Revision 1.2  2001/09/27 07:12:51  dancer
-# reindent etc.
-#
-# Revision 1.1  2001/09/27 07:10:47  dancer
-# new file from dale amon.
-#
-# 20010925	Dale Amon <amon@vnl.com>
-#		Created.
-#		Thanks to Jens Ruehmkorf 
-#		<ruehmkorf@informatik.uni-koeln.de>
-#		for discussions and ideas.
-#
+
+# $BUILDPLACE is as used in pbuilder. When already inside chroot, this
+# routine can be called with $BUILDPLACE=''
+
 # TODO:		* Are there any other executable backup types we should
 #		  filtered besides *~ and *.bak?
 #

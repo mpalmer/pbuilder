@@ -72,6 +72,11 @@ while [ -n "$1" ]; do
     esac
 done
 
+# fool pbuilder-runhooks to use / as buildplace, since I am inside chroot.
+BUILDPLACE=
+. /usr/lib/pbuilder-runhooks
+
+executehooks "D"
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
 "$PBUILDERSATISFYDEPENDSCMD"
 apt-get install -y --force-yes fakeroot
@@ -81,9 +86,20 @@ groupadd -g "${BUILDRESULTGID}" -o pbgroup
 useradd -g pbgroup -u "${BUILDRESULTUID}" -o pbuser
 
 # what about id -G output? if other groups than the designated is used, we're stuffed.
-
 export HOME=$(pwd)/../
+
+executehooks "A"
 
 # do build with that user.
 export DEBBUILDOPTS
-echo /usr/bin/dpkg-buildpackage -rfakeroot -us -uc '${DEBBUILDOPTS}' | su -p pbuser
+if echo /usr/bin/dpkg-buildpackage -rfakeroot -us -uc '${DEBBUILDOPTS}' | \
+    su -p pbuser; 
+    then
+    # build was successful
+    :
+else
+    executehooks "C"
+    exit 1
+fi
+
+executehooks "B"
