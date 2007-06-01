@@ -74,7 +74,7 @@ done
 
 # fool pbuilder-runhooks to use / as buildplace, since I am inside chroot.
 BUILDPLACE=
-. /usr/lib/pbuilder-runhooks
+. /usr/lib/pbuilder/pbuilder-runhooks
 
 executehooks "D"
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
