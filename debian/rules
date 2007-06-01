@@ -59,7 +59,7 @@ binary-indep: build install
 
 # Build architecture-dependent files here.
 binary-arch: build install
-ifeq (${ARCH},i386)
+ifneq (,$(findstring ${ARCH},i386 amd64))
 	dh_testdir -a
 	dh_testroot -a
 	dh_installdocs -a
