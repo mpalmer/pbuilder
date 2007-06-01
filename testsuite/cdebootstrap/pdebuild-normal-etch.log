@@ -38,6 +38,7 @@ Building the build Environment
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
 Installing the build-deps
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
  -> Attempting to parse the build-deps 
  -> Considering build-dep debhelper (>> 3.0.0)
    -> Trying debhelper
@@ -437,7 +438,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon May 28 00:08:34 UTC 2007
+Fri Jun  1 09:29:06 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -507,13 +508,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon May 28 00:08:39 UTC 2007
+Fri Jun  1 09:29:11 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-dsh: Process terminated (before write).
 b: b
+dsh: Process terminated (before write).
 c: c
 PASS: tests/segv-catcher.sh
 l w

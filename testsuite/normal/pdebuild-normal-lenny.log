@@ -38,6 +38,7 @@ Building the build Environment
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
 Installing the build-deps
+dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; using uid of process (0)
  -> Attempting to parse the build-deps 
  -> Considering build-dep debhelper (>> 3.0.0)
    -> Trying debhelper
@@ -422,9 +423,9 @@ success
 success
 success
 success
+a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
-a: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -437,7 +438,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun May 27 23:45:29 UTC 2007
+Fri Jun  1 09:11:33 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -507,14 +508,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun May 27 23:45:34 UTC 2007
+Fri Jun  1 09:11:38 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
+a: a
 b: b
 c: c
 dsh: Process terminated (before write).
-a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh

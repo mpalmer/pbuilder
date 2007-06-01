@@ -24,23 +24,23 @@ After unpacking 844kB of additional disk space will be used.
 Get:1 http://cdn.debian.or.jp sid/main libdebian-installer4 0.51 [28.1kB]
 Get:2 http://cdn.debian.or.jp sid/main libdebian-installer-extra4 0.51 [10.6kB]
 Get:3 http://cdn.debian.or.jp sid/main cdebootstrap 0.4.3 [29.0kB]
-Get:4 http://cdn.debian.or.jp sid/main pbuilder 0.167 [87.1kB]
+Get:4 http://cdn.debian.or.jp sid/main pbuilder 0.168 [87.3kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libdebian-installer4.
-(Reading database ... 11070 files and directories currently installed.)
+(Reading database ... 11066 files and directories currently installed.)
 Unpacking libdebian-installer4 (from .../libdebian-installer4_0.51_amd64.deb) ...
 Selecting previously deselected package libdebian-installer-extra4.
 Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.51_amd64.deb) ...
 Selecting previously deselected package cdebootstrap.
 Unpacking cdebootstrap (from .../cdebootstrap_0.4.3_amd64.deb) ...
 Selecting previously deselected package pbuilder.
-Unpacking pbuilder (from .../pbuilder_0.167_all.deb) ...
+Unpacking pbuilder (from .../pbuilder_0.168_all.deb) ...
 Setting up libdebian-installer4 (0.51) ...
 
 Setting up libdebian-installer-extra4 (0.51) ...
 
 Setting up cdebootstrap (0.4.3) ...
-Setting up pbuilder (0.167) ...
+Setting up pbuilder (0.168) ...
 Setting DEBBUILDOPTS=
  -> Attempting to parse the build-deps 
  -> Considering build-dep debhelper (>> 3.0.0)
@@ -75,7 +75,7 @@ Get:9 http://cdn.debian.or.jp sid/main libdshconfig1 0.20.12-2 [10.9kB]
 Get:10 http://cdn.debian.or.jp sid/main libdshconfig1-dev 0.20.12-2 [25.3kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11170 files and directories currently installed.)
+(Reading database ... 11166 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.20-8_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.20-8_amd64.deb) ...
@@ -121,7 +121,7 @@ After unpacking 451kB of additional disk space will be used.
 Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.7.1 [111kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11845 files and directories currently installed.)
+(Reading database ... 11841 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.7.1_amd64.deb) ...
 Setting up fakeroot (1.7.1) ...
 
@@ -416,10 +416,10 @@ success
 success
 success
 success
-a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
+a: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -431,7 +431,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sun May 27 23:32:43 UTC 2007
+Fri Jun  1 08:59:08 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -501,14 +501,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sun May 27 23:32:48 UTC 2007
+Fri Jun  1 08:59:13 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-dsh: Process terminated (before write).
 b: b
 c: c
+dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
