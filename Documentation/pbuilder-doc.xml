@@ -161,11 +161,12 @@
 	used to specify which base.tgz to use.
       </para>
       <para>
-	<command>pbuilder</command> will extract a fresh base chroot image
-	from base.tgz created with <command>pbuilder build</command>
-	and updated with <command>pbuilder update</command>,
-	and populate the chroot with build-dependencies by parsing
-	debian/control and invoking <command>apt-get</command>.
+	<command>pbuilder</command> will extract a fresh base chroot
+	image from base.tgz. (base.tgz is created with
+	<command>pbuilder create</command>, and updated with
+	<command>pbuilder update</command>).  The chroot is populated
+	with build-dependencies by parsing debian/control and invoking
+	<command>apt-get</command>.
       </para>
       <para>
 	For fuller documentation of command-line options, see
