@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xxx\n"
 "POT-Creation-Date: 2007-06-04 23:23+0900\n"
-"PO-Revision-Date: 2007-06-04 23:29+0900\n"
+"PO-Revision-Date: 2007-06-05 07:40+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Junichi Uekawa <dancer@debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -348,6 +348,9 @@ msgid ""
 "be built inside the chroot, to check that the current source tree will build "
 "happily inside the chroot."
 msgstr ""
+"<command>pdebuild</command> は、あらゆる操作の中でももっとも頻繁に行われるだろう作業を簡略化するためのラッパースクリプトです。Debian Developerは Debian パッケージのソースディレクトリで <command>debuild</command> コマンドをうつことでパッケージをビルドします。\n"
+"<command>pdebuild</command> は同様の操作をすることで、パッケージを chroot 内部でビルドし、\n"
+"現在のツリーが chroot 内部でもビルドすることを確認します。"
 
 # type: Content of: <book><chapter><sect1><para><command>
 #: pbuilder-doc.xml:189
@@ -356,12 +359,12 @@ msgid ""
 "the source packages, and then invokes <command>pbuilder</command> on the "
 "resulting source package.  However, unlike debuild, the resulting deb files "
 "will be found in the <command>"
-msgstr ""
+msgstr "<command>pdebuild</command> はまず <command>dpkg-source</command> コマンドを起動し、ソースパッケージを作成し、<command>pbuilder</command> をそのソースパッケージに対して実行します。 debuild とは違い、生成されたdeb ファイルは <command>"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:193
 msgid "</command> directory."
-msgstr ""
+msgstr "</command> で指定されたディレクトリに生成されます。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:197
@@ -377,6 +380,8 @@ msgid ""
 "however, it is possible to change the behaviour to run it inside the chroot "
 "with the <command>"
 msgstr ""
+" <command>pdebuild</command> 0.97 から一つ違う実行モードが追加されています。 \n"
+"<command>pdebuild</command> は <command>debian/rules clean</command> chroot 外部で実行するのですが、chroot内部で実行するように <command>"
 
 # type: Content of: <book><chapter><sect1><para><option>
 #: pbuilder-doc.xml:205 pbuilder-doc.xml:1123
@@ -390,6 +395,9 @@ msgid ""
 "and run <command>dpkg-buildpackage</command> inside.  It has the following "
 "characteristics, and is not yet the default mode of operation."
 msgstr ""
+"</command> を指定することができます。\n"
+"chroot 内部に作業中のディレクトリをバインドマウントし、 <command>dpkg-buildpackage</command> を内部で実行します。\n"
+"以下の特徴があり、まだデフォルトにはなっていません。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:214
@@ -398,18 +406,20 @@ msgid ""
 "package.  (which is a good point that current <command>pdebuild</command> "
 "cannot do)."
 msgstr ""
+"ソースパッケージを作成する際に、Build-Depend を chroot 内部で満たす。\n"
+"(以前の <command>pdebuild</command> でできなかったよい点)."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:219
 msgid "The working directory is modified from inside the chroot."
-msgstr ""
+msgstr "作業ディレクトリに chroot 内部から変更を加えられる。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:223
 msgid ""
 "Building with <command>pdebuild</command> does not guarantee that it works "
 "with <command>pbuilder</command>."
-msgstr ""
+msgstr "<command>pdebuild</command> でビルドできることは <command>pbuilder</command> で必ず動くということが保証されるわけではない。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:227
@@ -417,22 +427,22 @@ msgid ""
 "If making the source package fails, the session using the chroot is wasted "
 "(chroot creation takes a bit of time, which should be improved with "
 "cowdancer)."
-msgstr ""
+msgstr "ソースパッケージを作るステップ自体が失敗した場合に、その chroot を利用する接書んは無駄に終わる（chroot の作成には時間がかかる、cowdancer 等で改善する。)"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><command>
 #: pbuilder-doc.xml:232
 msgid "Does not work in the same manner as it used to; for example, <command>"
-msgstr ""
+msgstr "以前と同じ方法で動作してくれない。たとえば、<command>"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:233
 msgid "</command> does not have any effect."
-msgstr ""
+msgstr "</command> がきかない。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:237
 msgid "The build inside chroot is ran with the current user outside chroot."
-msgstr ""
+msgstr "chroot 内部でのビルドは chroot 外部での現在のユーザで実行される。"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:243
@@ -688,7 +698,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:420
 msgid "Using pbuilder for automated testing of packages"
-msgstr ""
+msgstr "pbuilder を自動テストに利用する"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:422
@@ -1177,7 +1187,7 @@ msgstr ""
 # type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:752
 msgid "Frequently asked questions"
-msgstr ""
+msgstr "FAQ （よくある質問）"
 
 # type: Content of: <book><chapter><para>
 #: pbuilder-doc.xml:755
