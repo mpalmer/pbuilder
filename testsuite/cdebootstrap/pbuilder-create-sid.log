@@ -6,7 +6,7 @@ P: Retrieving Release
 P: Retrieving Release.gpg
 P: Validating Release
 O: gpgv: 
-O: Signature made Fri Jun  1 05:16:00 2007 JST using DSA key ID 6070D3A1
+O: Signature made Mon Jun  4 05:15:52 2007 JST using DSA key ID 6070D3A1
 I: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
 O: gpgv: 
 O: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
@@ -15,6 +15,10 @@ P: Parsing Release
 P: Retrieving Packages.gz
 P: Validating Packages.gz
 P: Parsing Packages
+P: Retrieving gcc-4.2-base
+P: Validating gcc-4.2-base
+P: Retrieving libgcc1
+P: Validating libgcc1
 P: Retrieving libc6
 P: Validating libc6
 P: Retrieving perl-base
@@ -53,10 +57,6 @@ P: Retrieving debconf
 P: Validating debconf
 P: Retrieving adduser
 P: Validating adduser
-P: Retrieving gcc-4.2-base
-P: Validating gcc-4.2-base
-P: Retrieving libgcc1
-P: Validating libgcc1
 P: Retrieving libstdc++6
 P: Validating libstdc++6
 P: Retrieving libbz2-1.0
@@ -265,7 +265,9 @@ P: Retrieving wget
 P: Validating wget
 P: Retrieving whiptail
 P: Validating whiptail
+P: Extracting gcc-4.2-base
 P: Extracting libc6
+P: Extracting libgcc1
 P: Extracting perl-base
 P: Extracting libpam-runtime
 P: Extracting libpam0g
@@ -283,8 +285,6 @@ P: Extracting libtext-charwidth-perl
 P: Extracting libtext-wrapi18n-perl
 P: Extracting debconf
 P: Extracting debconf-i18n
-P: Extracting gcc-4.2-base
-P: Extracting libgcc1
 P: Extracting libstdc++6
 P: Extracting zlib1g
 P: Extracting libncurses5
@@ -328,16 +328,15 @@ P: Extracting tar
 P: Extracting tzdata
 P: Extracting util-linux
 O: Selecting previously deselected package dpkg.
+O: (Reading database ... 0 files and directories currently installed.)
+O: Unpacking dpkg (from .../dpkg_1.14.4_amd64.deb) ...
+P: Unpacking package dpkg
 O: dpkg: regarding .../dpkg_1.14.4_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on libc6 (>= 2.5-5)
 O: dpkg: warning - ignoring pre-dependency problem !
 O: dpkg: regarding .../dpkg_1.14.4_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on coreutils (>= 5.93-1)
 O: dpkg: warning - ignoring pre-dependency problem !
-O: (Reading database ... 
-O: 0 files and directories currently installed.)
-O: Unpacking dpkg (from .../dpkg_1.14.4_amd64.deb) ...
-P: Unpacking package dpkg
 O: Setting up dpkg (1.14.4) ...
 P: Configuring package dpkg
 O: dpkg: dpkg: dependency problems, but configuring anyway as you request:
@@ -356,7 +355,8 @@ O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by c
 O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
-O: (Reading database ... 238 files and directories currently installed.)
+O: (Reading database ... 
+O: 238 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: chown: 
@@ -2701,7 +2701,6 @@ O:
 O: makedev sdf6 b 8 86 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: 
 O: makedev sdf7 b 8 87 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -6249,6 +6248,7 @@ O:
 O: makedev tty50 c 4 50 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
+O: 
 O: makedev vcs50 c 7 50 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -6896,7 +6896,6 @@ O:
 O: makedev cdu535 b 24 0 root cdrom 0660: failed
 O: chown: 
 O: `root:cdrom': invalid user
-O: 
 O: makedev optcd b 17 0 root cdrom 0660: failed
 O: chown: 
 O: `root:cdrom': invalid user
@@ -13227,6 +13226,7 @@ O:
 O: makedev rd/c6d4p2 b 54 34 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d4p3 b 54 35 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20139,6 +20139,7 @@ O:
 O: makedev cciss/c1d10p8 b 105 168 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d10p9 b 105 169 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -21772,11 +21773,17 @@ O: `root:disk': invalid user
 O: 
 O: makedev i2o/hdd15 b 80 63 root disk 0660: failed
 O: 
-O: Selecting previously deselected package libc6.
+O: Selecting previously deselected package gcc-4.2-base.
 O: (Reading database ... 
 O: 238 files and directories currently installed.)
-O: Unpacking libc6 (from .../libc6_2.5-9_amd64.deb) ...
+O: Unpacking gcc-4.2-base (from .../gcc-4.2-base_4.2-20070528-1_amd64.deb) ...
+P: Unpacking package gcc-4.2-base
+O: Selecting previously deselected package libc6.
+O: Unpacking libc6 (from .../libc6_2.5-10_amd64.deb) ...
 P: Unpacking package libc6
+O: Selecting previously deselected package libgcc1.
+O: Unpacking libgcc1 (from .../libgcc1_4.2-20070528-1_amd64.deb) ...
+P: Unpacking package libgcc1
 O: Selecting previously deselected package perl-base.
 O: dpkg: regarding .../perl-base_5.8.8-7_amd64.deb containing perl-base, pre-dependency problem:
 O:  perl-base pre-depends on libc6 (>= 2.3.5-1)
@@ -21821,11 +21828,11 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking login (from .../login_4.0.18.1-9_amd64.deb) ...
 P: Unpacking package login
 O: Selecting previously deselected package debianutils.
-O: dpkg: regarding .../debianutils_2.19_amd64.deb containing debianutils, pre-dependency problem:
+O: dpkg: regarding .../debianutils_2.20.1_amd64.deb containing debianutils, pre-dependency problem:
 O:  debianutils pre-depends on libc6 (>= 2.5-5)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking debianutils (from .../debianutils_2.19_amd64.deb) ...
+O: Unpacking debianutils (from .../debianutils_2.20.1_amd64.deb) ...
 P: Unpacking package debianutils
 O: Selecting previously deselected package passwd.
 O: Unpacking passwd (from .../passwd_4.0.18.1-9_amd64.deb) ...
@@ -21860,12 +21867,6 @@ P: Unpacking package debconf
 O: Selecting previously deselected package debconf-i18n.
 O: Unpacking debconf-i18n (from .../debconf-i18n_1.5.13_all.deb) ...
 P: Unpacking package debconf-i18n
-O: Selecting previously deselected package gcc-4.2-base.
-O: Unpacking gcc-4.2-base (from .../gcc-4.2-base_4.2-20070528-1_amd64.deb) ...
-P: Unpacking package gcc-4.2-base
-O: Selecting previously deselected package libgcc1.
-O: Unpacking libgcc1 (from .../libgcc1_4.2-20070528-1_amd64.deb) ...
-P: Unpacking package libgcc1
 O: Selecting previously deselected package libstdc++6.
 O: Unpacking libstdc++6 (from .../libstdc++6_4.2-20070528-1_amd64.deb) ...
 P: Unpacking package libstdc++6
@@ -22017,14 +22018,14 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking e2fsprogs (from .../e2fsprogs_1.39+1.40-WIP-2007.04.07+dfsg-2_amd64.deb) ...
 P: Unpacking package e2fsprogs
 O: Selecting previously deselected package findutils.
-O: dpkg: regarding .../findutils_4.2.30-1_amd64.deb containing findutils, pre-dependency problem:
-O:  findutils pre-depends on libc6 (>= 2.5)
+O: dpkg: regarding .../findutils_4.2.31-1_amd64.deb containing findutils, pre-dependency problem:
+O:  findutils pre-depends on libc6 (>= 2.5-5)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking findutils (from .../findutils_4.2.30-1_amd64.deb) ...
+O: Unpacking findutils (from .../findutils_4.2.31-1_amd64.deb) ...
 P: Unpacking package findutils
 O: Selecting previously deselected package gcc-4.1-base.
-O: Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1.2-10_amd64.deb) ...
+O: Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1.2-11_amd64.deb) ...
 P: Unpacking package gcc-4.1-base
 O: Selecting previously deselected package grep.
 O: dpkg: regarding .../grep_2.5.1.ds2-6_amd64.deb containing grep, pre-dependency problem:
@@ -22110,7 +22111,7 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking tar (from .../tar_1.16.1-1_amd64.deb) ...
 P: Unpacking package tar
 O: Selecting previously deselected package tzdata.
-O: Unpacking tzdata (from .../tzdata_2007f-4_all.deb) ...
+O: Unpacking tzdata (from .../tzdata_2007f-7_all.deb) ...
 P: Unpacking package tzdata
 O: Selecting previously deselected package util-linux.
 O: dpkg: regarding .../util-linux_2.12r-19_amd64.deb containing util-linux, pre-dependency problem:
@@ -22137,7 +22138,7 @@ O: Unpacking util-linux (from .../util-linux_2.12r-19_amd64.deb) ...
 P: Unpacking package util-linux
 O: Setting up sysv-rc (2.86.ds1-38) ...
 P: Configuring package sysv-rc
-O: Setting up gcc-4.1-base (4.1.2-10) ...
+O: Setting up gcc-4.1-base (4.1.2-11) ...
 P: Configuring package gcc-4.1-base
 O: 
 O: Setting up gcc-4.2-base (4.2-20070528-1) ...
@@ -22146,7 +22147,7 @@ O:
 O: Setting up libpam-runtime (0.79-4) ...
 P: Configuring package libpam-runtime
 O: 
-O: Setting up libc6 (2.5-9) ...
+O: Setting up libc6 (2.5-10) ...
 P: Configuring package libc6
 O: 
 O: Setting up libcap1 (1:1.10-14) ...
@@ -22154,7 +22155,7 @@ P: Configuring package libcap1
 O: 
 O: Setting up mktemp (1.5-3) ...
 P: Configuring package mktemp
-O: Setting up debianutils (2.19) ...
+O: Setting up debianutils (2.20.1) ...
 P: Configuring package debianutils
 O: 
 O: Setting up libuuid1 (1.39+1.40-WIP-2007.04.07+dfsg-2) ...
@@ -22222,7 +22223,7 @@ O:
 O: Setting up libss2 (1.39+1.40-WIP-2007.04.07+dfsg-2) ...
 P: Configuring package libss2
 O: 
-O: Setting up findutils (4.2.30-1) ...
+O: Setting up findutils (4.2.31-1) ...
 P: Configuring package findutils
 O: 
 O: Setting up gzip (1.3.9-2) ...
@@ -22263,6 +22264,8 @@ O:
 O: Setting up libdevmapper1.02.1 (2:1.02.18-1) ...
 P: Configuring package libdevmapper1.02.1
 O: 
+O: Setting up debconf-i18n (1.5.13) ...
+P: Configuring package debconf-i18n
 O: Setting up libblkid1 (1.39+1.40-WIP-2007.04.07+dfsg-2) ...
 P: Configuring package libblkid1
 O: 
@@ -22275,6 +22278,9 @@ P: Configuring package sysvinit-utils
 O: Setting up bash (3.1dfsg-8) ...
 P: Configuring package bash
 O: 
+O: Setting up debconf (1.5.13) ...
+P: Configuring package debconf
+O: 
 O: Setting up login (1:4.0.18.1-9) ...
 P: Configuring package login
 O: 
@@ -22282,6 +22288,15 @@ O: Setting up lsb-base (3.1-23.1) ...
 P: Configuring package lsb-base
 O: Setting up procps (1:3.2.7-3) ...
 P: Configuring package procps
+O: 
+O: Setting up tzdata (2007f-7) ...
+P: Configuring package tzdata
+O: 
+O: Current default timezone: 'Etc/UTC'
+O: Local time is now: XXXX
+O: Universal Time is now: XXXX
+O: Run 'dpkg-reconfigure tzdata' if you wish to change it.
+O: 
 O: 
 O: Setting up mount (2.12r-19) ...
 P: Configuring package mount
@@ -22293,28 +22308,14 @@ O:
 O: Setting up initscripts (2.86.ds1-38) ...
 P: Configuring package initscripts
 O: 
+O: Setting up util-linux (2.12r-19) ...
+P: Configuring package util-linux
+O: 
 O: Setting up sysvinit (2.86.ds1-38) ...
 P: Configuring package sysvinit
 O: sysvinit: creating /dev/initctl
 O: init: 
 O: timeout opening/writing control channel /dev/initctl
-O: 
-O: Setting up debconf-i18n (1.5.13) ...
-P: Configuring package debconf-i18n
-O: Setting up debconf (1.5.13) ...
-P: Configuring package debconf
-O: 
-O: Setting up tzdata (2007f-4) ...
-P: Configuring package tzdata
-O: 
-O: Current default timezone: 'Etc/UTC'
-O: Local time is now: XXXX
-O: Universal Time is now: XXXX
-O: Run 'dpkg-reconfigure tzdata' if you wish to change it.
-O: 
-O: 
-O: Setting up util-linux (2.12r-19) ...
-P: Configuring package util-linux
 O: 
 O: Selecting previously deselected package libbz2-1.0.
 O: (Reading database ... 
@@ -22751,14 +22752,14 @@ P: Configuring package wget
 O: 
 O: Setting up whiptail (0.52.2-10) ...
 P: Configuring package whiptail
-O: Setting up klogd (1.4.1-20) ...
-P: Configuring package klogd
-O: 
 O: Setting up sysklogd (1.4.1-20) ...
 P: Configuring package sysklogd
 O: 
 O: Setting up tasksel-data (2.67) ...
 P: Configuring package tasksel-data
+O: Setting up klogd (1.4.1-20) ...
+P: Configuring package klogd
+O: 
 O: Setting up tasksel (2.67) ...
 P: Configuring package tasksel
 O: 
@@ -22799,7 +22800,7 @@ Refreshing the base.tgz
  -> installing dummy policy-rc.d
 Get:1 http://cdn.debian.or.jp sid Release.gpg [189B]
 Get:2 http://cdn.debian.or.jp sid Release [79.6kB]
-Get:3 http://cdn.debian.or.jp sid/main Packages [6267kB]
+Get:3 http://cdn.debian.or.jp sid/main Packages [6246kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
@@ -22830,13 +22831,13 @@ Get:2 http://cdn.debian.or.jp sid/main perl-modules 5.8.8-7 [2310kB]
 Get:3 http://cdn.debian.or.jp sid/main perl 5.8.8-7 [4240kB]
 Get:4 http://cdn.debian.or.jp sid/main binutils 2.17cvs20070426-8 [2559kB]
 Get:5 http://cdn.debian.or.jp sid/main linux-libc-dev 2.6.21-4 [698kB]
-Get:6 http://cdn.debian.or.jp sid/main libc6-dev 2.5-9 [2472kB]
-Get:7 http://cdn.debian.or.jp sid/main cpp-4.1 4.1.2-10 [2514kB]
+Get:6 http://cdn.debian.or.jp sid/main libc6-dev 2.5-10 [2473kB]
+Get:7 http://cdn.debian.or.jp sid/main cpp-4.1 4.1.2-11 [2514kB]
 Get:8 http://cdn.debian.or.jp sid/main cpp 4:4.1.2-2 [11.9kB]
-Get:9 http://cdn.debian.or.jp sid/main gcc-4.1 4.1.2-10 [424kB]
+Get:9 http://cdn.debian.or.jp sid/main gcc-4.1 4.1.2-11 [424kB]
 Get:10 http://cdn.debian.or.jp sid/main gcc 4:4.1.2-2 [5056B]
-Get:11 http://cdn.debian.or.jp sid/main libstdc++6-4.1-dev 4.1.2-10 [1155kB]
-Get:12 http://cdn.debian.or.jp sid/main g++-4.1 4.1.2-10 [2822kB]
+Get:11 http://cdn.debian.or.jp sid/main libstdc++6-4.1-dev 4.1.2-11 [1155kB]
+Get:12 http://cdn.debian.or.jp sid/main g++-4.1 4.1.2-11 [2822kB]
 Get:13 http://cdn.debian.or.jp sid/main g++ 4:4.1.2-2 [1374B]
 Get:14 http://cdn.debian.or.jp sid/main make 3.81-3 [395kB]
 Get:15 http://cdn.debian.or.jp sid/main dpkg-dev 1.14.4 [178kB]
@@ -22854,19 +22855,19 @@ Unpacking binutils (from .../binutils_2.17cvs20070426-8_amd64.deb) ...
 Selecting previously deselected package linux-libc-dev.
 Unpacking linux-libc-dev (from .../linux-libc-dev_2.6.21-4_amd64.deb) ...
 Selecting previously deselected package libc6-dev.
-Unpacking libc6-dev (from .../libc6-dev_2.5-9_amd64.deb) ...
+Unpacking libc6-dev (from .../libc6-dev_2.5-10_amd64.deb) ...
 Selecting previously deselected package cpp-4.1.
-Unpacking cpp-4.1 (from .../cpp-4.1_4.1.2-10_amd64.deb) ...
+Unpacking cpp-4.1 (from .../cpp-4.1_4.1.2-11_amd64.deb) ...
 Selecting previously deselected package cpp.
 Unpacking cpp (from .../cpp_4%3a4.1.2-2_amd64.deb) ...
 Selecting previously deselected package gcc-4.1.
-Unpacking gcc-4.1 (from .../gcc-4.1_4.1.2-10_amd64.deb) ...
+Unpacking gcc-4.1 (from .../gcc-4.1_4.1.2-11_amd64.deb) ...
 Selecting previously deselected package gcc.
 Unpacking gcc (from .../gcc_4%3a4.1.2-2_amd64.deb) ...
 Selecting previously deselected package libstdc++6-4.1-dev.
-Unpacking libstdc++6-4.1-dev (from .../libstdc++6-4.1-dev_4.1.2-10_amd64.deb) ...
+Unpacking libstdc++6-4.1-dev (from .../libstdc++6-4.1-dev_4.1.2-11_amd64.deb) ...
 Selecting previously deselected package g++-4.1.
-Unpacking g++-4.1 (from .../g++-4.1_4.1.2-10_amd64.deb) ...
+Unpacking g++-4.1 (from .../g++-4.1_4.1.2-11_amd64.deb) ...
 Selecting previously deselected package g++.
 Unpacking g++ (from .../g++_4%3a4.1.2-2_amd64.deb) ...
 Selecting previously deselected package make.
@@ -22879,20 +22880,20 @@ Setting up patch (2.5.9-4) ...
 Setting up binutils (2.17cvs20070426-8) ...
 
 Setting up linux-libc-dev (2.6.21-4) ...
-Setting up libc6-dev (2.5-9) ...
-Setting up cpp-4.1 (4.1.2-10) ...
+Setting up libc6-dev (2.5-10) ...
+Setting up cpp-4.1 (4.1.2-11) ...
 Setting up cpp (4:4.1.2-2) ...
 
-Setting up gcc-4.1 (4.1.2-10) ...
+Setting up gcc-4.1 (4.1.2-11) ...
 Setting up gcc (4:4.1.2-2) ...
 
 Setting up make (3.81-3) ...
+Setting up libstdc++6-4.1-dev (4.1.2-11) ...
 Setting up perl-modules (5.8.8-7) ...
-Setting up libstdc++6-4.1-dev (4.1.2-10) ...
-Setting up perl (5.8.8-7) ...
-
-Setting up g++-4.1 (4.1.2-10) ...
+Setting up g++-4.1 (4.1.2-11) ...
 Setting up g++ (4:4.1.2-2) ...
+
+Setting up perl (5.8.8-7) ...
 
 Setting up dpkg-dev (1.14.4) ...
 Setting up build-essential (11.3) ...

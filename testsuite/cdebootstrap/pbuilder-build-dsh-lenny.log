@@ -29,10 +29,10 @@ The following NEW packages will be installed:
   debhelper file gettext gettext-base html2text intltool-debian libdshconfig1
   libdshconfig1-dev libmagic1 po-debconf
 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3545kB of archives.
+Need to get 3549kB of archives.
 After unpacking 12.0MB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp lenny/main libmagic1 4.20-4 [326kB]
-Get:2 http://cdn.debian.or.jp lenny/main file 4.20-4 [38.7kB]
+Get:1 http://cdn.debian.or.jp lenny/main libmagic1 4.20-8 [329kB]
+Get:2 http://cdn.debian.or.jp lenny/main file 4.20-8 [39.6kB]
 Get:3 http://cdn.debian.or.jp lenny/main gettext-base 0.16.1-1 [132kB]
 Get:4 http://cdn.debian.or.jp lenny/main html2text 1.3.2a-3 [92.7kB]
 Get:5 http://cdn.debian.or.jp lenny/main gettext 0.16.1-1 [2261kB]
@@ -43,10 +43,10 @@ Get:9 http://cdn.debian.or.jp lenny/main libdshconfig1 0.20.12-2 [10.9kB]
 Get:10 http://cdn.debian.or.jp lenny/main libdshconfig1-dev 0.20.12-2 [25.3kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 12030 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.20-4_amd64.deb) ...
+(Reading database ... 12101 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.20-8_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.20-4_amd64.deb) ...
+Unpacking file (from .../archives/file_4.20-8_amd64.deb) ...
 Selecting previously deselected package gettext-base.
 Unpacking gettext-base (from .../gettext-base_0.16.1-1_amd64.deb) ...
 Selecting previously deselected package html2text.
@@ -63,9 +63,9 @@ Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.12-2_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
 Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.12-2_amd64.deb) ...
-Setting up libmagic1 (4.20-4) ...
+Setting up libmagic1 (4.20-8) ...
 
-Setting up file (4.20-4) ...
+Setting up file (4.20-8) ...
 Setting up gettext-base (0.16.1-1) ...
 
 Setting up html2text (1.3.2a-3) ...
@@ -84,14 +84,14 @@ Building dependency tree...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 103kB of archives.
-After unpacking 430kB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp lenny/main fakeroot 1.6.5 [103kB]
+Need to get 111kB of archives.
+After unpacking 451kB of additional disk space will be used.
+Get:1 http://cdn.debian.or.jp lenny/main fakeroot 1.7.1 [111kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12705 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.6.5_amd64.deb) ...
-Setting up fakeroot (1.6.5) ...
+(Reading database ... 12776 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.7.1_amd64.deb) ...
+Setting up fakeroot (1.7.1) ...
 
 Copying source file
     -> copying [/TESTDIR/dir1/dsh_0.25.8-1.dsc]
@@ -396,9 +396,9 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
+b: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
-b: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -410,7 +410,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Jun  1 09:36:59 UTC 2007
+Mon Jun  4 03:38:51 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -480,7 +480,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Fri Jun  1 09:37:04 UTC 2007
+Mon Jun  4 03:38:56 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
