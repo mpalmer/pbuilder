@@ -25,9 +25,10 @@ pbuilder-doc.%.po: $(MASTERXML)
 	# requires dblatex package.
 	dblatex $<
 
-install: pbuilder-doc.html
+install: pbuilder-doc.html pbuilder-doc.pdf
 	install -d -m 755 -o root -g root $(DESTDIR)/usr/share/doc/pbuilder/
 	install -m 644 -o root -g root pbuilder-doc.html $(DESTDIR)/usr/share/doc/pbuilder/
+	install -m 644 -o root -g root pbuilder-doc.pdf $(DESTDIR)/usr/share/doc/pbuilder/
 
 preview: pbuilder-doc.html
 	mozilla-firefox -remote "openfile($(PWD)/$<)"
