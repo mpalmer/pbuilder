@@ -1,20 +1,24 @@
 TODO and possible bugs: 
 
+* lenny goal!:
+   - support --allow-unauthenticated and package signatures; #317998
+pbuilder support for signatures will hopefully come
+
+* apt authentication support
+Add hooks to install gnupg package.
+Allow new keys to be registered into pbuilder chroots.
+Document in manual.
+test
+
+
 * /etc/pbuilderrc
 I want to not make it a conffile, but removing the file is a problem,
    since I already have /etc/pbuilder/pbuilderrc symlink.
 
 * pdebuild-internal
-   - hooks should be supported (342613)
    - Use pbuilder cache in pdebuild-internal (235237)
 I think I just need to add hacks to copy stuff.
    - testsuite for pdebuild-internal?
-
-* post-etch:
-   - support --allow-unauthenticated and package signiatures; #317998
-
-pbuilder support for signatures will hopefully come
-
    - support readlink -e usage instead of readlink -f.
 
 This is too trivial, but anyway. Debian 3.1 does not support 
@@ -31,22 +35,8 @@ Maybe document the limitation.
 * use arrays for debbuildopts
    - current --debbuildopts usages will break, how do we support it?
 
-* dpkg does not work in woody chroot under 2.6.11 or later kernels
-   - depends-on debian-bug: 322309 dpkg: no action
-   - depends-on debian-bug: 329468 debootstrap: fixed in 0.3.2
-   - depends-on debian-bug: 332903 cdebootstrap: no action
-
-* save-afer-login seems to save aptcache and make a big base.tgz.
-   we don't want it, clean aptcache before save test it is functional.
-
 * revert back to using --variant=buildd for debootstrap
    - depends-on debian-bug: 314858 debootstrap: fixed in 0.3.2
-
-* apt authentication support
-Add hooks to install gnupg package.
-Allow new keys to be registered into pbuilder chroots.
-Document in manual.
-test
 
 * BUG: Too many options! Creeping featurism!!
 
