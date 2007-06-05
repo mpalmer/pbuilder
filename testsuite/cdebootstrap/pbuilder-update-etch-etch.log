@@ -21,13 +21,13 @@ The following packages will be upgraded:
   base-files binutils cpio debconf debconf-i18n debianutils dhcp3-client
   dhcp3-common diff dmidecode findutils gzip info iputils-ping klogd
   laptop-detect libacl1 libattr1 libc6 libc6-dev libgcrypt11 libgpg-error0
-  libldap2 libncurses5 libncursesw5 libopencdk8 libsepol1 libslang2
-  libssl0.9.8 libtasn1-3 libusb-0.1-4 make man-db manpages mktemp
-  module-init-tools nano ncurses-base ncurses-bin netcat sed sysklogd tar
-  tasksel tasksel-data tzdata vim-common vim-tiny zlib1g
-49 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 20.1MB of archives.
-After unpacking 3695kB of additional disk space will be used.
+  libldap2 libncurses5 libncursesw5 libopencdk8 libreadline5 libsepol1
+  libslang2 libssl0.9.8 libtasn1-3 libusb-0.1-4 make man-db manpages mktemp
+  module-init-tools nano ncurses-base ncurses-bin netcat readline-common sed
+  sysklogd tar tasksel tasksel-data tzdata vim-common vim-tiny zlib1g
+51 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 20.2MB of archives.
+After unpacking 3609kB of additional disk space will be used.
 Get:1 http://cdn.debian.or.jp lenny/main debconf-i18n 1.5.13 [151kB]
 Get:2 http://cdn.debian.or.jp lenny/main debconf 1.5.13 [148kB]
 Get:3 http://cdn.debian.or.jp lenny/main tzdata 2007f-3 [384kB]
@@ -50,7 +50,7 @@ Get:19 http://cdn.debian.or.jp lenny/main libacl1 2.2.42-1 [16.1kB]
 Get:20 http://cdn.debian.or.jp lenny/main libsepol1 1.14-3 [125kB]
 Get:21 http://cdn.debian.or.jp lenny/main libslang2 2.0.7-1 [453kB]
 Get:22 http://cdn.debian.or.jp lenny/main zlib1g 1:1.2.3-15 [73.5kB]
-Get:23 http://cdn.debian.or.jp lenny/main cpio 2.7-1 [114kB]
+Get:23 http://cdn.debian.or.jp lenny/main cpio 2.7-3 [115kB]
 Get:24 http://cdn.debian.or.jp lenny/main dhcp3-client 3.0.4-14 [222kB]
 Get:25 http://cdn.debian.or.jp lenny/main dhcp3-common 3.0.4-14 [287kB]
 Get:26 http://cdn.debian.or.jp lenny/main dmidecode 2.9-1 [58.8kB]
@@ -64,20 +64,22 @@ Get:33 http://cdn.debian.or.jp lenny/main libgcrypt11 1.2.4-2 [190kB]
 Get:34 http://cdn.debian.or.jp lenny/main libldap2 2.1.30-13.4 [162kB]
 Get:35 http://cdn.debian.or.jp lenny/main libncursesw5 5.6-3 [358kB]
 Get:36 http://cdn.debian.or.jp lenny/main libopencdk8 0.5.13-2 [104kB]
-Get:37 http://cdn.debian.or.jp lenny/main libssl0.9.8 0.9.8e-5 [909kB]
-Get:38 http://cdn.debian.or.jp lenny/main libtasn1-3 0.3.9-1 [57.8kB]
-Get:39 http://cdn.debian.or.jp lenny/main libusb-0.1-4 2:0.1.12-7 [20.4kB]
-Get:40 http://cdn.debian.or.jp lenny/main man-db 2.4.4-3 [765kB]
-Get:41 http://cdn.debian.or.jp lenny/main manpages 2.49-1 [495kB]
-Get:42 http://cdn.debian.or.jp lenny/main module-init-tools 3.3-pre11-1 [85.3kB]
-Get:43 http://cdn.debian.or.jp lenny/main nano 2.0.3-1 [570kB]
-Get:44 http://cdn.debian.or.jp lenny/main netcat 1.10-33 [68.3kB]
-Get:45 http://cdn.debian.or.jp lenny/main tasksel 2.67 [76.7kB]
-Get:46 http://cdn.debian.or.jp lenny/main tasksel-data 2.67 [345kB]
-Get:47 http://cdn.debian.or.jp lenny/main vim-tiny 1:7.0-219+1 [617kB]
-Get:48 http://cdn.debian.or.jp lenny/main vim-common 1:7.0-219+1 [185kB]
-Get:49 http://cdn.debian.or.jp lenny/main make 3.81-3 [395kB]
-Extracting templates from packages: 61%Extracting templates from packages: 100%
+Get:37 http://cdn.debian.or.jp lenny/main readline-common 5.2-3 [50.8kB]
+Get:38 http://cdn.debian.or.jp lenny/main libreadline5 5.2-3 [144kB]
+Get:39 http://cdn.debian.or.jp lenny/main libssl0.9.8 0.9.8e-5 [909kB]
+Get:40 http://cdn.debian.or.jp lenny/main libtasn1-3 0.3.9-1 [57.8kB]
+Get:41 http://cdn.debian.or.jp lenny/main libusb-0.1-4 2:0.1.12-7 [20.4kB]
+Get:42 http://cdn.debian.or.jp lenny/main man-db 2.4.4-3 [765kB]
+Get:43 http://cdn.debian.or.jp lenny/main manpages 2.49-1 [495kB]
+Get:44 http://cdn.debian.or.jp lenny/main module-init-tools 3.3-pre11-1 [85.3kB]
+Get:45 http://cdn.debian.or.jp lenny/main nano 2.0.3-1 [570kB]
+Get:46 http://cdn.debian.or.jp lenny/main netcat 1.10-33 [68.3kB]
+Get:47 http://cdn.debian.or.jp lenny/main tasksel 2.67 [76.7kB]
+Get:48 http://cdn.debian.or.jp lenny/main tasksel-data 2.67 [345kB]
+Get:49 http://cdn.debian.or.jp lenny/main vim-tiny 1:7.0-219+1 [617kB]
+Get:50 http://cdn.debian.or.jp lenny/main vim-common 1:7.0-219+1 [185kB]
+Get:51 http://cdn.debian.or.jp lenny/main make 3.81-3 [395kB]
+Extracting templates from packages: 58%Extracting templates from packages: 100%
 Preconfiguring packages ...
 Fetched XXXB in Xs (XXXXXB/s)
 (Reading database ... 12033 files and directories currently installed.)
@@ -188,7 +190,7 @@ Unpacking replacement zlib1g ...
 Setting up zlib1g (1.2.3-15) ...
 
 (Reading database ... 12111 files and directories currently installed.)
-Preparing to replace cpio 2.6-17 (using .../archives/cpio_2.7-1_amd64.deb) ...
+Preparing to replace cpio 2.6-17 (using .../archives/cpio_2.7-3_amd64.deb) ...
 Unpacking replacement cpio ...
 Preparing to replace dhcp3-client 3.0.4-13 (using .../dhcp3-client_3.0.4-14_amd64.deb) ...
 Unpacking replacement dhcp3-client ...
@@ -216,6 +218,10 @@ Preparing to replace libncursesw5 5.5-5 (using .../libncursesw5_5.6-3_amd64.deb)
 Unpacking replacement libncursesw5 ...
 Preparing to replace libopencdk8 0.5.9-2 (using .../libopencdk8_0.5.13-2_amd64.deb) ...
 Unpacking replacement libopencdk8 ...
+Preparing to replace readline-common 5.2-2 (using .../readline-common_5.2-3_all.deb) ...
+Unpacking replacement readline-common ...
+Preparing to replace libreadline5 5.2-2 (using .../libreadline5_5.2-3_amd64.deb) ...
+Unpacking replacement libreadline5 ...
 Preparing to replace libssl0.9.8 0.9.8c-4 (using .../libssl0.9.8_0.9.8e-5_amd64.deb) ...
 Unpacking replacement libssl0.9.8 ...
 Preparing to replace libtasn1-3 0.3.6-2 (using .../libtasn1-3_0.3.9-1_amd64.deb) ...
@@ -245,7 +251,7 @@ Unpacking replacement make ...
 Setting up binutils (2.17cvs20070426-8) ...
 
 Setting up libc6-dev (2.5-9) ...
-Setting up cpio (2.7-1) ...
+Setting up cpio (2.7-3) ...
 
 Setting up dhcp3-common (3.0.4-14) ...
 Setting up dhcp3-client (3.0.4-14) ...
@@ -264,6 +270,10 @@ Setting up libldap2 (2.1.30-13.4) ...
 Setting up libncursesw5 (5.6-3) ...
 
 Setting up libopencdk8 (0.5.13-2) ...
+
+Setting up readline-common (5.2-3) ...
+
+Setting up libreadline5 (5.2-3) ...
 
 Setting up libssl0.9.8 (0.9.8e-5) ...
 
