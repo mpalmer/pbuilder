@@ -137,9 +137,6 @@ This is to avoid
 overwriting already existing deb files with
 the newly generated ones.
 
-\" 
-\" 
-\" 
 .TP
 .BI "\-\-mirror [" "mirror location" "]"
 Specifies the URL of Debian mirror to be 
@@ -160,9 +157,6 @@ the chroot, and specifying
 .B "file:/somewhere/"
 will most probably fail.
 
-\" 
-\" 
-\" 
 .TP
 .BI "\-\-othermirror [" "deb http://xxx/xxx/ ./ " "|" " other deb lines... " "]"
 The lines which is added to the sources.list, delimited with 
@@ -182,10 +176,6 @@ mirror sites; apt will then use them in preference to the ones
 listed in 
 .B "\-\-mirror".
 
-
-\" 
-\" 
-\" 
 .TP
 .BI "\-\-distribution [" "distribution" "]"
 Specifies the distribution used. Currently the supported values are
@@ -212,10 +202,6 @@ target, or when
 .B "pbuilder create"
 is being called.
 
-
-\" 
-\" 
-\" 
 .TP
 .BI "\-\-http\-proxy [" "proxy" "]"
 Specifies the http proxy URL. Something like
@@ -229,14 +215,12 @@ be cached. Use
 .B "\-\-aptcache """""
 if you want caching to be turned off.
 
-
 .TP
 .BI "\-\-configfile [" "configuration file to load" "]"
 Additional configuration file to read after all other
 configuration files have been read.
 
 \" START OF hookdir description
-
 .TP
 .BI "\-\-hookdir [" "location of user scripts" "]"
 Specifies the location where scripts for user intervention during
@@ -320,7 +304,6 @@ in
 target.
 
 \" End of hookdir description
-
 .TP
 .BI "\-\-debbuildopts [" "options" "]"
 
@@ -382,7 +365,6 @@ and
 .B execute
 session.
 
-
 .TP
 .BI "\-\-autocleanaptcache"
 Clean apt cache automatically, to run apt-get autoclean to only 
@@ -429,7 +411,6 @@ and
 
 The packages should be specified as a space-delimited list.
 
-
 .TP
 .BI "\-\-debemail [" "maintainer-name <email-address>" "]"
 
@@ -466,7 +447,6 @@ chroot.
 This option overrides other options, and may cause some inconsistency
 problems.
 
-
 .TP
 .BI "\-\-timeout [" "timeout in sleep time" "]"
 Time out building after sleeping set time.
@@ -474,8 +454,6 @@ Specify something like
 .B "\-\-timeout 10h"
 in the command line.
 Default is no timeout.
-
-
 
 .TP
 .BI "\-\-no\-targz"
@@ -527,7 +505,6 @@ their build dependencies satisfied.
 It will clean up the build place on failure, 
 or after a successful build.
 
-
 .TP
 .BI "\-\-debug"
 
@@ -538,17 +515,17 @@ and try to avoid cleanup processing when error happens in
 .B create
 targets.
 
-
-
 .SH "FILES"
 .TP
 .I "/etc/pbuilderrc"
 The system-wide configuration file for pbuilder.
+
 .TP
 .I "/usr/share/pbuilder/pbuilderrc"
 The default settings for pbuilder, used as fallback for all 
 values that is not specified in
 .B "/etc/pbuilderrc."
+
 .TP
 .I "${HOME}/.pbuilderrc"
 The personal configuration file for pbuilder, which overrides
@@ -569,7 +546,6 @@ I: Retrieving Release
 I: Retrieving Packages
 I: Validating Packages
 .hy
-
 
 .TP
 .B "pbuilder update"

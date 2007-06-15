@@ -94,7 +94,6 @@ is specified for
 .B "pbuilder update" 
 option.
 
-
 .TP
 .BI "export http_proxy=" "http://your-proxy:8080/"
 Defines the proxy for http connection.
@@ -142,7 +141,6 @@ This can be useful e.g. for binary-only builds. The command-line option
 overrides any contents specified here.
 The default value is to build source and binary package.
 
-
 .TP
 .BI "BINDMOUNTS=" "directories-to-bind-mount"
 When this value is set, pbuilder will mount these directories using
@@ -174,7 +172,6 @@ with "--variant=buildd"
 option, which results in debootstrap creating a minimal chroot for 
 buildd instead of trying to create a minimal installation chroot.
 
-
 .TP
 .BI "DEBOOTSTRAP=" "debootstrap"
 Use this option to switch the implementation of
@@ -183,7 +180,6 @@ Known implementations of debootstrap are
 .B "cdebootstrap" 
 and
 .B "debootstrap"
-
 
 .TP
 .BI "EXTRAPACKAGES=" """ccache linda XXX"""
@@ -199,9 +195,6 @@ Also this is installed on
 Uses this variable as 
 .BR "DEBIAN_BUILDARCH" "."
 This trick can be used for other environmental variables as well.
-
-
-
 
 .TP
 .BI "USEPROC=" "yes"
@@ -225,13 +218,11 @@ are many software which fail miserably when there is no
 .B /dev/pts
 being mounted.
 
-
 .TP
 .BI "REMOVEPACKAGES=" "lilo"
 Specify the packages to be removed on creation of 
 .B base.tgz
 Leaving lilo in the chroot is like keeping a timebomb...
-
 
 .TP
 .BI "DEBEMAIL=" "Maintainer Name <Mail@Address>"
@@ -248,7 +239,6 @@ command-line option.
 The default configuration for 
 .B pbuilder
 is empty for this value.
-
 
 .TP
 .BI "BUILDSOURCEROOTCMD=" "fakeroot"
@@ -339,14 +329,11 @@ They are
 The default value is 
 .B "0"
 
-
 .TP
 .BI "AUTO_DEBSIGN=" "yes"
 When this value is set to yes, 
 .B pdebuild 
 will invoke debsign command after building.
-
-
 
 .TP
 .BI "PKGNAME_LOGFILE_EXTENTION=" ".build"
