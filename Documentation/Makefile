@@ -7,6 +7,7 @@
 # po4a
 # dblatex
 
+# the main XML file which is source to all documents
 MASTERXML=pbuilder-doc.xml
 
 all: pbuilder-doc.html pbuilder-doc.ja.html
