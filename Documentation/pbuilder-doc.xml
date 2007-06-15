@@ -272,7 +272,7 @@
       <para>
 	<command>pbuilder</command> requires full root privilege
 	when it is satisfying the build-dependencies, but most packages do not
-	need root privilege, or fail to build when they are root.
+	need root privilege to build, or even refused to build when they are built as root.
 	<command>pbuilder </command> can create a user which is only used
 	inside <command>pbuilder </command> and use that user id when
 	building, and use the <command>fakeroot</command> command
