@@ -1,4 +1,3 @@
-// (let* ((dot buffer-file-name) (eps (replace-regexp-in-string "dot$" "eps" dot)) (svg (replace-regexp-in-string "dot$" "svg" dot))) (shell-command (concat "dot "dot" -T svg > "svg"; inkscape "svg" -p \"> "eps"\" ; gv "eps)))
 // (let* ((dot buffer-file-name) (eps (replace-regexp-in-string "dot$" "eps" dot)) (svg (replace-regexp-in-string "dot$" "svg" dot))) (shell-command (concat "dot "dot" -T ps > "eps"; gv "eps)))
 digraph structure {
 mindist=1
