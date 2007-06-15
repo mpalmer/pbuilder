@@ -13,6 +13,9 @@ future.
 
 \subsection{Concepts of using pbuilder}
 
+
+\begin{wrapfigure}{rt}{0.3\hsize}\includegraphics[width=1\hsize]{pbuildercycle.eps}\end{wrapfigure}
+
 pbuilder facilitates clean-room environment testing of package building
 through using a chroot image and extracting a fresh chroot image for
 every build.
@@ -27,15 +30,17 @@ When everything is set, \texttt{pbuilder build} will accept
 \texttt{.dsc} file (the Debian source-package) and build the package
 inside the chroot.
 
-\begin{tabular}{|l|l|l|}
-\hline
-operation & operation frequency & context \\
-\hline
-create & once per base.tgz & create the base filesystem \\
-update & once per day (unstable update) & update the base filesystem \\
-build & once per package & build the Debian package inside chroot \\
-\hline
-\end{tabular}
+\begin{table}[h]
+ \begin{tabular}{|l|l|l|}
+ \hline
+ operation & operation frequency & context \\
+ \hline
+ create & once per base.tgz & create the base filesystem \\
+ update & once per day (unstable update) & update the base filesystem \\
+ build & once per package & build the Debian package inside chroot \\
+ \hline
+ \end{tabular}
+\end{table}
 
 Let me examine a typical sequence of events in a day of a Debian Developer.
 
@@ -54,7 +59,7 @@ framework.
 \subsection{pbuilder Development structure}
 
 Let me mention a little bit about how pbuilder itself is developed.
-Currently pbuilder is co-maintained with resources provided by Alioth.
+Currently pbuilder is co-maintained using resources provided by Alioth.
 Development is done mostly by Lo\"ic Minier and Junichi Uekawa, and
 occasional commits from Matt Kraai, and Mattia Dongili.
 
@@ -84,9 +89,10 @@ Let me explain some of them.
 \subsubsection{LVM port}
 
 Someone did a port to using LVM snapshot for base.tgz-management.  There
-was some mail posted, but noone really picked it up.  chroot is still
-used as a method for segregation. The advantage is that LVM snapshots
-are much faster than extracting a tar archive for base image.
+was some e-mailing, but not quite gone into pbuilder.  LVM method still
+uses chroot as the method for segregation. The advantage is that LVM
+snapshot process is much faster than extracting a tar archive for base
+image.
 
 \subsubsection{user-mode-linux port}
 
