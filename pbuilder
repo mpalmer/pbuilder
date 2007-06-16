@@ -47,7 +47,7 @@ case "$1" in
 	fi
 	if [ -n "$APTCACHE" ]; then
 	    echo "Cleaning [$APTCACHE]"
-	    clean_subdirectories "$APTCACHE" || true
+	    rm "$APTCACHE"/* || true
 	fi
 	;;
     --login|login)
