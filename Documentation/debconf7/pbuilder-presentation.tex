@@ -17,12 +17,21 @@
 %     along with this program; if not, write to the Free Software
 %     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-\documentclass[dvipdfm,12pt]{beamer}
+\documentclass[dvipdfm,12pt,times]{beamer}
 %\usetheme{}
 
 %  preview (shell-command (concat "xpdf " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
 %  presentation (shell-command (concat "xpdf -fullscreen " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
 %  presentation-evince (shell-command (concat "evince " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
+
+\newcommand{\emtext}[1]{
+\begin{frame}{}
+ 
+{\Huge #1
+}
+\end{frame}
+}
+
 
 \title{what's happening with pbuilder?}
 \subtitle{Debian Conference 2007}
@@ -45,27 +54,34 @@
        and more recently, Debian/MacBook related.
 \end{itemize}
 \end{frame}
- 
+
+
+\emtext{How do I use pbuilder?}
+
 \begin{frame}{pbuilder basics}
 \includegraphics[height=0.7\vsize]{pbuildercycle.eps}
 \end{frame}
 
 \begin{frame}{pbuilder basics ...}
-\begin{tabular}{|l|p{8em}|p{8em}|}
+\begin{tabular}{|l|p{9em}|p{10em}|}
+\hline
 \hline
 operation & frequence & meaning \\
 \hline
-create & once in initial run & create base filesystem \\
+\hline
+create & once initially & create base filesystem \\
+\hline
 update & twice a day (according to unstable updates) & 
  revise base filesystem \\
+\hline
 build & for each package build & build Debian package inside chroot \\
 \hline
 \end{tabular}
 \end{frame}
 
-\begin{frame}[containsverbatim]{pbuilder create}
+\begin{frame}[containsverbatim]{pbuilder --create}
 \begin{verbatim}
-# pbuilder create
+# pbuilder --create
 Distribution is sid.
 Building the build environment
  -> running debootstrap
@@ -78,10 +94,9 @@ I: Validating Packages
 \end{verbatim}
 \end{frame}
 
-
-\begin{frame}[containsverbatim]{pbuilder update}
+\begin{frame}[containsverbatim]{pbuilder --update}
 \begin{verbatim}
-# pbuilder update
+# pbuilder --update
 W: /home/dancer/.pbuilderrc does not exist
 Building the build Environment
  -> extracting base tarball [/var/cache/pbuilder/base.tgz]
@@ -90,9 +105,9 @@ Building the build Environment
 \end{verbatim}
 \end{frame}
 
-\begin{frame}[containsverbatim]{pbuilder build}
+\begin{frame}[containsverbatim]{pbuilder --build}
 \begin{verbatim}
-# pbuilder build dsh_*.dsc
+# pbuilder --build dsh_*.dsc
 I: using fakeroot in build.
 Current time: Sat Jan 20 12:03:34 JST 2007
 pbuilder-time-stamp: 1169262214
@@ -104,15 +119,32 @@ Building the build Environment
 \end{verbatim}
 \end{frame}
 
-\begin{frame}{pbuilder basics ...}
-\begin{minipage}{0.4\hsize}
- How do you maintain your package today?
-\end{minipage}
-\begin{minipage}{0.5\hsize}
-  \includegraphics[height=0.9\vsize]{develcycle.eps}
-\end{minipage}
+
+\begin{frame}[containsverbatim]{pbuilder --login}
+\begin{verbatim}
+# pbuilder --login --bindmount ${HOME}
+I: using fakeroot in build.
+Current time: Sat Jan 20 12:03:34 JST 2007
+pbuilder-time-stamp: 1169262214
+Building the build Environment
+ -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.FeeAX18779/testimage]
+ -> creating local configuration
+	.
+	.
+\end{verbatim}
 \end{frame}
 
+\emtext{pdebuild}
+
+\begin{frame}{}
+  \begin{minipage}{0.4\hsize}
+   How do you maintain your package today?
+  \end{minipage}
+ \begin{minipage}{0.5\hsize}
+  \includegraphics[height=0.95\vsize]{develcycle.eps}
+ \end{minipage}
+\end{frame}
+ 
 \begin{frame}[containsverbatim]{Development}
 
 alioth project: \url{http://alioth.debian.org/projects/pbuilder}
