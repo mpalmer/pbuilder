@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xxx\n"
-"POT-Creation-Date: 2007-06-04 23:23+0900\n"
-"PO-Revision-Date: 2007-06-15 23:27+0900\n"
+"POT-Creation-Date: 2007-06-17 21:00+0900\n"
+"PO-Revision-Date: 2007-06-17 21:06+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Junichi Uekawa <dancer@debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "2007年5月27日"
 # type: Content of: <book><bookinfo><title>
 #: pbuilder-doc.xml:8
 msgid "pbuilder User's Manual"
-msgstr "pbuilder　ユーザマニュアル"
+msgstr "pbuilder 利用マニュアル"
 
 # type: Content of: <book><bookinfo><abbrev>
 #: pbuilder-doc.xml:9
@@ -38,12 +38,12 @@ msgstr "pbuilder-doc"
 # type: Content of: <book><bookinfo><subtitle>
 #: pbuilder-doc.xml:10
 msgid "Usage and operations"
-msgstr "利用と操作"
+msgstr "利用と操作方法について"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: pbuilder-doc.xml:11
 msgid "documentation in progress"
-msgstr "作業中"
+msgstr "草稿"
 
 # type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:22
@@ -240,7 +240,9 @@ msgstr ""
 msgid ""
 "It is possible to switch the distribution which the base.tgz is targeted at "
 "at this point.  Specify <command>"
-msgstr "この時点で、base.tgz が対象とするディストリビューションを指定することが可能です。<command>"
+msgstr ""
+"この時点で、base.tgz が対象とするディストリビューションを指定することが可能で"
+"す。<command>"
 
 # type: Content of: <book><chapter><sect1><para><command><option>
 #: pbuilder-doc.xml:132
@@ -255,21 +257,27 @@ msgstr "--override-config"
 # type: Content of: <book><chapter><sect1><para><footnote>
 #: pbuilder-doc.xml:132
 msgid "</command> to change the distribution to sid.  <footnote>"
-msgstr "</command> を指定すると、ディストリビューションを sid に変更できます。 <footnote>"
+msgstr ""
+"</command> を指定すると、ディストリビューションを sid に変更できます。 "
+"<footnote>"
 
 # type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:135
 msgid ""
 "Only upgrading is supported.  Debian does not generally support downgrading "
 "(yet?)."
-msgstr "アップグレードしかサポートされていません。Debianはダウングレードをサポートしていません（現時点では？）。"
+msgstr ""
+"アップグレードしかサポートされていません。Debianはダウングレードをサポートし"
+"ていません（現時点では？）。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:140 pbuilder-doc.xml:172
 msgid ""
 "For fuller documentation of command-line options, see the pbuilder.8 manual "
 "page"
-msgstr "コマンドラインオプションの詳細なドキュメントについては、pbuilder.8 マニュアルを参照"
+msgstr ""
+"コマンドラインオプションの詳細なドキュメントについては、pbuilder.8 マニュアル"
+"を参照"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:145
@@ -331,7 +339,10 @@ msgid ""
 "get</command>."
 msgstr ""
 "<command>pbuilder</command> は base.tgz から新しい\n"
-"chroot イメージを展開します。（base.tgz は  <command>pbuilder create</command> で作成され、 <command>pbuilder update</command> で更新されます)。 chroot には Build-Depend関係のパッケージが debian/control を解析して  <command>apt-get</command> を実行することで追加されます。"
+"chroot イメージを展開します。（base.tgz は  <command>pbuilder create</"
+"command> で作成され、 <command>pbuilder update</command> で更新されます)。 "
+"chroot には Build-Depend関係のパッケージが debian/control を解析して  "
+"<command>apt-get</command> を実行することで追加されます。"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:177
@@ -348,8 +359,12 @@ msgid ""
 "be built inside the chroot, to check that the current source tree will build "
 "happily inside the chroot."
 msgstr ""
-"<command>pdebuild</command> は、あらゆる操作の中でももっとも頻繁に行われるだろう作業を簡略化するためのラッパースクリプトです。Debian Developerは Debian パッケージのソースディレクトリで <command>debuild</command> コマンドをうつことでパッケージをビルドします。\n"
-"<command>pdebuild</command> は同様の操作をすることで、パッケージを chroot 内部でビルドし、\n"
+"<command>pdebuild</command> は、あらゆる操作の中でももっとも頻繁に行われるだ"
+"ろう作業を簡略化するためのラッパースクリプトです。Debian Developerは Debian "
+"パッケージのソースディレクトリで <command>debuild</command> コマンドをうつこ"
+"とでパッケージをビルドします。\n"
+"<command>pdebuild</command> は同様の操作をすることで、パッケージを chroot 内"
+"部でビルドし、\n"
 "現在のツリーが chroot 内部でもビルドすることを確認します。"
 
 # type: Content of: <book><chapter><sect1><para><command>
@@ -359,7 +374,11 @@ msgid ""
 "the source packages, and then invokes <command>pbuilder</command> on the "
 "resulting source package.  However, unlike debuild, the resulting deb files "
 "will be found in the <command>"
-msgstr "<command>pdebuild</command> はまず <command>dpkg-source</command> コマンドを起動し、ソースパッケージを作成し、<command>pbuilder</command> をそのソースパッケージに対して実行します。 debuild とは違い、生成されたdeb ファイルは <command>"
+msgstr ""
+"<command>pdebuild</command> はまず <command>dpkg-source</command> コマンドを"
+"起動し、ソースパッケージを作成し、<command>pbuilder</command> をそのソース"
+"パッケージに対して実行します。 debuild とは違い、生成されたdeb ファイルは "
+"<command>"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:193
@@ -380,8 +399,10 @@ msgid ""
 "however, it is possible to change the behaviour to run it inside the chroot "
 "with the <command>"
 msgstr ""
-" <command>pdebuild</command> 0.97 から一つ違う実行モードが追加されています。 \n"
-"<command>pdebuild</command> は <command>debian/rules clean</command> chroot 外部で実行するのですが、chroot内部で実行するように <command>"
+" <command>pdebuild</command> 0.97 から一つ違う実行モードが追加されていま"
+"す。 \n"
+"<command>pdebuild</command> は <command>debian/rules clean</command> chroot "
+"外部で実行するのですが、chroot内部で実行するように <command>"
 
 # type: Content of: <book><chapter><sect1><para><option>
 #: pbuilder-doc.xml:205 pbuilder-doc.xml:1123
@@ -396,15 +417,17 @@ msgid ""
 "characteristics, and is not yet the default mode of operation."
 msgstr ""
 "</command> を指定することができます。\n"
-"chroot 内部に作業中のディレクトリをバインドマウントし、 <command>dpkg-buildpackage</command> を内部で実行します。\n"
+"chroot 内部に作業中のディレクトリをバインドマウントし、 <command>dpkg-"
+"buildpackage</command> を内部で実行します。\n"
 "以下の特徴があり、まだデフォルトにはなっていません。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:214
+#, fuzzy
 msgid ""
 "Satisfies build-dependency inside the chroot before creating source "
-"package.  (which is a good point that current <command>pdebuild</command> "
-"cannot do)."
+"package.  (which is a good point that default <command>pdebuild</command> "
+"could not do)."
 msgstr ""
 "ソースパッケージを作成する際に、Build-Depend を chroot 内部で満たす。\n"
 "(以前の <command>pdebuild</command> でできなかったよい点)."
@@ -419,7 +442,9 @@ msgstr "作業ディレクトリに chroot 内部から変更を加えられる�
 msgid ""
 "Building with <command>pdebuild</command> does not guarantee that it works "
 "with <command>pbuilder</command>."
-msgstr "<command>pdebuild</command> でビルドできることは <command>pbuilder</command> で必ず動くということが保証されるわけではない。"
+msgstr ""
+"<command>pdebuild</command> でビルドできることは <command>pbuilder</command> "
+"で必ず動くということが保証されるわけではない。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:227
@@ -427,7 +452,9 @@ msgid ""
 "If making the source package fails, the session using the chroot is wasted "
 "(chroot creation takes a bit of time, which should be improved with "
 "cowdancer)."
-msgstr "ソースパッケージを作るステップ自体が失敗した場合に、その chroot を利用する接書んは無駄に終わる（chroot の作成には時間がかかる、cowdancer 等で改善する。)"
+msgstr ""
+"ソースパッケージを作るステップ自体が失敗した場合に、その chroot を利用する接"
+"書んは無駄に終わる（chroot の作成には時間がかかる、cowdancer 等で改善する。)"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><command>
 #: pbuilder-doc.xml:232
@@ -454,7 +481,9 @@ msgstr "設定ファイル"
 msgid ""
 "It is possible to specify all settings by command-line options. However, for "
 "typing convenience, it is possible to use a configuration file."
-msgstr "設定をすべてコマンドラインで指定することも可能です。しかし、入力を簡便にするために、設定ファイルを利用することもできます。"
+msgstr ""
+"設定をすべてコマンドラインで指定することも可能です。しかし、入力を簡便にする"
+"ために、設定ファイルを利用することもできます。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:250
@@ -462,7 +491,10 @@ msgid ""
 "<filename>/etc/pbuilderrc</filename> and <filename>${HOME}/.pbuilderrc</"
 "filename> are read in when <command>pbuilder</command> is invoked.  The "
 "possible options are documented in the pbuilderrc.5 manual page."
-msgstr "<filename>/etc/pbuilderrc</filename> と <filename>${HOME}/.pbuilderrc</filename> が <command>pbuilder</command> を実行すると読み込まれます。可能なオプションについては、 pbuilderrc.5 に解説されています。"
+msgstr ""
+"<filename>/etc/pbuilderrc</filename> と <filename>${HOME}/.pbuilderrc</"
+"filename> が <command>pbuilder</command> を実行すると読み込まれます。可能なオ"
+"プションについては、 pbuilderrc.5 に解説されています。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:257
@@ -490,7 +522,14 @@ msgid ""
 "share/pbuilder/pbuilderrc</filename>, e.g., \"unset DEBOOTSTRAPOPTS\", to "
 "cope with the use of cdebootstrap.  The same care is needed if you edited "
 "old system setting in <filename>/etc/pbuilderrc</filename>."
-msgstr " <filename>${HOME}/.pbuilderrc</filename> がシステムの設定より優先されることに注意してください。たとえば、 sarge から etch にアップグレードする場合に、自分の設定の一部を <filename>/usr/share/pbuilder/pbuilderrc</filename> にあわせて変更する必要がある可能性があります。例えば新しいバージョンの cdebootstrap に対応するために \"unset DEBOOTSTRAPOPTS\" を入れる、などの例が考えられます。同じことが、<filename>/etc/pbuilderrc</filename> にシステムの設定を入れている場合には当てはまります。"
+msgstr ""
+" <filename>${HOME}/.pbuilderrc</filename> がシステムの設定より優先されること"
+"に注意してください。たとえば、 sarge から etch にアップグレードする場合に、自"
+"分の設定の一部を <filename>/usr/share/pbuilder/pbuilderrc</filename> にあわせ"
+"て変更する必要がある可能性があります。例えば新しいバージョンの cdebootstrap "
+"に対応するために \"unset DEBOOTSTRAPOPTS\" を入れる、などの例が考えられます。"
+"同じことが、<filename>/etc/pbuilderrc</filename> にシステムの設定を入れている"
+"場合には当てはまります。"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:271
@@ -499,14 +538,21 @@ msgstr "chroot 内部で root 以外でパッケージをビルドする"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:273
+#, fuzzy
 msgid ""
 "<command>pbuilder</command> requires full root privilege when it is "
 "satisfying the build-dependencies, but most packages do not need root "
-"privilege, or fail to build when they are root.  <command>pbuilder </"
-"command> can create a user which is only used inside <command>pbuilder </"
-"command> and use that user id when building, and use the <command>fakeroot</"
-"command> command when root privilege is required."
+"privilege to build, or even refused to build when they are built as root.  "
+"<command>pbuilder </command> can create a user which is only used inside "
+"<command>pbuilder </command> and use that user id when building, and use the "
+"<command>fakeroot</command> command when root privilege is required."
 msgstr ""
+"<command>pbuilder</command> は依存関係を充足させる際には root 権限を必要とし"
+"ます、しかしほとんどのパッケージはビルド時に root 権限を必要とはせず、rootで"
+"はビルドできないパッケージも一部存在します。<command>pbuilder </command> は "
+"<command>pbuilder </command> 内部専用のユーザを作成し、そのユーザIDを利用して"
+"ビルドを実行することができます。root権限が必要な時には<command>fakeroot</"
+"command> コマンドを利用します。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:282
@@ -518,6 +564,11 @@ msgid ""
 "also set, <command>pbuilder</command> will use the specified user name and "
 "fakeroot for building packages, instead of running as root inside chroot."
 msgstr ""
+"BUILDUSERID 設定オプションは既存のユーザIDと異なるIDに設定しておきましょう。"
+"そうするとパッケージが <command>pbuilder</command> 内部でビルドしている際に、"
+"chroot　外部の環境に影響をあたえにくくなります。BUILDUSERNAME が設定されてい"
+"る場合、その名前を <command>pbuilder</command> は利用し、 chroot 内部でroot権"
+"限で動作する代わりに、fakeroot を利用してパッケージをビルドします。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:291
@@ -527,6 +578,9 @@ msgid ""
 "packages to the chroot, <command>pbuilder</command> will run under root "
 "privilege."
 msgstr ""
+"fakeroot の方法を利用している場合でも、<command>pbuilder</command> は root 権"
+"限が必要な場面では root 権限で稼働します。例えば、chroot内部にパッケージをイ"
+"ンストールする時には<command>pbuilder</command> は root 権限で稼働します。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:297
@@ -535,11 +589,14 @@ msgid ""
 "need to use user-mode-linux, as explained in <xref linkend=\"pbuilder-uml\"/"
 ">."
 msgstr ""
+"<command>pbuilder</command> を root 権限を必要としないで利用する方法について"
+"は、  user-mode-linux の利用が必要です。 <xref linkend=\"pbuilder-uml\"/> で"
+"説明しています。"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:303
 msgid "Using pbuilder for back-porting"
-msgstr ""
+msgstr "pbuilder をバックポートに活用する"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:305
@@ -551,6 +608,11 @@ msgid ""
 "to the following reasons, automatic back-porting is usually not possible, "
 "and manual interaction is required:"
 msgstr ""
+"<command>pbuilder</command> は古いディストリビューションのchroot を作成し、そ"
+"こでパッケージをビルドすることで、Debian の最新版のディストリビューションから"
+"ソフトウエアをバックポートするのに利用することが可能です。いくつかの点を検討"
+"する必要があり、次の理由により全自動でバックポートすることは現実的では無く、"
+"手動での作業も必要になるでしょう:"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:316
@@ -560,6 +622,9 @@ msgid ""
 "be possible to satisfy Build-Depends: on stable (without additional "
 "backporting work)."
 msgstr ""
+"unstableのパッケージが unstable にしかないパッケージや、unstable にしかない"
+"バージョンのパッケージに依存している場合がある。つまり、stable では Build-"
+"Depends: を充足することができない(さらなるバックポートが必要になる)。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:323
@@ -567,13 +632,15 @@ msgid ""
 "The stable distribution may have bugs that have been fixed in unstable which "
 "need to be worked around."
 msgstr ""
+"stable ディストリビューションには unstable で修正しているバグが含まれており、"
+"ワークアラウンドが必要になる。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:326
 msgid ""
 "The package in the unstable distribution may have problems building even on "
 "unstable."
-msgstr ""
+msgstr "unstable のパッケージが unstable 上であってもビルドしない場合がある。"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:332
@@ -679,7 +746,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:408
 msgid "Auto-backporting scripts"
-msgstr ""
+msgstr "自動バックポートスクリプト"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:410
@@ -687,6 +754,8 @@ msgid ""
 "There are some people who use <command>pbuilder</command> to automatically "
 "back-port a subset of packages to the stable distribution."
 msgstr ""
+"一部の人は <command>pbuilder</command> を一部のパッケージを自動的に stable "
+"ディストリビューションにバックポートするために利用しています。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:414
@@ -708,6 +777,10 @@ msgid ""
 "to install packages inside the chroot, or run them, or whatever else that "
 "can be done. Some known tests and ideas:"
 msgstr ""
+"<command>pbuilder</command> は、自動的なテストのために利用することができま"
+"す。フックを配置することができ、そのフックは chroot 内部にパッケージをインス"
+"トールしたり実行したりその他のいろいろなことを実行することができます。実行可"
+"能なテストとアイデアは次です:"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:430
@@ -717,6 +790,10 @@ msgid ""
 "check that everything installs somewhat (<filename>execute_installtest.sh</"
 "filename>)."
 msgstr ""
+"自動的にインストール・アップグレード・削除・インストール・パージ・アップグ"
+"レード・パージするようなテスト(例として、<filename>B91dpkg-i</filename>が配布"
+"されています)、もしくは全部インストールできることを確認する"
+"(<filename>execute_installtest.sh</filename>)。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:435
@@ -724,6 +801,8 @@ msgid ""
 "Automatically running lintian/linda (distributed as an example in <filename>/"
 "usr/share/doc/pbuilder/examples/B90linda</filename>)."
 msgstr ""
+"自動的にlintian/lindaを実行する (例として <filename>/usr/share/doc/pbuilder/"
+"examples/B90linda</filename>が配布されている)。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:439
@@ -758,7 +837,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:456
 msgid "See run-parts(8). For example, no '.' in file names!"
-msgstr ""
+msgstr "run-parts(8) を参照してください。例えば、ファイル名に '.' はふくめられません。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:459
@@ -773,7 +852,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:468
 msgid "Using pbuilder for testing builds with alternate compilers"
-msgstr ""
+msgstr "pbuilder でその他のコンパイラでのビルドを試験する"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:470
@@ -812,7 +891,7 @@ msgstr ""
 # type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:498
 msgid "Using User-mode-linux with pbuilder"
-msgstr ""
+msgstr "user-mode-linux を pbuilder で利用する"
 
 # type: Content of: <book><chapter><para>
 #: pbuilder-doc.xml:500
@@ -846,22 +925,22 @@ msgstr ""
 # type: Content of: <book><chapter><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:525
 msgid "Configuration of user-mode-linux"
-msgstr ""
+msgstr "user-mode-linux の設定"
 
 # type: Content of: <book><chapter><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:528
 msgid "Configuration of rootstrap"
-msgstr ""
+msgstr "rootstrap の設定"
 
 # type: Content of: <book><chapter><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:531
 msgid "Configuration of pbuilder-uml"
-msgstr ""
+msgstr "pbuilder-uml の設定"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:536
 msgid "Configuring user-mode-linux"
-msgstr ""
+msgstr "user-mode-linux の設定"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:538
@@ -891,7 +970,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:559
 msgid "Configuring rootstrap"
-msgstr ""
+msgstr "rootstrap の設定"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:561
@@ -904,27 +983,27 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:568
 msgid "Install the rootstrap package."
-msgstr ""
+msgstr "rootstrap　パッケージをインストールします。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:572
 msgid ""
 "TUN/TAP only: add the user to the uml-net group to allow access to the "
 "network"
-msgstr ""
+msgstr "TUN/TAPを利用している場合:ユーザを uml-net グループに追加し、ネットワークが利用できるようにします"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><screen>
 #: pbuilder-doc.xml:575
 #, no-wrap
 msgid "adduser dancer uml-net"
-msgstr ""
+msgstr "adduser dancer uml-net"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:579
 msgid ""
 "TUN/TAP only: Check that the kernel supports the TUN/TAP interface, or "
 "recompile the kernel if necessary."
-msgstr ""
+msgstr "TUN/TAPを利用している場合: カーネルが TUN/TAP インタフェースをサポートしていることを確認してください。必要であればカーネルをリビルドしてください。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:585
@@ -964,7 +1043,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:610
 msgid "Configuring pbuilder-uml"
-msgstr ""
+msgstr "pbuilder-uml の設定"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:612
@@ -1288,7 +1367,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><option>
 #: pbuilder-doc.xml:818
 msgid "--save-after-exec"
-msgstr ""
+msgstr "--save-after-exec"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:819
@@ -1298,7 +1377,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><option>
 #: pbuilder-doc.xml:819
 msgid "--save-after-login"
-msgstr ""
+msgstr "--save-after-login"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:819
@@ -1310,7 +1389,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><option>
 #: pbuilder-doc.xml:822
 msgid "--uml-login-nocow"
-msgstr ""
+msgstr "--uml-login-nocow"
 
 # type: Content of: <book><chapter><sect1><para><command>
 #: pbuilder-doc.xml:822
@@ -1336,7 +1415,7 @@ msgstr ""
 #: pbuilder-doc.xml:831
 #, no-wrap
 msgid "BUILDRESULTUID=$SUDO_UID"
-msgstr ""
+msgstr "BUILDRESULTUID=$SUDO_UID"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:831
@@ -1348,7 +1427,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:836
 msgid "Notes on usage of $TMPDIR"
-msgstr ""
+msgstr "$TMPDIRの使い方について"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:838
@@ -1369,7 +1448,7 @@ msgstr ""
 #: pbuilder-doc.xml:844
 #, no-wrap
 msgid "export TMPDIR=/tmp"
-msgstr ""
+msgstr "export TMPDIR=/tmp"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:845
@@ -1416,7 +1495,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><command><option>
 #: pbuilder-doc.xml:869
 msgid "--othermirror"
-msgstr ""
+msgstr "--othermirror"
 
 # type: Content of: <book><chapter><sect1><para><command>
 #: pbuilder-doc.xml:869
@@ -1440,7 +1519,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><command><option>
 #: pbuilder-doc.xml:877
 msgid "--bindmounts"
-msgstr ""
+msgstr "--bindmounts"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:877
@@ -1476,6 +1555,11 @@ msgid ""
 "/usr/bin/dpkg-scanpackages . /dev/null &gt; /var/cache/pbuilder/result/Packages\n"
 "/usr/bin/apt-get update"
 msgstr ""
+"# cat /var/cache/pbuilder/hooks/D70results\n"
+"#!/bin/sh\n"
+"cd /var/cache/pbuilder/result/\n"
+"/usr/bin/dpkg-scanpackages . /dev/null &gt; /var/cache/pbuilder/result/Packages\n"
+"/usr/bin/apt-get update"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:902
@@ -1501,7 +1585,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:918
 msgid "Different bash prompts inside pbuilder login"
-msgstr ""
+msgstr "pbuilder login で bash のプロンプトを変更する"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:920
@@ -1522,7 +1606,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:931
 msgid "Versions of bash from and before Debian 3.0"
-msgstr ""
+msgstr "Debian 3.0 以前のbash "
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:932
@@ -1538,7 +1622,7 @@ msgstr ""
 #: pbuilder-doc.xml:937
 #, no-wrap
 msgid "export debian_chroot=\"pbuild$$\""
-msgstr ""
+msgstr "export debian_chroot=\"pbuild$$\""
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:939
@@ -1684,7 +1768,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><option>
 #: pbuilder-doc.xml:1029
 msgid "--variant fakechroot"
-msgstr ""
+msgstr "--variant fakechroot"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1029
@@ -2339,12 +2423,12 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1463
 msgid "Using pbuilder without tar.gz"
-msgstr ""
+msgstr "tar.gz を利用しないで pbuilder を利用する"
 
 # type: Content of: <book><chapter><sect1><para><command><option>
 #: pbuilder-doc.xml:1465
 msgid "--no-targz"
-msgstr ""
+msgstr "--no-targz"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1465
@@ -2395,27 +2479,27 @@ msgstr ""
 # type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1500
 msgid "Reference materials"
-msgstr ""
+msgstr "参考文献"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1502
 msgid "Directory structure outside the chroot"
-msgstr ""
+msgstr "chroot 外部のディレクトリ構造"
 
 # type: Content of: <book><chapter><sect1><table><title>
 #: pbuilder-doc.xml:1504
 msgid "Directory Structure outside the chroot"
-msgstr ""
+msgstr "chroot 内部のディレクトリ構造"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1517
 msgid "configuration file"
-msgstr ""
+msgstr "設定ファイル"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1521
 msgid "Default configuration"
-msgstr ""
+msgstr "デフォルト設定"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1525
@@ -2427,7 +2511,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1531
 msgid "Default location pbuilder uses for chroot"
-msgstr ""
+msgstr "pbuilder がデフォルトでchroot のために利用する場所"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1535
@@ -2479,17 +2563,17 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1566
 msgid "Directory structure inside the chroot"
-msgstr ""
+msgstr "chroot 内部のディレクトリ構造"
 
 # type: Content of: <book><chapter><sect1><table><title>
 #: pbuilder-doc.xml:1568
 msgid "Directory Structure inside the chroot"
-msgstr ""
+msgstr "chroot 内部のディレクトリ構造"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1582
 msgid "symlink to <filename>/proc/mounts</filename>."
-msgstr ""
+msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1587
@@ -2504,48 +2588,48 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1597
 msgid ""
-"The script passwd as an argument to <command>pbuilder</command> execute is "
+"The script passed as an argument to <command>pbuilder</command> execute is "
 "passed on."
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
-#: pbuilder-doc.xml:1604
+#: pbuilder-doc.xml:1605
 msgid "The location of hooks."
-msgstr ""
+msgstr "フックの場所。"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
-#: pbuilder-doc.xml:1610
+#: pbuilder-doc.xml:1611
 msgid ""
 "<command>pbuilder</command> copies the content of this directory to and from "
 "the aptcache directory of outside chroot."
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
-#: pbuilder-doc.xml:1616
+#: pbuilder-doc.xml:1617
 msgid ""
 "<command>pbuilder-user-mode-linux</command> uses a script in <filename>/tmp</"
 "filename> to bootstrap into user-mode-linux"
 msgstr ""
 
 # type: Content of: <book><chapter><title>
-#: pbuilder-doc.xml:1626
+#: pbuilder-doc.xml:1627
 msgid "Minor archaeological details"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><title>
-#: pbuilder-doc.xml:1628
+#: pbuilder-doc.xml:1629
 msgid "Documentation history"
-msgstr ""
+msgstr "マニュアルの履歴"
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1630
+#: pbuilder-doc.xml:1631
 msgid ""
 "This document was started on 28 Dec 2002 by Junichi Uekawa, trying to "
 "document what is known about <command>pbuilder</command>."
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1635
+#: pbuilder-doc.xml:1636
 msgid ""
 "This documentation is available from the <command>pbuilder</command> source "
 "tar-ball, and from the git repository of <command>pbuilder</command> (web-"
@@ -2559,19 +2643,19 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1646
+#: pbuilder-doc.xml:1647
 msgid ""
 "Documentation is written using DocBook XML, with emacs PSGML mode, and using "
 "wysidocbookxml for live previewing."
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><title>
-#: pbuilder-doc.xml:1652
+#: pbuilder-doc.xml:1653
 msgid "Possibly inaccurate Background History of pbuilder"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1654
+#: pbuilder-doc.xml:1655
 msgid ""
 "The following is a most possibly inaccurate account of how "
 "<command>pbuilder</command> came to happen, and other attempts to make "
@@ -2581,12 +2665,12 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><title>
-#: pbuilder-doc.xml:1661
+#: pbuilder-doc.xml:1662
 msgid "The Time Before pbuilder"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><para>
-#: pbuilder-doc.xml:1663
+#: pbuilder-doc.xml:1664
 msgid ""
 "There was once dbuild, which was a shell script to build Debian packages "
 "from source. Lars Wirzenius wrote that script, and it was good, short, and "
@@ -2596,7 +2680,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><para>
-#: pbuilder-doc.xml:1670
+#: pbuilder-doc.xml:1671
 msgid ""
 "debbuild was probably written by James Troup. I don't know it because I have "
 "never seen the actual code, I could only find some references to it on the "
@@ -2604,7 +2688,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><para>
-#: pbuilder-doc.xml:1675
+#: pbuilder-doc.xml:1676
 msgid ""
 "sbuild is a perl script to build Debian packages from source.  It parses "
 "Build-Depends, and performs other miscellaneous checks, and has a lot of "
@@ -2618,12 +2702,12 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><title>
-#: pbuilder-doc.xml:1689
+#: pbuilder-doc.xml:1690
 msgid "Birth of pbuilder"
 msgstr "pbuilder の誕生"
 
 # type: Content of: <book><chapter><sect1><sect2><para>
-#: pbuilder-doc.xml:1691
+#: pbuilder-doc.xml:1692
 msgid ""
 "wanna-build (sbuild) was (at the time of year 2001) quite difficult to set "
 "up, and it was never a Debian package. dbuild was something that predated "
@@ -2631,7 +2715,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><para>
-#: pbuilder-doc.xml:1696
+#: pbuilder-doc.xml:1697
 msgid ""
 "Building packages from source using Build-Depends information within a "
 "chroot sounded trivial; and <command>pbuilder</command> was born. It was "
@@ -2641,7 +2725,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><para>
-#: pbuilder-doc.xml:1704
+#: pbuilder-doc.xml:1705
 msgid ""
 "Yes, and it took almost an year to get things somewhat right, and in the "
 "middle of the process, Debian 3.0 was released. Yay.  Debian 3.0 wasn't "
@@ -2650,12 +2734,12 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><title>
-#: pbuilder-doc.xml:1713
+#: pbuilder-doc.xml:1714
 msgid "And the second year of its life"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><para>
-#: pbuilder-doc.xml:1715
+#: pbuilder-doc.xml:1716
 msgid ""
 "Someone wanted <command>pbuilder</command> to not run as root, and as User-"
 "mode-linux has become more useful as time passed, I've started experimenting "
@@ -2667,12 +2751,12 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><title>
-#: pbuilder-doc.xml:1728
+#: pbuilder-doc.xml:1729
 msgid "Fifth year of pbuilder"
 msgstr "pbuilder の5年目"
 
 # type: Content of: <book><chapter><sect1><sect2><para>
-#: pbuilder-doc.xml:1730
+#: pbuilder-doc.xml:1731
 msgid ""
 "<command>pbuilder</command> is now widely adopted as a 'almost standard' "
 "tool for testing packages, and building packages in a pristine environment.  "
@@ -2682,7 +2766,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><sect2><para>
-#: pbuilder-doc.xml:1738
+#: pbuilder-doc.xml:1739
 msgid ""
 "<command>sbuild</command> is now a well-maintained Debian package within "
 "Debian, and with <command>pbuilder</command> being such a slow monster, some "
