@@ -22,6 +22,7 @@
 
 %  preview (shell-command (concat "xpdf " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
 %  presentation (shell-command (concat "xpdf -fullscreen " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
+%  presentation-evince (shell-command (concat "evince " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
 
 \title{what's happening with pbuilder?}
 \subtitle{Debian Conference 2007}
@@ -62,6 +63,47 @@ build & for each package build & build Debian package inside chroot \\
 \end{tabular}
 \end{frame}
 
+\begin{frame}[containsverbatim]{pbuilder create}
+\begin{verbatim}
+# pbuilder create
+Distribution is sid.
+Building the build environment
+ -> running debootstrap
+/usr/sbin/debootstrap
+I: Retrieving Release
+I: Retrieving Packages
+I: Validating Packages
+	.
+	.
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}[containsverbatim]{pbuilder update}
+\begin{verbatim}
+# pbuilder update
+W: /home/dancer/.pbuilderrc does not exist
+Building the build Environment
+ -> extracting base tarball [/var/cache/pbuilder/base.tgz]
+	.
+	.
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[containsverbatim]{pbuilder build}
+\begin{verbatim}
+# pbuilder build dsh_*.dsc
+I: using fakeroot in build.
+Current time: Sat Jan 20 12:03:34 JST 2007
+pbuilder-time-stamp: 1169262214
+Building the build Environment
+ -> extracting base tarball [/home/dancer/DEBIAN/pbuilder/pbuilder/testsuite/tmp.FeeAX18779/testimage]
+ -> creating local configuration
+	.
+	.
+\end{verbatim}
+\end{frame}
+
 \begin{frame}{pbuilder basics ...}
 \begin{minipage}{0.4\hsize}
  How do you maintain your package today?
@@ -70,7 +112,6 @@ build & for each package build & build Debian package inside chroot \\
   \includegraphics[height=0.9\vsize]{develcycle.eps}
 \end{minipage}
 \end{frame}
-
 
 \begin{frame}[containsverbatim]{Development}
 
@@ -110,7 +151,7 @@ git-clone
  \begin{itemize}
   \item schroot
   \item piuparts
-  \item autodebtest
+  \item autopkgtest
  \end{itemize}
 \end{frame}
 
