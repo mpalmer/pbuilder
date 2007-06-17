@@ -2,17 +2,17 @@
 .SH NAME
 pbuilder \- personal package builder
 .SH SYNOPSIS
-.BI "pbuilder create [" "options" "]"
+.BI "pbuilder --create [" "options" "]"
 .PP
-.BI "pbuilder update [" "options" "]"
+.BI "pbuilder --update [" "options" "]"
 .PP
-.BI "pbuilder build [" "options" "] " ".dsc-file"
+.BI "pbuilder --build [" "options" "] " ".dsc-file"
 .PP
-.BI "pbuilder execute [" "options" "] -- " "script [" "script options" "]"
+.BI "pbuilder --execute [" "options" "] -- " "script [" "script options" "]"
 .PP
-.BI "pbuilder clean"
+.BI "pbuilder --clean"
 .PP
-.BI "pbuilder login [" "options" "]"
+.BI "pbuilder --login [" "options" "]"
 .SH DESCRIPTION
 Front end program to the 
 .B "pbuilder"
@@ -22,13 +22,13 @@ and building Debian package in the chroot environment.
 .SH "COMMANDS"
 
 .TP
-.B "create"
+.B "--create"
 Creates a 
 .B "base.tgz" 
 for the specified distribution.
 
 .TP
-.B "update"
+.B "--update"
 Updates the 
 .B "base.tgz"
 for the specified distribution.
@@ -44,14 +44,14 @@ base.tgz to lenny, specify the
 options to update.
 
 .TP
-.B "build"
+.B "--build"
 Builds the package specified by
 .I ".dsc-file"
 in the chroot environment created using the 
 .B "base.tgz"
 
 .TP
-.B "clean"
+.B "--clean"
 Cleans up the directory specified by the configuration
 .B "BUILDPLACE"
 and
@@ -60,7 +60,7 @@ specified in
 .I "/etc/pbuilderrc"
 
 .TP
-.B "login"
+.B "--login"
 Logs into the chroot, and cleaned up afterwards.
 Any changes you make will not be kept.
 Only use this for temporary and debugging purposes.
@@ -70,10 +70,10 @@ Use
 option to mount.
 
 .TP
-.B "execute"
+.B "--execute"
 Execute a script or command inside the chroot,
 in a similar manner to 
-.B "login"
+.B "--login"
 
 The file specified in the command-line argument will be 
 copied into the chroot, and invoked.
@@ -81,11 +81,11 @@ copied into the chroot, and invoked.
 The remaining arguments are passed on to the script.
 
 .TP
-.B "dumpconfig"
+.B "--dumpconfig"
 Dumps configuration information, used for debugging.
 
 .TP
-.B "debuild"
+.B "--debuild"
 Builds a Debian package from the Debian source directory.
 The current directory should have the usual
 .I "debian/"
@@ -144,7 +144,10 @@ specified in
 .B "sources.list"
 inside the chroot.
 This option is only valid when distribution is being specified, for 
-update and build targets.
+.B "--update"
+and
+.B "--build"
+targets.
 The format is something like:
 .I "http://http.us.debian.org/debian" 
 which should point to your favourite mirror.
@@ -190,16 +193,17 @@ and
 
 Specify to use different apt set up inside the chroot than it was used for creating the 
 base.tgz.
-Specify this when you want to do pbuilder update with a different distribution
-target set up.
+Specify this when you want to do 
+.B "pbuilder --update"
+ with a different distribution target set up.
 
 .B "--distribution, " "--mirror, " "--othermirror"
  options are only valid when
 .B "\-\-override\-config"
 option is specified in 
-.B "update"
+.B "--update"
 target, or when
-.B "pbuilder create"
+.B "pbuilder --create"
 is being called.
 
 .TP
@@ -224,7 +228,11 @@ configuration files have been read.
 .TP
 .BI "\-\-hookdir [" "location of user scripts" "]"
 Specifies the location where scripts for user intervention during
-the create and update process are stored. Currently scripts are
+the 
+.B "--create"
+ and
+.B "--update"
+process are stored. Currently scripts are
 executed at only one point, on exit from the chrooted environment,
 just before either a create or a build regenerated the base.tgz
 file. The script names must be in the form 
@@ -236,7 +244,7 @@ ensure the interpreter was previously installed in the chrooted
 environment. Files ending in ~ or .bak are ignored.
 
 Although it may not seem necessary, 
-.B "pbuilder update" 
+.B "pbuilder --update" 
 does not invoke the hooks if 
 .B "\-\-hookdir"
 is empty, so if you want to avoid running hooks,
@@ -255,7 +263,7 @@ This allows for use of custom debootstrap hook script.
 
 .B "A<digit><digit><whatever-else-you-want>"
 is for 
-.B build 
+.B "--build"
 target. 
 It is executed before build starts; after
 unpacking the build system, and unpacking the source,
@@ -279,9 +287,9 @@ Also useful for calling
 
 .B "E<digit><digit><whatever-else-you-want>"
 is executed after
-.B "pbuilder update"
+.B "pbuilder --update"
  and
-.B "pbuilder create"
+.B "pbuilder --create"
 finishes apt-get work with the chroot, 
 before umounting kernel file systems (/proc) and 
 creating the tarball from the chroot.
@@ -290,9 +298,9 @@ creating the tarball from the chroot.
 is executed just before user logs in, or 
 program starts executing, after chroot is created 
 in 
-.B login
+.B "--login"
 or 
-.B execute
+.B "--execute"
 target.
 
 .B "G<digit><digit><whatever-else-you-want>"
@@ -300,7 +308,7 @@ is executed just after debootstrap finishes,
 and configuration is loaded, and pbuilder starts mounting /proc and invoking 
 .B "apt-get install"
 in 
-.B create
+.B "--create"
 target.
 
 \" End of hookdir description
@@ -402,12 +410,12 @@ which is
 .B "build-essential"
 by default.
 This is used in 
-.B "build"
+.B "--build"
 and 
-.B "create"
+.B "--create"
 (after successfully creating the initial chroot)
 and 
-.BR "update" .
+.BR "--update" .
 
 The packages should be specified as a space-delimited list.
 
@@ -428,7 +436,7 @@ Alternative option to
 option. 
 Automatically creates a logfile that is named by the .dsc file name,
 only really applicable for 
-.B build
+.B "--build"
 target.
 
 The file extension is specified by 
@@ -484,9 +492,9 @@ if it has the same contents as the
 file, and no modifications are done.
 
 For preserving the build place for
-.B "create"
+.B "--create"
 and 
-.B "update"
+.B "--update"
 targets, see
 .B "--debug"
 option.
@@ -510,9 +518,9 @@ or after a successful build.
 
 Turn on Debug mode of pbuilder, to be verbose about errors,
 and try to avoid cleanup processing when error happens in 
-.B update
+.B "--update"
  and
-.B create
+.B "--create"
 targets.
 
 .SH "FILES"
@@ -534,10 +542,10 @@ settings set in other configuration files.
 .SH "EXAMPLES"
 
 .TP
-.B "pbuilder create"
+.B "pbuilder --create"
 
 .nf
-# pbuilder create
+# pbuilder --create
 Distribution is sid.
 Building the build environment
  -> running debootstrap
@@ -550,10 +558,10 @@ I: Validating Packages
 .hy
 
 .TP
-.B "pbuilder update"
+.B "pbuilder --update"
 
 .nf
-# pbuilder update
+# pbuilder --update
 W: /home/dancer/.pbuilderrc does not exist
 Building the build Environment
  -> extracting base tarball [/var/cache/pbuilder/base.tgz]
@@ -562,10 +570,10 @@ Building the build Environment
 .hy
 
 .TP
-.B "pbuilder build"
+.B "pbuilder --build"
 
 .nf
-# pbuilder build dsh_*.dsc
+# pbuilder --build dsh_*.dsc
 I: using fakeroot in build.
 Current time: Sat Jan 20 12:03:34 JST 2007
 pbuilder-time-stamp: 1169262214
