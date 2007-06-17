@@ -941,6 +941,17 @@ cd /var/cache/pbuilder/result/
 	export PS1="pbuild chroot 32165 # "
       </screen>
     </sect1>
+    <sect1 id="chrootmemo">
+      <title>Creating a chroot reminder</title>
+      <para>
+	Bash prompts will help you remember that you are inside a
+	chroot.  There are other cases where you may want other signs
+	of being inside a chroot.  Check out the
+	<filename>examples/F90chrootmemo</filename> hook script.  It
+	will create a file called <filename>/CHROOT</filename> inside
+	your chroot. 
+      </para>
+    </sect1>
     <sect1 id="packagecachearchives">
       <title>Using /var/cache/apt/archives for the package cache</title>
       <para>
@@ -1087,16 +1098,6 @@ cd /var/cache/pbuilder/result/
       <para>
 	<command>pbuilder</command> with cowdancer is also an
 	alternative that improves speed of pbuilder startup.
-      </para>
-    </sect1>
-    <sect1 id="chrootmemo">
-      <title>Creating a chroot reminder</title>
-      <para>
-	You may want a sign that you are inside a chroot, when working
-	with chroot.  Check out the
-	<filename>examples/F90chrootmemo</filename> hook script.  It
-	will create a file called <filename>/CHROOT</filename> inside
-	your chroot.
       </para>
     </sect1>
     <sect1 id="sponsor">
