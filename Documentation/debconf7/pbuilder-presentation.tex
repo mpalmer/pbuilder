@@ -55,6 +55,19 @@
 \end{itemize}
 \end{frame}
 
+\emtext{What is the concept of pbuilder?}
+
+\emtext{What is a chroot?}
+
+\begin{frame}{concept of a chroot}
+ \includegraphics[width=1\hsize]{chroot.eps}\\
+\texttt{\# chroot /var/cache/pbuilder/build/XXX bin/bash}
+\end{frame}
+
+\begin{frame}{concept of pbuilder}
+ \includegraphics[width=1\hsize]{chroot-pbuilder.eps}\\
+\texttt{\# pbuilder --XXXX}
+\end{frame}
 
 \emtext{How do I use pbuilder?}
 
@@ -135,6 +148,35 @@ Building the build Environment
 \end{frame}
 
 \emtext{pdebuild}
+
+\begin{frame}[containsverbatim]{pdebuild}
+\begin{verbatim}
+$ ls debian/rules
+debian/rules
+$ pdebuild
+W: /home/dancer/.pbuilderrc does not exist
+dpkg-buildpackage: source package is cowdancer
+dpkg-buildpackage: source version is 0.26
+dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
+dpkg-buildpackage: source version without epoch 0.26
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp configure-stamp
+/usr/bin/make clean
+make[1]: Entering directory `/home/dancer/DEBIAN/cowdancer/cowdancer'
+rm -f *~ *.o *.lo libcowdancer.so cow-shell cowbuilder
+make[1]: Leaving directory `/home/dancer/DEBIAN/cowdancer/cowdancer'
+dh_clean
+ dpkg-source -b cowdancer
+dpkg-source: warning: source directory `./cowdancer' is not <sourcepackage>-<upstreamversion> `cowdancer-0.26'
+dpkg-source: building cowdancer in cowdancer_0.26.tar.gz
+	.
+	.
+	.
+\end{verbatim}
+\end{frame}
+
 
 \begin{frame}{}
   \begin{minipage}{0.4\hsize}
