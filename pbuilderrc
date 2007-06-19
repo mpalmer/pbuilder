@@ -44,8 +44,8 @@ PBUILDERROOTCMD="sudo"
 # not support unsigned APT repositories
 PBUILDERSATISFYDEPENDSCMD="/usr/lib/pbuilder/pbuilder-satisfydepends"
 
-#default is to build everything. Passed on to dpkg-buildpackage
-#DEBBUILDOPTS="-b"
+#Command-line option passed on to dpkg-buildpackage.
+#DEBBUILDOPTS="-IXXX -iXXX"
 DEBBUILDOPTS=""
 
 #APT configuration files directory
