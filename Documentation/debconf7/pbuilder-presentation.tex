@@ -18,7 +18,6 @@
 %     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 \documentclass[dvipdfm,12pt,times]{beamer}
-%\usetheme{}
 
 %  preview (shell-command (concat "xpdf " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
 %  presentation (shell-command (concat "xpdf -fullscreen " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
@@ -55,7 +54,7 @@
 \end{itemize}
 \end{frame}
 
-\emtext{What is the concept of pbuilder?}
+\emtext{pbuilder, what is the concept?}
 
 \emtext{What is a chroot?}
 
@@ -66,7 +65,7 @@
 
 \begin{frame}{concept of pbuilder}
  \includegraphics[width=1\hsize]{chroot-pbuilder.eps}\\
-\texttt{\# pbuilder --XXXX}
+\texttt{\# pbuilder --create, pbuilder --update, pbuilder --build}
 \end{frame}
 
 \emtext{How do I use pbuilder?}
@@ -177,7 +176,6 @@ dpkg-source: building cowdancer in cowdancer_0.26.tar.gz
 \end{verbatim}
 \end{frame}
 
-
 \begin{frame}{}
   \begin{minipage}{0.4\hsize}
    How do you maintain your package today?
@@ -187,16 +185,6 @@ dpkg-source: building cowdancer in cowdancer_0.26.tar.gz
  \end{minipage}
 \end{frame}
  
-\begin{frame}[containsverbatim]{Development}
-
-alioth project: \url{http://alioth.debian.org/projects/pbuilder}
-
-\begin{verbatim}
-git-clone
-  ssh://git.debian.org/git/pbuilder/pbuilder.git
-\end{verbatim}
-\end{frame}
-
 \begin{frame}{pbuilder backend variations}
 \begin{minipage}{0.5\hsize}
  Motivation
@@ -214,6 +202,24 @@ git-clone
 \end{minipage}
 \end{frame}
 
+\begin{frame}{uml}
+ 
+ different method of segregation
+ 
+ COW block device support
+\end{frame}
+
+\begin{frame}{cowdancer}
+ 
+ speed up through implementation 
+\end{frame}
+
+\begin{frame}{qemu}
+
+ Try running other architectures at your fingertips?
+\end{frame}
+
+
 \begin{frame}{further ideas}
  \begin{itemize}
   \item install testing
@@ -227,6 +233,21 @@ git-clone
   \item piuparts
   \item autopkgtest
  \end{itemize}
+\end{frame}
+
+\begin{frame}[containsverbatim]{References}
+\begin{itemize}
+ \item Information:\\
+       \url{http://pbuilder.alioth.debian.org/}
+
+ \item Development:\\
+ alioth project: \url{http://alioth.debian.org/projects/pbuilder}
+
+\begin{verbatim}
+git-clone
+  ssh://git.debian.org/git/pbuilder/pbuilder.git
+\end{verbatim}
+\end{itemize}
 \end{frame}
 
 \end{document}
