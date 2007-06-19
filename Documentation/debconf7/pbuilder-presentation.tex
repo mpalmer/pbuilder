@@ -17,7 +17,7 @@
 %     along with this program; if not, write to the Free Software
 %     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-\documentclass[dvipdfm,12pt,times]{beamer}
+\documentclass[dvipdfm,17pt,times]{beamer}
 
 %  preview (shell-command (concat "xpdf " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
 %  presentation (shell-command (concat "xpdf -fullscreen " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
@@ -41,6 +41,13 @@
 \begin{document}
 \frame{\titlepage{}}
 
+\begin{frame}{Agenda?}
+\begin{itemize}
+ \item pbuilder
+ \item cowbuilder
+ \item qemubuilder
+\end{itemize}
+\end{frame}
 
 \begin{frame}{Who am I?}
 \begin{itemize}
@@ -59,36 +66,39 @@
 \emtext{What is a chroot?}
 
 \begin{frame}{concept of a chroot}
- \includegraphics[width=1\hsize]{chroot.eps}\\
+ \includegraphics[width=0.8\hsize]{chroot.eps}\\
 \texttt{\# chroot /var/cache/pbuilder/build/XXX bin/bash}
 \end{frame}
 
 \begin{frame}{concept of pbuilder}
  \includegraphics[width=1\hsize]{chroot-pbuilder.eps}\\
-\texttt{\# pbuilder --create, pbuilder --update, pbuilder --build}
+\texttt{\# pbuilder --XXXX}
 \end{frame}
 
 \emtext{How do I use pbuilder?}
 
-\begin{frame}{pbuilder basics}
-\includegraphics[height=0.7\vsize]{pbuildercycle.eps}
+\begin{frame}[containsverbatim]{installing pbuilder}
+\begin{verbatim}
+# apt-get install pbuilder
+# vi /etc/pbuilderrc
+# evince 
+  /usr/share/doc/pbuilder/
+     pbuilder-doc.pdf	
+\end{verbatim}
 \end{frame}
 
-\begin{frame}{pbuilder basics ...}
-\begin{tabular}{|l|p{9em}|p{10em}|}
-\hline
-\hline
-operation & frequence & meaning \\
-\hline
-\hline
-create & once initially & create base filesystem \\
-\hline
-update & twice a day (according to unstable updates) & 
- revise base filesystem \\
-\hline
-build & for each package build & build Debian package inside chroot \\
-\hline
-\end{tabular}
+\begin{frame}{pbuilder basics}
+\begin{minipage}{0.4\hsize}
+\includegraphics[height=0.7\vsize]{pbuildercycle.eps}
+\end{minipage}
+\begin{minipage}{0.55\hsize}
+\begin{itemize}
+ \item done once to create base filesystem.
+ \item twice a day to follow unstable updates, to revise base
+       filesystem.
+ \item for each package build to build Debian package inside chroot.
+\end{itemize}
+\end{minipage}
 \end{frame}
 
 \begin{frame}[containsverbatim]{pbuilder --create}
@@ -186,19 +196,26 @@ dpkg-source: building cowdancer in cowdancer_0.26.tar.gz
 \end{frame}
  
 \begin{frame}{pbuilder backend variations}
-\begin{minipage}{0.5\hsize}
- Motivation
-\begin{itemize}
- \item limitation in chroot segregation (process space, filesystem)
- \item COW filesystem optimization
-\end{itemize}
-\end{minipage}\begin{minipage}{0.4\hsize}
+ \definecolor{titleback}{gray}{0.9}
+
+\begin{minipage}{0.35\hsize}
   \begin{itemize}
   \item LVM
   \item UML
   \item cowdancer
   \item qemu
  \end{itemize}
+\end{minipage}
+\begin{minipage}{0.6\hsize}
+ \colorbox{titleback}{
+\begin{minipage}{1\hsize}
+ Motivation
+\begin{itemize}
+ \item limitation in chroot segregation (process space, filesystem)
+ \item COW filesystem optimization (tarball extraction slow.)
+\end{itemize}
+\end{minipage}
+}
 \end{minipage}
 \end{frame}
 
@@ -207,17 +224,81 @@ dpkg-source: building cowdancer in cowdancer_0.26.tar.gz
  different method of segregation
  
  COW block device support
+
 \end{frame}
 
-\begin{frame}{cowdancer}
+\begin{frame}[containsverbatim]{cowdancer}
  
- speed up through implementation 
+ Speed up through use of copy-on-write filesystem.
+
+ Just a matter of:
+
+\begin{verbatim}
+# cp -al
+    /var/cache/pbuilder/base.cow 
+    /var/cache/pbuilder/build/XXX
+# chroot
+    /var/cache/pbuilder/build/XXX
+\end{verbatim}
 \end{frame}
 
-\begin{frame}{qemu}
+\begin{frame}{qemubuilder}
 
  Try running other architectures at your fingertips?
 \end{frame}
+
+\begin{frame}[containsverbatim]{qemubuilder example config}
+
+\begin{verbatim}
+KERNEL_IMAGE=2.6.18-4-mips-di-vmlinux
+INITRD=2.6.18-4-mips-di-initrd.gz
+ARCH=mips
+BASEPATH=
+  /var/cache/pbuilder/base-mips.qemu
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{qemubuilder gritty details... create}
+
+\includegraphics[width=1\hsize]{qemubuilder-create.eps}
+\end{frame}
+
+\begin{frame}{qemubuilder gritty details... build}
+
+\includegraphics[width=1\hsize]{qemubuilder-build.eps}
+\end{frame}
+
+\emtext{qemubuilder --create --config mips.config}
+\emtext{qemubuilder --update --config mips.config}
+\emtext{qemubuilder --build --config mips.config XXX.dsc}
+\begin{frame}[containsverbatim]{qemubuilder --login}
+\begin{verbatim}
+$ sudo qemubuilder --login --config pbuilder-qemu-mips.config
+bash: /root/.pbuilderrc: No such file or directory
+fsck 1.40-WIP (14-Nov-2006)
+e2fsck 1.40-WIP (14-Nov-2006)
+/home/dancer/tmp/base-mips.qemu: clean, 11585/393984 files, 88319/786432 blocks
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB) copied, 0.0229856 seconds, 45.6 MB/s
+mke2fs 1.40-WIP (14-Nov-2006)
+	.
+	.
+	.
+\end{verbatim}\end{frame}
+
+\begin{frame}[containsverbatim]{qemubuilder --login}
+\begin{verbatim}
+	.
+	.
+	.
+hostname: the specified hostname is invalid
+bound to 10.0.2.15 -- renewal in 35272 seconds.
+bash: no job control in this shell
+root@pbuilder-coreduo:/#
+\end{verbatim}
+\end{frame}
+
 
 
 \begin{frame}{further ideas}
@@ -243,11 +324,14 @@ dpkg-source: building cowdancer in cowdancer_0.26.tar.gz
  \item Development:\\
  alioth project: \url{http://alioth.debian.org/projects/pbuilder}
 
-\begin{verbatim}
-git-clone
-  ssh://git.debian.org/git/pbuilder/pbuilder.git
-\end{verbatim}
+ \item git repository:\\
+\texttt{git-clone
+  \url{git://git.debian.org/git/pbuilder/pbuilder.git}}
+
 \end{itemize}
 \end{frame}
+
+
+\emtext{Questions?}
 
 \end{document}
