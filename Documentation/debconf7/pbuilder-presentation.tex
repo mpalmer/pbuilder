@@ -41,23 +41,23 @@
 \begin{document}
 \frame{\titlepage{}}
 
-\begin{frame}{Agenda?}
-\begin{itemize}
- \item pbuilder
- \item cowbuilder
- \item qemubuilder
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Who am I?}
+\begin{frame}{Who is this guy?}
 \begin{itemize}
  \item Junichi Uekawa, dancer@debian.org
- \item Lives in Japan, Debian JP Project Leader for 2007
+ \item Lives in Japan, Leading Debian JP for 2007
  \item Debian Developer since 2000
  \item Interests: Audio-processing related tools, and 
        Debian quality maintenance related tools,
        Japanese localization, shared library packaging, 
        and more recently, Debian/MacBook related.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Agenda?}
+\begin{itemize}
+ \item pbuilder
+ \item cowbuilder
+ \item qemubuilder
 \end{itemize}
 \end{frame}
 
@@ -227,7 +227,7 @@ dpkg-source: building cowdancer in cowdancer_0.26.tar.gz
 
 \end{frame}
 
-\begin{frame}[containsverbatim]{cowdancer}
+\begin{frame}[containsverbatim]{cowbuilder}
  
  Speed up through use of copy-on-write filesystem.
 
@@ -237,9 +237,22 @@ dpkg-source: building cowdancer in cowdancer_0.26.tar.gz
 # cp -al
     /var/cache/pbuilder/base.cow 
     /var/cache/pbuilder/build/XXX
-# chroot
-    /var/cache/pbuilder/build/XXX
+# chroot 
+   /var/cache/pbuilder/build/XXX
+   cow-shell 
 \end{verbatim}
+\end{frame}
+
+\begin{frame}{Concepts of cowdancer}
+ \begin{itemize}
+  \item Usage: hardlink files, 
+	\texttt{LD\_PRELOAD} libcowdancer.so;
+	trap libc calls likely to cause file writes
+	(open, etc) and break the hardlink.
+  \item light-weight compared to other solutions (no extra partition, no
+	LVM, no extra kernel modules/patches )
+  \item cow-shell into it.
+ \end{itemize}
 \end{frame}
 
 \begin{frame}{qemubuilder}
@@ -258,12 +271,12 @@ BASEPATH=
 \end{verbatim}
 \end{frame}
 
-\begin{frame}{qemubuilder gritty details... create}
+\begin{frame}{qemubuilder details... create}
 
 \includegraphics[width=1\hsize]{qemubuilder-create.eps}
 \end{frame}
 
-\begin{frame}{qemubuilder gritty details... build}
+\begin{frame}{qemubuilder details... build}
 
 \includegraphics[width=1\hsize]{qemubuilder-build.eps}
 \end{frame}
@@ -316,18 +329,29 @@ root@pbuilder-coreduo:/#
  \end{itemize}
 \end{frame}
 
+\begin{frame}{thanks to}
+ \begin{itemize}
+  \item Lo\"ic Minier
+  \item Mattia Dongili
+  \item Matt Kraai
+  \item ... others as in AUTHORS / THANKS file.
+ \end{itemize}
+\end{frame}
+
 \begin{frame}[containsverbatim]{References}
 \begin{itemize}
  \item Information:\\
+       \url{/usr/share/doc/pbuilder/pbuilder-doc.pdf}, 
        \url{http://pbuilder.alioth.debian.org/}
 
- \item Development:\\
- alioth project: \url{http://alioth.debian.org/projects/pbuilder}
+ \item alioth project:\\
+{\scriptsize
+\url{http://alioth.debian.org/projects/pbuilder}}
 
  \item git repository:\\
-\texttt{git-clone
-  \url{git://git.debian.org/git/pbuilder/pbuilder.git}}
-
+{\scriptsize
+\texttt{git-clone git://git.debian.org/git/pbuilder/pbuilder.git}
+}
 \end{itemize}
 \end{frame}
 
