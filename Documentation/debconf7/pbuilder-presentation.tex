@@ -22,6 +22,7 @@
 %  preview (shell-command (concat "xpdf " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
 %  presentation (shell-command (concat "xpdf -fullscreen " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
 %  presentation-evince (shell-command (concat "evince " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
+%  presentation-real (shell-command (concat "DISPLAY=:0.1 evince " (replace-regexp-in-string "tex$" "pdf"(buffer-file-name)) "&"))
 
 \newcommand{\emtext}[1]{
 \begin{frame}{}
@@ -56,6 +57,7 @@
 \begin{frame}{Agenda?}
 \begin{itemize}
  \item pbuilder
+ \item pbuilder-uml
  \item cowbuilder
  \item qemubuilder
 \end{itemize}
