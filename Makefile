@@ -57,6 +57,7 @@ install:
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/rebuild
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
+	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-mnt
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-umlresult
 	$(INSTALL_EXECUTABLE) pbuilder-buildpackage $(DESTDIR)/usr/lib/pbuilder/
@@ -108,6 +109,12 @@ install:
 	$(INSTALL_FILE) examples/pbuilder-test/002_sample.c $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
 	$(INSTALL_EXECUTABLE) examples/pbuilder-test/003_makecheck $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
 	$(INSTALL_EXECUTABLE) examples/pbuilder-test/004_ldd $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
+
+	$(INSTALL_FILE) examples/lvmpbuilder/README $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
+	$(INSTALL_EXECUTABLE) examples/lvmpbuilder/lvmbuilder $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
+	$(INSTALL_FILE) examples/lvmpbuilder/pbuilderrc $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
+	$(INSTALL_EXECUTABLE) examples/lvmpbuilder/sample_device_creator $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
+	$(INSTALL_EXECUTABLE) examples/lvmpbuilder/sample_setup_base $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
 
 	# install workaround for initscripts -- 2005-12-21
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/workaround

@@ -1378,13 +1378,9 @@ git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git
 	LVM2 has a useful snapshot function that features Copy-on-write images.
 	That could be used for <command>pbuilder</command> just as it can be used for
 	the user-mode-linux <command>pbuilder</command> port.
-	It may prove to be faster, but it is not implemented yet,
-	and so no measurement has been made, yet.
-      </para>
-      <para>
-	<command>User-mode-linux</command> cow support has been
-	preferred for <command>pbuilder-user-mode-linux</command>, but
-	the idea of using LVM is interesting.
+	lvmpbuilder script in the examples directory implements such port.
+	The scripts and documentation can be found under 
+	<filename>/usr/share/doc/pbuilder/examples/lvmpbuilder/</filename>
       </para>
     </sect1>
     <sect1 id="cowdancer">
