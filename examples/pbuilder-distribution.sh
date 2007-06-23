@@ -16,7 +16,7 @@ if ( $PROCEED == true ) then
    sudo pbuilder $OPERATION \
       --basetgz $BASE_DIR/$DISTRIBUTION-base.tgz \
       --distribution $DISTRIBUTION \
-      --buildresult $BASE_DIR/result $@
+      --buildresult $BASE_DIR/result "$@"
 else
    echo "Invalid command..."
    echo "Valid commands are:"
