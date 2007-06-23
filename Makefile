@@ -56,6 +56,7 @@ install:
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/pbuilder
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/rebuild
+	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-mnt
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-umlresult
 	$(INSTALL_EXECUTABLE) pbuilder-buildpackage $(DESTDIR)/usr/lib/pbuilder/
@@ -100,6 +101,13 @@ install:
 	$(INSTALL_EXECUTABLE) examples/rebuild/buildall $(DESTDIR)/usr/share/doc/pbuilder/examples/rebuild
 	$(INSTALL_EXECUTABLE) examples/rebuild/getlist $(DESTDIR)/usr/share/doc/pbuilder/examples/rebuild
 	$(INSTALL_FILE) examples/rebuild/README $(DESTDIR)/usr/share/doc/pbuilder/examples/rebuild
+	$(INSTALL_FILE) examples/pbuilder-test/README $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
+	$(INSTALL_EXECUTABLE) examples/pbuilder-test/000_prepinstall $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
+	$(INSTALL_EXECUTABLE) examples/pbuilder-test/001_apprun $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
+	$(INSTALL_EXECUTABLE) examples/pbuilder-test/002_libfile $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
+	$(INSTALL_FILE) examples/pbuilder-test/002_sample.c $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
+	$(INSTALL_EXECUTABLE) examples/pbuilder-test/003_makecheck $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
+	$(INSTALL_EXECUTABLE) examples/pbuilder-test/004_ldd $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
 
 	# install workaround for initscripts -- 2005-12-21
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/workaround
