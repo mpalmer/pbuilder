@@ -25,15 +25,15 @@ case "$1" in
 
         CONFFILE=/etc/pbuilderrc
 
+        # if there is a custom file, then we shouldn't touch it
+        CURRENTMIRROR=$(grep -E "MIRRORSITE=" "$CONFFILE" | sed 's#MIRRORSITE=##g')
+        [ "$CURRENTMIRROR" = "_" ] || exit 0
+
         db_get pbuilder/mirrorsite
         MIRRORSITE="$RET"
 
         if [ "$MIRRORSITE" = "_" ]
         then
-            # if there is a custom file, then we shouldn't touch it
-            CURRENTMIRROR=$(grep -E "MIRRORSITE=" "$CONFFILE" | sed 's#MIRRORSITE=##g')
-            [ "$CURRENTMIRROR" = "_" ] || exit 0
-
             MIRRORSITE=$(grep -E '^deb ' /etc/apt/sources.list | head -n 1 | awk '{print $2;}')
             db_set pbuilder/mirrorsite "$MIRRORSITE"
             db_input medium pbuilder/mirrorsite || true
