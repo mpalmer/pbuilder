@@ -6,7 +6,7 @@ P: Retrieving Release
 P: Retrieving Release.gpg
 P: Validating Release
 O: gpgv: 
-O: Signature made Wed Jun  6 05:12:05 2007 JST using DSA key ID 6070D3A1
+O: Signature made Sun Jun 10 05:14:43 2007 JST using DSA key ID 6070D3A1
 I: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
 O: gpgv: 
 O: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
@@ -219,6 +219,8 @@ P: Retrieving libslang2
 P: Validating libslang2
 P: Retrieving libnewt0.52
 P: Validating libnewt0.52
+P: Retrieving libopencdk10
+P: Validating libopencdk10
 P: Retrieving libpopt0
 P: Validating libpopt0
 P: Retrieving libssl0.9.8
@@ -2353,7 +2355,6 @@ O:
 O: makedev hdp24 b 89 88 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: 
 O: makedev sda b 8 0 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2749,6 +2750,7 @@ O:
 O: makedev sdg2 b 8 98 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
+O: 
 O: makedev sdg3 b 8 99 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -6896,6 +6898,7 @@ O:
 O: makedev cdu535 b 24 0 root cdrom 0660: failed
 O: chown: 
 O: `root:cdrom': invalid user
+O: 
 O: makedev optcd b 17 0 root cdrom 0660: failed
 O: chown: 
 O: `root:cdrom': invalid user
@@ -7610,7 +7613,6 @@ O:
 O: makedev rd/c0d20p6 b 48 166 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: 
 O: makedev rd/c0d20p7 b 48 167 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15134,21 +15136,35 @@ O:
 O: makedev rd/c7d31p7 b 55 255 root disk 0660: failed
 O: chown: 
 O: makedev dac960_gam c 10 252 root disk 0660: failed
-O: makedev dpti1 c 151 0 root disk 0660: failed
-O: makedev dpti2 c 151 1 root disk 0660: failed
-O: makedev dpti3 c 151 2 root disk 0660: failed
-O: makedev dpti4 c 151 3 root disk 0660: failed
-O: makedev dpti5 c 151 4 root disk 0660: failed
-O: makedev dpti6 c 151 5 root disk 0660: failed
-O: makedev dpti7 c 151 6 root disk 0660: failed
 O: `root:disk': invalid user
-O: chown: `root:disk': invalid user
-O: chown: `root:disk': invalid user
-O: chown: `root:disk': invalid user
-O: chown: `root:disk': invalid user
-O: chown: `root:disk': invalid user
-O: chown: `root:disk': invalid user
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
+O: makedev dpti1 c 151 0 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
+O: makedev dpti2 c 151 1 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
+O: makedev dpti3 c 151 2 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
+O: makedev dpti4 c 151 3 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
+O: makedev dpti5 c 151 4 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
+O: makedev dpti6 c 151 5 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
+O: makedev dpti7 c 151 6 root disk 0660: failed
 O: chown: 
 O: `root:root': invalid user
 O: 
@@ -16138,6 +16154,7 @@ O:
 O: makedev ida/c0d15p5 b 72 245 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d15p6 b 72 246 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17513,7 +17530,6 @@ O:
 O: makedev ida/c2d4p13 b 74 77 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: 
 O: makedev ida/c2d4p14 b 74 78 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18687,6 +18703,7 @@ O:
 O: makedev cciss/c0d4p1 b 104 65 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d4p2 b 104 66 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19942,7 +19959,6 @@ O:
 O: makedev cciss/c1d7p11 b 105 123 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: 
 O: makedev cciss/c1d7p12 b 105 124 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -22327,7 +22343,7 @@ O: Selecting previously deselected package libdb4.2.
 O: Unpacking libdb4.2 (from .../libdb4.2_4.2.52+dfsg-2_amd64.deb) ...
 P: Unpacking package libdb4.2
 O: Selecting previously deselected package libsasl2-2.
-O: Unpacking libsasl2-2 (from .../libsasl2-2_2.1.22.dfsg1-10_amd64.deb) ...
+O: Unpacking libsasl2-2 (from .../libsasl2-2_2.1.22.dfsg1-12_amd64.deb) ...
 P: Unpacking package libsasl2-2
 O: Selecting previously deselected package libldap2.
 O: Unpacking libldap2 (from .../libldap2_2.1.30-13.4_amd64.deb) ...
@@ -22376,7 +22392,7 @@ P: Configuring package libgnutls13
 O: 
 O: Setting up libdb4.2 (4.2.52+dfsg-2) ...
 P: Configuring package libdb4.2
-O: Setting up libsasl2-2 (2.1.22.dfsg1-10) ...
+O: Setting up libsasl2-2 (2.1.22.dfsg1-12) ...
 P: Configuring package libsasl2-2
 O: 
 O: Setting up libldap2 (2.1.30-13.4) ...
@@ -22454,19 +22470,19 @@ O: The following NEW packages will be installed:
 O:   adduser apt-utils aptitude bsdmainutils cpio cron dhcp3-client dhcp3-common
 O:   dmidecode ed groff-base ifupdown info iptables iputils-ping klogd
 O:   laptop-detect libconsole libdb4.4 libgdbm3 liblzo1 libncursesw5 libnewt0.52
-O:   libpopt0 libsigc++-2.0-0c2a libssl0.9.8 libwrap0 logrotate man-db manpages
-O:   module-init-tools nano net-tools netbase netcat openbsd-inetd sysklogd
-O:   tasksel tasksel-data tcpd traceroute update-inetd vim-common vim-tiny wget
-O:   whiptail
-O: 0 upgraded, 46 newly installed, 0 to remove and 0 not upgraded.
+O:   libopencdk10 libpopt0 libsigc++-2.0-0c2a libssl0.9.8 libwrap0 logrotate
+O:   man-db manpages module-init-tools nano net-tools netbase netcat
+O:   openbsd-inetd sysklogd tasksel tasksel-data tcpd traceroute update-inetd
+O:   vim-common vim-tiny wget whiptail
+O: 0 upgraded, 47 newly installed, 0 to remove and 0 not upgraded.
 O: Need to get 12.5MB of archives.
-O: After unpacking 39.6MB of additional disk space will be used.
+O: After unpacking 39.8MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
 O:   adduser libdb4.4 apt-utils libncursesw5 libsigc++-2.0-0c2a aptitude
 O:   bsdmainutils cpio cron dhcp3-common dhcp3-client dmidecode ed groff-base
 O:   net-tools ifupdown info iptables iputils-ping sysklogd klogd laptop-detect
-O:   libconsole libgdbm3 liblzo1 libnewt0.52 libpopt0 libssl0.9.8 libwrap0
-O:   logrotate man-db manpages module-init-tools nano update-inetd tcpd
+O:   libconsole libgdbm3 liblzo1 libnewt0.52 libopencdk10 libpopt0 libssl0.9.8
+O:   libwrap0 logrotate man-db manpages module-init-tools nano update-inetd tcpd
 O:   openbsd-inetd netbase netcat tasksel-data tasksel traceroute vim-common
 O:   vim-tiny wget whiptail
 O: debconf: delaying package configuration, since apt-utils is not installed
@@ -22495,7 +22511,7 @@ O: Selecting previously deselected package bsdmainutils.
 O: Unpacking bsdmainutils (from .../bsdmainutils_6.1.6_amd64.deb) ...
 P: Unpacking package bsdmainutils
 O: Selecting previously deselected package cpio.
-O: Unpacking cpio (from .../bootstrap/cpio_2.7-3_amd64.deb) ...
+O: Unpacking cpio (from .../bootstrap/cpio_2.7-4_amd64.deb) ...
 P: Unpacking package cpio
 O: Selecting previously deselected package cron.
 O: Unpacking cron (from .../cron_3.0pl1-100_amd64.deb) ...
@@ -22551,6 +22567,9 @@ P: Unpacking package liblzo1
 O: Selecting previously deselected package libnewt0.52.
 O: Unpacking libnewt0.52 (from .../libnewt0.52_0.52.2-10_amd64.deb) ...
 P: Unpacking package libnewt0.52
+O: Selecting previously deselected package libopencdk10.
+O: Unpacking libopencdk10 (from .../libopencdk10_0.6.3-1_amd64.deb) ...
+P: Unpacking package libopencdk10
 O: Selecting previously deselected package libpopt0.
 O: Unpacking libpopt0 (from .../libpopt0_1.10-3_amd64.deb) ...
 P: Unpacking package libpopt0
@@ -22567,7 +22586,7 @@ O: Selecting previously deselected package man-db.
 O: Unpacking man-db (from .../man-db_2.4.4-3_amd64.deb) ...
 P: Unpacking package man-db
 O: Selecting previously deselected package manpages.
-O: Unpacking manpages (from .../manpages_2.49-1_all.deb) ...
+O: Unpacking manpages (from .../manpages_2.51-1_all.deb) ...
 P: Unpacking package manpages
 O: Selecting previously deselected package module-init-tools.
 O: Unpacking module-init-tools (from .../module-init-tools_3.3-pre11-1_amd64.deb) ...
@@ -22631,7 +22650,7 @@ O:
 O: Setting up bsdmainutils (6.1.6) ...
 P: Configuring package bsdmainutils
 O: 
-O: Setting up cpio (2.7-3) ...
+O: Setting up cpio (2.7-4) ...
 P: Configuring package cpio
 O: 
 O: Setting up cron (3.0pl1-100) ...
@@ -22684,6 +22703,9 @@ O:
 O: Setting up libnewt0.52 (0.52.2-10) ...
 P: Configuring package libnewt0.52
 O: 
+O: Setting up libopencdk10 (0.6.3-1) ...
+P: Configuring package libopencdk10
+O: 
 O: Setting up libpopt0 (1.10-3) ...
 P: Configuring package libpopt0
 O: 
@@ -22699,7 +22721,7 @@ O: Setting up man-db (2.4.4-3) ...
 P: Configuring package man-db
 O: Building database of manual pages ...
 O: 
-O: Setting up manpages (2.49-1) ...
+O: Setting up manpages (2.51-1) ...
 P: Configuring package manpages
 O: Setting up module-init-tools (3.3-pre11-1) ...
 P: Configuring package module-init-tools
@@ -22748,21 +22770,21 @@ P: Configuring package tasksel
 O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 7176 files and directories currently installed.)
+O: 7187 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 O: Purging configuration files for cdebootstrap-helper-apt ...
 O: Reading package lists...
 O: 
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 7175 files and directories currently installed.)
+O: 7186 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 7173 files and directories currently installed.)
+O: 7184 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 P: Writing hosts
 P: Writing resolv.conf
@@ -22783,7 +22805,7 @@ Refreshing the base.tgz
  -> installing dummy policy-rc.d
 Get:1 http://cdn.debian.or.jp sid Release.gpg [189B]
 Get:2 http://cdn.debian.or.jp sid Release [79.6kB]
-Get:3 http://cdn.debian.or.jp sid/main Packages [6252kB]
+Get:3 http://cdn.debian.or.jp sid/main Packages [6255kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
@@ -22827,7 +22849,7 @@ Get:15 http://cdn.debian.or.jp sid/main dpkg-dev 1.14.4 [178kB]
 Get:16 http://cdn.debian.or.jp sid/main build-essential 11.3 [6982B]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package patch.
-(Reading database ... 7173 files and directories currently installed.)
+(Reading database ... 7184 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
 Selecting previously deselected package perl-modules.
 Unpacking perl-modules (from .../perl-modules_5.8.8-7_all.deb) ...

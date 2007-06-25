@@ -5,9 +5,12 @@ Building the build environment
 P: Retrieving Release
 P: Retrieving Release.gpg
 P: Validating Release
+O: gpgv: 
+O: Signature made Sun Jun 10 05:13:46 2007 JST using DSA key ID 6070D3A1
 I: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
-O: gpgv: Signature made Wed Jun  6 05:11:10 2007 JST using DSA key ID 6070D3A1
-O: gpgv: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
+O: gpgv: 
+O: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
+O: 
 P: Parsing Release
 P: Retrieving Packages.gz
 P: Validating Packages.gz
@@ -327,16 +330,15 @@ P: Extracting tar
 P: Extracting tzdata
 P: Extracting util-linux
 O: Selecting previously deselected package dpkg.
+O: (Reading database ... 0 files and directories currently installed.)
+O: Unpacking dpkg (from .../dpkg_1.14.4_amd64.deb) ...
+P: Unpacking package dpkg
 O: dpkg: regarding .../dpkg_1.14.4_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on libc6 (>= 2.5-5)
 O: dpkg: warning - ignoring pre-dependency problem !
 O: dpkg: regarding .../dpkg_1.14.4_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on coreutils (>= 5.93-1)
 O: dpkg: warning - ignoring pre-dependency problem !
-O: (Reading database ... 
-O: 0 files and directories currently installed.)
-O: Unpacking dpkg (from .../dpkg_1.14.4_amd64.deb) ...
-P: Unpacking package dpkg
 O: Setting up dpkg (1.14.4) ...
 P: Configuring package dpkg
 O: dpkg: dpkg: dependency problems, but configuring anyway as you request:
@@ -4293,7 +4295,6 @@ O:
 O: makedev ttyu7 c 3 87 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
-O: 
 O: makedev ptyu8 c 2 88 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -6913,6 +6914,7 @@ O:
 O: makedev gscd0 b 16 0 root cdrom 0660: failed
 O: chown: 
 O: `root:cdrom': invalid user
+O: 
 O: makedev lmscd b 24 0 root cdrom 0660: failed
 O: chown: 
 O: `root:cdrom': invalid user
@@ -7987,7 +7989,6 @@ O:
 O: makedev rd/c1d0p4 b 49 4 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: 
 O: makedev rd/c1d0p5 b 49 5 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9157,14 +9158,22 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d5p1 b 50 41 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d5p2 b 50 42 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d5p3 b 50 43 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d5p4 b 50 44 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d5p5 b 50 45 root disk 0660: failed
-O: chown: `root:disk': invalid user
-O: chown: `root:disk': invalid user
-O: chown: `root:disk': invalid user
-O: chown: `root:disk': invalid user
 O: chown: 
 O: `root:disk': invalid user
 O: 
@@ -13527,7 +13536,6 @@ O:
 O: makedev rd/c6d13p7 b 54 111 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: 
 O: makedev rd/c6d14 b 54 112 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18497,7 +18505,6 @@ O:
 O: makedev cciss/c0d1 b 104 16 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: 
 O: makedev cciss/c0d1p1 b 104 17 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -21077,6 +21084,7 @@ O:
 O: makedev cciss/c2d9p5 b 106 149 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d9p6 b 106 150 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -21784,7 +21792,7 @@ O: Selecting previously deselected package libsepol1.
 O: Unpacking libsepol1 (from .../libsepol1_2.0.3-1_amd64.deb) ...
 P: Unpacking package libsepol1
 O: Selecting previously deselected package libselinux1.
-O: Unpacking libselinux1 (from .../libselinux1_1.32-3_amd64.deb) ...
+O: Unpacking libselinux1 (from .../libselinux1_2.0.15-2_amd64.deb) ...
 P: Unpacking package libselinux1
 O: Selecting previously deselected package libcap1.
 O: Unpacking libcap1 (from .../libcap1_1.10-14_amd64.deb) ...
@@ -21796,19 +21804,19 @@ O: Selecting previously deselected package libpam-modules.
 O: Unpacking libpam-modules (from .../libpam-modules_0.79-4_amd64.deb) ...
 P: Unpacking package libpam-modules
 O: Selecting previously deselected package login.
-O: dpkg: regarding .../login_4.0.18.1-7_amd64.deb containing login, pre-dependency problem:
-O:  login pre-depends on libc6 (>= 2.3.5-1)
+O: dpkg: regarding .../login_4.0.18.1-9_amd64.deb containing login, pre-dependency problem:
+O:  login pre-depends on libc6 (>= 2.5-5)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../login_4.0.18.1-7_amd64.deb containing login, pre-dependency problem:
+O: dpkg: regarding .../login_4.0.18.1-9_amd64.deb containing login, pre-dependency problem:
 O:  login pre-depends on libpam0g (>= 0.76)
 O:   libpam0g is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../login_4.0.18.1-7_amd64.deb containing login, pre-dependency problem:
+O: dpkg: regarding .../login_4.0.18.1-9_amd64.deb containing login, pre-dependency problem:
 O:  login pre-depends on libpam-runtime (>= 0.76-14)
 O:   libpam-runtime is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking login (from .../login_4.0.18.1-7_amd64.deb) ...
+O: Unpacking login (from .../login_4.0.18.1-9_amd64.deb) ...
 P: Unpacking package login
 O: Selecting previously deselected package debianutils.
 O: dpkg: regarding .../debianutils_2.19_amd64.deb containing debianutils, pre-dependency problem:
@@ -21818,7 +21826,7 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking debianutils (from .../debianutils_2.19_amd64.deb) ...
 P: Unpacking package debianutils
 O: Selecting previously deselected package passwd.
-O: Unpacking passwd (from .../passwd_4.0.18.1-7_amd64.deb) ...
+O: Unpacking passwd (from .../passwd_4.0.18.1-9_amd64.deb) ...
 P: Unpacking package passwd
 O: Selecting previously deselected package liblocale-gettext-perl.
 O: dpkg: regarding .../liblocale-gettext-perl_1.05-1_amd64.deb containing liblocale-gettext-perl, pre-dependency problem:
@@ -22007,11 +22015,11 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking e2fsprogs (from .../e2fsprogs_1.39+1.40-WIP-2006.11.14+dfsg-2_amd64.deb) ...
 P: Unpacking package e2fsprogs
 O: Selecting previously deselected package findutils.
-O: dpkg: regarding .../findutils_4.2.30-1_amd64.deb containing findutils, pre-dependency problem:
-O:  findutils pre-depends on libc6 (>= 2.5)
+O: dpkg: regarding .../findutils_4.2.31-1_amd64.deb containing findutils, pre-dependency problem:
+O:  findutils pre-depends on libc6 (>= 2.5-5)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking findutils (from .../findutils_4.2.30-1_amd64.deb) ...
+O: Unpacking findutils (from .../findutils_4.2.31-1_amd64.deb) ...
 P: Unpacking package findutils
 O: Selecting previously deselected package gcc-4.1-base.
 O: Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1.1-21_amd64.deb) ...
@@ -22100,7 +22108,7 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking tar (from .../tar_1.16.1-1_amd64.deb) ...
 P: Unpacking package tar
 O: Selecting previously deselected package tzdata.
-O: Unpacking tzdata (from .../tzdata_2007f-3_all.deb) ...
+O: Unpacking tzdata (from .../tzdata_2007f-8_all.deb) ...
 P: Unpacking package tzdata
 O: Selecting previously deselected package util-linux.
 O: dpkg: regarding .../util-linux_2.12r-19_amd64.deb containing util-linux, pre-dependency problem:
@@ -22212,7 +22220,7 @@ O:
 O: Setting up libss2 (1.39+1.40-WIP-2006.11.14+dfsg-2) ...
 P: Configuring package libss2
 O: 
-O: Setting up findutils (4.2.30-1) ...
+O: Setting up findutils (4.2.31-1) ...
 P: Configuring package findutils
 O: 
 O: Setting up gzip (1.3.9-2) ...
@@ -22222,7 +22230,7 @@ O: Setting up liblocale-gettext-perl (1.05-1) ...
 P: Configuring package liblocale-gettext-perl
 O: Setting up diff (2.8.1-12) ...
 P: Configuring package diff
-O: Setting up libselinux1 (1.32-3) ...
+O: Setting up libselinux1 (2.0.15-2) ...
 P: Configuring package libselinux1
 O: init: 
 O: /dev/initctl: No such file or directory
@@ -22265,7 +22273,7 @@ P: Configuring package sysvinit-utils
 O: Setting up bash (3.1dfsg-8) ...
 P: Configuring package bash
 O: 
-O: Setting up login (1:4.0.18.1-7) ...
+O: Setting up login (1:4.0.18.1-9) ...
 P: Configuring package login
 O: 
 O: Setting up lsb-base (3.1-23.1) ...
@@ -22276,7 +22284,7 @@ O:
 O: Setting up mount (2.12r-19) ...
 P: Configuring package mount
 O: 
-O: Setting up passwd (1:4.0.18.1-7) ...
+O: Setting up passwd (1:4.0.18.1-9) ...
 P: Configuring package passwd
 O: Shadow passwords are now on.
 O: 
@@ -22294,7 +22302,7 @@ P: Configuring package debconf-i18n
 O: Setting up debconf (1.5.13) ...
 P: Configuring package debconf
 O: 
-O: Setting up tzdata (2007f-3) ...
+O: Setting up tzdata (2007f-8) ...
 P: Configuring package tzdata
 O: 
 O: Current default timezone: 'Etc/UTC'
@@ -22404,6 +22412,8 @@ P: Configuring package gnupg
 O: Setting up debian-archive-keyring (2007.02.19) ...
 P: Configuring package debian-archive-keyring
 O: gpg: 
+O: keyring `/etc/apt/secring.gpg' created
+O: gpg: 
 O: keyring `/etc/apt/trusted.gpg' created
 O: gpg: 
 O: /etc/apt/trustdb.gpg: trustdb created
@@ -22436,7 +22446,8 @@ O:              unchanged: 3
 O: 
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
-O: (Reading database ... 5283 files and directories currently installed.)
+O: (Reading database ... 
+O: 5283 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 O: Get:1 bootstrap: . Release.gpg [189B]
@@ -22793,7 +22804,7 @@ Refreshing the base.tgz
  -> installing dummy policy-rc.d
 Get:1 http://cdn.debian.or.jp lenny Release.gpg [189B]
 Get:2 http://cdn.debian.or.jp lenny Release [68.5kB]
-Get:3 http://cdn.debian.or.jp lenny/main Packages [5940kB]
+Get:3 http://cdn.debian.or.jp lenny/main Packages [5955kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
