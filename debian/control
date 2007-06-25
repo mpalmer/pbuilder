@@ -3,12 +3,12 @@ Section: devel
 Priority: extra
 Maintainer: Debian pbuilder maintenance team <pbuilder-maint@lists.alioth.debian.org>
 Uploaders: Junichi Uekawa <dancer@debian.org>, Matt Kraai <kraai@debian.org>
-Build-Depends: debhelper (>= 4.1.0), docbook-xsl, ldp-docbook-xsl (>= 0.0.20040321-0.1), xsltproc, dpkg-dev (>= 1.13.19), dblatex, rootstrap [i386 amd64]
+Build-Depends: debhelper (>= 4.1.0), docbook-xsl, ldp-docbook-xsl (>= 0.0.20040321-0.1), xsltproc, dpkg-dev (>= 1.13.19), dblatex, rootstrap [i386 amd64], debconf|debconf-2.0
 Standards-Version: 3.7.2
 
 Package: pbuilder
 Architecture: all
-Depends: cdebootstrap|debootstrap, wget, gcc, debianutils (>= 1.13.1), coreutils (>= 4.5.8-1)
+Depends: cdebootstrap|debootstrap, wget, gcc, debianutils (>= 1.13.1), coreutils (>= 4.5.8-1), ${misc:Depends}
 Recommends: fakeroot, sudo, devscripts, cowdancer
 Suggests: pbuilder-uml
 Description: personal package builder for Debian packages
