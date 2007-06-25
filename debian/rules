@@ -72,6 +72,7 @@ ifneq (,$(findstring ${ARCH},i386 amd64))
 	dh_gencontrol  -a
 	dh_md5sums  -a
 	dh_builddeb -a
+	dh_installdebconf
 endif
 
 

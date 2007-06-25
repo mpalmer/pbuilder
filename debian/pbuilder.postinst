@@ -1,0 +1,20 @@
+#!/bin/sh
+
+. /usr/share/debconf/confmodule
+
+CONFFILE=/etc/pbuilderrc
+
+db_get pbuilder/mirrorsite
+MIRRORSITE="$RET"
+
+if [ "$MIRRORSITE" = "_" ]
+then
+    MIRRORSITE=$(grep -E '^deb ' /etc/apt/sources.list | head -n 1 | awk '{print $2;}')
+    db_set pbuilder/mirrorsite "$MIRRORSITE"
+    db_input medium pbuilder/mirrorsite
+    db_go
+fi
+
+TMPFILE=`mktemp`
+cat "$CONFFILE" | sed "s#MIRRORSITE=.*\$#MIRRORSITE=$MIRRORSITE#" > "$TMPFILE" && mv "$TMPFILE" "$CONFFILE"
+
