@@ -1155,6 +1155,9 @@ cd /var/cache/pbuilder/result/
 	needs to exist, and be writable by user within <command>chroot</command>.  The
 	default user within <command>chroot</command> is <screen>uid=1234</screen>.
       </para>
+      <para>
+	Example is provided as pbuilderrc.ccache.
+      </para>
       <screen>
 export CCACHE_DIR="/var/cache/pbuilder/ccache"
 export PATH="/usr/lib/ccache:${PATH}"
