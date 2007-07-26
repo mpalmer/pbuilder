@@ -864,6 +864,57 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	<command>pbuilder</command> with a etch chroot.
       </para>
     </sect1>
+    <sect1 id="ENVVARDISTRIBUTIONSWITCH">
+      <title>Using environmental variables for running <command>pbuilder</command>
+	for specific distribution
+      </title>
+      <para>      This section<footnote>
+	  <para>This part of the documentation contributed by Andres Mejia</para>
+	  <para>
+	    This example was taken from a wiki (<ulink url="https://wiki.ubuntu.com/PbuilderHowto">https://wiki.ubuntu.com/PbuilderHowto</ulink>).
+      </para>
+
+	</footnote>
+	describes briefly a way to setup and use multiple pbuilder setups
+	by creating a pbuilderrc configuration in your home path (<filename>$HOME/.pbuilderrc</filename>)
+	and using the variable "DIST" when running pbuilder or pdebuild.
+</para>
+      <para>      First, setup <filename>$HOME/.pbuilderrc</filename> to look like:</para>
+      <para>
+	<screen>
+if [ -n "${DIST}" ]; then
+        BASETGZ="`dirname $BASETGZ`/$DIST-base.tgz"
+        DISTRIBUTION="$DIST"
+        BUILDRESULT="/var/cache/pbuilder/$DIST/result/"
+        APTCACHE="/var/cache/pbuilder/$DIST/aptcache/"
+fi
+</screen></para>
+      <para>Then, whenever you wish to use pbuilder for a particular distro, assign a value
+to "DIST" that is one of the distros available for Debian or any Debian based
+distro you happen to be running (i.e. whatever is found under
+/usr/lib/debootstrap/scripts).
+      </para>
+
+      <para>Here's some examples on running pbuilder or pdebuild:
+</para>
+      <para><screen>
+DIST=gutsy sudo pbuilder create
+
+DIST=sid sudo pbuilder create --mirror http://http.us.debian.org/debian
+
+DIST=gutsy sudo pbuilder create \
+        --othermirror "deb http://archive.ubuntu.com/ubuntu gutsy universe \
+        multiverse"
+
+DIST=gutsy sudo pbuilder update
+
+DIST=sid sudo pbuilder update --override-config --mirror \
+http://http.us.debian.org/debian \
+--othermirror "deb http://http.us.debian.org/debian sid contrib non-free"
+
+DIST=gutsy pdebuild
+</screen></para>
+    </sect1>
     <sect1 id="usingspecialaptsources">
       <title>Using special apt sources lists, and local packages</title>
       <para>
