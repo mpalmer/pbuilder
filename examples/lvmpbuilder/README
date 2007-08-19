@@ -1,36 +1,50 @@
-The files in this directory (except pbuilderrc) were written by
-(C) 2006 Kapil Hari Paranjape <kapil@imsc.res.in>. 
-They are placed in the public domain. You can do with them exactly as you wish.
+The files under this directory were written by Kapil Hari Paranjape
+<kapil@imsc.res.in> and are based on pbuilder by Junichi Uekawa.
 
-These are scripts to help pbuilder run with the device mapper or LVM.
-(You do need "dmsetup" to be installed on your system.)
+They are placed under the GPL (see the header of each file for
+details).
+
+These files are scripts to help pbuilder run with the linux device mapper.
 
 I hope the files are reasonably well commented. If not please ask me.
 
-The rough order of things is as follows.
+The order of things is roughly as follows.
 
-1. Use a script like "sample_device_creator" to create two block
-devices. The BASE device should have enough space to hold the basic
-buildd environment (an unpacked base.tgz from pbuilder). The COW
-device should have enough space to perform the build.
+1. Create/assign two block devices for build work. The BASEDEV device
+   should have enough space to hold the basic debian buildd root
+   (an unpacked base.tgz from pbuilder). The COWDEV device should have
+   enough space to actually perform the build.
+
+   WARNING: All data on these two devices will be wiped out
+   in the process of using lvmbuilder. You have been warned.
+
+1a.You could use a script like "sample_device_creator" to create
+   two block devices. This creates "loop"back block devices out
+   of files.
+
+   WARNING: This is a sample script which I no longer use.
+   Instead I have two real block devices reserved for build work.
 
 2. You should edit your ~/.pbuilderrc and add two lines
-	BASEDEV=<fullpath of base device>
-	COWDEV=<fullpath of cow device>
+	BASEDEV=<fullpath of base block device>
+	COWDEV=<fullpath of cow block device>
+   you can also give these on the command line with
+	--basedev <fullpath of base block device>
+   and
+	--cowdev <fullpath of cow block device>
 
-3. Use a script like "sample_setup_base" to setup the BASE device. 
-Essentially this ensures that BASE device has a working (ext2) file
-system which has the entire chroot (e.g. just unpack base.tgz to this
-device). In addition, the BASE device *must* be "e2fsck -f"'ed in
-order that the resize works in the next step. Optionally you can set
-the BASE device to be a read-only device after this step.
+3. Edit the lvmbuilder script to give the location of the lib
+   subdirectory.
 
-4. Now you can run "lvmbuilder <dsc_filename>" to build your package.
-	(a) It ought to be faster than unpacking base.tgz
-	(b) It will make no changes to the BASE device.
+4. After this you can use lvmbuilder in place of pbuilder for
+   the "create", "update", "build", "login" and "execute" operations.
+   A number of command line options of pbuilder do not make
+   sense in the lvm context --- these should generate error
+   messages. See the file STRATEGY for details.
+
 
 Hope this helps!
 --
 Kapil Hari Paranjape
-Thu, 28 Sep 2006 12:40:12 +0530
+Wed, 15 Aug 2007 09:55:17 +0530
 

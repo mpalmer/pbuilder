@@ -112,10 +112,11 @@ install:
 	$(INSTALL_EXECUTABLE) examples/pbuilder-test/004_ldd $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
 
 	$(INSTALL_FILE) examples/lvmpbuilder/README $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
+	$(INSTALL_FILE) examples/lvmpbuilder/STRATEGY $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
 	$(INSTALL_EXECUTABLE) examples/lvmpbuilder/lvmbuilder $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
-	$(INSTALL_FILE) examples/lvmpbuilder/pbuilderrc $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
-	$(INSTALL_EXECUTABLE) examples/lvmpbuilder/sample_device_creator $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
-	$(INSTALL_EXECUTABLE) examples/lvmpbuilder/sample_setup_base $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
+	$(INSTALL_FILE) examples/lvmpbuilder/lib/lvmbuilder-checkparams $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder/lib
+	$(INSTALL_FILE) examples/lvmpbuilder/lib/lvmbuilder-modules $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder/lib
+	$(INSTALL_FILE) examples/lvmpbuilder/lib/lvmbuilder-unimplemented $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder/lib
 
 	# install workaround for initscripts -- 2005-12-21
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/workaround
