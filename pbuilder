@@ -68,7 +68,7 @@ File extracted to: $BUILDPLACE
 "
 	fi
 	executehooks "F"
-	${CHROOTEXEC} bin/bash
+	(${CHROOTEXEC} bin/bash -c 'exec -a -bash bin/bash')
 
 	save_aptcache
 
