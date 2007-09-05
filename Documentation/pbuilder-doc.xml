@@ -1230,6 +1230,22 @@ BINDMOUNTS="${CCACHE_DIR}"
 	<screen>APTCACHEHARDLINK=no</screen>.
       </para>
     </sect1>
+    <sect1>
+      <title id="svnbuildpackage">Using svn-buildpackage together with pbuilder</title>
+      <para>
+	pdebuild command can be used with svn-buildpackage
+	--svn-builder command-line option.
+	<footnote>
+	  <para><ulink url="http://www.bononia.it/~zack/blog/posts/2007/09/svn-cowbuilder.html">
+	      Zack has posted an example on his blog.
+	    </ulink></para>
+	</footnote>
+      </para>
+      <screen>
+alias svn-cowbuilder="svn-buildpackage --svn-builder='pdebuild --pbuilder cowbuilder"
+      </screen>
+    </sect1>
+
     <!-- end of FAQ -->
   </chapter>
 

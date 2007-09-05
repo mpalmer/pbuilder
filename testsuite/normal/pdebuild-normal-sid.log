@@ -38,34 +38,61 @@ Building the build Environment
  -> mounting /dev/pts filesystem
  -> policy-rc.d already exists
 Installing the build-deps
- -> Attempting to parse the build-deps 
- -> Considering build-dep debhelper (>> 3.0.0)
-   -> Trying debhelper
- -> Considering build-dep libdshconfig1-dev (>= 0.20.11-1)
-   -> Trying libdshconfig1-dev
- -> Considering build-dep po4a
-   -> Trying po4a
- -> Installing  debhelper libdshconfig1-dev po4a
+ -> Attempting to satisfy build-dependencies
+ -> Creating pbuilder-satisfydepends-dummy package
+Package: pbuilder-satisfydepends-dummy
+Version: 0.invalid.0
+Architecture: amd64
+Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
+Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
+ This package was created automatically by pbuilder and should
+Depends: debhelper (>> 3.0.0), libdshconfig1-dev (>= 0.20.11-1), po4a
+dpkg-deb: building package `pbuilder-satisfydepends-dummy' in `/tmp/satisfydepends-aptitude/pbuilder-satisfydepends-dummy.deb'.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following extra packages will be installed:
-  file gettext gettext-base html2text intltool-debian libdshconfig1 libmagic1
-  libsgmls-perl libsp1c2 po-debconf sp
-Suggested packages:
-  dh-make cvs gettext-doc sgmlspl sgmls-doc doc-base sgml-data
-Recommended packages:
-  libmail-sendmail-perl libcompress-zlib-perl libterm-readkey-perl
+aptitude is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Selecting previously deselected package pbuilder-satisfydepends-dummy.
+(Reading database ... 11321 files and directories currently installed.)
+Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
+dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
+ pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
+  Package debhelper is not installed.
+ pbuilder-satisfydepends-dummy depends on libdshconfig1-dev (>= 0.20.11-1); however:
+  Package libdshconfig1-dev is not installed.
+ pbuilder-satisfydepends-dummy depends on po4a; however:
+  Package po4a is not installed.
+dpkg: error processing pbuilder-satisfydepends-dummy (--install):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ pbuilder-satisfydepends-dummy
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Initializing package states...
+Writing extended state information...
+Reading task descriptions...
+Building tag database...
+The following NEW packages will be automatically installed:
+  debhelper file gettext gettext-base html2text intltool-debian 
+  libdshconfig1 libdshconfig1-dev libmagic1 libsgmls-perl libsp1c2 
+  po-debconf po4a sp 
 The following NEW packages will be installed:
-  debhelper file gettext gettext-base html2text intltool-debian libdshconfig1
-  libdshconfig1-dev libmagic1 libsgmls-perl libsp1c2 po-debconf po4a sp
-0 upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
-Need to get 5888kB of archives.
-After unpacking 19.3MB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp sid/main libmagic1 4.21-2 [332kB]
-Get:2 http://cdn.debian.or.jp sid/main file 4.21-2 [40.0kB]
-Get:3 http://cdn.debian.or.jp sid/main gettext-base 0.16.1-2 [133kB]
-Get:4 http://cdn.debian.or.jp sid/main html2text 1.3.2a-3 [92.7kB]
+  debhelper file gettext gettext-base html2text intltool-debian 
+  libdshconfig1 libdshconfig1-dev libmagic1 libsgmls-perl libsp1c2 
+  po-debconf po4a sp 
+The following partially installed packages will be configured:
+  pbuilder-satisfydepends-dummy 
+The following packages are RECOMMENDED but will NOT be installed:
+  libcompress-zlib-perl libmail-sendmail-perl libterm-readkey-perl 
+0 packages upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
+Need to get 5932kB of archives. After unpacking 19.8MB will be used.
+Writing extended state information...
+Get:1 http://cdn.debian.or.jp sid/main libmagic1 4.21-3 [333kB]
+Get:2 http://cdn.debian.or.jp sid/main file 4.21-3 [40.3kB]
+Get:3 http://cdn.debian.or.jp sid/main html2text 1.3.2a-3 [92.7kB]
+Get:4 http://cdn.debian.or.jp sid/main gettext-base 0.16.1-2 [133kB]
 Get:5 http://cdn.debian.or.jp sid/main gettext 0.16.1-2 [2269kB]
 Get:6 http://cdn.debian.or.jp sid/main intltool-debian 0.35.0+20060710.1 [30.8kB]
 Get:7 http://cdn.debian.or.jp sid/main po-debconf 1.0.9 [117kB]
@@ -75,17 +102,17 @@ Get:10 http://cdn.debian.or.jp sid/main libdshconfig1-dev 0.20.13-1 [25.4kB]
 Get:11 http://cdn.debian.or.jp sid/main libsgmls-perl 1.03ii-31 [29.3kB]
 Get:12 http://cdn.debian.or.jp sid/main libsp1c2 1.3.4-1.2.1-47 [1386kB]
 Get:13 http://cdn.debian.or.jp sid/main sp 1.3.4-1.2.1-47 [182kB]
-Get:14 http://cdn.debian.or.jp sid/main po4a 0.31-1 [720kB]
+Get:14 http://cdn.debian.or.jp sid/main po4a 0.32-1 [762kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11096 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.21-2_amd64.deb) ...
+(Reading database ... 11321 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.21-3_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.21-2_amd64.deb) ...
-Selecting previously deselected package gettext-base.
-Unpacking gettext-base (from .../gettext-base_0.16.1-2_amd64.deb) ...
+Unpacking file (from .../archives/file_4.21-3_amd64.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
+Selecting previously deselected package gettext-base.
+Unpacking gettext-base (from .../gettext-base_0.16.1-2_amd64.deb) ...
 Selecting previously deselected package gettext.
 Unpacking gettext (from .../gettext_0.16.1-2_amd64.deb) ...
 Selecting previously deselected package intltool-debian.
@@ -105,13 +132,13 @@ Unpacking libsp1c2 (from .../libsp1c2_1.3.4-1.2.1-47_amd64.deb) ...
 Selecting previously deselected package sp.
 Unpacking sp (from .../sp_1.3.4-1.2.1-47_amd64.deb) ...
 Selecting previously deselected package po4a.
-Unpacking po4a (from .../archives/po4a_0.31-1_all.deb) ...
-Setting up libmagic1 (4.21-2) ...
+Unpacking po4a (from .../archives/po4a_0.32-1_all.deb) ...
+Setting up libmagic1 (4.21-3) ...
 
-Setting up file (4.21-2) ...
-Setting up gettext-base (0.16.1-2) ...
-
+Setting up file (4.21-3) ...
 Setting up html2text (1.3.2a-3) ...
+
+Setting up gettext-base (0.16.1-2) ...
 
 Setting up gettext (0.16.1-2) ...
 
@@ -126,7 +153,16 @@ Setting up libsp1c2 (1.3.4-1.2.1-47) ...
 
 Setting up sp (1.3.4-1.2.1-47) ...
 
-Setting up po4a (0.31-1) ...
+Setting up po4a (0.32-1) ...
+Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading extended state information...
+Initializing package states...
+Writing extended state information...
+Reading task descriptions...
+Building tag database...
  -> Finished parsing the build-deps
 Reading package lists...
 Building dependency tree...
@@ -139,7 +175,7 @@ After unpacking 451kB of additional disk space will be used.
 Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.7.1 [111kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12038 files and directories currently installed.)
+(Reading database ... 12284 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.7.1_amd64.deb) ...
 Setting up fakeroot (1.7.1) ...
 
@@ -455,11 +491,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Aug 17 03:05:27 UTC 2007
+Wed Sep  5 03:04:34 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -529,7 +565,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Fri Aug 17 03:05:32 UTC 2007
+Wed Sep  5 03:04:39 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
