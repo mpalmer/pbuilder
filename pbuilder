@@ -69,6 +69,7 @@ File extracted to: $BUILDPLACE
 	fi
 	executehooks "F"
 	(${CHROOTEXEC} bin/bash -c 'exec -a -bash bin/bash')
+	RET=$?
 
 	save_aptcache
 
@@ -88,12 +89,12 @@ File extracted to: $BUILDPLACE
 		create_basetgz
 		cleanbuildplace
 		trap - exit sighup
-		exit 0
+		exit $RET
 	    fi
 	fi
 	umountproc_cleanbuildplace
 	trap - exit sighup
-	exit 0
+	exit $RET
 	;;
     --execute|execute)
 	# try to execute arbitrary program.
@@ -118,7 +119,8 @@ File extracted to: $BUILDPLACE
 	cat "$EXECPROGRAM" > "$RUNNAME"
 	chmod a+x "$RUNNAME"
 	executehooks "F"
-	${CHROOTEXEC} /run "$@"
+	( ${CHROOTEXEC} /run "$@" )
+	RET=$?
 	rm -f "$RUNNAME"
 
 	save_aptcache
@@ -137,12 +139,12 @@ File extracted to: $BUILDPLACE
 		create_basetgz
 		cleanbuildplace
 		trap - exit sighup
-		exit 0
+		exit $RET
 	    fi
 	fi
 	umountproc_cleanbuildplace
 	trap - exit sighup
-	exit 0
+	exit $RET
 	;;
     --dumpconfig|dumpconfig)
 	shift
