@@ -6,7 +6,7 @@ P: Retrieving Release
 P: Retrieving Release.gpg
 P: Validating Release
 O: gpgv: 
-O: Signature made Mon Sep 10 05:19:29 2007 JST using DSA key ID 6070D3A1
+O: Signature made Mon Oct  1 05:19:00 2007 JST using DSA key ID 6070D3A1
 I: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
 O: gpgv: 
 O: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
@@ -23,26 +23,6 @@ P: Retrieving libc6
 P: Validating libc6
 P: Retrieving perl-base
 P: Validating perl-base
-P: Retrieving libpam-runtime
-P: Validating libpam-runtime
-P: Retrieving libpam0g
-P: Validating libpam0g
-P: Retrieving libsepol1
-P: Validating libsepol1
-P: Retrieving libselinux1
-P: Validating libselinux1
-P: Retrieving libcap1
-P: Validating libcap1
-P: Retrieving libdb4.3
-P: Validating libdb4.3
-P: Retrieving libpam-modules
-P: Validating libpam-modules
-P: Retrieving login
-P: Validating login
-P: Retrieving debianutils
-P: Validating debianutils
-P: Retrieving passwd
-P: Validating passwd
 P: Retrieving liblocale-gettext-perl
 P: Validating liblocale-gettext-perl
 P: Retrieving libtext-iconv-perl
@@ -55,6 +35,26 @@ P: Retrieving debconf-i18n
 P: Validating debconf-i18n
 P: Retrieving debconf
 P: Validating debconf
+P: Retrieving libpam-runtime
+P: Validating libpam-runtime
+P: Retrieving libpam0g
+P: Validating libpam0g
+P: Retrieving libsepol1
+P: Validating libsepol1
+P: Retrieving libselinux1
+P: Validating libselinux1
+P: Retrieving libcap1
+P: Validating libcap1
+P: Retrieving libdb4.6
+P: Validating libdb4.6
+P: Retrieving libpam-modules
+P: Validating libpam-modules
+P: Retrieving login
+P: Validating login
+P: Retrieving debianutils
+P: Validating debianutils
+P: Retrieving passwd
+P: Validating passwd
 P: Retrieving adduser
 P: Validating adduser
 P: Retrieving libstdc++6
@@ -201,6 +201,8 @@ P: Retrieving laptop-detect
 P: Validating laptop-detect
 P: Retrieving libconsole
 P: Validating libconsole
+P: Retrieving libdb4.3
+P: Validating libdb4.3
 P: Retrieving libgdbm3
 P: Validating libgdbm3
 P: Retrieving liblzo1
@@ -267,22 +269,22 @@ P: Extracting gcc-4.2-base
 P: Extracting libc6
 P: Extracting libgcc1
 P: Extracting perl-base
-P: Extracting libpam-runtime
-P: Extracting libpam0g
-P: Extracting libsepol1
-P: Extracting libselinux1
-P: Extracting libcap1
-P: Extracting libdb4.3
-P: Extracting libpam-modules
-P: Extracting login
-P: Extracting debianutils
-P: Extracting passwd
 P: Extracting liblocale-gettext-perl
 P: Extracting libtext-iconv-perl
 P: Extracting libtext-charwidth-perl
 P: Extracting libtext-wrapi18n-perl
 P: Extracting debconf
 P: Extracting debconf-i18n
+P: Extracting libpam-runtime
+P: Extracting libpam0g
+P: Extracting libsepol1
+P: Extracting libselinux1
+P: Extracting libcap1
+P: Extracting libdb4.6
+P: Extracting libpam-modules
+P: Extracting login
+P: Extracting debianutils
+P: Extracting passwd
 P: Extracting libstdc++6
 P: Extracting zlib1g
 P: Extracting libncurses5
@@ -316,6 +318,7 @@ P: Extracting hostname
 P: Extracting mount
 P: Extracting sysvinit-utils
 P: Extracting initscripts
+P: Extracting libdb4.3
 P: Extracting libslang2
 P: Extracting mktemp
 P: Extracting ncurses-base
@@ -326,28 +329,27 @@ P: Extracting tar
 P: Extracting tzdata
 P: Extracting util-linux
 O: Selecting previously deselected package dpkg.
-O: dpkg: regarding .../dpkg_1.14.5_amd64.deb containing dpkg, pre-dependency problem:
-O:  dpkg pre-depends on libc6 (>= 2.5-5)
+O: dpkg: regarding .../dpkg_1.14.6_amd64.deb containing dpkg, pre-dependency problem:
+O:  dpkg pre-depends on libc6 (>= 2.6.1-1)
 O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../dpkg_1.14.5_amd64.deb containing dpkg, pre-dependency problem:
+O: dpkg: regarding .../dpkg_1.14.6_amd64.deb containing dpkg, pre-dependency problem:
 O:  dpkg pre-depends on coreutils (>= 5.93-1)
 O: dpkg: warning - ignoring pre-dependency problem !
 O: (Reading database ... 
 O: 0 files and directories currently installed.)
-O: Unpacking dpkg (from .../dpkg_1.14.5_amd64.deb) ...
+O: Unpacking dpkg (from .../dpkg_1.14.6_amd64.deb) ...
 P: Unpacking package dpkg
 O: dpkg: dpkg: dependency problems, but configuring anyway as you request:
-O:  dpkg depends on libc6 (>= 2.5-5); however:
+O:  dpkg depends on libc6 (>= 2.6.1-1); however:
 O:   Package libc6 is not installed.
 O:  dpkg depends on coreutils (>= 5.93-1); however:
 O:   Package coreutils is not installed.
-O: Setting up dpkg (1.14.5) ...
+O: Setting up dpkg (1.14.6) ...
 P: Configuring package dpkg
-O: 
 P: Configuring helper cdebootstrap-helper-diverts
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
 O: (Reading database ... 
-O: 237 files and directories currently installed.)
+O: 248 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
 O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
@@ -355,7 +357,7 @@ O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
 O: (Reading database ... 
-O: 240 files and directories currently installed.)
+O: 251 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: chown: 
@@ -370,7 +372,9 @@ O: chown:
 O: `root:root': invalid user
 O: 
 O: makedev null c 1 3 root root 0666: failed
-O: chown: `root:kmem': invalid user
+O: chown: 
+O: `root:kmem': invalid user
+O: 
 O: makedev port c 1 4 root kmem 0640: failed
 O: chown: 
 O: `root:root': invalid user
@@ -408,8 +412,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ram3 b 1 3 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
+O: chown: `root:disk': invalid user
 O: 
 O: makedev ram4 b 1 4 root disk 0660: failed
 O: chown: 
@@ -424,9 +427,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ram7 b 1 7 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev ram8 b 1 8 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -456,9 +457,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ram15 b 1 15 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev ram16 b 1 16 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -608,9 +607,7 @@ O: chown:
 O: `root:floppy': invalid user
 O: 
 O: makedev fd0u3840 b 2 112 root floppy 0660: failed
-O: chown: 
-O: `root:floppy': invalid user
-O: 
+O: chown: `root:floppy': invalid user
 O: makedev fd0u1840 b 2 116 root floppy 0660: failed
 O: chown: 
 O: `root:floppy': invalid user
@@ -640,7 +637,9 @@ O: chown:
 O: `root:floppy': invalid user
 O: 
 O: makedev fd1u720 b 2 17 root floppy 0660: failed
-O: chown: `root:floppy': invalid user
+O: chown: 
+O: `root:floppy': invalid user
+O: 
 O: makedev fd1h360 b 2 21 root floppy 0660: failed
 O: chown: 
 O: `root:floppy': invalid user
@@ -786,9 +785,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hda9 b 3 9 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev hda10 b 3 10 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -950,7 +947,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdc b 22 0 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdc1 b 22 1 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -972,7 +971,8 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdc6 b 22 6 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
 O: 
 O: makedev hdc7 b 22 7 root disk 0660: failed
 O: chown: 
@@ -1019,7 +1019,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdc18 b 22 18 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdc19 b 22 19 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1069,9 +1071,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdd6 b 22 70 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev hdd7 b 22 71 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1113,9 +1113,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdd17 b 22 81 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev hdd18 b 22 82 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1135,7 +1133,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdd23 b 22 87 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdd24 b 22 88 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1265,9 +1265,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdf6 b 33 70 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev hdf7 b 33 71 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1293,13 +1291,17 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdf13 b 33 77 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdf14 b 33 78 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev hdf15 b 33 79 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdf16 b 33 80 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1357,9 +1359,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdg5 b 34 5 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev hdg6 b 34 6 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1373,7 +1373,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdg9 b 34 9 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdg10 b 34 10 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1419,7 +1421,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdg21 b 34 21 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdg22 b 34 22 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1481,7 +1485,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdh12 b 34 76 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdh13 b 34 77 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1503,9 +1509,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdh18 b 34 82 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev hdh19 b 34 83 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1619,7 +1623,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdi22 b 56 22 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdi23 b 56 23 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1713,7 +1719,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdj21 b 56 85 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdj22 b 56 86 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1771,7 +1779,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdk11 b 57 11 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdk12 b 57 12 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1809,9 +1819,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdk21 b 57 21 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev hdk22 b 57 22 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1913,9 +1921,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdl22 b 57 86 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev hdl23 b 57 87 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1969,7 +1975,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdm11 b 88 11 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdm12 b 88 12 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -1995,7 +2003,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdm18 b 88 18 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdm19 b 88 19 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2033,17 +2043,19 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev hdn3 b 88 67 root disk 0660: failed
-O: chown: `root:disk': invalid user
-O: makedev hdn4 b 88 68 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
+O: makedev hdn4 b 88 68 root disk 0660: failed
+O: chown: `root:disk': invalid user
 O: makedev hdn5 b 88 69 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev hdn6 b 88 70 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev hdn7 b 88 71 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2337,9 +2349,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sda5 b 8 5 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev sda6 b 8 6 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2349,9 +2359,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sda8 b 8 8 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev sda9 b 8 9 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2385,7 +2393,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdb1 b 8 17 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev sdb2 b 8 18 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2441,7 +2451,6 @@ O:
 O: makedev sdb15 b 8 31 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: 
 O: makedev sdc b 8 32 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2583,7 +2592,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sde3 b 8 67 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev sde4 b 8 68 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2631,6 +2642,7 @@ O:
 O: makedev sde15 b 8 79 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
+O: 
 O: makedev sdf b 8 80 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2720,9 +2732,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdg6 b 8 102 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev sdg7 b 8 103 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2804,7 +2814,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdh11 b 8 123 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev sdh12 b 8 124 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2830,7 +2842,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdi2 b 8 130 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev sdi3 b 8 131 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2884,7 +2898,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdj b 8 144 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev sdj1 b 8 145 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -2918,8 +2934,10 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdj9 b 8 153 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev sdj10 b 8 154 root disk 0660: failed
-O: chown: `root:disk': invalid user
 O: chown: 
 O: `root:disk': invalid user
 O: 
@@ -3008,9 +3026,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdl b 8 176 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev sdl1 b 8 177 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -3168,9 +3184,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdn8 b 8 216 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev sdn9 b 8 217 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -3208,7 +3222,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdo2 b 8 226 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev sdo3 b 8 227 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -3254,7 +3270,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdo14 b 8 238 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev sdo15 b 8 239 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -3276,7 +3294,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev sdp4 b 8 244 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev sdp5 b 8 245 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -3334,9 +3354,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev xda3 b 13 3 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev xda4 b 13 4 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -3494,7 +3512,9 @@ O: chown:
 O: `root:root': invalid user
 O: 
 O: makedev sg7 c 21 7 root root 0600: failed
-O: chown: `root:root': invalid user
+O: chown: 
+O: `root:root': invalid user
+O: 
 O: makedev sg8 c 21 8 root root 0600: failed
 O: chown: 
 O: `root:root': invalid user
@@ -3524,7 +3544,9 @@ O: chown:
 O: `root:root': invalid user
 O: 
 O: makedev sg15 c 21 15 root root 0600: failed
-O: chown: `root:root': invalid user
+O: chown: 
+O: `root:root': invalid user
+O: 
 O: makedev sg16 c 21 16 root root 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -3662,9 +3684,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyq0 c 3 16 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev ptyq1 c 2 17 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -3678,7 +3698,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyq2 c 3 18 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ptyq3 c 2 19 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -3780,9 +3802,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyqf c 3 31 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev ptyr0 c 2 32 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -3808,9 +3828,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ptyr3 c 2 35 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev ttyr3 c 3 35 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -3884,7 +3902,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyrc c 3 44 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ptyrd c 2 45 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -3986,8 +4006,10 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttys9 c 3 57 root tty 0666: failed
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ptysa c 2 58 root tty 0666: failed
-O: chown: `root:tty': invalid user
 O: chown: 
 O: `root:tty': invalid user
 O: 
@@ -4028,13 +4050,17 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ptysf c 2 63 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ttysf c 3 63 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
 O: 
 O: makedev ptyt0 c 2 64 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ttyt0 c 3 64 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4108,7 +4134,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyt9 c 3 73 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ptyta c 2 74 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4162,7 +4190,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyu0 c 3 80 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ptyu1 c 2 81 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4192,9 +4222,13 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyu4 c 3 84 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ptyu5 c 2 85 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ttyu5 c 3 85 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4212,8 +4246,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyu7 c 3 87 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
+O: chown: `root:tty': invalid user
 O: 
 O: makedev ptyu8 c 2 88 root tty 0666: failed
 O: chown: 
@@ -4348,7 +4381,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyv8 c 3 104 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ptyv9 c 2 105 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4358,7 +4393,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ptyva c 2 106 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ttyva c 3 106 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4372,9 +4409,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ptyvc c 2 108 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev ttyvc c 3 108 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4428,7 +4463,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ptyw3 c 2 115 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ttyw3 c 3 115 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4446,7 +4483,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyw5 c 3 117 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ptyw6 c 2 118 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4456,7 +4495,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ptyw7 c 2 119 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ttyw7 c 3 119 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4758,7 +4799,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ptyyd c 2 157 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ttyyd c 3 157 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4792,9 +4835,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyz1 c 3 161 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev ptyz2 c 2 162 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4820,9 +4861,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ptyz5 c 2 165 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev ttyz5 c 3 165 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4944,9 +4983,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttya4 c 3 180 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev ptya5 c 2 181 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -4976,9 +5013,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttya8 c 3 184 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev ptya9 c 2 185 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -5050,6 +5085,7 @@ O:
 O: makedev ttyb1 c 3 193 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
+O: 
 O: makedev ptyb2 c 2 194 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -5155,9 +5191,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ptybf c 2 207 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev ttybf c 3 207 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -5231,7 +5265,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyc8 c 3 216 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev ptyc9 c 2 217 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -5301,7 +5337,8 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyd1 c 3 225 root tty 0666: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
 O: 
 O: makedev ptyd2 c 2 226 root tty 0666: failed
 O: chown: 
@@ -5372,9 +5409,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ttyda c 3 234 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev ptydb c 2 235 root tty 0666: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -5456,8 +5491,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev ptye5 c 2 245 root tty 0666: failed
-O: chown: 
-O: `root:tty': invalid user
+O: chown: `root:tty': invalid user
 O: 
 O: makedev ttye5 c 3 245 root tty 0666: failed
 O: chown: 
@@ -5576,7 +5610,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev tty2 c 4 2 root tty 0600: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev vcs2 c 7 2 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -5610,7 +5646,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev tty5 c 4 5 root tty 0600: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev vcs5 c 7 5 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -5656,7 +5694,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev tty9 c 4 9 root tty 0600: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev vcs9 c 7 9 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -5666,7 +5706,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev tty10 c 4 10 root tty 0600: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev vcs10 c 7 10 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -5840,9 +5882,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev vcsa24 c 7 152 root tty 0600: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev tty25 c 4 25 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -6060,11 +6100,11 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev tty43 c 4 43 root tty 0600: failed
-O: chown: `root:tty': invalid user
-O: makedev vcs43 c 7 43 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
 O: 
+O: makedev vcs43 c 7 43 root tty 0600: failed
+O: chown: `root:tty': invalid user
 O: makedev vcsa43 c 7 171 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -6150,13 +6190,17 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev vcsa50 c 7 178 root tty 0600: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev tty51 c 4 51 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
 O: 
 O: makedev vcs51 c 7 51 root tty 0600: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev vcsa51 c 7 179 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -6174,7 +6218,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev tty53 c 4 53 root tty 0600: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev vcs53 c 7 53 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -6208,9 +6254,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev tty56 c 4 56 root tty 0600: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev vcs56 c 7 56 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -6240,9 +6284,7 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev vcsa58 c 7 186 root tty 0600: failed
-O: chown: 
-O: `root:tty': invalid user
-O: 
+O: chown: `root:tty': invalid user
 O: makedev tty59 c 4 59 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -6284,7 +6326,9 @@ O: chown:
 O: `root:tty': invalid user
 O: 
 O: makedev vcs62 c 7 62 root tty 0600: failed
-O: chown: `root:tty': invalid user
+O: chown: 
+O: `root:tty': invalid user
+O: 
 O: makedev vcsa62 c 7 190 root tty 0600: failed
 O: chown: 
 O: `root:tty': invalid user
@@ -6334,7 +6378,9 @@ O: chown:
 O: `root:root': invalid user
 O: 
 O: makedev atibm c 10 3 root root 0660: failed
-O: chown: `root:root': invalid user
+O: chown: 
+O: `root:root': invalid user
+O: 
 O: makedev jbm c 10 4 root root 0660: failed
 O: chown: 
 O: `root:root': invalid user
@@ -6360,9 +6406,7 @@ O: chown:
 O: `root:root': invalid user
 O: 
 O: makedev input/event1 c 13 65 root root 0660: failed
-O: chown: 
-O: `root:root': invalid user
-O: 
+O: chown: `root:root': invalid user
 O: makedev input/js2 c 13 2 root root 0660: failed
 O: chown: 
 O: `root:root': invalid user
@@ -6436,13 +6480,16 @@ O: chown:
 O: `root:audio': invalid user
 O: 
 O: makedev midi00 c 14 2 root audio 0660: failed
-O: chown: `root:audio': invalid user
+O: chown: 
+O: `root:audio': invalid user
+O: 
 O: makedev midi01 c 14 18 root audio 0660: failed
 O: chown: 
 O: `root:audio': invalid user
 O: 
 O: makedev midi02 c 14 34 root audio 0660: failed
-O: chown: `root:audio': invalid user
+O: chown: 
+O: `root:audio': invalid user
 O: 
 O: makedev midi03 c 14 50 root audio 0660: failed
 O: chown: 
@@ -6543,7 +6590,6 @@ O:
 O: makedev smpte3 c 35 131 root audio 0660: failed
 O: chown: 
 O: `root:video': invalid user
-O: 
 O: makedev fb0 c 29 0 root video 0660: failed
 O: chown: 
 O: `root:video': invalid user
@@ -6553,7 +6599,9 @@ O: chown:
 O: `root:video': invalid user
 O: 
 O: makedev fb2 c 29 2 root video 0660: failed
-O: chown: `root:video': invalid user
+O: chown: 
+O: `root:video': invalid user
+O: 
 O: makedev fb3 c 29 3 root video 0660: failed
 O: chown: 
 O: `root:video': invalid user
@@ -6591,7 +6639,9 @@ O: chown:
 O: `root:dialout': invalid user
 O: 
 O: makedev isdnctrl1 c 45 65 root dialout 0660: failed
-O: chown: `root:dialout': invalid user
+O: chown: 
+O: `root:dialout': invalid user
+O: 
 O: makedev ippp1 c 45 129 root dialout 0660: failed
 O: chown: 
 O: `root:dialout': invalid user
@@ -6625,7 +6675,9 @@ O: chown:
 O: `root:dialout': invalid user
 O: 
 O: makedev isdnctrl4 c 45 68 root dialout 0660: failed
-O: chown: `root:dialout': invalid user
+O: chown: 
+O: `root:dialout': invalid user
+O: 
 O: makedev ippp4 c 45 132 root dialout 0660: failed
 O: chown: 
 O: `root:dialout': invalid user
@@ -6773,6 +6825,7 @@ O:
 O: makedev cdu535 b 24 0 root cdrom 0660: failed
 O: chown: 
 O: `root:cdrom': invalid user
+O: 
 O: makedev optcd b 17 0 root cdrom 0660: failed
 O: chown: 
 O: `root:cdrom': invalid user
@@ -6985,7 +7038,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d5p1 b 48 41 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d5p2 b 48 42 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7011,9 +7066,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d6 b 48 48 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d6p1 b 48 49 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d6p2 b 48 50 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7039,9 +7098,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d7 b 48 56 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d7p1 b 48 57 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d7p2 b 48 58 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7103,7 +7166,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d9p1 b 48 73 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d9p2 b 48 74 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7225,7 +7290,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d13 b 48 104 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d13p1 b 48 105 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7251,7 +7318,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d13p7 b 48 111 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d14 b 48 112 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7309,7 +7378,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d15p6 b 48 126 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d15p7 b 48 127 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7335,7 +7406,8 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d16p5 b 48 133 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d16p6 b 48 134 root disk 0660: failed
 O: chown: 
@@ -7358,7 +7430,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d17p3 b 48 139 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d17p4 b 48 140 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7372,7 +7446,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d17p7 b 48 143 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d18 b 48 144 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7578,7 +7654,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d24p3 b 48 195 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d24p4 b 48 196 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7628,7 +7706,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d26 b 48 208 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d26p1 b 48 209 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7670,7 +7750,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d27p3 b 48 219 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d27p4 b 48 220 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7684,7 +7766,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d27p7 b 48 223 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d28 b 48 224 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7694,7 +7778,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d28p2 b 48 226 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d28p3 b 48 227 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7704,9 +7790,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d28p5 b 48 229 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d28p6 b 48 230 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d28p7 b 48 231 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7728,7 +7818,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d29p4 b 48 236 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d29p5 b 48 237 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7754,7 +7846,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c0d30p3 b 48 243 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c0d30p4 b 48 244 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7808,7 +7902,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d0p1 b 49 1 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d0p2 b 49 2 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7894,7 +7990,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d2p7 b 49 23 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d3 b 49 24 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7928,7 +8026,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d4 b 49 32 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d4p1 b 49 33 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -7970,8 +8070,10 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d5p3 b 49 43 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d5p4 b 49 44 root disk 0660: failed
-O: chown: `root:disk': invalid user
 O: chown: 
 O: `root:disk': invalid user
 O: 
@@ -8028,7 +8130,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d7p2 b 49 58 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d7p3 b 49 59 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8074,7 +8178,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d8p6 b 49 70 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d8p7 b 49 71 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8188,7 +8294,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d12p3 b 49 99 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d12p4 b 49 100 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8202,7 +8310,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d12p7 b 49 103 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d13 b 49 104 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8228,7 +8338,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d13p6 b 49 110 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d13p7 b 49 111 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8326,9 +8438,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d16p7 b 49 135 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c1d17 b 49 136 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8342,9 +8452,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d17p3 b 49 139 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d17p4 b 49 140 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d17p5 b 49 141 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8502,7 +8616,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d22p4 b 49 180 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d22p5 b 49 181 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8512,7 +8628,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d22p7 b 49 183 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d23 b 49 184 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8526,7 +8644,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d23p3 b 49 187 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d23p4 b 49 188 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8596,7 +8716,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d25p5 b 49 205 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d25p6 b 49 206 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8630,7 +8752,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d26p6 b 49 214 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d26p7 b 49 215 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8656,9 +8780,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d27p5 b 49 221 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d27p6 b 49 222 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d27p7 b 49 223 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8712,9 +8840,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d29p4 b 49 236 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d29p5 b 49 237 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d29p6 b 49 238 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8772,7 +8904,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c1d31p4 b 49 252 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c1d31p5 b 49 253 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8788,7 +8922,6 @@ O:
 O: makedev rd/c2d0 b 50 0 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: 
 O: makedev rd/c2d0p1 b 50 1 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8834,9 +8967,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d1p4 b 50 12 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c2d1p5 b 50 13 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8886,7 +9017,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d3p1 b 50 25 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d3p2 b 50 26 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -8968,7 +9101,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d5p6 b 50 46 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d5p7 b 50 47 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9014,7 +9149,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d7p2 b 50 58 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d7p3 b 50 59 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9100,9 +9237,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d10 b 50 80 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d10p1 b 50 81 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d10p2 b 50 82 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9116,7 +9257,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d10p5 b 50 85 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d10p6 b 50 86 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9130,11 +9273,11 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d11p1 b 50 89 root disk 0660: failed
-O: makedev rd/c2d11p2 b 50 90 root disk 0660: failed
-O: chown: `root:disk': invalid user
 O: chown: 
 O: `root:disk': invalid user
 O: 
+O: makedev rd/c2d11p2 b 50 90 root disk 0660: failed
+O: chown: `root:disk': invalid user
 O: makedev rd/c2d11p3 b 50 91 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9152,7 +9295,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d11p7 b 50 95 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d12 b 50 96 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9166,7 +9311,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d12p3 b 50 99 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d12p4 b 50 100 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9180,7 +9327,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d12p7 b 50 103 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d13 b 50 104 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9250,7 +9399,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d15p1 b 50 121 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d15p2 b 50 122 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9304,7 +9455,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d16p7 b 50 135 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d17 b 50 136 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9330,7 +9483,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d17p6 b 50 142 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d17p7 b 50 143 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9352,7 +9507,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d18p4 b 50 148 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d18p5 b 50 149 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9378,7 +9535,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d19p3 b 50 155 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d19p4 b 50 156 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9408,7 +9567,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d20p3 b 50 163 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d20p4 b 50 164 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9450,7 +9611,8 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d21p6 b 50 174 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d21p7 b 50 175 root disk 0660: failed
 O: chown: 
@@ -9477,7 +9639,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d22p5 b 50 181 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d22p6 b 50 182 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9531,7 +9695,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d24p3 b 50 195 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d24p4 b 50 196 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9541,11 +9707,11 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d24p6 b 50 198 root disk 0660: failed
-O: chown: `root:disk': invalid user
-O: makedev rd/c2d24p7 b 50 199 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
+O: makedev rd/c2d24p7 b 50 199 root disk 0660: failed
+O: chown: `root:disk': invalid user
 O: makedev rd/c2d25 b 50 200 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9575,7 +9741,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d25p7 b 50 207 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d26 b 50 208 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9599,6 +9767,7 @@ O:
 O: makedev rd/c2d26p5 b 50 213 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d26p6 b 50 214 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9632,7 +9801,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d27p6 b 50 222 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d27p7 b 50 223 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9662,11 +9833,11 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d28p6 b 50 230 root disk 0660: failed
-O: chown: `root:disk': invalid user
-O: makedev rd/c2d28p7 b 50 231 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
+O: makedev rd/c2d28p7 b 50 231 root disk 0660: failed
+O: chown: `root:disk': invalid user
 O: makedev rd/c2d29 b 50 232 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9676,7 +9847,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d29p2 b 50 234 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d29p3 b 50 235 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9710,7 +9883,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d30p3 b 50 243 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d30p4 b 50 244 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9720,7 +9895,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c2d30p6 b 50 246 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c2d30p7 b 50 247 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9818,15 +9995,15 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d1p7 b 51 15 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d2 b 51 16 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d2p1 b 51 17 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c3d2p2 b 51 18 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9848,7 +10025,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d2p7 b 51 23 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d3 b 51 24 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9930,7 +10109,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d5p4 b 51 44 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d5p5 b 51 45 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -9988,7 +10169,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d7p3 b 51 59 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d7p4 b 51 60 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10034,7 +10217,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d8p7 b 51 71 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d9 b 51 72 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10064,9 +10249,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d9p7 b 51 79 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c3d10 b 51 80 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10184,7 +10367,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d13p5 b 51 109 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d13p6 b 51 110 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10210,7 +10395,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d14p4 b 51 116 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d14p5 b 51 117 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10224,11 +10411,11 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d15 b 51 120 root disk 0660: failed
-O: chown: `root:disk': invalid user
-O: makedev rd/c3d15p1 b 51 121 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
+O: makedev rd/c3d15p1 b 51 121 root disk 0660: failed
+O: chown: `root:disk': invalid user
 O: makedev rd/c3d15p2 b 51 122 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10238,7 +10425,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d15p4 b 51 124 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d15p5 b 51 125 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10264,17 +10453,19 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d16p3 b 51 131 root disk 0660: failed
-O: chown: `root:disk': invalid user
-O: makedev rd/c3d16p4 b 51 132 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
+O: makedev rd/c3d16p4 b 51 132 root disk 0660: failed
+O: chown: `root:disk': invalid user
 O: makedev rd/c3d16p5 b 51 133 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d16p6 b 51 134 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d16p7 b 51 135 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10316,7 +10507,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d18p1 b 51 145 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d18p2 b 51 146 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10386,15 +10579,15 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d20p3 b 51 163 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d20p4 b 51 164 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d20p5 b 51 165 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c3d20p6 b 51 166 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10432,7 +10625,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d21p7 b 51 175 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d22 b 51 176 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10442,7 +10637,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d22p2 b 51 178 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d22p3 b 51 179 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10452,7 +10649,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d22p5 b 51 181 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d22p6 b 51 182 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10466,7 +10665,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d23p1 b 51 185 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d23p2 b 51 186 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10496,7 +10697,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d24p1 b 51 193 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d24p2 b 51 194 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10538,7 +10741,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d25p4 b 51 204 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d25p5 b 51 205 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10552,7 +10757,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d26 b 51 208 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d26p1 b 51 209 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10618,7 +10825,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d28p1 b 51 225 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d28p2 b 51 226 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10628,7 +10837,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d28p4 b 51 228 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d28p5 b 51 229 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10642,7 +10853,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d29 b 51 232 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d29p1 b 51 233 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10676,7 +10889,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c3d30p1 b 51 241 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c3d30p2 b 51 242 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10754,7 +10969,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d0p5 b 52 5 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d0p6 b 52 6 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10836,7 +11053,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d3p2 b 52 26 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d3p3 b 52 27 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10914,7 +11133,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d5p6 b 52 46 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d5p7 b 52 47 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10952,7 +11173,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d7 b 52 56 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d7p1 b 52 57 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -10982,9 +11205,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d8 b 52 64 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c4d8p1 b 52 65 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11038,8 +11259,10 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d9p6 b 52 78 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d9p7 b 52 79 root disk 0660: failed
-O: chown: `root:disk': invalid user
 O: chown: 
 O: `root:disk': invalid user
 O: 
@@ -11080,9 +11303,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d11p1 b 52 89 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c4d11p2 b 52 90 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11124,9 +11345,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d12p4 b 52 100 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c4d12p5 b 52 101 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11208,7 +11427,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d15p1 b 52 121 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d15p2 b 52 122 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11238,9 +11459,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d16p1 b 52 129 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d16p2 b 52 130 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d16p3 b 52 131 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11290,7 +11515,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d17p7 b 52 143 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d18 b 52 144 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11364,7 +11591,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d20p2 b 52 162 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d20p3 b 52 163 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11394,7 +11623,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d21p2 b 52 170 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d21p3 b 52 171 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11416,7 +11647,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d22 b 52 176 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d22p1 b 52 177 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11438,9 +11671,12 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d22p6 b 52 182 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d22p7 b 52 183 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d23 b 52 184 root disk 0660: failed
 O: chown: 
@@ -11523,9 +11759,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d25p4 b 52 204 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d25p5 b 52 205 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d25p6 b 52 206 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11591,7 +11831,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d27p6 b 52 222 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d27p7 b 52 223 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11617,7 +11859,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d28p5 b 52 229 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d28p6 b 52 230 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11639,7 +11883,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d29p3 b 52 235 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d29p4 b 52 236 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11649,7 +11895,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c4d29p6 b 52 238 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c4d29p7 b 52 239 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11751,9 +11999,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d1 b 53 8 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c5d1p1 b 53 9 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11799,7 +12045,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d2p4 b 53 20 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d2p5 b 53 21 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -11813,7 +12061,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d3 b 53 24 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d3p1 b 53 25 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12047,7 +12297,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d10p3 b 53 83 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d10p4 b 53 84 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12061,7 +12313,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d10p7 b 53 87 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d11 b 53 88 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12103,7 +12357,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d12p2 b 53 98 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d12p3 b 53 99 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12149,7 +12405,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d13p6 b 53 110 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d13p7 b 53 111 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12159,7 +12417,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d14p1 b 53 113 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d14p2 b 53 114 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12173,10 +12433,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d14p5 b 53 117 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d14p6 b 53 118 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d14p7 b 53 119 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12206,8 +12469,10 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d15p6 b 53 126 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d15p7 b 53 127 root disk 0660: failed
-O: chown: `root:disk': invalid user
 O: chown: 
 O: `root:disk': invalid user
 O: 
@@ -12288,9 +12553,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d18p3 b 53 147 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c5d18p4 b 53 148 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12424,11 +12687,12 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d22p5 b 53 181 root disk 0660: failed
+O: chown: `root:disk': invalid user
+O: 
+O: makedev rd/c5d22p6 b 53 182 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
-O: makedev rd/c5d22p6 b 53 182 root disk 0660: failed
-O: chown: `root:disk': invalid user
 O: makedev rd/c5d22p7 b 53 183 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12438,11 +12702,11 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d23p1 b 53 185 root disk 0660: failed
-O: chown: `root:disk': invalid user
-O: makedev rd/c5d23p2 b 53 186 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
+O: makedev rd/c5d23p2 b 53 186 root disk 0660: failed
+O: chown: `root:disk': invalid user
 O: makedev rd/c5d23p3 b 53 187 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12464,7 +12728,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d24 b 53 192 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d24p1 b 53 193 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12478,7 +12744,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d24p4 b 53 196 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d24p5 b 53 197 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12540,7 +12808,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d26p4 b 53 212 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d26p5 b 53 213 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12550,7 +12820,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d26p7 b 53 215 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d27 b 53 216 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12564,7 +12836,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d27p3 b 53 219 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d27p4 b 53 220 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12612,14 +12886,13 @@ O:
 O: makedev rd/c5d28p7 b 53 231 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d29 b 53 232 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d29p1 b 53 233 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c5d29p2 b 53 234 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12641,15 +12914,15 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d29p7 b 53 239 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c5d30 b 53 240 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d30p1 b 53 241 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d30p2 b 53 242 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12671,13 +12944,17 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d30p7 b 53 247 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d31 b 53 248 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c5d31p1 b 53 249 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c5d31p2 b 53 250 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12739,7 +13016,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d1p1 b 54 9 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d1p2 b 54 10 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12889,7 +13168,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d5p7 b 54 47 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d6 b 54 48 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12903,7 +13184,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d6p3 b 54 51 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d6p4 b 54 52 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12925,9 +13208,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d7p1 b 54 57 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c6d7p2 b 54 58 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -12961,9 +13242,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d8p2 b 54 66 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c6d8p3 b 54 67 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13021,9 +13300,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d10p1 b 54 81 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c6d10p2 b 54 82 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13041,7 +13318,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d10p6 b 54 86 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d10p7 b 54 87 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13107,7 +13386,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d12p7 b 54 103 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d13 b 54 104 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13137,7 +13418,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d13p7 b 54 111 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d14 b 54 112 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13199,7 +13482,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d15p7 b 54 127 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d16 b 54 128 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13209,7 +13494,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d16p2 b 54 130 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d16p3 b 54 131 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13311,7 +13598,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d19p4 b 54 156 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d19p5 b 54 157 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13341,7 +13630,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d20p4 b 54 164 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d20p5 b 54 165 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13411,7 +13702,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d22p6 b 54 182 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d22p7 b 54 183 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13437,7 +13730,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d23p5 b 54 189 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d23p6 b 54 190 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13487,7 +13782,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d25p2 b 54 202 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d25p3 b 54 203 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13517,7 +13814,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d26p2 b 54 210 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d26p3 b 54 211 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13567,7 +13866,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d27p7 b 54 223 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d28 b 54 224 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13577,9 +13878,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d28p2 b 54 226 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c6d28p3 b 54 227 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13597,15 +13896,15 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d28p7 b 54 231 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c6d29 b 54 232 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d29p1 b 54 233 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d29p2 b 54 234 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13643,7 +13942,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d30p3 b 54 243 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d30p4 b 54 244 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13653,7 +13954,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d30p6 b 54 246 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c6d30p7 b 54 247 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13671,9 +13974,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c6d31p3 b 54 251 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c6d31p4 b 54 252 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13735,9 +14036,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d1p3 b 55 11 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c7d1p4 b 55 12 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13759,7 +14058,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d2p1 b 55 17 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d2p2 b 55 18 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13805,7 +14106,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d3p5 b 55 29 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d3p6 b 55 30 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13867,7 +14170,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d5p5 b 55 45 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d5p6 b 55 46 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13941,7 +14246,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d8 b 55 64 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d8p1 b 55 65 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -13955,7 +14262,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d8p4 b 55 68 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d8p5 b 55 69 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14069,9 +14378,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d12p1 b 55 97 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c7d12p2 b 55 98 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14209,7 +14516,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d16p4 b 55 132 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d16p5 b 55 133 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14351,11 +14660,11 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d21 b 55 168 root disk 0660: failed
+O: chown: `root:disk': invalid user
+O: makedev rd/c7d21p1 b 55 169 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
-O: makedev rd/c7d21p1 b 55 169 root disk 0660: failed
-O: chown: `root:disk': invalid user
 O: makedev rd/c7d21p2 b 55 170 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14381,7 +14690,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d22 b 55 176 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d22p1 b 55 177 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14443,7 +14754,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d24 b 55 192 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d24p1 b 55 193 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14489,7 +14802,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d25p4 b 55 204 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d25p5 b 55 205 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14499,7 +14814,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d25p7 b 55 207 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d26 b 55 208 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14525,9 +14842,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d26p6 b 55 214 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev rd/c7d26p7 b 55 215 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14605,7 +14920,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev rd/c7d29p2 b 55 234 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev rd/c7d29p3 b 55 235 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14711,7 +15028,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev dpti5 c 151 4 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev dpti6 c 151 5 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14719,7 +15038,6 @@ O:
 O: makedev dpti7 c 151 6 root disk 0660: failed
 O: chown: 
 O: `root:root': invalid user
-O: 
 O: chown: 
 O: `root:disk': invalid user
 O: 
@@ -14744,7 +15062,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d0p5 b 72 5 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d0p6 b 72 6 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14762,7 +15082,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d0p10 b 72 10 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d0p11 b 72 11 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14788,7 +15110,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d1p1 b 72 17 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d1p2 b 72 18 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14898,7 +15222,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d2p13 b 72 45 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d2p14 b 72 46 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14920,7 +15246,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d3p3 b 72 51 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d3p4 b 72 52 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -14978,7 +15306,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d4p2 b 72 66 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d4p3 b 72 67 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15004,7 +15334,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d4p9 b 72 73 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d4p10 b 72 74 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15026,7 +15358,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d4p15 b 72 79 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d5 b 72 80 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15108,9 +15442,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d6p4 b 72 100 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev ida/c0d6p5 b 72 101 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15132,7 +15464,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d6p10 b 72 106 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d6p11 b 72 107 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15146,9 +15480,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d6p14 b 72 110 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev ida/c0d6p15 b 72 111 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15158,7 +15490,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d7p1 b 72 113 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d7p2 b 72 114 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15188,7 +15522,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d7p9 b 72 121 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d7p10 b 72 122 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15218,7 +15554,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d8p1 b 72 129 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d8p2 b 72 130 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15292,15 +15630,15 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d9p4 b 72 148 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev ida/c0d9p5 b 72 149 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d9p6 b 72 150 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d9p7 b 72 151 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15406,7 +15744,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d11p1 b 72 177 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d11p2 b 72 178 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15420,9 +15760,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d11p5 b 72 181 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev ida/c0d11p6 b 72 182 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15468,7 +15806,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d12p1 b 72 193 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d12p2 b 72 194 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15478,7 +15818,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d12p4 b 72 196 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d12p5 b 72 197 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15638,10 +15980,9 @@ O:
 O: makedev ida/c0d14p12 b 72 236 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
-O: makedev ida/c0d14p13 b 72 237 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
 O: 
+O: makedev ida/c0d14p13 b 72 237 root disk 0660: failed
+O: chown: `root:disk': invalid user
 O: makedev ida/c0d14p14 b 72 238 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15655,7 +15996,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d15p1 b 72 241 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d15p2 b 72 242 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15673,7 +16016,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c0d15p6 b 72 246 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c0d15p7 b 72 247 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15731,9 +16076,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d0p5 b 73 5 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d0p6 b 73 6 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d0p7 b 73 7 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15847,7 +16196,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d2p3 b 73 35 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d2p4 b 73 36 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15873,7 +16224,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d2p10 b 73 42 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d2p11 b 73 43 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15887,9 +16240,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d2p14 b 73 46 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev ida/c1d2p15 b 73 47 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15899,7 +16250,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d3p1 b 73 49 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d3p2 b 73 50 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15969,7 +16322,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d4p3 b 73 67 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d4p4 b 73 68 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -15991,7 +16346,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d4p9 b 73 73 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d4p10 b 73 74 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16017,7 +16374,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d5 b 73 80 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d5p1 b 73 81 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16031,7 +16390,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d5p4 b 73 84 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d5p5 b 73 85 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16041,7 +16402,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d5p7 b 73 87 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d5p8 b 73 88 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16107,7 +16470,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d6p8 b 73 104 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d6p9 b 73 105 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16157,7 +16522,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d7p5 b 73 117 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d7p6 b 73 118 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16171,7 +16538,8 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d7p9 b 73 121 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d7p10 b 73 122 root disk 0660: failed
 O: chown: 
@@ -16250,7 +16618,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d8p13 b 73 141 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d8p14 b 73 142 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16264,7 +16634,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d9p1 b 73 145 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d9p2 b 73 146 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16334,7 +16706,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d10p3 b 73 163 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d10p4 b 73 164 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16392,7 +16766,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d11p2 b 73 178 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d11p3 b 73 179 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16426,7 +16802,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d11p11 b 73 187 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d11p12 b 73 188 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16448,7 +16826,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d12p1 b 73 193 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d12p2 b 73 194 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16510,7 +16890,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d13p1 b 73 209 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d13p2 b 73 210 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16624,7 +17006,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d14p14 b 73 238 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d14p15 b 73 239 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16642,7 +17026,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d15p3 b 73 243 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d15p4 b 73 244 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16652,7 +17038,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c1d15p6 b 73 246 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c1d15p7 b 73 247 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16746,7 +17134,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d0p14 b 74 14 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d0p15 b 74 15 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16772,7 +17162,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d1p5 b 74 21 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d1p6 b 74 22 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16814,7 +17206,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d2 b 74 32 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d2p1 b 74 33 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16824,11 +17218,11 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d2p3 b 74 35 root disk 0660: failed
-O: chown: `root:disk': invalid user
-O: makedev ida/c2d2p4 b 74 36 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
+O: makedev ida/c2d2p4 b 74 36 root disk 0660: failed
+O: chown: `root:disk': invalid user
 O: makedev ida/c2d2p5 b 74 37 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16890,7 +17284,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d3p4 b 74 52 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d3p5 b 74 53 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -16984,7 +17380,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d4p12 b 74 76 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d4p13 b 74 77 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17078,7 +17476,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d6p4 b 74 100 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d6p5 b 74 101 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17188,7 +17588,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d8 b 74 128 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d8p1 b 74 129 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17198,7 +17600,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d8p3 b 74 131 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d8p4 b 74 132 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17248,7 +17652,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d9 b 74 144 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d9p1 b 74 145 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17294,7 +17700,8 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d9p12 b 74 156 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d9p13 b 74 157 root disk 0660: failed
 O: chown: 
@@ -17329,9 +17736,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d10p5 b 74 165 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d10p6 b 74 166 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d10p7 b 74 167 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17417,17 +17828,19 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d11p12 b 74 188 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d11p13 b 74 189 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d11p14 b 74 190 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d11p15 b 74 191 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev ida/c2d12 b 74 192 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17465,9 +17878,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d12p9 b 74 201 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev ida/c2d12p10 b 74 202 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17577,7 +17988,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d14p5 b 74 229 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d14p6 b 74 230 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17607,8 +18020,10 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ida/c2d14p13 b 74 237 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ida/c2d14p14 b 74 238 root disk 0660: failed
-O: chown: `root:disk': invalid user
 O: chown: 
 O: `root:disk': invalid user
 O: 
@@ -17684,7 +18099,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ataraid/d0 b 114 0 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev ataraid/d0p1 b 114 1 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17714,9 +18131,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev ataraid/d0p8 b 114 8 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev ataraid/d0p9 b 114 9 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -17913,9 +18328,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d0p9 b 104 9 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev cciss/c0d0p10 b 104 10 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18049,7 +18462,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d2p11 b 104 43 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d2p12 b 104 44 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18059,15 +18474,15 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d2p14 b 104 46 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d2p15 b 104 47 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d3 b 104 48 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev cciss/c0d3p1 b 104 49 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18137,7 +18552,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d4p2 b 104 66 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d4p3 b 104 67 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18147,7 +18564,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d4p5 b 104 69 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d4p6 b 104 70 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18201,7 +18620,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d5p3 b 104 83 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d5p4 b 104 84 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18295,7 +18716,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d6p11 b 104 107 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d6p12 b 104 108 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18309,8 +18732,10 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d6p15 b 104 111 root disk 0660: failed
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d7 b 104 112 root disk 0660: failed
-O: chown: `root:disk': invalid user
 O: chown: 
 O: `root:disk': invalid user
 O: 
@@ -18339,7 +18764,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d7p7 b 104 119 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d7p8 b 104 120 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18377,9 +18804,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d8p1 b 104 129 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev cciss/c0d8p2 b 104 130 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18393,7 +18818,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d8p5 b 104 133 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d8p6 b 104 134 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18419,7 +18846,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d8p12 b 104 140 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d8p13 b 104 141 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18493,7 +18922,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d9p15 b 104 159 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d10 b 104 160 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18555,7 +18986,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d10p15 b 104 175 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d11 b 104 176 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18581,7 +19014,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d11p6 b 104 182 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d11p7 b 104 183 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18635,7 +19070,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d12p4 b 104 196 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d12p5 b 104 197 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18677,7 +19114,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d12p15 b 104 207 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d13 b 104 208 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18687,7 +19126,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d13p2 b 104 210 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d13p3 b 104 211 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18745,7 +19186,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d14p1 b 104 225 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d14p2 b 104 226 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18795,11 +19238,11 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d14p14 b 104 238 root disk 0660: failed
+O: chown: `root:disk': invalid user
+O: makedev cciss/c0d14p15 b 104 239 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
-O: makedev cciss/c0d14p15 b 104 239 root disk 0660: failed
-O: chown: `root:disk': invalid user
 O: makedev cciss/c0d15 b 104 240 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18809,15 +19252,21 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d15p2 b 104 242 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d15p3 b 104 243 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d15p4 b 104 244 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c0d15p5 b 104 245 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c0d15p6 b 104 246 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18859,7 +19308,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d0 b 105 0 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d0p1 b 105 1 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18877,7 +19328,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d0p5 b 105 5 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d0p6 b 105 6 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -18983,7 +19436,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d2 b 105 32 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d2p1 b 105 33 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19025,7 +19480,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d2p11 b 105 43 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d2p12 b 105 44 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19103,7 +19560,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d3p15 b 105 63 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d4 b 105 64 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19241,7 +19700,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d6p2 b 105 98 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d6p3 b 105 99 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19251,9 +19712,13 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d6p5 b 105 101 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d6p6 b 105 102 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d6p7 b 105 103 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19263,7 +19728,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d6p9 b 105 105 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d6p10 b 105 106 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19369,7 +19836,8 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d8p4 b 105 132 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d8p5 b 105 133 root disk 0660: failed
 O: chown: 
@@ -19448,9 +19916,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d9p8 b 105 152 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev cciss/c1d9p9 b 105 153 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19604,7 +20070,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d11p15 b 105 191 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d12 b 105 192 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19666,7 +20134,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d12p15 b 105 207 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d13 b 105 208 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19680,7 +20150,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d13p3 b 105 211 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d13p4 b 105 212 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19690,7 +20162,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d13p6 b 105 214 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d13p7 b 105 215 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19724,7 +20198,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d13p15 b 105 223 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d14 b 105 224 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19758,7 +20234,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d14p8 b 105 232 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d14p9 b 105 233 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19792,7 +20270,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c1d15p1 b 105 241 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c1d15p2 b 105 242 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19918,9 +20398,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d1p1 b 106 17 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev cciss/c2d1p2 b 106 18 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19930,7 +20408,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d1p4 b 106 20 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d1p5 b 106 21 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19944,7 +20424,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d1p8 b 106 24 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d1p9 b 106 25 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -19974,7 +20456,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d2 b 106 32 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d2p1 b 106 33 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20044,7 +20528,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d3p2 b 106 50 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d3p3 b 106 51 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20118,9 +20604,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d4p5 b 106 69 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev cciss/c2d4p6 b 106 70 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20150,15 +20634,15 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d4p13 b 106 77 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev cciss/c2d4p14 b 106 78 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d4p15 b 106 79 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d5 b 106 80 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20200,7 +20684,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d5p10 b 106 90 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d5p11 b 106 91 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20314,7 +20800,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d7p7 b 106 119 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d7p8 b 106 120 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20328,7 +20816,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d7p11 b 106 123 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d7p12 b 106 124 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20354,7 +20844,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d8p2 b 106 130 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d8p3 b 106 131 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20392,7 +20884,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d8p12 b 106 140 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d8p13 b 106 141 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20406,9 +20900,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d9 b 106 144 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev cciss/c2d9p1 b 106 145 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20418,7 +20910,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d9p3 b 106 147 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d9p4 b 106 148 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20444,7 +20938,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d9p10 b 106 154 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d9p11 b 106 155 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20454,7 +20950,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d9p13 b 106 157 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d9p14 b 106 158 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20536,7 +21034,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d11p2 b 106 178 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d11p3 b 106 179 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20590,7 +21090,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d12 b 106 192 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d12p1 b 106 193 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20708,7 +21210,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d13p14 b 106 222 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d13p15 b 106 223 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20718,7 +21222,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d14p1 b 106 225 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d14p2 b 106 226 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20736,7 +21242,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d14p6 b 106 230 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d14p7 b 106 231 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20750,7 +21258,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d14p10 b 106 234 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d14p11 b 106 235 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20760,7 +21270,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev cciss/c2d14p13 b 106 237 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev cciss/c2d14p14 b 106 238 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20921,13 +21433,17 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev i2o/hdb4 b 80 20 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev i2o/hdb5 b 80 21 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
 O: 
 O: makedev i2o/hdb6 b 80 22 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev i2o/hdb7 b 80 23 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -20973,7 +21489,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev i2o/hdc2 b 80 34 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev i2o/hdc3 b 80 35 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -21019,7 +21537,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev i2o/hdc14 b 80 46 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev i2o/hdc15 b 80 47 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -21041,7 +21561,9 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev i2o/hdd4 b 80 52 root disk 0660: failed
-O: chown: `root:disk': invalid user
+O: chown: 
+O: `root:disk': invalid user
+O: 
 O: makedev i2o/hdd5 b 80 53 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -21051,9 +21573,7 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev i2o/hdd7 b 80 55 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev i2o/hdd8 b 80 56 root disk 0660: failed
 O: chown: 
 O: `root:disk': invalid user
@@ -21079,14 +21599,11 @@ O: chown:
 O: `root:disk': invalid user
 O: 
 O: makedev i2o/hdd14 b 80 62 root disk 0660: failed
-O: chown: 
-O: `root:disk': invalid user
-O: 
+O: chown: `root:disk': invalid user
 O: makedev i2o/hdd15 b 80 63 root disk 0660: failed
-O: 
 O: Selecting previously deselected package gcc-4.2-base.
 O: (Reading database ... 
-O: 240 files and directories currently installed.)
+O: 251 files and directories currently installed.)
 O: Unpacking gcc-4.2-base (from .../gcc-4.2-base_4.2.1-4_amd64.deb) ...
 P: Unpacking package gcc-4.2-base
 O: Selecting previously deselected package libc6.
@@ -21102,52 +21619,6 @@ O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking perl-base (from .../perl-base_5.8.8-7_amd64.deb) ...
 P: Unpacking package perl-base
-O: Selecting previously deselected package libpam-runtime.
-O: Unpacking libpam-runtime (from .../libpam-runtime_0.79-4_all.deb) ...
-P: Unpacking package libpam-runtime
-O: Selecting previously deselected package libpam0g.
-O: Unpacking libpam0g (from .../libpam0g_0.79-4_amd64.deb) ...
-P: Unpacking package libpam0g
-O: Selecting previously deselected package libsepol1.
-O: Unpacking libsepol1 (from .../libsepol1_2.0.3-1+b1_amd64.deb) ...
-P: Unpacking package libsepol1
-O: Selecting previously deselected package libselinux1.
-O: Unpacking libselinux1 (from .../libselinux1_2.0.15-2+b1_amd64.deb) ...
-P: Unpacking package libselinux1
-O: Selecting previously deselected package libcap1.
-O: Unpacking libcap1 (from .../libcap1_1.10-14_amd64.deb) ...
-P: Unpacking package libcap1
-O: Selecting previously deselected package libdb4.3.
-O: Unpacking libdb4.3 (from .../libdb4.3_4.3.29-8_amd64.deb) ...
-P: Unpacking package libdb4.3
-O: Selecting previously deselected package libpam-modules.
-O: Unpacking libpam-modules (from .../libpam-modules_0.79-4_amd64.deb) ...
-P: Unpacking package libpam-modules
-O: Selecting previously deselected package login.
-O: dpkg: regarding .../login_4.0.18.1-11_amd64.deb containing login, pre-dependency problem:
-O:  login pre-depends on libc6 (>= 2.5-5)
-O:   libc6 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../login_4.0.18.1-11_amd64.deb containing login, pre-dependency problem:
-O:  login pre-depends on libpam0g (>= 0.76)
-O:   libpam0g is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../login_4.0.18.1-11_amd64.deb containing login, pre-dependency problem:
-O:  login pre-depends on libpam-runtime (>= 0.76-14)
-O:   libpam-runtime is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking login (from .../login_4.0.18.1-11_amd64.deb) ...
-P: Unpacking package login
-O: Selecting previously deselected package debianutils.
-O: dpkg: regarding .../debianutils_2.23.1_amd64.deb containing debianutils, pre-dependency problem:
-O:  debianutils pre-depends on libc6 (>= 2.6-1)
-O:   libc6 is unpacked, but has never been configured.
-O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking debianutils (from .../debianutils_2.23.1_amd64.deb) ...
-P: Unpacking package debianutils
-O: Selecting previously deselected package passwd.
-O: Unpacking passwd (from .../passwd_4.0.18.1-11_amd64.deb) ...
-P: Unpacking package passwd
 O: Selecting previously deselected package liblocale-gettext-perl.
 O: dpkg: regarding .../liblocale-gettext-perl_1.05-1_amd64.deb containing liblocale-gettext-perl, pre-dependency problem:
 O:  liblocale-gettext-perl pre-depends on perl-base (>= 5.8.8-3)
@@ -21178,6 +21649,52 @@ P: Unpacking package debconf
 O: Selecting previously deselected package debconf-i18n.
 O: Unpacking debconf-i18n (from .../debconf-i18n_1.5.14_all.deb) ...
 P: Unpacking package debconf-i18n
+O: Selecting previously deselected package libpam-runtime.
+O: Unpacking libpam-runtime (from .../libpam-runtime_0.99.7.1-4_all.deb) ...
+P: Unpacking package libpam-runtime
+O: Selecting previously deselected package libpam0g.
+O: Unpacking libpam0g (from .../libpam0g_0.99.7.1-4_amd64.deb) ...
+P: Unpacking package libpam0g
+O: Selecting previously deselected package libsepol1.
+O: Unpacking libsepol1 (from .../libsepol1_2.0.3-1+b1_amd64.deb) ...
+P: Unpacking package libsepol1
+O: Selecting previously deselected package libselinux1.
+O: Unpacking libselinux1 (from .../libselinux1_2.0.15-2+b1_amd64.deb) ...
+P: Unpacking package libselinux1
+O: Selecting previously deselected package libcap1.
+O: Unpacking libcap1 (from .../libcap1_1.10-14_amd64.deb) ...
+P: Unpacking package libcap1
+O: Selecting previously deselected package libdb4.6.
+O: Unpacking libdb4.6 (from .../libdb4.6_4.6.19-1_amd64.deb) ...
+P: Unpacking package libdb4.6
+O: Selecting previously deselected package libpam-modules.
+O: Unpacking libpam-modules (from .../libpam-modules_0.99.7.1-4_amd64.deb) ...
+P: Unpacking package libpam-modules
+O: Selecting previously deselected package login.
+O: dpkg: regarding .../login_4.0.18.1-11_amd64.deb containing login, pre-dependency problem:
+O:  login pre-depends on libc6 (>= 2.5-5)
+O:   libc6 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: dpkg: regarding .../login_4.0.18.1-11_amd64.deb containing login, pre-dependency problem:
+O:  login pre-depends on libpam0g (>= 0.76)
+O:   libpam0g is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: dpkg: regarding .../login_4.0.18.1-11_amd64.deb containing login, pre-dependency problem:
+O:  login pre-depends on libpam-runtime (>= 0.76-14)
+O:   libpam-runtime is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking login (from .../login_4.0.18.1-11_amd64.deb) ...
+P: Unpacking package login
+O: Selecting previously deselected package debianutils.
+O: dpkg: regarding .../debianutils_2.25_amd64.deb containing debianutils, pre-dependency problem:
+O:  debianutils pre-depends on libc6 (>= 2.6.1-1)
+O:   libc6 is unpacked, but has never been configured.
+O: dpkg: warning - ignoring pre-dependency problem !
+O: Unpacking debianutils (from .../debianutils_2.25_amd64.deb) ...
+P: Unpacking package debianutils
+O: Selecting previously deselected package passwd.
+O: Unpacking passwd (from .../passwd_4.0.18.1-11_amd64.deb) ...
+P: Unpacking package passwd
 O: Selecting previously deselected package libstdc++6.
 O: Unpacking libstdc++6 (from .../libstdc++6_4.2.1-4_amd64.deb) ...
 P: Unpacking package libstdc++6
@@ -21185,10 +21702,10 @@ O: Selecting previously deselected package zlib1g.
 O: Unpacking zlib1g (from .../zlib1g_1.2.3.3.dfsg-5_amd64.deb) ...
 P: Unpacking package zlib1g
 O: Selecting previously deselected package libncurses5.
-O: Unpacking libncurses5 (from .../libncurses5_5.6+20070825-1_amd64.deb) ...
+O: Unpacking libncurses5 (from .../libncurses5_5.6+20070908-1_amd64.deb) ...
 P: Unpacking package libncurses5
 O: Selecting previously deselected package base-passwd.
-O: Unpacking base-passwd (from .../base-passwd_3.5.12_amd64.deb) ...
+O: Unpacking base-passwd (from .../base-passwd_3.5.13_amd64.deb) ...
 P: Unpacking package base-passwd
 O: Selecting previously deselected package makedev.
 O: Unpacking makedev (from .../makedev_2.3.1-83_all.deb) ...
@@ -21222,10 +21739,10 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking bsdutils (from .../bsdutils_2.12r-19_amd64.deb) ...
 P: Unpacking package bsdutils
 O: Selecting previously deselected package libattr1.
-O: Unpacking libattr1 (from .../libattr1_2.4.32-1.2_amd64.deb) ...
+O: Unpacking libattr1 (from .../libattr1_2.4.39-1_amd64.deb) ...
 P: Unpacking package libattr1
 O: Selecting previously deselected package libacl1.
-O: Unpacking libacl1 (from .../libacl1_2.2.42-1_amd64.deb) ...
+O: Unpacking libacl1 (from .../libacl1_2.2.45-1_amd64.deb) ...
 P: Unpacking package libacl1
 O: Selecting previously deselected package coreutils.
 O: dpkg: regarding .../coreutils_5.97-5.3_amd64.deb containing coreutils, pre-dependency problem:
@@ -21242,15 +21759,7 @@ O:   libselinux1 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking coreutils (from .../coreutils_5.97-5.3_amd64.deb) ...
 P: Unpacking package coreutils
-O: Use of uninitialized value in string eq at /usr/sbin/dpkg-divert line 224.
-O: Use of uninitialized value in length at /usr/sbin/dpkg-divert line 224.
-O: Use of uninitialized value in length at /usr/sbin/dpkg-divert line 224.
-O: Use of uninitialized value in length at /usr/sbin/dpkg-divert line 224.
 O: No diversion `any diversion of /usr/share/man/man1/md5sum.textutils.1.gz', none removed
-O: Use of uninitialized value in string eq at /usr/sbin/dpkg-divert line 224.
-O: Use of uninitialized value in length at /usr/sbin/dpkg-divert line 224.
-O: Use of uninitialized value in length at /usr/sbin/dpkg-divert line 224.
-O: Use of uninitialized value in length at /usr/sbin/dpkg-divert line 224.
 O: No diversion `any diversion of /usr/bin/md5sum.textutils', none removed
 O: Selecting previously deselected package sed.
 O: dpkg: regarding .../sed_4.1.5-3_amd64.deb containing sed, pre-dependency problem:
@@ -21260,15 +21769,15 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking sed (from .../sed_4.1.5-3_amd64.deb) ...
 P: Unpacking package sed
 O: Selecting previously deselected package ncurses-bin.
-O: dpkg: regarding .../ncurses-bin_5.6+20070825-1_amd64.deb containing ncurses-bin, pre-dependency problem:
-O:  ncurses-bin pre-depends on libc6 (>= 2.6-1)
+O: dpkg: regarding .../ncurses-bin_5.6+20070908-1_amd64.deb containing ncurses-bin, pre-dependency problem:
+O:  ncurses-bin pre-depends on libc6 (>= 2.6.1-1)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: dpkg: regarding .../ncurses-bin_5.6+20070825-1_amd64.deb containing ncurses-bin, pre-dependency problem:
+O: dpkg: regarding .../ncurses-bin_5.6+20070908-1_amd64.deb containing ncurses-bin, pre-dependency problem:
 O:  ncurses-bin pre-depends on libncurses5 (>= 5.6)
 O:   libncurses5 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking ncurses-bin (from .../ncurses-bin_5.6+20070825-1_amd64.deb) ...
+O: Unpacking ncurses-bin (from .../ncurses-bin_5.6+20070908-1_amd64.deb) ...
 P: Unpacking package ncurses-bin
 O: Selecting previously deselected package lsb-base.
 O: Unpacking lsb-base (from .../lsb-base_3.1-24_all.deb) ...
@@ -21281,7 +21790,7 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking diff (from .../diff_2.8.1-12_amd64.deb) ...
 P: Unpacking package diff
 O: Selecting previously deselected package dselect.
-O: Unpacking dselect (from .../dselect_1.14.5_amd64.deb) ...
+O: Unpacking dselect (from .../dselect_1.14.6_amd64.deb) ...
 P: Unpacking package dselect
 O: Selecting previously deselected package e2fslibs.
 O: Unpacking e2fslibs (from .../e2fslibs_1.40.2-1_amd64.deb) ...
@@ -21336,14 +21845,14 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking findutils (from .../findutils_4.2.31-1_amd64.deb) ...
 P: Unpacking package findutils
 O: Selecting previously deselected package gcc-4.1-base.
-O: Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1.2-15_amd64.deb) ...
+O: Unpacking gcc-4.1-base (from .../gcc-4.1-base_4.1.2-16_amd64.deb) ...
 P: Unpacking package gcc-4.1-base
 O: Selecting previously deselected package grep.
-O: dpkg: regarding .../grep_2.5.1.ds2-6_amd64.deb containing grep, pre-dependency problem:
-O:  grep pre-depends on libc6 (>= 2.3.5-1)
+O: dpkg: regarding .../grep_2.5.3~dfsg-2_amd64.deb containing grep, pre-dependency problem:
+O:  grep pre-depends on libc6 (>= 2.6.1-1)
 O:   libc6 is unpacked, but has never been configured.
 O: dpkg: warning - ignoring pre-dependency problem !
-O: Unpacking grep (from .../grep_2.5.1.ds2-6_amd64.deb) ...
+O: Unpacking grep (from .../grep_2.5.3~dfsg-2_amd64.deb) ...
 P: Unpacking package grep
 O: Selecting previously deselected package gzip.
 O: dpkg: regarding .../gzip_1.3.12-3.1_amd64.deb containing gzip, pre-dependency problem:
@@ -21380,6 +21889,9 @@ P: Unpacking package sysvinit-utils
 O: Selecting previously deselected package initscripts.
 O: Unpacking initscripts (from .../initscripts_2.86.ds1-38.1_amd64.deb) ...
 P: Unpacking package initscripts
+O: Selecting previously deselected package libdb4.3.
+O: Unpacking libdb4.3 (from .../libdb4.3_4.3.29-9_amd64.deb) ...
+P: Unpacking package libdb4.3
 O: Selecting previously deselected package libslang2.
 O: Unpacking libslang2 (from .../libslang2_2.0.7-3_amd64.deb) ...
 P: Unpacking package libslang2
@@ -21391,10 +21903,10 @@ O: dpkg: warning - ignoring pre-dependency problem !
 O: Unpacking mktemp (from .../mktemp_1.5-5_amd64.deb) ...
 P: Unpacking package mktemp
 O: Selecting previously deselected package ncurses-base.
-O: Unpacking ncurses-base (from .../ncurses-base_5.6+20070825-1_all.deb) ...
+O: Unpacking ncurses-base (from .../ncurses-base_5.6+20070908-1_all.deb) ...
 P: Unpacking package ncurses-base
 O: Selecting previously deselected package procps.
-O: Unpacking procps (from .../procps_3.2.7-4_amd64.deb) ...
+O: Unpacking procps (from .../procps_3.2.7-4.1_amd64.deb) ...
 P: Unpacking package procps
 O: Selecting previously deselected package sysv-rc.
 O: Unpacking sysv-rc (from .../sysv-rc_2.86.ds1-38.1_all.deb) ...
@@ -21449,97 +21961,71 @@ O: Unpacking util-linux (from .../util-linux_2.12r-19_amd64.deb) ...
 P: Unpacking package util-linux
 O: Setting up sysv-rc (2.86.ds1-38.1) ...
 P: Configuring package sysv-rc
-O: Setting up gcc-4.1-base (4.1.2-15) ...
+O: Setting up gcc-4.1-base (4.1.2-16) ...
 P: Configuring package gcc-4.1-base
-O: 
 O: Setting up gcc-4.2-base (4.2.1-4) ...
 P: Configuring package gcc-4.2-base
-O: 
-O: Setting up libpam-runtime (0.79-4) ...
+O: Setting up libpam-runtime (0.99.7.1-4) ...
 P: Configuring package libpam-runtime
-O: 
 O: Setting up libc6 (2.6.1-1) ...
 P: Configuring package libc6
-O: 
 O: Setting up libcap1 (1:1.10-14) ...
 P: Configuring package libcap1
-O: 
 O: Setting up mktemp (1.5-5) ...
 P: Configuring package mktemp
-O: Setting up debianutils (2.23.1) ...
+O: Setting up debianutils (2.25) ...
 P: Configuring package debianutils
-O: 
 O: Setting up libuuid1 (1.40.2-1) ...
 P: Configuring package libuuid1
-O: 
-O: Setting up libpam0g (0.79-4) ...
-P: Configuring package libpam0g
-O: 
 O: Setting up bsdutils (1:2.12r-19) ...
 P: Configuring package bsdutils
-O: 
 O: Setting up perl-base (5.8.8-7) ...
 P: Configuring package perl-base
 O: Setting up libsepol1 (2.0.3-1+b1) ...
 P: Configuring package libsepol1
 O: telinit: 
 O: /dev/initctl: No such file or directory
-O: 
 O: Setting up tar (1.18-2) ...
 P: Configuring package tar
-O: 
 O: Setting up zlib1g (1:1.2.3.3.dfsg-5) ...
 P: Configuring package zlib1g
-O: 
 O: Setting up libgcc1 (1:4.2.1-4) ...
 P: Configuring package libgcc1
-O: 
 O: Setting up libtext-iconv-perl (1.4-3) ...
 P: Configuring package libtext-iconv-perl
-O: Setting up libncurses5 (5.6+20070825-1) ...
+O: Setting up libncurses5 (5.6+20070908-1) ...
 P: Configuring package libncurses5
-O: 
-O: Setting up libattr1 (1:2.4.32-1.2) ...
+O: Setting up libattr1 (1:2.4.39-1) ...
 P: Configuring package libattr1
-O: 
 O: Setting up sed (4.1.5-3) ...
 P: Configuring package sed
 O: install-info(/usr/share/info/sed.info): no backup file /var/backups/infodir.bak available, retrieving default file.
-O: 
 O: Setting up e2fslibs (1.40.2-1) ...
 P: Configuring package e2fslibs
-O: 
-O: Setting up base-passwd (3.5.12) ...
+O: Setting up base-passwd (3.5.13) ...
 P: Configuring package base-passwd
-O: 
 O: Setting up libcomerr2 (1.40.2-1) ...
 P: Configuring package libcomerr2
-O: 
 O: Setting up mawk (1.3.3-11) ...
 P: Configuring package mawk
-O: 
-O: Setting up libdb4.3 (4.3.29-8) ...
+O: Setting up libdb4.3 (4.3.29-9) ...
 P: Configuring package libdb4.3
-O: Setting up grep (2.5.1.ds2-6) ...
+O: Setting up libdb4.6 (4.6.19-1) ...
+P: Configuring package libdb4.6
+O: Setting up grep (2.5.3~dfsg-2) ...
 P: Configuring package grep
-O: 
 O: Setting up hostname (2.93) ...
 P: Configuring package hostname
-O: Setting up libacl1 (2.2.42-1) ...
+O: Setting up libacl1 (2.2.45-1) ...
 P: Configuring package libacl1
-O: 
 O: Setting up libslang2 (2.0.7-3) ...
 P: Configuring package libslang2
-O: 
 O: Setting up libss2 (1.40.2-1) ...
 P: Configuring package libss2
-O: 
 O: Setting up findutils (4.2.31-1) ...
 P: Configuring package findutils
-O: 
 O: Setting up gzip (1.3.12-3.1) ...
 P: Configuring package gzip
-O: 
 O: Setting up liblocale-gettext-perl (1.05-1) ...
 P: Configuring package liblocale-gettext-perl
 O: Setting up diff (2.8.1-12) ...
@@ -21548,58 +22034,46 @@ O: Setting up libselinux1 (2.0.15-2+b1) ...
 P: Configuring package libselinux1
 O: init: 
 O: /dev/initctl: No such file or directory
-O: 
 O: Setting up libstdc++6 (4.2.1-4) ...
 P: Configuring package libstdc++6
-O: 
 O: Setting up libtext-charwidth-perl (0.04-4) ...
 P: Configuring package libtext-charwidth-perl
 O: Setting up libtext-wrapi18n-perl (0.06-5) ...
 P: Configuring package libtext-wrapi18n-perl
 O: Setting up coreutils (5.97-5.3) ...
 P: Configuring package coreutils
-O: 
 O: Setting up makedev (2.3.1-83) ...
 P: Configuring package makedev
-O: 
-O: Setting up ncurses-base (5.6+20070825-1) ...
+O: Setting up ncurses-base (5.6+20070908-1) ...
 P: Configuring package ncurses-base
-O: Setting up ncurses-bin (5.6+20070825-1) ...
+O: Setting up ncurses-bin (5.6+20070908-1) ...
 P: Configuring package ncurses-bin
-O: Setting up libpam-modules (0.79-4) ...
-P: Configuring package libpam-modules
-O: 
 O: Setting up base-files (4.0.1) ...
 P: Configuring package base-files
-O: 
 O: Setting up libdevmapper1.02.1 (2:1.02.20-2) ...
 P: Configuring package libdevmapper1.02.1
-O: 
 O: Setting up debconf-i18n (1.5.14) ...
 P: Configuring package debconf-i18n
 O: Setting up libblkid1 (1.40.2-1) ...
 P: Configuring package libblkid1
-O: 
 O: Setting up e2fsprogs (1.40.2-1) ...
 P: Configuring package e2fsprogs
-O: Setting up dselect (1.14.5) ...
+O: Setting up dselect (1.14.6) ...
 P: Configuring package dselect
 O: Setting up sysvinit-utils (2.86.ds1-38.1) ...
 P: Configuring package sysvinit-utils
 O: Setting up bash (3.1dfsg-8) ...
 P: Configuring package bash
-O: 
 O: Setting up debconf (1.5.14) ...
 P: Configuring package debconf
-O: 
-O: Setting up login (1:4.0.18.1-11) ...
-P: Configuring package login
-O: 
 O: Setting up lsb-base (3.1-24) ...
 P: Configuring package lsb-base
-O: Setting up procps (1:3.2.7-4) ...
+O: Setting up procps (1:3.2.7-4.1) ...
 P: Configuring package procps
-O: 
+O: Setting up libpam0g (0.99.7.1-4) ...
+P: Configuring package libpam0g
+O: Setting up libpam-modules (0.99.7.1-4) ...
+P: Configuring package libpam-modules
 O: Setting up tzdata (2007g-1) ...
 P: Configuring package tzdata
 O: 
@@ -21608,29 +22082,25 @@ O: Local time is now: XXXX
 O: Universal Time is now: XXXX
 O: Run 'dpkg-reconfigure tzdata' if you wish to change it.
 O: 
-O: 
 O: Setting up mount (2.12r-19) ...
 P: Configuring package mount
-O: 
+O: Setting up initscripts (2.86.ds1-38.1) ...
+P: Configuring package initscripts
+O: Setting up util-linux (2.12r-19) ...
+P: Configuring package util-linux
+O: Setting up login (1:4.0.18.1-11) ...
+P: Configuring package login
 O: Setting up passwd (1:4.0.18.1-11) ...
 P: Configuring package passwd
 O: Shadow passwords are now on.
-O: 
-O: Setting up initscripts (2.86.ds1-38.1) ...
-P: Configuring package initscripts
-O: 
-O: Setting up util-linux (2.12r-19) ...
-P: Configuring package util-linux
-O: 
 O: Setting up sysvinit (2.86.ds1-38.1) ...
 P: Configuring package sysvinit
 O: sysvinit: creating /dev/initctl
 O: init: 
 O: timeout opening/writing control channel /dev/initctl
-O: 
 O: Selecting previously deselected package libbz2-1.0.
 O: (Reading database ... 
-O: 4891 files and directories currently installed.)
+O: 5003 files and directories currently installed.)
 O: Unpacking libbz2-1.0 (from .../libbz2-1.0_1.0.3-7_amd64.deb) ...
 P: Unpacking package libbz2-1.0
 O: Selecting previously deselected package libgpg-error0.
@@ -21658,7 +22128,7 @@ O: Selecting previously deselected package libsasl2-2.
 O: Unpacking libsasl2-2 (from .../libsasl2-2_2.1.22.dfsg1-14_amd64.deb) ...
 P: Unpacking package libsasl2-2
 O: Selecting previously deselected package libldap2.
-O: Unpacking libldap2 (from .../libldap2_2.1.30-13.4_amd64.deb) ...
+O: Unpacking libldap2 (from .../libldap2_2.1.30.dfsg-13.5_amd64.deb) ...
 P: Unpacking package libldap2
 O: Selecting previously deselected package readline-common.
 O: Unpacking readline-common (from .../readline-common_5.2-3_all.deb) ...
@@ -21683,42 +22153,30 @@ O: Unpacking apt (from .../bootstrap/apt_0.7.6_amd64.deb) ...
 P: Unpacking package apt
 O: Setting up libbz2-1.0 (1.0.3-7) ...
 P: Configuring package libbz2-1.0
-O: 
 O: Setting up libgpg-error0 (1.4-2) ...
 P: Configuring package libgpg-error0
-O: 
 O: Setting up libgcrypt11 (1.2.4-2) ...
 P: Configuring package libgcrypt11
-O: 
 O: Setting up liblzo2-2 (2.02-3) ...
 P: Configuring package liblzo2-2
-O: 
 O: Setting up libopencdk10 (0.6.4-1) ...
 P: Configuring package libopencdk10
-O: 
 O: Setting up libtasn1-3 (0.3.10-1) ...
 P: Configuring package libtasn1-3
-O: 
 O: Setting up libgnutls13 (1.7.19-1) ...
 P: Configuring package libgnutls13
-O: 
 O: Setting up libdb4.4 (4.4.20-8) ...
 P: Configuring package libdb4.4
 O: Setting up libsasl2-2 (2.1.22.dfsg1-14) ...
 P: Configuring package libsasl2-2
-O: 
-O: Setting up libldap2 (2.1.30-13.4) ...
+O: Setting up libldap2 (2.1.30.dfsg-13.5) ...
 P: Configuring package libldap2
-O: 
 O: Setting up readline-common (5.2-3) ...
 P: Configuring package readline-common
-O: 
 O: Setting up libreadline5 (5.2-3) ...
 P: Configuring package libreadline5
-O: 
 O: Setting up libusb-0.1-4 (2:0.1.12-7) ...
 P: Configuring package libusb-0.1-4
-O: 
 O: Setting up gpgv (1.4.6-2) ...
 P: Configuring package gpgv
 O: Setting up gnupg (1.4.6-2) ...
@@ -21746,7 +22204,6 @@ O:               imported: 4
 O: 
 O: gpg: 
 O: no ultimately trusted keys found
-O: 
 O: Setting up apt (0.7.6) ...
 P: Configuring package apt
 O: gpg: 
@@ -21761,17 +22218,15 @@ O: gpg:
 O: Total number processed: 4
 O: gpg: 
 O:              unchanged: 4
-O: 
 P: Configuring helper cdebootstrap-helper-apt
 O: Selecting previously deselected package cdebootstrap-helper-apt.
 O: (Reading database ... 
-O: 5307 files and directories currently installed.)
+O: 5419 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-apt (from /cdebootstrap-helper-apt.deb) ...
 O: Setting up cdebootstrap-helper-apt (1) ...
 O: Get:1 bootstrap: . Release.gpg [189B]
 O: Get:2 bootstrap: . Release [68.5kB]
 O: Reading package lists...
-O: 
 O: 
 O: Reading package lists...
 O: 
@@ -21794,7 +22249,7 @@ O:   tasksel tasksel-data tcpd traceroute update-inetd vim-common vim-tiny wget
 O:   whiptail
 O: 0 upgraded, 45 newly installed, 0 to remove and 0 not upgraded.
 O: Need to get 12.1MB of archives.
-O: After unpacking 38.6MB of additional disk space will be used.
+O: After unpacking 38.5MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
 O:   adduser apt-utils libncursesw5 libsigc++-2.0-0c2a aptitude bsdmainutils cpio
 O:   cron dhcp3-common dhcp3-client dmidecode ed groff-base net-tools ifupdown
@@ -21806,14 +22261,14 @@ O: debconf: delaying package configuration, since apt-utils is not installed
 O: Authentication warning overridden.
 O: Selecting previously deselected package adduser.
 O: (Reading database ... 
-O: 5308 files and directories currently installed.)
-O: Unpacking adduser (from .../adduser_3.104_all.deb) ...
+O: 5420 files and directories currently installed.)
+O: Unpacking adduser (from .../adduser_3.105_all.deb) ...
 P: Unpacking package adduser
 O: Selecting previously deselected package apt-utils.
 O: Unpacking apt-utils (from .../apt-utils_0.7.6_amd64.deb) ...
 P: Unpacking package apt-utils
 O: Selecting previously deselected package libncursesw5.
-O: Unpacking libncursesw5 (from .../libncursesw5_5.6+20070825-1_amd64.deb) ...
+O: Unpacking libncursesw5 (from .../libncursesw5_5.6+20070908-1_amd64.deb) ...
 P: Unpacking package libncursesw5
 O: Selecting previously deselected package libsigc++-2.0-0c2a.
 O: Unpacking libsigc++-2.0-0c2a (from .../libsigc++-2.0-0c2a_2.0.17-2_amd64.deb) ...
@@ -21843,7 +22298,7 @@ O: Selecting previously deselected package ed.
 O: Unpacking ed (from .../bootstrap/ed_0.7-1_amd64.deb) ...
 P: Unpacking package ed
 O: Selecting previously deselected package groff-base.
-O: Unpacking groff-base (from .../groff-base_1.18.1.1-12_amd64.deb) ...
+O: Unpacking groff-base (from .../groff-base_1.18.1.1-13_amd64.deb) ...
 P: Unpacking package groff-base
 O: Selecting previously deselected package net-tools.
 O: Unpacking net-tools (from .../net-tools_1.60-17_amd64.deb) ...
@@ -21900,7 +22355,7 @@ O: Selecting previously deselected package man-db.
 O: Unpacking man-db (from .../man-db_2.4.4-4_amd64.deb) ...
 P: Unpacking package man-db
 O: Selecting previously deselected package manpages.
-O: Unpacking manpages (from .../manpages_2.62-1_all.deb) ...
+O: Unpacking manpages (from .../manpages_2.63-1_all.deb) ...
 P: Unpacking package manpages
 O: Selecting previously deselected package module-init-tools.
 O: Unpacking module-init-tools (from .../module-init-tools_3.3-pre11-4_amd64.deb) ...
@@ -21924,7 +22379,7 @@ O: Selecting previously deselected package tcpd.
 O: Unpacking tcpd (from .../tcpd_7.6.dbs-14_amd64.deb) ...
 P: Unpacking package tcpd
 O: Selecting previously deselected package traceroute.
-O: Unpacking traceroute (from .../traceroute_2.0.7-4_amd64.deb) ...
+O: Unpacking traceroute (from .../traceroute_2.0.9~rc1-1_amd64.deb) ...
 P: Unpacking package traceroute
 O: Selecting previously deselected package update-inetd.
 O: Unpacking update-inetd (from .../update-inetd_4.27-0.6_all.deb) ...
@@ -21941,45 +22396,34 @@ P: Unpacking package wget
 O: Selecting previously deselected package whiptail.
 O: Unpacking whiptail (from .../whiptail_0.52.2-11_amd64.deb) ...
 P: Unpacking package whiptail
-O: Setting up adduser (3.104) ...
+O: Setting up adduser (3.105) ...
 P: Configuring package adduser
-O: 
 O: Setting up apt-utils (0.7.6) ...
 P: Configuring package apt-utils
-O: 
-O: Setting up libncursesw5 (5.6+20070825-1) ...
+O: Setting up libncursesw5 (5.6+20070908-1) ...
 P: Configuring package libncursesw5
-O: 
 O: Setting up libsigc++-2.0-0c2a (2.0.17-2) ...
 P: Configuring package libsigc++-2.0-0c2a
-O: 
 O: Setting up aptitude (0.4.6.1-1) ...
 P: Configuring package aptitude
-O: 
 O: Setting up bsdmainutils (6.1.6) ...
 P: Configuring package bsdmainutils
-O: 
 O: Setting up cpio (2.9-3) ...
 P: Configuring package cpio
-O: 
 O: Setting up cron (3.0pl1-100) ...
 P: Configuring package cron
 O: Adding group `crontab' (GID 101) ...
 O: Done.
-O: 
 O: Setting up dhcp3-common (3.0.6-1) ...
 P: Configuring package dhcp3-common
 O: Setting up dhcp3-client (3.0.6-1) ...
 P: Configuring package dhcp3-client
-O: 
 O: Setting up dmidecode (2.9-1) ...
 P: Configuring package dmidecode
 O: Setting up ed (0.7-1) ...
 P: Configuring package ed
-O: 
-O: Setting up groff-base (1.18.1.1-12) ...
+O: Setting up groff-base (1.18.1.1-13) ...
 P: Configuring package groff-base
-O: 
 O: Setting up net-tools (1.60-17) ...
 P: Configuring package net-tools
 O: Setting up ifupdown (0.6.8) ...
@@ -21989,108 +22433,84 @@ O: Warning: cannot read table of mounted file systems
 O: 
 O: ifupdown.postinst: Warning: No 'iface lo' definition found in /etc/network/interfaces
 O: ifupdown.postinst: Warning: No 'auto lo' statement found in /etc/network/interfaces
-O: 
 O: Setting up info (4.8.dfsg.1-6) ...
 P: Configuring package info
-O: 
 O: Setting up iptables (1.3.8.0debian1-1) ...
 P: Configuring package iptables
-O: 
 O: Setting up iputils-ping (3:20070202-2) ...
 P: Configuring package iputils-ping
 O: Setting up laptop-detect (0.12.1-0.1) ...
 P: Configuring package laptop-detect
 O: Setting up libconsole (1:0.2.3dbs-65) ...
 P: Configuring package libconsole
-O: 
 O: Setting up libgdbm3 (1.8.3-3) ...
 P: Configuring package libgdbm3
-O: 
 O: Setting up liblzo1 (1.08-3) ...
 P: Configuring package liblzo1
-O: 
 O: Setting up libnewt0.52 (0.52.2-11) ...
 P: Configuring package libnewt0.52
-O: 
 O: Setting up libopencdk8 (0.5.13-2) ...
 P: Configuring package libopencdk8
-O: 
 O: Setting up libpopt0 (1.10-3) ...
 P: Configuring package libpopt0
-O: 
 O: Setting up libssl0.9.8 (0.9.8e-6) ...
 P: Configuring package libssl0.9.8
-O: 
 O: Setting up libwrap0 (7.6.dbs-14) ...
 P: Configuring package libwrap0
-O: 
 O: Setting up logrotate (3.7.1-3) ...
 P: Configuring package logrotate
 O: Setting up man-db (2.4.4-4) ...
 P: Configuring package man-db
 O: Building database of manual pages ...
-O: 
-O: Setting up manpages (2.62-1) ...
+O: Setting up manpages (2.63-1) ...
 P: Configuring package manpages
 O: Setting up module-init-tools (3.3-pre11-4) ...
 P: Configuring package module-init-tools
-O: 
 O: Setting up nano (2.0.6-2) ...
 P: Configuring package nano
-O: 
 O: Setting up netbase (4.30) ...
 P: Configuring package netbase
-O: 
 O: Setting up netcat (1.10-33) ...
 P: Configuring package netcat
 O: Setting up tcpd (7.6.dbs-14) ...
 P: Configuring package tcpd
-O: 
-O: Setting up traceroute (2.0.7-4) ...
+O: Setting up traceroute (2.0.9~rc1-1) ...
 P: Configuring package traceroute
-O: 
 O: Setting up update-inetd (4.27-0.6) ...
 P: Configuring package update-inetd
-O: 
 O: Setting up vim-common (1:7.1-056+2) ...
 P: Configuring package vim-common
-O: 
 O: Setting up vim-tiny (1:7.1-056+2) ...
 P: Configuring package vim-tiny
-O: 
 O: Setting up wget (1.10.2-3) ...
 P: Configuring package wget
-O: 
 O: Setting up whiptail (0.52.2-11) ...
 P: Configuring package whiptail
 O: Setting up sysklogd (1.5-1) ...
 P: Configuring package sysklogd
-O: 
 O: Setting up tasksel-data (2.68) ...
 P: Configuring package tasksel-data
 O: Setting up klogd (1.5-1) ...
 P: Configuring package klogd
-O: 
 O: Setting up tasksel (2.68) ...
 P: Configuring package tasksel
-O: 
 P: Deconfiguring helper cdebootstrap-helper-apt
 O: (Reading database ... 
-O: 7183 files and directories currently installed.)
+O: 7307 files and directories currently installed.)
 O: Removing cdebootstrap-helper-apt ...
 O: Purging configuration files for cdebootstrap-helper-apt ...
 O: Reading package lists...
 O: 
 P: Deconfiguring helper cdebootstrap-helper-diverts
 O: (Reading database ... 
-O: 7182 files and directories currently installed.)
+O: 7306 files and directories currently installed.)
 O: Removing cdebootstrap-helper-diverts ...
 O: Purging configuration files for cdebootstrap-helper-diverts ...
 O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
 O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
 P: Deconfiguring helper cdebootstrap-helper-makedev
 O: (Reading database ... 
-O: 7180 files and directories currently installed.)
+O: 7304 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 P: Writing hosts
 P: Writing resolv.conf
@@ -22111,7 +22531,7 @@ Refreshing the base.tgz
  -> installing dummy policy-rc.d
 Get:1 http://cdn.debian.or.jp lenny Release.gpg [189B]
 Get:2 http://cdn.debian.or.jp lenny Release [68.5kB]
-Get:3 http://cdn.debian.or.jp lenny/main Packages [6081kB]
+Get:3 http://cdn.debian.or.jp lenny/main Packages [6165kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
 dpkg - warning: ignoring request to remove lilo which isn't installed.
@@ -22125,40 +22545,42 @@ Reading state information...
 apt is already the newest version.
 aptitude is already the newest version.
 The following extra packages will be installed:
-  binutils cpp cpp-4.1 g++ g++-4.1 gcc gcc-4.1 libc6-dev libstdc++6-4.1-dev
-  linux-libc-dev make patch perl perl-modules
+  binutils cpp cpp-4.2 g++ g++-4.2 gcc gcc-4.2 libc6-dev libgomp1
+  libstdc++6-4.2-dev linux-libc-dev make patch perl perl-modules
 Suggested packages:
-  binutils-doc cpp-doc gcc-4.1-locales debian-keyring g++-multilib
-  g++-4.1-multilib gcc-4.1-doc gcc-multilib manpages-dev autoconf automake1.9
-  libtool flex bison gdb gcc-doc gcc-4.1-multilib glibc-doc libstdc++6-4.1-doc
+  binutils-doc cpp-doc gcc-4.2-locales debian-keyring g++-multilib
+  g++-4.2-multilib gcc-4.2-doc gcc-multilib manpages-dev autoconf automake1.9
+  libtool flex bison gdb gcc-doc gcc-4.2-multilib glibc-doc libstdc++6-4.2-doc
   make-doc diff-doc libterm-readline-gnu-perl libterm-readline-perl-perl
 Recommended packages:
-  bzip2 libmudflap0-dev perl-doc
+  bzip2 libmudflap0-4.2-dev perl-doc
 The following NEW packages will be installed:
-  binutils build-essential cpp cpp-4.1 dpkg-dev g++ g++-4.1 gcc gcc-4.1
-  libc6-dev libstdc++6-4.1-dev linux-libc-dev make patch perl perl-modules
-0 upgraded, 16 newly installed, 0 to remove and 0 not upgraded.
-Need to get 20.1MB of archives.
-After unpacking 79.0MB of additional disk space will be used.
+  binutils build-essential cpp cpp-4.2 dpkg-dev g++ g++-4.2 gcc gcc-4.2
+  libc6-dev libgomp1 libstdc++6-4.2-dev linux-libc-dev make patch perl
+  perl-modules
+0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
+Need to get 20.6MB of archives.
+After unpacking 81.2MB of additional disk space will be used.
 Get:1 http://cdn.debian.or.jp lenny/main patch 2.5.9-4 [98.7kB]
 Get:2 http://cdn.debian.or.jp lenny/main perl-modules 5.8.8-7 [2310kB]
 Get:3 http://cdn.debian.or.jp lenny/main perl 5.8.8-7 [4240kB]
 Get:4 http://cdn.debian.or.jp lenny/main binutils 2.18-1 [2709kB]
 Get:5 http://cdn.debian.or.jp lenny/main linux-libc-dev 2.6.21-6 [686kB]
 Get:6 http://cdn.debian.or.jp lenny/main libc6-dev 2.6.1-1 [2493kB]
-Get:7 http://cdn.debian.or.jp lenny/main cpp-4.1 4.1.2-15 [2518kB]
-Get:8 http://cdn.debian.or.jp lenny/main cpp 4:4.1.2-9 [12.3kB]
-Get:9 http://cdn.debian.or.jp lenny/main gcc-4.1 4.1.2-15 [427kB]
-Get:10 http://cdn.debian.or.jp lenny/main gcc 4:4.1.2-9 [5016B]
-Get:11 http://cdn.debian.or.jp lenny/main libstdc++6-4.1-dev 4.1.2-15 [1154kB]
-Get:12 http://cdn.debian.or.jp lenny/main g++-4.1 4.1.2-15 [2827kB]
-Get:13 http://cdn.debian.or.jp lenny/main g++ 4:4.1.2-9 [1372B]
-Get:14 http://cdn.debian.or.jp lenny/main make 3.81-3 [395kB]
-Get:15 http://cdn.debian.or.jp lenny/main dpkg-dev 1.14.5 [183kB]
-Get:16 http://cdn.debian.or.jp lenny/main build-essential 11.3 [6982B]
+Get:7 http://cdn.debian.or.jp lenny/main cpp-4.2 4.2.1-4 [2706kB]
+Get:8 http://cdn.debian.or.jp lenny/main cpp 4:4.2.1-6 [12.4kB]
+Get:9 http://cdn.debian.or.jp lenny/main libgomp1 4.2.1-4 [13.4kB]
+Get:10 http://cdn.debian.or.jp lenny/main gcc-4.2 4.2.1-4 [485kB]
+Get:11 http://cdn.debian.or.jp lenny/main gcc 4:4.2.1-6 [5012B]
+Get:12 http://cdn.debian.or.jp lenny/main libstdc++6-4.2-dev 4.2.1-4 [1213kB]
+Get:13 http://cdn.debian.or.jp lenny/main g++-4.2 4.2.1-4 [3025kB]
+Get:14 http://cdn.debian.or.jp lenny/main g++ 4:4.2.1-6 [1370B]
+Get:15 http://cdn.debian.or.jp lenny/main make 3.81-3 [395kB]
+Get:16 http://cdn.debian.or.jp lenny/main dpkg-dev 1.14.6 [227kB]
+Get:17 http://cdn.debian.or.jp lenny/main build-essential 11.3 [6982B]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package patch.
-(Reading database ... 7180 files and directories currently installed.)
+(Reading database ... 7304 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
 Selecting previously deselected package perl-modules.
 Unpacking perl-modules (from .../perl-modules_5.8.8-7_all.deb) ...
@@ -22170,46 +22592,44 @@ Selecting previously deselected package linux-libc-dev.
 Unpacking linux-libc-dev (from .../linux-libc-dev_2.6.21-6_amd64.deb) ...
 Selecting previously deselected package libc6-dev.
 Unpacking libc6-dev (from .../libc6-dev_2.6.1-1_amd64.deb) ...
-Selecting previously deselected package cpp-4.1.
-Unpacking cpp-4.1 (from .../cpp-4.1_4.1.2-15_amd64.deb) ...
+Selecting previously deselected package cpp-4.2.
+Unpacking cpp-4.2 (from .../cpp-4.2_4.2.1-4_amd64.deb) ...
 Selecting previously deselected package cpp.
-Unpacking cpp (from .../cpp_4%3a4.1.2-9_amd64.deb) ...
-Selecting previously deselected package gcc-4.1.
-Unpacking gcc-4.1 (from .../gcc-4.1_4.1.2-15_amd64.deb) ...
+Unpacking cpp (from .../cpp_4%3a4.2.1-6_amd64.deb) ...
+Selecting previously deselected package libgomp1.
+Unpacking libgomp1 (from .../libgomp1_4.2.1-4_amd64.deb) ...
+Selecting previously deselected package gcc-4.2.
+Unpacking gcc-4.2 (from .../gcc-4.2_4.2.1-4_amd64.deb) ...
 Selecting previously deselected package gcc.
-Unpacking gcc (from .../gcc_4%3a4.1.2-9_amd64.deb) ...
-Selecting previously deselected package libstdc++6-4.1-dev.
-Unpacking libstdc++6-4.1-dev (from .../libstdc++6-4.1-dev_4.1.2-15_amd64.deb) ...
-Selecting previously deselected package g++-4.1.
-Unpacking g++-4.1 (from .../g++-4.1_4.1.2-15_amd64.deb) ...
+Unpacking gcc (from .../gcc_4%3a4.2.1-6_amd64.deb) ...
+Selecting previously deselected package libstdc++6-4.2-dev.
+Unpacking libstdc++6-4.2-dev (from .../libstdc++6-4.2-dev_4.2.1-4_amd64.deb) ...
+Selecting previously deselected package g++-4.2.
+Unpacking g++-4.2 (from .../g++-4.2_4.2.1-4_amd64.deb) ...
 Selecting previously deselected package g++.
-Unpacking g++ (from .../g++_4%3a4.1.2-9_amd64.deb) ...
+Unpacking g++ (from .../g++_4%3a4.2.1-6_amd64.deb) ...
 Selecting previously deselected package make.
 Unpacking make (from .../archives/make_3.81-3_amd64.deb) ...
 Selecting previously deselected package dpkg-dev.
-Unpacking dpkg-dev (from .../dpkg-dev_1.14.5_all.deb) ...
+Unpacking dpkg-dev (from .../dpkg-dev_1.14.6_all.deb) ...
 Selecting previously deselected package build-essential.
 Unpacking build-essential (from .../build-essential_11.3_amd64.deb) ...
 Setting up patch (2.5.9-4) ...
 Setting up binutils (2.18-1) ...
-
 Setting up linux-libc-dev (2.6.21-6) ...
 Setting up libc6-dev (2.6.1-1) ...
-Setting up cpp-4.1 (4.1.2-15) ...
-Setting up cpp (4:4.1.2-9) ...
-
-Setting up gcc-4.1 (4.1.2-15) ...
-Setting up gcc (4:4.1.2-9) ...
-
+Setting up cpp-4.2 (4.2.1-4) ...
+Setting up cpp (4:4.2.1-6) ...
+Setting up libgomp1 (4.2.1-4) ...
+Setting up gcc-4.2 (4.2.1-4) ...
+Setting up gcc (4:4.2.1-6) ...
 Setting up make (3.81-3) ...
-Setting up libstdc++6-4.1-dev (4.1.2-15) ...
+Setting up libstdc++6-4.2-dev (4.2.1-4) ...
 Setting up perl-modules (5.8.8-7) ...
-Setting up g++-4.1 (4.1.2-15) ...
-Setting up g++ (4:4.1.2-9) ...
-
+Setting up g++-4.2 (4.2.1-4) ...
+Setting up g++ (4:4.2.1-6) ...
 Setting up perl (5.8.8-7) ...
-
-Setting up dpkg-dev (1.14.5) ...
+Setting up dpkg-dev (1.14.6) ...
 Setting up build-essential (11.3) ...
 umount: /sys: not mounted
 umount: /run: not found

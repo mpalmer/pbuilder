@@ -28,7 +28,7 @@ Get:3 http://cdn.debian.or.jp sid/main cdebootstrap 0.4.3 [29.0kB]
 Get:4 http://cdn.debian.or.jp sid/main pbuilder 0.172 [172kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libdebian-installer4.
-(Reading database ... 11350 files and directories currently installed.)
+(Reading database ... 10972 files and directories currently installed.)
 Unpacking libdebian-installer4 (from .../libdebian-installer4_0.52_amd64.deb) ...
 Selecting previously deselected package libdebian-installer-extra4.
 Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.52_amd64.deb) ...
@@ -57,7 +57,7 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 11471 files and directories currently installed.)
+(Reading database ... 11093 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -90,7 +90,7 @@ The following partially installed packages will be configured:
 The following packages are RECOMMENDED but will NOT be installed:
   libcompress-zlib-perl libmail-sendmail-perl libterm-readkey-perl 
 0 packages upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
-Need to get 5932kB of archives. After unpacking 19.8MB will be used.
+Need to get 5931kB of archives. After unpacking 19.8MB will be used.
 Writing extended state information...
 Get:1 http://cdn.debian.or.jp sid/main libmagic1 4.21-3 [333kB]
 Get:2 http://cdn.debian.or.jp sid/main file 4.21-3 [40.3kB]
@@ -99,7 +99,7 @@ Get:4 http://cdn.debian.or.jp sid/main gettext-base 0.16.1-2 [133kB]
 Get:5 http://cdn.debian.or.jp sid/main gettext 0.16.1-2 [2269kB]
 Get:6 http://cdn.debian.or.jp sid/main intltool-debian 0.35.0+20060710.1 [30.8kB]
 Get:7 http://cdn.debian.or.jp sid/main po-debconf 1.0.9 [117kB]
-Get:8 http://cdn.debian.or.jp sid/main debhelper 5.0.54 [520kB]
+Get:8 http://cdn.debian.or.jp sid/main debhelper 5.0.57 [519kB]
 Get:9 http://cdn.debian.or.jp sid/main libdshconfig1 0.20.13-1 [11.0kB]
 Get:10 http://cdn.debian.or.jp sid/main libdshconfig1-dev 0.20.13-1 [25.4kB]
 Get:11 http://cdn.debian.or.jp sid/main libsgmls-perl 1.03ii-31 [29.3kB]
@@ -108,7 +108,7 @@ Get:13 http://cdn.debian.or.jp sid/main sp 1.3.4-1.2.1-47 [182kB]
 Get:14 http://cdn.debian.or.jp sid/main po4a 0.32-1 [762kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11471 files and directories currently installed.)
+(Reading database ... 11093 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.21-3_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.21-3_amd64.deb) ...
@@ -123,7 +123,7 @@ Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) .
 Selecting previously deselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_1.0.9_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_5.0.54_all.deb) ...
+Unpacking debhelper (from .../debhelper_5.0.57_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.13-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -143,7 +143,7 @@ Setting up gettext-base (0.16.1-2) ...
 Setting up gettext (0.16.1-2) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
 Setting up po-debconf (1.0.9) ...
-Setting up debhelper (5.0.54) ...
+Setting up debhelper (5.0.57) ...
 Setting up libdshconfig1 (0.20.13-1) ...
 Setting up libdshconfig1-dev (0.20.13-1) ...
 Setting up libsgmls-perl (1.03ii-31) ...
@@ -166,14 +166,14 @@ Reading state information...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 111kB of archives.
+Need to get 113kB of archives.
 After unpacking 451kB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.7.1 [111kB]
+Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.8 [113kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12434 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.7.1_amd64.deb) ...
-Setting up fakeroot (1.7.1) ...
+(Reading database ... 12053 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.8_amd64.deb) ...
+Setting up fakeroot (1.8) ...
 dpkg-buildpackage: source package is dsh
 dpkg-buildpackage: source version is 0.25.9-1
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
@@ -441,7 +441,6 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
-dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -465,10 +464,10 @@ success
 success
 success
 success
-b: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
 a: dsh: Failed executing ./invalid-exec-file with llexec call
+b: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -480,7 +479,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Sep 10 03:26:11 UTC 2007
+Mon Oct  1 03:26:36 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -550,7 +549,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Sep 10 03:26:16 UTC 2007
+Mon Oct  1 03:26:41 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
