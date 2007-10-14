@@ -50,6 +50,7 @@ TAGS:
 install:
 	$(INSTALL_DIRECTORY) $(DESTDIR)/etc
 	$(INSTALL_DIRECTORY) $(DESTDIR)/etc/pbuilder
+	$(INSTALL_DIRECTORY) $(DESTDIR)/etc/bash_completion.d
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/sbin
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/bin
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/lib/pbuilder
@@ -85,6 +86,7 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-checkparams $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-funcs $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pdebuild-internal $(DESTDIR)/usr/lib/pbuilder/
+	$(INSTALL_FILE) bash_completion.pbuilder $(DESTDIR)/etc/bash_completion.d/pbuilder
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/etc
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/pbuilder
 	$(INSTALL_FILE) pbuilder-uml.conf $(DESTDIR)/etc/pbuilder
