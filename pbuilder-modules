@@ -28,23 +28,23 @@ pbuilder [operation] [pbuilder-options]
 pdebuild [pdebuild-options] -- [pbuilder-options]
 
 command lines:
-pbuilder create [--basetgz base.tgz-path] [--distribution etch|lenny|sid|experimental]
+pbuilder --create [--basetgz base.tgz-path] [--distribution etch|lenny|sid|experimental]
   Creates a base.tgz
 
-pbuilder update [--basetgz base.tgz-path] [--distribution etch|lenny|sid|experimental]
+pbuilder --update [--basetgz base.tgz-path] [--distribution etch|lenny|sid|experimental]
   Updates a base.tgz
 
-pbuilder build [--basetgz base.tgz-path] pbuilder_2.2.0-1.dsc
+pbuilder --build [--basetgz base.tgz-path] pbuilder_2.2.0-1.dsc
   Builds using the base.tgz. Requires a .dsc filename
 
-pbuilder clean
+pbuilder --clean
   Cleans the temporal build directory.
 
-pbuilder login
-pbuilder execute -- [command] [command-options]
+pbuilder --login
+pbuilder --execute -- [command] [command-options]
   Logs in to the build environment and execute command.
 
-pbuilder dumpconfig
+pbuilder --dumpconfig
   Dumps configuration information to stdout for debugging.
 
 pbuilder-options:
