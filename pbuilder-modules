@@ -54,6 +54,7 @@ pbuilder-options:
  --othermirror [other mirror location in apt deb-line format, delimited with | signs]
  --http-proxy [proxy]
  --distribution [distribution(sid|etch|lenny|experimental)]
+ --components [components]
  --buildresult [location-to-copy-build-result]
  --aptcache [location of retrieved package files]
  --removepackages [packages-to-remove on pbuilder create]
@@ -299,13 +300,16 @@ function installaptlines (){
 	echo "Distribution not specified, please specify" >&2
 	exit 1
     fi
+    if [ -z "$COMPONENTS" ] ; then
+	COMPONENTS="main"
+    fi
     if [ -n "$OTHERMIRROR" ]; then 
 	echo "$OTHERMIRROR" | tr "|" "\n" >> "$BUILDPLACE"/etc/apt/sources.list 
     fi
     if [ -n "$MIRRORSITE" ] ; then
 	cat >> "$BUILDPLACE"/etc/apt/sources.list << EOF
-deb $MIRRORSITE $DISTRIBUTION main 
-#deb-src $MIRRORSITE $DISTRIBUTION main
+deb $MIRRORSITE $DISTRIBUTION $COMPONENTS
+#deb-src $MIRRORSITE $DISTRIBUTION $COMPONENTS
 EOF
     fi
     if [ -n "$APTCONFDIR" ]; then

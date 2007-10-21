@@ -189,18 +189,21 @@ and
 .B "experimental".
 
 .TP
+.BI "\-\-components [" "components" "]"
+Specifies the default distribution components to use. eg. "main contrib non-free".
+Default is "main".
+
+.TP
 .BI "\-\-override\-config"
-
-Specify to use different apt set up inside the chroot than it was used for creating the 
-base.tgz.
-Specify this when you want to do 
+Specify to use different apt set up inside the chroot than it was used for creating the base.tgz.
+Specify this when you want to do
 .B "pbuilder --update"
- with a different distribution target set up.
+with a different distribution target set up.
 
-.B "--distribution, " "--mirror, " "--othermirror"
- options are only valid when
+.B "--distribution", "--components", "--mirror", "--othermirror"
+options are only valid when
 .B "\-\-override\-config"
-option is specified in 
+option is specified in
 .B "--update"
 target, or when
 .B "pbuilder --create"
