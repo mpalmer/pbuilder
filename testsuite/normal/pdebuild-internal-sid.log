@@ -20,24 +20,24 @@ Recommended packages:
 The following NEW packages will be installed:
   cdebootstrap libdebian-installer-extra4 libdebian-installer4 pbuilder
 0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
-Need to get 241kB of archives.
+Need to get 242kB of archives.
 After unpacking 1102kB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp sid/main libdebian-installer4 0.52 [28.0kB]
-Get:2 http://cdn.debian.or.jp sid/main libdebian-installer-extra4 0.52 [10.7kB]
+Get:1 http://cdn.debian.or.jp sid/main libdebian-installer4 0.53 [28.9kB]
+Get:2 http://cdn.debian.or.jp sid/main libdebian-installer-extra4 0.53 [10.7kB]
 Get:3 http://cdn.debian.or.jp sid/main cdebootstrap 0.4.3 [29.0kB]
 Get:4 http://cdn.debian.or.jp sid/main pbuilder 0.173 [173kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libdebian-installer4.
 (Reading database ... 11001 files and directories currently installed.)
-Unpacking libdebian-installer4 (from .../libdebian-installer4_0.52_amd64.deb) ...
+Unpacking libdebian-installer4 (from .../libdebian-installer4_0.53_amd64.deb) ...
 Selecting previously deselected package libdebian-installer-extra4.
-Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.52_amd64.deb) ...
+Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.53_amd64.deb) ...
 Selecting previously deselected package cdebootstrap.
 Unpacking cdebootstrap (from .../cdebootstrap_0.4.3_amd64.deb) ...
 Selecting previously deselected package pbuilder.
 Unpacking pbuilder (from .../pbuilder_0.173_all.deb) ...
-Setting up libdebian-installer4 (0.52) ...
-Setting up libdebian-installer-extra4 (0.52) ...
+Setting up libdebian-installer4 (0.53) ...
+Setting up libdebian-installer-extra4 (0.53) ...
 Setting up cdebootstrap (0.4.3) ...
 Setting up pbuilder (0.173) ...
 Setting DEBBUILDOPTS=
@@ -99,7 +99,7 @@ Get:4 http://cdn.debian.or.jp sid/main gettext-base 0.16.1-2 [133kB]
 Get:5 http://cdn.debian.or.jp sid/main gettext 0.16.1-2 [2269kB]
 Get:6 http://cdn.debian.or.jp sid/main intltool-debian 0.35.0+20060710.1 [30.8kB]
 Get:7 http://cdn.debian.or.jp sid/main po-debconf 1.0.9 [117kB]
-Get:8 http://cdn.debian.or.jp sid/main debhelper 5.0.57 [519kB]
+Get:8 http://cdn.debian.or.jp sid/main debhelper 5.0.58 [519kB]
 Get:9 http://cdn.debian.or.jp sid/main libdshconfig1 0.20.13-1 [11.0kB]
 Get:10 http://cdn.debian.or.jp sid/main libdshconfig1-dev 0.20.13-1 [25.4kB]
 Get:11 http://cdn.debian.or.jp sid/main libsgmls-perl 1.03ii-31 [29.3kB]
@@ -123,7 +123,7 @@ Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) .
 Selecting previously deselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_1.0.9_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_5.0.57_all.deb) ...
+Unpacking debhelper (from .../debhelper_5.0.58_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.13-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -143,7 +143,7 @@ Setting up gettext-base (0.16.1-2) ...
 Setting up gettext (0.16.1-2) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
 Setting up po-debconf (1.0.9) ...
-Setting up debhelper (5.0.57) ...
+Setting up debhelper (5.0.58) ...
 Setting up libdshconfig1 (0.20.13-1) ...
 Setting up libdshconfig1-dev (0.20.13-1) ...
 Setting up libsgmls-perl (1.03ii-31) ...
@@ -425,7 +425,6 @@ make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.9/po'
 make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.9'
 /usr/bin/make  dsh
 make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.9'
-make[3]: `dsh' is up to date.
 make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.9'
 /usr/bin/make  check-TESTS
 make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.9'
@@ -464,10 +463,10 @@ success
 success
 success
 success
-b: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
+b: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -479,7 +478,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Oct 19 03:05:49 UTC 2007
+Mon Oct 22 03:05:00 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -549,14 +548,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Fri Oct 19 03:05:54 UTC 2007
+Mon Oct 22 03:05:05 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
-dsh: Process terminated (before write).
 c: c
+dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
