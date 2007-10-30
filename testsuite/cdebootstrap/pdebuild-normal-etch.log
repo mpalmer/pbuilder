@@ -1,7 +1,6 @@
-dpkg-buildpackage: source package is dsh
-dpkg-buildpackage: source version is 0.25.9-1
+dpkg-buildpackage: source package dsh
+dpkg-buildpackage: source version 0.25.9-1
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
-dpkg-buildpackage: source version without epoch 0.25.9-1
  fakeroot debian/rules clean
 dh_testdir
 dh_testroot
@@ -23,7 +22,7 @@ dpkg-source: building dsh in dsh_0.25.9-1.diff.gz
 dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
 dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
 dpkg-source: building dsh in dsh_0.25.9-1.dsc
- dpkg-genchanges -S
+ dpkg-genchanges -S >../dsh_0.25.9-1_source.changes
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: source only upload (original source is included)
 W: /home/dancer/.pbuilderrc does not exist
@@ -467,10 +466,10 @@ success
 success
 success
 success
+a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
-a: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -482,7 +481,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Oct 22 03:30:30 UTC 2007
+Mon Oct 29 03:29:23 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -552,14 +551,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Oct 22 03:30:35 UTC 2007
+Mon Oct 29 03:29:28 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
+dsh: Process terminated (before write).
 b: b
 c: c
-dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
