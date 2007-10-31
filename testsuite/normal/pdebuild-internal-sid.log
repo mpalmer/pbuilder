@@ -23,15 +23,15 @@ The following NEW packages will be installed:
   cdebootstrap cowdancer devscripts fakeroot libdebian-installer-extra4
   libdebian-installer4 pbuilder sudo
 0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
-Need to get 979kB of archives.
-After unpacking 3449kB of additional disk space will be used.
+Need to get 981kB of archives.
+After unpacking 3453kB of additional disk space will be used.
 Get:1 http://cdn.debian.or.jp sid/main libdebian-installer4 0.53 [28.9kB]
 Get:2 http://cdn.debian.or.jp sid/main libdebian-installer-extra4 0.53 [10.7kB]
 Get:3 http://cdn.debian.or.jp sid/main cdebootstrap 0.4.3 [29.0kB]
 Get:4 http://cdn.debian.or.jp sid/main pbuilder 0.174 [174kB]
 Get:5 http://cdn.debian.or.jp sid/main cowdancer 0.43 [40.3kB]
-Get:6 http://cdn.debian.or.jp sid/main devscripts 2.10.9 [403kB]
-Get:7 http://cdn.debian.or.jp sid/main fakeroot 1.8.2 [113kB]
+Get:6 http://cdn.debian.or.jp sid/main devscripts 2.10.10 [404kB]
+Get:7 http://cdn.debian.or.jp sid/main fakeroot 1.8.3 [114kB]
 Get:8 http://cdn.debian.or.jp sid/main sudo 1.6.9p6-1 [180kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libdebian-installer4.
@@ -46,9 +46,9 @@ Unpacking pbuilder (from .../pbuilder_0.174_all.deb) ...
 Selecting previously deselected package cowdancer.
 Unpacking cowdancer (from .../cowdancer_0.43_amd64.deb) ...
 Selecting previously deselected package devscripts.
-Unpacking devscripts (from .../devscripts_2.10.9_amd64.deb) ...
+Unpacking devscripts (from .../devscripts_2.10.10_amd64.deb) ...
 Selecting previously deselected package fakeroot.
-Unpacking fakeroot (from .../fakeroot_1.8.2_amd64.deb) ...
+Unpacking fakeroot (from .../fakeroot_1.8.3_amd64.deb) ...
 Selecting previously deselected package sudo.
 Unpacking sudo (from .../sudo_1.6.9p6-1_amd64.deb) ...
  Removing any system startup links for /etc/init.d/sudo ...
@@ -57,8 +57,8 @@ Setting up libdebian-installer-extra4 (0.53) ...
 Setting up cdebootstrap (0.4.3) ...
 Setting up pbuilder (0.174) ...
 Setting up cowdancer (0.43) ...
-Setting up devscripts (2.10.9) ...
-Setting up fakeroot (1.8.2) ...
+Setting up devscripts (2.10.10) ...
+Setting up fakeroot (1.8.3) ...
 Setting up sudo (1.6.9p6-1) ...
 No /etc/sudoers found... creating one for you.
 Setting DEBBUILDOPTS=
@@ -78,7 +78,7 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 12129 files and directories currently installed.)
+(Reading database ... 12128 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -137,7 +137,7 @@ Get:19 http://cdn.debian.or.jp sid/main libmail-sendmail-perl 0.79-4 [27.6kB]
 Get:20 http://cdn.debian.or.jp sid/main libterm-readkey-perl 2.30-3 [32.6kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 12129 files and directories currently installed.)
+(Reading database ... 12128 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.21-3_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.21-3_amd64.deb) ...
@@ -505,8 +505,8 @@ success
 success
 b: dsh: Failed executing ./invalid-exec-file with llexec call
 a: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -518,7 +518,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Oct 29 03:05:37 UTC 2007
+Wed Oct 31 03:06:19 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -588,7 +588,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Oct 29 03:05:42 UTC 2007
+Wed Oct 31 03:06:24 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
