@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xxx\n"
 "POT-Creation-Date: 2007-09-06 07:50+0900\n"
-"PO-Revision-Date: 2007-06-19 05:28+0900\n"
+"PO-Revision-Date: 2007-11-06 20:36+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Junichi Uekawa <dancer@debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -164,7 +164,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><command><option>
 #: pbuilder-doc.xml:89
 msgid "--distribution"
-msgstr "--distribution"
+msgstr "for sudo sessions<"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:89 pbuilder-doc.xml:156
@@ -423,7 +423,6 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:214
-#, fuzzy
 msgid ""
 "Satisfies build-dependency inside the chroot before creating source "
 "package.  (which is a good point that default <command>pdebuild</command> "
@@ -539,7 +538,6 @@ msgstr "chroot 内部で root 以外でパッケージをビルドする"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:273
-#, fuzzy
 msgid ""
 "<command>pbuilder</command> requires full root privilege when it is "
 "satisfying the build-dependencies, but most packages do not need root "
@@ -547,13 +545,7 @@ msgid ""
 "<command>pbuilder </command> can create a user which is only used inside "
 "<command>pbuilder </command> and use that user id when building, and use the "
 "<command>fakeroot</command> command when root privilege is required."
-msgstr ""
-"<command>pbuilder</command> は依存関係を充足させる際には root 権限を必要とし"
-"ます、しかしほとんどのパッケージはビルド時に root 権限を必要とはせず、rootで"
-"はビルドできないパッケージも一部存在します。<command>pbuilder </command> は "
-"<command>pbuilder </command> 内部専用のユーザを作成し、そのユーザIDを利用して"
-"ビルドを実行することができます。root権限が必要な時には<command>fakeroot</"
-"command> コマンドを利用します。"
+msgstr "<command>pbuilder</command> は依存関係を充足させる際には root 権限を必要とします、しかしほとんどのパッケージはビルド時に root 権限を必要とはせず、rootではビルドできないパッケージも一部存在します。<command>pbuilder </command> は <command>pbuilder </command> 内部専用のユーザを作成し、そのユーザIDを利用してビルドを実行することができます。root権限が必要な時には<command>fakeroot</command> コマンドを利用します。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:282
@@ -670,7 +662,7 @@ msgstr ""
 msgid ""
 "Build-Dependencies need to install non-interactively, but some packages are "
 "so broken that they cannot install without interaction (like postgresql)."
-msgstr ""
+msgstr "依存関係を充足させるためのインストールは非インタラクティブに行われる必要がありますが、一部のパッケージはインタラクティブな操作がないとインストールできないくらいに壊れているものがあります（postgresqlなど）."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:350
@@ -678,12 +670,12 @@ msgid ""
 "When a library package breaks, or gcc/gcj/g++ breaks, or even bison, a large "
 "number of build failures are reported.  (gcj-3.0 which had no \"javac\", "
 "bison which got more strict, etc.)"
-msgstr ""
+msgstr "ライブラリパッケージに問題があったり、gcc/gcj/g++ に問題がある場合、また bison もそうですが、多くのビルド失敗が報告されます。 (gcj-3.0 に \"javac\" がなくなったり、bison がより厳密になったり、など）"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:356
 msgid "Some people were quite hostile against build failure reports."
-msgstr ""
+msgstr "一部の人はビルド失敗の報告に敵対的なので注意しましょう。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:360
@@ -860,13 +852,10 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:467
-#, fuzzy
 msgid ""
 "Example scripts for use with pbuilder-test can be found in <filename>/usr/"
 "share/doc/pbuilder/examples/pbuilder-test</filename>"
-msgstr ""
-"自動的にlintian/lindaを実行する (例として <filename>/usr/share/doc/pbuilder/"
-"examples/B90linda</filename>が配布されている)。"
+msgstr "pbuilder-test を利用するスクリプト例は <filename>/usr/share/doc/pbuilder/examples/pbuilder-test</filename>以下に配布されている。"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:472
@@ -1133,7 +1122,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:655
 msgid "Considerations for running pbuilder-user-mode-linux"
-msgstr ""
+msgstr "pbuilder-user-mode-linuxを実行する場合の検討項目"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:657
@@ -1395,7 +1384,7 @@ msgstr "--save-after-exec"
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:823
 msgid "and/or"
-msgstr ""
+msgstr "もしくは"
 
 # type: Content of: <book><chapter><sect1><para><option>
 #: pbuilder-doc.xml:823
@@ -1407,7 +1396,7 @@ msgstr "--save-after-login"
 msgid ""
 "options to the <command>pbuilder login</command> session to accomplish the "
 "goal.  It is possible to add the"
-msgstr ""
+msgstr "オプションを  <command>pbuilder login</command> セッションに追加することで達成することができます。"
 
 # type: Content of: <book><chapter><sect1><para><option>
 #: pbuilder-doc.xml:826
@@ -1417,17 +1406,17 @@ msgstr "--uml-login-nocow"
 # type: Content of: <book><chapter><sect1><para><command>
 #: pbuilder-doc.xml:826
 msgid "option to <command>pbuilder-user-mode-linux"
-msgstr ""
+msgstr "オプションを <command>pbuilder-user-mode-linux"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:827
 msgid "</command> session as well."
-msgstr ""
+msgstr "</command> セッションに追加することも可能です。"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:832
 msgid "Setting BUILDRESULTUID for sudo sessions"
-msgstr ""
+msgstr "BUILDRESULTUID を sudo のセッションに追加する"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:834
@@ -2119,9 +2108,8 @@ msgstr ""
 
 # type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1234
-#, fuzzy
 msgid "Using svn-buildpackage together with pbuilder"
-msgstr "user-mode-linux を pbuilder で利用する"
+msgstr "svn-buildpackage を pbuilder で利用する"
 
 # type: Content of: <book><chapter><sect1><para><footnote>
 #: pbuilder-doc.xml:1236
@@ -2580,11 +2568,14 @@ msgid ""
 "# pbuilder create --distribution lenny --no-targz --basetgz /chroot/lenny\n"
 "# pbuilder create --distribution sid --no-targz --basetgz /chroot/sid"
 msgstr ""
+"# pbuilder create --distribution etch --no-targz --basetgz /chroot/etch\n"
+"# pbuilder create --distribution lenny --no-targz --basetgz /chroot/lenny\n"
+"# pbuilder create --distribution sid --no-targz --basetgz /chroot/sid"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1557
 msgid "Using pbuilder in a vserver"
-msgstr ""
+msgstr "pbuilder を vserver で利用する"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1559
@@ -2728,19 +2719,19 @@ msgstr "フックの場所。"
 msgid ""
 "<command>pbuilder</command> copies the content of this directory to and from "
 "the aptcache directory of outside chroot."
-msgstr ""
+msgstr "<command>pbuilder</command> は chroot 外部の aptcache ディレクトリからコピーしてきたり、chroot 外部の aptcache ディレクトリへコピーしたりします。"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1688
 msgid ""
 "<command>pbuilder-user-mode-linux</command> uses a script in <filename>/tmp</"
 "filename> to bootstrap into user-mode-linux"
-msgstr ""
+msgstr "<command>pbuilder-user-mode-linux</command> は <filename>/tmp</filename> のスクリプトを利用して  user-mode-linux にブートストラップします。"
 
 # type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1698
 msgid "Minor archaeological details"
-msgstr ""
+msgstr "些細な過去の経緯の詳細"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1700
