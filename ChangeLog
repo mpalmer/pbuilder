@@ -1,3 +1,15 @@
+2007-11-07  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-satisfydepends-classic: add APTFLAG, which is "-o
+	APT::Install-Recommends=false" to toggle recommends
+	installation. This option is ignored by etch apt, so should be
+	harmless.
+
+	* pbuilder-modules (APT): install Install-Recommends "false"
+	configuration to /etc/apt/apt.conf.d/15pbuilder.  Move
+	experimental configuration to there from /etc/apt/apt.conf to
+	/etc/apt/apt.conf.d/15pbuilder.
+
 2007-10-25  Junichi Uekawa  <dancer@debian.org>
 
 	* pbuilderrc: set default value for COMPONENTS, so that

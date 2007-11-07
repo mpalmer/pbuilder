@@ -316,14 +316,18 @@ EOF
 	echo "  -> Copy " "$APTCONFDIR"/* " to chroot"
 	cp -a "$APTCONFDIR/"* "$BUILDPLACE"/etc/apt
     fi
-		  
+
+    # configure /etc/apt.conf.d/15pbuilder
+    cat > "$BUILDPLACE"/etc/apt/apt.conf.d/15pbuilder <<EOF
+APT::Install-Recommends "false";
+EOF
     if [ -n "$EXPERIMENTAL" ]; then
 	echo "  -> Installing apt-lines and pinning for experimental"
 	if [ -n "$MIRRORSITE" ] ; then
 	    echo "deb $MIRRORSITE experimental main" >> "$BUILDPLACE"/etc/apt/sources.list
 	    echo "#deb-src $MIRRORSITE experimental main" >> "$BUILDPLACE"/etc/apt/sources.list
 	fi
-	cat >> "$BUILDPLACE"/etc/apt/apt.conf << EOF
+	cat >> "$BUILDPLACE"/etc/apt/apt.conf.d/15pbuilder <<EOF
 APT::Default-Release "experimental";
 EOF
     fi

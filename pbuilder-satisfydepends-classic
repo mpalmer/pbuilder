@@ -33,6 +33,7 @@ function checkbuilddep_internal () {
     local INSTALLPKGMULTI
     local CURRENTREALPKGNAME
     local SATISFIED
+    local APTFLAG="-o APT::Install-Recommends=false"
     echo " -> Attempting to parse the build-deps "
     for INSTALLPKGMULTI in $(get_control_re "$DEBIAN_CONTROL" "$BD_REGEXP" |
 	tr " " "/" | \
@@ -60,12 +61,12 @@ function checkbuilddep_internal () {
 	fi
 	echo "   -> Trying $CURRENTREALPKGNAME"
 
-	if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST $CURRENTREALPKGNAME >& /dev/null; then
+	if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST $CURRENTREALPKGNAME >& /dev/null; then
 	    SATISFIED="yes"
 	    INSTALLPKGLIST="$INSTALLPKGLIST $CURRENTREALPKGNAME"
 	else
 	    echo "       -> Cannot install $CURRENTREALPKGNAME; apt errors follow:"
-	    if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST "$CURRENTREALPKGNAME"; then
+	    if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST "$CURRENTREALPKGNAME"; then
 		:
 	    fi
 	    # package could not be found. -- looking for alternative.
@@ -74,13 +75,13 @@ function checkbuilddep_internal () {
 	    if [ -n "$PROVIDED" ]; then
 		# something provides this package
 		echo "     -> Considering $PROVIDED to satisfy the dependency "
-		if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST $PROVIDED >& /dev/null; then
+		if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST $PROVIDED >& /dev/null; then
 		    SATISFIED="yes";
 		    INSTALLPKGLIST="$INSTALLPKGLIST $PROVIDED"
 		else
 		    # show the error for diagnostic purposes
 		    echo "       -> Cannot install $PROVIDED; apt errors follow:"
-		    if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST $PROVIDED; then
+		    if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST $PROVIDED; then
 			:
 		    fi
 		fi
@@ -100,10 +101,10 @@ function checkbuilddep_internal () {
     
     # now actually install the packages
     echo " -> Installing $INSTALLPKGLIST"
-    if ! $CHROOTEXEC apt-get -y --force-yes install $INSTALLPKGLIST; then
+    if ! $CHROOTEXEC apt-get -y --force-yes install $APTFLAG $INSTALLPKGLIST; then
 	echo " -> Trying to fix apt error"
 	# Work around an apt bug which causes configure to fail.
-	if $CHROOTEXEC dpkg --configure --pending && $CHROOTEXEC apt-get -y --force-yes install $INSTALLPKGLIST; then
+	if $CHROOTEXEC dpkg --configure --pending && $CHROOTEXEC apt-get -y --force-yes install $APTFLAG $INSTALLPKGLIST; then
 	    echo " -> Apt bug workaround succeeded"
 	elif [ "$CONTINUE_FAIL" != "yes" ]; then
 	    echo "E: Unrecoverable error installing build-dependencies." >&2
