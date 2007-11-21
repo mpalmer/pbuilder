@@ -12,30 +12,23 @@ Building dependency tree...
 Reading state information...
 passwd is already the newest version.
 The following extra packages will be installed:
-  cdebootstrap cowdancer devscripts fakeroot libdebian-installer-extra4
-  libdebian-installer4 sudo
+  cdebootstrap libdebian-installer-extra4 libdebian-installer4
 Suggested packages:
-  devscripts-el at cvs-buildpackage cvs subversion svk tla bzr git-core
-  mercurial debian-keyring dupload dput gnuplot libcrypt-ssleay-perl
-  libsoap-lite-perl libtimedate-perl liburi-perl libwww-perl lintian linda
-  mailx mailutils mutt patchutils ssh strace wdiff www-browser pbuilder-uml
+  pbuilder-uml
+Recommended packages:
+  fakeroot sudo devscripts cowdancer
 The following NEW packages will be installed:
-  cdebootstrap cowdancer devscripts fakeroot libdebian-installer-extra4
-  libdebian-installer4 pbuilder sudo
-0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
-Need to get 981kB of archives.
-After unpacking 3453kB of additional disk space will be used.
+  cdebootstrap libdebian-installer-extra4 libdebian-installer4 pbuilder
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 242kB of archives.
+After unpacking 1110kB of additional disk space will be used.
 Get:1 http://cdn.debian.or.jp sid/main libdebian-installer4 0.53 [28.9kB]
 Get:2 http://cdn.debian.or.jp sid/main libdebian-installer-extra4 0.53 [10.7kB]
 Get:3 http://cdn.debian.or.jp sid/main cdebootstrap 0.4.3 [29.0kB]
 Get:4 http://cdn.debian.or.jp sid/main pbuilder 0.174 [174kB]
-Get:5 http://cdn.debian.or.jp sid/main cowdancer 0.43 [40.3kB]
-Get:6 http://cdn.debian.or.jp sid/main devscripts 2.10.10 [404kB]
-Get:7 http://cdn.debian.or.jp sid/main fakeroot 1.8.3 [114kB]
-Get:8 http://cdn.debian.or.jp sid/main sudo 1.6.9p6-1 [180kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libdebian-installer4.
-(Reading database ... 11771 files and directories currently installed.)
+(Reading database ... 11037 files and directories currently installed.)
 Unpacking libdebian-installer4 (from .../libdebian-installer4_0.53_amd64.deb) ...
 Selecting previously deselected package libdebian-installer-extra4.
 Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.53_amd64.deb) ...
@@ -43,24 +36,10 @@ Selecting previously deselected package cdebootstrap.
 Unpacking cdebootstrap (from .../cdebootstrap_0.4.3_amd64.deb) ...
 Selecting previously deselected package pbuilder.
 Unpacking pbuilder (from .../pbuilder_0.174_all.deb) ...
-Selecting previously deselected package cowdancer.
-Unpacking cowdancer (from .../cowdancer_0.43_amd64.deb) ...
-Selecting previously deselected package devscripts.
-Unpacking devscripts (from .../devscripts_2.10.10_amd64.deb) ...
-Selecting previously deselected package fakeroot.
-Unpacking fakeroot (from .../fakeroot_1.8.3_amd64.deb) ...
-Selecting previously deselected package sudo.
-Unpacking sudo (from .../sudo_1.6.9p6-1_amd64.deb) ...
- Removing any system startup links for /etc/init.d/sudo ...
 Setting up libdebian-installer4 (0.53) ...
 Setting up libdebian-installer-extra4 (0.53) ...
 Setting up cdebootstrap (0.4.3) ...
 Setting up pbuilder (0.174) ...
-Setting up cowdancer (0.43) ...
-Setting up devscripts (2.10.10) ...
-Setting up fakeroot (1.8.3) ...
-Setting up sudo (1.6.9p6-1) ...
-No /etc/sudoers found... creating one for you.
 Setting DEBBUILDOPTS=
  -> Attempting to satisfy build-dependencies
  -> Creating pbuilder-satisfydepends-dummy package
@@ -78,7 +57,7 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 12128 files and directories currently installed.)
+(Reading database ... 11159 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -100,20 +79,19 @@ Reading task descriptions...
 Building tag database...
 The following NEW packages will be automatically installed:
   debhelper file gettext gettext-base html2text intltool-debian 
-  libcompress-raw-zlib-perl libcompress-zlib-perl libdshconfig1 
-  libdshconfig1-dev libio-compress-base-perl libio-compress-zlib-perl 
-  libmagic1 libmail-sendmail-perl libsgmls-perl libsp1c2 
-  libterm-readkey-perl po-debconf po4a sp 
+  libdshconfig1 libdshconfig1-dev libmagic1 libsgmls-perl libsp1c2 
+  po-debconf po4a sp 
 The following NEW packages will be installed:
   debhelper file gettext gettext-base html2text intltool-debian 
-  libcompress-raw-zlib-perl libcompress-zlib-perl libdshconfig1 
-  libdshconfig1-dev libio-compress-base-perl libio-compress-zlib-perl 
-  libmagic1 libmail-sendmail-perl libsgmls-perl libsp1c2 
-  libterm-readkey-perl po-debconf po4a sp 
+  libdshconfig1 libdshconfig1-dev libmagic1 libsgmls-perl libsp1c2 
+  po-debconf po4a sp 
 The following partially installed packages will be configured:
   pbuilder-satisfydepends-dummy 
-0 packages upgraded, 20 newly installed, 0 to remove and 0 not upgraded.
-Need to get 6315kB of archives. After unpacking 21.2MB will be used.
+The following packages are RECOMMENDED but will NOT be installed:
+  libcompress-zlib-perl libmail-box-perl libmail-sendmail-perl 
+  libterm-readkey-perl 
+0 packages upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
+Need to get 6046kB of archives. After unpacking 20.0MB will be used.
 Writing extended state information...
 Get:1 http://cdn.debian.or.jp sid/main libmagic1 4.21-3 [333kB]
 Get:2 http://cdn.debian.or.jp sid/main file 4.21-3 [40.3kB]
@@ -121,23 +99,17 @@ Get:3 http://cdn.debian.or.jp sid/main html2text 1.3.2a-3 [92.7kB]
 Get:4 http://cdn.debian.or.jp sid/main gettext-base 0.16.1-2 [133kB]
 Get:5 http://cdn.debian.or.jp sid/main gettext 0.16.1-2 [2269kB]
 Get:6 http://cdn.debian.or.jp sid/main intltool-debian 0.35.0+20060710.1 [30.8kB]
-Get:7 http://cdn.debian.or.jp sid/main po-debconf 1.0.9 [117kB]
-Get:8 http://cdn.debian.or.jp sid/main debhelper 5.0.59 [519kB]
+Get:7 http://cdn.debian.or.jp sid/main po-debconf 1.0.10 [231kB]
+Get:8 http://cdn.debian.or.jp sid/main debhelper 5.0.61 [520kB]
 Get:9 http://cdn.debian.or.jp sid/main libdshconfig1 0.20.13-1 [11.0kB]
 Get:10 http://cdn.debian.or.jp sid/main libdshconfig1-dev 0.20.13-1 [25.4kB]
 Get:11 http://cdn.debian.or.jp sid/main libsgmls-perl 1.03ii-31 [29.3kB]
 Get:12 http://cdn.debian.or.jp sid/main libsp1c2 1.3.4-1.2.1-47 [1386kB]
 Get:13 http://cdn.debian.or.jp sid/main sp 1.3.4-1.2.1-47 [182kB]
 Get:14 http://cdn.debian.or.jp sid/main po4a 0.32-1 [762kB]
-Get:15 http://cdn.debian.or.jp sid/main libcompress-raw-zlib-perl 2.006-1 [94.5kB]
-Get:16 http://cdn.debian.or.jp sid/main libio-compress-base-perl 2.006-1 [55.1kB]
-Get:17 http://cdn.debian.or.jp sid/main libio-compress-zlib-perl 2.006-1 [138kB]
-Get:18 http://cdn.debian.or.jp sid/main libcompress-zlib-perl 2.007-1 [35.4kB]
-Get:19 http://cdn.debian.or.jp sid/main libmail-sendmail-perl 0.79-4 [27.6kB]
-Get:20 http://cdn.debian.or.jp sid/main libterm-readkey-perl 2.30-3 [32.6kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 12128 files and directories currently installed.)
+(Reading database ... 11159 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.21-3_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.21-3_amd64.deb) ...
@@ -150,9 +122,9 @@ Unpacking gettext (from .../gettext_0.16.1-2_amd64.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
 Selecting previously deselected package po-debconf.
-Unpacking po-debconf (from .../po-debconf_1.0.9_all.deb) ...
+Unpacking po-debconf (from .../po-debconf_1.0.10_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_5.0.59_all.deb) ...
+Unpacking debhelper (from .../debhelper_5.0.61_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.13-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -165,26 +137,14 @@ Selecting previously deselected package sp.
 Unpacking sp (from .../sp_1.3.4-1.2.1-47_amd64.deb) ...
 Selecting previously deselected package po4a.
 Unpacking po4a (from .../archives/po4a_0.32-1_all.deb) ...
-Selecting previously deselected package libcompress-raw-zlib-perl.
-Unpacking libcompress-raw-zlib-perl (from .../libcompress-raw-zlib-perl_2.006-1_amd64.deb) ...
-Selecting previously deselected package libio-compress-base-perl.
-Unpacking libio-compress-base-perl (from .../libio-compress-base-perl_2.006-1_all.deb) ...
-Selecting previously deselected package libio-compress-zlib-perl.
-Unpacking libio-compress-zlib-perl (from .../libio-compress-zlib-perl_2.006-1_all.deb) ...
-Selecting previously deselected package libcompress-zlib-perl.
-Unpacking libcompress-zlib-perl (from .../libcompress-zlib-perl_2.007-1_all.deb) ...
-Selecting previously deselected package libmail-sendmail-perl.
-Unpacking libmail-sendmail-perl (from .../libmail-sendmail-perl_0.79-4_all.deb) ...
-Selecting previously deselected package libterm-readkey-perl.
-Unpacking libterm-readkey-perl (from .../libterm-readkey-perl_2.30-3_amd64.deb) ...
 Setting up libmagic1 (4.21-3) ...
 Setting up file (4.21-3) ...
 Setting up html2text (1.3.2a-3) ...
 Setting up gettext-base (0.16.1-2) ...
 Setting up gettext (0.16.1-2) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
-Setting up po-debconf (1.0.9) ...
-Setting up debhelper (5.0.59) ...
+Setting up po-debconf (1.0.10) ...
+Setting up debhelper (5.0.61) ...
 Setting up libdshconfig1 (0.20.13-1) ...
 Setting up libdshconfig1-dev (0.20.13-1) ...
 Setting up libsgmls-perl (1.03ii-31) ...
@@ -192,12 +152,6 @@ Setting up libsp1c2 (1.3.4-1.2.1-47) ...
 Setting up sp (1.3.4-1.2.1-47) ...
 Setting up po4a (0.32-1) ...
 Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
-Setting up libcompress-raw-zlib-perl (2.006-1) ...
-Setting up libio-compress-base-perl (2.006-1) ...
-Setting up libio-compress-zlib-perl (2.006-1) ...
-Setting up libcompress-zlib-perl (2.007-1) ...
-Setting up libmail-sendmail-perl (0.79-4) ...
-Setting up libterm-readkey-perl (2.30-3) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -210,9 +164,17 @@ Building tag database...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-fakeroot is already the newest version.
-fakeroot set to manual installed.
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following NEW packages will be installed:
+  fakeroot
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 111kB of archives.
+After unpacking 455kB of additional disk space will be used.
+Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.8.5 [111kB]
+Fetched XXXB in Xs (XXXXXB/s)
+Selecting previously deselected package fakeroot.
+(Reading database ... 12156 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.8.5_amd64.deb) ...
+Setting up fakeroot (1.8.5) ...
 dpkg-buildpackage: source package dsh
 dpkg-buildpackage: source version 0.25.9-1
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
@@ -503,9 +465,9 @@ success
 success
 success
 success
-b: dsh: Failed executing ./invalid-exec-file with llexec call
-a: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
+a: dsh: Failed executing ./invalid-exec-file with llexec call
+b: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -514,11 +476,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-1: 1
 2: 2
+1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Wed Oct 31 03:06:19 UTC 2007
+Wed Nov 21 03:05:47 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -588,14 +550,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Wed Oct 31 03:06:24 UTC 2007
+Wed Nov 21 03:05:52 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 dsh: Process terminated (before write).
-b: b
 c: c
+b: b
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
