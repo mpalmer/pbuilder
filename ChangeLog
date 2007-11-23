@@ -1,3 +1,9 @@
+2007-11-23  Loïc Minier <lool@dooz.org>
+
+	* pbuilder-satisfydepends-aptitude: Pass -o
+	APT::Install-Recommends=false to aptitude as --without-recommends
+	doesn't seem to be enough with the new APT.
+
 2007-11-07  Junichi Uekawa  <dancer@debian.org>
 
 	* testsuite/random-manual-test-material/build-depends-on-experimental/bde_0.1.dsc:
