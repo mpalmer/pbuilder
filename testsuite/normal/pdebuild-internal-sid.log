@@ -16,30 +16,30 @@ The following extra packages will be installed:
 Suggested packages:
   pbuilder-uml
 Recommended packages:
-  fakeroot sudo devscripts cowdancer
+  cowdancer devscripts fakeroot sudo
 The following NEW packages will be installed:
   cdebootstrap libdebian-installer-extra4 libdebian-installer4 pbuilder
 0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
-Need to get 242kB of archives.
-After unpacking 1110kB of additional disk space will be used.
+Need to get 290kB of archives.
+After unpacking 1352kB of additional disk space will be used.
 Get:1 http://cdn.debian.or.jp sid/main libdebian-installer4 0.53 [28.9kB]
 Get:2 http://cdn.debian.or.jp sid/main libdebian-installer-extra4 0.53 [10.7kB]
 Get:3 http://cdn.debian.or.jp sid/main cdebootstrap 0.4.3 [29.0kB]
-Get:4 http://cdn.debian.or.jp sid/main pbuilder 0.174 [174kB]
+Get:4 http://cdn.debian.or.jp sid/main pbuilder 0.175 [221kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libdebian-installer4.
-(Reading database ... 11037 files and directories currently installed.)
+(Reading database ... 11038 files and directories currently installed.)
 Unpacking libdebian-installer4 (from .../libdebian-installer4_0.53_amd64.deb) ...
 Selecting previously deselected package libdebian-installer-extra4.
 Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.53_amd64.deb) ...
 Selecting previously deselected package cdebootstrap.
 Unpacking cdebootstrap (from .../cdebootstrap_0.4.3_amd64.deb) ...
 Selecting previously deselected package pbuilder.
-Unpacking pbuilder (from .../pbuilder_0.174_all.deb) ...
+Unpacking pbuilder (from .../pbuilder_0.175_all.deb) ...
 Setting up libdebian-installer4 (0.53) ...
 Setting up libdebian-installer-extra4 (0.53) ...
 Setting up cdebootstrap (0.4.3) ...
-Setting up pbuilder (0.174) ...
+Setting up pbuilder (0.175) ...
 Setting DEBBUILDOPTS=
  -> Attempting to satisfy build-dependencies
  -> Creating pbuilder-satisfydepends-dummy package
@@ -57,7 +57,7 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 11159 files and directories currently installed.)
+(Reading database ... 11162 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -109,7 +109,7 @@ Get:13 http://cdn.debian.or.jp sid/main sp 1.3.4-1.2.1-47 [182kB]
 Get:14 http://cdn.debian.or.jp sid/main po4a 0.32-1 [762kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11159 files and directories currently installed.)
+(Reading database ... 11162 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.21-3_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.21-3_amd64.deb) ...
@@ -167,14 +167,14 @@ Reading state information...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 111kB of archives.
+Need to get 114kB of archives.
 After unpacking 455kB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.8.5 [111kB]
+Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.8.8 [114kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12156 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.8.5_amd64.deb) ...
-Setting up fakeroot (1.8.5) ...
+(Reading database ... 12159 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.8.8_amd64.deb) ...
+Setting up fakeroot (1.8.8) ...
 dpkg-buildpackage: source package dsh
 dpkg-buildpackage: source version 0.25.9-1
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
@@ -465,9 +465,9 @@ success
 success
 success
 success
-c: dsh: Failed executing ./invalid-exec-file with llexec call
-a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
+a: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -476,11 +476,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Wed Nov 21 03:05:47 UTC 2007
+Fri Nov 23 03:07:57 UTC 2007
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -550,14 +550,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Wed Nov 21 03:05:52 UTC 2007
+Fri Nov 23 03:08:02 UTC 2007
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 dsh: Process terminated (before write).
-c: c
 b: b
+c: c
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
