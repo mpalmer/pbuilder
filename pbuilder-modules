@@ -317,6 +317,11 @@ EOF
 	cp -a "$APTCONFDIR/"* "$BUILDPLACE"/etc/apt
     fi
 
+    if [ ! -d "$BUILDPLACE"/etc/apt/apt.conf.d ]; then
+	echo "  -> Create /etc/apt/apt.conf.d/ inside chroot"
+	mkdir "$BUILDPLACE"/etc/apt/apt.conf.d
+    fi
+
     # configure /etc/apt.conf.d/15pbuilder
     cat > "$BUILDPLACE"/etc/apt/apt.conf.d/15pbuilder <<EOF
 APT::Install-Recommends "false";
