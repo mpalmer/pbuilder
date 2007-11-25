@@ -1,9 +1,14 @@
 pbuilder (0.176) UNRELEASED; urgency=low
 
-  * Create /etc/apt/apt.conf.d just in case it doesn't exist. (Closes:
-    #452584).
+  [ Loic Minier ]
+  * Do not install recommends in pbuilder-satisfydepends-aptitude. 
+  explicitly add -o APT::Install-Recommends=false 
 
- -- Junichi Uekawa <dancer@debian.org>  Sat, 24 Nov 2007 22:43:48 +0900
+  [ Junichi Uekawa ]
+  * Create /etc/apt/apt.conf.d just in case it doesn't exist. (Closes:
+  #452584).
+
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 24 Nov 2007 22:45:35 +0900
 
 pbuilder (0.175) unstable; urgency=low
 
