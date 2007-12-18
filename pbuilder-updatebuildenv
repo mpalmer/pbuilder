@@ -38,6 +38,7 @@ loadhooks
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"
 $CHROOTEXEC /usr/bin/apt-get update
+$CHROOTEXEC /usr/bin/apt-get -y autoremove || true
 if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
 fi
