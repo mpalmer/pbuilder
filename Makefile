@@ -15,6 +15,7 @@ SHELLCODES=pbuilder-buildpackage \
 	pbuilder-modules \
 	pbuilder-runhooks \
 	pbuilder-satisfydepends-classic \
+	pbuilder-satisfydepends-gdebi \
 	pbuilder-satisfydepends-funcs \
 	pbuilder-satisfydepends-checkparams \
 	pbuilder-satisfydepends-aptitude \
@@ -81,6 +82,7 @@ install:
 	#install aptitude as the default satisfydepends 
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-aptitude $(DESTDIR)/usr/lib/pbuilder/pbuilder-satisfydepends
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-classic $(DESTDIR)/usr/lib/pbuilder/
+	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-gdebi $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-aptitude $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-experimental $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-checkparams $(DESTDIR)/usr/lib/pbuilder/
