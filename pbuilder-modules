@@ -217,7 +217,10 @@ function mountproc () {
     if [ "$USEDEVPTS" = "yes" ]; then
 	echo " -> mounting /dev/pts filesystem"
 	mkdir -p $BUILDPLACE/dev/pts || true
-	mount -t devpts /dev/pts "$BUILDPLACE/dev/pts" 
+	TTYGRP=5
+	TTYMODE=620
+	[ -f /etc/default/devpts ] && . /etc/default/devpts
+	mount -t devpts /dev/pts "$BUILDPLACE/dev/pts" -onoexec,nosuid,gid=$TTYGRP,mode=$TTYMODE
     fi
     if [ -x /usr/sbin/selinuxenabled ] && /usr/sbin/selinuxenabled; then
 	echo " -> mounting selinux filesystem"
