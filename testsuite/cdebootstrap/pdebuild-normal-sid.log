@@ -1,28 +1,28 @@
 dpkg-buildpackage: source package dsh
-dpkg-buildpackage: source version 0.25.9-1
+dpkg-buildpackage: source version 0.25.10-1
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
  fakeroot debian/rules clean
 dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.9'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.9'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.9'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.9'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
 make: [clean] Error 2 (ignored)
 dh_clean
- dpkg-source -b dsh-0.25.9
-dpkg-source: building dsh using existing dsh_0.25.9.orig.tar.gz
-dpkg-source: building dsh in dsh_0.25.9-1.diff.gz
+ dpkg-source -b dsh-0.25.10
+dpkg-source: building dsh using existing dsh_0.25.10.orig.tar.gz
+dpkg-source: building dsh in dsh_0.25.10-1.diff.gz
 dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
 dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
-dpkg-source: building dsh in dsh_0.25.9-1.dsc
- dpkg-genchanges -S >../dsh_0.25.9-1_source.changes
+dpkg-source: building dsh in dsh_0.25.10-1.dsc
+ dpkg-genchanges -S >../dsh_0.25.10-1_source.changes
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: source only upload (original source is included)
 W: /home/dancer/.pbuilderrc does not exist
