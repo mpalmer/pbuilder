@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xxx\n"
 "POT-Creation-Date: 2007-09-06 07:50+0900\n"
-"PO-Revision-Date: 2007-11-07 09:29+0900\n"
+"PO-Revision-Date: 2008-01-04 20:06+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Junichi Uekawa <dancer@debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -684,7 +684,7 @@ msgid ""
 "command> sweep done around 2002, but these transitional problems which "
 "affect a large portion of Debian Archive do arise from time to time.  "
 "Regression tests have their values."
-msgstr ""
+msgstr "2002年ころの<command>pbuilder </command> の実行により初期のバグは洗いだされました。しかし、このように移行に関連したDebian全体に影響するような問題はときどき発生します。回帰テストには価値があるのです。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:366
@@ -698,26 +698,26 @@ msgid ""
 "it should be possible to set the application up on your system also.  "
 "However, it is a new introduction, and please file bugs to the Debian BTS if "
 "you know of possible problems, or improved on the script considerably."
-msgstr ""
+msgstr "上川が利用したスクリプトは今 <command>pbuilder</command> ディストリビューションに含まれています。<filename>/usr/share/doc/pbuilder/examples/pbuildd/</filename> にあり、設定は、 <filename>/etc/pbuilder/pbuildd-config.sh</command> が設定ファイルです。<command>pbuilder</command> になれている人であれば簡単に設定することができるはずです。しばらく実行されていたため、自分のシステムでも実行できるでしょう。ただ、まだ新しいので問題があれば Debian BTS に登録してください。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:378
 msgid "To set up pbuildd, there are some points to be aware of."
-msgstr ""
+msgstr "pbuildd の設定について気にしておくところがいくつかあります。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:382
 msgid ""
 "A file <filename>./avoidlist</filename> needs to be available with the list "
 "of packages to avoid building."
-msgstr ""
+msgstr "ビルドしないパッケージの一覧ファイル <filename>./avoidlist</filename> が存在する必要があります。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:385
 msgid ""
 "It will try building anything, even packages which are not aimed for your "
 "architecture."
-msgstr ""
+msgstr "自分のアーキテクチャ向けでないものを含めて、あらゆるものをビルドしようとします。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:389
@@ -725,7 +725,7 @@ msgid ""
 "Because you are running random build scripts, it is better to use the "
 "fakeroot option of <command>pbuilder</command>, to avoid running the build "
 "under root privilege."
-msgstr ""
+msgstr "任意のビルドスクリプトを実行しているため、 root 権限で実行しないために、 <command>pbuilder</command> のfakeroot オプションを利用するのがよいでしょう。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:394
@@ -886,6 +886,9 @@ msgid ""
 "export DEBIAN_BUILDARCH=athlon\n"
 "export DEBIAN_BUILDGCCVER=3.2"
 msgstr ""
+"EXTRAPACKAGES=\"pentium-builder gcc-3.2 g++-3.2\"\n"
+"export DEBIAN_BUILDARCH=athlon\n"
+"export DEBIAN_BUILDGCCVER=3.2"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:494
@@ -1037,6 +1040,13 @@ msgid ""
 "uml=192.168.1.199\n"
 "netmask=255.255.255.0"
 msgstr ""
+"transport=tuntap\n"
+"interface=eth0\n"
+"gateway=192.168.1.1\n"
+"mirror=http://192.168.1.2:8081/debian\n"
+"host=192.168.1.198\n"
+"uml=192.168.1.199\n"
+"netmask=255.255.255.0"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:602
@@ -1060,12 +1070,12 @@ msgstr "pbuilder-uml の設定"
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:616
 msgid "The following needs to happen:"
-msgstr ""
+msgstr "以下の設定が必要です:"
 
 # type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:619
 msgid "Install the pbuilder-uml package."
-msgstr ""
+msgstr "pbuilder-uml をインストールする"
 
 # type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:623
@@ -1086,6 +1096,13 @@ msgid ""
 "UML_GATEWAY=192.168.1.1\n"
 "PBUILDER_UML_IMAGE=\"/home/dancer/uml-image\""
 msgstr ""
+"MY_ETH0=tuntap,,,192.168.1.198\n"
+"UML_IP=192.168.1.199\n"
+"UML_NETMASK=255.255.255.0\n"
+"UML_NETWORK=192.168.1.0\n"
+"UML_BROADCAST=255.255.255.255\n"
+"UML_GATEWAY=192.168.1.1\n"
+"PBUILDER_UML_IMAGE=\"/home/dancer/uml-image\""
 
 # type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:635
@@ -1290,7 +1307,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:764
 msgid "pbuilder create fails"
-msgstr ""
+msgstr "pbuilder create が失敗する"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:766
@@ -1421,7 +1438,7 @@ msgstr "BUILDRESULTUID を sudo のセッションに追加する"
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:834
 msgid "It is possible to set"
-msgstr ""
+msgstr "pbuilderrc で"
 
 # type: Content of: <book><chapter><sect1><para><screen>
 #: pbuilder-doc.xml:835
@@ -1434,7 +1451,7 @@ msgstr "BUILDRESULTUID=$SUDO_UID"
 msgid ""
 "in pbuilderrc to set the proper BUILDRESULTUID when using <command>sudo</"
 "command>."
-msgstr ""
+msgstr "と設定することで <command>sudo</command> の際に BUILDRESULTUID を適切に設定することが可能です。"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:840
