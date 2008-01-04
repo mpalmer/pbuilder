@@ -23,7 +23,7 @@
 set -e
 
 function checkbuilddep_internal () {
-    $CHROOTEXEC apt-get -y --force-yes install gdebi
+    $CHROOTEXEC apt-get -y --force-yes install gdebi-core
     INSTALL=$($CHROOTEXEC /usr/bin/gdebi --quiet --apt-line $DEBIAN_CONTROL)
     $CHROOTEXEC /usr/bin/apt-get install -y $INSTALL
 }
