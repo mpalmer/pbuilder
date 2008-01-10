@@ -22,7 +22,7 @@ set -e
 . /usr/lib/pbuilder/pbuilder-runhooks
 
 
-if [ -n "$DISTRIBUTION" ]; then
+if [ -n "$DISTRIBUTION" ] && [ "$OVERRIDE_APTLINES" = "yes" ]; then
     echo "Upgrading for distribution $DISTRIBUTION" 
 fi
 if [ "${PBUILDER_DEBUGMODE}" = "yes" ]; then
