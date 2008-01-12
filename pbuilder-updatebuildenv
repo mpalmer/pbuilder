@@ -16,7 +16,7 @@
 #   along with this program; if not, write to the Free Software
 #   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-set -e 
+set -e
 
 . /usr/lib/pbuilder/pbuilder-checkparams
 . /usr/lib/pbuilder/pbuilder-runhooks
@@ -38,14 +38,13 @@ loadhooks
 echo "Refreshing the base.tgz "
 echo " -> upgrading packages"
 $CHROOTEXEC /usr/bin/apt-get update
-$CHROOTEXEC /usr/bin/apt-get -y autoremove || true
 if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
 fi
 recover_aptcache
 
 $TRAP saveaptcache_umountproc_cleanbuildplace_trap exit sighup
-$CHROOTEXEC /usr/bin/apt-get -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrade 
+$CHROOTEXEC /usr/bin/apt-get -y --force-yes "${FORCE_CONFNEW[@]}" -o "APT::Get::AutomaticRemove=true"  dist-upgrade
 $CHROOTEXEC /usr/bin/apt-get -y --force-yes install build-essential dpkg-dev apt aptitude $EXTRAPACKAGES
 save_aptcache
 
