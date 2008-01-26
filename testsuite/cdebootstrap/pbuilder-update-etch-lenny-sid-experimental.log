@@ -10,14 +10,18 @@ Building the build Environment
  -> policy-rc.d already exists
 Refreshing the base.tgz 
  -> upgrading packages
-Get:1 http://cdn.debian.or.jp sid Release.gpg [189B]
-Get:2 http://cdn.debian.or.jp experimental Release.gpg [189B]
+Hit http://cdn.debian.or.jp sid Release.gpg
+Get:1 http://cdn.debian.or.jp experimental Release.gpg [189B]
 Hit http://cdn.debian.or.jp sid Release
-Get:3 http://cdn.debian.or.jp experimental Release [79.6kB]
-Get:4 http://cdn.debian.or.jp sid/main Packages/DiffIndex [2038B]
-Get:5 http://cdn.debian.or.jp experimental/main Packages [303kB]
+Get:2 http://cdn.debian.or.jp experimental Release [79.6kB]
+Get:3 http://cdn.debian.or.jp sid/main Packages/DiffIndex [2038B]
+Get:4 http://cdn.debian.or.jp experimental/main Packages [191kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 9 not upgraded.
 dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
 Building dependency tree...
@@ -29,18 +33,17 @@ The following packages will be REMOVED:
   logrotate man-db netbase openbsd-inetd passwd tasksel tasksel-data tcpd
   tzdata update-inetd util-linux wget
 The following NEW packages will be installed:
-  cpp-4.3 g++-4.3 gcc-4.3 gcc-4.3-base iproute libatm1 libgmp3c2 libmpfr1ldbl
+  cpp-4.3 g++-4.3 gcc-4.3 iproute libgmp3c2 libgomp1 libmpfr1ldbl
   libstdc++6-4.3-dev
 The following packages will be upgraded:
-  coreutils cpp findutils g++ gcc initscripts libgcc1 libgomp1 libstdc++6 perl
-  perl-base perl-modules sysv-rc sysvinit sysvinit-utils
+  cpp findutils g++ gcc perl perl-base perl-modules
 WARNING: The following essential packages will be removed.
 This should NOT be done unless you know exactly what you are doing!
   login libpam-modules (due to login) libpam0g (due to login) util-linux
   tzdata (due to util-linux)
-15 upgraded, 9 newly installed, 26 to remove and 0 not upgraded.
-Need to get 27.7MB of archives.
-After unpacking 14.4MB of additional disk space will be used.
+7 upgraded, 8 newly installed, 26 to remove and 0 not upgraded.
+Need to get 22.4MB of archives.
+After this operation, 12.1MB of additional disk space will be used.
 You are about to do something potentially harmful.
 To continue type in the phrase 'Yes, do as I say!'
  ?] Abort.

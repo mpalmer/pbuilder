@@ -1,50 +1,8 @@
 Upgrading for distribution sid
 Building the build Environment
  -> extracting base tarball [/TESTDIR/testimage]
- -> creating local configuration
- -> copying local configuration
-  -> Installing apt-lines
-  -> Installing apt-lines and pinning for experimental
- -> mounting /proc filesystem
- -> mounting /dev/pts filesystem
- -> policy-rc.d already exists
-Refreshing the base.tgz 
- -> upgrading packages
-Get:1 http://cdn.debian.or.jp sid Release.gpg [189B]
-Get:2 http://cdn.debian.or.jp experimental Release.gpg [189B]
-Hit http://cdn.debian.or.jp sid Release
-Get:3 http://cdn.debian.or.jp experimental Release [79.6kB]
-Get:4 http://cdn.debian.or.jp sid/main Packages/DiffIndex [2038B]
-Get:5 http://cdn.debian.or.jp experimental/main Packages [303kB]
-Fetched XXXB in Xs (XXXXXB/s)
-Reading package lists...
-dpkg - warning: ignoring request to remove lilo which isn't installed.
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages will be REMOVED:
-  adduser cron debconf debconf-i18n dhcp3-client ifupdown
-  liblocale-gettext-perl libpam-modules libpam0g libssl0.9.8
-  libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl login
-  logrotate man-db netbase passwd tasksel tasksel-data tcpd tzdata
-  update-inetd util-linux wget
-The following NEW packages will be installed:
-  cpp-4.3 g++-4.3 gcc-4.3 gcc-4.3-base iproute libatm1 libgmp3c2 libmpfr1ldbl
-  libstdc++6-4.3-dev
-The following packages will be upgraded:
-  coreutils cpp findutils g++ gcc initscripts libgcc1 libgomp1 libstdc++6 perl
-  perl-base perl-modules sysv-rc sysvinit sysvinit-utils
-WARNING: The following essential packages will be removed.
-This should NOT be done unless you know exactly what you are doing!
-  login libpam-modules (due to login) libpam0g (due to login) util-linux
-  tzdata (due to util-linux)
-15 upgraded, 9 newly installed, 25 to remove and 0 not upgraded.
-Need to get 27.7MB of archives.
-After unpacking 14.6MB of additional disk space will be used.
-You are about to do something potentially harmful.
-To continue type in the phrase 'Yes, do as I say!'
- ?] Abort.
- -> unmounting dev/pts filesystem
- -> unmounting proc filesystem
- -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//NUM and its subdirectories
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error exit delayed from previous errors
+E: failed to extract /TESTDIR/testimage to /var/cache/pbuilder/build//NUM
