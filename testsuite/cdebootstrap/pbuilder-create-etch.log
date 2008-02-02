@@ -6,10 +6,10 @@ P: Retrieving Release
 P: Retrieving Release.gpg
 P: Validating Release
 I: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
+I: Good signature from "Etch Stable Release Key <debian-release@lists.debian.org>"
 O: gpgv: Signature made Mon Dec 31 01:13:12 2007 JST using DSA key ID 6070D3A1
 O: gpgv: Good signature from "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>"
 O: gpgv: Signature made Mon Dec 31 01:17:16 2007 JST using DSA key ID ADB11277
-I: Good signature from "Etch Stable Release Key <debian-release@lists.debian.org>"
 O: gpgv: Good signature from "Etch Stable Release Key <debian-release@lists.debian.org>"
 P: Parsing Release
 P: Retrieving Packages.gz
@@ -342,16 +342,15 @@ O:   Package libc6 is not installed.
 O:  dpkg depends on coreutils (>= 5.93-1); however:
 O:   Package coreutils is not installed.
 O: 
-P: Configuring helper cdebootstrap-helper-diverts
+P: Configuring helper cdebootstrap-helper-rc.d
 O: Selecting previously deselected package cdebootstrap-helper-diverts.
 O: (Reading database ... 238 files and directories currently installed.)
-O: Unpacking cdebootstrap-helper-diverts (from .../cdebootstrap-helper-diverts.deb) ...
-O: Adding `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
-O: Adding `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
+O: Unpacking cdebootstrap-helper-diverts (from /cdebootstrap-helper-rc.d.deb) ...
+O: Adding `diversion of /usr/sbin/policy-rc.d to /usr/sbin/policy-rc.d.REAL by cdebootstrap-helper-diverts'
 O: Setting up cdebootstrap-helper-diverts (1) ...
 P: Configuring helper cdebootstrap-helper-makedev
 O: Selecting previously deselected package cdebootstrap-helper-makedev.
-O: (Reading database ... 241 files and directories currently installed.)
+O: (Reading database ... 240 files and directories currently installed.)
 O: Unpacking cdebootstrap-helper-makedev (from .../cdebootstrap-helper-makedev.deb) ...
 O: Setting up cdebootstrap-helper-makedev (1) ...
 O: chown: `root:kmem': invalid user
@@ -11061,7 +11060,7 @@ O: chown: `root:disk': invalid user
 O: makedev i2o/hdd15 b 80 63 root disk 0660: failed
 O: 
 O: Selecting previously deselected package tzdata.
-O: (Reading database ... 241 files and directories currently installed.)
+O: (Reading database ... 240 files and directories currently installed.)
 O: Unpacking tzdata (from .../tzdata_2007j-1etch1_all.deb) ...
 P: Unpacking package tzdata
 O: Selecting previously deselected package libc6.
@@ -11731,7 +11730,7 @@ O:   module-init-tools nano net-tools netbase netcat openbsd-inetd sysklogd
 O:   tasksel tasksel-data tcpd traceroute update-inetd vim-common vim-tiny wget
 O:   whiptail
 O: 0 upgraded, 46 newly installed, 0 to remove and 0 not upgraded.
-O: Need to get 12.4MB of archives.
+O: Need to get 0B/12.4MB of archives.
 O: After unpacking 39.4MB of additional disk space will be used.
 O: WARNING: The following packages cannot be authenticated!
 O:   adduser libdb4.4 apt-utils libncursesw5 libsigc++-2.0-0c2a aptitude
@@ -12022,14 +12021,10 @@ O: Removing cdebootstrap-helper-apt ...
 O: Purging configuration files for cdebootstrap-helper-apt ...
 O: Reading package lists...
 O: 
-P: Deconfiguring helper cdebootstrap-helper-diverts
-O: (Reading database ... 7129 files and directories currently installed.)
-O: Removing cdebootstrap-helper-diverts ...
-O: Purging configuration files for cdebootstrap-helper-diverts ...
-O: Removing `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.REAL by cdebootstrap-helper-diverts'
-O: Removing `diversion of /usr/sbin/invoke-rc.d to /usr/sbin/invoke-rc.d.REAL by cdebootstrap-helper-diverts'
+P: Deconfiguring helper cdebootstrap-helper-rc.d
+O: dpkg - warning: ignoring request to remove cdebootstrap-helper-rc.d which isn't installed.
 P: Deconfiguring helper cdebootstrap-helper-makedev
-O: (Reading database ... 7127 files and directories currently installed.)
+O: (Reading database ... 7129 files and directories currently installed.)
 O: Removing cdebootstrap-helper-makedev ...
 P: Writing hosts
 P: Writing resolv.conf
@@ -12047,7 +12042,7 @@ Refreshing the base.tgz
  -> upgrading packages
  -> mounting /proc filesystem
  -> mounting /dev/pts filesystem
- -> installing dummy policy-rc.d
+ -> policy-rc.d already exists
 Get:1 http://cdn.debian.or.jp etch Release.gpg [378B]
 Get:2 http://cdn.debian.or.jp etch Release [58.2kB]
 Get:3 http://cdn.debian.or.jp etch/main Packages [5534kB]
@@ -12098,7 +12093,7 @@ Get:16 http://cdn.debian.or.jp etch/main dpkg-dev 1.13.25 [166kB]
 Get:17 http://cdn.debian.or.jp etch/main build-essential 11.3 [6982B]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package patch.
-(Reading database ... 7127 files and directories currently installed.)
+(Reading database ... 7129 files and directories currently installed.)
 Unpacking patch (from .../patch_2.5.9-4_amd64.deb) ...
 Selecting previously deselected package perl-modules.
 Unpacking perl-modules (from .../perl-modules_5.8.8-7etch1_all.deb) ...

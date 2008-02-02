@@ -15,7 +15,7 @@ Get:1 http://cdn.debian.or.jp experimental Release.gpg [189B]
 Hit http://cdn.debian.or.jp sid Release
 Get:2 http://cdn.debian.or.jp experimental Release [79.6kB]
 Get:3 http://cdn.debian.or.jp sid/main Packages/DiffIndex [2038B]
-Get:4 http://cdn.debian.or.jp experimental/main Packages [191kB]
+Get:4 http://cdn.debian.or.jp experimental/main Packages [189kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
 Reading package lists...
@@ -26,27 +26,10 @@ dpkg - warning: ignoring request to remove lilo which isn't installed.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following packages will be REMOVED:
-  adduser cron debconf debconf-i18n dhcp3-client ifupdown
-  liblocale-gettext-perl libpam-modules libpam0g libssl0.9.8
-  libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl login
-  logrotate man-db netbase passwd tasksel tasksel-data tcpd tzdata
-  update-inetd util-linux wget
-The following NEW packages will be installed:
-  cpp-4.3 g++-4.3 gcc-4.3 iproute libgmp3c2 libgomp1 libmpfr1ldbl
-  libstdc++6-4.3-dev
-The following packages will be upgraded:
-  cpp findutils g++ gcc perl perl-base perl-modules
-WARNING: The following essential packages will be removed.
-This should NOT be done unless you know exactly what you are doing!
-  login libpam-modules (due to login) libpam0g (due to login) util-linux
-  tzdata (due to util-linux)
-7 upgraded, 8 newly installed, 25 to remove and 0 not upgraded.
-Need to get 22.4MB of archives.
-After this operation, 12.2MB of additional disk space will be used.
-You are about to do something potentially harmful.
-To continue type in the phrase 'Yes, do as I say!'
- ?] Abort.
+The following packages have unmet dependencies:
+  e2fsprogs: PreDepends: libuuid1 (>= 1.34-1) but it is not going to be installed
+  mount: PreDepends: libuuid1 but it is not going to be installed
+E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
  -> unmounting dev/pts filesystem
  -> unmounting proc filesystem
  -> cleaning the build env 
