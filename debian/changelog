@@ -1,10 +1,18 @@
-pbuilder (0.178~1.gbpbecce0) UNRELEASED; urgency=low
+pbuilder (0.178) unstable; urgency=low
 
-  ** SNAPSHOT build @becce06a3435e1521c9f311fef7d5cab8684cb50 **
+  [ Junichi Uekawa ]
+  * satisfydepends-gdebi: reorganize code to go in-line with other
+    funcs.
+  * gdebi: install gdebi-core, not gdebi into chroot.
+  * revise japanese documentation
+  * Do not show "Upgrading for distribution xyz" message on update when
+    --override-config is not specified (closes: #459432)
 
-  * UNRELEASED
+  [ Loïc Minier ]
+  * Set APT::Get::AutomaticRemove=true in upgrade instead of calling
+    autoremove
 
- -- Junichi Uekawa <dancer@debian.org>  Wed, 26 Dec 2007 21:11:54 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 02 Feb 2008 10:58:34 +0900
 
 pbuilder (0.177) unstable; urgency=low
 
