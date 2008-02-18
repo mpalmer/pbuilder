@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pbuilder-0.171\n"
 "POT-Creation-Date: 2008-01-04 20:06+0900\n"
-"PO-Revision-Date: 2007-11-01 20:02+0100\n"
+"PO-Revision-Date: 2008-02-06 22:10+0100\n"
 "Last-Translator: Vincent Bernat <bernat@luffy.cx>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -202,7 +202,7 @@ msgstr ""
 "Pour une documentation plus complète des options disponibles en ligne de "
 "commande, référez-vous à la page de manuel pbuilder.8. Il sera également "
 "nécessaire de renseigner le fichier <filename>/etc/pbuilderrc</filename> "
-"afin d'indiquer le mirroir à utiliser <footnote>"
+"afin d'indiquer le miroir à utiliser <footnote>"
 
 # type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:109
@@ -347,7 +347,7 @@ msgid ""
 msgstr ""
 "<command>pbuilder</command> va extraire un environnement de base du fichier "
 "base.tgz. (base.tgz est créé à l'aide de <command>pbuilder create</command> "
-"et mis à jour avec <command>pbuilder update</command>). Le fichier debian/"
+"et mis à jour avec <command>pbuilder update</command>.) Le fichier debian/"
 "control est analysé afin de déterminer les dépendances à installer avec "
 "<command>apt-get</command>."
 
@@ -730,7 +730,6 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:366
-#, fuzzy
 msgid ""
 "A script that was used by Junichi Uekawa in the initial run is now included "
 "in the <command>pbuilder</command> distribution, as <command>pbuildd.sh</"
@@ -749,9 +748,8 @@ msgstr ""
 "pbuilder/pbuildd-config.sh</filename>. Les personnes qui sont habituées à "
 "<command>pbuilder</command> devraient facilement pouvoir l'utiliser. Il "
 "existe depuis un certain temps et vous devriez aussi pouvoir l'utiliser sur "
-"votre système. Toutefois, comme il s'agit d'un ajout récent, signalez tout "
-"bogue au BTS Debian si vous avez connaissance de certains problèmes ou avez "
-"apporté des améliorations importantes."
+"votre système. Cette version n'est pas la mieux testée mais devrait pouvoir "
+"servir de base."
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:376
@@ -1757,23 +1755,22 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:866
-#, fuzzy
 msgid ""
 "Using environmental variables for running <command>pbuilder</command> for "
 "specific distribution"
 msgstr ""
-"Créer un raccourci pour lancer <command>pbuilder</command> pour une "
-"distribution spécifique"
+"Utilisation des variables d'environnement pour lancer <command>pbuilder</"
+"command> pour une distribution spécifique"
 
 # type: Content of: <book><chapter><sect1><para><footnote>
 #: pbuilder-doc.xml:869
 msgid "This section<footnote>"
-msgstr ""
+msgstr "Cette section<footnote>"
 
 # type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:870
 msgid "This part of the documentation contributed by Andres Mejia"
-msgstr ""
+msgstr "Cette partie de la documentation est une contribution de Andres Mejia"
 
 # type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:872
@@ -1781,6 +1778,8 @@ msgid ""
 "This example was taken from a wiki (<ulink url=\"https://wiki.ubuntu.com/"
 "PbuilderHowto\">https://wiki.ubuntu.com/PbuilderHowto</ulink>)."
 msgstr ""
+"Cette exemple est issu d'un wiki (<ulink url=\"https://wiki.ubuntu.com/"
+"PbuilderHowto\">https://wiki.ubuntu.com/PbuilderHowto</ulink>)."
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:875
@@ -1790,11 +1789,17 @@ msgid ""
 "$HOME/.pbuilderrc</filename>)  and using the variable \"DIST\" when running "
 "pbuilder or pdebuild."
 msgstr ""
+"</footnote> décrit brièvement comment configurer et utiliser plusieurs "
+"pbuilders en créant un fichier de configuration pbuilderrc dans votre "
+"répertoire utilisateur (<filename>$HOME/.pbuilderrc</filename>) et en "
+"utilisant la variable \"DIST\" en lançant pbuilder ou pdebuild."
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:880
 msgid "First, setup <filename>$HOME/.pbuilderrc</filename> to look like:"
 msgstr ""
+"Tout d'abord, mettez en place un fichier <filename>$HOME/.pbuilderrc</"
+"filename> ressemblant à ceci :"
 
 # type: Content of: <book><chapter><sect1><para><screen>
 #: pbuilder-doc.xml:883
@@ -1807,6 +1812,12 @@ msgid ""
 "        APTCACHE=\"/var/cache/pbuilder/$DIST/aptcache/\"\n"
 "fi"
 msgstr ""
+"if [ -n \"${DIST}\" ]; then\n"
+"        BASETGZ=\"`dirname $BASETGZ`/$DIST-base.tgz\"\n"
+"        DISTRIBUTION=\"$DIST\"\n"
+"        BUILDRESULT=\"/var/cache/pbuilder/$DIST/result/\"\n"
+"        APTCACHE=\"/var/cache/pbuilder/$DIST/aptcache/\"\n"
+"fi"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:890
@@ -1816,11 +1827,15 @@ msgid ""
 "Debian based distro you happen to be running (i.e. whatever is found under /"
 "usr/lib/debootstrap/scripts)."
 msgstr ""
+"Puis, dès que vous voulez utiliser une distribution particulière avec "
+"pbuilder, assignez la valeur de \"DIST\" à une des distributions de Debian "
+"ou n'importe quelle distribution basée sur Debian (c'est à dire à n'importe "
+"quelle valeur qui se trouve dans /usr/lib/debootstrap/scripts)."
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:896
 msgid "Here's some examples on running pbuilder or pdebuild:"
-msgstr ""
+msgstr "Voici quelques exemples d'utilisation avec pbuilder ou pdebuild :"
 
 # type: Content of: <book><chapter><sect1><para><screen>
 #: pbuilder-doc.xml:899
@@ -1842,6 +1857,21 @@ msgid ""
 "\n"
 "DIST=gutsy pdebuild"
 msgstr ""
+"DIST=gutsy sudo pbuilder create\n"
+"\n"
+"DIST=sid sudo pbuilder create --mirror http://http.us.debian.org/debian\n"
+"\n"
+"DIST=gutsy sudo pbuilder create \\\n"
+"        --othermirror \"deb http://archive.ubuntu.com/ubuntu gutsy universe \\\n"
+"        multiverse\"\n"
+"\n"
+"DIST=gutsy sudo pbuilder update\n"
+"\n"
+"DIST=sid sudo pbuilder update --override-config --mirror \\\n"
+"http://http.us.debian.org/debian \\\n"
+"--othermirror \"deb http://http.us.debian.org/debian sid contrib non-free\"\n"
+"\n"
+"DIST=gutsy pdebuild"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:917
@@ -2460,7 +2490,7 @@ msgstr "."
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1208
 msgid "Example is provided as pbuilderrc.ccache."
-msgstr ""
+msgstr "L'exemple suivant est disponible dans pbuilderrc.ccache."
 
 # type: Content of: <book><chapter><sect1><screen>
 #: pbuilder-doc.xml:1211
@@ -2496,9 +2526,8 @@ msgstr ""
 
 # type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1232
-#, fuzzy
 msgid "Using svn-buildpackage together with pbuilder"
-msgstr "Utiliser User-mode-linux avec pbuilder"
+msgstr "Utiliser svn-buildpackage avec pbuilder"
 
 # type: Content of: <book><chapter><sect1><para><footnote>
 #: pbuilder-doc.xml:1234
@@ -2506,12 +2535,14 @@ msgid ""
 "pdebuild command can be used with svn-buildpackage --svn-builder command-"
 "line option.  <footnote>"
 msgstr ""
+"La commande pdebuild peut être utilisée avec l'option --svn-builder de svn-"
+"buildpackage.  <footnote>"
 
 # type: Content of: <book><chapter><sect1><screen>
 #: pbuilder-doc.xml:1243
 #, no-wrap
 msgid "alias svn-cowbuilder=\"svn-buildpackage --svn-builder='pdebuild --pbuilder cowbuilder\""
-msgstr ""
+msgstr "alias svn-cowbuilder=\"svn-buildpackage --svn-builder='pdebuild --pbuilder cowbuilder\""
 
 # type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1251
