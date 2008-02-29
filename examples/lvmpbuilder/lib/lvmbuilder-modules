@@ -1,0 +1,138 @@
+#! /bin/bash
+# The functions used to mount and unmount the filesystems for lvmbuilder
+#   lvmbuilder -- Debian package builder using LVM
+#   Copyright (C) 2007 Kapil Hari Paranjape
+#   based on:
+#   pbuilder -- personal Debian package builder
+#   Copyright (C) 2001-2006 Junichi Uekawa
+#
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+# lvmbuilder by Kapil Hari Paranjape <kapil@debian.org> 2007 Aug 15
+# pbuilder by Junichi Uekawa <dancer@debian.org> 2001 Aug 25
+
+set -e 
+
+function clean_basedev(){
+    	echo -n "This will wipe out $BASEDEV. Proceed?[y/N]"
+    	read ans
+    	if [ "$ans" != "y" -a "$ans" != "Y" ] 
+    	then
+    		exit 0
+	fi
+    	echo "Making new file system at $BASEDEV."
+	mke2fs $BASEDEV
+}
+
+function unmount_basedev(){
+	umount $BASEDEV
+	e2fsck -f -v $BASEDEV
+}
+
+function setup_workplace(){
+	# Size computations
+	BASESIZE=$(blockdev --getsize $BASEDEV)
+	COWSIZE=$(blockdev --getsize $COWDEV)
+	TOTAL=$[ $COWSIZE + $BASESIZE ]
+
+	# Load the necessary modules
+	modprobe dm_zero dm_mirror dm_snapshot dm_mod
+
+	## Create the total base device
+	# It consists of the base device extended by zeroes.
+	# The length of the zeroes is the size of the cow.
+	( echo 0 $BASESIZE linear $BASEDEV 0 ; \
+	  echo $BASESIZE $COWSIZE zero ) | \
+	  dmsetup create $TOTALNAME
+
+	## Create the work device
+	# It is the snapshot device with the all writes
+	# going to the cow device. The file-system is resized
+	# to the maximum extent possible.
+	echo 0 $TOTAL snapshot $TOTALDEV $COWDEV n 16 | \
+	  dmsetup create $WORKNAME
+
+	[ -b $WORKDEV ] && resize2fs $WORKDEV
+    	mount $WORKDEV $BUILDPLACE
+}
+
+function takedown_workplace(){
+	umount /dev/mapper/lvmbuilder-work
+	dmsetup remove lvmbuilder-work
+	dmsetup remove lvmbuilder-total
+}
+
+function showhelp(){
+    cat <<EOF
+lvmbuilder - Debian package builder using pbuilder and lvm
+Copyright 2007 Kapil Hari Paranjape
+Based on:
+pbuilder - a personal builder
+Copyright 2001-2006 Junichi Uekawa
+Distributed under GNU Public License version 2 or later
+
+lvmbuilder [operation] [lvmbuilder-options]
+
+command lines:
+lvmbuilder create [--basedev base-device-path] [--distribution sarge|etch|sid|experimental]
+  Creates a base distribution on an ext2 filesystem on the base block device 
+
+lvmbuilder update [--basedev base-device-path] [--distribution sarge|etch|sid|experimental]
+  Updates a base distribution on an ext2 filesystem on the base block device
+
+lvmbuilder build [--basedev base-device-path] [--cowdev cow-device-path] pkgsrc.dsc
+  Builds using the base distribution with all writes going to cow block device.
+  Requires a .dsc filename
+
+lvmbuilder clean [--basedev base-device-path]
+  Creates a fresh ext2fs file system on the base block device.
+
+lvmbuilder login
+lvmbuilder execute -- [command] [command-options]
+  Logs in to the build environment and execute command.
+
+lvmbuilder dumpconfig
+  Dumps configuration information to stdout for debugging.
+
+lvmbuilder-options:
+ --basedev [base device location]
+ --cowdev [cow device location]
+ --buildplace [location of build]
+ --mirror [mirror location]
+ --othermirror [other mirror location in apt deb-line format, delimited with | signs]
+ --http-proxy [proxy]
+ --distribution [distribution(sarge|sid|etch|experimental)]
+ --buildresult [location-to-copy-build-result]
+ --aptcache [location of retrieved package files]
+ --removepackages [packages-to-remove on pbuilder create]
+ --extrapackages [packages-to-add on pbuilder create]
+ --configfile [configuration file to load]
+ --debemail [mail address]
+ --debbuildopts [dpkg-buildpackage options]
+ --logfile [filename to output log]
+ --pkgname-logfile
+ --aptconfdir [overriding apt config dir]
+ --timeout [timeout time]
+ --override-config 
+ --binary-arch
+ --debug
+ --autocleanaptcache
+ --debootstrapopts [debootstrap options]
+ --debootstrap [debootstrap|cdebootstrap]
+
+EOF
+    exit 1
+}
+

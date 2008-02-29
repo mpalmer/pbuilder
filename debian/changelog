@@ -1,4 +1,4 @@
-pbuilder (0.170.1) UNRELEASED; urgency=low
+pbuilder (0.179~1.gbfaef96.1) UNRELEASED; urgency=low
 
   * Non-maintainer upload.
   * added support for detection of the default mirror in postinst
@@ -6,6 +6,119 @@ pbuilder (0.170.1) UNRELEASED; urgency=low
     po-debconf manual
 
  -- Eddy Petrișor <eddy.petrisor@gmail.com>  Mon, 25 Jun 2007 21:20:13 +0300
+
+pbuilder (0.179~1.gbpfaef96) UNRELEASED; urgency=low
+
+  ** SNAPSHOT build @faef9623c90601f936b6bf06a69f376d5d28e3a7 **
+
+  * UNRELEASED
+
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 02 Feb 2008 12:27:36 +0900
+
+pbuilder (0.178) unstable; urgency=low
+
+  [ Junichi Uekawa ]
+  * satisfydepends-gdebi: reorganize code to go in-line with other
+    funcs.
+  * gdebi: install gdebi-core, not gdebi into chroot.
+  * revise japanese documentation
+  * Do not show "Upgrading for distribution xyz" message on update when
+    --override-config is not specified (closes: #459432)
+
+  [ Loïc Minier ]
+  * Set APT::Get::AutomaticRemove=true in upgrade instead of calling
+    autoremove
+
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 02 Feb 2008 10:58:34 +0900
+
+pbuilder (0.177) unstable; urgency=low
+
+  [ Loic Minier ]
+  * Run apt-get autoremove after upgrade.
+
+  [ Junichi Uekawa ]
+  * python-apt/gdebi based pbuilder-satisfydepends-gdebi (closes:
+    #453388)
+  * Fix devpts mount permissions (closes: #453862)
+  * Document pbuilder-satisfydepends-gebi in manpage
+
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 26 Dec 2007 20:53:24 +0900
+
+pbuilder (0.176) unstable; urgency=low
+
+  [ Loic Minier ]
+  * Do not install recommends in pbuilder-satisfydepends-aptitude. 
+  explicitly add -o APT::Install-Recommends=false 
+
+  [ Junichi Uekawa ]
+  * Create /etc/apt/apt.conf.d just in case it doesn't exist. (Closes:
+  #452584).
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 25 Nov 2007 12:41:42 +0900
+
+pbuilder (0.175) unstable; urgency=low
+
+  * debian/control: Vcs-Browser and Vcs-Git instead of XS-*.
+  * Bug fix: "pbuilder: pdebuild - Breakage when using XC- headers",
+    thanks to Soren Hansen (Closes: #448757).
+  * Bug fix: "pbuilder: French documentation translation", thanks to
+    Vincent Bernat (Closes: #448294).
+  * Bug fix: "pbuilder-satisfydepends-classic should pass
+    -o APT::Install-Recommends=false to apt-get", thanks to Daniel Schepler
+    (Closes: #448562).
+  * set /etc/apt/apt.conf.d/15pbuilder so that Install-Recommends is false.
+
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 21 Nov 2007 19:22:00 +0900
+
+pbuilder (0.174) unstable; urgency=low
+
+  [ Junichi Uekawa ]
+  * add bash_completion.
+  * Bug fix: "pbuilder: incoherence man page with --help", thanks to David
+    Vernazobres (Closes: #446479).
+  * Bug fix: "Add XS-Vcs-* field", thanks to Laurent Bigonville (Closes:
+    #447631).
+
+  [ Adrien Cunin ]
+  * Added the ability to specify the distribution components via $COMPONENTS in
+    pbuilderrc or via pbuilder --components. Part of the patch taken from
+    Ubuntu. (Closes: #422371)
+
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 25 Oct 2007 20:18:09 +0900
+
+pbuilder (0.173) unstable; urgency=low
+
+  * documentation update: add svn-buildpackage example.
+  * return exit code for pbuilder login / execute
+
+ -- Junichi Uekawa <dancer@debian.org>  Mon, 01 Oct 2007 22:19:54 +0900
+
+pbuilder (0.172) unstable; urgency=low
+
+  [ Loic Minier ]
+  * Fix a file name in pdebuild.1's man page which was being interpreted by
+    man; thanks Roland Stigge; closes: #437336.
+
+  [ Junichi Uekawa ]
+  * update lvmpbuilder, thanks to Kapil Hari Paranjape (closes: #389884)
+  * rename pbuilder-satisfydepends to pbuilder-satisfydepends-classic, and
+    install pbuilder-satisfydepends-aptitude as the deafault
+    pbuilder-satisfydepends
+  * install aptitude per default in chroot.
+  * "pdebuild: [manual] Change pbuilder.8 to pbuilder(8)", thanks
+    to Jari Aalto (Closes: #439818).
+  * Bug fix: "pbuilder login does not create a login shell", thanks to Ben
+    Hutchings (Closes: #439285).
+
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 29 Aug 2007 08:42:19 +0900
+
+pbuilder (0.171) unstable; urgency=low
+
+  * add example configuration file for ccache.
+  * Bug fix: "$HOME/.pbuilderrc example for use in using multiple pbuilder
+    setups", thanks to Andres Mejia (Closes: #432277).
+
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 01 Aug 2007 21:19:09 +0900
 
 pbuilder (0.170) unstable; urgency=low
 

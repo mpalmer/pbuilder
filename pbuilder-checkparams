@@ -75,6 +75,10 @@ while [ -n "$1" ]; do
 	    DISTRIBUTION="$2";
 	    shift; shift;
 	    ;;
+	--components)
+	    COMPONENTS="$2";
+	    shift; shift;
+	    ;;
 	--buildresult)
 	    if [ -n "$2" ]; then
 		if [ -d "$2" ]; then

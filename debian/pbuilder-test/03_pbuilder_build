@@ -6,5 +6,4 @@ cp /etc/apt/sources.list{,-}
 sed 's/#deb-src/deb-src/' < /etc/apt/sources.list- > /etc/apt/sources.list
 apt-get update
 apt-get source dsh
-pbuilder build dsh*dsc
-
+LD_PRELOAD= pbuilder build dsh*dsc

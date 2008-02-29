@@ -9,8 +9,9 @@
 
 # the main XML file which is source to all documents
 MASTERXML=pbuilder-doc.xml
+HTMLDOCS= pbuilder-doc.html pbuilder-doc.ja.html pbuilder-doc.fr.html
 
-all: pbuilder-doc.html pbuilder-doc.ja.html
+all: pbuilder-doc.html pbuilder-doc.ja.html pbuilder-doc.fr.html
 
 %.html: %.xml pbuilder-doc.xsl
 	xsltproc pbuilder-doc.xsl $< > $@.tmp
@@ -26,9 +27,9 @@ pbuilder-doc.%.po: $(MASTERXML)
 	# requires dblatex package.
 	dblatex $<
 
-install: pbuilder-doc.html pbuilder-doc.pdf
+install: $(HTMLDOCS) pbuilder-doc.pdf
 	install -d -m 755 -o root -g root $(DESTDIR)/usr/share/doc/pbuilder/
-	install -m 644 -o root -g root pbuilder-doc.html $(DESTDIR)/usr/share/doc/pbuilder/
+	install -m 644 -o root -g root $(HTMLDOCS) $(DESTDIR)/usr/share/doc/pbuilder/
 	install -m 644 -o root -g root pbuilder-doc.pdf $(DESTDIR)/usr/share/doc/pbuilder/
 
 preview: pbuilder-doc.html

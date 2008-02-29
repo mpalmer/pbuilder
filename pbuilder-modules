@@ -28,23 +28,23 @@ pbuilder [operation] [pbuilder-options]
 pdebuild [pdebuild-options] -- [pbuilder-options]
 
 command lines:
-pbuilder create [--basetgz base.tgz-path] [--distribution etch|lenny|sid|experimental]
+pbuilder --create [--basetgz base.tgz-path] [--distribution etch|lenny|sid|experimental]
   Creates a base.tgz
 
-pbuilder update [--basetgz base.tgz-path] [--distribution etch|lenny|sid|experimental]
+pbuilder --update [--basetgz base.tgz-path] [--distribution etch|lenny|sid|experimental]
   Updates a base.tgz
 
-pbuilder build [--basetgz base.tgz-path] pbuilder_2.2.0-1.dsc
+pbuilder --build [--basetgz base.tgz-path] pbuilder_2.2.0-1.dsc
   Builds using the base.tgz. Requires a .dsc filename
 
-pbuilder clean
+pbuilder --clean
   Cleans the temporal build directory.
 
-pbuilder login
-pbuilder execute -- [command] [command-options]
+pbuilder --login
+pbuilder --execute -- [command] [command-options]
   Logs in to the build environment and execute command.
 
-pbuilder dumpconfig
+pbuilder --dumpconfig
   Dumps configuration information to stdout for debugging.
 
 pbuilder-options:
@@ -54,6 +54,7 @@ pbuilder-options:
  --othermirror [other mirror location in apt deb-line format, delimited with | signs]
  --http-proxy [proxy]
  --distribution [distribution(sid|etch|lenny|experimental)]
+ --components [components]
  --buildresult [location-to-copy-build-result]
  --aptcache [location of retrieved package files]
  --removepackages [packages-to-remove on pbuilder create]
@@ -216,7 +217,10 @@ function mountproc () {
     if [ "$USEDEVPTS" = "yes" ]; then
 	echo " -> mounting /dev/pts filesystem"
 	mkdir -p $BUILDPLACE/dev/pts || true
-	mount -t devpts /dev/pts "$BUILDPLACE/dev/pts" 
+	TTYGRP=5
+	TTYMODE=620
+	[ -f /etc/default/devpts ] && . /etc/default/devpts
+	mount -t devpts /dev/pts "$BUILDPLACE/dev/pts" -onoexec,nosuid,gid=$TTYGRP,mode=$TTYMODE
     fi
     if [ -x /usr/sbin/selinuxenabled ] && /usr/sbin/selinuxenabled; then
 	echo " -> mounting selinux filesystem"
@@ -299,27 +303,39 @@ function installaptlines (){
 	echo "Distribution not specified, please specify" >&2
 	exit 1
     fi
+    if [ -z "$COMPONENTS" ] ; then
+	COMPONENTS="main"
+    fi
     if [ -n "$OTHERMIRROR" ]; then 
 	echo "$OTHERMIRROR" | tr "|" "\n" >> "$BUILDPLACE"/etc/apt/sources.list 
     fi
     if [ -n "$MIRRORSITE" ] ; then
 	cat >> "$BUILDPLACE"/etc/apt/sources.list << EOF
-deb $MIRRORSITE $DISTRIBUTION main 
-#deb-src $MIRRORSITE $DISTRIBUTION main
+deb $MIRRORSITE $DISTRIBUTION $COMPONENTS
+#deb-src $MIRRORSITE $DISTRIBUTION $COMPONENTS
 EOF
     fi
     if [ -n "$APTCONFDIR" ]; then
 	echo "  -> Copy " "$APTCONFDIR"/* " to chroot"
 	cp -a "$APTCONFDIR/"* "$BUILDPLACE"/etc/apt
     fi
-		  
+
+    if [ ! -d "$BUILDPLACE"/etc/apt/apt.conf.d ]; then
+	echo "  -> Create /etc/apt/apt.conf.d/ inside chroot"
+	mkdir "$BUILDPLACE"/etc/apt/apt.conf.d
+    fi
+
+    # configure /etc/apt.conf.d/15pbuilder
+    cat > "$BUILDPLACE"/etc/apt/apt.conf.d/15pbuilder <<EOF
+APT::Install-Recommends "false";
+EOF
     if [ -n "$EXPERIMENTAL" ]; then
 	echo "  -> Installing apt-lines and pinning for experimental"
 	if [ -n "$MIRRORSITE" ] ; then
 	    echo "deb $MIRRORSITE experimental main" >> "$BUILDPLACE"/etc/apt/sources.list
 	    echo "#deb-src $MIRRORSITE experimental main" >> "$BUILDPLACE"/etc/apt/sources.list
 	fi
-	cat >> "$BUILDPLACE"/etc/apt/apt.conf << EOF
+	cat >> "$BUILDPLACE"/etc/apt/apt.conf.d/15pbuilder <<EOF
 APT::Default-Release "experimental";
 EOF
     fi

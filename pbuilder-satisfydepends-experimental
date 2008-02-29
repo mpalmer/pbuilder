@@ -19,6 +19,10 @@
 #
 # module to satisfy build dependencies; experimental flavor
 
+# can test this with:
+# testsuite/random-manual-test-material/build-depends-on-experimental:
+# sudo pbuilder --build --configfile config bde_0.1.dsc
+
 set -e
 
 . /usr/lib/pbuilder/pbuilder-satisfydepends-funcs
@@ -33,6 +37,7 @@ function checkbuilddep_internal () {
     local SATISFIED
     local PACKAGEVERSIONS
     local CANDIDATE_VERSION
+    local APTFLAG="-o APT::Install-Recommends=false"
     echo " -> Attempting to parse the build-deps"
     for INSTALLPKGMULTI in $(get_control_re "$DEBIAN_CONTROL" "$BD_REGEXP" |
 	tr " " "/" | \
@@ -54,7 +59,7 @@ function checkbuilddep_internal () {
 
 	while [ "$SATISFIED" = "no" ]; do
 	    echo "   -> Trying to add $CURRENT_APT_COMMAND"
-	    if APT_OUTPUT="$( exec 2>&1; LC_ALL=C $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST $CURRENT_APT_COMMAND )"; then
+	    if APT_OUTPUT="$( exec 2>&1; LC_ALL=C $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST $CURRENT_APT_COMMAND )"; then
 		# success, we're done
 		SATISFIED="yes"
 		INSTALLPKGLIST="$INSTALLPKGLIST $CURRENT_APT_COMMAND"
@@ -85,7 +90,7 @@ function checkbuilddep_internal () {
 	fi
 
 	echo "       -> Cannot install $CURRENT_APT_COMMAND; apt errors follow:"
-	if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST "$CURRENT_APT_COMMAND"; then
+	if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST "$CURRENT_APT_COMMAND"; then
 	    :
 	fi
 	# package could not be found. -- looking for alternative.
@@ -94,13 +99,13 @@ function checkbuilddep_internal () {
 	if [ -n "$PROVIDED" ]; then
 	    # something provides this package
 	    echo "     -> Considering $PROVIDED to satisfy the dependency "
-	    if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST $PROVIDED >& /dev/null; then
+	    if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST $PROVIDED >& /dev/null; then
 		SATISFIED="yes";
 		INSTALLPKGLIST="$INSTALLPKGLIST $PROVIDED"
 	    else
 		# show the error for diagnostic purposes
 		echo "       -> Cannot install $PROVIDED; apt errors follow:"
-		if $CHROOTEXEC /usr/bin/apt-get -s install $INSTALLPKGLIST $PROVIDED; then
+		if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST $PROVIDED; then
 		    :
 		fi
 	    fi
@@ -119,10 +124,10 @@ function checkbuilddep_internal () {
     
     # now actually install the packages
     echo " -> Installing $INSTALLPKGLIST"
-    if ! $CHROOTEXEC apt-get -y --force-yes install $INSTALLPKGLIST; then
+    if ! $CHROOTEXEC apt-get -y --force-yes $APTFLAG install $INSTALLPKGLIST; then
 	echo " -> Trying to fix apt error"
 	# Work around an apt bug which causes configure to fail.
-	if $CHROOTEXEC dpkg --configure --pending && $CHROOTEXEC apt-get -y --force-yes install $INSTALLPKGLIST; then
+	if $CHROOTEXEC dpkg --configure --pending && $CHROOTEXEC apt-get -y --force-yes $APTFLAG install $INSTALLPKGLIST; then
 	    echo " -> Apt bug workaround succeeded"
 	elif [ "$CONTINUE_FAIL" != "yes" ]; then
 	    echo "E: Unrecoverable error installing build-dependencies." >&2

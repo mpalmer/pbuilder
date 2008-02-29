@@ -95,6 +95,18 @@ is specified for
 option.
 
 .TP
+.BI "COMPONENTS=" "main"
+Specify the default distribution components to use.
+This option is space-delimited.
+This option only affects when doing
+.B "pbuilder create"
+or when
+.B "--override-config"
+is specified for
+.B "pbuilder update"
+option.
+
+.TP
 .BI "export http_proxy=" "http://your-proxy:8080/"
 Defines the proxy for http connection.
 
@@ -260,13 +272,28 @@ in
 .TP
 .BI "PBUILDERSATISFYDEPENDSCMD=" "/usr/lib/pbuilder/pbuilder-satisfydepends"
 
-This option is used by various parts of pbuilder to satisfy (i.e. install) the
-build-dependencies of a package.  There are two alternate implementations, the
-"experimental" implementation, "pbuilder-satisfydepends-experimental", which
-might be useful to pull packages from experimental or from repositories with a
-low APT Pin Priority, and the "aptitude" implementation, which will resolve
-build-dependencies and build-conflicts with aptitude which helps dealing with
-complex cases but does not support unsigned APT repositories
+This option is used by various parts of pbuilder to satisfy
+(i.e. install) the build-dependencies of a package.  There are four
+implementations:
+
+The "experimental" implementation,
+"pbuilder-satisfydepends-experimental", which might be useful to pull
+packages from experimental or from repositories with a low APT Pin
+Priority.
+
+The "aptitude" implementation, which will resolve build-dependencies
+and build-conflicts with aptitude which helps dealing with complex
+cases but does not support unsigned APT repositories.
+
+The "gdebi" implementation, which will resolve build-dependencies
+using gdebi tool, faster than classic implementation, and does not
+require installation of a dummy package like the aptitude
+implementation.
+
+The "classic" implementation, which was the original implementation
+used until 0.172.
+
+The default is now "aptitude".
 
 .TP
 .BI "BUILDUSERID=" "1234"

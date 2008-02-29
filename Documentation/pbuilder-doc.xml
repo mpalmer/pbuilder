@@ -363,16 +363,14 @@
 	time.  Regression tests have their values.
       </para>
       <para>
-	A script that was used by Junichi Uekawa is now included in
+	A script that was used by Junichi Uekawa in the initial run is now included in
 	the <command>pbuilder</command> distribution, as <command>pbuildd.sh</command>.
 	It is available in <filename>/usr/share/doc/pbuilder/examples/pbuildd/</filename>
 	and its configuration is in <filename>/etc/pbuilder/pbuildd-config.sh</filename>.
 	It should be easy enough to set up for people who are used to
 	<command>pbuilder</command>. It has been running for quite a while, and it should be
 	possible to set the application up on your system also.
-	However, it is a new introduction, and please file bugs
-	to the Debian BTS if you know of possible problems,
-	or improved on the script considerably.
+	This version of the code is not the most tested, but should function as a starter.
       </para>
       <para>
 	To set up pbuildd, there are some points to be aware of.
@@ -864,6 +862,57 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell
 	<command>pbuilder</command> with a etch chroot.
       </para>
     </sect1>
+    <sect1 id="ENVVARDISTRIBUTIONSWITCH">
+      <title>Using environmental variables for running <command>pbuilder</command>
+	for specific distribution
+      </title>
+      <para>      This section<footnote>
+	  <para>This part of the documentation contributed by Andres Mejia</para>
+	  <para>
+	    This example was taken from a wiki (<ulink url="https://wiki.ubuntu.com/PbuilderHowto">https://wiki.ubuntu.com/PbuilderHowto</ulink>).
+      </para>
+
+	</footnote>
+	describes briefly a way to setup and use multiple pbuilder setups
+	by creating a pbuilderrc configuration in your home path (<filename>$HOME/.pbuilderrc</filename>)
+	and using the variable "DIST" when running pbuilder or pdebuild.
+</para>
+      <para>      First, setup <filename>$HOME/.pbuilderrc</filename> to look like:</para>
+      <para>
+	<screen>
+if [ -n "${DIST}" ]; then
+        BASETGZ="`dirname $BASETGZ`/$DIST-base.tgz"
+        DISTRIBUTION="$DIST"
+        BUILDRESULT="/var/cache/pbuilder/$DIST/result/"
+        APTCACHE="/var/cache/pbuilder/$DIST/aptcache/"
+fi
+</screen></para>
+      <para>Then, whenever you wish to use pbuilder for a particular distro, assign a value
+to "DIST" that is one of the distros available for Debian or any Debian based
+distro you happen to be running (i.e. whatever is found under
+/usr/lib/debootstrap/scripts).
+      </para>
+
+      <para>Here's some examples on running pbuilder or pdebuild:
+</para>
+      <para><screen>
+DIST=gutsy sudo pbuilder create
+
+DIST=sid sudo pbuilder create --mirror http://http.us.debian.org/debian
+
+DIST=gutsy sudo pbuilder create \
+        --othermirror "deb http://archive.ubuntu.com/ubuntu gutsy universe \
+        multiverse"
+
+DIST=gutsy sudo pbuilder update
+
+DIST=sid sudo pbuilder update --override-config --mirror \
+http://http.us.debian.org/debian \
+--othermirror "deb http://http.us.debian.org/debian sid contrib non-free"
+
+DIST=gutsy pdebuild
+</screen></para>
+    </sect1>
     <sect1 id="usingspecialaptsources">
       <title>Using special apt sources lists, and local packages</title>
       <para>
@@ -1155,6 +1204,9 @@ cd /var/cache/pbuilder/result/
 	needs to exist, and be writable by user within <command>chroot</command>.  The
 	default user within <command>chroot</command> is <screen>uid=1234</screen>.
       </para>
+      <para>
+	Example is provided as pbuilderrc.ccache.
+      </para>
       <screen>
 export CCACHE_DIR="/var/cache/pbuilder/ccache"
 export PATH="/usr/lib/ccache:${PATH}"
@@ -1176,6 +1228,22 @@ BINDMOUNTS="${CCACHE_DIR}"
 	<screen>APTCACHEHARDLINK=no</screen>.
       </para>
     </sect1>
+    <sect1>
+      <title id="svnbuildpackage">Using svn-buildpackage together with pbuilder</title>
+      <para>
+	pdebuild command can be used with svn-buildpackage
+	--svn-builder command-line option.
+	<footnote>
+	  <para><ulink url="http://www.bononia.it/~zack/blog/posts/2007/09/svn-cowbuilder.html">
+	      Zack has posted an example on his blog.
+	    </ulink></para>
+	</footnote>
+      </para>
+      <screen>
+alias svn-cowbuilder="svn-buildpackage --svn-builder='pdebuild --pbuilder cowbuilder"
+      </screen>
+    </sect1>
+
     <!-- end of FAQ -->
   </chapter>
 

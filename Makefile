@@ -14,7 +14,8 @@ SHELLCODES=pbuilder-buildpackage \
 	pbuilder-loadconfig \
 	pbuilder-modules \
 	pbuilder-runhooks \
-	pbuilder-satisfydepends \
+	pbuilder-satisfydepends-classic \
+	pbuilder-satisfydepends-gdebi \
 	pbuilder-satisfydepends-funcs \
 	pbuilder-satisfydepends-checkparams \
 	pbuilder-satisfydepends-aptitude \
@@ -50,6 +51,7 @@ TAGS:
 install:
 	$(INSTALL_DIRECTORY) $(DESTDIR)/etc
 	$(INSTALL_DIRECTORY) $(DESTDIR)/etc/pbuilder
+	$(INSTALL_DIRECTORY) $(DESTDIR)/etc/bash_completion.d
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/sbin
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/bin
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/lib/pbuilder
@@ -76,16 +78,22 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-user-mode-linux $(DESTDIR)/usr/bin
 	$(INSTALL_EXECUTABLE) pdebuild-user-mode-linux $(DESTDIR)/usr/bin
 	$(INSTALL_EXECUTABLE) debuild-pbuilder $(DESTDIR)/usr/bin
-	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends $(DESTDIR)/usr/lib/pbuilder/
+
+	#install aptitude as the default satisfydepends 
+	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-aptitude $(DESTDIR)/usr/lib/pbuilder/pbuilder-satisfydepends
+	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-classic $(DESTDIR)/usr/lib/pbuilder/
+	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-gdebi $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-aptitude $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-experimental $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-checkparams $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-funcs $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pdebuild-internal $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/doc/pbuilder/examples
+	$(INSTALL_FILE) bash_completion.pbuilder $(DESTDIR)/etc/bash_completion.d/pbuilder
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/pbuilder
 	$(INSTALL_FILE) pbuilder-uml.conf $(DESTDIR)/etc/pbuilder
 	$(INSTALL_FILE) pbuilder-uml.conf $(DESTDIR)/usr/share/pbuilder
+	$(INSTALL_FILE) examples/pbuilderrc.ccache $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/B90linda $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/B91dpkg-i $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/B92test-pkg $(DESTDIR)/usr/share/doc/pbuilder/examples
@@ -111,10 +119,11 @@ install:
 	$(INSTALL_EXECUTABLE) examples/pbuilder-test/004_ldd $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
 
 	$(INSTALL_FILE) examples/lvmpbuilder/README $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
+	$(INSTALL_FILE) examples/lvmpbuilder/STRATEGY $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
 	$(INSTALL_EXECUTABLE) examples/lvmpbuilder/lvmbuilder $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
-	$(INSTALL_FILE) examples/lvmpbuilder/pbuilderrc $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
-	$(INSTALL_EXECUTABLE) examples/lvmpbuilder/sample_device_creator $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
-	$(INSTALL_EXECUTABLE) examples/lvmpbuilder/sample_setup_base $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
+	$(INSTALL_FILE) examples/lvmpbuilder/lib/lvmbuilder-checkparams $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder/lib
+	$(INSTALL_FILE) examples/lvmpbuilder/lib/lvmbuilder-modules $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder/lib
+	$(INSTALL_FILE) examples/lvmpbuilder/lib/lvmbuilder-unimplemented $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder/lib
 
 	# install workaround for initscripts -- 2005-12-21
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/workaround

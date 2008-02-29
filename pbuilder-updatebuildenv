@@ -16,13 +16,13 @@
 #   along with this program; if not, write to the Free Software
 #   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-set -e 
+set -e
 
 . /usr/lib/pbuilder/pbuilder-checkparams
 . /usr/lib/pbuilder/pbuilder-runhooks
 
 
-if [ -n "$DISTRIBUTION" ]; then
+if [ -n "$DISTRIBUTION" ] && [ "$OVERRIDE_APTLINES" = "yes" ]; then
     echo "Upgrading for distribution $DISTRIBUTION" 
 fi
 if [ "${PBUILDER_DEBUGMODE}" = "yes" ]; then
@@ -44,8 +44,8 @@ fi
 recover_aptcache
 
 $TRAP saveaptcache_umountproc_cleanbuildplace_trap exit sighup
-$CHROOTEXEC /usr/bin/apt-get -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrade 
-$CHROOTEXEC /usr/bin/apt-get -y --force-yes install build-essential dpkg-dev apt $EXTRAPACKAGES
+$CHROOTEXEC /usr/bin/apt-get -y --force-yes "${FORCE_CONFNEW[@]}" -o "APT::Get::AutomaticRemove=true"  dist-upgrade
+$CHROOTEXEC /usr/bin/apt-get -y --force-yes install build-essential dpkg-dev apt aptitude $EXTRAPACKAGES
 save_aptcache
 
 # optionally auto-clean apt-cache

@@ -12,7 +12,9 @@ node [fontsize=30]
 "test package"->"edit source" [label="fail"]
 "test package"->"pbuilder build" [label="success"]
 "pbuilder build"->"edit source" [label="fail"]
-"pbuilder build"->"debsign" [label="success"]
+"pbuilder build"->"test pbuilder-generated package" [label="success"]
+"test pbuilder-generated package"->"debsign" [label="success"]
+"test pbuilder-generated package"->"edit source" [label="fail"]
 "debsign"->"dput"
 }
 

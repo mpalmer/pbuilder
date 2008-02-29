@@ -1,88 +1,89 @@
-#!/bin/sh
-#The files in this directory (except pbuilderrc) were written by
-#(C) 2006 Kapil Hari Paranjape <kapil@imsc.res.in>. 
-#They are placed in the public domain. You can do with them exactly as you wish.
-
-# This assumes:
-# A.
-#	You have added the following lines to you ~/.pbuilderrc
-#		BASEDEV=<path to your base device>
-#		COWDEV=<path to your cow device>
+#! /bin/bash
+#   lvmbuilder -- Debian package builder using LVM
+#   Copyright (C) 2007 Kapil Hari Paranjape
+#   based on:
+#   pbuilder -- personal Debian package builder
+#   Copyright (C) 2001-2006 Junichi Uekawa
 #
-# B.
-#        That the BASE and COW device have been properly set up.
-#        Specifically, you must run:
-#		e2fsck -f $BASEDEV
-#	 It is too painful to run this everytime!
+#   This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 2 of the License, or
+#   (at your option) any later version.
 #
-#	 You can also run
-#		blockdev --setro $BASEDEV
-#	 This tries to ensure that the $BASDEV remains pristine.
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
 #
-# C.
-#	 It also assumes that /dev/mapper/{total,work}
-#	 do not exist already.
+#   You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software
+#   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
+# lvmbuilder by Kapil Hari Paranjape <kapil@debian.org> 2007 Aug 15
+# pbuilder by Junichi Uekawa <dancer@debian.org> 2001 Aug 25
 
-if [ $# -lt 1 ]
-then
-	echo You need to supply the name of the dsc file
+set -e 
+
+# Base directory for LVM stuff
+LVMBLIB=./lib 'LVMBLIB needs to be defined'
+
+# For safe file creation
+umask 0022
+
+# command line operation
+OP="$1"
+shift
+
+case "$OP" in
+    --create|create)
+	. ${LVMBLIB}/lvmbuilder-checkparams
+	. ${LVMBLIB}/lvmbuilder-modules
+	clean_basedev
+	mount $BASEDEV $BUILDPLACE
+	trap unmount_basedev exit
+	pbuilder "$OP" "${PBCMDLINE[@]}"
+	;;
+    --update|update)
+	. ${LVMBLIB}/lvmbuilder-checkparams
+	. ${LVMBLIB}/lvmbuilder-modules
+	mount $BASEDEV $BUILDPLACE
+	trap unmount_basedev exit
+	pbuilder "$OP" "${PBCMDLINE[@]}"
+	;;
+    --clean|clean)
+	. ${LVMBLIB}/lvmbuilder-checkparams
+	. ${LVMBLIB}/lvmbuilder-modules
+	clean_basedev
+	. /usr/lib/pbuilder/pbuilder-checkparams
+	if [ -n "$APTCACHE" ]; then
+	    echo "Cleaning [$APTCACHE]"
+	    clean_subdirectories "$APTCACHE" || true
+	fi
+	;;
+    --build|build|--login|login|--execute|execute)
+	. ${LVMBLIB}/lvmbuilder-checkparams
+	. ${LVMBLIB}/lvmbuilder-modules
+    	setup_workplace
+    	trap takedown_workplace exit
+	pbuilder "$OP" "${PBCMDLINE[@]}"
+	;;
+    --dumpconfig|dumpconfig)
+	. ${LVMBLIB}/lvmbuilder-checkparams
+	. ${LVMBLIB}/lvmbuilder-modules
+	echo " -> start dump config"
+	echo "  -> set"
+	set;
+	echo "  -> env"
+	env;
+	echo " -> end dump config"
+	;;
+    --debuild|debuild)
+	echo "E: The debuild mode of pbuilder is currently not supported by lvmbuilder."  >&2
 	exit 1
-fi
-
-PKGDSC=$1
-
-# Source the pbuilderrc file
-. /usr/lib/pbuilder/pbuilder-loadconfig
-
-
-if [ -z "$BASEDEV" -o -z "$COWDEV" ]
-then
-	echo Please define BASEDEV and COWDEV in your ~/.pbuilderrc file
-	exit 1
-fi
-
-# Size computations
-
-BASESIZE=$(blockdev --getsize $BASEDEV)
-COWSIZE=$(blockdev --getsize $COWDEV)
-TOTAL=$[ $COWSIZE + $BASESIZE ]
-
-## Create the total base device
-# It consists of the base device extended by zeroes.
-# The length of the zeroes is the size of the cow.
-dd if=/dev/zero of=$COWDEV bs=4K count=16
-
-( echo 0 $BASESIZE linear $BASEDEV 0 ; \
-  echo $BASESIZE $COWSIZE zero ) | \
-  dmsetup create total 
-
-## Create the work device
-# It is the snapshot device with the all writes
-# going to the cow device. The file-system is resized
-# to the maximum extent possible.
-echo 0 $TOTAL snapshot /dev/mapper/total $COWDEV p 16 | \
-  dmsetup create work
-
-resize2fs /dev/mapper/work 
-
-mount /dev/mapper/work $BUILDPLACE
-
-# run build
-pbuilder build --no-targz $PKGDSC 
-
-## Check the status
-# If pbuilder returned with
-# an error then we must stop
-# and be able to examine the work space.
-[ $? != 0 ] && \
-( echo Error during build. $BUILDPLACE contains the build place. ; \
-  exit 1 )
-
-## Clean Up
-umount $BUILDPLACE
-dmsetup remove work
-dmsetup remove total
-
-echo Done.
+	;;
+    *)
+	. ${LVMBLIB}/lvmbuilder-modules
+	showhelp
+	;;
+esac
 

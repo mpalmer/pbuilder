@@ -9,149 +9,194 @@ Building the build Environment
  -> policy-rc.d already exists
 Reading package lists...
 Building dependency tree...
+Reading state information...
 passwd is already the newest version.
 The following extra packages will be installed:
   cdebootstrap libdebian-installer-extra4 libdebian-installer4
 Suggested packages:
   pbuilder-uml
 Recommended packages:
-  fakeroot sudo devscripts cowdancer
+  cowdancer devscripts fakeroot sudo
 The following NEW packages will be installed:
   cdebootstrap libdebian-installer-extra4 libdebian-installer4 pbuilder
 0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
-Need to get 231kB of archives.
-After unpacking 938kB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp sid/main libdebian-installer4 0.51 [28.1kB]
-Get:2 http://cdn.debian.or.jp sid/main libdebian-installer-extra4 0.51 [10.6kB]
-Get:3 http://cdn.debian.or.jp sid/main cdebootstrap 0.4.3 [29.0kB]
-Get:4 http://cdn.debian.or.jp sid/main pbuilder 0.169 [163kB]
+Need to get 292kB of archives.
+After this operation, 1360kB of additional disk space will be used.
+Get:1 http://cdn.debian.or.jp sid/main libdebian-installer4 0.55 [29.1kB]
+Get:2 http://cdn.debian.or.jp sid/main libdebian-installer-extra4 0.55 [10.9kB]
+Get:3 http://cdn.debian.or.jp sid/main cdebootstrap 0.4.4 [30.0kB]
+Get:4 http://cdn.debian.or.jp sid/main pbuilder 0.178 [222kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libdebian-installer4.
-(Reading database ... 11066 files and directories currently installed.)
-Unpacking libdebian-installer4 (from .../libdebian-installer4_0.51_amd64.deb) ...
+(Reading database ... 10991 files and directories currently installed.)
+Unpacking libdebian-installer4 (from .../libdebian-installer4_0.55_amd64.deb) ...
 Selecting previously deselected package libdebian-installer-extra4.
-Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.51_amd64.deb) ...
+Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.55_amd64.deb) ...
 Selecting previously deselected package cdebootstrap.
-Unpacking cdebootstrap (from .../cdebootstrap_0.4.3_amd64.deb) ...
+Unpacking cdebootstrap (from .../cdebootstrap_0.4.4_amd64.deb) ...
 Selecting previously deselected package pbuilder.
-Unpacking pbuilder (from .../pbuilder_0.169_all.deb) ...
-Setting up libdebian-installer4 (0.51) ...
-
-Setting up libdebian-installer-extra4 (0.51) ...
-
-Setting up cdebootstrap (0.4.3) ...
-Setting up pbuilder (0.169) ...
-
+Unpacking pbuilder (from .../pbuilder_0.178_all.deb) ...
+Setting up libdebian-installer4 (0.55) ...
+Setting up libdebian-installer-extra4 (0.55) ...
+Setting up cdebootstrap (0.4.4) ...
+Setting up pbuilder (0.178) ...
 Setting DEBBUILDOPTS=
- -> Attempting to parse the build-deps 
- -> Considering build-dep debhelper (>> 3.0.0)
-   -> Trying debhelper
- -> Considering build-dep libdshconfig1-dev (>= 0.20.11-1)
-   -> Trying libdshconfig1-dev
- -> Installing  debhelper libdshconfig1-dev
+ -> Attempting to satisfy build-dependencies
+ -> Creating pbuilder-satisfydepends-dummy package
+Package: pbuilder-satisfydepends-dummy
+Version: 0.invalid.0
+Architecture: amd64
+Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
+Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
+ This package was created automatically by pbuilder and should
+Depends: debhelper (>> 3.0.0), libdshconfig1-dev (>= 0.20.11-1), po4a
+dpkg-deb: building package `pbuilder-satisfydepends-dummy' in `/tmp/satisfydepends-aptitude/pbuilder-satisfydepends-dummy.deb'.
 Reading package lists...
 Building dependency tree...
-The following extra packages will be installed:
-  file gettext gettext-base html2text intltool-debian libdshconfig1 libmagic1
-  po-debconf
-Suggested packages:
-  dh-make cvs gettext-doc
-Recommended packages:
-  libmail-sendmail-perl libcompress-zlib-perl
+Reading state information...
+aptitude is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Selecting previously deselected package pbuilder-satisfydepends-dummy.
+(Reading database ... 11117 files and directories currently installed.)
+Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
+dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
+ pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
+  Package debhelper is not installed.
+ pbuilder-satisfydepends-dummy depends on libdshconfig1-dev (>= 0.20.11-1); however:
+  Package libdshconfig1-dev is not installed.
+ pbuilder-satisfydepends-dummy depends on po4a; however:
+  Package po4a is not installed.
+dpkg: error processing pbuilder-satisfydepends-dummy (--install):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ pbuilder-satisfydepends-dummy
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Initializing package states...
+Writing extended state information...
+Reading task descriptions...
+Building tag database...
 The following NEW packages will be installed:
-  debhelper file gettext gettext-base html2text intltool-debian libdshconfig1
-  libdshconfig1-dev libmagic1 po-debconf
-0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3552kB of archives.
-After unpacking 12.0MB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp sid/main libmagic1 4.21-1 [332kB]
-Get:2 http://cdn.debian.or.jp sid/main file 4.21-1 [40.0kB]
-Get:3 http://cdn.debian.or.jp sid/main gettext-base 0.16.1-1 [132kB]
-Get:4 http://cdn.debian.or.jp sid/main html2text 1.3.2a-3 [92.7kB]
-Get:5 http://cdn.debian.or.jp sid/main gettext 0.16.1-1 [2261kB]
-Get:6 http://cdn.debian.or.jp sid/main intltool-debian 0.35.0+20060710.1 [30.8kB]
-Get:7 http://cdn.debian.or.jp sid/main po-debconf 1.0.8 [111kB]
-Get:8 http://cdn.debian.or.jp sid/main debhelper 5.0.50 [517kB]
-Get:9 http://cdn.debian.or.jp sid/main libdshconfig1 0.20.12-2 [10.9kB]
-Get:10 http://cdn.debian.or.jp sid/main libdshconfig1-dev 0.20.12-2 [25.3kB]
+  debhelper{a} file{a} gettext{a} gettext-base{a} html2text{a} 
+  intltool-debian{a} libdshconfig1{a} libdshconfig1-dev{a} libgomp1{a} 
+  libmagic1{a} libsgmls-perl{a} libsp1c2{a} po-debconf{a} po4a{a} sp{a} 
+The following partially installed packages will be configured:
+  pbuilder-satisfydepends-dummy 
+0 packages upgraded, 15 newly installed, 0 to remove and 0 not upgraded.
+Need to get 6561kB of archives. After unpacking 21.3MB will be used.
+Writing extended state information...
+Get:1 http://cdn.debian.or.jp sid/main libmagic1 4.23-2 [343kB]
+Get:2 http://cdn.debian.or.jp sid/main file 4.23-2 [41.8kB]
+Get:3 http://cdn.debian.or.jp sid/main html2text 1.3.2a-3 [92.7kB]
+Get:4 http://cdn.debian.or.jp sid/main gettext-base 0.17-2 [130kB]
+Get:5 http://cdn.debian.or.jp sid/main libgomp1 4.3-20080202-1 [15.5kB]
+Get:6 http://cdn.debian.or.jp sid/main gettext 0.17-2 [2763kB]
+Get:7 http://cdn.debian.or.jp sid/main intltool-debian 0.35.0+20060710.1 [30.8kB]
+Get:8 http://cdn.debian.or.jp sid/main po-debconf 1.0.11 [231kB]
+Get:9 http://cdn.debian.or.jp sid/main debhelper 6.0.5 [519kB]
+Get:10 http://cdn.debian.or.jp sid/main libdshconfig1 0.20.13-1 [11.0kB]
+Get:11 http://cdn.debian.or.jp sid/main libdshconfig1-dev 0.20.13-1 [25.4kB]
+Get:12 http://cdn.debian.or.jp sid/main libsgmls-perl 1.03ii-32 [27.8kB]
+Get:13 http://cdn.debian.or.jp sid/main libsp1c2 1.3.4-1.2.1-47 [1386kB]
+Get:14 http://cdn.debian.or.jp sid/main sp 1.3.4-1.2.1-47 [182kB]
+Get:15 http://cdn.debian.or.jp sid/main po4a 0.32-1 [762kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11168 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.21-1_amd64.deb) ...
+(Reading database ... 11117 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.23-2_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.21-1_amd64.deb) ...
-Selecting previously deselected package gettext-base.
-Unpacking gettext-base (from .../gettext-base_0.16.1-1_amd64.deb) ...
+Unpacking file (from .../archives/file_4.23-2_amd64.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
+Selecting previously deselected package gettext-base.
+Unpacking gettext-base (from .../gettext-base_0.17-2_amd64.deb) ...
+Selecting previously deselected package libgomp1.
+Unpacking libgomp1 (from .../libgomp1_4.3-20080202-1_amd64.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.16.1-1_amd64.deb) ...
+Unpacking gettext (from .../gettext_0.17-2_amd64.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
 Selecting previously deselected package po-debconf.
-Unpacking po-debconf (from .../po-debconf_1.0.8_all.deb) ...
+Unpacking po-debconf (from .../po-debconf_1.0.11_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_5.0.50_all.deb) ...
+Unpacking debhelper (from .../debhelper_6.0.5_all.deb) ...
 Selecting previously deselected package libdshconfig1.
-Unpacking libdshconfig1 (from .../libdshconfig1_0.20.12-2_amd64.deb) ...
+Unpacking libdshconfig1 (from .../libdshconfig1_0.20.13-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
-Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.12-2_amd64.deb) ...
-Setting up libmagic1 (4.21-1) ...
-
-Setting up file (4.21-1) ...
-Setting up gettext-base (0.16.1-1) ...
-
+Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.13-1_amd64.deb) ...
+Selecting previously deselected package libsgmls-perl.
+Unpacking libsgmls-perl (from .../libsgmls-perl_1.03ii-32_all.deb) ...
+Selecting previously deselected package libsp1c2.
+Unpacking libsp1c2 (from .../libsp1c2_1.3.4-1.2.1-47_amd64.deb) ...
+Selecting previously deselected package sp.
+Unpacking sp (from .../sp_1.3.4-1.2.1-47_amd64.deb) ...
+Selecting previously deselected package po4a.
+Unpacking po4a (from .../archives/po4a_0.32-1_all.deb) ...
+Setting up libmagic1 (4.23-2) ...
+Setting up file (4.23-2) ...
 Setting up html2text (1.3.2a-3) ...
-
-Setting up gettext (0.16.1-1) ...
-
+Setting up gettext-base (0.17-2) ...
+Setting up libgomp1 (4.3-20080202-1) ...
+Setting up gettext (0.17-2) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
-Setting up po-debconf (1.0.8) ...
-Setting up debhelper (5.0.50) ...
-Setting up libdshconfig1 (0.20.12-2) ...
-
-Setting up libdshconfig1-dev (0.20.12-2) ...
+Setting up po-debconf (1.0.11) ...
+Setting up debhelper (6.0.5) ...
+Setting up libdshconfig1 (0.20.13-1) ...
+Setting up libdshconfig1-dev (0.20.13-1) ...
+Setting up libsgmls-perl (1.03ii-32) ...
+Setting up libsp1c2 (1.3.4-1.2.1-47) ...
+Setting up sp (1.3.4-1.2.1-47) ...
+Setting up po4a (0.32-1) ...
+Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading extended state information...
+Initializing package states...
+Writing extended state information...
+Reading task descriptions...
+Building tag database...
  -> Finished parsing the build-deps
 Reading package lists...
 Building dependency tree...
+Reading state information...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 111kB of archives.
-After unpacking 451kB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.7.1 [111kB]
+Need to get 115kB of archives.
+After this operation, 463kB of additional disk space will be used.
+Get:1 http://cdn.debian.or.jp sid/main fakeroot 1.9.3 [115kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11843 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.7.1_amd64.deb) ...
-Setting up fakeroot (1.7.1) ...
-
-dpkg-buildpackage: source package is dsh
-dpkg-buildpackage: source version is 0.25.8-1
+(Reading database ... 12123 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.9.3_amd64.deb) ...
+Setting up fakeroot (1.9.3) ...
+dpkg-buildpackage: source package dsh
+dpkg-buildpackage: source version 0.25.10-1
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
 dpkg-buildpackage: host architecture amd64
-dpkg-buildpackage: source version without epoch 0.25.8-1
  fakeroot debian/rules clean
 dh_testdir
 dh_testroot
 rm -f build-stamp configure-stamp
 /usr/bin/make clean
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
 make: [clean] Error 2 (ignored)
 /usr/bin/make distclean
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
 make: [clean] Error 2 (ignored)
 dh_clean
- dpkg-source -b dsh-0.25.8
-dpkg-source: building dsh using existing dsh_0.25.8.orig.tar.gz
-dpkg-source: building dsh in dsh_0.25.8-1.diff.gz
+ dpkg-source -b dsh-0.25.10
+dpkg-source: building dsh using existing dsh_0.25.10.orig.tar.gz
+dpkg-source: building dsh in dsh_0.25.10-1.diff.gz
 dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
 dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
-dpkg-source: building dsh in dsh_0.25.8-1.dsc
+dpkg-source: building dsh in dsh_0.25.10-1.dsc
  debian/rules build
 dh_testdir
 INSTALL_PROGRAM='install -p    -o root -g root  -m  755 -s' CFLAGS='-Wall -g -O2' \
@@ -198,7 +243,7 @@ checking if the linker (/usr/bin/ld) is GNU ld... yes
 checking for /usr/bin/ld option to reload object files... -r
 checking for BSD-compatible nm... /usr/bin/nm -B
 checking whether ln -s works... yes
-checking how to recognise dependent libraries... pass_all
+checking how to recognize dependent libraries... pass_all
 checking for sys/types.h... yes
 checking for sys/stat.h... yes
 checking for stdlib.h... yes
@@ -243,7 +288,7 @@ checking for lf95... no
 checking for ftn... no
 checking whether we are using the GNU Fortran 77 compiler... no
 checking whether  accepts -g... no
-checking the maximum length of command line arguments... 32768
+checking the maximum length of command line arguments... 98304
 checking command to parse /usr/bin/nm -B output from gcc object... ok
 checking for objdir... .libs
 checking for ar... ar
@@ -338,18 +383,18 @@ config.status: creating po/Makefile
 touch configure-stamp
 dh_testdir
 /usr/bin/make
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 /usr/bin/make  all-recursive
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 Making all in m4
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/m4'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/m4'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/m4'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/m4'
 Making all in po
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/po'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/po'
 make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/po'
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/po'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-dsh.o -MD -MP -MF ".deps/dsh-dsh.Tpo" -c -o dsh-dsh.o `test -f 'dsh.c' || echo './'`dsh.c; \
 	then mv -f ".deps/dsh-dsh.Tpo" ".deps/dsh-dsh.Po"; else rm -f ".deps/dsh-dsh.Tpo"; exit 1; fi
 if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-linkedlist.o -MD -MP -MF ".deps/dsh-linkedlist.Tpo" -c -o dsh-linkedlist.o `test -f 'linkedlist.c' || echo './'`linkedlist.c; \
@@ -358,30 +403,30 @@ if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDL
 	then mv -f ".deps/dsh-parameter.Tpo" ".deps/dsh-parameter.Po"; else rm -f ".deps/dsh-parameter.Tpo"; exit 1; fi
 /bin/sh ./libtool --tag=CC --mode=link gcc  -Wall -g -O2   -o dsh  dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  -ldshconfig 
 mkdir .libs
-gcc -Wall -g -O2 -o dsh dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  /usr/lib/libdshconfig.so
+gcc -Wall -g -O2 -o dsh dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  /usr/lib/libdshconfig.so  
 mkdir build-man
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
 sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.5 > build-man/dsh.conf.5
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
 /usr/bin/make check
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 Making check in m4
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/m4'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/m4'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/m4'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/m4'
 Making check in po
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/po'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/po'
 make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/po'
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/po'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 /usr/bin/make  dsh
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 make[3]: `dsh' is up to date.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
 /usr/bin/make  check-TESTS
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 PASS: tests/param-f.sh
 dsh: File ./tests/nonexistent.file could not be opened for read
 PASS: tests/param-f-fail.sh
@@ -417,10 +462,10 @@ success
 success
 success
 success
+a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
-a: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -432,7 +477,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Wed Jun  6 03:05:11 UTC 2007
+Mon Feb 18 03:05:44 UTC 2008
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -502,14 +547,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Wed Jun  6 03:05:16 UTC 2007
+Mon Feb 18 03:05:49 UTC 2008
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
-c: c
 dsh: Process terminated (before write).
+c: c
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -518,9 +563,9 @@ PASS: tests/machinelist-order.sh
 ===================
 All 17 tests passed
 ===================
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
 touch build-stamp
  fakeroot debian/rules binary
 dh_testdir
@@ -528,58 +573,58 @@ dh_testroot
 dh_clean -k
 dh_installdirs
 # Add here commands to install the package into debian/dsh.
-/usr/bin/make install DESTDIR=/TESTDIR/dir2/dsh-0.25.8/debian/dsh
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
+/usr/bin/make install DESTDIR=/TESTDIR/dir2/dsh-0.25.10/debian/dsh
+make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 Making install in m4
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/m4'
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/m4'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/m4'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/m4'
 make[3]: Nothing to be done for `install-exec-am'.
 make[3]: Nothing to be done for `install-data-am'.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/m4'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/m4'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/m4'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/m4'
 Making install in po
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8/po'
-/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share
-mkdir -p -- /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share
-mkdir -p -- /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/locale/ja/LC_MESSAGES
-installing ja.gmo as /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/po'
+/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share
+mkdir -p -- /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share
+mkdir -p -- /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/locale/ja/LC_MESSAGES
+installing ja.gmo as /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
 if test "dsh" = "gettext"; then \
-	  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/gettext/po; \
+	  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/gettext/po; \
 	  for file in Makefile.in.in Makevars remove-potcdate.sin   ; do \
 	    /usr/bin/install -c -m 644 ./$file \
-			    /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/gettext/po/$file; \
+			    /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/gettext/po/$file; \
 	  done; \
 	else \
 	  : ; \
 	fi
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8/po'
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.8'
-test -z "/usr/bin" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/bin"
-  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/bin/dsh'
-install -p -o root -g root -m 755 -s dsh /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/bin/dsh
-test -z "/etc/dsh" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.8/debian/dsh/etc/dsh"
- /usr/bin/install -c -m 644 'dsh.conf' '/TESTDIR/dir2/dsh-0.25.8/debian/dsh/etc/dsh/dsh.conf'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/po'
+make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
+make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
+test -z "/usr/bin" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/bin"
+  /bin/sh ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/bin/dsh'
+install -p -o root -g root -m 755 -s dsh /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/bin/dsh
+test -z "/etc/dsh" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.10/debian/dsh/etc/dsh"
+ /usr/bin/install -c -m 644 'dsh.conf' '/TESTDIR/dir2/dsh-0.25.10/debian/dsh/etc/dsh/dsh.conf'
 for LANGS in ja ; do \
-		mkdir -p /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/$LANGS/man1 ;\
-		mkdir -p /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/$LANGS/man5 ;\
+		mkdir -p /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/$LANGS/man1 ;\
+		mkdir -p /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/$LANGS/man5 ;\
 		sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.$LANGS.1 \
-			> /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
+			> /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
 		sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.$LANGS.5 \
-			> /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
+			> /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
 	done
-test -z "/usr/share/man/man1" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/man1"
- /usr/bin/install -c -m 644 './build-man/dsh.1' '/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/man1/dsh.1'
-test -z "/usr/share/man/man5" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/man5"
- /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/share/man/man5/dsh.conf.5'
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.8'
-cp /TESTDIR/dir2/dsh-0.25.8/debian/machines.list /TESTDIR/dir2/dsh-0.25.8/debian/dsh/etc/dsh/machines.list
-cp /TESTDIR/dir2/dsh-0.25.8/dsh.conf /TESTDIR/dir2/dsh-0.25.8/debian/dsh/etc/dsh/dsh.conf
-ln -s ../machines.list /TESTDIR/dir2/dsh-0.25.8/debian/dsh/etc/dsh/group/all
-install -d /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/lib/update-cluster
-install -m 755 /TESTDIR/dir2/dsh-0.25.8/debian/dsh.updatelist /TESTDIR/dir2/dsh-0.25.8/debian/dsh/usr/lib/update-cluster/
+test -z "/usr/share/man/man1" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/man1"
+ /usr/bin/install -c -m 644 './build-man/dsh.1' '/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/man1/dsh.1'
+test -z "/usr/share/man/man5" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/man5"
+ /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/man5/dsh.conf.5'
+make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
+make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
+make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
+cp /TESTDIR/dir2/dsh-0.25.10/debian/machines.list /TESTDIR/dir2/dsh-0.25.10/debian/dsh/etc/dsh/machines.list
+cp /TESTDIR/dir2/dsh-0.25.10/dsh.conf /TESTDIR/dir2/dsh-0.25.10/debian/dsh/etc/dsh/dsh.conf
+ln -s ../machines.list /TESTDIR/dir2/dsh-0.25.10/debian/dsh/etc/dsh/group/all
+install -d /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/lib/update-cluster
+install -m 755 /TESTDIR/dir2/dsh-0.25.10/debian/dsh.updatelist /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/lib/update-cluster/
 dh_testdir
 dh_testroot
 dh_installdocs NEWS
@@ -596,8 +641,8 @@ dh_installdeb
 dh_gencontrol
 dh_md5sums
 dh_builddeb
-dpkg-deb: building package `dsh' in `../dsh_0.25.8-1_amd64.deb'.
- dpkg-genchanges
+dpkg-deb: building package `dsh' in `../dsh_0.25.10-1_amd64.deb'.
+ dpkg-genchanges  >../dsh_0.25.10-1_amd64.changes
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting /TESTDIR/dir2 filesystem

@@ -47,7 +47,7 @@ export BUILDRESULTGID=$(id -g)
 if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
     ${PBUILDERROOTCMD} ${PDEBUILD_PBUILDER} --execute "$@" ${EXTRA_CONFIGFILE[@]/#/--configfile } --bindmounts $(readlink -f ..) -- /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}" --uid "${BUILDRESULTUID}" --gid "${BUILDRESULTGID}" --pbuildersatisfydepends "$PBUILDERSATISFYDEPENDSCMD"
     if [ -d "${BUILDRESULT}" ]; then
-	for files in $(sed -rn '/^Files:/,${s/.* ([^ ]+)$/\1/p}' ../${CHANGES}); do
+	for files in $(sed -rn '/^Files:/,${s/^ .* ([^ ]+)$/\1/p}' ../${CHANGES}); do
 	    cp -a ../"$files" "${BUILDRESULT}"
 	done
 	cp -a ../${CHANGES} "${BUILDRESULT}"

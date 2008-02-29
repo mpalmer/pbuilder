@@ -1,3 +1,97 @@
+2007-12-24  Junichi Uekawa  <dancer@debian.org>
+
+	* This changelog is no longer maintained, see git log for details.
+	For brief user-oriented list of changes, see debian/changelog
+
+2007-12-18  Loïc Minier <lool@dooz.org>
+
+	* pbuilder-updatebuildenv: Run apt-get autoremove after upgrade.
+
+2007-12-16  Junichi Uekawa  <dancer@debian.org>
+
+	* examples/B92test-pkg: try to skip package test which do not have any test.
+
+2007-11-24  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-modules (pbuilder-options): create etc/apt/apt.conf.d/
+
+2007-11-23  Loïc Minier <lool@dooz.org>
+
+	* pbuilder-satisfydepends-aptitude: Pass -o
+	APT::Install-Recommends=false to aptitude as --without-recommends
+	doesn't seem to be enough with the new APT.
+
+2007-11-07  Junichi Uekawa  <dancer@debian.org>
+
+	* testsuite/random-manual-test-material/build-depends-on-experimental/bde_0.1.dsc:
+	add sample files for easier testing.
+
+	* pbuilder-satisfydepends-experimental: add APTFLAG here also.
+
+	* pbuilder-satisfydepends-classic: add APTFLAG, which is "-o
+	APT::Install-Recommends=false" to toggle recommends
+	installation. This option is ignored by etch apt, so should be
+	harmless.
+
+	* pbuilder-modules (APT): install Install-Recommends "false"
+	configuration to /etc/apt/apt.conf.d/15pbuilder.  Move
+	experimental configuration to there from /etc/apt/apt.conf to
+	/etc/apt/apt.conf.d/15pbuilder.
+
+2007-10-25  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilderrc: set default value for COMPONENTS, so that
+	qemubuilder and others can depend on it being set.
+
+2007-10-15  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder-modules: change 'pbuilder --help' command-line format
+	to be prepended with '--'
+
+	* Makefile: update makefile to install bash_completion
+
+	* bash_completion.pbuilder: add bash_completion
+
+2007-09-10  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilder: return return codes for --login and --execute
+
+2007-09-06  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml: add svn-buildpackage example.
+
+2007-08-28  Junichi Uekawa  <dancer@debian.org>
+
+	* pbuilderrc.5 (Example): document
+	pbuilder-satisfydepends-aptitude as the default.
+
+	* pbuilder-updatebuildenv: install aptitude per default.
+	* pbuilder-createbuildenv: install aptitude per default.
+
+	* pbuilder-satisfydepends-classic: rename to '-classic'.
+
+2007-08-20  Junichi Uekawa  <dancer@debian.org>
+
+	* Makefile: update makefile to install lvmbuilder
+
+	* examples/lvmpbuilder/lvmbuilder: update with new version.
+	
+2007-07-27  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml: add document on example usage of
+	pbuilderrc with DIST env-var.
+
+2007-07-22  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/pbuilder-doc.xml: refer to example file.
+
+	* examples/pbuilderrc.ccache: create example file.
+
+2007-07-16  Junichi Uekawa  <dancer@debian.org>
+
+	* Documentation/debconf7/develcycle.dot: change diagram to contain
+	testing pbuilder-generated package before debsign and dput.
+
 2007-06-23  Junichi Uekawa  <dancer@debian.org>
 
 	* Makefile: install lvmpbuilder scripts as example.
@@ -1150,7 +1244,7 @@
 	* pbuilder-modules (pbuilder-options): 
 	find '-xdev' is an option, not an evaluation, and so moved it around
 	since newer find now complains.
-	Marc Dequènes (Duck) <Duck@DuckCorp.org> and "Artur R. Czechowski" <arturcz@hell.pl>
+	Marc Dequ竪nes (Duck) <Duck@DuckCorp.org> and "Artur R. Czechowski" <arturcz@hell.pl>
 	#312913
 
 2005-06-08  Junichi Uekawa  <dancer@debian.org>
@@ -2390,7 +2484,7 @@
 	* pbuilder-modules (save_aptcache,recover_aptcache): 
 	use "find | while read ; " combination to go over the limits of 
 	shell globbing.
-	#176872, reported by "Michel Dänzer" <daenzer@debian.org>.
+	#176872, reported by "Michel D辰nzer" <daenzer@debian.org>.
 
 2003-01-10  Junichi Uekawa  <dancer@debian.org>
 
@@ -3539,8 +3633,4 @@
 	energy. When pbuilder stabilizes, I will look at doing it.
 
 	14 Jan 2002 Junichi Uekawa <dancer@debian.org>
-	Copyright (c) 2001-2006 Junichi Uekawa
-
-
-
-	
+	Copyright (c) 2001-2007 Junichi Uekawa 上川純一
