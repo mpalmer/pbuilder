@@ -3,3 +3,16 @@ Type: string
 Default: _
 _Description: Default mirror site:
  Please enter the default mirror you want to be used by pbuilder.
+ .
+ If you leave this field blank, there will be one attempt to autodetect
+ this information. If this attempt fails, you will be prompted to insert
+ valid mirror information.
+ .
+ Here is a valid mirror example: http://ftp.debian.org/debian
+
+Template: pbuilder/nomirror
+Type: error
+_Description: Default mirror not found
+ Mirror information detection failed and the user provided no mirror information.
+ .
+ Please enter valid mirror information.

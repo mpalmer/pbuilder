@@ -26,24 +26,49 @@ case "$1" in
         CONFFILE=/etc/pbuilderrc
 
         # if there is a custom file, then we shouldn't touch it
-        if [ -f "$CONFFILE" ] ; then
+        if [ -f "$CONFFILE" ]
+        then
             CURRENTMIRROR=$(grep -E "^MIRRORSITE=" "$CONFFILE" | sed 's#MIRRORSITE=##g')
-            [ "$CURRENTMIRROR" = "_" ] || exit 0
+            [ -z "$CURRENTMIRROR" ] || exit 0
         else
-            # FIXME: try creating a file only with the MIRRORSITE line
+            # TODO: try creating a file only with the MIRRORSITE line
             cp "/usr/share/doc/pbuilder/examples/pbuilderrc" "$CONFFILE"
-            MIRRORSITE="_"
+            MIRRORSITE=""
+            db_set pbuilder/mirrorsite ""
         fi
+
+        db_input medium pbuilder/mirrorsite || [ $? = 30 ]
+        db_go
 
         db_get pbuilder/mirrorsite
         MIRRORSITE="$RET"
 
-        if [ "$MIRRORSITE" = "_" ]
+        # the "_" alternative is just a safety net,
+        # but that should really never happen
+        if [ -z "$MIRRORSITE" ] || [ "$MIRRORSITE" = "_" ]
         then
-            MIRRORSITE=$(grep -E '^deb ' /etc/apt/sources.list | head -n 1 | awk '{print $2;}')
+            TMPSRC=`mktemp`
+            SRCLISTDIR=/etc/apt/sources.list.d
+            [ -f /etc/apt/sources.list ] && cat /etc/apt/sources.list > "$TMPSRC" || true
+            [ -f $SRCLISTDIR/*.sources.list ] && cat $SRCLISTDIR/*.sources.list >> "$TMPSRC" || true
+            MIRRORSITE=$(grep -E '^deb ' "$TMPSRC" | head -n 1 | awk '{print $2;}')
+            rm -f "$TMPSRC"
+            while [ -z "$MIRRORSITE" ]
+            do
+                db_input pbuilder/nomirror || true
+                db_input high pbuilder/mirrorsite && RETCODE=$? || RETCODE=$?
+                db_go
+
+                # if the interface is non-interactive, still set a valid mirror
+                if [ $RETCODE = 30 ]
+                then
+                    MIRRORSITE="http://ftp.debian.org/debian"
+                else
+                    db_get pbuilder/mirrorsite
+                    MIRRORSITE="$RET"
+                fi
+            done
             db_set pbuilder/mirrorsite "$MIRRORSITE"
-            db_input medium pbuilder/mirrorsite || true
-            db_go
         fi
 
         TMPFILE=`mktemp`
