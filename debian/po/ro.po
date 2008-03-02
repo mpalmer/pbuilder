@@ -5,13 +5,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Eddy Petrisor <eddy.petrisor@gmail.com>, 2007.
-# Eddy Petrișor <eddy.petrisor@gmail.com>, 2007.
+# Eddy Petrișor <eddy.petrisor@gmail.com>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
-"Report-Msgid-Bugs-To: pbuilder-maint@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2007-06-25 20:56+0300\n"
-"PO-Revision-Date: 2007-06-25 21:08+0300\n"
+"Report-Msgid-Bugs-To: pbuilder@packages.debian.org\n"
+"POT-Creation-Date: 2008-03-02 08:23+0200\n"
+"PO-Revision-Date: 2008-03-02 08:50+0200\n"
 "Last-Translator: Eddy Petrișor <eddy.petrisor@gmail.com>\n"
 "Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,61 @@ msgstr ""
 #. Description
 #: ../pbuilder.templates:1001
 msgid "Default mirror site:"
-msgstr "Situl oglindă implicit:"
+msgstr "Saitul oglindă implicit:"
 
 #. Type: string
 #. Description
 #: ../pbuilder.templates:1001
 msgid "Please enter the default mirror you want to be used by pbuilder."
-msgstr "Introduceți situl oglindă implicit pe care doriți să-l folosească pbuilder."
+msgstr "Introduceți saitul oglindă implicit pe care doriți să-l folosească pbuilder."
+
+#. Type: string
+#. Description
+#: ../pbuilder.templates:1001
+msgid ""
+"If you leave this field blank, there will be one attempt to autodetect this "
+"information. If this attempt fails, you will be prompted again to insert "
+"some valid mirror information."
+msgstr "Dacă lăsați liber acest câmp, se va încerca o singură dată să se detecteze automat această informație. Dacă această încercare eșuează, vi se va cere, din nou să introduceți niște informații valide despre saitul-oglindă."
+
+#. Type: string
+#. Description
+#: ../pbuilder.templates:1001
+msgid "Here is a valid mirror example: http://ftp.debian.org/debian"
+msgstr "Iată un exemplu valid de sait-oglindă: http://ftp.ro.debian.org/debian"
+
+#. Type: error
+#. Description
+#: ../pbuilder.templates:2001
+#| msgid "Default mirror site:"
+msgid "Default mirror not found"
+msgstr "Saitul oglindă implicit nu a fost găsit"
+
+#. Type: error
+#. Description
+#: ../pbuilder.templates:2001
+msgid ""
+"Mirror information detection failed and the user provided no mirror "
+"information."
+msgstr "Detectarea informațiilor despre saitul-oglindă a eșuat și utilizatorul nu a furnizat nici o informație despre saitul-oglindă."
+
+#. Type: error
+#. Description
+#: ../pbuilder.templates:2001
+msgid "Please enter valid mirror information."
+msgstr "Introduceți informație validă referitoare la saituri ."
+
+#. Type: boolean
+#. Description
+#: ../pbuilder.templates:3001
+msgid "Overwrite current configuration?"
+msgstr "Se suprascrie actualul fișier de configurație?"
+
+#. Type: boolean
+#. Description
+#: ../pbuilder.templates:3001
+msgid ""
+"Your system seems to have already pbuilder configuration. Proceeding might "
+"discard or overwrite part or the entire pbuilder's configuration."
+msgstr "Sistemul pare să aibă deja o configurație pentru pbuilder. Continuarea cu această acțiune ar putea duce la ștergerea sau suprascrierea parțială sau totală a fișierului de configurare aparținând lui pbuilder."
 
