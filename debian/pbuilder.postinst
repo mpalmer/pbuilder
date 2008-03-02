@@ -26,8 +26,14 @@ case "$1" in
         CONFFILE=/etc/pbuilderrc
 
         # if there is a custom file, then we shouldn't touch it
-        CURRENTMIRROR=$(grep -E "MIRRORSITE=" "$CONFFILE" | sed 's#MIRRORSITE=##g')
-        [ "$CURRENTMIRROR" = "_" ] || exit 0
+        if [ -f "$CONFFILE" ] ; then
+            CURRENTMIRROR=$(grep -E "^MIRRORSITE=" "$CONFFILE" | sed 's#MIRRORSITE=##g')
+            [ "$CURRENTMIRROR" = "_" ] || exit 0
+        else
+            # FIXME: try creating a file only with the MIRRORSITE line
+            cp "/usr/share/doc/pbuilder/examples/pbuilderrc" "$CONFFILE"
+            MIRRORSITE="_"
+        fi
 
         db_get pbuilder/mirrorsite
         MIRRORSITE="$RET"
