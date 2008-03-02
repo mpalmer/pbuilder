@@ -26,10 +26,15 @@ case "$1" in
         CONFFILE=/etc/pbuilderrc
 
         # if there is a custom file, then we shouldn't touch it
-        if [ -f "$CONFFILE" ]
-        then
+        if [ -f "$CONFFILE" ] ; then
             CURRENTMIRROR=$(grep -E "^MIRRORSITE=" "$CONFFILE" | sed 's#MIRRORSITE=##g')
-            [ -z "$CURRENTMIRROR" ] || exit 0
+            if [ "$CURRENTMIRROR" ] ; then
+                db_input low pbuilder/rewrite || [ $? = 30 ]
+                db_go
+
+                db_get pbuilder/rewrite
+                [ "$RET" = "true" ] || exit 0
+            fi
         else
             # TODO: try creating a file only with the MIRRORSITE line
             cp "/usr/share/doc/pbuilder/examples/pbuilderrc" "$CONFFILE"
@@ -37,6 +42,8 @@ case "$1" in
             db_set pbuilder/mirrorsite ""
         fi
 
+        db_get pbuilder/mirrorsite
+        [ "$RET" = "_" ] && db_set pbuilder/mirrorsite "" || true
         db_input medium pbuilder/mirrorsite || [ $? = 30 ]
         db_go
 
@@ -45,23 +52,20 @@ case "$1" in
 
         # the "_" alternative is just a safety net,
         # but that should really never happen
-        if [ -z "$MIRRORSITE" ] || [ "$MIRRORSITE" = "_" ]
-        then
+        if [ -z "$MIRRORSITE" ] || [ "$MIRRORSITE" = "_" ] ; then
             TMPSRC=`mktemp`
             SRCLISTDIR=/etc/apt/sources.list.d
             [ -f /etc/apt/sources.list ] && cat /etc/apt/sources.list > "$TMPSRC" || true
             [ -f $SRCLISTDIR/*.sources.list ] && cat $SRCLISTDIR/*.sources.list >> "$TMPSRC" || true
             MIRRORSITE=$(grep -E '^deb ' "$TMPSRC" | head -n 1 | awk '{print $2;}')
             rm -f "$TMPSRC"
-            while [ -z "$MIRRORSITE" ]
-            do
-                db_input pbuilder/nomirror || true
+            while [ -z "$MIRRORSITE" ] ; do
+                db_input high pbuilder/nomirror || true
                 db_input high pbuilder/mirrorsite && RETCODE=$? || RETCODE=$?
                 db_go
 
                 # if the interface is non-interactive, still set a valid mirror
-                if [ $RETCODE = 30 ]
-                then
+                if [ $RETCODE = 30 ] ; then
                     MIRRORSITE="http://ftp.debian.org/debian"
                 else
                     db_get pbuilder/mirrorsite

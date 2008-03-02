@@ -5,8 +5,8 @@ _Description: Default mirror site:
  Please enter the default mirror you want to be used by pbuilder.
  .
  If you leave this field blank, there will be one attempt to autodetect
- this information. If this attempt fails, you will be prompted to insert
- valid mirror information.
+ this information. If this attempt fails, you will be prompted again
+ to insert some valid mirror information.
  .
  Here is a valid mirror example: http://ftp.debian.org/debian
 
@@ -16,3 +16,11 @@ _Description: Default mirror not found
  Mirror information detection failed and the user provided no mirror information.
  .
  Please enter valid mirror information.
+
+Template: pbuilder/rewrite
+Type: boolean
+Default: false
+_Description: Overwrite current configuration?
+ Your system seems to have already pbuilder configuration.
+ Proceeding might discard or overwrite part or the entire
+ pbuilder's configuration.
