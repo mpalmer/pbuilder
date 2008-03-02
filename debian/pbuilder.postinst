@@ -75,8 +75,7 @@ case "$1" in
             db_set pbuilder/mirrorsite "$MIRRORSITE"
         fi
 
-        TMPFILE=`mktemp`
-        cat "$CONFFILE" | sed "s#MIRRORSITE=.*\$#MIRRORSITE=$MIRRORSITE#" > "$TMPFILE" && mv "$TMPFILE" "$CONFFILE"
+        sed -i "s#MIRRORSITE=.*\$#MIRRORSITE=$MIRRORSITE#" "$CONFFILE"
 
     ;;
 
