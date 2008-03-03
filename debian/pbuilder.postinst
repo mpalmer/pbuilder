@@ -53,12 +53,12 @@ case "$1" in
         # the "_" alternative is just a safety net,
         # but that should really never happen
         if [ -z "$MIRRORSITE" ] || [ "$MIRRORSITE" = "_" ] ; then
-            TMPSRC=`mktemp`
             SRCLISTDIR=/etc/apt/sources.list.d
-            [ -f /etc/apt/sources.list ] && cat /etc/apt/sources.list > "$TMPSRC" || true
-            [ -f $SRCLISTDIR/*.sources.list ] && cat $SRCLISTDIR/*.sources.list >> "$TMPSRC" || true
-            MIRRORSITE=$(grep -E '^deb ' "$TMPSRC" | head -n 1 | awk '{print $2;}')
-            rm -f "$TMPSRC"
+            MIRRORSITE=$(
+                ( [ -f /etc/apt/sources.list ] && cat /etc/apt/sources.list || true ;
+                  [ -f $SRCLISTDIR/*.sources.list ] && cat $SRCLISTDIR/*.sources.list || true ) \
+                | grep -E '^deb ' | head -n 1 | awk '{print $2;}'
+                )
             while [ -z "$MIRRORSITE" ] ; do
                 db_input high pbuilder/nomirror || true
                 db_input high pbuilder/mirrorsite && RETCODE=$? || RETCODE=$?
