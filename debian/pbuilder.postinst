@@ -24,6 +24,7 @@ case "$1" in
     configure)
 
         CONFFILE=/etc/pbuilderrc
+        PLACEHOLDER='http://you-have-broken-debconf-configuration.example.com/'
 
         # if there is a custom file, then we shouldn't touch it
         if [ -f "$CONFFILE" ] ; then
@@ -36,23 +37,22 @@ case "$1" in
                 [ "$RET" = "true" ] || exit 0
             fi
         else
-            # TODO: try creating a file only with the MIRRORSITE line
-            cp "/usr/share/doc/pbuilder/examples/pbuilderrc" "$CONFFILE"
+            echo "MIRRORSITE=$PLACEHOLDER" > "$CONFFILE"
             MIRRORSITE=""
             db_set pbuilder/mirrorsite ""
         fi
 
         db_get pbuilder/mirrorsite
-        [ "$RET" = "_" ] && db_set pbuilder/mirrorsite "" || true
+        [ "$RET" = "$PLACEHOLDER" ] && db_set pbuilder/mirrorsite "" || true
         db_input medium pbuilder/mirrorsite || [ $? = 30 ]
         db_go
 
         db_get pbuilder/mirrorsite
         MIRRORSITE="$RET"
 
-        # the "_" alternative is just a safety net,
+        # the "$PLACEHOLDER" alternative is just a safety net,
         # but that should really never happen
-        if [ -z "$MIRRORSITE" ] || [ "$MIRRORSITE" = "_" ] ; then
+        if [ -z "$MIRRORSITE" ] || [ "$MIRRORSITE" = "$PLACEHOLDER" ] ; then
             SRCLISTDIR=/etc/apt/sources.list.d
             MIRRORSITE=$(
                 ( [ -f /etc/apt/sources.list ] && cat /etc/apt/sources.list || true ;
