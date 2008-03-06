@@ -28,7 +28,7 @@ case "$1" in
 
         # if there is a custom file, then we shouldn't touch it
         if [ -f "$CONFFILE" ] ; then
-            CURRENTMIRROR=$(grep -E "^MIRRORSITE=" "$CONFFILE" | sed 's#MIRRORSITE=##g')
+            CURRENTMIRROR=$(grep -E "^[ 	]*MIRRORSITE=" "$CONFFILE" | sed 's#MIRRORSITE=##g')
             if [ "$CURRENTMIRROR" ] ; then
                 db_input low pbuilder/rewrite || [ $? = 30 ]
                 db_go
@@ -75,7 +75,7 @@ case "$1" in
             db_set pbuilder/mirrorsite "$MIRRORSITE"
         fi
 
-        sed -i "s#MIRRORSITE=.*\$#MIRRORSITE=$MIRRORSITE#" "$CONFFILE"
+        sed -i "s#^\s*MIRRORSITE=.*\$#MIRRORSITE=$MIRRORSITE#" "$CONFFILE"
 
     ;;
 
