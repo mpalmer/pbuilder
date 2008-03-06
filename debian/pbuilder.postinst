@@ -38,6 +38,11 @@ case "$1" in
 
                 # make sure latter calls do not overwrite stuff silently
                 db_set pbuilder/rewrite "false"
+            else
+                # no MIRRORSITE line found in the pbuilderrc file
+                echo "MIRRORSITE=$PLACEHOLDER" >> "$CONFFILE"
+                MIRRORSITE=""
+                db_set pbuilder/mirrorsite ""
             fi
         else
             echo "MIRRORSITE=$PLACEHOLDER" > "$CONFFILE"
