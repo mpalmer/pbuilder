@@ -74,7 +74,7 @@ case "$1" in
 
                 # if the interface is non-interactive, still set a valid mirror
                 if [ $RETCODE = 30 ] ; then
-                    MIRRORSITE="http://ftp.debian.org/debian"
+                    MIRRORSITE="http://cdn.debian.net/debian"
                 else
                     db_get pbuilder/mirrorsite
                     MIRRORSITE="$RET"
