@@ -35,6 +35,9 @@ case "$1" in
 
                 db_get pbuilder/rewrite
                 [ "$RET" = "true" ] || exit 0
+
+                # make sure latter calls do not overwrite stuff silently
+                db_set pbuilder/rewrite "false"
             fi
         else
             echo "MIRRORSITE=$PLACEHOLDER" > "$CONFFILE"
