@@ -88,8 +88,8 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-checkparams $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-funcs $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pdebuild-internal $(DESTDIR)/usr/lib/pbuilder/
+	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_FILE) bash_completion.pbuilder $(DESTDIR)/etc/bash_completion.d/pbuilder
-	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/etc
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/pbuilder
 	$(INSTALL_FILE) pbuilder-uml.conf $(DESTDIR)/etc/pbuilder
 	$(INSTALL_FILE) pbuilder-uml.conf $(DESTDIR)/usr/share/pbuilder

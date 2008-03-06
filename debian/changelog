@@ -4,7 +4,19 @@ pbuilder (0.179~1.gbpfaef96) UNRELEASED; urgency=low
 
   * UNRELEASED
 
- -- Junichi Uekawa <dancer@debian.org>  Sat, 02 Feb 2008 12:27:36 +0900
+  [ Eddy Petrișor ]
+  * added support for detection of the default mirror in postinst
+    (Closes: #333294)
+    - /etc/pbuilderrc is no longer a conffile
+    - detection of the default MIRRORSITE relies on the information from
+      /etc/apt/sources.list and /etc/apt/sources.list.d/
+  * bumped versioned dependency on debhelper to (>= 4.1.16) as indicated in
+    po-debconf manual
+
+  [ po-debconf translations ]
+  * iniatial Romanian translation (by Eddy Petrișor)
+
+ -- Eddy Petrișor <eddy.petrisor@gmail.com>  Sun, 02 Mar 2008 08:50:48 +0200
 
 pbuilder (0.178) unstable; urgency=low
 
