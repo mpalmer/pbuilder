@@ -43,7 +43,7 @@ while [ -n "$1" ]; do
 	--basetgz) 
 	    case "${PBCURRENTCOMMANDLINEOPERATION}" in
 		create|--create)
-		    touch "$2";
+		    touch "$2";;
 	    esac
 	    if [ ! -f "$2" ]; then
 		echo "E: File $2 does not exist" >&2 
