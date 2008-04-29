@@ -227,10 +227,24 @@ function mountproc () {
 	mkdir -p $BUILDPLACE/selinux
 	mount -t selinuxfs /selinux "$BUILDPLACE/selinux"
     fi    
+    local -a mounted
     for mnt in $BINDMOUNTS; do
 	echo "-> Mounting $mnt"
-	mkdir -p "$BUILDPLACE/$mnt"
-	mount -obind "$mnt" "$BUILDPLACE/$mnt"
+	if mkdir -p "$BUILDPLACE/$mnt" && 
+	    mount -obind "$mnt" "$BUILDPLACE/$mnt"; then
+	    # successful.
+	    mounted[${#mounted[@]}]="$mnt"
+	else
+	    # when unsuccessful, backtrack / umount and abort.
+	    if [ -n "${mounted[*]}" ]; then
+		echo "-> error recovery: umount successfully mounted bind-mounts: ${mounted[@]}"
+		for umnt in "${mounted[@]}"; do
+		    echo "-> umounting $umnt"
+		    umount "$umnt"
+		done
+	    fi
+	    exit 1
+	fi
     done
     if [ -f "$BUILDPLACE/usr/sbin/policy-rc.d" ]; then
 	echo " -> policy-rc.d already exists"
