@@ -60,6 +60,7 @@ install:
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/rebuild
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/pbuilder-test
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder
+	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/share/doc/pbuilder/examples/lvmpbuilder/lib
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-mnt
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-umlresult
 	$(INSTALL_EXECUTABLE) pbuilder-buildpackage $(DESTDIR)/usr/lib/pbuilder/
