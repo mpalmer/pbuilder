@@ -200,7 +200,7 @@
 	There is a slightly different mode of operation available
 	in <command>pdebuild</command> since version 0.97. <command>pdebuild</command> usually runs
 	<command>debian/rules clean</command> outside of the chroot;
-	however, it is possible to change the behaviour to run it
+	however, it is possible to change the behavior to run it
 	inside the chroot with
 	the <command><option>--use-pdebuild-internal</option></command>.
 	It will try to bind mount the working directory inside chroot,
@@ -485,8 +485,7 @@
 	<screen>
 EXTRAPACKAGES="pentium-builder gcc-3.2 g++-3.2"
 export DEBIAN_BUILDARCH=athlon
-export DEBIAN_BUILDGCCVER=3.2
-	</screen>
+export DEBIAN_BUILDGCCVER=3.2</screen>
       </para>
       <para>
 	It will instruct <command>pbuilder</command> to install the <command>pentium-builder</command> package
@@ -573,9 +572,8 @@ export DEBIAN_BUILDGCCVER=3.2
 	  <para>
 	    TUN/TAP only:
 	    add the user to the uml-net group to allow access to the network
-	    <screen>
-adduser dancer uml-net
-	    </screen></para>
+	    <screen>adduser dancer uml-net</screen>
+          </para>
 	</listitem>
 	<listitem>
 	  <para>TUN/TAP only:
@@ -595,8 +593,7 @@ gateway=192.168.1.1
 mirror=http://192.168.1.2:8081/debian
 host=192.168.1.198
 uml=192.168.1.199
-netmask=255.255.255.0
-	    </screen>
+netmask=255.255.255.0</screen>
 	    Some experimentation with configuration and running
 	    <command>rootstrap ~/test.uml</command> to actually
 	    test it would be handy.
@@ -628,8 +625,7 @@ UML_NETMASK=255.255.255.0
 UML_NETWORK=192.168.1.0
 UML_BROADCAST=255.255.255.255
 UML_GATEWAY=192.168.1.1
-PBUILDER_UML_IMAGE="/home/dancer/uml-image"
-	      </screen>
+PBUILDER_UML_IMAGE="/home/dancer/uml-image"</screen>
 	      Also, it needs to match the rootstrap configuration.
 	    </para>
 	  </listitem>
@@ -700,8 +696,7 @@ PBUILDER_UML_IMAGE="/home/dancer/uml-image"
 for IP in 102 103 104 105; do
   xterm -e pbuilder-user-mode-linux build --uml-ip 192.168.0.$IP \
     20030107/whizzytex_1.1.1-1.dsc &amp;
-done
-	    </screen>
+done</screen>
 	    When using slirp, this problem does not exist.
 	  </para>
 	</listitem>
@@ -746,8 +741,7 @@ sed 's/X11Forwarding.*/X11Forwarding yes/' /etc/ssh/sshd_config- &gt; /etc/ssh/s
 /etc/init.d/ssh restart
 ifconfig
 echo "Hit enter to finish"
-read
-      </screen>
+read</screen>
     </sect1>
   </chapter>
   <chapter id="faq">
@@ -814,8 +808,7 @@ read
       <screen>
 $ mkdir ~/loginhooks
 $ cp C10shell ~/loginhooks/E10shell
-$ sudo pbuilder update --hookdir ~/loginhooks/E10shell
-      </screen>
+$ sudo pbuilder update --hookdir ~/loginhooks/E10shell</screen>
       <para>
 	It is also possible to add <option>--save-after-exec</option>
 	and/or <option>--save-after-login</option> options
@@ -916,7 +909,7 @@ DIST=gutsy pdebuild
     <sect1 id="usingspecialaptsources">
       <title>Using special apt sources lists, and local packages</title>
       <para>
-	If you have some very specialised requirements on your
+	If you have some very specialized requirements on your
 	apt setup inside <command>pbuilder</command>,
 	it is possible to specify that through
 	the <command><option>--othermirror</option></command>
@@ -936,8 +929,7 @@ DIST=gutsy pdebuild
 	First, set up pbuilderrc to bindmount your build results directory.
       </para>
       <para>
-	<screen>BINDMOUNTS="/var/cache/pbuilder/result"
-	</screen>
+	<screen>BINDMOUNTS="/var/cache/pbuilder/result"</screen>
       </para>
       <para>
 	Then, add the following hook
@@ -948,8 +940,7 @@ DIST=gutsy pdebuild
 #!/bin/sh
 cd /var/cache/pbuilder/result/
 /usr/bin/dpkg-scanpackages . /dev/null &gt; /var/cache/pbuilder/result/Packages
-/usr/bin/apt-get update
-	</screen>
+/usr/bin/apt-get update</screen>
       </para>
       <para>
 	This way, you can use <filename>deb file:/var/cache/pbuilder/result</filename>
@@ -987,12 +978,10 @@ cd /var/cache/pbuilder/result/
       </para>
       <para>example of debian_chroot</para>
       <screen>
-	export debian_chroot="pbuild$$"
-      </screen>
+	export debian_chroot="pbuild$$"</screen>
       <para>example of PS1</para>
       <screen>
-	export PS1="pbuild chroot 32165 # "
-      </screen>
+	export PS1="pbuild chroot 32165 # "</screen>
     </sect1>
     <sect1 id="chrootmemo">
       <title>Creating a chroot reminder</title>
@@ -1028,7 +1017,7 @@ cd /var/cache/pbuilder/result/
     <sect1 id="stablebackport">
       <title>pbuilder back ported to stable Debian releases</title>
       <para>
-	Currently stable back port of pbuilder is avialable at backports.org.
+	Currently stable back port of pbuilder is available at backports.org.
       </para>
     </sect1>
     <sect1 id="LOGNAME">
@@ -1038,8 +1027,7 @@ cd /var/cache/pbuilder/result/
       </para>
       <para>
 	<screen>
-	dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)
-	</screen>
+	dpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)</screen>
       </para>
       <para>
 	It is currently safe to ignore this warning message.  Please
@@ -1069,7 +1057,10 @@ cd /var/cache/pbuilder/result/
 	not possible to make hard links across different devices; and
 	thus this error will occur, depending on your set up.  If this
 	happens, set <screen>APTCACHEHARDLINK=no</screen> in your
-	pbuilderrc file.
+	pbuilderrc file. Note that packages in
+	<command>APTCACHE</command> will be copied into chroot local
+	cache, so plan for enough space on
+	<command>BUILDPLACE</command> device.
       </para>
     </sect1>
     <sect1 id="fakechroot">
@@ -1086,7 +1077,7 @@ cd /var/cache/pbuilder/result/
 	example is <command>ldd</command>.  Inside
 	<command>fakechroot</command>, <command>ldd</command> will
 	check the library dependency outside of the chroot, which is
-	not the expected behaviour.
+	not the expected behavior.
       </para>
       <para>
 	To work around the problem, debootstrap has a
@@ -1114,8 +1105,7 @@ cd /var/cache/pbuilder/result/
 	the nodev option.
       </para>
       <screen>
-	/var/lib/dpkg/info/base-files.postinst: /dev/null: Permission denied
-      </screen>
+	/var/lib/dpkg/info/base-files.postinst: /dev/null: Permission denied</screen>
       <para>
 	You will also have problems if you mount the file system with
 	the noexec option, or nosuid.
@@ -1162,8 +1152,7 @@ cd /var/cache/pbuilder/result/
 	<command>pdebuild</command>.
       </para>
       <screen>
-	<command>pdebuild  <option>--auto-debsign </option> <option>--debsign-k </option><parameter>XXXXXXXX</parameter></command>
-      </screen>
+	<command>pdebuild  <option>--auto-debsign </option> <option>--debsign-k </option><parameter>XXXXXXXX</parameter></command></screen>
     </sect1>
     <sect1 id="sourcechanges">
       <title>Why is there a source.changes file in ../?</title>
@@ -1174,7 +1163,7 @@ cd /var/cache/pbuilder/result/
 	It is harmless unless you try to upload it to the Debian archive.
       </para>
       <para>
-	This behaviour is different when running through <option>--use-pdebuild-internal</option>
+	This behavior is different when running through <option>--use-pdebuild-internal</option>
       </para>
     </sect1>
     <sect1 id="amd64i386">
@@ -1191,15 +1180,14 @@ cd /var/cache/pbuilder/result/
 	<screen>
 <command>pbuilder create --distribution sid --debootstrapopts --arch --debootstrapopts i386 \
   --basetgz /var/cache/pbuilder/base-i386.tgz --mirror http://ftp.jp.debian.org/debian</command>
-<command>linux32 pbuilder build --basetgz /var/cache/pbuilder/base-i386.tgz</command>
-	</screen>
+<command>linux32 pbuilder build --basetgz /var/cache/pbuilder/base-i386.tgz</command></screen>
       </para>
     </sect1>
     <sect1 id="ccache">
       <title>How to use ccache</title>
       <para>
 	To use <command>ccache</command> with
-	<command>pbuilder</command>, use the following for
+	<command>pbuilder</command>, use the following
 	configuration.  Note that the directory used for CCACHE_DIR
 	needs to exist, and be writable by user within <command>chroot</command>.  The
 	default user within <command>chroot</command> is <screen>uid=1234</screen>.
@@ -1212,8 +1200,7 @@ export CCACHE_DIR="/var/cache/pbuilder/ccache"
 export PATH="/usr/lib/ccache:${PATH}"
 
 EXTRAPACKAGES=ccache
-BINDMOUNTS="${CCACHE_DIR}"
-      </screen>
+BINDMOUNTS="${CCACHE_DIR}"</screen>
       <para>
 	<ulink url="http://web.glandium.org/blog/?p=55">This entry created thanks to a blog posting.
 	</ulink>
@@ -1234,14 +1221,13 @@ BINDMOUNTS="${CCACHE_DIR}"
 	pdebuild command can be used with svn-buildpackage
 	--svn-builder command-line option.
 	<footnote>
-	  <para><ulink url="http://www.bononia.it/~zack/blog/posts/2007/09/svn-cowbuilder.html">
+	  <para><ulink url="http://upsilon.cc/~zack/blog/posts/2007/09/svn-cowbuilder/">
 	      Zack has posted an example on his blog.
 	    </ulink></para>
 	</footnote>
       </para>
       <screen>
-alias svn-cowbuilder="svn-buildpackage --svn-builder='pdebuild --pbuilder cowbuilder"
-      </screen>
+alias svn-cowbuilder="svn-buildpackage --svn-builder='pdebuild --pbuilder cowbuilder"</screen>
     </sect1>
 
     <!-- end of FAQ -->
@@ -1302,8 +1288,7 @@ alias svn-cowbuilder="svn-buildpackage --svn-builder='pdebuild --pbuilder cowbui
       <screen>
 git-clone git://git.debian.org/git/pbuilder/pbuilder.git
 git-clone http://git.debian.org/git/pbuilder/pbuilder.git
-git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git
-      </screen>
+git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git</screen>
       <para>
 	Test-suites are available in <filename>./testsuite/</filename> directory.
 	Changes are expected not to break the test-suites.
@@ -1460,8 +1445,7 @@ git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git
 	<screen>
 # cowbuilder --create --distribution sid
 # cowbuilder --update --distribution sid
-# cowbuilder --build XXX.dsc
-	</screen>
+# cowbuilder --build XXX.dsc</screen>
       </para>
       <para>
 	It is also possible to use cowdancer with pdebuild command.
@@ -1470,8 +1454,7 @@ git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git
       </para>
       <para>
 	<screen>
-$ pdebuild --pbuilder cowbuilder
-	</screen>
+$ pdebuild --pbuilder cowbuilder</screen>
       </para>
       <sect2 id="sargecowdancer">
         <title>Using cowdancer for sarge</title>
@@ -1499,8 +1482,7 @@ deb-src http://www.backports.org/debian sarge-backports main
 
 # sarge
 deb     http://ftp.de.debian.org/debian sarge main
-deb-src http://ftp.de.debian.org/debian sarge main
-          </screen>
+deb-src http://ftp.de.debian.org/debian sarge main</screen>
         </para>
         <para>
           It is recommended to "Pin" the cowdancer package appropriately in
@@ -1512,8 +1494,7 @@ $ cat preferences
 Explanation: use cowdancer from backports
 Package: cowdancer
 Pin: release a=sarge-backports
-Pin-Priority: 950
-          </screen>
+Pin-Priority: 950</screen>
         </para>
       </sect2>
     </sect1>
@@ -1536,8 +1517,7 @@ Pin-Priority: 950
 	<screen>
 # pbuilder create --distribution etch --no-targz --basetgz /chroot/etch
 # pbuilder create --distribution lenny --no-targz --basetgz /chroot/lenny
-# pbuilder create --distribution sid --no-targz --basetgz /chroot/sid
-	</screen>
+# pbuilder create --distribution sid --no-targz --basetgz /chroot/sid</screen>
       </para>
     </sect1>
     <sect1 id="inavserver">
@@ -1765,7 +1745,7 @@ Pin-Priority: 950
 	  was released. Yay.
 	  Debian 3.0 wasn't completely buildable with <command>pbuilder</command>,
 	  but the amount of packages which are not buildable
-	  is steadily decreasing. (I hope)
+	  is steadily decreasing (I hope).
 	</para>
       </sect2>
       <sect2 id="secondyear">
