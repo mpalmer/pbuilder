@@ -1,8 +1,5 @@
 #!/usr/bin/make -f
 
-# This is the debhelper compatability version to use.
-ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
-
 build: build-stamp
 build-stamp:
 	dh_testdir
@@ -40,20 +37,18 @@ binary-indep: build install
 	dh_builddeb -i
 
 binary-arch: build install
-ifneq (,$(findstring ${ARCH},i386 amd64))
-	dh_testdir -a
-	dh_testroot -a
-	dh_installdocs -a
+	dh_testdir -s
+	dh_testroot -s
+	dh_installdocs -s
 	dh_installman -ppbuilder-uml pbuilder-user-mode-linux.1 pbuilder-uml.conf.5 pdebuild-user-mode-linux.1
-	dh_installchangelogs -a
-	dh_link -a
-	dh_compress -a -X.pdf
-	dh_fixperms -a
-	dh_installdeb -a
-	dh_gencontrol  -a
-	dh_md5sums  -a
-	dh_builddeb -a
-endif
+	dh_installchangelogs -s
+	dh_link -s
+	dh_compress -s -X.pdf
+	dh_fixperms -s
+	dh_installdeb -s
+	dh_gencontrol -s
+	dh_md5sums -s
+	dh_builddeb -s
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install
