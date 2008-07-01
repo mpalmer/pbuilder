@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xxx\n"
-"POT-Creation-Date: 2008-05-09 00:49+0900\n"
-"PO-Revision-Date: 2008-01-04 20:06+0900\n"
+"POT-Creation-Date: 2008-05-09 00:50+0900\n"
+"PO-Revision-Date: 2008-06-27 15:35+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Junichi Uekawa <dancer@debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -402,7 +402,6 @@ msgstr "詳細は pdebuild.1 マニュアルページを参照してください
 
 # type: Content of: <book><chapter><sect1><para><command>
 #: pbuilder-doc.xml:200
-#, fuzzy
 msgid ""
 "There is a slightly different mode of operation available in "
 "<command>pdebuild</command> since version 0.97. <command>pdebuild</command> "
@@ -714,7 +713,6 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:366
-#, fuzzy
 msgid ""
 "A script that was used by Junichi Uekawa in the initial run is now included "
 "in the <command>pbuilder</command> distribution, as <command>pbuildd.sh</"
@@ -725,14 +723,7 @@ msgid ""
 "while, and it should be possible to set the application up on your system "
 "also.  This version of the code is not the most tested, but should function "
 "as a starter."
-msgstr ""
-"上川が利用したスクリプトは今 <command>pbuilder</command> ディストリビューショ"
-"ンに含まれています。<filename>/usr/share/doc/pbuilder/examples/pbuildd/</"
-"filename> にあり、設定は、 <filename>/etc/pbuilder/pbuildd-config.sh</"
-"command> が設定ファイルです。<command>pbuilder</command> になれている人であれ"
-"ば簡単に設定することができるはずです。しばらく実行されていたため、自分のシス"
-"テムでも実行できるでしょう。ただ、まだ新しいので問題があれば Debian BTS に登"
-"録してください。"
+msgstr "上川が利用したスクリプトは今 <command>pbuilder</command> ディストリビューションに含まれています。<filename>/usr/share/doc/pbuilder/examples/pbuildd/</filename> にあり、設定は、 <filename>/etc/pbuilder/pbuildd-config.sh</filename> が設定ファイルです。<command>pbuilder</command> になれている人であれば簡単に設定することができるはずです。しばらく実行されていたため、自分のシステムでも実行できるでしょう。ただ、まだ新しいので問題があれば Debian BTS に登録してください。"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:376
@@ -772,7 +763,7 @@ msgstr ""
 msgid ""
 "Because not all builds are guaranteed to finish in a finite time, setting a "
 "timeout is probably necessary, or pbuildd may stall with a bad build."
-msgstr ""
+msgstr "すべてのビルドが有限時間で完了することが保証されているわけではありません、そのためタイムアウトを準備しておくことが必要かもしれません。そうしないとpbuilddは悪いビルドでずっと待ち状態になる可能性もあります。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:398
@@ -780,7 +771,7 @@ msgid ""
 "Some packages require a lot of disk space, around 2GB seems to be sufficient "
 "for the largest packages for the time being.  If you find otherwise, please "
 "inform the maintainer of this documentation."
-msgstr ""
+msgstr "一部のパッケージは大量のディスク領域を必要とします、現時点では最大のパッケージであっても2GBくらいが十分なようです。もしそうでないという状況を発見した場合はこの文書のメンテナに連絡してください。"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:406
@@ -801,7 +792,7 @@ msgstr ""
 msgid ""
 "I would like some information on how people are doing it, I would appreciate "
 "any feedback or information on how you are doing, or any examples."
-msgstr ""
+msgstr "どのように実際にやっているのか情報をください、フィードバックや情報や例を歓迎します。"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:418
@@ -836,13 +827,10 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:433
-#, fuzzy
 msgid ""
 "Automatically running lintian (distributed as an example in <filename>/usr/"
 "share/doc/pbuilder/examples/B90lintian</filename>)."
-msgstr ""
-"自動的にlintian/lindaを実行する (例として <filename>/usr/share/doc/pbuilder/"
-"examples/B90linda</filename>が配布されている)。"
+msgstr "自動的にlintianを実行する (例として <filename>/usr/share/doc/pbuilder/examples/B90lintian</filename>が配布されている)。"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:437
@@ -851,20 +839,20 @@ msgid ""
 "removed from Debian.  A <command>pbuilder</command> implementation can be "
 "found as debian/pbuilder-test directory, implemented through B92test-pkg "
 "script."
-msgstr ""
+msgstr "自動的にパッケージの debian-test を行う? debian-test パッケージは Debian から削除されました。 <command>pbuilder</command> での代替は debian/pbuilder-test ディレクトリにあります。B92test-pkgスクリプトで実装されています。"
 
 # type: Content of: <book><chapter><sect1><para><footnote>
 #: pbuilder-doc.xml:444
 msgid ""
 "To use B92test-pkg script, first, add it to your hook directory.  <footnote>"
-msgstr ""
+msgstr "B92test-pkg を利用するためには、まずB92test-pkg スクリプトをフックディレクトリに追加してください。 <footnote>"
 
 # type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:446
 msgid ""
 "It is possible to specify <command>--hookdir /usr/share/doc/pbuilder/"
 "examples</command> command-line option to include all example hooks as well."
-msgstr ""
+msgstr "<command>--hookdir /usr/share/doc/pbuilder/examples</command> コマンドラインオプションを指定することですべてのサンプルフックを利用することが可能です。"
 
 # type: Content of: <book><chapter><sect1><para><footnote>
 #: pbuilder-doc.xml:449
@@ -873,6 +861,8 @@ msgid ""
 "pbuilder-test/NN_name</filename> (where NN is number) following run-parts "
 "standard<footnote>"
 msgstr ""
+"</footnote>。\n"
+"テストファイルは <filename>debian/pbuilder-test/NN_name</filename> (NN: 番号)に配置されたシェルスクリプトです。ファイル名規則は run-parts の標準にしたがいます。<footnote>"
 
 # type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:454
@@ -923,13 +913,14 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><para><screen>
 #: pbuilder-doc.xml:485
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\n"
 "EXTRAPACKAGES=\"pentium-builder gcc-3.2 g++-3.2\"\n"
 "export DEBIAN_BUILDARCH=athlon\n"
 "export DEBIAN_BUILDGCCVER=3.2"
 msgstr ""
+"\n"
 "EXTRAPACKAGES=\"pentium-builder gcc-3.2 g++-3.2\"\n"
 "export DEBIAN_BUILDARCH=athlon\n"
 "export DEBIAN_BUILDGCCVER=3.2"
@@ -1074,7 +1065,7 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><screen>
 #: pbuilder-doc.xml:589
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\n"
 "transport=tuntap\n"
@@ -1085,6 +1076,7 @@ msgid ""
 "uml=192.168.1.199\n"
 "netmask=255.255.255.0"
 msgstr ""
+"\n"
 "transport=tuntap\n"
 "interface=eth0\n"
 "gateway=192.168.1.1\n"
@@ -1131,7 +1123,7 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para><screen>
 #: pbuilder-doc.xml:621
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\n"
 "MY_ETH0=tuntap,,,192.168.1.198\n"
@@ -1142,6 +1134,7 @@ msgid ""
 "UML_GATEWAY=192.168.1.1\n"
 "PBUILDER_UML_IMAGE=\"/home/dancer/uml-image\""
 msgstr ""
+"\n"
 "MY_ETH0=tuntap,,,192.168.1.198\n"
 "UML_IP=192.168.1.199\n"
 "UML_NETMASK=255.255.255.0\n"
@@ -1222,14 +1215,14 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:678
 msgid "Parallel running of pbuilder-user-mode-linux"
-msgstr ""
+msgstr "pbuilder-user-mode-linux を複数同時に実行させる"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:680
 msgid ""
 "To run <command>pbuilder-user-mode-linux</command> in parallel on a system, "
 "there are a few things to bear in mind."
-msgstr ""
+msgstr "<command>pbuilder-user-mode-linux</command> を同一システム上で同時に複数実行させるにはいくつか注意するべき点があります。\n"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:685
@@ -1257,6 +1250,11 @@ msgid ""
 "    20030107/whizzytex_1.1.1-1.dsc &amp;\n"
 "done"
 msgstr ""
+"\n"
+"for IP in 102 103 104 105; do\n"
+"  xterm -e pbuilder-user-mode-linux build --uml-ip 192.168.0.$IP \\\n"
+"    20030107/whizzytex_1.1.1-1.dsc &amp;\n"
+"done"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:700
@@ -1280,7 +1278,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><command><option>
 #: pbuilder-doc.xml:712 pbuilder-doc.xml:818
 msgid "login"
-msgstr ""
+msgstr "login"
 
 # type: Content of: <book><chapter><sect1><para><command>
 #: pbuilder-doc.xml:712
@@ -1292,7 +1290,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><command><option>
 #: pbuilder-doc.xml:715
 msgid "execute"
-msgstr ""
+msgstr "execute"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:715
@@ -1385,7 +1383,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:775
 msgid "Directories that cannot be bind-mounted"
-msgstr ""
+msgstr "bind mount できないディレクトリ"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:777
@@ -1401,7 +1399,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:788
 msgid "Logging in to pbuilder to investigate build failure"
-msgstr ""
+msgstr "ビルド失敗の調査のために pbuilder 環境にログインする"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:790
@@ -1415,7 +1413,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:799
 msgid "Logging in to pbuilder to modify the environment"
-msgstr ""
+msgstr "環境を変更するために pbuilder 環境にログインする"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:801
@@ -1440,7 +1438,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:813
 msgid "It is also possible to add"
-msgstr ""
+msgstr "また別の方法としては"
 
 # type: Content of: <book><chapter><sect1><para><option>
 #: pbuilder-doc.xml:813
@@ -1680,9 +1678,8 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><para><command>
 #: pbuilder-doc.xml:918
-#, fuzzy
 msgid "</command>"
-msgstr "<command>"
+msgstr "</command>"
 
 # type: Content of: <book><chapter><sect1><para><command>
 #: pbuilder-doc.xml:921
@@ -1722,7 +1719,7 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><para><screen>
 #: pbuilder-doc.xml:938
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\n"
 "# cat /var/cache/pbuilder/hooks/D70results\n"
@@ -1731,6 +1728,7 @@ msgid ""
 "/usr/bin/dpkg-scanpackages . /dev/null &gt; /var/cache/pbuilder/result/Packages\n"
 "/usr/bin/apt-get update"
 msgstr ""
+"\n"
 "# cat /var/cache/pbuilder/hooks/D70results\n"
 "#!/bin/sh\n"
 "cd /var/cache/pbuilder/result/\n"
@@ -1803,11 +1801,11 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><screen>
 #: pbuilder-doc.xml:980
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\n"
 "\texport debian_chroot=\"pbuild$$\""
-msgstr "export debian_chroot=\"pbuild$$\""
+msgstr "\n        export debian_chroot=\"pbuild$$\""
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:982
@@ -2106,9 +2104,8 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><para><command>
 #: pbuilder-doc.xml:1155
-#, fuzzy
 msgid "<command>pdebuild"
-msgstr "<command>"
+msgstr "<command>pdebuild"
 
 # type: Content of: <book><chapter><sect1><screen>
 #: pbuilder-doc.xml:1155
@@ -2367,34 +2364,32 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><table><title>
 #: pbuilder-doc.xml:1302
 msgid "Directory structure of the testsuite"
-msgstr ""
+msgstr "テストスイートのディレクトリ構造"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><thead><row><entry>
 #: pbuilder-doc.xml:1308 pbuilder-doc.xml:1548 pbuilder-doc.xml:1612
 msgid "Directory"
-msgstr ""
+msgstr "ディレクトリ"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><thead><row><entry>
 #: pbuilder-doc.xml:1309 pbuilder-doc.xml:1549 pbuilder-doc.xml:1613
 msgid "Meaning"
-msgstr ""
+msgstr "意味"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1314
-#, fuzzy
 msgid "<filename>./testsuite/</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>./testsuite/</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1315
 msgid "Directory for testsuite"
-msgstr ""
+msgstr "テストスイートへのディレクトリ"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1318
-#, fuzzy
 msgid "<filename>./testsuite/run-test.sh</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>./testsuite/run-test.sh</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1319
@@ -2405,9 +2400,8 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1322
-#, fuzzy
 msgid "<filename>./testsuite/run-test.log</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>./testsuite/run-test.log</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1323
@@ -2474,19 +2468,19 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1347
 msgid "Files used for the regression testsuite."
-msgstr ""
+msgstr "回帰テストスイートに利用されるファイル"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1350
 msgid "<filename>./testsuite/regression/log/BugID-*.sh.log</filename>"
-msgstr ""
+msgstr "<filename>./testsuite/regression/log/BugID-*.sh.log</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1351
 msgid ""
 "Output of the regression test, output from the script is redirected by run-"
 "regression.sh"
-msgstr ""
+msgstr "回帰テストの出力、 run-regression.sh によりスクリプトの出力がリダイレクトされる"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1357
@@ -2521,7 +2515,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1379
 msgid "Using pbuilder for small experiments"
-msgstr ""
+msgstr "pbuilder を小規模な実験のために活用する"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1381
@@ -2571,7 +2565,7 @@ msgstr ""
 # type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1412
 msgid "Experimental or wish-list features of pbuilder"
-msgstr ""
+msgstr "実験的な pbuilder の wish-list 的な機能"
 
 # type: Content of: <book><chapter><para>
 #: pbuilder-doc.xml:1414
@@ -2583,7 +2577,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1418
 msgid "Using LVM"
-msgstr ""
+msgstr "LVMの活用"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1420
@@ -2599,7 +2593,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1429
 msgid "Using cowdancer"
-msgstr ""
+msgstr "cowdancer の活用"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1431
@@ -2626,6 +2620,10 @@ msgid ""
 "# cowbuilder --update --distribution sid\n"
 "# cowbuilder --build XXX.dsc"
 msgstr ""
+"\n"
+"# cowbuilder --create --distribution sid\n"
+"# cowbuilder --update --distribution sid\n"
+"# cowbuilder --build XXX.dsc"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1451
@@ -2637,7 +2635,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><para><option>
 #: pbuilder-doc.xml:1452
 msgid "--pbuilder"
-msgstr ""
+msgstr "--pbuilder"
 
 # type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1453
@@ -2650,12 +2648,12 @@ msgstr ""
 msgid ""
 "\n"
 "$ pdebuild --pbuilder cowbuilder"
-msgstr ""
+msgstr "\n$ pdebuild --pbuilder cowbuilder"
 
 # type: Content of: <book><chapter><sect1><sect2><title>
 #: pbuilder-doc.xml:1460
 msgid "Using cowdancer for sarge"
-msgstr ""
+msgstr "sarge 向けに cowdancer を利用する"
 
 # type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1462
@@ -2694,6 +2692,15 @@ msgid ""
 "deb     http://ftp.de.debian.org/debian sarge main\n"
 "deb-src http://ftp.de.debian.org/debian sarge main"
 msgstr ""
+"\n"
+"$ cat sources.list\n"
+"# sarge-backports\n"
+"deb     http://www.backports.org/debian sarge-backports main\n"
+"deb-src http://www.backports.org/debian sarge-backports main\n"
+"\n"
+"# sarge\n"
+"deb     http://ftp.de.debian.org/debian sarge main\n"
+"deb-src http://ftp.de.debian.org/debian sarge main"
 
 # type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1488
@@ -2713,6 +2720,12 @@ msgid ""
 "Pin: release a=sarge-backports\n"
 "Pin-Priority: 950"
 msgstr ""
+"\n"
+"$ cat preferences\n"
+"Explanation: use cowdancer from backports\n"
+"Package: cowdancer\n"
+"Pin: release a=sarge-backports\n"
+"Pin-Priority: 950"
 
 # type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1502
@@ -2742,13 +2755,14 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><para><screen>
 #: pbuilder-doc.xml:1517
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "\n"
 "# pbuilder create --distribution etch --no-targz --basetgz /chroot/etch\n"
 "# pbuilder create --distribution lenny --no-targz --basetgz /chroot/lenny\n"
 "# pbuilder create --distribution sid --no-targz --basetgz /chroot/sid"
 msgstr ""
+"\n"
 "# pbuilder create --distribution etch --no-targz --basetgz /chroot/etch\n"
 "# pbuilder create --distribution lenny --no-targz --basetgz /chroot/lenny\n"
 "# pbuilder create --distribution sid --no-targz --basetgz /chroot/sid"
@@ -2791,9 +2805,8 @@ msgstr "chroot 内部のディレクトリ構造"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1554
-#, fuzzy
 msgid "<filename>/etc/pbuilderrc</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>/etc/pbuilderrc</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1555
@@ -2882,9 +2895,8 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1588
-#, fuzzy
 msgid "<filename>/tmp</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>/tmp</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1589
@@ -2927,9 +2939,8 @@ msgstr "chroot 内部のディレクトリ構造"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1618
-#, fuzzy
 msgid "<filename>/etc/mtab</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>/etc/mtab</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1620
@@ -2938,9 +2949,8 @@ msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1624
-#, fuzzy
 msgid "<filename>/tmp/buildd</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>/tmp/buildd</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1625
@@ -2954,9 +2964,8 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1634
-#, fuzzy
 msgid "<filename>/run</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>/run</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1635
@@ -2967,9 +2976,8 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1641
-#, fuzzy
 msgid "<filename>/tmp/hooks</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>/tmp/hooks</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1643
@@ -2978,9 +2986,8 @@ msgstr "フックの場所。"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1647
-#, fuzzy
 msgid "<filename>/var/cache/apt/archives</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>/var/cache/apt/archives</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1649
@@ -2993,9 +3000,8 @@ msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1654
-#, fuzzy
 msgid "<filename>/tmp/XXXX</filename>"
-msgstr " <filename>/proc/mounts</filename>へのシンボリックリンク。"
+msgstr "<filename>/tmp/XXXX</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1655
@@ -3131,7 +3137,7 @@ msgstr ""
 # type: Content of: <book><chapter><sect1><sect2><title>
 #: pbuilder-doc.xml:1752
 msgid "And the second year of its life"
-msgstr ""
+msgstr "そして二年目の人生"
 
 # type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1754
