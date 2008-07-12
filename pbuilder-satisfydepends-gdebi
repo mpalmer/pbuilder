@@ -24,8 +24,15 @@ set -e
 
 function checkbuilddep_internal () {
     $CHROOTEXEC apt-get -y --force-yes install gdebi-core
-    INSTALL=$($CHROOTEXEC /usr/bin/gdebi --quiet --apt-line $DEBIAN_CONTROL)
-    $CHROOTEXEC /usr/bin/apt-get install -y $INSTALL
+    NO_RECOMMENDS=""
+    if VERSION=$($CHROOTEXEC /usr/bin/gdebi --version 2>/dev/null); then
+        if dpkg --compare-versions $VERSION ge 0.3.9; then
+            NO_RECOMMENDS="-o APT::Install-Recommends=false"
+        fi
+    fi
+
+    INSTALL=$($CHROOTEXEC /usr/bin/gdebi --quiet --apt-line $NO_RECOMMENDS $DEBIAN_CONTROL)
+    $CHROOTEXEC /usr/bin/apt-get install -y --force-yes $INSTALL
 }
 
 . /usr/lib/pbuilder/pbuilder-satisfydepends-checkparams
