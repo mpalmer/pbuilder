@@ -1,8 +1,30 @@
-pbuilder (0.182) UNRELEASED; urgency=low
+pbuilder (0.182) unstable; urgency=low
 
+  [ Junichi Uekawa ]
+  * updated japanese documentation ja.po
+  * implement a bash functional unit-testing testsuite, testlib.
+  * run the unit-tests in makefile make check
+  * Reorder command-line options, and add error check so that things are
+    better checked.
+  * update japanese po translation.
+
+  [ Ignacio Mondino ]
+  * [INTL:es] Spanish translation for po-debconf template (closes:
+    #493649)
+
+  [ Loïc Minier ]
+  * Pass APT::Install-Recommends=false to gdebi when possible
+  * Wrap build-deps, deps, and uploaders to get cleaner diffs.
+  * Suggest gdebi; closes: #488314.
+  * Pass -s to dh_* instead of checking dpkg-architecture and using -a
+  * Cleanup rules
+  * pbuilder-buildpackage-funcs: always pass chroot to satisfydepends
+  * Drop build-dep on rootstrap; only used at runtime
+  * pdebuild: Move "$@" to end of "arg chain" for PDEBUILD_BUILDER calls
+  * pbuilder-satisfydepends-gdebi: add "--force-yes" to apt-get call
   * UNRELEASED snapshot banner
 
- -- Loic Minier <lool@dooz.org>  Fri, 27 Jun 2008 19:11:12 +0200
+ -- Junichi Uekawa <dancer@debian.org>  Tue, 12 Aug 2008 01:56:28 +0900
 
 pbuilder (0.181) unstable; urgency=low
 
