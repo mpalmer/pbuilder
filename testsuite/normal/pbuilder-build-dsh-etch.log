@@ -14,7 +14,7 @@ dpkg-architecture: warning: no utmp entry available and LOGNAME not defined; usi
  -> Creating pbuilder-satisfydepends-dummy package
 Package: pbuilder-satisfydepends-dummy
 Version: 0.invalid.0
-Architecture: amd64
+Architecture: i386
 Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
 Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
  This package was created automatically by pbuilder and should
@@ -25,7 +25,7 @@ Building dependency tree...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 12048 files and directories currently installed.)
+(Reading database ... 12124 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -54,34 +54,34 @@ The following NEW packages will be installed:
 The following packages are RECOMMENDED but will NOT be installed:
   libcompress-zlib-perl libmail-sendmail-perl libterm-readkey-perl 
 0 packages upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
-Need to get 5778kB of archives. After unpacking 18.9MB will be used.
+Need to get 5654kB of archives. After unpacking 17.7MB will be used.
 Writing extended state information...
-Get:1 http://cdn.debian.or.jp etch/main libmagic1 4.17-5etch3 [277kB]
-Get:2 http://cdn.debian.or.jp etch/main file 4.17-5etch3 [32.3kB]
-Get:3 http://cdn.debian.or.jp etch/main html2text 1.3.2a-3 [92.7kB]
-Get:4 http://cdn.debian.or.jp etch/main gettext-base 0.16.1-1 [132kB]
-Get:5 http://cdn.debian.or.jp etch/main gettext 0.16.1-1 [2261kB]
-Get:6 http://cdn.debian.or.jp etch/main intltool-debian 0.35.0+20060710.1 [30.8kB]
-Get:7 http://cdn.debian.or.jp etch/main po-debconf 1.0.8 [111kB]
-Get:8 http://cdn.debian.or.jp etch/main debhelper 5.0.42 [510kB]
-Get:9 http://cdn.debian.or.jp etch/main libdshconfig1 0.20.12-2 [10.9kB]
-Get:10 http://cdn.debian.or.jp etch/main libdshconfig1-dev 0.20.12-2 [25.3kB]
-Get:11 http://cdn.debian.or.jp etch/main libsgmls-perl 1.03ii-31 [29.3kB]
-Get:12 http://cdn.debian.or.jp etch/main libsp1c2 1.3.4-1.2.1-47 [1386kB]
-Get:13 http://cdn.debian.or.jp etch/main sp 1.3.4-1.2.1-47 [182kB]
-Get:14 http://cdn.debian.or.jp etch/main po4a 0.29-1etch1 [697kB]
+Get:1 http://localhost etch/main libmagic1 4.17-5etch3 [275kB]
+Get:2 http://localhost etch/main file 4.17-5etch3 [31.9kB]
+Get:3 http://localhost etch/main html2text 1.3.2a-3 [98.9kB]
+Get:4 http://localhost etch/main gettext-base 0.16.1-1 [123kB]
+Get:5 http://localhost etch/main gettext 0.16.1-1 [2190kB]
+Get:6 http://localhost etch/main intltool-debian 0.35.0+20060710.1 [30.8kB]
+Get:7 http://localhost etch/main po-debconf 1.0.8 [111kB]
+Get:8 http://localhost etch/main debhelper 5.0.42 [510kB]
+Get:9 http://localhost etch/main libdshconfig1 0.20.12-2 [10.6kB]
+Get:10 http://localhost etch/main libdshconfig1-dev 0.20.12-2 [25.1kB]
+Get:11 http://localhost etch/main libsgmls-perl 1.03ii-31 [29.3kB]
+Get:12 http://localhost etch/main libsp1c2 1.3.4-1.2.1-47 [1345kB]
+Get:13 http://localhost etch/main sp 1.3.4-1.2.1-47 [176kB]
+Get:14 http://localhost etch/main po4a 0.29-1etch1 [697kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 12048 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.17-5etch3_amd64.deb) ...
+(Reading database ... 12124 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.17-5etch3_i386.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../file_4.17-5etch3_amd64.deb) ...
+Unpacking file (from .../file_4.17-5etch3_i386.deb) ...
 Selecting previously deselected package html2text.
-Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
+Unpacking html2text (from .../html2text_1.3.2a-3_i386.deb) ...
 Selecting previously deselected package gettext-base.
-Unpacking gettext-base (from .../gettext-base_0.16.1-1_amd64.deb) ...
+Unpacking gettext-base (from .../gettext-base_0.16.1-1_i386.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.16.1-1_amd64.deb) ...
+Unpacking gettext (from .../gettext_0.16.1-1_i386.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
 Selecting previously deselected package po-debconf.
@@ -89,15 +89,15 @@ Unpacking po-debconf (from .../po-debconf_1.0.8_all.deb) ...
 Selecting previously deselected package debhelper.
 Unpacking debhelper (from .../debhelper_5.0.42_all.deb) ...
 Selecting previously deselected package libdshconfig1.
-Unpacking libdshconfig1 (from .../libdshconfig1_0.20.12-2_amd64.deb) ...
+Unpacking libdshconfig1 (from .../libdshconfig1_0.20.12-2_i386.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
-Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.12-2_amd64.deb) ...
+Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.12-2_i386.deb) ...
 Selecting previously deselected package libsgmls-perl.
 Unpacking libsgmls-perl (from .../libsgmls-perl_1.03ii-31_all.deb) ...
 Selecting previously deselected package libsp1c2.
-Unpacking libsp1c2 (from .../libsp1c2_1.3.4-1.2.1-47_amd64.deb) ...
+Unpacking libsp1c2 (from .../libsp1c2_1.3.4-1.2.1-47_i386.deb) ...
 Selecting previously deselected package sp.
-Unpacking sp (from .../sp_1.3.4-1.2.1-47_amd64.deb) ...
+Unpacking sp (from .../sp_1.3.4-1.2.1-47_i386.deb) ...
 Selecting previously deselected package po4a.
 Unpacking po4a (from .../po4a_0.29-1etch1_all.deb) ...
 Setting up libmagic1 (4.17-5etch3) ...
@@ -128,13 +128,13 @@ Building dependency tree...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 97.4kB of archives.
-After unpacking 406kB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp etch/main fakeroot 1.5.10 [97.4kB]
+Need to get 96.2kB of archives.
+After unpacking 311kB of additional disk space will be used.
+Get:1 http://localhost etch/main fakeroot 1.5.10 [96.2kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12974 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.5.10_amd64.deb) ...
+(Reading database ... 13047 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.5.10_i386.deb) ...
 Setting up fakeroot (1.5.10) ...
 
 Copying source file
@@ -151,7 +151,7 @@ dpkg-source: applying ./dsh_0.25.10-1.diff.gz
  -> Building the package
 dpkg-buildpackage: source package is dsh
 dpkg-buildpackage: source version is 0.25.10-1
-dpkg-buildpackage: host architecture amd64
+dpkg-buildpackage: host architecture i386
 dpkg-buildpackage: source version without epoch 0.25.10-1
  fakeroot debian/rules clean
 dh_testdir
@@ -171,8 +171,8 @@ dh_clean
  dpkg-source -b dsh-0.25.10
 dpkg-source: building dsh using existing dsh_0.25.10.orig.tar.gz
 dpkg-source: building dsh in dsh_0.25.10-1.diff.gz
-dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
 dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
+dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
 dpkg-source: building dsh in dsh_0.25.10-1.dsc
  debian/rules build
 dh_testdir
@@ -212,8 +212,8 @@ checking for grep that handles long lines and -e... /bin/grep
 checking for egrep... /bin/grep -E
 checking for ANSI C header files... yes
 checking for sys/wait.h that is POSIX.1 compatible... yes
-checking build system type... x86_64-unknown-linux-gnu
-checking host system type... x86_64-unknown-linux-gnu
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
 checking for a sed that does not truncate output... /bin/sed
 checking for ld used by gcc... /usr/bin/ld
 checking if the linker (/usr/bin/ld) is GNU ld... yes
@@ -276,7 +276,7 @@ checking for gcc option to produce PIC... -fPIC
 checking if gcc PIC flag -fPIC works... yes
 checking if gcc static flag -static works... yes
 checking if gcc supports -c -o file.o... yes
-checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
 checking whether -lc should be explicitly linked in... no
 checking dynamic linker characteristics... GNU/Linux ld.so
 checking how to hardcode library paths into programs... immediate
@@ -286,14 +286,14 @@ checking whether to build shared libraries... yes
 checking whether to build static libraries... yes
 configure: creating libtool
 appending configuration tag "CXX" to libtool
-checking for ld used by g++... /usr/bin/ld -m elf_x86_64
-checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
-checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for ld used by g++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
 checking for g++ option to produce PIC... -fPIC
 checking if g++ PIC flag -fPIC works... yes
 checking if g++ static flag -static works... yes
 checking if g++ supports -c -o file.o... yes
-checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
 checking dynamic linker characteristics... GNU/Linux ld.so
 checking how to hardcode library paths into programs... immediate
 appending configuration tag "F77" to libtool
@@ -302,8 +302,8 @@ checking for msgfmt... /usr/bin/msgfmt
 checking for gmsgfmt... /usr/bin/msgfmt
 checking for xgettext... /usr/bin/xgettext
 checking for msgmerge... /usr/bin/msgmerge
-checking for ld used by GCC... /usr/bin/ld -m elf_x86_64
-checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
 checking for shared library run path origin... done
 checking whether NLS is requested... yes
 checking for GNU gettext in libc... yes
@@ -454,7 +454,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Mar 28 03:10:06 UTC 2008
+Mon Aug 11 15:50:15 UTC 2008
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -524,13 +524,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Fri Mar 28 03:10:11 UTC 2008
+Mon Aug 11 15:50:20 UTC 2008
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-dsh: Process terminated (before write).
 b: b
+dsh: Process terminated (before write).
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -618,7 +618,7 @@ dh_installdeb
 dh_gencontrol
 dh_md5sums
 dh_builddeb
-dpkg-deb: building package `dsh' in `../dsh_0.25.10-1_amd64.deb'.
+dpkg-deb: building package `dsh' in `../dsh_0.25.10-1_i386.deb'.
  dpkg-genchanges -mJunichi Uekawa <dancer@debian.org>
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)

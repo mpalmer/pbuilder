@@ -16,36 +16,38 @@ The following extra packages will be installed:
 Suggested packages:
   pbuilder-uml
 Recommended packages:
-  cowdancer devscripts fakeroot sudo
+  fakeroot sudo devscripts cowdancer
 The following NEW packages will be installed:
   cdebootstrap libdebian-installer-extra4 libdebian-installer4 pbuilder
 0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
-Need to get 295kB of archives.
-After this operation, 1368kB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp lenny/main libdebian-installer4 0.55 [29.1kB]
-Get:2 http://cdn.debian.or.jp lenny/main libdebian-installer-extra4 0.55 [10.9kB]
-Get:3 http://cdn.debian.or.jp lenny/main cdebootstrap 0.4.9 [33.2kB]
-Get:4 http://cdn.debian.or.jp lenny/main pbuilder 0.178 [222kB]
+Need to get 298kB of archives.
+After this operation, 1241kB of additional disk space will be used.
+Get:1 http://localhost lenny/main libdebian-installer4 0.58 [26.6kB]
+Get:2 http://localhost lenny/main libdebian-installer-extra4 0.58 [10.9kB]
+Get:3 http://localhost lenny/main cdebootstrap 0.5.3 [29.5kB]
+Get:4 http://localhost lenny/main pbuilder 0.181 [231kB]
+Preconfiguring packages ...
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libdebian-installer4.
-(Reading database ... 10992 files and directories currently installed.)
-Unpacking libdebian-installer4 (from .../libdebian-installer4_0.55_amd64.deb) ...
+(Reading database ... 11444 files and directories currently installed.)
+Unpacking libdebian-installer4 (from .../libdebian-installer4_0.58_i386.deb) ...
 Selecting previously deselected package libdebian-installer-extra4.
-Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.55_amd64.deb) ...
+Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.58_i386.deb) ...
 Selecting previously deselected package cdebootstrap.
-Unpacking cdebootstrap (from .../cdebootstrap_0.4.9_amd64.deb) ...
+Unpacking cdebootstrap (from .../cdebootstrap_0.5.3_i386.deb) ...
 Selecting previously deselected package pbuilder.
-Unpacking pbuilder (from .../pbuilder_0.178_all.deb) ...
-Setting up libdebian-installer4 (0.55) ...
-Setting up libdebian-installer-extra4 (0.55) ...
-Setting up cdebootstrap (0.4.9) ...
-Setting up pbuilder (0.178) ...
+Unpacking pbuilder (from .../pbuilder_0.181_all.deb) ...
+Processing triggers for man-db ...
+Setting up libdebian-installer4 (0.58) ...
+Setting up libdebian-installer-extra4 (0.58) ...
+Setting up cdebootstrap (0.5.3) ...
+Setting up pbuilder (0.181) ...
 Setting DEBBUILDOPTS=
  -> Attempting to satisfy build-dependencies
  -> Creating pbuilder-satisfydepends-dummy package
 Package: pbuilder-satisfydepends-dummy
 Version: 0.invalid.0
-Architecture: amd64
+Architecture: i386
 Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
 Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
  This package was created automatically by pbuilder and should
@@ -57,7 +59,7 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 11118 files and directories currently installed.)
+(Reading database ... 11567 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -76,78 +78,74 @@ Reading state information...
 Initializing package states...
 Writing extended state information...
 Reading task descriptions...
-Building tag database...
 The following NEW packages will be installed:
   debhelper{a} file{a} gettext{a} gettext-base{a} html2text{a} 
-  intltool-debian{a} libdshconfig1{a} libdshconfig1-dev{a} libgomp1{a} 
-  libmagic1{a} libsgmls-perl{a} libsp1c2{a} po-debconf{a} po4a{a} sp{a} 
+  intltool-debian{a} libdshconfig1{a} libdshconfig1-dev{a} libmagic1{a} 
+  libsgmls-perl{a} libsp1c2{a} po-debconf{a} po4a{a} sp{a} 
 The following partially installed packages will be configured:
   pbuilder-satisfydepends-dummy 
-0 packages upgraded, 15 newly installed, 0 to remove and 0 not upgraded.
-Need to get 6591kB of archives. After unpacking 21.1MB will be used.
+0 packages upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
+Need to get 6546kB of archives. After unpacking 19.6MB will be used.
 Writing extended state information...
-Get:1 http://cdn.debian.or.jp lenny/main libmagic1 4.23-2 [343kB]
-Get:2 http://cdn.debian.or.jp lenny/main file 4.23-2 [41.8kB]
-Get:3 http://cdn.debian.or.jp lenny/main html2text 1.3.2a-3 [92.7kB]
-Get:4 http://cdn.debian.or.jp lenny/main gettext-base 0.17-2 [130kB]
-Get:5 http://cdn.debian.or.jp lenny/main libgomp1 4.3.0-1 [15.5kB]
-Get:6 http://cdn.debian.or.jp lenny/main gettext 0.17-2 [2763kB]
-Get:7 http://cdn.debian.or.jp lenny/main intltool-debian 0.35.0+20060710.1 [30.8kB]
-Get:8 http://cdn.debian.or.jp lenny/main po-debconf 1.0.12.1 [237kB]
-Get:9 http://cdn.debian.or.jp lenny/main debhelper 6.0.5 [519kB]
-Get:10 http://cdn.debian.or.jp lenny/main libdshconfig1 0.20.13-1 [11.0kB]
-Get:11 http://cdn.debian.or.jp lenny/main libdshconfig1-dev 0.20.13-1 [25.4kB]
-Get:12 http://cdn.debian.or.jp lenny/main libsgmls-perl 1.03ii-32 [27.8kB]
-Get:13 http://cdn.debian.or.jp lenny/main libsp1c2 1.3.4-1.2.1-47 [1386kB]
-Get:14 http://cdn.debian.or.jp lenny/main sp 1.3.4-1.2.1-47 [182kB]
-Get:15 http://cdn.debian.or.jp lenny/main po4a 0.33.1-1 [786kB]
+Get:1 http://localhost lenny/main libmagic1 4.25-1 [367kB]
+Get:2 http://localhost lenny/main file 4.25-1 [44.0kB]
+Get:3 http://localhost lenny/main html2text 1.3.2a-5 [91.5kB]
+Get:4 http://localhost lenny/main gettext-base 0.17-3 [117kB]
+Get:5 http://localhost lenny/main gettext 0.17-3 [2672kB]
+Get:6 http://localhost lenny/main intltool-debian 0.35.0+20060710.1 [30.8kB]
+Get:7 http://localhost lenny/main po-debconf 1.0.15 [237kB]
+Get:8 http://localhost lenny/main debhelper 7.0.15 [554kB]
+Get:9 http://localhost lenny/main libdshconfig1 0.20.13-1 [10.7kB]
+Get:10 http://localhost lenny/main libdshconfig1-dev 0.20.13-1 [25.2kB]
+Get:11 http://localhost lenny/main libsgmls-perl 1.03ii-32 [27.8kB]
+Get:12 http://localhost lenny/main libsp1c2 1.3.4-1.2.1-47 [1345kB]
+Get:13 http://localhost lenny/main sp 1.3.4-1.2.1-47 [176kB]
+Get:14 http://localhost lenny/main po4a 0.34-2 [847kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 11118 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_4.23-2_amd64.deb) ...
+(Reading database ... 11567 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_4.25-1_i386.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_4.23-2_amd64.deb) ...
+Unpacking file (from .../archives/file_4.25-1_i386.deb) ...
 Selecting previously deselected package html2text.
-Unpacking html2text (from .../html2text_1.3.2a-3_amd64.deb) ...
+Unpacking html2text (from .../html2text_1.3.2a-5_i386.deb) ...
 Selecting previously deselected package gettext-base.
-Unpacking gettext-base (from .../gettext-base_0.17-2_amd64.deb) ...
-Selecting previously deselected package libgomp1.
-Unpacking libgomp1 (from .../libgomp1_4.3.0-1_amd64.deb) ...
+Unpacking gettext-base (from .../gettext-base_0.17-3_i386.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.17-2_amd64.deb) ...
+Unpacking gettext (from .../gettext_0.17-3_i386.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
 Selecting previously deselected package po-debconf.
-Unpacking po-debconf (from .../po-debconf_1.0.12.1_all.deb) ...
+Unpacking po-debconf (from .../po-debconf_1.0.15_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_6.0.5_all.deb) ...
+Unpacking debhelper (from .../debhelper_7.0.15_all.deb) ...
 Selecting previously deselected package libdshconfig1.
-Unpacking libdshconfig1 (from .../libdshconfig1_0.20.13-1_amd64.deb) ...
+Unpacking libdshconfig1 (from .../libdshconfig1_0.20.13-1_i386.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
-Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.13-1_amd64.deb) ...
+Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.13-1_i386.deb) ...
 Selecting previously deselected package libsgmls-perl.
 Unpacking libsgmls-perl (from .../libsgmls-perl_1.03ii-32_all.deb) ...
 Selecting previously deselected package libsp1c2.
-Unpacking libsp1c2 (from .../libsp1c2_1.3.4-1.2.1-47_amd64.deb) ...
+Unpacking libsp1c2 (from .../libsp1c2_1.3.4-1.2.1-47_i386.deb) ...
 Selecting previously deselected package sp.
-Unpacking sp (from .../sp_1.3.4-1.2.1-47_amd64.deb) ...
+Unpacking sp (from .../sp_1.3.4-1.2.1-47_i386.deb) ...
 Selecting previously deselected package po4a.
-Unpacking po4a (from .../archives/po4a_0.33.1-1_all.deb) ...
-Setting up libmagic1 (4.23-2) ...
-Setting up file (4.23-2) ...
-Setting up html2text (1.3.2a-3) ...
-Setting up gettext-base (0.17-2) ...
-Setting up libgomp1 (4.3.0-1) ...
-Setting up gettext (0.17-2) ...
+Unpacking po4a (from .../archives/po4a_0.34-2_all.deb) ...
+Processing triggers for man-db ...
+Setting up libmagic1 (4.25-1) ...
+Setting up file (4.25-1) ...
+Setting up html2text (1.3.2a-5) ...
+Setting up gettext-base (0.17-3) ...
+Setting up gettext (0.17-3) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
-Setting up po-debconf (1.0.12.1) ...
-Setting up debhelper (6.0.5) ...
+Setting up po-debconf (1.0.15) ...
+Setting up debhelper (7.0.15) ...
 Setting up libdshconfig1 (0.20.13-1) ...
 Setting up libdshconfig1-dev (0.20.13-1) ...
 Setting up libsgmls-perl (1.03ii-32) ...
 Setting up libsp1c2 (1.3.4-1.2.1-47) ...
 Setting up sp (1.3.4-1.2.1-47) ...
-Setting up po4a (0.33.1-1) ...
+Setting up po4a (0.34-2) ...
 Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
 Reading package lists...
 Building dependency tree...
@@ -156,7 +154,6 @@ Reading extended state information...
 Initializing package states...
 Writing extended state information...
 Reading task descriptions...
-Building tag database...
  -> Finished parsing the build-deps
 Reading package lists...
 Building dependency tree...
@@ -164,18 +161,24 @@ Reading state information...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 115kB of archives.
-After this operation, 463kB of additional disk space will be used.
-Get:1 http://cdn.debian.or.jp lenny/main fakeroot 1.9.3 [115kB]
+Need to get 113kB of archives.
+After this operation, 365kB of additional disk space will be used.
+Get:1 http://localhost lenny/main fakeroot 1.9.5 [113kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 12129 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.9.3_amd64.deb) ...
-Setting up fakeroot (1.9.3) ...
+(Reading database ... 12633 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.9.5_i386.deb) ...
+Processing triggers for man-db ...
+Setting up fakeroot (1.9.5) ...
+dpkg-buildpackage: set CFLAGS to default value: -g -O2
+dpkg-buildpackage: set CPPFLAGS to default value: 
+dpkg-buildpackage: set LDFLAGS to default value: 
+dpkg-buildpackage: set FFLAGS to default value: -g -O2
+dpkg-buildpackage: set CXXFLAGS to default value: -g -O2
 dpkg-buildpackage: source package dsh
 dpkg-buildpackage: source version 0.25.10-1
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
-dpkg-buildpackage: host architecture amd64
+dpkg-buildpackage: host architecture i386
  fakeroot debian/rules clean
 dh_testdir
 dh_testroot
@@ -192,11 +195,12 @@ make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
 make: [clean] Error 2 (ignored)
 dh_clean
  dpkg-source -b dsh-0.25.10
-dpkg-source: building dsh using existing dsh_0.25.10.orig.tar.gz
-dpkg-source: building dsh in dsh_0.25.10-1.diff.gz
-dpkg-source: warning: file debian/compat has no final newline (either original or modified version)
-dpkg-source: warning: file dcp.sh has no final newline (either original or modified version)
-dpkg-source: building dsh in dsh_0.25.10-1.dsc
+dpkg-source: info: using source format `1.0'
+dpkg-source: info: building dsh using existing dsh_0.25.10.orig.tar.gz
+dpkg-source: info: building dsh in dsh_0.25.10-1.diff.gz
+dpkg-source: warning: file dsh-0.25.10/dcp.sh has no final newline (either original or modified version)
+dpkg-source: warning: file dsh-0.25.10/debian/compat has no final newline (either original or modified version)
+dpkg-source: info: building dsh in dsh_0.25.10-1.dsc
  debian/rules build
 dh_testdir
 INSTALL_PROGRAM='install -p    -o root -g root  -m  755 -s' CFLAGS='-Wall -g -O2' \
@@ -235,8 +239,8 @@ checking for grep that handles long lines and -e... /bin/grep
 checking for egrep... /bin/grep -E
 checking for ANSI C header files... yes
 checking for sys/wait.h that is POSIX.1 compatible... yes
-checking build system type... x86_64-unknown-linux-gnu
-checking host system type... x86_64-unknown-linux-gnu
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
 checking for a sed that does not truncate output... /bin/sed
 checking for ld used by gcc... /usr/bin/ld
 checking if the linker (/usr/bin/ld) is GNU ld... yes
@@ -299,7 +303,7 @@ checking for gcc option to produce PIC... -fPIC
 checking if gcc PIC flag -fPIC works... yes
 checking if gcc static flag -static works... yes
 checking if gcc supports -c -o file.o... yes
-checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether the gcc linker (/usr/bin/ld) supports shared libraries... yes
 checking whether -lc should be explicitly linked in... no
 checking dynamic linker characteristics... GNU/Linux ld.so
 checking how to hardcode library paths into programs... immediate
@@ -309,14 +313,14 @@ checking whether to build shared libraries... yes
 checking whether to build static libraries... yes
 configure: creating libtool
 appending configuration tag "CXX" to libtool
-checking for ld used by g++... /usr/bin/ld -m elf_x86_64
-checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
-checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for ld used by g++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
 checking for g++ option to produce PIC... -fPIC
 checking if g++ PIC flag -fPIC works... yes
 checking if g++ static flag -static works... yes
 checking if g++ supports -c -o file.o... yes
-checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
 checking dynamic linker characteristics... GNU/Linux ld.so
 checking how to hardcode library paths into programs... immediate
 appending configuration tag "F77" to libtool
@@ -325,8 +329,8 @@ checking for msgfmt... /usr/bin/msgfmt
 checking for gmsgfmt... /usr/bin/msgfmt
 checking for xgettext... /usr/bin/xgettext
 checking for msgmerge... /usr/bin/msgmerge
-checking for ld used by GCC... /usr/bin/ld -m elf_x86_64
-checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
 checking for shared library run path origin... done
 checking whether NLS is requested... yes
 checking for GNU gettext in libc... yes
@@ -477,7 +481,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Mar 28 03:46:20 UTC 2008
+Mon Aug 11 16:31:26 UTC 2008
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -547,13 +551,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Fri Mar 28 03:46:25 UTC 2008
+Mon Aug 11 16:31:31 UTC 2008
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-dsh: Process terminated (before write).
 b: b
+dsh: Process terminated (before write).
 c: c
 PASS: tests/segv-catcher.sh
 l w
@@ -641,8 +645,8 @@ dh_installdeb
 dh_gencontrol
 dh_md5sums
 dh_builddeb
-dpkg-deb: building package `dsh' in `../dsh_0.25.10-1_amd64.deb'.
- dpkg-genchanges  >../dsh_0.25.10-1_amd64.changes
+dpkg-deb: building package `dsh' in `../dsh_0.25.10-1_i386.deb'.
+ dpkg-genchanges  >../dsh_0.25.10-1_i386.changes
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
  -> unmounting /TESTDIR/dir2 filesystem
