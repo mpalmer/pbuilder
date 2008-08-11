@@ -1,3 +1,4 @@
 #!/bin/bash
 env -u COWDANCER_REUSE -u COWDANCER_ILISTFILE -u LD_PRELOAD \
-pbuilder create --distribution sid --debootstrap debootstrap
+    pbuilder create --distribution sid --debootstrap debootstrap \
+    --mirror http://localhost:9999/debian
