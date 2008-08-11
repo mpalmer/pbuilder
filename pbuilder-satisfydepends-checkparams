@@ -25,7 +25,7 @@ BD_REGEXP="build-(depends|depends-indep)"
 BC_REGEXP="build-(conflicts|conflicts-indep)"
 FORCEVERSION=""
 CONTINUE_FAIL="no"
-
+CHROOTEXEC_AFTER_INTERNAL_CHROOTEXEC=no
 
 while [ -n "$1" ]; do
     case "$1" in
@@ -33,12 +33,20 @@ while [ -n "$1" ]; do
 	    DEBIAN_CONTROL="$2"
 	    shift; shift
 	    ;;
+
+	# --chroot option and --internal-chrootexec options conflict with each other.
+	# 
 	--chroot)
 	    CHROOTEXEC="chroot $2 "
+	    if [ ${CHROOTEXEC_AFTER_INTERNAL_CHROOTEXEC} = maybe ]; then
+		echo '--chroot specified after --internal-chrootexec' >&2
+		exit 1
+	    fi
 	    shift; shift
 	    ;;
 	--internal-chrootexec)
 	    CHROOTEXEC="$2"
+	    CHROOTEXEC_AFTER_INTERNAL_CHROOTEXEC=maybe
 	    shift; shift 
 	    ;;
 	--binary-all)
@@ -69,6 +77,5 @@ while [ -n "$1" ]; do
 	    ;;
     esac
 done
-
 
 checkbuilddep_internal
