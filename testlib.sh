@@ -11,8 +11,7 @@ TESTLIB_TESTS=0
 testlib_echo() {
     case "$1" in
 	OK)
-	    shift
-	    echo "[OK  ]" "$@" >&2 
+	    # no output is probably good.
     	    ;;
 	FAIL)
 	    shift
@@ -24,10 +23,11 @@ testlib_echo() {
 }
 
 testlib_summary() {
-    echo "Ran ${TESTLIB_TESTS} tests and ${TESTLIB_FAILS} failed"
+    echo "$0: Ran ${TESTLIB_TESTS} tests and $((TESTLIB_TESTS - TESTLIB_FAILS)) succeeded, ${TESTLIB_FAILS} failed"
     if [ $TESTLIB_FAILS != 0 ]; then
 	echo '================='
 	echo 'Testsuite FAILED!'
+	echo "  $0"
 	echo '================='
 	exit 1
     fi
@@ -69,6 +69,7 @@ expect_output() {
 }
 
 #   Write your functions test_xxxx and call them at the end with their expected result code:
+# . ./testlib.sh
 # expect_success test_success
 # expect_success test_fail
 # expect_success test_options "hello world"
