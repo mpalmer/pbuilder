@@ -58,13 +58,13 @@ expect_fail() {
 
 expect_output() {
     # run the test in subshell
-    local val
-    val="$1"; 
-    shift 
-    if [ $( "$@" ) = "$1" ]; then
+    local val result
+    val="$1"; shift 
+    result="$( ( "$@" 2>&1 ) )"|| true
+    if [ "${result}" = "${val}" ]; then
 	testlib_echo "OK" "$1"
     else
-	testlib_echo "FAIL" "$1"
+	testlib_echo "FAIL" "$1 reason: [${result}] != [${val}]" 
     fi
 }
 

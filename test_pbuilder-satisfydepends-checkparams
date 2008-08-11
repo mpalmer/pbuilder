@@ -9,16 +9,36 @@ checkbuilddep_internal() {
     : # do nothing function    
 }
 
-test_chrootexec1() {
-    set -- --chroot /tmp --internal-chrootexec 'chroot /tmp-hoge '
-    . ./pbuilder-satisfydepends-checkparams
-}
-
 test_chrootexec2() {
     set -- --internal-chrootexec 'chroot /tmp-hoge ' --chroot /tmp
     . ./pbuilder-satisfydepends-checkparams
 }
-
-expect_success test_chrootexec1
 expect_fail test_chrootexec2
+
+test_chrootexec1() {
+    set -- --chroot /tmp --internal-chrootexec 'chroot /tmp-hoge '
+    . ./pbuilder-satisfydepends-checkparams
+}
+expect_success test_chrootexec1
+
+test_chrootexec_echo() {
+    set -- --echo --chroot /tmp
+    . ./pbuilder-satisfydepends-checkparams
+}
+expect_fail test_chrootexec_echo
+
+test_chrootexec_echo2() {
+    set -- --chroot /tmp --echo 
+    . ./pbuilder-satisfydepends-checkparams
+    echo $CHROOTEXEC
+}
+expect_output "echo chroot /tmp" test_chrootexec_echo2 
+
+test_chrootexec_expect() {
+    set -- --chroot /tmp --internal-chrootexec 'chroot /tmp-hoge '
+    . ./pbuilder-satisfydepends-checkparams
+    echo $CHROOTEXEC
+}
+expect_output "chroot /tmp-hoge" test_chrootexec_expect 
+
 testlib_summary

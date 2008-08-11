@@ -34,8 +34,8 @@ while [ -n "$1" ]; do
 	    shift; shift
 	    ;;
 
-	# --chroot option and --internal-chrootexec options conflict with each other.
-	# 
+	# --chroot option and --internal-chrootexec options and --echo options somewhat conflict with each other.
+
 	--chroot)
 	    CHROOTEXEC="chroot $2 "
 	    if [ ${CHROOTEXEC_AFTER_INTERNAL_CHROOTEXEC} = maybe ]; then
@@ -49,6 +49,12 @@ while [ -n "$1" ]; do
 	    CHROOTEXEC_AFTER_INTERNAL_CHROOTEXEC=maybe
 	    shift; shift 
 	    ;;
+	--echo)
+	    CHROOTEXEC="echo $CHROOTEXEC"
+	    CHROOTEXEC_AFTER_INTERNAL_CHROOTEXEC=maybe
+	    shift
+	    ;;
+
 	--binary-all)
 	    BD_REGEXP='build-(depends|depends-indep)'
 	    BC_REGEXP='build-(conflicts|conflicts-indep)'
@@ -57,10 +63,6 @@ while [ -n "$1" ]; do
 	--binary-arch)
 	    BD_REGEXP='build-depends'
 	    BC_REGEXP='build-conflicts'
-	    shift
-	    ;;
-	--echo)
-	    CHROOTEXEC="echo $CHROOTEXEC"
 	    shift
 	    ;;
 	--continue-fail)
