@@ -1,0 +1,24 @@
+#!/bin/bash
+
+. ./testlib.sh
+
+# testsuite to test pbuilder-satisfydepends-checkparams.
+
+# mock function
+checkbuilddep_internal() {
+    : # do nothing function    
+}
+
+test_chrootexec1() {
+    set -- --chroot /tmp --internal-chrootexec 'chroot /tmp-hoge '
+    . ./pbuilder-satisfydepends-checkparams
+}
+
+test_chrootexec2() {
+    set -- --internal-chrootexec 'chroot /tmp-hoge ' --chroot /tmp
+    . ./pbuilder-satisfydepends-checkparams
+}
+
+expect_success test_chrootexec1
+expect_fail test_chrootexec2
+testlib_summary
