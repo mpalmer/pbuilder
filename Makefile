@@ -29,10 +29,14 @@ SHELLCODES=pbuilder-buildpackage \
 	pdebuild-internal
 
 check:
-	set -e;
+	set -e; \
 	for A in $(SHELLCODES); do \
 		bash -n $$A; \
 		echo $$A; \
+	done
+	set -e ; \
+	for A in test_*; do \
+		bash $$A; \
 	done
 
 full-check: 
