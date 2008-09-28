@@ -37,8 +37,8 @@ function loadhooks () {
     fi
     if [ -d "$HOOKDIR" ]; then
 	mkdir -p "$BUILDPLACE/$hooks"
-	if ! cp -a "$HOOKDIR/"* "$BUILDPLACE/$hooks"; then
-	    echo "W: no hooks found on the hookdir" >&2 
+	if ! cp -aL "$HOOKDIR/"* "$BUILDPLACE/$hooks"; then
+	    echo "W: no hooks found in the hookdir '$HOOKDIR'" >&2 
 	fi
     fi
 }
