@@ -179,13 +179,15 @@ When this option is set to
 .B "--variant=buildd"
 .B "pbuilder"
 will invoke 
-.B "debootstrap" 
+.B "$DEBOOTSTRAP" 
 with "--variant=buildd"
 option, which results in debootstrap creating a minimal chroot for 
 buildd instead of trying to create a minimal installation chroot.
+.B "DEBOOTSTRAP"
+is another directive in this file.
 
 .TP
-.BI "DEBOOTSTRAP=" "debootstrap"
+.BI "DEBOOTSTRAP=" "cdebootstrap"
 Use this option to switch the implementation of
 debootstrap.
 Known implementations of debootstrap are 
