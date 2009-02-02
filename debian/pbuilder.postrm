@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = purge ]; then
+        rm -f /etc/pbuilderrc
+	if [ -e /usr/share/debconf/confmodule ]; then
+	    . /usr/share/debconf/confmodule
+	    db_purge
+	fi
+fi
+
+#DEBHELPER#
+exit 0
