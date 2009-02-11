@@ -1,0 +1,33 @@
+#!/bin/bash
+
+. ./testlib.sh
+. ./pbuilder-satisfydepends-funcs
+
+# testsuite to test pbuilder-satisfydepends-checkparams.
+
+test_get_control_re() {
+    CONTROL=$(tempfile)
+    cat <<EOF > "$CONTROL"
+Source: amule
+XXXX:
+Build-Depends: 
+ autotools-dev,
+ debhelper,
+ quilt,
+##
+ libwxgtk2.8-dev,
+Build-Depends-Indep: test, test1
+Desctiption: test
+ other things
+ wow
+EOF
+    get_control_re "$CONTROL" "build-(depends|depends-indep)"
+}
+expect_output " 
+ autotools-dev,
+ debhelper,
+ quilt,
+ libwxgtk2.8-dev,
+ test, test1" test_get_control_re
+
+testlib_summary

@@ -60,6 +60,7 @@ get_control_re() {
         /^$/ { source=0 }
         /^Source:/ { source=1 }
         /^[^ ]*:/ { p=0 }
+        /^#/ { next }
         tolower($0) ~ /^'"$re"':/ { p=1 }
         { if (p && source) { print $0 } }' |
         sed 's/^[^: ]*://'
