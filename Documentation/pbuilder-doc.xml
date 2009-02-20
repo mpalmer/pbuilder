@@ -259,12 +259,10 @@
 	different distributions.
       </para>
       <para>
-	Please note <filename>${HOME}/.pbuilderrc</filename> supersede system settings.  For
-	example, if you are upgrading from sarge to etch, you may need to
-	adjust some part of your local setting just like new
-	<filename>/usr/share/pbuilder/pbuilderrc</filename>, e.g., "unset DEBOOTSTRAPOPTS", to cope
-	with the use of cdebootstrap.  The same care is needed if you edited
-	old system setting in <filename>/etc/pbuilderrc</filename>.
+	Please note <filename>${HOME}/.pbuilderrc</filename> supersede
+	system settings.  Caveats is that if you have some
+	configuration, you may need to tweak the configuration to work
+	with new versions of pbuilder when upgrading.
       </para>
     </sect1>
     <sect1 id="nonrootchroot">
@@ -851,8 +849,8 @@ $ sudo pbuilder update --hookdir ~/loginhooks/E10shell</screen>
 	with scripts that reduce the amount of typing.  An example
 	script <filename>pbuilder-distribution.sh</filename> is
 	provided as an example.  Invoking the script as
-	<filename>pbuilder-etch</filename> will invoke
-	<command>pbuilder</command> with a etch chroot.
+	<filename>pbuilder-squeeze</filename> will invoke
+	<command>pbuilder</command> with a squeeze chroot.
       </para>
     </sect1>
     <sect1 id="ENVVARDISTRIBUTIONSWITCH">
@@ -1456,47 +1454,6 @@ git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git</screen>
 	<screen>
 $ pdebuild --pbuilder cowbuilder</screen>
       </para>
-      <sect2 id="sargecowdancer">
-        <title>Using cowdancer for sarge</title>
-	<para>
-	  This section is mostly obsolete now that etch is released,
-	  but left for reference, and will be removed after lenny
-	  release.
-	</para>
-        <para>
-          cowdancer was introduced after the release of Debian sarge;
-          if you want to build packages for sarge with cowbuilder, you
-          will need to workaround its unavailability.
-        </para>
-        <para>
-          One way to workaround the problem is to set APTCONFDIR in pbuilderrc
-          to point to a directory with a list of sources for APT which has both
-          sarge and sarge-backports.
-        </para>
-        <para>
-          <screen>
-$ cat sources.list
-# sarge-backports
-deb     http://www.backports.org/debian sarge-backports main
-deb-src http://www.backports.org/debian sarge-backports main
-
-# sarge
-deb     http://ftp.de.debian.org/debian sarge main
-deb-src http://ftp.de.debian.org/debian sarge main</screen>
-        </para>
-        <para>
-          It is recommended to "Pin" the cowdancer package appropriately in
-          this case, via the APT preferences mechanism.
-        </para>
-        <para>
-          <screen>
-$ cat preferences
-Explanation: use cowdancer from backports
-Package: cowdancer
-Pin: release a=sarge-backports
-Pin-Priority: 950</screen>
-        </para>
-      </sect2>
     </sect1>
     <sect1 id="withouttargz">
       <title>Using pbuilder without tar.gz</title>
@@ -1515,8 +1472,8 @@ Pin-Priority: 950</screen>
 	It should be possible to create base chroot images
 	for <command>dchroot</command> with the following commands:
 	<screen>
-# pbuilder create --distribution etch --no-targz --basetgz /chroot/etch
 # pbuilder create --distribution lenny --no-targz --basetgz /chroot/lenny
+# pbuilder create --distribution squeeze --no-targz --basetgz /chroot/squeeze
 # pbuilder create --distribution sid --no-targz --basetgz /chroot/sid</screen>
       </para>
     </sect1>
