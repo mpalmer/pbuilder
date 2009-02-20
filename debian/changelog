@@ -1,3 +1,24 @@
+pbuilder (0.186) unstable; urgency=low
+
+  [ shaul Karl ]
+  * Fixes to pbuilderrc.5, pbuilder.1, pbuilder.8
+    (closes: #513359, #513359, #513359)
+
+  [ Junichi Uekawa ]
+  * Document the default debootstrap implementation (closes: #513316)
+  * /var/cache/pbuilder not empty so not removed upon purge,
+    after purge configuration is still there.
+    (closes: #513739, #513737)
+  * made debbuildopts description in manpage more verbose
+    (closes: #501390)
+  * Handle comments in debian/control. (closes: #514656)
+  * Lenny is released, We no longer support Etch and update regression
+    testsuite accordingly.
+  * revise documentation for obvious changes for lenny release, and
+    squeeze updates.
+
+ -- Junichi Uekawa <dancer@debian.org>  Fri, 20 Feb 2009 21:56:49 +0900
+
 pbuilder (0.185) unstable; urgency=low
 
   [ Junichi Uekawa ]
