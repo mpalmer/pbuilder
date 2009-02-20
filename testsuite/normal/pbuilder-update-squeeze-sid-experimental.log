@@ -1,0 +1,214 @@
+Upgrading for distribution sid
+Building the build Environment
+ -> extracting base tarball [/TESTDIR/testimage]
+ -> creating local configuration
+ -> copying local configuration
+  -> Installing apt-lines
+  -> Installing apt-lines and pinning for experimental
+ -> mounting /proc filesystem
+ -> mounting /dev/pts filesystem
+ -> policy-rc.d already exists
+Refreshing the base.tgz 
+ -> upgrading packages
+Hit http://localhost sid Release.gpg
+Get:1 http://localhost experimental Release.gpg [189B]
+Hit http://localhost sid Release
+Get:2 http://localhost experimental Release [73.9kB]
+Ign http://localhost sid/main Packages/DiffIndex
+Ign http://localhost experimental/main Packages
+Ign http://localhost sid/main Packages
+Get:3 http://localhost experimental/main Packages [820kB]
+Hit http://localhost sid/main Packages
+Fetched XXXB in Xs (XXXXXB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  apt-utils apt-xapian-index libdb4.5 libsqlite3-0 libssl0.9.8 lsb-release
+  mime-support python python-apt python-central python-debian python-minimal
+  python-support python-xapian python2.5 python2.5-minimal
+The following packages will be upgraded:
+  apt aptitude bsdutils cpio diff libgmp3c2 libsigc++-2.0-0c2a mount
+  util-linux
+9 upgraded, 16 newly installed, 0 to remove and 0 not upgraded.
+Need to get 13.9MB of archives.
+After this operation, 28.0MB of additional disk space will be used.
+Get:1 http://localhost experimental/main diff 2.8.7-0.2 [248kB]
+Get:2 http://localhost experimental/main mount 2.14~rc2-0 [145kB]
+Get:3 http://localhost experimental/main util-linux 2.14~rc2-0 [550kB]
+Get:4 http://localhost experimental/main bsdutils 1:2.14~rc2-0 [64.7kB]
+Get:5 http://localhost experimental/main apt 0.7.21~exp1 [1645kB]
+Get:6 http://localhost experimental/main apt-utils 0.7.21~exp1 [193kB]
+Get:7 http://localhost sid/main python2.5-minimal 2.5.4-1 [1290kB]
+Get:8 http://localhost sid/main mime-support 3.44-1 [33.3kB]
+Get:9 http://localhost sid/main libdb4.5 4.5.20-13 [555kB]
+Get:10 http://localhost experimental/main libsqlite3-0 3.6.10-1 [287kB]
+Get:11 http://localhost sid/main libssl0.9.8 0.9.8g-15 [975kB]
+Get:12 http://localhost sid/main python2.5 2.5.4-1 [3041kB]
+Get:13 http://localhost sid/main python-minimal 2.5.2-3 [13.5kB]
+Get:14 http://localhost sid/main python 2.5.2-3 [139kB]
+Get:15 http://localhost sid/main python-central 0.6.8 [40.4kB]
+Get:16 http://localhost sid/main python-xapian 1.0.7-3.1 [550kB]
+Get:17 http://localhost sid/main lsb-release 3.2-20 [20.0kB]
+Get:18 http://localhost experimental/main python-apt 0.7.9~exp2 [414kB]
+Get:19 http://localhost experimental/main python-support 0.90.1 [29.7kB]
+Get:20 http://localhost sid/main python-debian 0.1.12 [53.1kB]
+Get:21 http://localhost sid/main apt-xapian-index 0.16 [32.7kB]
+Get:22 http://localhost experimental/main libsigc++-2.0-0c2a 2.2.2-1 [35.3kB]
+Get:23 http://localhost experimental/main aptitude 0.5.1-1 [3146kB]
+Get:24 http://localhost experimental/main cpio 2.9.90-1 [180kB]
+Get:25 http://localhost experimental/main libgmp3c2 2:4.2.4+dfsg-1 [215kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched XXXB in Xs (XXXXXB/s)
+(READING DATABASE ... 9686 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
+PREPARING TO REPLACE DIFF 2.8.1-12 (USING .../DIFF_2.8.7-0.2_AMD64.DEB) ...
+UNPACKING REPLACEMENT DIFF ...
+SETTING UP DIFF (2.8.7-0.2) ...
+(READING DATABASE ... 9694 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
+PREPARING TO REPLACE MOUNT 2.13.1.1-1 (USING .../MOUNT_2.14~RC2-0_AMD64.DEB) ...
+UNPACKING REPLACEMENT MOUNT ...
+SETTING UP MOUNT (2.14~RC2-0) ...
+(READING DATABASE ... 9694 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
+PREPARING TO REPLACE UTIL-LINUX 2.13.1.1-1 (USING .../UTIL-LINUX_2.14~RC2-0_AMD64.DEB) ...
+UNPACKING REPLACEMENT UTIL-LINUX ...
+SETTING UP UTIL-LINUX (2.14~RC2-0) ...
+(READING DATABASE ... 9696 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
+PREPARING TO REPLACE BSDUTILS 1:2.13.1.1-1 (USING .../BSDUTILS_1%3A2.14~RC2-0_AMD64.DEB) ...
+UNPACKING REPLACEMENT BSDUTILS ...
+SETTING UP BSDUTILS (1:2.14~RC2-0) ...
+(READING DATABASE ... 9696 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
+PREPARING TO REPLACE APT 0.7.20.2 (USING .../APT_0.7.21~EXP1_AMD64.DEB) ...
+UNPACKING REPLACEMENT APT ...
+SETTING UP APT (0.7.21~EXP1) ...
+GPG: KEY 6070D3A1: "DEBIAN ARCHIVE AUTOMATIC SIGNING KEY (4.0/ETCH) <FTPMASTER@DEBIAN.ORG>" NOT CHANGED
+GPG: KEY ADB11277: "ETCH STABLE RELEASE KEY <DEBIAN-RELEASE@LISTS.DEBIAN.ORG>" NOT CHANGED
+GPG: KEY BBE55AB3: "DEBIAN-VOLATILE ARCHIVE AUTOMATIC SIGNING KEY (4.0/ETCH)" NOT CHANGED
+GPG: KEY F42584E6: "LENNY STABLE RELEASE KEY <DEBIAN-RELEASE@LISTS.DEBIAN.ORG>" NOT CHANGED
+GPG: KEY 55BE302B: "DEBIAN ARCHIVE AUTOMATIC SIGNING KEY (5.0/LENNY) <FTPMASTER@DEBIAN.ORG>" NOT CHANGED
+GPG: KEY 6D849617: "DEBIAN-VOLATILE ARCHIVE AUTOMATIC SIGNING KEY (5.0/LENNY)" NOT CHANGED
+GPG: TOTAL NUMBER PROCESSED: 6
+GPG:              UNCHANGED: 6
+SELECTING PREVIOUSLY DESELECTED PACKAGE APT-UTILS.
+(READING DATABASE ... 9698 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
+UNPACKING APT-UTILS (FROM .../APT-UTILS_0.7.21~EXP1_AMD64.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON2.5-MINIMAL.
+UNPACKING PYTHON2.5-MINIMAL (FROM .../PYTHON2.5-MINIMAL_2.5.4-1_AMD64.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE MIME-SUPPORT.
+UNPACKING MIME-SUPPORT (FROM .../MIME-SUPPORT_3.44-1_ALL.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE LIBDB4.5.
+UNPACKING LIBDB4.5 (FROM .../LIBDB4.5_4.5.20-13_AMD64.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE LIBSQLITE3-0.
+UNPACKING LIBSQLITE3-0 (FROM .../LIBSQLITE3-0_3.6.10-1_AMD64.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE LIBSSL0.9.8.
+UNPACKING LIBSSL0.9.8 (FROM .../LIBSSL0.9.8_0.9.8G-15_AMD64.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON2.5.
+UNPACKING PYTHON2.5 (FROM .../PYTHON2.5_2.5.4-1_AMD64.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-MINIMAL.
+UNPACKING PYTHON-MINIMAL (FROM .../PYTHON-MINIMAL_2.5.2-3_ALL.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON.
+UNPACKING PYTHON (FROM .../PYTHON_2.5.2-3_ALL.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-CENTRAL.
+UNPACKING PYTHON-CENTRAL (FROM .../PYTHON-CENTRAL_0.6.8_ALL.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-XAPIAN.
+UNPACKING PYTHON-XAPIAN (FROM .../PYTHON-XAPIAN_1.0.7-3.1_AMD64.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE LSB-RELEASE.
+UNPACKING LSB-RELEASE (FROM .../LSB-RELEASE_3.2-20_ALL.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-APT.
+UNPACKING PYTHON-APT (FROM .../PYTHON-APT_0.7.9~EXP2_AMD64.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-SUPPORT.
+UNPACKING PYTHON-SUPPORT (FROM .../PYTHON-SUPPORT_0.90.1_ALL.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-DEBIAN.
+UNPACKING PYTHON-DEBIAN (FROM .../PYTHON-DEBIAN_0.1.12_ALL.DEB) ...
+SELECTING PREVIOUSLY DESELECTED PACKAGE APT-XAPIAN-INDEX.
+UNPACKING APT-XAPIAN-INDEX (FROM .../APT-XAPIAN-INDEX_0.16_ALL.DEB) ...
+PREPARING TO REPLACE LIBSIGC++-2.0-0C2A 2.0.18-2 (USING .../LIBSIGC++-2.0-0C2A_2.2.2-1_AMD64.DEB) ...
+UNPACKING REPLACEMENT LIBSIGC++-2.0-0C2A ...
+PREPARING TO REPLACE APTITUDE 0.4.11.11-1 (USING .../APTITUDE_0.5.1-1_AMD64.DEB) ...
+UNPACKING REPLACEMENT APTITUDE ...
+PREPARING TO REPLACE CPIO 2.9-15 (USING .../CPIO_2.9.90-1_AMD64.DEB) ...
+UNPACKING REPLACEMENT CPIO ...
+PREPARING TO REPLACE LIBGMP3C2 2:4.2.2+DFSG-3 (USING .../LIBGMP3C2_2%3A4.2.4+DFSG-1_AMD64.DEB) ...
+UNPACKING REPLACEMENT LIBGMP3C2 ...
+SETTING UP APT-UTILS (0.7.21~EXP1) ...
+SETTING UP PYTHON2.5-MINIMAL (2.5.4-1) ...
+SETTING UP MIME-SUPPORT (3.44-1) ...
+SETTING UP LIBDB4.5 (4.5.20-13) ...
+SETTING UP LIBSQLITE3-0 (3.6.10-1) ...
+SETTING UP LIBSSL0.9.8 (0.9.8G-15) ...
+SETTING UP PYTHON2.5 (2.5.4-1) ...
+SETTING UP PYTHON-MINIMAL (2.5.2-3) ...
+SETTING UP PYTHON (2.5.2-3) ...
+SETTING UP PYTHON-CENTRAL (0.6.8) ...
+SETTING UP PYTHON-XAPIAN (1.0.7-3.1) ...
+SETTING UP LSB-RELEASE (3.2-20) ...
+SETTING UP PYTHON-APT (0.7.9~EXP2) ...
+SETTING UP PYTHON-SUPPORT (0.90.1) ...
+SETTING UP PYTHON-DEBIAN (0.1.12) ...
+SETTING UP APT-XAPIAN-INDEX (0.16) ...
+APT-XAPIAN-INDEX: BUILDING NEW INDEX IN BACKGROUND...
+SETTING UP LIBSIGC++-2.0-0C2A (2.2.2-1) ...
+SETTING UP APTITUDE (0.5.1-1) ...
+ANOTHER UPDATE IS ALREADY RUNNING: SHOWING ITS PROGRESS.
+READING CURRENT TIMESTAMP FAILED: [ERRNO 2] NO SUCH FILE OR DIRECTORY: '/VAR/LIB/APT-XAPIAN-INDEX/UPDATE-TIMESTAMP'. ASSUMING THE INDEX HAS NOT BEEN CREATED YET.
+REBUILDING XAPIAN INDEX... REBUILDING XAPIAN INDEX... 0% REBUILDING XAPIAN INDEX... 0% REBUILDING XAPIAN INDEX... 1% REBUILDING XAPIAN INDEX... 2% REBUILDING XAPIAN INDEX... 3% REBUILDING XAPIAN INDEX... 4% REBUILDING XAPIAN INDEX... 4% REBUILDING XAPIAN INDEX... 5% REBUILDING XAPIAN INDEX... 6% REBUILDING XAPIAN INDEX... 7% REBUILDING XAPIAN INDEX... 8% REBUILDING XAPIAN INDEX... 8% REBUILDING XAPIAN INDEX... 9% REBUILDING XAPIAN INDEX... 10% REBUILDING XAPIAN INDEX... 11% REBUILDING XAPIAN INDEX... 12% REBUILDING XAPIAN INDEX... 13% REBUILDING XAPIAN INDEX... 13% REBUILDING XAPIAN INDEX... 14% REBUILDING XAPIAN INDEX... 15% REBUILDING XAPIAN INDEX... 16% REBUILDING XAPIAN INDEX... 17% REBUILDING XAPIAN INDEX... 17% REBUILDING XAPIAN INDEX... 18% REBUILDING XAPIAN INDEX... 19% REBUILDING XAPIAN INDEX... 20% REBUILDING XAPIAN INDEX... 21% REBUILDING XAPIAN INDEX... 21% REBUILDING XAPIAN INDEX... 22% REBUILDING XAPIAN INDEX... 23% REBUILDING XAPIAN INDEX... 24% REBUILDING XAPIAN INDEX... 25% REBUILDING XAPIAN INDEX... 26% REBUILDING XAPIAN INDEX... 26% REBUILDING XAPIAN INDEX... 27% REBUILDING XAPIAN INDEX... 28% REBUILDING XAPIAN INDEX... 29% REBUILDING XAPIAN INDEX... 30% REBUILDING XAPIAN INDEX... 30% REBUILDING XAPIAN INDEX... 31% REBUILDING XAPIAN INDEX... 32% REBUILDING XAPIAN INDEX... 33% REBUILDING XAPIAN INDEX... 34% REBUILDING XAPIAN INDEX... 35% REBUILDING XAPIAN INDEX... 35% REBUILDING XAPIAN INDEX... 36% REBUILDING XAPIAN INDEX... 37% REBUILDING XAPIAN INDEX... 38% REBUILDING XAPIAN INDEX... 39% REBUILDING XAPIAN INDEX... 39%
+TRACEBACK (MOST RECENT CALL LAST):
+  FILE "/USR/SBIN/UPDATE-APT-XAPIAN-INDEX", LINE 527, IN <MODULE>
+    CHILDPROGRESS.LOOP()
+  FILE "/USR/SBIN/UPDATE-APT-XAPIAN-INDEX", LINE 125, IN LOOP
+    MSG = SELF.SOCK.RECV(4096)
+SOCKET.TIMEOUT: TIMED OUT
+DPKG: ERROR PROCESSING APTITUDE (--CONFIGURE):
+ SUBPROCESS POST-INSTALLATION SCRIPT RETURNED ERROR EXIT STATUS 1
+SETTING UP CPIO (2.9.90-1) ...
+SETTING UP LIBGMP3C2 (2:4.2.4+DFSG-1) ...
+PROCESSING TRIGGERS FOR PYTHON-SUPPORT ...
+ERRORS WERE ENCOUNTERED WHILE PROCESSING:
+ APTITUDE
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+ -> unmounting dev/pts filesystem
+W: Could not unmount dev/pts: umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+W: Retrying to unmount dev/pts in 5s
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+
+  Could not unmount dev/pts, some programs might
+  still be using files in /proc (klogd?).
+  Please check and kill these processes manually
+  so that I can unmount dev/pts.  Last umount error was:
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+
+  This error only affects chroots; you may want to use
+  user-mode-linux to avoid this message.
+
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+
+  Could not unmount dev/pts, some programs might
+  still be using files in /proc (klogd?).
+  Please check and kill these processes manually
+  so that I can unmount dev/pts.  Last umount error was:
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+
+  This error only affects chroots; you may want to use
+  user-mode-linux to avoid this message.
+
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+
+  Could not unmount dev/pts, some programs might
+  still be using files in /proc (klogd?).
+  Please check and kill these processes manually
+  so that I can unmount dev/pts.  Last umount error was:
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+umount: /var/cache/pbuilder/build/26882/dev/pts: device is busy
+
+  This error only affects chroots; you may want to use
+  user-mode-linux to avoid this message.
+
+ -> unmounting proc filesystem
+ -> cleaning the build env 
+    -> removing directory /var/cache/pbuilder/build//NUM and its subdirectories
