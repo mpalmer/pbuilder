@@ -50,7 +50,7 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
     : > ${RESULTFILE}
     RESULTFILE=$(readlink -f ${RESULTFILE})
     
-    for distribution in sid etch lenny; do
+    for distribution in sid lenny squeeze; do
 	sudo ${PBUILDER} create $HOOKOPTION "${DEBOOTSTRAPOPTS[@]}" --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log.orig 
 
 	log_success create-${distribution}-${DEBOOTSTRAP}
@@ -81,15 +81,15 @@ for DEBOOTSTRAP in debootstrap cdebootstrap; do
 	
 	# upgrading testing.
 	case $distribution in 
-	    etch)
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution lenny --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-etch.log.orig 
-		log_success update-${distribution}-etch
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid.log.orig 
-		log_success update-${distribution}-lenny-sid
-		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-lenny-sid-experimental.log.orig 
-		log_success update-${distribution}-sid-experimental
-		;;
 	    lenny)
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution squeeze --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-squeeze.log.orig 
+		log_success update-${distribution}-squeeze
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-squeeze-sid.log.orig 
+		log_success update-${distribution}-squeeze-sid
+		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-squeeze-sid-experimental.log.orig 
+		log_success update-${distribution}-squeeze-sid-experimental
+		;;
+	    squeeze)
 		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution sid --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid.log.orig 
 		log_success update-${distribution}-sid
 		sudo ${PBUILDER} update $HOOKOPTION --basetgz ${testimage} --distribution experimental --mirror $mirror --override-config --logfile ${logdir}/pbuilder-update-${distribution}-sid-experimental.log.orig 
