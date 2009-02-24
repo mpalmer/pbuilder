@@ -28,6 +28,7 @@
 INTERNAL_BUILD_UML=""
 CHROOTEXEC=""
 OVERRIDE_APTLINES="no"
+OVERRIDE_APTLINES_WARN="" # set this if --override-config option should be set.
 BINARY_ARCH="no"
 PBUILDER_BUILD_LOGFILE=
 PRESERVE_BUILDPLACE="no"
@@ -62,10 +63,12 @@ while [ -n "$1" ]; do
 	    ;;
 	--mirror)
 	    MIRRORSITE="$2";
+	    OVERRIDE_APTLINES_WARN=yes
 	    shift; shift;
 	    ;;
 	--othermirror)
 	    OTHERMIRROR="$2";
+	    OVERRIDE_APTLINES_WARN=yes
 	    shift; shift;
 	    ;;
 	--http-proxy)
@@ -74,10 +77,12 @@ while [ -n "$1" ]; do
 	    ;;
 	--distribution)
 	    DISTRIBUTION="$2";
+	    OVERRIDE_APTLINES_WARN=yes
 	    shift; shift;
 	    ;;
 	--components)
 	    COMPONENTS="$2";
+	    OVERRIDE_APTLINES_WARN=yes
 	    shift; shift;
 	    ;;
 	--buildresult)

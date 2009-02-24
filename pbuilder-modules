@@ -395,6 +395,10 @@ function extractbuildplace () {
     # installaptlines may fail with exit 1, do it earlier than mountproc.
     if [ "$OVERRIDE_APTLINES" = "yes" ]; then
 	installaptlines
+    else # Warn if override config is not set
+	if [ "$OVERRIDE_APTLINES_WARN" = "yes" ]; then
+	    echo "W: --override-config is not set; not updating apt.conf Read the manpage for details."
+	fi
     fi
 
     mountproc
