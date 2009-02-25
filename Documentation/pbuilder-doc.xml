@@ -943,6 +943,18 @@ cd /var/cache/pbuilder/result/
       <para>
 	This way, you can use <filename>deb file:/var/cache/pbuilder/result</filename>
       </para>
+      <para>
+	To add new apt-key inside chroot:
+	<!-- from http://ubuntuforums.org/archive/index.php/t-696820.html -->
+      </para>
+      <para>
+	<screen>
+sudo pbuilder --login --save-after-login
+# apt-key add - &lt;&lt;EOF
+...public key goes here...
+EOF
+# logout
+</screen></para>
     </sect1>
     <sect1 id="apt-getupdateonbuild-depend">
       <title>How to get pbuilder to run apt-get update before trying to satisfy build-dependency</title>
