@@ -42,11 +42,11 @@ case "$1" in
 	shift;
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	if [ -n "$BASEBUILDPLACE" ]; then 
-	    echo "Cleaning [$BASEBUILDPLACE]"
+	    log "I: Cleaning [$BASEBUILDPLACE]"
 	    clean_subdirectories "$BASEBUILDPLACE" || true
 	fi
 	if [ -n "$APTCACHE" ]; then
-	    echo "Cleaning [$APTCACHE]"
+	    log "I: Cleaning [$APTCACHE]"
 	    rm "$APTCACHE"/* || true
 	fi
 	;;
@@ -61,9 +61,9 @@ case "$1" in
 	trap saveaptcache_umountproc_cleanbuildplace_trap exit sighup
 
 	if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
-	    echo " -> entering the shell"
+	    log "I: entering the shell"
 	else
-	    echo " -> entering the shell
+	    log "I: entering the shell
 File extracted to: $BUILDPLACE
 "
 	fi
@@ -78,10 +78,10 @@ File extracted to: $BUILDPLACE
 	# saving the place afterwards
 	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
 	    if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
-		echo "E: Invalid combination of internal-build-uml and save-after-login flags" >&2
+		log "E: Invalid combination of internal-build-uml and save-after-login flags"
 		exit 1
 	    else
-		echo " -> Saving the results, modifications to this session will persist"
+		log "I: Saving the results, modifications to this session will persist"
 		unloadhooks
 		umountproc
 		trap cleanbuildplace_trap exit sighup
@@ -104,7 +104,7 @@ File extracted to: $BUILDPLACE
 	EXECPROGRAM="$1"
 	shift
 	if [ ! -f "${EXECPROGRAM}" ]; then
-	    echo "Command line parameter [$EXECPROGRAM] does not exist" >&2
+	    log "E: Command line parameter [$EXECPROGRAM] does not exist"
 	    exit 1;
 	fi;
 	extractbuildplace
@@ -129,9 +129,9 @@ File extracted to: $BUILDPLACE
 	# saving the place afterwards
 	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
 	    if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
-		echo "E: Invalid combination of internal-build-uml and save-after-login flags" >&2 
+		log "E: Invalid combination of internal-build-uml and save-after-login flags"
 	    else
-		echo " -> Saving the results, modifications to this session will persist"
+		log "I: Saving the results, modifications to this session will persist"
 		unloadhooks
 		umountproc
 		trap cleanbuildplace_trap exit sighup
@@ -154,12 +154,12 @@ File extracted to: $BUILDPLACE
 	trap umountproc_cleanbuildplace_trap exit sighup
 	loadhooks
 	executehooks "F"
-	echo " -> start dump config"
-	echo "  -> set"
+	log "I: start dump config"
+	log "I: set"
 	set;
-	echo "  -> env"
+	log "I: env"
 	env;
-	echo " -> end dump config"
+	log "I: end dump config"
 	;;
     --debuild|debuild)
 	shift

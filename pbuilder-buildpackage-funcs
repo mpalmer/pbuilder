@@ -25,7 +25,7 @@ function copydsc () {
       "$DSCFILE" \
 	$(cat "$DSCFILE" | \
 	awk 'BEGIN{p=0} /^$/ {p=0} /^.*:/ {p=0} {if (p){print "'$(dirname "$DSCFILE")'/" $3}} /^Files:/{p=1}' ) ; do
-	echo "    -> copying [$FILE]"
+	log "I: copying [$FILE]"
         cp -p "$FILE" "$TARGET" 
     done
 }
@@ -45,7 +45,7 @@ function checkbuilddep () {
 	if [ $? -eq 2 -a "${PRESERVE_BUILDPLACE}" = "yes" ]; then
 	    trap umountproc_trap exit sighup
 	fi
-	echo "E: pbuilder-satisfydepends failed." >&2
+	log "E: pbuilder-satisfydepends failed."
 	exit 2
     fi
     # install extra packages to the chroot
@@ -55,15 +55,14 @@ function checkbuilddep () {
 }
 
 function echobacktime () {
-    echo "Current time: $(date)"
-    echo "pbuilder-time-stamp: $(date +%s)"
+    log "I: Current time: $(date)"
+    log "I: pbuilder-time-stamp: $(date +%s)"
 }
 
 function showbuildbanner () {
     # show some banners for building
-    echo "pbuilder-buildpackage/"$(dpkg --print-architecture) 
-    echo "$1"
-    echo
+    log "I: pbuilder-buildpackage/"$(dpkg --print-architecture) 
+    log "I: $1"
 }
 
 function cowprotect () {

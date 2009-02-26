@@ -27,7 +27,7 @@ set -e
 
 PACKAGENAME="$1"
 if [ ! -f "$PACKAGENAME" ]; then
-    echo "Command line parameter [$PACKAGENAME] is not a valid .dsc file name" >&2
+    log "E: Command line parameter [$PACKAGENAME] is not a valid .dsc file name"
     exit 1;
 fi;
 
@@ -35,7 +35,7 @@ if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
     SUTOUSER="env LOGNAME=$BUILDUSERNAME su -p $BUILDUSERNAME"
     DEBBUILDOPTS="$DEBBUILDOPTS -rfakeroot"
     EXTRAPACKAGES="${EXTRAPACKAGES} fakeroot"
-    echo "I: using fakeroot in build."
+    log "I: using fakeroot in build."
 else
     # run the build in root
     SUTOUSER="su -p "
@@ -60,9 +60,9 @@ if [ ! -d "${BUILDRESULT}" ]; then
 	mkdir -p "${BUILDRESULT}"
     fi
     if [ -d "${BUILDRESULT}" ]; then
-	echo " -> created buildresult dir: ${BUILDRESULT}"
+	log "I: created buildresult dir: ${BUILDRESULT}"
     else
-	echo "E: failed creating buildresult dir: ${BUILDRESULT}" >&2 
+	log "E: failed creating buildresult dir: ${BUILDRESULT}"
 	exit 1
     fi
 fi
@@ -73,7 +73,7 @@ if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
 	exec > >(tee "${PBUILDER_BUILD_LOGFILE}")
 	exec 2>&1
 	PBUILDER_BUILD_LOGFILE=$(readlink -f "${PBUILDER_BUILD_LOGFILE}")
-	echo "I: Using pkgname logfile"
+	log "I: Using pkgname logfile"
 	echobacktime
     fi
 fi
@@ -87,31 +87,31 @@ fi
 
 recover_aptcache
 createbuilduser
-echo "Installing the build-deps"
+log "I: Installing the build-deps"
 executehooks "D"
 trap saveaptcache_umountproc_cleanbuildplace_trap exit sighup
 checkbuilddep "$PACKAGENAME"
 save_aptcache
 trap umountproc_cleanbuildplace_trap exit sighup
 
-echo "Copying source file"
+log "I: Copying source file"
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
 
-echo "Extracting source"
+log "I: Extracting source"
 if echo "chown $BUILDUSERNAME:$BUILDUSERNAME /tmp/buildd /tmp/buildd/*" | $CHROOTEXEC /bin/bash; then
     : # success
 else
-    echo "E: pbuilder: Failed chowning to $BUILDUSERNAME:$BUILDUSERNAME" >&2 
+    log "E: pbuilder: Failed chowning to $BUILDUSERNAME:$BUILDUSERNAME"
     exit 1;
 fi
 if echo "( cd tmp/buildd; /usr/bin/dpkg-source -x $(basename $PACKAGENAME) )" | $CHROOTEXEC $SUTOUSER ; then
     : # success
 else
-    echo "pbuilder: Failed extracting the source" >&2 
+    log "E: pbuilder: Failed extracting the source"
     exit 1;
 fi
 
-echo " -> Building the package"
+log "I: Building the package"
 
 executehooks "A"
 
@@ -130,10 +130,10 @@ if [ -n "${TIMEOUT_TIME}" ]; then
     ( 
 	: Timeout process
 	sleep "${TIMEOUT_TIME}"
-	echo " -> Terminating build process due to timeout "
+	log "I: Terminating build process due to timeout "
 	kill ${BUILD_PID} || true
     ) & # timeout process
-    KILL_WAIT_PID="kill "$!" || true; echo \"  -> Terminate timeout process\"; "
+    KILL_WAIT_PID="kill "$!" || true; echo \"I: Terminate timeout process\"; "
 else
     KILL_WAIT_PID=""
 fi
@@ -141,7 +141,7 @@ fi
 if ! wait ${BUILD_PID}; then
     trap umountproc_cleanbuildplace_trap exit sighup
     eval "${KILL_WAIT_PID}"
-    echo "pbuilder: Failed autobuilding of package" >&2
+    log "E: Failed autobuilding of package"
     executehooks "C"
     exit 1;
 else
@@ -161,7 +161,7 @@ if [ -d "${BUILDRESULT}" ]; then
     chgrp "${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
     cp -p "${BUILDPLACE}"/tmp/buildd/* "${BUILDRESULT}" 2>/dev/null || true
 else
-    echo "E: BUILDRESULT=[$BUILDRESULT] is not a directory." >&2
+    log "E: BUILDRESULT=[$BUILDRESULT] is not a directory."
 fi
 
 :

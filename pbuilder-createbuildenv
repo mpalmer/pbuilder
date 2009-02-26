@@ -26,7 +26,7 @@ set -e
 if [ -z "$DISTRIBUTION" ]; then
     DISTRIBUTION=sid
 fi
-echo "Distribution is $DISTRIBUTION."
+log "I: Distribution is $DISTRIBUTION."
 
 if [ "${PBUILDER_DEBUGMODE}" = "yes" ]; then
     TRAP="echo ignoring trap "
@@ -37,37 +37,37 @@ fi
 # first clean it.
 cleanbuildplace
 
-echo "Building the build environment"
+log "I: Building the build environment"
 mkdir -p "$BUILDPLACE"
 if [ ! -d "$BUILDPLACE" ]; then
-    echo "E: Could not make directory [$BUILDPLACE]" >&2
+    log "E: Could not make directory [$BUILDPLACE]"
     exit 1
 fi
 
 $TRAP cleanbuildplace exit
 
-echo " -> running $DEBOOTSTRAP"
+log "I: running $DEBOOTSTRAP"
 unset DEBOOTSTRAPSCRIPT
 if [ -n "$HOOKDIR" ]; then
     if [ -f "$HOOKDIR/$DISTRIBUTION" ]; then
 	DEBOOTSTRAPSCRIPT=$(readlink -f "$HOOKDIR")"/$DISTRIBUTION"
-	echo "  -> Applying user distribution dist build script $DEBOOTSTRAPSCRIPT"
+	log "I: Applying user distribution dist build script $DEBOOTSTRAPSCRIPT"
     fi
 fi
 
 if which "${DEBOOTSTRAP}"; then
     : # debootstrap exists
 else
-    echo "E: ${DEBOOTSTRAP} does not exist, install or change DEBOOTSTRAP option" >&2
+    log "E: ${DEBOOTSTRAP} does not exist, install or change DEBOOTSTRAP option"
     exit 1
 fi
 
 if ! ( cd "$BUILDPLACE" && "${DEBOOTSTRAP}" "${DEBOOTSTRAPOPTS[@]}" "$DISTRIBUTION" . "$MIRRORSITE" $DEBOOTSTRAPSCRIPT ) ; then
-    echo "pbuilder: $DEBOOTSTRAP failed" >&2
+    log "E: $DEBOOTSTRAP failed"
     exit 1
 fi
 
-echo " -> debootstrap finished"
+log "I: debootstrap finished"
 loadhooks
 
 
@@ -78,8 +78,8 @@ installaptlines
 
 executehooks "G"
 
-echo "Refreshing the base.tgz "
-echo " -> upgrading packages"
+log "I: Refreshing the base.tgz "
+log "I: upgrading packages"
 mountproc
 $TRAP umountproc_cleanbuildplace_trap exit sighup
 $CHROOTEXEC /usr/bin/apt-get update

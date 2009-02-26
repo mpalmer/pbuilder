@@ -23,7 +23,7 @@ set -e
 
 
 if [ -n "$DISTRIBUTION" ] && [ "$OVERRIDE_APTLINES" = "yes" ]; then
-    echo "Upgrading for distribution $DISTRIBUTION" 
+    log "I: Upgrading for distribution $DISTRIBUTION" 
 fi
 if [ "${PBUILDER_DEBUGMODE}" = "yes" ]; then
     TRAP="echo ignoring trap "
@@ -35,8 +35,8 @@ extractbuildplace
 $TRAP umountproc_cleanbuildplace_trap exit sighup
 
 loadhooks
-echo "Refreshing the base.tgz "
-echo " -> upgrading packages"
+log "I: Refreshing the base.tgz "
+log "I: upgrading packages"
 $CHROOTEXEC /usr/bin/apt-get update
 if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
@@ -50,13 +50,13 @@ save_aptcache
 
 # optionally auto-clean apt-cache
 if [ "${AUTOCLEANAPTCACHE}" = "yes" -a -n "$APTCACHE" ]; then
-    echo " -> Cleaning the cached apt archive"
+    log "I: Cleaning the cached apt archive"
     $CHROOTEXEC /usr/bin/apt-get autoclean || true
     find "$APTCACHE/" -maxdepth 1 -name \*.deb | \
 	while read A; do
 	    if [ ! -f "$BUILDPLACE/var/cache/apt/archives/"$(basename "$A") -a \
 		-f "$A" ]; then
-		echo " -> obsolete cache content "$(basename "$A")" removed"
+		log "I: obsolete cache content "$(basename "$A")" removed"
 		rm -f "$A" || true
 	    fi
     done

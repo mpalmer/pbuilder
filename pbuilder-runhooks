@@ -38,7 +38,7 @@ function loadhooks () {
     if [ -d "$HOOKDIR" ]; then
 	mkdir -p "$BUILDPLACE/$hooks"
 	if ! cp -aL "$HOOKDIR/"* "$BUILDPLACE/$hooks"; then
-	    echo "W: no hooks found in the hookdir '$HOOKDIR'" >&2 
+	    log "W: no hooks found in the hookdir '$HOOKDIR'"
 	fi
     fi
 }
@@ -54,7 +54,7 @@ function unloadhooks () {
     if [ -d "$BUILDPLACE/$hooks" ]; then
 	rm -rf "$BUILDPLACE/$hooks"
     else
-	echo "E: Logic failure." >&2 
+	log "E: Logic failure."
     fi
 }
 
@@ -77,25 +77,26 @@ function executehooks () {
     for fn in "$BUILDPLACE/$hooks/$prefix"[0-9][0-9]* ; do
 	case "$fn" in
 	    "$BUILDPLACE/$hooks/$prefix"'[0-9][0-9]*')
-		echo "W: no hooks of type ${prefix} found -- ignoring" >&2 
+		log "W: no hooks of type ${prefix} found -- ignoring"
 		;;
 	    *~)
-		echo "W: skipping an editor backup file $fn" >&2 
+		log "W: skipping an editor backup file $fn"
 		;;
 	    *.bak)
-		echo "W: skipping a backup file $fn" >&2 
+		log "W: skipping a backup file $fn"
 		;;
 	    *)	
 		if [ -x "$fn" ]; then
+		    log "I: user script $fn starting"
 		    $CHROOTEXEC "$hooks/"$(basename "$fn")
-		    echo " -> user script $fn finished"
+		    log "I: user script $fn finished"
 		else
 		    if [ -f "$fn" ]; then
 			filetype=$(basename "$fn" ) 
-			echo "W: execute priv not set on file $filetype, not executing." >&2 
+			log "W: execute priv not set on file $filetype, not executing."
 		    else
 			# Should it reach here ? This case should be caught in the above case.
-			echo "W: no hooks of type ${prefix} found -- internal error in logic" >&2 
+			log "W: no hooks of type ${prefix} found -- internal error in logic"
 		    fi
 		fi  
 	        ;;	

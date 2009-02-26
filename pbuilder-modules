@@ -88,6 +88,29 @@ EOF
     exit 1
 }
 
+# Log a message
+# message is of a format
+#  E: error message
+#  W: warning message
+#  I: informational message
+function log() {
+    case "$*" in
+	"E: "*) 
+	    echo "$*" >&2
+	    ;;
+ 	"W: "*) 
+	    echo "$*" >&2
+	    ;;
+ 	"I: "*) 
+	    echo "$*"
+	    ;;
+	*)
+	    echo "malformed log message: $*"
+	    exit 1
+	    ;;
+    esac
+}
+
 # test whether a directory is empty
 # fails if "$*" exists but isn't a directory
 # fails and outputs garbage if "$*" doesn't actually exist
@@ -101,23 +124,23 @@ function seems_truly_unmounted() {
     local mountpoint
     mountpoint="$1"
     if ! [ -e "$BUILDPLACE/$mountpoint" ]; then
-        echo "W: $mountpoint doesn't exist" >&2 
+        log "W: $mountpoint doesn't exist"
         return 1
     fi
     if ! [ -d "$BUILDPLACE/$mountpoint" ]; then
-        echo "W: $mountpoint isn't a directory" >&2 
+        log "W: $mountpoint isn't a directory"
         return 1
     fi
     if [ -r "$BUILDPLACE/proc/mounts" ] && grep -q "^[^ ]* $mountpoint " "$BUILDPLACE/proc/mounts"; then
-        echo "W: $mountpoint is mounted according to build place's /proc/mounts" >&2 
+        log "W: $mountpoint is mounted according to build place's /proc/mounts"
         return 1
     fi
     if [ -r "/proc/mounts" ] && grep -q "^[^ ]* $BUILDPLACE/$mountpoint " "/proc/mounts"; then
-        echo "W: $mountpoint is mounted according to system's /proc/mounts" >&2 
+        log "W: $mountpoint is mounted according to system's /proc/mounts"
         return 1
     fi
     if ! is_empty_dir "$BUILDPLACE/$mountpoint"; then
-        echo "W: $mountpoint not empty" >&2 
+        log "W: $mountpoint not empty"
         return 1
     fi
     return 0
@@ -126,13 +149,13 @@ function seems_truly_unmounted() {
 function umount_one () {
     if [ "${IGNORE_UMOUNT}" = "yes" ]; then
 	# support ignore umount option.
-	echo " -> ignoring umount of $1 filesystem"
+	log "I: ignoring umount of $1 filesystem"
 	return
     fi
-    echo " -> unmounting $1 filesystem"
+    log "I: unmounting $1 filesystem"
     local UMOUNT_OUTPUT
     if ! UMOUNT_OUTPUT="$(LC_ALL=C umount "$BUILDPLACE/$1" 2>&1)"; then
-        echo "W: Could not unmount $1: $UMOUNT_OUTPUT" >&2 
+        log "W: Could not unmount $1: $UMOUNT_OUTPUT"
         local ignore_umount_error="no"
         case $UMOUNT_OUTPUT in
           "umount: "*": not found"|"umount:"*": not mounted")
@@ -140,7 +163,7 @@ function umount_one () {
             if seems_truly_unmounted "$1"; then
                 ignore_umount_error="yes"
             else
-                echo "W: Tried ignoring error in unmount, but sanity check failed: $1 might still be mounted" >&2 
+                log "W: Tried ignoring error in unmount, but sanity check failed: $1 might still be mounted"
             fi
             ;;
           *)
@@ -148,7 +171,7 @@ function umount_one () {
             ;;
         esac
         if [ "$ignore_umount_error" != "yes" ]; then
-	    echo "W: Retrying to unmount $1 in 5s" >&2 
+	    log "W: Retrying to unmount $1 in 5s"
 	    sleep 5s
 	    while ! umount "$BUILDPLACE/$1"; do
 		sleep 5s
@@ -167,7 +190,7 @@ EOF
 		chroot "$BUILDPLACE" bin/sh
 	    done
         else
-            echo "W: Ignored error in unmount" >&2 
+            log "W: Ignored error in unmount"
         fi
     fi
 }
@@ -204,18 +227,18 @@ function umountproc () {
 # Also create a policy-rc.d script if it doesn't already exist.
 function mountproc () {
     if [ "$USEPROC" = "yes" ]; then
-	echo " -> mounting /proc filesystem"
+	log "I: mounting /proc filesystem"
 	mkdir -p $BUILDPLACE/proc
 	mount -t proc /proc "$BUILDPLACE/proc"
 	ln -s ../proc/mounts $BUILDPLACE/etc/mtab 2> /dev/null || true
     fi
     if [ "$USEDEVFS" = "yes" ]; then
-	echo " -> mounting /dev filesystem"
+	log "I: mounting /dev filesystem"x
 	mkdir -p $BUILDPLACE/dev || true
 	mount -t devfs /dev "$BUILDPLACE/dev" 
     fi
     if [ "$USEDEVPTS" = "yes" ]; then
-	echo " -> mounting /dev/pts filesystem"
+	log "I: mounting /dev/pts filesystem"
 	mkdir -p $BUILDPLACE/dev/pts || true
 	TTYGRP=5
 	TTYMODE=620
@@ -223,13 +246,13 @@ function mountproc () {
 	mount -t devpts /dev/pts "$BUILDPLACE/dev/pts" -onoexec,nosuid,gid=$TTYGRP,mode=$TTYMODE
     fi
     if [ -x /usr/sbin/selinuxenabled ] && /usr/sbin/selinuxenabled; then
-	echo " -> mounting selinux filesystem"
+	log "I: mounting selinux filesystem"
 	mkdir -p $BUILDPLACE/selinux
 	mount -t selinuxfs /selinux "$BUILDPLACE/selinux"
     fi    
     local -a mounted
     for mnt in $BINDMOUNTS; do
-	echo "-> Mounting $mnt"
+	log "I: Mounting $mnt"
 	if mkdir -p "$BUILDPLACE/$mnt" && 
 	    mount -obind "$mnt" "$BUILDPLACE/$mnt"; then
 	    # successful.
@@ -237,9 +260,9 @@ function mountproc () {
 	else
 	    # when unsuccessful, backtrack / umount and abort.
 	    if [ -n "${mounted[*]}" ]; then
-		echo "-> error recovery: umount successfully mounted bind-mounts: ${mounted[@]}"
+		log "I: error recovery: umount successfully mounted bind-mounts: ${mounted[@]}"
 		for umnt in "${mounted[@]}"; do
-		    echo "-> umounting $umnt"
+		    log "I: umounting $umnt"
 		    umount "$umnt"
 		done
 	    fi
@@ -247,9 +270,9 @@ function mountproc () {
 	fi
     done
     if [ -f "$BUILDPLACE/usr/sbin/policy-rc.d" ]; then
-	echo " -> policy-rc.d already exists"
+	log "I: policy-rc.d already exists"
     else
-	echo " -> installing dummy policy-rc.d"
+	log "I: installing dummy policy-rc.d"
 	echo "\
 #!/bin/sh
 
@@ -270,14 +293,14 @@ done
 ## function to clean subdirs, use instead of rm -r
 function clean_subdirectories () {
   if [ -z "$1" ]; then
-      echo "Fatal internal error in clean_subdirectories"
+      log "E: Fatal internal error in clean_subdirectories"
       exit 1;
   fi
   if [ ! -d "$1" ]; then
-      echo "Warning: directory $1 does not exist in clean_subdirectories"
+      log "W: directory $1 does not exist in clean_subdirectories"
       return;
   fi
-  echo "    -> removing directory $1 and its subdirectories"
+  log "I: removing directory $1 and its subdirectories"
   find "$1" -xdev \( \! -type d \) -print0 |xargs -0 rm -f
   find "$1" -xdev -depth -type d -print0 | \
       (xargs -0 rmdir || true)
@@ -285,11 +308,11 @@ function clean_subdirectories () {
 
 function cleanbuildplace () {
     if [ "$?" -ne 0 ]; then
-	echo " -> Aborting with an error";
+	log "W: Aborting with an error";
     fi
     if [ "${INTERNAL_BUILD_UML}" != "yes" ]; then
 	if [ -d "$BUILDPLACE" ]; then 
-	    echo " -> cleaning the build env "
+	    log "I: cleaning the build env "
 	    clean_subdirectories "$BUILDPLACE"
 	fi;
     fi
@@ -298,7 +321,7 @@ function cleanbuildplace () {
 function umountproc_cleanbuildplace () {
     # rolling back to abort.
     if [ "$?" -ne 0 ]; then
-	echo " -> Aborting with an error";
+	log "W: Aborting with an error";
     fi
     umountproc
     cleanbuildplace
@@ -311,10 +334,10 @@ function saveaptcache_umountproc_cleanbuildplace () {
 }
 
 function installaptlines (){
-    echo "  -> Installing apt-lines"
+    log "I: Installing apt-lines"
     rm -f "$BUILDPLACE"/etc/apt/sources.list
     if [ -z "$DISTRIBUTION" ]; then
-	echo "Distribution not specified, please specify" >&2
+	log "E: Distribution not specified, please specify"
 	exit 1
     fi
     if [ -z "$COMPONENTS" ] ; then
@@ -330,12 +353,12 @@ deb $MIRRORSITE $DISTRIBUTION $COMPONENTS
 EOF
     fi
     if [ -n "$APTCONFDIR" ]; then
-	echo "  -> Copy " "$APTCONFDIR"/* " to chroot"
+	log "I: Copy " "$APTCONFDIR"/* " to chroot"
 	cp -a "$APTCONFDIR/"* "$BUILDPLACE"/etc/apt
     fi
 
     if [ ! -d "$BUILDPLACE"/etc/apt/apt.conf.d ]; then
-	echo "  -> Create /etc/apt/apt.conf.d/ inside chroot"
+	log "I: Create /etc/apt/apt.conf.d/ inside chroot"
 	mkdir "$BUILDPLACE"/etc/apt/apt.conf.d
     fi
 
@@ -344,7 +367,7 @@ EOF
 APT::Install-Recommends "false";
 EOF
     if [ -n "$EXPERIMENTAL" ]; then
-	echo "  -> Installing apt-lines and pinning for experimental"
+	log "I: Installing apt-lines and pinning for experimental"
 	if [ -n "$MIRRORSITE" ] ; then
 	    echo "deb $MIRRORSITE experimental main" >> "$BUILDPLACE"/etc/apt/sources.list
 	    echo "#deb-src $MIRRORSITE experimental main" >> "$BUILDPLACE"/etc/apt/sources.list
@@ -356,13 +379,13 @@ EOF
 }
 
 function copy_local_configuration () {
-    echo " -> copying local configuration"
+    log "I: copying local configuration"
     for a in hosts hostname resolv.conf; do 
 	if [ -f "/etc/$a" ]; then
 		rm -f "$BUILDPLACE/etc/$a"
 		cp $( readlink -f "/etc/$a" ) "$BUILDPLACE/etc/$a";
 	else
-		echo "W: No local /etc/$a to copy, relying on $BUILDPLACE/etc/$a to be correct" >&2
+		log "W: No local /etc/$a to copy, relying on $BUILDPLACE/etc/$a to be correct"
  	fi
     done
 }
@@ -373,21 +396,21 @@ function extractbuildplace () {
 
     if [ "${INTERNAL_BUILD_UML}" != "yes" -a ! \( "${PRESERVE_BUILDPLACE}" = "yes" -a -d "$BUILDPLACE" \) ]; then
 	cleanbuildplace
-	echo "Building the build Environment"
+	log "I: Building the build Environment"
 	if ! mkdir -p "$BUILDPLACE"; then
-	    echo "E: failed to build the directory to chroot" >&2
+	    log "E: failed to build the directory to chroot"
 	    exit 1
 	fi
-	echo " -> extracting base tarball [${BASETGZ}]"
+	log "I: extracting base tarball [${BASETGZ}]"
 	if [ ! -f "$BASETGZ" ]; then
-	    echo "E: failed to find $BASETGZ, have you done <pbuilder create> to create your base tarball yet?" >&2
+	    log "E: failed to find $BASETGZ, have you done <pbuilder create> to create your base tarball yet?"
 	    exit 1
 	fi
 	if ! (cd "$BUILDPLACE" && tar xfzp "$BASETGZ"); then
-	    echo "E: failed to extract $BASETGZ to $BUILDPLACE" >&2 
+	    log "E: failed to extract $BASETGZ to $BUILDPLACE"
 	    exit 1
 	fi
-	echo " -> creating local configuration"
+	log "I: creating local configuration"
 	hostname -f > "$BUILDPLACE/etc/mailname"
     fi
     copy_local_configuration
@@ -397,7 +420,7 @@ function extractbuildplace () {
 	installaptlines
     else # Warn if override config is not set
 	if [ "$OVERRIDE_APTLINES_WARN" = "yes" ]; then
-	    echo "W: --override-config is not set; not updating apt.conf Read the manpage for details."
+	    log "W: --override-config is not set; not updating apt.conf Read the manpage for details."
 	fi
     fi
 
@@ -415,7 +438,7 @@ function recover_aptcache() {
 	else
 	    doit=cp
 	fi
-	echo "Obtaining the cached apt archive contents"
+	log "I: Obtaining the cached apt archive contents"
 	find "$APTCACHE" -maxdepth 1 -name \*.deb | \
 	    while read A ; do
 	    $doit "$A" "$BUILDPLACE/var/cache/apt/archives/" || true
@@ -428,7 +451,7 @@ function save_aptcache() {
     # it is safe to call this function several times.
     local doit
     if [ -n "$APTCACHE" ]; then
-	echo "Copying back the cached apt archive contents"
+	log "I: Copying back the cached apt archive contents"
 	mkdir -p "$APTCACHE" ;
 	if [ "$APTCACHEHARDLINK" = "yes" ]; then
 	    doit=ln
@@ -438,7 +461,7 @@ function save_aptcache() {
 	find "$BUILDPLACE/var/cache/apt/archives/" -maxdepth 1 -name \*.deb | \
 	    while read A ;do
 	    if [ ! -f "$APTCACHE/"$(basename "$A") -a -f "$A" ]; then
-		echo " -> new cache content "$(basename "$A")" added"
+		log "I: new cache content "$(basename "$A")" added"
 		$doit "$A" "$APTCACHE/" || true
 	    fi
 	done
@@ -449,16 +472,16 @@ function create_basetgz() {
     # create base.tgz
     ( 
 	if ! cd "$BUILDPLACE"; then
-	    echo "Error: unexpected error in chdir to $BUILDPLACE" >&2
+	    log "E: unexpected error in chdir to $BUILDPLACE"
 	    exit 1;
 	fi
 	while test -f "${BASETGZ}.tmp"; do
-	    echo "  -> Someone else has lock over ${BASETGZ}.tmp, waiting"
+	    log "I: Someone else has lock over ${BASETGZ}.tmp, waiting"
 	    sleep 10s
 	done
-	echo " -> creating base tarball [${BASETGZ}]"
+	log "I: creating base tarball [${BASETGZ}]"
 	if ! tar cfz "${BASETGZ}.tmp" * ; then
-	    echo " -> failed building base tarball"
+	    log "E: failed building base tarball"
 	    rm -f "${BASETGZ}.tmp"
 	    exit 1;
 	fi

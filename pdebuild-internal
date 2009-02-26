@@ -38,10 +38,15 @@ export LOGNAME=root
 cd "$1"
 shift;
 
+# dummy function that does enough, real one is defined elsewhere.
+function log() {
+    echo "$*"
+}
+
 while [ -n "$1" ]; do 
     case "$1" in 
 	--debbuildopts)
-	    echo "Setting DEBBUILDOPTS=$2"
+	    log "I: Setting DEBBUILDOPTS=$2"
 	    DEBBUILDOPTS="$2"
 	    shift; shift;
 	    ;;
@@ -63,7 +68,7 @@ while [ -n "$1" ]; do
 	    shift;
 	    ;;
 	--*)
-	    echo "Error: Unknown option [$1] was specified " >&2 
+	    log "E: Unknown option [$1] was specified "
 	    exit 1;
 	    ;;
 	*)

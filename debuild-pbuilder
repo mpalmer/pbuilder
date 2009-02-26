@@ -6,7 +6,7 @@ while ! test -d ./debian -o "$(pwd)" = "/" ; do
 done
 
 if test ! -d ./debian; then
-    echo "Cannot find ./debian dir"
+    echo "E: Cannot find ./debian dir" >&2
     exit 1
 fi;
 

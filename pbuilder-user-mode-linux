@@ -36,7 +36,7 @@ function usecow () {
     PBUILDER_COWFILENAME="${BUILDPLACE}/$$.cow"
     PBUILDER_COW="${PBUILDER_COWFILENAME},"
     if ! touch "${PBUILDER_COWFILENAME}"; then
-	echo "E: Cannot write-access to the COW file, check buildplace" >&2 
+	log "E: Cannot write-access to the COW file, check buildplace"
 	exit 1;
     fi
     rm -f "${PBUILDER_COWFILENAME}"

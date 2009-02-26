@@ -1,0 +1,15 @@
+#!/bin/bash
+
+. ./testlib.sh
+. ./pbuilder-modules
+
+function test_information() {
+    log "I: test"
+    log "W: warning"
+    log "E: error"
+}
+expect_output "I: test
+W: warning
+E: error" test_information
+
+testlib_summary

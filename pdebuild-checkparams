@@ -33,7 +33,7 @@ while [ -n "$1" ]; do
 		    BUILDRESULT=$(readlink -f "$2");
 		else
 		    BUILDRESULT="$2"
-		    echo "W: Build-result Directory $2 does not exist" >&2 
+		    log "W: Build-result Directory $2 does not exist"
 		    # warn, but make it progress.
 		fi
 	    else
@@ -47,7 +47,7 @@ while [ -n "$1" ]; do
 	    ;;
 	--configfile)
 	    if [ ! -f "$2" ]; then
-		echo "E: Config file $2 does not exist" >&2
+		log "E: Config file $2 does not exist"
 		exit 1
 	    fi
 	    . "$2";
@@ -85,14 +85,14 @@ while [ -n "$1" ]; do
 	    shift;
 	    ;;
 	--logfile)
-	    echo "  -> Logging to $2"
+	    log "I: Logging to $2"
 	    PBUILDER_BUILD_LOGFILE=$(readlink -f $2)
 	    exec > >(tee "$2");
 	    exec 2>&1
 	    shift; shift;
 	    ;;
 	--pbuilder)
-	    echo "  -> using $2 as pbuilder"
+	    log "I: using $2 as pbuilder"
 	    PDEBUILD_PBUILDER="$2"
 	    shift; shift;
 	    ;;
@@ -104,7 +104,7 @@ while [ -n "$1" ]; do
 	    break;
 	    ;;
 	--*)
-	    echo "Error: Unknown option [$1] was specified " >&2 
+	    log "E: Unknown option [$1] was specified "
 	    exit 1;
 	    ;;
 	*)
