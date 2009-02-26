@@ -1,12 +1,12 @@
 W: /home/dancer/.pbuilderrc does not exist
-Building the build Environment
- -> extracting base tarball [/TESTDIR/testimage]
- -> creating local configuration
- -> copying local configuration
- -> mounting /proc filesystem
- -> mounting /dev/pts filesystem
--> Mounting /TESTDIR/dir2
- -> policy-rc.d already exists
+I: Building the build Environment
+I: extracting base tarball [/TESTDIR/testimage]
+I: creating local configuration
+I: copying local configuration
+I: mounting /proc filesystem
+I: mounting /dev/pts filesystem
+I: Mounting /TESTDIR/dir2
+I: policy-rc.d already exists
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -33,7 +33,7 @@ Get:6 http://localhost squeeze/main pbuilder 0.185 [332kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libssl0.9.8.
-(Reading database ... 9668 files and directories currently installed.)
+(Reading database ... 9677 files and directories currently installed.)
 Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8g-15_amd64.deb) ...
 Selecting previously deselected package wget.
 Unpacking wget (from .../wget_1.11.4-2_amd64.deb) ...
@@ -51,7 +51,7 @@ Setting up libdebian-installer4 (0.61) ...
 Setting up libdebian-installer-extra4 (0.61) ...
 Setting up cdebootstrap (0.5.4) ...
 Setting up pbuilder (0.185) ...
-Setting DEBBUILDOPTS=
+I: Setting DEBBUILDOPTS=
  -> Attempting to satisfy build-dependencies
  -> Creating pbuilder-satisfydepends-dummy package
 Package: pbuilder-satisfydepends-dummy
@@ -68,7 +68,7 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 9860 files and directories currently installed.)
+(Reading database ... 9869 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -95,12 +95,12 @@ The following NEW packages will be installed:
 The following partially installed packages will be configured:
   pbuilder-satisfydepends-dummy 
 0 packages upgraded, 21 newly installed, 0 to remove and 0 not upgraded.
-Need to get 10.9MB of archives. After unpacking 32.4MB will be used.
+Need to get 10.9MB of archives. After unpacking 32.5MB will be used.
 Writing extended state information...
 Get:1 http://localhost squeeze/main libmagic1 4.26-2 [369kB]
 Get:2 http://localhost squeeze/main file 4.26-2 [44.8kB]
 Get:3 http://localhost squeeze/main html2text 1.3.2a-5 [95.9kB]
-Get:4 http://localhost squeeze/main libpcre3 7.6-2.1 [213kB]
+Get:4 http://localhost squeeze/main libpcre3 7.8-2 [215kB]
 Get:5 http://localhost squeeze/main libglib2.0-0 2.16.6-1 [826kB]
 Get:6 http://localhost squeeze/main libxml2 2.6.32.dfsg-5 [860kB]
 Get:7 http://localhost squeeze/main libcroco3 0.6.1-2 [123kB]
@@ -121,14 +121,14 @@ Get:21 http://localhost squeeze/main po4a 0.34-2 [847kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 9860 files and directories currently installed.)
+(Reading database ... 9869 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.26-2_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.26-2_amd64.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-5_amd64.deb) ...
 Selecting previously deselected package libpcre3.
-Unpacking libpcre3 (from .../libpcre3_7.6-2.1_amd64.deb) ...
+Unpacking libpcre3 (from .../libpcre3_7.8-2_amd64.deb) ...
 Selecting previously deselected package libglib2.0-0.
 Unpacking libglib2.0-0 (from .../libglib2.0-0_2.16.6-1_amd64.deb) ...
 Selecting previously deselected package libxml2.
@@ -166,7 +166,7 @@ Unpacking po4a (from .../archives/po4a_0.34-2_all.deb) ...
 Setting up libmagic1 (4.26-2) ...
 Setting up file (4.26-2) ...
 Setting up html2text (1.3.2a-5) ...
-Setting up libpcre3 (7.6-2.1) ...
+Setting up libpcre3 (7.8-2) ...
 Setting up libglib2.0-0 (2.16.6-1) ...
 Setting up libxml2 (2.6.32.dfsg-5) ...
 Setting up libcroco3 (0.6.1-2) ...
@@ -205,7 +205,7 @@ Get:1 http://localhost squeeze/main fakeroot 1.11 [116kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11404 files and directories currently installed.)
+(Reading database ... 11413 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.11_amd64.deb) ...
 Processing triggers for man-db ...
 Setting up fakeroot (1.11) ...
@@ -466,6 +466,7 @@ make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/po'
 make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
 /usr/bin/make  dsh
 make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
+make[3]: `dsh' is up to date.
 make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
 /usr/bin/make  check-TESTS
 make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
@@ -519,7 +520,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Feb 20 04:10:46 UTC 2009
+Thu Feb 26 05:00:09 UTC 2009
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -589,14 +590,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Fri Feb 20 04:10:51 UTC 2009
+Thu Feb 26 05:00:14 UTC 2009
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 b: b
-a: a
 c: c
-dsh: Process terminated (before write).
+a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -687,8 +687,8 @@ dpkg-deb: building package `dsh' in `../dsh_0.25.10-1_amd64.deb'.
  dpkg-genchanges  >../dsh_0.25.10-1_amd64.changes
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
- -> unmounting /TESTDIR/dir2 filesystem
- -> unmounting dev/pts filesystem
- -> unmounting proc filesystem
- -> cleaning the build env 
-    -> removing directory /TESTDIR/dir3/NUM and its subdirectories
+I: unmounting /TESTDIR/dir2 filesystem
+I: unmounting dev/pts filesystem
+I: unmounting proc filesystem
+I: cleaning the build env 
+I: removing directory /TESTDIR/dir3/NUM and its subdirectories

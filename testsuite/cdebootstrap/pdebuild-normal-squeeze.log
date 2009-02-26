@@ -40,16 +40,16 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: source only upload (original source is included)
 W: /home/dancer/.pbuilderrc does not exist
 I: using fakeroot in build.
-Current time: TIME
-pbuilder-time-stamp: XXXX
-Building the build Environment
- -> extracting base tarball [/TESTDIR/testimage]
- -> creating local configuration
- -> copying local configuration
- -> mounting /proc filesystem
- -> mounting /dev/pts filesystem
- -> policy-rc.d already exists
-Installing the build-deps
+I: Current time: Thu Feb 26 14:24:08 JST 2009
+I: pbuilder-time-stamp: 1235625848
+I: Building the build Environment
+I: extracting base tarball [/TESTDIR/testimage]
+I: creating local configuration
+I: copying local configuration
+I: mounting /proc filesystem
+I: mounting /dev/pts filesystem
+I: policy-rc.d already exists
+I: Installing the build-deps
  -> Attempting to satisfy build-dependencies
  -> Creating pbuilder-satisfydepends-dummy package
 Package: pbuilder-satisfydepends-dummy
@@ -66,7 +66,7 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 9640 files and directories currently installed.)
+(Reading database ... 9649 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -93,12 +93,12 @@ The following NEW packages will be installed:
 The following partially installed packages will be configured:
   pbuilder-satisfydepends-dummy 
 0 packages upgraded, 21 newly installed, 0 to remove and 0 not upgraded.
-Need to get 10.9MB of archives. After unpacking 32.4MB will be used.
+Need to get 10.9MB of archives. After unpacking 32.5MB will be used.
 Writing extended state information...
 Get:1 http://localhost squeeze/main libmagic1 4.26-2 [369kB]
 Get:2 http://localhost squeeze/main file 4.26-2 [44.8kB]
 Get:3 http://localhost squeeze/main html2text 1.3.2a-5 [95.9kB]
-Get:4 http://localhost squeeze/main libpcre3 7.6-2.1 [213kB]
+Get:4 http://localhost squeeze/main libpcre3 7.8-2 [215kB]
 Get:5 http://localhost squeeze/main libglib2.0-0 2.16.6-1 [826kB]
 Get:6 http://localhost squeeze/main libxml2 2.6.32.dfsg-5 [860kB]
 Get:7 http://localhost squeeze/main libcroco3 0.6.1-2 [123kB]
@@ -119,14 +119,14 @@ Get:21 http://localhost squeeze/main po4a 0.34-2 [847kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 9640 files and directories currently installed.)
+(Reading database ... 9649 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.26-2_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.26-2_amd64.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-5_amd64.deb) ...
 Selecting previously deselected package libpcre3.
-Unpacking libpcre3 (from .../libpcre3_7.6-2.1_amd64.deb) ...
+Unpacking libpcre3 (from .../libpcre3_7.8-2_amd64.deb) ...
 Selecting previously deselected package libglib2.0-0.
 Unpacking libglib2.0-0 (from .../libglib2.0-0_2.16.6-1_amd64.deb) ...
 Selecting previously deselected package libxml2.
@@ -164,7 +164,7 @@ Unpacking po4a (from .../archives/po4a_0.34-2_all.deb) ...
 Setting up libmagic1 (4.26-2) ...
 Setting up file (4.26-2) ...
 Setting up html2text (1.3.2a-5) ...
-Setting up libpcre3 (7.6-2.1) ...
+Setting up libpcre3 (7.8-2) ...
 Setting up libglib2.0-0 (2.16.6-1) ...
 Setting up libxml2 (2.6.32.dfsg-5) ...
 Setting up libcroco3 (0.6.1-2) ...
@@ -196,16 +196,16 @@ Building dependency tree...
 Reading state information...
 fakeroot is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Copying source file
-    -> copying [../dsh_0.25.10-1.dsc]
-    -> copying [../dsh_0.25.10.orig.tar.gz]
-    -> copying [../dsh_0.25.10-1.diff.gz]
-Extracting source
+I: Copying source file
+I: copying [../dsh_0.25.10-1.dsc]
+I: copying [../dsh_0.25.10.orig.tar.gz]
+I: copying [../dsh_0.25.10-1.diff.gz]
+I: Extracting source
 dpkg-source: warning: extracting unsigned source package (dsh_0.25.10-1.dsc)
 dpkg-source: extracting dsh in dsh-0.25.10
 dpkg-source: info: unpacking dsh_0.25.10.orig.tar.gz
 dpkg-source: info: applying dsh_0.25.10-1.diff.gz
- -> Building the package
+I: Building the package
 dpkg-buildpackage: set CFLAGS to default value: -g -O2
 dpkg-buildpackage: set CPPFLAGS to default value: 
 dpkg-buildpackage: set LDFLAGS to default value: 
@@ -502,10 +502,10 @@ success
 success
 success
 success
+d: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
 a: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -517,7 +517,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Fri Feb 20 04:42:42 UTC 2009
+Thu Feb 26 05:25:06 UTC 2009
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -530,6 +530,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 DUMPing parameters passed to llexec
 [2] 
+1: Using sleep as the remote shell
 3: Using sleep as the remote shell
 3: Show machine names on output
 3: Adding machine 5,4,3,2,1 to list
@@ -542,7 +543,6 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 DUMPing parameters passed to llexec
 [3] 
-1: Using sleep as the remote shell
 1: Show machine names on output
 1: Adding machine 5,4,3,2,1 to list
 1: Setting forklimit to 3 and wait_shell to 0
@@ -587,14 +587,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Fri Feb 20 04:42:47 UTC 2009
+Thu Feb 26 05:25:11 UTC 2009
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-a: a
-dsh: Process terminated (before write).
 c: c
+dsh: Process terminated (before write).
 b: b
+a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -685,9 +685,9 @@ dpkg-deb: building package `dsh' in `../dsh_0.25.10-1_amd64.deb'.
  dpkg-genchanges  >../dsh_0.25.10-1_amd64.changes
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
- -> unmounting dev/pts filesystem
- -> unmounting proc filesystem
- -> cleaning the build env 
-    -> removing directory /TESTDIR/dir3/NUM and its subdirectories
-Current time: TIME
-pbuilder-time-stamp: XXXX
+I: unmounting dev/pts filesystem
+I: unmounting proc filesystem
+I: cleaning the build env 
+I: removing directory /TESTDIR/dir3/NUM and its subdirectories
+I: Current time: Thu Feb 26 14:25:15 JST 2009
+I: pbuilder-time-stamp: 1235625915

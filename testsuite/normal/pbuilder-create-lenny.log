@@ -1,6 +1,6 @@
-Distribution is lenny.
-Building the build environment
- -> running debootstrap
+I: Distribution is lenny.
+I: Building the build environment
+I: running debootstrap
 /usr/sbin/debootstrap
 I: Retrieving Release
 I: Retrieving Packages
@@ -441,9 +441,10 @@ I: Configuring libstdc++6-4.3-dev...
 I: Configuring g++...
 I: Configuring dpkg-dev...
 I: Base system installed successfully.
- -> debootstrap finished
- -> copying local configuration
-  -> Installing apt-lines
+I: debootstrap finished
+I: copying local configuration
+I: Installing apt-lines
+I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh starting
 umount: sysfs: not found
 umount: /sys: not mounted
 umount: sysfs: not found
@@ -453,12 +454,12 @@ umount: /dev/shm: not mounted
 umount: proc: not mounted
 umount: proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//NUM/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
-Refreshing the base.tgz 
- -> upgrading packages
- -> mounting /proc filesystem
- -> mounting /dev/pts filesystem
- -> installing dummy policy-rc.d
+I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+I: Refreshing the base.tgz 
+I: upgrading packages
+I: mounting /proc filesystem
+I: mounting /dev/pts filesystem
+I: installing dummy policy-rc.d
 Get:1 http://localhost lenny Release.gpg [386B]
 Hit http://localhost lenny Release
 Ign http://localhost lenny/main Packages/DiffIndex
@@ -516,6 +517,7 @@ Setting up libxapian15 (1.0.7-4) ...
 Setting up libept0 (0.5.22) ...
 Setting up aptitude (0.4.11.11-1~lenny1) ...
 Setting up build-essential (11.4) ...
+I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh starting
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
@@ -523,9 +525,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
- -> unmounting dev/pts filesystem
- -> unmounting proc filesystem
- -> creating base tarball [/TESTDIR/testimage]
- -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//NUM and its subdirectories
+I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+I: unmounting dev/pts filesystem
+I: unmounting proc filesystem
+I: creating base tarball [/TESTDIR/testimage]
+I: cleaning the build env 
+I: removing directory /var/cache/pbuilder/build//NUM and its subdirectories

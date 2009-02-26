@@ -1,6 +1,6 @@
-Distribution is sid.
-Building the build environment
- -> running debootstrap
+I: Distribution is sid.
+I: Building the build environment
+I: running debootstrap
 /usr/sbin/debootstrap
 I: Retrieving Release
 I: Retrieving Packages
@@ -441,9 +441,10 @@ I: Configuring libstdc++6-4.3-dev...
 I: Configuring g++...
 I: Configuring dpkg-dev...
 I: Base system installed successfully.
- -> debootstrap finished
- -> copying local configuration
-  -> Installing apt-lines
+I: debootstrap finished
+I: copying local configuration
+I: Installing apt-lines
+I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh starting
 umount: sysfs: not found
 umount: /sys: not mounted
 umount: sysfs: not found
@@ -453,12 +454,12 @@ umount: /dev/shm: not mounted
 umount: proc: not mounted
 umount: proc: not mounted
 umount: /dev/pts: not mounted
- -> user script /var/cache/pbuilder/build//NUM/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
-Refreshing the base.tgz 
- -> upgrading packages
- -> mounting /proc filesystem
- -> mounting /dev/pts filesystem
- -> installing dummy policy-rc.d
+I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh finished
+I: Refreshing the base.tgz 
+I: upgrading packages
+I: mounting /proc filesystem
+I: mounting /dev/pts filesystem
+I: installing dummy policy-rc.d
 Get:1 http://localhost sid Release.gpg [189B]
 Hit http://localhost sid Release
 Ign http://localhost sid/main Packages/DiffIndex
@@ -483,26 +484,26 @@ The following NEW packages will be installed:
   aptitude build-essential libcwidget3 libept0 libncursesw5 libsigc++-2.0-0c2a
   libxapian15
 0 upgraded, 7 newly installed, 0 to remove and 0 not upgraded.
-Need to get 4802kB of archives.
+Need to get 4811kB of archives.
 After this operation, 14.2MB of additional disk space will be used.
 Get:1 http://localhost sid/main libncursesw5 5.7+20090214-1 [376kB]
 Get:2 http://localhost sid/main libsigc++-2.0-0c2a 2.0.18-2 [34.2kB]
 Get:3 http://localhost sid/main libcwidget3 0.5.12-4 [310kB]
-Get:4 http://localhost sid/main libxapian15 1.0.7-4 [801kB]
+Get:4 http://localhost sid/main libxapian15 1.0.10-2 [810kB]
 Get:5 http://localhost sid/main libept0 0.5.26 [205kB]
 Get:6 http://localhost sid/main aptitude 0.4.11.11-1 [3068kB]
 Get:7 http://localhost sid/main build-essential 11.4 [7126B]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libncursesw5.
-(Reading database ... 9489 files and directories currently installed.)
+(Reading database ... 9570 files and directories currently installed.)
 Unpacking libncursesw5 (from .../libncursesw5_5.7+20090214-1_amd64.deb) ...
 Selecting previously deselected package libsigc++-2.0-0c2a.
 Unpacking libsigc++-2.0-0c2a (from .../libsigc++-2.0-0c2a_2.0.18-2_amd64.deb) ...
 Selecting previously deselected package libcwidget3.
 Unpacking libcwidget3 (from .../libcwidget3_0.5.12-4_amd64.deb) ...
 Selecting previously deselected package libxapian15.
-Unpacking libxapian15 (from .../libxapian15_1.0.7-4_amd64.deb) ...
+Unpacking libxapian15 (from .../libxapian15_1.0.10-2_amd64.deb) ...
 Selecting previously deselected package libept0.
 Unpacking libept0 (from .../libept0_0.5.26_amd64.deb) ...
 Selecting previously deselected package aptitude.
@@ -512,10 +513,11 @@ Unpacking build-essential (from .../build-essential_11.4_amd64.deb) ...
 Setting up libncursesw5 (5.7+20090214-1) ...
 Setting up libsigc++-2.0-0c2a (2.0.18-2) ...
 Setting up libcwidget3 (0.5.12-4) ...
-Setting up libxapian15 (1.0.7-4) ...
+Setting up libxapian15 (1.0.10-2) ...
 Setting up libept0 (0.5.26) ...
 Setting up aptitude (0.4.11.11-1) ...
 Setting up build-essential (11.4) ...
+I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh starting
 umount: /sys: not mounted
 umount: /run: not found
 umount: /proc/bus/usb: not mounted
@@ -523,9 +525,9 @@ umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
 kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
- -> user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
- -> unmounting dev/pts filesystem
- -> unmounting proc filesystem
- -> creating base tarball [/TESTDIR/testimage]
- -> cleaning the build env 
-    -> removing directory /var/cache/pbuilder/build//NUM and its subdirectories
+I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
+I: unmounting dev/pts filesystem
+I: unmounting proc filesystem
+I: creating base tarball [/TESTDIR/testimage]
+I: cleaning the build env 
+I: removing directory /var/cache/pbuilder/build//NUM and its subdirectories
