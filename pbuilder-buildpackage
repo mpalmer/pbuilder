@@ -96,6 +96,7 @@ trap umountproc_cleanbuildplace_trap exit sighup
 
 log "I: Copying source file"
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
+copyinputfile "$BUILDPLACE/tmp/buildd"
 
 log "I: Extracting source"
 if echo "chown $BUILDUSERNAME:$BUILDUSERNAME /tmp/buildd /tmp/buildd/*" | $CHROOTEXEC /bin/bash; then

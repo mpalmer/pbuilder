@@ -198,6 +198,19 @@ while [ -n "$1" ]; do
 	    SAVE_AFTER_LOGIN=yes;
 	    shift;
 	    ;;
+	--inputfile)
+	    if [ ! -f "$2" ]; then
+		log "E: Input file $2 does not exist"
+		exit 1
+	    fi
+	    INPUTFILE[${#INPUTFILE[@]}]="$2";
+	    shift; shift; 
+	    ;;
+	--outputfile)
+	    OUTPUTFILE[${#OUTPUTFILE[@]}]="$2";
+	    shift; shift; 
+	    ;;
+
 	## internal options.
 	--internal-chrootexec)
 	    # specify custom chrootexec function -- this is internal debugging function

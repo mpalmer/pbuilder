@@ -1,7 +1,7 @@
 #! /bin/bash
 # common modules for pbuilder.
 #   pbuilder -- personal Debian package builder
-#   Copyright (C) 2001-2007 Junichi Uekawa
+#   Copyright (C) 2001-2009 Junichi Uekawa
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -487,6 +487,19 @@ function create_basetgz() {
 	fi
 	mv "${BASETGZ}.tmp" "${BASETGZ}"
     )
+}
+
+function copyinputfile() {
+    # copy files to inside chroot, copy all files specified by INPUTFILE[] parameter.
+    TARGETDIR="$1"
+    if [ -z "$TARGETDIR" ]; then
+	log "E: Unexpected error in copyinputfile"
+	exit 1x
+    fi
+    if [ -n "$INPUTFILE" ]; then
+	log "I: copy ${INPUTFILE[*]} to taget directory"
+	cp "${INPUTFILE[@]}" "${TARGETDIR}"
+    fi
 }
 
 # all trap hooks that should lead to 'exit'; and error exit.
