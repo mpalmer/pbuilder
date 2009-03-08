@@ -1592,11 +1592,12 @@ $ pdebuild --pbuilder cowbuilder</screen>
 	    <row>
 	      <entry><filename>/tmp/buildd</filename></entry>
 	      <entry>Default place used in <command>pbuilder</command>
-	      to place the Debian package to be processed.
-	      <filename>/tmp/buildd/packagename-version/</filename>
-	      will be the root directory of the package being
-	      processed.  HOME environment variable is set to this
-	      value inside chroot by pbuilder-buildpackage
+		to place the Debian package to be processed.
+		<filename>/tmp/buildd/packagename-version/</filename>
+		will be the root directory of the package being
+		processed.  HOME environment variable is set to this
+		value inside chroot by pbuilder-buildpackage.
+		<option>--inputfile</option> will place files here.
 	      </entry>
 	    </row>
 	    <row>
