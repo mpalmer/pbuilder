@@ -58,12 +58,24 @@ get_control_re() {
     cat "$control" |
         awk '
         BEGIN { source=1 }
-        /^$/ { source=0 }
+        /^$/ { 
+          if (p) {
+            print s
+            s=""
+          }
+          source=0 
+        }
         /^Source:/ { source=1 }
-        /^[^ ]*:/ { p=0 }
+        /^[^ ]*:/ { 
+          if (source && p) { 
+            print s
+            s=""
+          }
+          p=0
+        }
         /^#/ { next }
         tolower($0) ~ /^'"$re"':/ { p=1 }
-        { if (p && source) { print $0 } }' |
+        { if (p && source) { s=s""$0 } }' |
         sed 's/^[^: ]*://'
 }
 

@@ -15,23 +15,20 @@ Build-Depends:
  debhelper,
  quilt,
 ##
- libwxgtk2.8-dev,
+ libwxgtk2.8-dev
 Build-Depends-Indep: test, test1, 
  test2, test3 | 
  test4, test5
+Misc: test
+
+Build-Depends: wrong build depends, line
 Desctiption: test
  other things
  wow
 EOF
     get_control_re "$CONTROL" "build-(depends|depends-indep)"
 }
-expect_output " 
- autotools-dev,
- debhelper,
- quilt,
- libwxgtk2.8-dev,
- test, test1, 
- test2, test3 | 
- test4, test5" test_get_control_re
+expect_output "  autotools-dev, debhelper, quilt, libwxgtk2.8-dev
+ test, test1,  test2, test3 |  test4, test5" test_get_control_re
 
 testlib_summary
