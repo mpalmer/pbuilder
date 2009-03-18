@@ -52,7 +52,7 @@ export HOME="/tmp/buildd"
 
 echobacktime
 extractbuildplace 
-trap umountproc_cleanbuildplace_trap exit sighup
+trap umountproc_cleanbuildplace_trap exit sighup sigpipe
 loadhooks
 
 if [ ! -d "${BUILDRESULT}" ]; then
@@ -89,10 +89,10 @@ recover_aptcache
 createbuilduser
 log "I: Installing the build-deps"
 executehooks "D"
-trap saveaptcache_umountproc_cleanbuildplace_trap exit sighup
+trap saveaptcache_umountproc_cleanbuildplace_trap exit sighup sigpipe
 checkbuilddep "$PACKAGENAME"
 save_aptcache
-trap umountproc_cleanbuildplace_trap exit sighup
+trap umountproc_cleanbuildplace_trap exit sighup sigpipe
 
 log "I: Copying source file"
 copydsc "$PACKAGENAME" "$BUILDPLACE/tmp/buildd"
@@ -140,7 +140,7 @@ else
 fi
 
 if ! wait ${BUILD_PID}; then
-    trap umountproc_cleanbuildplace_trap exit sighup
+    trap umountproc_cleanbuildplace_trap exit sighup sigpipe
     eval "${KILL_WAIT_PID}"
     log "E: Failed autobuilding of package"
     executehooks "C"
@@ -150,10 +150,10 @@ else
     # build was successful
 fi
 
-trap umountproc_cleanbuildplace_trap exit sighup
+trap umountproc_cleanbuildplace_trap exit sighup sigpipe
 executehooks "B"
 save_aptcache
-trap cleanbuildplace_trap exit sighup
+trap cleanbuildplace_trap exit sighup sigpipe
 umountproc
 
 
@@ -167,6 +167,6 @@ fi
 
 :
 cleanbuildplace
-trap - exit sighup
+trap - exit sighup sigpipe
 echobacktime
 exit 0
