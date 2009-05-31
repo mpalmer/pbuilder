@@ -1,3 +1,15 @@
+pbuilder (0.188) unstable; urgency=low
+
+  [ Junichi Uekawa ]
+  * add a note that debian/changelog should not be edited.
+  * Declare bashisms explicit in buildall script. (closes: #530157)
+  
+  [ Loïc Minier ]
+  * Call apt-get autoremove on upgrades: (closes: #322649)
+  * Drop useless -o APT::Get::AutomaticRemove=true
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 31 May 2009 10:44:05 +0900
+
 pbuilder (0.187) unstable; urgency=low
 
   [ Junichi Uekawa ]
