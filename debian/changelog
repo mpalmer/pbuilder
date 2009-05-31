@@ -1,8 +1,19 @@
-pbuilder (0.186.0snapshot) UNRELEASED; urgency=low
+pbuilder (0.187) unstable; urgency=low
 
-  * 
+  [ Junichi Uekawa ]
+  * gcc is not a useful dependency of pbuilder (closes: #486492)
+  * warn if --othermirror is specified and --override-config
+    is not specified. (closes: #493154)
+  * refactor to use 'log' function rather than using 'echo' directly.
+  * implement --inputfile option.
+  * handle packages line wrapping with something other than ',' in
+    Build-Depends (closes: 519306)
 
- -- Junichi Uekawa <dancer@debian.org>  Thu, 26 Feb 2009 13:21:03 +0900
+  [ Stefan Fritsch ]
+  * Bug#520251: pbuilder: Pbuilder does not umount bindmounts when ssh
+    connection dies
+
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 21 Mar 2009 12:47:46 +0900
 
 pbuilder (0.186) unstable; urgency=low
 

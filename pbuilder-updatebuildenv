@@ -44,7 +44,8 @@ fi
 recover_aptcache
 
 $TRAP saveaptcache_umountproc_cleanbuildplace_trap exit sighup
-$CHROOTEXEC /usr/bin/apt-get -y --force-yes "${FORCE_CONFNEW[@]}" -o "APT::Get::AutomaticRemove=true"  dist-upgrade
+$CHROOTEXEC /usr/bin/apt-get -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrade
+$CHROOTEXEC /usr/bin/apt-get -y --force-yes autoremove
 $CHROOTEXEC /usr/bin/apt-get -y --force-yes install build-essential dpkg-dev apt aptitude $EXTRAPACKAGES
 save_aptcache
 
