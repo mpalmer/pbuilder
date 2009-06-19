@@ -45,7 +45,10 @@ recover_aptcache
 
 $TRAP saveaptcache_umountproc_cleanbuildplace_trap exit sighup
 $CHROOTEXEC /usr/bin/apt-get -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrade
-$CHROOTEXEC /usr/bin/apt-get -y --force-yes autoremove
+# autoremove: Ignore error in case of etch because apt in etch doesn't
+# support autoremove. TODO: Do not ignore error when etch is no longer
+# supported.
+$CHROOTEXEC /usr/bin/apt-get -y --force-yes autoremove || true
 $CHROOTEXEC /usr/bin/apt-get -y --force-yes install build-essential dpkg-dev apt aptitude $EXTRAPACKAGES
 save_aptcache
 
