@@ -28,6 +28,8 @@ SHELLCODES=pbuilder-buildpackage \
 	pdebuild-user-mode-linux \
 	pdebuild-internal
 
+all:
+
 check:
 	set -e; \
 	for A in $(SHELLCODES); do \
