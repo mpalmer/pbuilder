@@ -17,7 +17,9 @@ install: build
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	$(MAKE) check
+endif
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/pbuilder
 	dh_movefiles -ppbuilder-uml --sourcedir=debian/pbuilder
 
