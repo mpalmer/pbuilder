@@ -1,8 +1,19 @@
-pbuilder (0.189~snapshot1) UNRELEASED; urgency=low
+pbuilder (0.189) unstable; urgency=low
 
-  * dummy snapshot changelog, don't edit here.
+  [ Junichi Uekawa ]
+  * Do not error out on etch apt for apt-get autoremove (closes: #531454)
 
- -- Junichi Uekawa <dancer@debian.org>  Tue, 23 Jun 2009 08:49:32 +0900
+  [ Peter Pentchev ]
+  * update GPL symlink
+  * Split a long description line.
+  * Convert an example into a real shell script.
+  * add all: target in Makefile
+  * Bump Standards-Version to 3.8.1 by simply honoring the nocheck build
+    option.
+  * Bump the debhelper compatibility level to 7: dh_prep instead of
+    dh_clean -k.
+
+ -- Junichi Uekawa <dancer@debian.org>  Mon, 13 Jul 2009 20:43:22 +0900
 
 pbuilder (0.188) unstable; urgency=low
 
