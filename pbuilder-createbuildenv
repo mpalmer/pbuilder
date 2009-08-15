@@ -82,13 +82,13 @@ log "I: Refreshing the base.tgz "
 log "I: upgrading packages"
 mountproc
 $TRAP umountproc_cleanbuildplace_trap exit sighup
-$CHROOTEXEC /usr/bin/apt-get update
+$CHROOTEXEC /usr/bin/apt-get -q update
 if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
 fi
 recover_aptcache
-$CHROOTEXEC /usr/bin/apt-get -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrade
-$CHROOTEXEC /usr/bin/apt-get -y --force-yes install build-essential dpkg-dev apt $EXTRAPACKAGES
+$CHROOTEXEC /usr/bin/apt-get -q -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrade
+$CHROOTEXEC /usr/bin/apt-get -q -y --force-yes install build-essential dpkg-dev apt $EXTRAPACKAGES
 save_aptcache
 
 executehooks "E"

@@ -30,7 +30,7 @@ set -e
 
 # I am probably running as root; make sure I have pbuilder installed here.
 # passwd is needed as well because of useradd and groupadd calls.
-apt-get install -y --force-yes pbuilder passwd
+apt-get install -q -y --force-yes pbuilder passwd
 
 # I'm not going to have the same LOGNAME as outside, I'm root.
 export LOGNAME=root
@@ -84,7 +84,7 @@ BUILDPLACE=
 executehooks "D"
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
 "$PBUILDERSATISFYDEPENDSCMD"
-apt-get install -y --force-yes fakeroot
+apt-get install -q -y --force-yes fakeroot
 
 # create the user similar to that used outside
 groupadd -g "${BUILDRESULTGID}" -o pbgroup
