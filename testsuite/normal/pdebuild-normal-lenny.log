@@ -40,8 +40,8 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: source only upload (original source is included)
 W: /home/dancer/.pbuilderrc does not exist
 I: using fakeroot in build.
-I: Current time: Sat Mar 21 11:24:34 JST 2009
-I: pbuilder-time-stamp: 1237602274
+I: Current time: Sun Aug 16 08:06:08 JST 2009
+I: pbuilder-time-stamp: 1250377568
 I: Building the build Environment
 I: extracting base tarball [/TESTDIR/testimage]
 I: creating local configuration
@@ -66,7 +66,7 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 9656 files and directories currently installed.)
+(Reading database ... 9662 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -114,7 +114,7 @@ Get:17 http://localhost lenny/main po4a 0.34-2 [847kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 9656 files and directories currently installed.)
+(Reading database ... 9662 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_4.26-1_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_4.26-1_amd64.deb) ...
@@ -177,6 +177,7 @@ Writing extended state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+aptitude is already the newest version.
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
@@ -186,7 +187,7 @@ Get:1 http://localhost lenny/main fakeroot 1.11 [116kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11143 files and directories currently installed.)
+(Reading database ... 11149 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.11_amd64.deb) ...
 Processing triggers for man-db ...
 Setting up fakeroot (1.11) ...
@@ -497,9 +498,9 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
-b: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
 d: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
+b: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -507,11 +508,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-2: 2
 1: 1
+2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Mar 21 02:25:31 UTC 2009
+Sat Aug 15 23:08:18 UTC 2009
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -581,14 +582,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Mar 21 02:25:36 UTC 2009
+Sat Aug 15 23:08:23 UTC 2009
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
-b: b
 dsh: Process terminated (before write).
 c: c
+b: b
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -683,5 +684,5 @@ I: unmounting dev/pts filesystem
 I: unmounting proc filesystem
 I: cleaning the build env 
 I: removing directory /TESTDIR/dir3/NUM and its subdirectories
-I: Current time: Sat Mar 21 11:25:39 JST 2009
-I: pbuilder-time-stamp: 1237602339
+I: Current time: Sun Aug 16 08:08:49 JST 2009
+I: pbuilder-time-stamp: 1250377729

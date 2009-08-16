@@ -9,270 +9,493 @@ I: mounting /dev/pts filesystem
 I: policy-rc.d already exists
 I: Refreshing the base.tgz 
 I: upgrading packages
-Get:1 http://localhost squeeze Release.gpg [197B]
-Get:2 http://localhost squeeze Release [71.6kB]
+Get:1 http://localhost squeeze Release.gpg [835B]
+Get:2 http://localhost squeeze Release [92.5kB]
 Ign http://localhost squeeze/main Packages
-Get:3 http://localhost squeeze/main Packages [7262kB]
+Get:3 http://localhost squeeze/main Packages [7639kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 The following NEW packages will be installed:
-  libdb4.7
+  dash gcc-4.4-base libdb4.7 sensible-utils
 The following packages will be upgraded:
-  aptitude base-files bash binutils cpio cpp cpp-4.3 debconf debconf-i18n
-  debianutils findutils g++ g++-4.3 gcc gcc-4.3 gcc-4.3-base gnupg gpgv grep
-  gzip libc6 libc6-dev libdb4.6 libept0 libgcc1 libgdbm3 libgmp3c2 libgomp1
-  libmpfr1ldbl libncurses5 libncursesw5 libpam-modules libpam-runtime libpam0g
-  libreadline5 libsepol1 libstdc++6 libstdc++6-4.3-dev libxapian15 mawk mktemp
-  ncurses-base ncurses-bin readline-common sed tzdata
-46 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 36.9MB of archives.
-After this operation, 4481kB of additional disk space will be used.
-Get:1 http://localhost squeeze/main base-files 5.0 [73.2kB]
-Get:2 http://localhost squeeze/main debianutils 2.31 [56.0kB]
-Get:3 http://localhost squeeze/main bash 3.2-5 [643kB]
-Get:4 http://localhost squeeze/main findutils 4.4.0-3 [631kB]
-Get:5 http://localhost squeeze/main grep 2.5.4-3 [316kB]
-Get:6 http://localhost squeeze/main gzip 1.3.12-8 [107kB]
-Get:7 http://localhost squeeze/main mktemp 1.6-1 [11.8kB]
-Get:8 http://localhost squeeze/main ncurses-bin 5.7+20090228-1 [310kB]
-Get:9 http://localhost squeeze/main sed 4.1.5-8 [254kB]
-Get:10 http://localhost squeeze/main libc6-dev 2.9-4 [2521kB]
-Get:11 http://localhost squeeze/main libgomp1 4.3.3-3 [15.5kB]
-Get:12 http://localhost squeeze/main cpp-4.3 4.3.3-3 [3372kB]
-Get:13 http://localhost squeeze/main gcc-4.3-base 4.3.3-3 [104kB]
-Get:14 http://localhost squeeze/main libgcc1 1:4.3.3-3 [44.5kB]
-Get:15 http://localhost squeeze/main gcc-4.3 4.3.3-3 [2609kB]
-Get:16 http://localhost squeeze/main g++-4.3 4.3.3-3 [4801kB]
-Get:17 http://localhost squeeze/main libstdc++6-4.3-dev 4.3.3-3 [1428kB]
-Get:18 http://localhost squeeze/main libstdc++6 4.3.3-3 [334kB]
-Get:19 http://localhost squeeze/main libgmp3c2 2:4.2.4+dfsg-2 [215kB]
-Get:20 http://localhost squeeze/main libmpfr1ldbl 2.4.1-1 [418kB]
-Get:21 http://localhost squeeze/main binutils 2.19.1-1 [2921kB]
-Get:22 http://localhost squeeze/main libc6 2.9-4 [4935kB]
-Get:23 http://localhost squeeze/main libncurses5 5.7+20090228-1 [354kB]
-Get:24 http://localhost squeeze/main ncurses-base 5.7+20090228-1 [179kB]
-Get:25 http://localhost squeeze/main debconf-i18n 1.5.26 [177kB]
-Get:26 http://localhost squeeze/main debconf 1.5.26 [149kB]
-Get:27 http://localhost squeeze/main libdb4.7 4.7.25-6 [654kB]
-Get:28 http://localhost squeeze/main libpam-modules 1.0.1-7 [308kB]
-Get:29 http://localhost squeeze/main mawk 1.3.3-14 [90.5kB]
-Get:30 http://localhost squeeze/main readline-common 5.2-4 [50.9kB]
-Get:31 http://localhost squeeze/main libreadline5 5.2-4 [147kB]
-Get:32 http://localhost squeeze/main gpgv 1.4.9-4 [183kB]
-Get:33 http://localhost squeeze/main gnupg 1.4.9-4 [2047kB]
-Get:34 http://localhost squeeze/main libpam-runtime 1.0.1-7 [177kB]
-Get:35 http://localhost squeeze/main libpam0g 1.0.1-7 [107kB]
-Get:36 http://localhost squeeze/main libsepol1 2.0.32-1 [125kB]
-Get:37 http://localhost squeeze/main tzdata 2009b-1 [752kB]
-Get:38 http://localhost squeeze/main libxapian15 1.0.10-2 [810kB]
-Get:39 http://localhost squeeze/main libept0 0.5.26 [205kB]
-Get:40 http://localhost squeeze/main libncursesw5 5.7+20090228-1 [376kB]
-Get:41 http://localhost squeeze/main aptitude 0.4.11.11-1 [3068kB]
-Get:42 http://localhost squeeze/main cpio 2.9.90-3 [182kB]
-Get:43 http://localhost squeeze/main libgdbm3 1.8.3-4 [24.2kB]
-Get:44 http://localhost squeeze/main libdb4.6 4.6.21-13 [593kB]
-Get:45 http://localhost squeeze/main cpp 4:4.3.3-2 [14.1kB]
-Get:46 http://localhost squeeze/main gcc 4:4.3.3-2 [4998B]
-Get:47 http://localhost squeeze/main g++ 4:4.3.3-2 [1374B]
+  apt aptitude base-files base-passwd bash binutils bsdutils bzip2 coreutils
+  cpio cpp cpp-4.3 debconf debconf-i18n debianutils diff dpkg dpkg-dev
+  findutils g++ g++-4.3 gcc gcc-4.3 gcc-4.3-base gnupg gpgv grep gzip
+  initscripts libacl1 libattr1 libbz2-1.0 libc6 libc6-dev libdb4.6
+  libdevmapper1.02.1 libept0 libgcc1 libgdbm3 libgmp3c2 libgomp1 libmpfr1ldbl
+  libncurses5 libncursesw5 libpam-modules libpam-runtime libpam0g libreadline5
+  libselinux1 libsepol1 libslang2 libstdc++6 libstdc++6-4.3-dev
+  libtext-charwidth-perl libtext-iconv-perl libtext-wrapi18n-perl libxapian15
+  linux-libc-dev login lsb-base make makedev mawk mktemp mount ncurses-base
+  ncurses-bin passwd perl perl-base perl-modules procps readline-common sed
+  sysv-rc sysvinit sysvinit-utils tar tzdata util-linux zlib1g
+81 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 62.8MB of archives.
+After this operation, 5677kB of additional disk space will be used.
+Get:1 http://localhost squeeze/main linux-libc-dev 2.6.30-5 [827kB]
+Get:2 http://localhost squeeze/main libc6-dev 2.9-23 [2577kB]
+Get:3 http://localhost squeeze/main gcc-4.4-base 4.4.1-1 [110kB]
+Get:4 http://localhost squeeze/main libgcc1 1:4.4.1-1 [53.1kB]
+Get:5 http://localhost squeeze/main libc6 2.9-23 [4776kB]
+Get:6 http://localhost squeeze/main base-passwd 3.5.21 [42.0kB]
+Get:7 http://localhost squeeze/main base-files 5.0.0 [70.3kB]
+Get:8 http://localhost squeeze/main dpkg 1.15.3.1+b1 [2214kB]
+Get:9 http://localhost squeeze/main sensible-utils 0.0.1 [4442B]
+Get:10 http://localhost squeeze/main debianutils 3.2 [48.9kB]
+Get:11 http://localhost squeeze/main dash 0.5.5.1-2.3 [99.5kB]
+Get:12 http://localhost squeeze/main bash 3.2-6 [640kB]
+Get:13 http://localhost squeeze/main coreutils 7.4-2 [4883kB]
+Get:14 http://localhost squeeze/main diff 2.8.1-13 [193kB]
+Get:15 http://localhost squeeze/main findutils 4.4.2-1 [689kB]
+Get:16 http://localhost squeeze/main grep 2.5.4-4 [317kB]
+Get:17 http://localhost squeeze/main gzip 1.3.12-8 [107kB]
+Get:18 http://localhost squeeze/main login 1:4.1.4.2-1 [755kB]
+Get:19 http://localhost squeeze/main mktemp 7.4-2 [13.9kB]
+Get:20 http://localhost squeeze/main libsepol1 2.0.36-1 [127kB]
+Get:21 http://localhost squeeze/main mount 2.15.1~rc1-1 [164kB]
+Get:22 http://localhost squeeze/main ncurses-bin 5.7+20090803-1 [312kB]
+Get:23 http://localhost squeeze/main perl-modules 5.10.0-24 [3199kB]
+Get:24 http://localhost squeeze/main libdb4.6 4.6.21-14 [590kB]
+Get:25 http://localhost squeeze/main libgdbm3 1.8.3-6 [38.5kB]
+Get:26 http://localhost squeeze/main zlib1g 1:1.2.3.3.dfsg-15 [75.8kB]
+Get:27 http://localhost squeeze/main perl 5.10.0-24 [5198kB]
+Get:28 http://localhost squeeze/main perl-base 5.10.0-24 [1043kB]
+Get:29 http://localhost squeeze/main libselinux1 2.0.82-1 [81.7kB]
+Get:30 http://localhost squeeze/main sed 4.2.1-3 [249kB]
+Get:31 http://localhost squeeze/main sysvinit 2.86.ds1-65 [110kB]
+Get:32 http://localhost squeeze/main tar 1.22-1.1 [877kB]
+Get:33 http://localhost squeeze/main lsb-base 3.2-23 [20.0kB]
+Get:34 http://localhost squeeze/main libtext-iconv-perl 1.7-2 [18.5kB]
+Get:35 http://localhost squeeze/main libtext-charwidth-perl 0.04-6 [11.9kB]
+Get:36 http://localhost squeeze/main libtext-wrapi18n-perl 0.06-7 [9004B]
+Get:37 http://localhost squeeze/main debconf-i18n 1.5.27 [183kB]
+Get:38 http://localhost squeeze/main debconf 1.5.27 [151kB]
+Get:39 http://localhost squeeze/main tzdata 2009k-2 [773kB]
+Get:40 http://localhost squeeze/main util-linux 2.15.1~rc1-1 [588kB]
+Get:41 http://localhost squeeze/main bsdutils 1:2.15.1~rc1-1 [74.3kB]
+Get:42 http://localhost squeeze/main libncurses5 5.7+20090803-1 [355kB]
+Get:43 http://localhost squeeze/main ncurses-base 5.7+20090803-1 [182kB]
+Get:44 http://localhost squeeze/main sysvinit-utils 2.86.ds1-65 [94.7kB]
+Get:45 http://localhost squeeze/main libdb4.7 4.7.25-7 [650kB]
+Get:46 http://localhost squeeze/main libpam-modules 1.0.1-10 [308kB]
+Get:47 http://localhost squeeze/main mawk 1.3.3-15 [90.1kB]
+Get:48 http://localhost squeeze/main libstdc++6 4.4.1-1 [341kB]
+Get:49 http://localhost squeeze/main libxapian15 1.0.14-2 [811kB]
+Get:50 http://localhost squeeze/main libept0 0.5.26+b1 [206kB]
+Get:51 http://localhost squeeze/main libncursesw5 5.7+20090803-1 [379kB]
+Get:52 http://localhost squeeze/main aptitude 0.4.11.11-1+b1 [3070kB]
+Get:53 http://localhost squeeze/main apt 0.7.21 [1622kB]
+Get:54 http://localhost squeeze/main bzip2 1.0.5-3 [48.6kB]
+Get:55 http://localhost squeeze/main libbz2-1.0 1.0.5-3 [45.4kB]
+Get:56 http://localhost squeeze/main readline-common 5.2-5 [50.9kB]
+Get:57 http://localhost squeeze/main libreadline5 5.2-5 [146kB]
+Get:58 http://localhost squeeze/main gpgv 1.4.9-4 [183kB]
+Get:59 http://localhost squeeze/main gnupg 1.4.9-4 [2047kB]
+Get:60 http://localhost squeeze/main initscripts 2.86.ds1-65 [76.1kB]
+Get:61 http://localhost squeeze/main libattr1 1:2.4.43-3 [12.3kB]
+Get:62 http://localhost squeeze/main libacl1 2.2.47-3 [19.1kB]
+Get:63 http://localhost squeeze/main libpam-runtime 1.0.1-10 [185kB]
+Get:64 http://localhost squeeze/main libpam0g 1.0.1-10 [107kB]
+Get:65 http://localhost squeeze/main libslang2 2.1.4-3 [510kB]
+Get:66 http://localhost squeeze/main passwd 1:4.1.4.2-1 [1054kB]
+Get:67 http://localhost squeeze/main sysv-rc 2.86.ds1-65 [67.6kB]
+Get:68 http://localhost squeeze/main cpio 2.10-1 [245kB]
+Get:69 http://localhost squeeze/main libgomp1 4.4.1-1 [25.3kB]
+Get:70 http://localhost squeeze/main libgmp3c2 2:4.3.1+dfsg-3 [307kB]
+Get:71 http://localhost squeeze/main libmpfr1ldbl 2.4.1-2 [419kB]
+Get:72 http://localhost squeeze/main libstdc++6-4.3-dev 4.3.3-14 [1384kB]
+Get:73 http://localhost squeeze/main g++-4.3 4.3.3-14 [4804kB]
+Get:74 http://localhost squeeze/main gcc-4.3 4.3.3-14 [2593kB]
+Get:75 http://localhost squeeze/main cpp-4.3 4.3.3-14 [3348kB]
+Get:76 http://localhost squeeze/main binutils 2.19.51.20090723-1 [3197kB]
+Get:77 http://localhost squeeze/main gcc-4.3-base 4.3.3-14 [107kB]
+Get:78 http://localhost squeeze/main libdevmapper1.02.1 2:1.02.30-3 [61.8kB]
+Get:79 http://localhost squeeze/main makedev 2.3.1-89 [42.4kB]
+Get:80 http://localhost squeeze/main procps 1:3.2.8-1 [244kB]
+Get:81 http://localhost squeeze/main cpp 4:4.3.3-9 [14.4kB]
+Get:82 http://localhost squeeze/main make 3.81-6 [405kB]
+Get:83 http://localhost squeeze/main dpkg-dev 1.15.3.1 [647kB]
+Get:84 http://localhost squeeze/main gcc 4:4.3.3-9 [5024B]
+Get:85 http://localhost squeeze/main g++ 4:4.3.3-9 [1376B]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
-(Reading database ... 9656 files and directories currently installed.)
-Preparing to replace base-files 5 (using .../base-files_5.0_amd64.deb) ...
-Unpacking replacement base-files ...
-Setting up base-files (5.0) ...
-Installing new version of config file /etc/debian_version ...
-Installing new version of config file /etc/issue ...
-Installing new version of config file /etc/issue.net ...
-(Reading database ... 9657 files and directories currently installed.)
-Preparing to replace debianutils 2.30 (using .../debianutils_2.31_amd64.deb) ...
-Unpacking replacement debianutils ...
-Setting up debianutils (2.31) ...
-(Reading database ... 9657 files and directories currently installed.)
-Preparing to replace bash 3.2-4 (using .../archives/bash_3.2-5_amd64.deb) ...
-Unpacking replacement bash ...
-Setting up bash (3.2-5) ...
-(Reading database ... 9657 files and directories currently installed.)
-Preparing to replace findutils 4.4.0-2 (using .../findutils_4.4.0-3_amd64.deb) ...
-Unpacking replacement findutils ...
-Setting up findutils (4.4.0-3) ...
-(Reading database ... 9657 files and directories currently installed.)
-Preparing to replace grep 2.5.3~dfsg-6 (using .../grep_2.5.4-3_amd64.deb) ...
-Unpacking replacement grep ...
-Setting up grep (2.5.4-3) ...
-(Reading database ... 9658 files and directories currently installed.)
-Preparing to replace gzip 1.3.12-6 (using .../gzip_1.3.12-8_amd64.deb) ...
-Unpacking replacement gzip ...
-Setting up gzip (1.3.12-8) ...
-(Reading database ... 9658 files and directories currently installed.)
-Preparing to replace mktemp 1.5-9 (using .../mktemp_1.6-1_amd64.deb) ...
-Unpacking replacement mktemp ...
-Setting up mktemp (1.6-1) ...
-(Reading database ... 9658 files and directories currently installed.)
-Preparing to replace ncurses-bin 5.7+20081213-1 (using .../ncurses-bin_5.7+20090228-1_amd64.deb) ...
-Unpacking replacement ncurses-bin ...
-Setting up ncurses-bin (5.7+20090228-1) ...
-(Reading database ... 9658 files and directories currently installed.)
-Preparing to replace sed 4.1.5-6 (using .../archives/sed_4.1.5-8_amd64.deb) ...
-Unpacking replacement sed ...
-Setting up sed (4.1.5-8) ...
-(Reading database ... 9658 files and directories currently installed.)
-Preparing to replace libc6-dev 2.7-18 (using .../libc6-dev_2.9-4_amd64.deb) ...
+(Reading database ... 9662 files and directories currently installed.)
+Preparing to replace linux-libc-dev 2.6.26-17 (using .../linux-libc-dev_2.6.30-5_amd64.deb) ...
+Unpacking replacement linux-libc-dev ...
+Preparing to replace libc6-dev 2.7-18 (using .../libc6-dev_2.9-23_amd64.deb) ...
 Unpacking replacement libc6-dev ...
-Preparing to replace libgomp1 4.3.2-1.1 (using .../libgomp1_4.3.3-3_amd64.deb) ...
-Unpacking replacement libgomp1 ...
-Preparing to replace cpp-4.3 4.3.2-1.1 (using .../cpp-4.3_4.3.3-3_amd64.deb) ...
-Unpacking replacement cpp-4.3 ...
-Preparing to replace gcc-4.3-base 4.3.2-1.1 (using .../gcc-4.3-base_4.3.3-3_amd64.deb) ...
-Unpacking replacement gcc-4.3-base ...
-Setting up gcc-4.3-base (4.3.3-3) ...
-(Reading database ... 9663 files and directories currently installed.)
-Preparing to replace libgcc1 1:4.3.2-1.1 (using .../libgcc1_1%3a4.3.3-3_amd64.deb) ...
+Selecting previously deselected package gcc-4.4-base.
+Unpacking gcc-4.4-base (from .../gcc-4.4-base_4.4.1-1_amd64.deb) ...
+Setting up gcc-4.4-base (4.4.1-1) ...
+(Reading database ... 9769 files and directories currently installed.)
+Preparing to replace libgcc1 1:4.3.2-1.1 (using .../libgcc1_1%3a4.4.1-1_amd64.deb) ...
 Unpacking replacement libgcc1 ...
-Setting up libgcc1 (1:4.3.3-3) ...
-(Reading database ... 9663 files and directories currently installed.)
-Preparing to replace gcc-4.3 4.3.2-1.1 (using .../gcc-4.3_4.3.3-3_amd64.deb) ...
-Unpacking replacement gcc-4.3 ...
-Preparing to replace g++-4.3 4.3.2-1.1 (using .../g++-4.3_4.3.3-3_amd64.deb) ...
-Unpacking replacement g++-4.3 ...
-Preparing to replace libstdc++6-4.3-dev 4.3.2-1.1 (using .../libstdc++6-4.3-dev_4.3.3-3_amd64.deb) ...
-Unpacking replacement libstdc++6-4.3-dev ...
-Preparing to replace libstdc++6 4.3.2-1.1 (using .../libstdc++6_4.3.3-3_amd64.deb) ...
-Unpacking replacement libstdc++6 ...
-Setting up libstdc++6 (4.3.3-3) ...
-(Reading database ... 9672 files and directories currently installed.)
-Preparing to replace libgmp3c2 2:4.2.2+dfsg-3 (using .../libgmp3c2_2%3a4.2.4+dfsg-2_amd64.deb) ...
-Unpacking replacement libgmp3c2 ...
-Preparing to replace libmpfr1ldbl 2.3.1.dfsg.1-2 (using .../libmpfr1ldbl_2.4.1-1_amd64.deb) ...
-Unpacking replacement libmpfr1ldbl ...
-Preparing to replace binutils 2.18.1~cvs20080103-7 (using .../binutils_2.19.1-1_amd64.deb) ...
-Unpacking replacement binutils ...
-Preparing to replace libc6 2.7-18 (using .../archives/libc6_2.9-4_amd64.deb) ...
+Setting up libgcc1 (1:4.4.1-1) ...
+(Reading database ... 9769 files and directories currently installed.)
+Preparing to replace libc6 2.7-18 (using .../libc6_2.9-23_amd64.deb) ...
+Removing obsolete conffile /etc/init.d/glibc.sh ...
 Checking for services that may need to be restarted...
 Checking init scripts...
 Unpacking replacement libc6 ...
-Setting up libc6 (2.9-4) ...
-Installing new version of config file /etc/init.d/glibc.sh ...
+Setting up libc6 (2.9-23) ...
+Installing new version of config file /etc/bindresvport.blacklist ...
 Installing new version of config file /etc/gai.conf ...
 Checking for services that may need to be restarted...
 Checking init scripts...
 Nothing to restart.
-(Reading database ... 9681 files and directories currently installed.)
-Preparing to replace libncurses5 5.7+20081213-1 (using .../libncurses5_5.7+20090228-1_amd64.deb) ...
-Unpacking replacement libncurses5 ...
-Setting up libncurses5 (5.7+20090228-1) ...
-(Reading database ... 9681 files and directories currently installed.)
-Preparing to replace ncurses-base 5.7+20081213-1 (using .../ncurses-base_5.7+20090228-1_all.deb) ...
-Unpacking replacement ncurses-base ...
-Setting up ncurses-base (5.7+20090228-1) ...
-(Reading database ... 9681 files and directories currently installed.)
-Preparing to replace debconf-i18n 1.5.24 (using .../debconf-i18n_1.5.26_all.deb) ...
-Unpacking replacement debconf-i18n ...
-Setting up debconf-i18n (1.5.26) ...
-(Reading database ... 9681 files and directories currently installed.)
-Preparing to replace debconf 1.5.24 (using .../debconf_1.5.26_all.deb) ...
-Unpacking replacement debconf ...
-Setting up debconf (1.5.26) ...
-Selecting previously deselected package libdb4.7.
-(Reading database ... 9681 files and directories currently installed.)
-Unpacking libdb4.7 (from .../libdb4.7_4.7.25-6_amd64.deb) ...
-Setting up libdb4.7 (4.7.25-6) ...
-(Reading database ... 9685 files and directories currently installed.)
-Preparing to replace libpam-modules 1.0.1-5 (using .../libpam-modules_1.0.1-7_amd64.deb) ...
-Unpacking replacement libpam-modules ...
-Setting up libpam-modules (1.0.1-7) ...
-Installing new version of config file /etc/security/limits.conf ...
-(Reading database ... 9685 files and directories currently installed.)
-Preparing to replace mawk 1.3.3-11.1 (using .../mawk_1.3.3-14_amd64.deb) ...
-Unpacking replacement mawk ...
-Preparing to replace readline-common 5.2-3.1 (using .../readline-common_5.2-4_all.deb) ...
-Unpacking replacement readline-common ...
-Setting up readline-common (5.2-4) ...
-(Reading database ... 9685 files and directories currently installed.)
-Preparing to replace libreadline5 5.2-3.1 (using .../libreadline5_5.2-4_amd64.deb) ...
-Unpacking replacement libreadline5 ...
-Setting up libreadline5 (5.2-4) ...
-(Reading database ... 9685 files and directories currently installed.)
-Preparing to replace gpgv 1.4.9-3 (using .../gpgv_1.4.9-4_amd64.deb) ...
-Unpacking replacement gpgv ...
-Setting up gpgv (1.4.9-4) ...
-(Reading database ... 9685 files and directories currently installed.)
-Preparing to replace gnupg 1.4.9-3 (using .../gnupg_1.4.9-4_amd64.deb) ...
-Unpacking replacement gnupg ...
-Setting up gnupg (1.4.9-4) ...
-(Reading database ... 9687 files and directories currently installed.)
-Preparing to replace libpam-runtime 1.0.1-5 (using .../libpam-runtime_1.0.1-7_all.deb) ...
-Unpacking replacement libpam-runtime ...
-Setting up libpam-runtime (1.0.1-7) ...
-(Reading database ... 9694 files and directories currently installed.)
-Preparing to replace libpam0g 1.0.1-5 (using .../libpam0g_1.0.1-7_amd64.deb) ...
-Unpacking replacement libpam0g ...
-Setting up libpam0g (1.0.1-7) ...
-(Reading database ... 9694 files and directories currently installed.)
-Preparing to replace libsepol1 2.0.30-2 (using .../libsepol1_2.0.32-1_amd64.deb) ...
+(Reading database ... 9765 files and directories currently installed.)
+Preparing to replace base-passwd 3.5.20 (using .../base-passwd_3.5.21_amd64.deb) ...
+Unpacking replacement base-passwd ...
+Setting up base-passwd (3.5.21) ...
+(Reading database ... 9765 files and directories currently installed.)
+Preparing to replace base-files 5lenny3 (using .../base-files_5.0.0_amd64.deb) ...
+Unpacking replacement base-files ...
+Replacing files in old package dpkg ...
+Setting up base-files (5.0.0) ...
+Installing new version of config file /etc/debian_version ...
+Installing new version of config file /etc/issue ...
+Installing new version of config file /etc/issue.net ...
+(Reading database ... 9764 files and directories currently installed.)
+Preparing to replace dpkg 1.14.25 (using .../dpkg_1.15.3.1+b1_amd64.deb) ...
+Unpacking replacement dpkg ...
+Setting up dpkg (1.15.3.1+b1) ...
+Installing new version of config file /etc/logrotate.d/dpkg ...
+Selecting previously deselected package sensible-utils.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9761 files and directories currently installed.)
+Unpacking sensible-utils (from .../sensible-utils_0.0.1_all.deb) ...
+Replacing files in old package debianutils ...
+Setting up sensible-utils (0.0.1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9765 files and directories currently installed.)
+Preparing to replace debianutils 2.30 (using .../debianutils_3.2_amd64.deb) ...
+Unpacking replacement debianutils ...
+Setting up debianutils (3.2) ...
+Selecting previously deselected package dash.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9761 files and directories currently installed.)
+Unpacking dash (from .../dash_0.5.5.1-2.3_amd64.deb) ...
+Adding `diversion of /bin/sh to /bin/sh.distrib by dash'
+Adding `diversion of /usr/share/man/man1/sh.1.gz to /usr/share/man/man1/sh.distrib.1.gz by dash'
+Setting up dash (0.5.5.1-2.3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9772 files and directories currently installed.)
+Preparing to replace bash 3.2-4 (using .../archives/bash_3.2-6_amd64.deb) ...
+Unpacking replacement bash ...
+Setting up bash (3.2-6) ...
+update-alternatives: using /usr/share/man/man7/bash-builtins.7.gz to provide /usr/share/man/man7/builtins.7.gz (builtins.7.gz) in auto mode.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9772 files and directories currently installed.)
+Preparing to replace coreutils 6.10-6 (using .../coreutils_7.4-2_amd64.deb) ...
+Unpacking replacement coreutils ...
+Replacing files in old package mktemp ...
+Setting up coreutils (7.4-2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9779 files and directories currently installed.)
+Preparing to replace diff 2.8.1-12 (using .../diff_2.8.1-13_amd64.deb) ...
+Unpacking replacement diff ...
+Setting up diff (2.8.1-13) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9779 files and directories currently installed.)
+Preparing to replace findutils 4.4.0-2 (using .../findutils_4.4.2-1_amd64.deb) ...
+Unpacking replacement findutils ...
+Setting up findutils (4.4.2-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9781 files and directories currently installed.)
+Preparing to replace grep 2.5.3~dfsg-6 (using .../grep_2.5.4-4_amd64.deb) ...
+Unpacking replacement grep ...
+Setting up grep (2.5.4-4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9782 files and directories currently installed.)
+Preparing to replace gzip 1.3.12-6 (using .../gzip_1.3.12-8_amd64.deb) ...
+Unpacking replacement gzip ...
+Setting up gzip (1.3.12-8) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9782 files and directories currently installed.)
+Preparing to replace login 1:4.1.1-6 (using .../login_1%3a4.1.4.2-1_amd64.deb) ...
+Unpacking replacement login ...
+Setting up login (1:4.1.4.2-1) ...
+Installing new version of config file /etc/login.defs ...
+Installing new version of config file /etc/securetty ...
+Installing new version of config file /etc/pam.d/login ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9781 files and directories currently installed.)
+Preparing to replace mktemp 1.5-9 (using .../archives/mktemp_7.4-2_all.deb) ...
+Unpacking replacement mktemp ...
+Setting up mktemp (7.4-2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9781 files and directories currently installed.)
+Preparing to replace libsepol1 2.0.30-2 (using .../libsepol1_2.0.36-1_amd64.deb) ...
 Unpacking replacement libsepol1 ...
-Setting up libsepol1 (2.0.32-1) ...
+Setting up libsepol1 (2.0.36-1) ...
 telinit: timeout opening/writing control channel /dev/initctl
-(Reading database ... 9694 files and directories currently installed.)
-Preparing to replace tzdata 2008h-2 (using .../tzdata_2009b-1_all.deb) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9781 files and directories currently installed.)
+Preparing to replace mount 2.13.1.1-1 (using .../mount_2.15.1~rc1-1_amd64.deb) ...
+Unpacking replacement mount ...
+Setting up mount (2.15.1~rc1-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9781 files and directories currently installed.)
+Preparing to replace ncurses-bin 5.7+20081213-1 (using .../ncurses-bin_5.7+20090803-1_amd64.deb) ...
+Unpacking replacement ncurses-bin ...
+Setting up ncurses-bin (5.7+20090803-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9781 files and directories currently installed.)
+Preparing to replace perl-modules 5.10.0-19 (using .../perl-modules_5.10.0-24_all.deb) ...
+Unpacking replacement perl-modules ...
+Preparing to replace libdb4.6 4.6.21-11 (using .../libdb4.6_4.6.21-14_amd64.deb) ...
+Unpacking replacement libdb4.6 ...
+Preparing to replace libgdbm3 1.8.3-3 (using .../libgdbm3_1.8.3-6_amd64.deb) ...
+Unpacking replacement libgdbm3 ...
+Preparing to replace zlib1g 1:1.2.3.3.dfsg-12 (using .../zlib1g_1%3a1.2.3.3.dfsg-15_amd64.deb) ...
+Unpacking replacement zlib1g ...
+Setting up zlib1g (1:1.2.3.3.dfsg-15) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9785 files and directories currently installed.)
+Preparing to replace perl 5.10.0-19 (using .../perl_5.10.0-24_amd64.deb) ...
+Unpacking replacement perl ...
+Preparing to replace perl-base 5.10.0-19 (using .../perl-base_5.10.0-24_amd64.deb) ...
+Unpacking replacement perl-base ...
+Setting up perl-base (5.10.0-24) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9785 files and directories currently installed.)
+Preparing to replace libselinux1 2.0.65-5 (using .../libselinux1_2.0.82-1_amd64.deb) ...
+Unpacking replacement libselinux1 ...
+Setting up libselinux1 (2.0.82-1) ...
+init: timeout opening/writing control channel /dev/initctl
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9785 files and directories currently installed.)
+Preparing to replace sed 4.1.5-6 (using .../archives/sed_4.2.1-3_amd64.deb) ...
+Unpacking replacement sed ...
+Setting up sed (4.2.1-3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9788 files and directories currently installed.)
+Preparing to replace sysvinit 2.86.ds1-61 (using .../sysvinit_2.86.ds1-65_amd64.deb) ...
+Unpacking replacement sysvinit ...
+Setting up sysvinit (2.86.ds1-65) ...
+init: timeout opening/writing control channel /dev/initctl
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9787 files and directories currently installed.)
+Preparing to replace tar 1.20-1 (using .../tar_1.22-1.1_amd64.deb) ...
+Unpacking replacement tar ...
+Setting up tar (1.22-1.1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9787 files and directories currently installed.)
+Preparing to replace lsb-base 3.2-20 (using .../lsb-base_3.2-23_all.deb) ...
+Unpacking replacement lsb-base ...
+Setting up lsb-base (3.2-23) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9787 files and directories currently installed.)
+Preparing to replace libtext-iconv-perl 1.7-1+b1 (using .../libtext-iconv-perl_1.7-2_amd64.deb) ...
+Unpacking replacement libtext-iconv-perl ...
+Setting up libtext-iconv-perl (1.7-2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9788 files and directories currently installed.)
+Preparing to replace libtext-charwidth-perl 0.04-5+b1 (using .../libtext-charwidth-perl_0.04-6_amd64.deb) ...
+Unpacking replacement libtext-charwidth-perl ...
+Setting up libtext-charwidth-perl (0.04-6) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9788 files and directories currently installed.)
+Preparing to replace libtext-wrapi18n-perl 0.06-6 (using .../libtext-wrapi18n-perl_0.06-7_all.deb) ...
+Unpacking replacement libtext-wrapi18n-perl ...
+Setting up libtext-wrapi18n-perl (0.06-7) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9788 files and directories currently installed.)
+Preparing to replace debconf-i18n 1.5.24 (using .../debconf-i18n_1.5.27_all.deb) ...
+Unpacking replacement debconf-i18n ...
+Setting up debconf-i18n (1.5.27) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9792 files and directories currently installed.)
+Preparing to replace debconf 1.5.24 (using .../debconf_1.5.27_all.deb) ...
+Unpacking replacement debconf ...
+Setting up debconf (1.5.27) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9792 files and directories currently installed.)
+Preparing to replace tzdata 2009g-0lenny1 (using .../tzdata_2009k-2_all.deb) ...
 Unpacking replacement tzdata ...
-Setting up tzdata (2009b-1) ...
+Setting up tzdata (2009k-2) ...
 
 Current default timezone: 'Etc/UTC'
 Local time is now: XXXX
 Universal Time is now: XXXX
 Run 'dpkg-reconfigure tzdata' if you wish to change it.
 
-(Reading database ... 9700 files and directories currently installed.)
-Preparing to replace libxapian15 1.0.7-4 (using .../libxapian15_1.0.10-2_amd64.deb) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9795 files and directories currently installed.)
+Preparing to replace util-linux 2.13.1.1-1 (using .../util-linux_2.15.1~rc1-1_amd64.deb) ...
+Unpacking replacement util-linux ...
+Setting up util-linux (2.15.1~rc1-1) ...
+Installing new version of config file /etc/init.d/hwclockfirst.sh ...
+Installing new version of config file /etc/init.d/hwclock.sh ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9802 files and directories currently installed.)
+Preparing to replace bsdutils 1:2.13.1.1-1 (using .../bsdutils_1%3a2.15.1~rc1-1_amd64.deb) ...
+Unpacking replacement bsdutils ...
+Setting up bsdutils (1:2.15.1~rc1-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9802 files and directories currently installed.)
+Preparing to replace libncurses5 5.7+20081213-1 (using .../libncurses5_5.7+20090803-1_amd64.deb) ...
+Unpacking replacement libncurses5 ...
+Setting up libncurses5 (5.7+20090803-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9802 files and directories currently installed.)
+Preparing to replace ncurses-base 5.7+20081213-1 (using .../ncurses-base_5.7+20090803-1_all.deb) ...
+Unpacking replacement ncurses-base ...
+Setting up ncurses-base (5.7+20090803-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9802 files and directories currently installed.)
+Preparing to replace sysvinit-utils 2.86.ds1-61 (using .../sysvinit-utils_2.86.ds1-65_amd64.deb) ...
+Unpacking replacement sysvinit-utils ...
+Setting up sysvinit-utils (2.86.ds1-65) ...
+Selecting previously deselected package libdb4.7.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9808 files and directories currently installed.)
+Unpacking libdb4.7 (from .../libdb4.7_4.7.25-7_amd64.deb) ...
+Setting up libdb4.7 (4.7.25-7) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9812 files and directories currently installed.)
+Preparing to replace libpam-modules 1.0.1-5+lenny1 (using .../libpam-modules_1.0.1-10_amd64.deb) ...
+Unpacking replacement libpam-modules ...
+Setting up libpam-modules (1.0.1-10) ...
+Installing new version of config file /etc/security/limits.conf ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9812 files and directories currently installed.)
+Preparing to replace mawk 1.3.3-11.1 (using .../mawk_1.3.3-15_amd64.deb) ...
+Unpacking replacement mawk ...
+Preparing to replace libstdc++6 4.3.2-1.1 (using .../libstdc++6_4.4.1-1_amd64.deb) ...
+Unpacking replacement libstdc++6 ...
+Setting up libstdc++6 (4.4.1-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9812 files and directories currently installed.)
+Preparing to replace libxapian15 1.0.7-4 (using .../libxapian15_1.0.14-2_amd64.deb) ...
 Unpacking replacement libxapian15 ...
-Preparing to replace libept0 0.5.22 (using .../libept0_0.5.26_amd64.deb) ...
+Preparing to replace libept0 0.5.22 (using .../libept0_0.5.26+b1_amd64.deb) ...
 Unpacking replacement libept0 ...
-Preparing to replace libncursesw5 5.7+20081213-1 (using .../libncursesw5_5.7+20090228-1_amd64.deb) ...
+Preparing to replace libncursesw5 5.7+20081213-1 (using .../libncursesw5_5.7+20090803-1_amd64.deb) ...
 Unpacking replacement libncursesw5 ...
-Preparing to replace aptitude 0.4.11.11-1~lenny1 (using .../aptitude_0.4.11.11-1_amd64.deb) ...
+Preparing to replace aptitude 0.4.11.11-1~lenny1 (using .../aptitude_0.4.11.11-1+b1_amd64.deb) ...
 Unpacking replacement aptitude ...
-Preparing to replace cpio 2.9-13 (using .../cpio_2.9.90-3_amd64.deb) ...
+Preparing to replace apt 0.7.20.2+lenny1 (using .../archives/apt_0.7.21_amd64.deb) ...
+Unpacking replacement apt ...
+Setting up apt (0.7.21) ...
+gpg: key 6070D3A1: "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>" not changed
+gpg: key ADB11277: "Etch Stable Release Key <debian-release@lists.debian.org>" not changed
+gpg: key BBE55AB3: "Debian-Volatile Archive Automatic Signing Key (4.0/etch)" not changed
+gpg: key F42584E6: "Lenny Stable Release Key <debian-release@lists.debian.org>" not changed
+gpg: key 55BE302B: "Debian Archive Automatic Signing Key (5.0/lenny) <ftpmaster@debian.org>" not changed
+gpg: key 6D849617: "Debian-Volatile Archive Automatic Signing Key (5.0/lenny)" not changed
+gpg: Total number processed: 6
+gpg:              unchanged: 6
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9812 files and directories currently installed.)
+Preparing to replace bzip2 1.0.5-1 (using .../bzip2_1.0.5-3_amd64.deb) ...
+Unpacking replacement bzip2 ...
+Preparing to replace libbz2-1.0 1.0.5-1 (using .../libbz2-1.0_1.0.5-3_amd64.deb) ...
+Unpacking replacement libbz2-1.0 ...
+Setting up libbz2-1.0 (1.0.5-3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9812 files and directories currently installed.)
+Preparing to replace readline-common 5.2-3.1 (using .../readline-common_5.2-5_all.deb) ...
+Unpacking replacement readline-common ...
+Setting up readline-common (5.2-5) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9812 files and directories currently installed.)
+Preparing to replace libreadline5 5.2-3.1 (using .../libreadline5_5.2-5_amd64.deb) ...
+Unpacking replacement libreadline5 ...
+Setting up libreadline5 (5.2-5) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9812 files and directories currently installed.)
+Preparing to replace gpgv 1.4.9-3+lenny1 (using .../gpgv_1.4.9-4_amd64.deb) ...
+Unpacking replacement gpgv ...
+Setting up gpgv (1.4.9-4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9812 files and directories currently installed.)
+Preparing to replace gnupg 1.4.9-3+lenny1 (using .../gnupg_1.4.9-4_amd64.deb) ...
+Unpacking replacement gnupg ...
+Setting up gnupg (1.4.9-4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9814 files and directories currently installed.)
+Preparing to replace initscripts 2.86.ds1-61 (using .../initscripts_2.86.ds1-65_amd64.deb) ...
+Unpacking replacement initscripts ...
+Setting up initscripts (2.86.ds1-65) ...
+Installing new version of config file /etc/init.d/bootlogd ...
+Installing new version of config file /etc/init.d/bootmisc.sh ...
+Installing new version of config file /etc/init.d/checkfs.sh ...
+Installing new version of config file /etc/init.d/checkroot.sh ...
+Installing new version of config file /etc/init.d/mountoverflowtmp ...
+Installing new version of config file /etc/init.d/mountkernfs.sh ...
+Installing new version of config file /etc/init.d/rc.local ...
+Installing new version of config file /etc/init.d/umountfs ...
+Installing new version of config file /etc/init.d/umountnfs.sh ...
+Installing new version of config file /etc/init.d/urandom ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9816 files and directories currently installed.)
+Preparing to replace libattr1 1:2.4.43-2 (using .../libattr1_1%3a2.4.43-3_amd64.deb) ...
+Unpacking replacement libattr1 ...
+Setting up libattr1 (1:2.4.43-3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9816 files and directories currently installed.)
+Preparing to replace libacl1 2.2.47-2 (using .../libacl1_2.2.47-3_amd64.deb) ...
+Unpacking replacement libacl1 ...
+Setting up libacl1 (2.2.47-3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9816 files and directories currently installed.)
+Preparing to replace libpam-runtime 1.0.1-5+lenny1 (using .../libpam-runtime_1.0.1-10_all.deb) ...
+Unpacking replacement libpam-runtime ...
+Setting up libpam-runtime (1.0.1-10) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9824 files and directories currently installed.)
+Preparing to replace libpam0g 1.0.1-5+lenny1 (using .../libpam0g_1.0.1-10_amd64.deb) ...
+Unpacking replacement libpam0g ...
+Setting up libpam0g (1.0.1-10) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9824 files and directories currently installed.)
+Preparing to replace libslang2 2.1.3-3 (using .../libslang2_2.1.4-3_amd64.deb) ...
+Unpacking replacement libslang2 ...
+Setting up libslang2 (2.1.4-3) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9827 files and directories currently installed.)
+Preparing to replace passwd 1:4.1.1-6 (using .../passwd_1%3a4.1.4.2-1_amd64.deb) ...
+Unpacking replacement passwd ...
+Setting up passwd (1:4.1.4.2-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9820 files and directories currently installed.)
+Preparing to replace sysv-rc 2.86.ds1-61 (using .../sysv-rc_2.86.ds1-65_all.deb) ...
+Unpacking replacement sysv-rc ...
+Setting up sysv-rc (2.86.ds1-65) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9822 files and directories currently installed.)
+Preparing to replace cpio 2.9-13 (using .../archives/cpio_2.10-1_amd64.deb) ...
 Unpacking replacement cpio ...
-Preparing to replace libgdbm3 1.8.3-3 (using .../libgdbm3_1.8.3-4_amd64.deb) ...
-Unpacking replacement libgdbm3 ...
-Preparing to replace libdb4.6 4.6.21-11 (using .../libdb4.6_4.6.21-13_amd64.deb) ...
-Unpacking replacement libdb4.6 ...
-Preparing to replace cpp 4:4.3.2-2 (using .../cpp_4%3a4.3.3-2_amd64.deb) ...
+Preparing to replace libgomp1 4.3.2-1.1 (using .../libgomp1_4.4.1-1_amd64.deb) ...
+Unpacking replacement libgomp1 ...
+Preparing to replace libgmp3c2 2:4.2.2+dfsg-3 (using .../libgmp3c2_2%3a4.3.1+dfsg-3_amd64.deb) ...
+Unpacking replacement libgmp3c2 ...
+Preparing to replace libmpfr1ldbl 2.3.1.dfsg.1-2 (using .../libmpfr1ldbl_2.4.1-2_amd64.deb) ...
+Unpacking replacement libmpfr1ldbl ...
+Preparing to replace libstdc++6-4.3-dev 4.3.2-1.1 (using .../libstdc++6-4.3-dev_4.3.3-14_amd64.deb) ...
+Unpacking replacement libstdc++6-4.3-dev ...
+Preparing to replace g++-4.3 4.3.2-1.1 (using .../g++-4.3_4.3.3-14_amd64.deb) ...
+Unpacking replacement g++-4.3 ...
+Preparing to replace gcc-4.3 4.3.2-1.1 (using .../gcc-4.3_4.3.3-14_amd64.deb) ...
+Unpacking replacement gcc-4.3 ...
+Preparing to replace cpp-4.3 4.3.2-1.1 (using .../cpp-4.3_4.3.3-14_amd64.deb) ...
+Unpacking replacement cpp-4.3 ...
+Preparing to replace binutils 2.18.1~cvs20080103-7 (using .../binutils_2.19.51.20090723-1_amd64.deb) ...
+Unpacking replacement binutils ...
+Preparing to replace gcc-4.3-base 4.3.2-1.1 (using .../gcc-4.3-base_4.3.3-14_amd64.deb) ...
+Unpacking replacement gcc-4.3-base ...
+Preparing to replace libdevmapper1.02.1 2:1.02.27-4 (using .../libdevmapper1.02.1_2%3a1.02.30-3_amd64.deb) ...
+Unpacking replacement libdevmapper1.02.1 ...
+Preparing to replace makedev 2.3.1-88 (using .../makedev_2.3.1-89_all.deb) ...
+Unpacking replacement makedev ...
+Preparing to replace procps 1:3.2.7-11 (using .../procps_1%3a3.2.8-1_amd64.deb) ...
+Unpacking replacement procps ...
+Preparing to replace cpp 4:4.3.2-2 (using .../cpp_4%3a4.3.3-9_amd64.deb) ...
 Unpacking replacement cpp ...
-Preparing to replace gcc 4:4.3.2-2 (using .../gcc_4%3a4.3.3-2_amd64.deb) ...
+Preparing to replace make 3.81-5 (using .../archives/make_3.81-6_amd64.deb) ...
+Unpacking replacement make ...
+Preparing to replace dpkg-dev 1.14.25 (using .../dpkg-dev_1.15.3.1_all.deb) ...
+Unpacking replacement dpkg-dev ...
+Preparing to replace gcc 4:4.3.2-2 (using .../gcc_4%3a4.3.3-9_amd64.deb) ...
 Removing old gcc doc directory.
 Unpacking replacement gcc ...
-Preparing to replace g++ 4:4.3.2-2 (using .../g++_4%3a4.3.3-2_amd64.deb) ...
+Preparing to replace g++ 4:4.3.2-2 (using .../g++_4%3a4.3.3-9_amd64.deb) ...
 Unpacking replacement g++ ...
-Setting up libc6-dev (2.9-4) ...
-Setting up libgomp1 (4.3.3-3) ...
-Setting up libgmp3c2 (2:4.2.4+dfsg-2) ...
-Setting up libmpfr1ldbl (2.4.1-1) ...
-Setting up cpp-4.3 (4.3.3-3) ...
-Setting up binutils (2.19.1-1) ...
-Setting up gcc-4.3 (4.3.3-3) ...
-Setting up mawk (1.3.3-14) ...
-Setting up libxapian15 (1.0.10-2) ...
-Setting up libept0 (0.5.26) ...
-Setting up libncursesw5 (5.7+20090228-1) ...
-Setting up aptitude (0.4.11.11-1) ...
-Setting up cpio (2.9.90-3) ...
-Setting up libgdbm3 (1.8.3-4) ...
-Setting up libdb4.6 (4.6.21-13) ...
-Setting up cpp (4:4.3.3-2) ...
-Setting up gcc (4:4.3.3-2) ...
-Setting up g++-4.3 (4.3.3-3) ...
-Setting up g++ (4:4.3.3-2) ...
-Setting up libstdc++6-4.3-dev (4.3.3-3) ...
+Setting up linux-libc-dev (2.6.30-5) ...
+Setting up libc6-dev (2.9-23) ...
+Setting up libdb4.6 (4.6.21-14) ...
+Setting up libgdbm3 (1.8.3-6) ...
+Setting up mawk (1.3.3-15) ...
+Setting up libxapian15 (1.0.14-2) ...
+Setting up libept0 (0.5.26+b1) ...
+Setting up libncursesw5 (5.7+20090803-1) ...
+Setting up aptitude (0.4.11.11-1+b1) ...
+Setting up bzip2 (1.0.5-3) ...
+Setting up cpio (2.10-1) ...
+Setting up libgomp1 (4.4.1-1) ...
+Setting up libgmp3c2 (2:4.3.1+dfsg-3) ...
+Setting up libmpfr1ldbl (2.4.1-2) ...
+Setting up gcc-4.3-base (4.3.3-14) ...
+Setting up cpp-4.3 (4.3.3-14) ...
+Setting up binutils (2.19.51.20090723-1) ...
+Setting up gcc-4.3 (4.3.3-14) ...
+Setting up libdevmapper1.02.1 (2:1.02.30-3) ...
+Setting up makedev (2.3.1-89) ...
+Setting up procps (1:3.2.8-1) ...
+Setting up cpp (4:4.3.3-9) ...
+Setting up make (3.81-6) ...
+Setting up gcc (4:4.3.3-9) ...
+Setting up perl-modules (5.10.0-24) ...
+Setting up g++-4.3 (4.3.3-14) ...
+Setting up libstdc++6-4.3-dev (4.3.3-14) ...
+Setting up g++ (4:4.3.3-9) ...
+Setting up perl (5.10.0-24) ...
+Setting up dpkg-dev (1.15.3.1) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 build-essential is already the newest version.
 dpkg-dev is already the newest version.
 apt is already the newest version.
+apt set to manually installed.
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh starting
@@ -282,7 +505,8 @@ umount: /proc/bus/usb: not mounted
 umount: /dev/shm: not mounted
 umount: /lib/init/rw: not mounted
 cat: /var/run/inetd.pid: No such file or directory
-kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+kill: 20: Usage: kill [-s sigspec | -signum | -sigspec] [pid | job]... or
+kill -l [exitstatus]
 I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
 I: unmounting dev/pts filesystem
 I: unmounting proc filesystem
