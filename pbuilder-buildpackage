@@ -116,11 +116,7 @@ log "I: Building the package"
 
 executehooks "A"
 
-if [ -z "$DEBEMAIL" ]; then
-    DPKG_COMMANDLINE="cd tmp/buildd/*/; dpkg-buildpackage -us -uc $DEBBUILDOPTS"
-else
-    DPKG_COMMANDLINE="cd tmp/buildd/*/; dpkg-buildpackage -us -uc  \"-m$DEBEMAIL\" $DEBBUILDOPTS"
-fi
+DPKG_COMMANDLINE="cd tmp/buildd/*/; dpkg-buildpackage -us -uc ${DEBEMAIL:+"-e$DEBEMAIL"} $DEBBUILDOPTS"
 
 (
     : Build process
