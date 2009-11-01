@@ -116,7 +116,7 @@ log "I: Building the package"
 
 executehooks "A"
 
-DPKG_COMMANDLINE="cd tmp/buildd/*/; dpkg-buildpackage -us -uc ${DEBEMAIL:+"-e$DEBEMAIL"} $DEBBUILDOPTS"
+DPKG_COMMANDLINE="cd tmp/buildd/*/; dpkg-buildpackage -us -uc ${DEBEMAIL:+\"-e$DEBEMAIL\"} $DEBBUILDOPTS"
 
 (
     : Build process
