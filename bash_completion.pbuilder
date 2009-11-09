@@ -10,21 +10,17 @@
 have pbuilder &&
 _pbuilder()
 {
-    local cur prev options
+    local cur options
 
     COMPREPLY=()
     cur=${COMP_WORDS[COMP_CWORD]}
-    prev=${COMP_WORDS[COMP_CWORD-1]}
     options='--create --update --build --login --execute --dumpconfig'
 
-    case $prev in
-        --build)
-            COMPREPLY=( $( compgen -o filenames -G "$cur*.dsc" ) )
-            ;;
-        *)
-            COMPREPLY=( $( compgen -W "$options" | grep "^$cur" ) )
-            ;;
-    esac
+    if [ $COMP_CWORD -eq 1 ]; then
+        COMPREPLY=( $( compgen -W "$options" | grep "^$cur" ) )
+    elif [ "${COMP_WORDS[1]}" = --build ]; then
+        COMPREPLY=( $( compgen -o filenames -G "$cur*.dsc" ) )
+    fi
 
     return 0
 }
