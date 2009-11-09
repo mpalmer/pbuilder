@@ -53,7 +53,8 @@ Package: pbuilder-uml
 Architecture: i386 amd64
 Depends: rootstrap (>= 0.3.9-1),
          user-mode-linux,
-         pbuilder (= ${source:Version})
+         pbuilder (= ${source:Version}),
+         ${misc:Depends}
 Description: user-mode-linux version of pbuilder
  pbuilder-uml uses a User-mode-linux system, and builds Debian packages
  inside the UML image. It is an ideal system to use to check 
