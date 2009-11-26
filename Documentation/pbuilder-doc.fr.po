@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pbuilder-0.171\n"
-"POT-Creation-Date: 2009-05-31 10:47+0900\n"
-"PO-Revision-Date: 2008-02-06 22:10+0100\n"
+"POT-Creation-Date: 2009-11-26 11:35-0800\n"
+"PO-Revision-Date: 2008-05-07 00:28+0200\n"
 "Last-Translator: Vincent Bernat <bernat@luffy.cx>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,46 +14,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # type: Attribute 'xml:lang' of: <book>
+#. type: Attribute 'xml:lang' of: <book>
 #: pbuilder-doc.xml:5
 msgid "en"
 msgstr "fr"
 
-# type: Content of: <book><bookinfo><date>
+#. type: Content of: <book><bookinfo>
 #: pbuilder-doc.xml:7
-msgid "2007-5-27"
-msgstr "27 mai 2007"
+msgid "<date>2007-5-27</date>"
+msgstr ""
 
 # type: Content of: <book><bookinfo><title>
+#. type: Content of: <book><bookinfo><title>
 #: pbuilder-doc.xml:8
 msgid "pbuilder User's Manual"
 msgstr "Manuel de l'utilisateur de pbuilder"
 
-# type: Content of: <book><bookinfo><abbrev>
+#. type: Content of: <book><bookinfo>
 #: pbuilder-doc.xml:9
-msgid "pbuilder-doc"
-msgstr "pbuilder-doc"
+msgid "<abbrev>pbuilder-doc</abbrev>"
+msgstr ""
 
 # type: Content of: <book><bookinfo><subtitle>
+#. type: Content of: <book><bookinfo><subtitle>
 #: pbuilder-doc.xml:10
 msgid "Usage and operations"
 msgstr "Mode d'emploi"
 
 # type: Content of: <book><bookinfo><releaseinfo>
+#. type: Content of: <book><bookinfo><releaseinfo>
 #: pbuilder-doc.xml:11
 msgid "documentation in progress"
 msgstr "documentation en construction"
 
+#. type: Content of: <book><bookinfo><authorgroup><author><firstname>
+#: pbuilder-doc.xml:14
+msgid "Junichi"
+msgstr ""
+
+#. type: Content of: <book><bookinfo><authorgroup><author><surname>
+#: pbuilder-doc.xml:15
+msgid "Uekawa"
+msgstr ""
+
 # type: Content of: <book><chapter><title>
+#. type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:22
 msgid "Introducing pbuilder"
 msgstr "Présentation de pbuilder"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:24
 msgid "Aims of pbuilder"
 msgstr "Buts de pbuilder"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:26
 msgid ""
 "<command>pbuilder</command> stands for Personal Builder, and it is an "
@@ -75,6 +92,7 @@ msgstr ""
 "réalisé à travers une image de base ne contenant qu'un minimum de paquets."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:40
 msgid ""
 "The Debian distribution consists of free software accompanied with source.  "
@@ -87,6 +105,7 @@ msgstr ""
 "spécifiées et contenues également dans la section \"main\"."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:48
 msgid ""
 "The primary aim of <command>pbuilder</command> is different from other auto-"
@@ -101,6 +120,7 @@ msgstr ""
 "plus souvent le plus mauvais choix qui est sélectionné."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:56
 msgid ""
 "In this way, <command>pbuilder</command> tries to ensure that packages "
@@ -115,6 +135,7 @@ msgstr ""
 "sources."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:63
 msgid ""
 "The goal of making Debian buildable from source is somewhat accomplished, "
@@ -128,11 +149,13 @@ msgstr ""
 "sources. Depuis, les choses se sont grandemment améliorées."
 
 # type: Content of: <book><chapter><title>
+#. type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:71
 msgid "Using pbuilder"
 msgstr "Utilisation de pbuilder"
 
 # type: Content of: <book><chapter><para>
+#. type: Content of: <book><chapter><para>
 #: pbuilder-doc.xml:73
 msgid ""
 "There are several simple commands for operation.  <command>pbuilder create</"
@@ -146,18 +169,22 @@ msgstr ""
 "utilisées. Regardons chacune de ces commandes."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:80
 msgid "Creating a base chroot image tar-ball"
 msgstr "Création de l'image de base"
 
 # type: Content of: <book><chapter><sect1><para><command>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:82
+#, fuzzy
 msgid ""
 "<command>pbuilder create</command> will create a base chroot image tar-ball "
 "(base.tgz).  All other commands will operate on the resulting base.tgz If "
 "the Debian release to be created within chroot is not going to be \"sid"
 "\" (which is the default), the distribution code-name needs to be specified "
-"with the <command>"
+"with the <command><option>--distribution</option></command> command-line "
+"option."
 msgstr ""
 "<command>pbuilder create</command> permet de créer une archive tar contenant "
 "l'image de base (base.tgz). Toutes les autres commandes se baseront sur le "
@@ -165,51 +192,29 @@ msgstr ""
 "l'image de base n'est pas « sid » (valeur par défaut), le nom de code de la "
 "version doit être spécifié à l'aide de l'option <command>"
 
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:89
-msgid "--distribution"
-msgstr "--distribution"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:89 pbuilder-doc.xml:156
-msgid "</command> command-line option."
-msgstr "</command>."
-
-# type: Content of: <book><chapter><sect1><para><footnote>
-#: pbuilder-doc.xml:93
-msgid "<command>debootstrap</command> <footnote>"
-msgstr ""
-
 # type: Content of: <book><chapter><sect1><para><footnote><para>
+#. type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:94
 msgid "debootstrap or cdebootstrap can be chosen"
 msgstr "il est possible de choisir debootstrap ou cdebootstrap"
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:95
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:93
+#, fuzzy
 msgid ""
-"</footnote> is used to create the bare minimum Debian installation, and then "
-"build-essential packages are installed on top of the minimum installation "
-"using <command>apt-get</command> inside the chroot."
+"<command>debootstrap</command> <placeholder type=\"footnote\" id=\"0\"/> is "
+"used to create the bare minimum Debian installation, and then build-"
+"essential packages are installed on top of the minimum installation using "
+"<command>apt-get</command> inside the chroot."
 msgstr ""
 "</footnote> est utilisé pour créer une installation minimale de Debian. Les "
 "paquets essentiels à la construction des paquets sont ensuite installés par-"
 "dessus cette installation minimale en utilisant <command>apt-get</command> à "
 "l'intérieur de l'environnement."
 
-# type: Content of: <book><chapter><sect1><para><footnote>
-#: pbuilder-doc.xml:103
-msgid ""
-"For fuller documentation of command-line options, see the pbuilder.8 manual "
-"page.  Some configuration will be required for <filename>/etc/pbuilderrc</"
-"filename> for the mirror site <footnote>"
-msgstr ""
-"Pour une documentation plus complète des options disponibles en ligne de "
-"commande, référez-vous à la page de manuel pbuilder.8. Il sera également "
-"nécessaire de renseigner le fichier <filename>/etc/pbuilderrc</filename> "
-"afin d'indiquer le miroir à utiliser <footnote>"
-
 # type: Content of: <book><chapter><sect1><para><footnote><para>
+#. type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:109
 msgid ""
 "The mirror site should preferably be a local mirror or a cache server, so as "
@@ -220,22 +225,30 @@ msgstr ""
 "pas surcharger les miroirs publics avec un très grand nombre d'accès. "
 "L'utilisation d'outils tels que apt-proxy est conseillée."
 
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:115
+# type: Content of: <book><chapter><sect1><para><footnote>
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:103
+#, fuzzy
 msgid ""
-"</footnote> to use, and proxy configuration may be required to allow access "
-"through HTTP.  See the pbuilderrc.5 manual page for details."
+"For fuller documentation of command-line options, see the pbuilder.8 manual "
+"page.  Some configuration will be required for <filename>/etc/pbuilderrc</"
+"filename> for the mirror site <placeholder type=\"footnote\" id=\"0\"/> to "
+"use, and proxy configuration may be required to allow access through HTTP.  "
+"See the pbuilderrc.5 manual page for details."
 msgstr ""
-"</footnote> et, éventuellement, la configuration du proxy pour accéder au "
-"miroir via HTTP. Référez-vous à la page de manuel pbuilderrc.5 pour plus de "
-"détails."
+"Pour une documentation plus complète des options disponibles en ligne de "
+"commande, référez-vous à la page de manuel pbuilder.8. Il sera également "
+"nécessaire de renseigner le fichier <filename>/etc/pbuilderrc</filename> "
+"afin d'indiquer le miroir à utiliser <footnote>"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:122
 msgid "Updating the base.tgz"
 msgstr "Mettre à jour le fichier base.tgz"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:123
 msgid ""
 "<command>pbuilder update</command> will update the base.tgz.  It will "
@@ -248,31 +261,8 @@ msgstr ""
 "command> et <command>apt-get dist-upgrade</command>  seront invoqués à "
 "l'intérieur de l'environnement obtenu et le fichier base.tgz sera recréé."
 
-# type: Content of: <book><chapter><sect1><para><command>
-#: pbuilder-doc.xml:130
-msgid ""
-"It is possible to switch the distribution which the base.tgz is targeted at "
-"at this point.  Specify <command>"
-msgstr ""
-"Il est possible de changer la distribution utilisée dans l'environnement "
-"contenu dans base.tgz à ce niveau. Utilisez <command>"
-
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:132
-msgid "--distribution <parameter>sid</parameter>"
-msgstr "--distribution <parameter>sid</parameter>"
-
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:132
-msgid "--override-config"
-msgstr "--override-config"
-
-# type: Content of: <book><chapter><sect1><para><footnote>
-#: pbuilder-doc.xml:132
-msgid "</command> to change the distribution to sid.  <footnote>"
-msgstr "</command> pour changer la distribution pour « sid ». <footnote>"
-
 # type: Content of: <book><chapter><sect1><para><footnote><para>
+#. type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:135
 msgid ""
 "Only upgrading is supported.  Debian does not generally support downgrading "
@@ -281,13 +271,17 @@ msgstr ""
 "Seule une mise à jour est possible : Debian ne supporte pas (encore ?) les "
 "retours en arrière."
 
-# type: Content of: <book><chapter><sect1><para><footnote>
-#: pbuilder-doc.xml:137 pbuilder-doc.xml:1237
-#, fuzzy
-msgid "</footnote>"
-msgstr "Cette section<footnote>"
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:130
+msgid ""
+"It is possible to switch the distribution which the base.tgz is targeted at "
+"at this point.  Specify <command><option>--distribution <parameter>sid</"
+"parameter></option> <option>--override-config</option></command> to change "
+"the distribution to sid.  <placeholder type=\"footnote\" id=\"0\"/>"
+msgstr ""
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:140 pbuilder-doc.xml:172
 msgid ""
 "For fuller documentation of command-line options, see the pbuilder.8 manual "
@@ -297,29 +291,22 @@ msgstr ""
 "la page de manuel pbuilder.8."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:145
 msgid "Building a package using the base.tgz"
 msgstr "Construire un paquet en utilisant le fichier base.tgz"
 
 # type: Content of: <book><chapter><sect1><para><command>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:147
-msgid "To build a package inside the chroot, invoke <command>pbuilder build"
-msgstr ""
-"Pour construire un paquet dans l'environnement de base, invoquez "
-"<command>pbuilder build"
-
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:148
-msgid "whatever.dsc"
-msgstr "paquet.dsc"
-
-# type: Content of: <book><chapter><sect1><para><command>
-#: pbuilder-doc.xml:148
+#, fuzzy
 msgid ""
-"</command>.  <command>pbuilder</command> will extract the base.tgz to a "
-"temporary working directory, enter the directory with chroot, satisfy the "
-"build-dependencies inside chroot, and build the package.  The built packages "
-"will be moved to a directory specified with the <command>"
+"To build a package inside the chroot, invoke <command>pbuilder build "
+"<option>whatever.dsc</option></command>.  <command>pbuilder</command> will "
+"extract the base.tgz to a temporary working directory, enter the directory "
+"with chroot, satisfy the build-dependencies inside chroot, and build the "
+"package.  The built packages will be moved to a directory specified with the "
+"<command><option>--buildresult</option></command> command-line option."
 msgstr ""
 "</command>. <command>pbuilder</command> va alors extraire le fichier base."
 "tgz dans un répertoire temporaire, se placer dans cet environnement de base, "
@@ -327,27 +314,17 @@ msgstr ""
 "paquet pour construire ce dernier. Les paquets obtenus seront déplacés dans "
 "le répertoire indiqué à l'aide de <command>"
 
-# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><command><option>
-#: pbuilder-doc.xml:156 pbuilder-doc.xml:193 pbuilder-doc.xml:233
-msgid "--buildresult"
-msgstr "--buildresult"
-
-# type: Content of: <book><chapter><sect1><para><command>
-#: pbuilder-doc.xml:160 pbuilder-doc.xml:1475
-msgid "The <command>"
-msgstr "L'option <command>"
-
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:160
-msgid "--basetgz"
-msgstr "--basetgz"
-
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:160
-msgid "</command> option can be used to specify which base.tgz to use."
+#, fuzzy
+msgid ""
+"The <command><option>--basetgz</option></command> option can be used to "
+"specify which base.tgz to use."
 msgstr "</command> permet d'indiquer quel fichier base.tgz utiliser."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:164
 msgid ""
 "<command>pbuilder</command> will extract a fresh base chroot image from base."
@@ -363,11 +340,13 @@ msgstr ""
 "<command>apt-get</command>."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:177
 msgid "Facilitating Debian Developers' typing, pdebuild"
 msgstr "pdebuild ou comment éviter d'en taper trop"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:179
 msgid ""
 "<command>pdebuild</command> is a little wrapper script that does the most "
@@ -385,12 +364,15 @@ msgstr ""
 "le code source actuel se construit sans problème dans celui-ci."
 
 # type: Content of: <book><chapter><sect1><para><command>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:189
+#, fuzzy
 msgid ""
 "<command>pdebuild</command> calls <command>dpkg-source</command> to build "
 "the source packages, and then invokes <command>pbuilder</command> on the "
 "resulting source package.  However, unlike debuild, the resulting deb files "
-"will be found in the <command>"
+"will be found in the <command><option>--buildresult</option></command> "
+"directory."
 msgstr ""
 "<command>pdebuild</command> appelle <command>dpkg-source</command> pour "
 "construire les paquets sources puis utilise <command>pbuilder</command> sur "
@@ -398,16 +380,13 @@ msgstr ""
 "deb obtenus se trouveront dans le répertoire spécifié par <command>"
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:193
-msgid "</command> directory."
-msgstr "</command>."
-
-# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:197
 msgid "See the pdebuild.1 manual page for more details."
 msgstr "Référez-vous à la page de manuel pdebuild.1 pour plus de détails."
 
 # type: Content of: <book><chapter><sect1><para><command>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:200
 #, fuzzy
 msgid ""
@@ -415,7 +394,10 @@ msgid ""
 "<command>pdebuild</command> since version 0.97. <command>pdebuild</command> "
 "usually runs <command>debian/rules clean</command> outside of the chroot; "
 "however, it is possible to change the behavior to run it inside the chroot "
-"with the <command>"
+"with the <command><option>--use-pdebuild-internal</option></command>.  It "
+"will try to bind mount the working directory inside chroot, and run "
+"<command>dpkg-buildpackage</command> inside.  It has the following "
+"characteristics, and is not yet the default mode of operation."
 msgstr ""
 "Depuis la version 0.97, <command>pdebuild</command> dispose d'un mode "
 "d'opération légèrement différent. <command>pdebuild</command> utilise "
@@ -424,24 +406,8 @@ msgstr ""
 "comportement pour lancer cette commande dans l'environnement de base en "
 "utilisant l'option <command>"
 
-# type: Content of: <book><chapter><sect1><para><option>
-#: pbuilder-doc.xml:205 pbuilder-doc.xml:1176
-msgid "--use-pdebuild-internal"
-msgstr "--use-pdebuild-internal"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:205
-msgid ""
-"</command>.  It will try to bind mount the working directory inside chroot, "
-"and run <command>dpkg-buildpackage</command> inside.  It has the following "
-"characteristics, and is not yet the default mode of operation."
-msgstr ""
-"</command>. Le répertoire actuel sera alors attaché à l'intérieur de "
-"l'environnement de base et <command>dpkg-buildpackage</command> sera lancé "
-"dans celui-ci. Ce mode d'opération a les propriétés suivantes et n'est pas "
-"encore utilisé par défaut."
-
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:214
 msgid ""
 "Satisfies build-dependency inside the chroot before creating source "
@@ -453,11 +419,13 @@ msgstr ""
 "bon comportement, <command>pdebuild</command> ne l'effectue pas par défaut."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:219
 msgid "The working directory is modified from inside the chroot."
 msgstr "Le répertoire de travail est modifié depuis l'environnement de base."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:223
 msgid ""
 "Building with <command>pdebuild</command> does not guarantee that it works "
@@ -467,6 +435,7 @@ msgstr ""
 "fonctionnera également avec <command>pbuilder</command>."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:227
 msgid ""
 "If making the source package fails, the session using the chroot is wasted "
@@ -478,18 +447,18 @@ msgstr ""
 "un peu de temps, ce qui peut être amélioré en utilisant cowdancer)."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><command>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:232
-msgid "Does not work in the same manner as it used to; for example, <command>"
+#, fuzzy
+msgid ""
+"Does not work in the same manner as it used to; for example, "
+"<command><option>--buildresult</option></command> does not have any effect."
 msgstr ""
 "Le comportement est différent de la méthode traditionnelle. Par exemple, "
 "<command>"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
-#: pbuilder-doc.xml:233
-msgid "</command> does not have any effect."
-msgstr "</command> n'a aucun effet."
-
-# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:237
 msgid "The build inside chroot is ran with the current user outside chroot."
 msgstr ""
@@ -497,11 +466,13 @@ msgstr ""
 "qu'en dehors de celui-ci."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:243
 msgid "Configuration Files"
 msgstr "Fichiers de configuration"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:245
 msgid ""
 "It is possible to specify all settings by command-line options. However, for "
@@ -512,6 +483,7 @@ msgstr ""
 "fois, il est possible d'utiliser un fichier de configuration."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:250
 msgid ""
 "<filename>/etc/pbuilderrc</filename> and <filename>${HOME}/.pbuilderrc</"
@@ -523,25 +495,18 @@ msgstr ""
 "options possibles sont documentées dans la page de manuel pbuilderrc.5."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:257
-msgid "It is useful to use"
-msgstr "Il est opportun d'utiliser l'option"
-
-# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><command><option>
-#: pbuilder-doc.xml:257 pbuilder-doc.xml:668
-msgid "--configfile"
-msgstr "--configfile"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:257
+#, fuzzy
 msgid ""
-"option to load up a preset configuration file when switching between "
-"configuration files for different distributions."
+"It is useful to use <option>--configfile</option> option to load up a preset "
+"configuration file when switching between configuration files for different "
+"distributions."
 msgstr ""
 "pour charger un fichier de configuration particulier et jongler entre les "
 "différentes distributions."
 
-# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:262
 msgid ""
 "Please note <filename>${HOME}/.pbuilderrc</filename> supersede system "
@@ -550,11 +515,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:269
 msgid "Building packages as non-root inside the chroot"
 msgstr "Construire des paquets sans être root dans l'environnement de base"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:271
 msgid ""
 "<command>pbuilder</command> requires full root privilege when it is "
@@ -573,6 +540,7 @@ msgstr ""
 "sera utilisé lorsque les privilèges du super-utilisateur seront requis."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:280
 msgid ""
 "BUILDUSERID configuration option should be set to a value for a user id that "
@@ -592,6 +560,7 @@ msgstr ""
 "l'environnement de base."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:289
 msgid ""
 "Even when using the fakerooting method, <command>pbuilder</command> will run "
@@ -604,6 +573,7 @@ msgstr ""
 "exemple quand il doit installer des paquets dans l'environnement de base."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:295
 msgid ""
 "To be able to invoke <command>pbuilder</command> without being root, you "
@@ -614,11 +584,13 @@ msgstr ""
 "utiliser user-mode-linux comme expliqué dans <xref linkend=\"pbuilder-uml\"/>"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:301
 msgid "Using pbuilder for back-porting"
 msgstr "Utiliser pbuilder pour les rétroportages"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:303
 msgid ""
 "<command>pbuilder</command> can be used for back-porting software from the "
@@ -636,6 +608,7 @@ msgstr ""
 "possible et une intervention manuelle est requise :"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:314
 msgid ""
 "The package from the unstable distribution may depend on packages or "
@@ -649,6 +622,7 @@ msgstr ""
 "« stable » (sans travail supplémentaire)."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:321
 msgid ""
 "The stable distribution may have bugs that have been fixed in unstable which "
@@ -658,6 +632,7 @@ msgstr ""
 "« unstable » et qui ont besoin d'être contournés."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:324
 msgid ""
 "The package in the unstable distribution may have problems building even on "
@@ -667,11 +642,13 @@ msgstr ""
 "compris dans « unstable »."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:330
 msgid "Mass-building packages"
 msgstr "Construction des paquets en grand nombre"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:332
 msgid ""
 "<command>pbuilder</command> can be automated, because its operations are non-"
@@ -690,6 +667,7 @@ msgstr ""
 "avec la construction automatique :"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:343
 msgid ""
 "Build-Dependencies need to install non-interactively, but some packages are "
@@ -700,6 +678,7 @@ msgstr ""
 "interaction (postgresql par exemple)."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:348
 msgid ""
 "When a library package breaks, or gcc/gcj/g++ breaks, or even bison, a large "
@@ -711,6 +690,7 @@ msgstr ""
 "pas de commande \"javac\", bison qui devient plus strict, etc.)."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:354
 msgid "Some people were quite hostile against build failure reports."
 msgstr ""
@@ -718,6 +698,7 @@ msgstr ""
 "d'échecs de construction à partir des sources."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:358
 msgid ""
 "Most of the initial bugs have been resolved in the <command>pbuilder</"
@@ -731,6 +712,7 @@ msgstr ""
 "temps. Les tests de régression sont alors utiles."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:364
 msgid ""
 "A script that was used by Junichi Uekawa in the initial run is now included "
@@ -754,6 +736,7 @@ msgstr ""
 "servir de base."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:374
 msgid "To set up pbuildd, there are some points to be aware of."
 msgstr ""
@@ -761,6 +744,7 @@ msgstr ""
 "nombre de points."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:378
 msgid ""
 "A file <filename>./avoidlist</filename> needs to be available with the list "
@@ -770,6 +754,7 @@ msgstr ""
 "paquets qu'il ne faut pas construire."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:381
 msgid ""
 "It will try building anything, even packages which are not aimed for your "
@@ -779,6 +764,7 @@ msgstr ""
 "pas destinés à votre architecture."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:385
 msgid ""
 "Because you are running random build scripts, it is better to use the "
@@ -790,6 +776,7 @@ msgstr ""
 "l'exécuter avec les privilèges du super-utilisateur."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:390
 msgid ""
 "Because not all builds are guaranteed to finish in a finite time, setting a "
@@ -801,6 +788,7 @@ msgstr ""
 "mauvais paquet."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:396
 msgid ""
 "Some packages require a lot of disk space, around 2GB seems to be sufficient "
@@ -812,11 +800,13 @@ msgstr ""
 "contre-exemples, informez-en le mainteneur de cette documentation."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:404
 msgid "Auto-backporting scripts"
 msgstr "Scripts de rétroportage automatique"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:406
 msgid ""
 "There are some people who use <command>pbuilder</command> to automatically "
@@ -826,6 +816,7 @@ msgstr ""
 "automatiquement un sous-ensemble de paquets vers la distribution stable."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:410
 msgid ""
 "I would like some information on how people are doing it, I would appreciate "
@@ -835,11 +826,13 @@ msgstr ""
 "retour sur le sujet ou des exemples seraient appréciés."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:416
 msgid "Using pbuilder for automated testing of packages"
 msgstr "Utiliser pbuilder pour tester automatiquement les paquets"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:418
 msgid ""
 "<command>pbuilder</command> can be used for automated testing of packages.  "
@@ -853,6 +846,7 @@ msgstr ""
 "action. Voici quelques pistes :"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:426
 msgid ""
 "Automatic install-remove-upgrade-remove-install-purge-upgrade-purge test-"
@@ -866,16 +860,17 @@ msgstr ""
 "(<filename>execute_installtest.sh</filename>)."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:431
-#, fuzzy
 msgid ""
 "Automatically running lintian (distributed as an example in <filename>/usr/"
 "share/doc/pbuilder/examples/B90lintian</filename>)."
 msgstr ""
-"Lancer automatiquement lintian/linda. Un exemple est fourni dans <filename>/"
-"usr/share/doc/pbuilder/examples/B90linda</filename>)."
+"Lancer automatiquement lintian. Un exemple est fourni dans <filename>/usr/"
+"share/doc/pbuilder/examples/B90lintian</filename>)."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:435
 msgid ""
 "Automatic debian-test of the package? The debian-test package has been "
@@ -888,15 +883,8 @@ msgstr ""
 "<filename>debian/pbuilder-test</filename> une implémentation pour "
 "<command>pbuilder</command> à travers le script B92test-pkg."
 
-# type: Content of: <book><chapter><sect1><para><footnote>
-#: pbuilder-doc.xml:442
-msgid ""
-"To use B92test-pkg script, first, add it to your hook directory.  <footnote>"
-msgstr ""
-"Pour utiliser le script B92test-pkg, ajoutez-le d'abord dans votre "
-"répertoire de crochets. <footnote>"
-
 # type: Content of: <book><chapter><sect1><para><footnote><para>
+#. type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:444
 msgid ""
 "It is possible to specify <command>--hookdir /usr/share/doc/pbuilder/"
@@ -905,18 +893,8 @@ msgstr ""
 "Il est possible d'utiliser l'option <command>--hookdir /usr/share/doc/"
 "pbuilder/examples</command> pour inclure tous les crochets donnés en exemple."
 
-# type: Content of: <book><chapter><sect1><para><footnote>
-#: pbuilder-doc.xml:447
-msgid ""
-"</footnote>.  The test files are shell scripts placed in <filename>debian/"
-"pbuilder-test/NN_name</filename> (where NN is number) following run-parts "
-"standard<footnote>"
-msgstr ""
-"</footnote>. Les fichiers de tests sont des scripts placés dans "
-"<filename>debian/pbuilder-test/NN_name</filename> (où NN est un nombre) en "
-"respectant la convention de run-parts<footnote>"
-
 # type: Content of: <book><chapter><sect1><para><footnote><para>
+#. type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:452
 msgid "See run-parts(8). For example, no '.' in file names!"
 msgstr ""
@@ -924,13 +902,18 @@ msgstr ""
 "fichiers !"
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:455
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:442
+#, fuzzy
 msgid ""
-"</footnote> for file names.  After a successful build, packages are first "
-"tested for installation and removal, and then each test is ran inside the "
-"chroot.  The current directory is the top directory of the source-code.  "
-"This means you can expect to be able to use ./debian/ directory from inside "
-"your scripts."
+"To use B92test-pkg script, first, add it to your hook directory.  "
+"<placeholder type=\"footnote\" id=\"0\"/>.  The test files are shell scripts "
+"placed in <filename>debian/pbuilder-test/NN_name</filename> (where NN is "
+"number) following run-parts standard<placeholder type=\"footnote\" id=\"1\"/"
+"> for file names.  After a successful build, packages are first tested for "
+"installation and removal, and then each test is ran inside the chroot.  The "
+"current directory is the top directory of the source-code.  This means you "
+"can expect to be able to use ./debian/ directory from inside your scripts."
 msgstr ""
 "</footnote> pour les noms de fichiers. Après une construction réussie, les "
 "paquets sont d'abord testés en les installant et en les retirant puis chaque "
@@ -939,6 +922,7 @@ msgstr ""
 "attendre à pouvoir utiliser le répertoire ./debian/ depuis vos scripts."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:463
 msgid ""
 "Example scripts for use with pbuilder-test can be found in <filename>/usr/"
@@ -948,14 +932,30 @@ msgstr ""
 "share/doc/pbuilder/examples/pbuilder-test</filename>"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:468
 msgid "Using pbuilder for testing builds with alternate compilers"
 msgstr ""
 "Utiliser pbuilder pour tester la construction en utilisant d'autres "
 "compilateurs"
 
+# type: Content of: <book><chapter><sect1><para><screen>
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:484
+#, no-wrap
+msgid ""
+"EXTRAPACKAGES=\"pentium-builder gcc-3.2 g++-3.2\"\n"
+"export DEBIAN_BUILDARCH=athlon\n"
+"export DEBIAN_BUILDGCCVER=3.2"
+msgstr ""
+"EXTRAPACKAGES=\"pentium-builder gcc-3.2 g++-3.2\"\n"
+"export DEBIAN_BUILDARCH=athlon\n"
+"export DEBIAN_BUILDGCCVER=3.2"
+
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:470
+#, fuzzy
 msgid ""
 "Most packages are compiled with <command>gcc</command> or <command>g++</"
 "command> and using the default compiler version, which was gcc 2.95 for "
@@ -967,7 +967,7 @@ msgid ""
 "packages than the default gcc, by providing a wrapper script called gcc "
 "which calls the real gcc.  To use <command>pentium-builder</command> in "
 "<command>pbuilder</command>, it is possible to set up the following in the "
-"configuration:"
+"configuration: <placeholder type=\"screen\" id=\"0\"/>"
 msgstr ""
 "La plupart des paquets sont compilés à l'aide de <command>gcc</command> ou "
 "<command>g++</command> et en utilisant la version par défaut du compilateur, "
@@ -981,20 +981,8 @@ msgstr ""
 "<command>pentium-builder</command> avec <command>pbuilder</command>, il "
 "suffit d'ajouter les lignes suivantes dans la configuration :"
 
-# type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:483
-#, fuzzy, no-wrap
-msgid ""
-"\n"
-"EXTRAPACKAGES=\"pentium-builder gcc-3.2 g++-3.2\"\n"
-"export DEBIAN_BUILDARCH=athlon\n"
-"export DEBIAN_BUILDGCCVER=3.2"
-msgstr ""
-"EXTRAPACKAGES=\"pentium-builder gcc-3.2 g++-3.2\"\n"
-"export DEBIAN_BUILDARCH=athlon\n"
-"export DEBIAN_BUILDGCCVER=3.2"
-
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:489
 msgid ""
 "It will instruct <command>pbuilder</command> to install the <command>pentium-"
@@ -1008,11 +996,13 @@ msgstr ""
 "pour faire fonctionner <command>pentium-builder</command>."
 
 # type: Content of: <book><chapter><title>
+#. type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:497
 msgid "Using User-mode-linux with pbuilder"
 msgstr "Utiliser User-mode-linux avec pbuilder"
 
 # type: Content of: <book><chapter><para>
+#. type: Content of: <book><chapter><para>
 #: pbuilder-doc.xml:499
 msgid ""
 "It is possible to use user-mode-linux by invoking <command>pbuilder-user-"
@@ -1030,6 +1020,7 @@ msgstr ""
 "<command>pbuilder</command>."
 
 # type: Content of: <book><chapter><para>
+#. type: Content of: <book><chapter><para>
 #: pbuilder-doc.xml:509
 msgid ""
 "<command>User-mode-linux</command> is a somewhat less proven platform than "
@@ -1047,6 +1038,7 @@ msgstr ""
 "rapide."
 
 # type: Content of: <book><chapter><para>
+#. type: Content of: <book><chapter><para>
 #: pbuilder-doc.xml:520
 msgid ""
 "The configuration of <command>pbuilder-user-mode-linux</command> goes in "
@@ -1056,26 +1048,31 @@ msgstr ""
 "en trois étapes :"
 
 # type: Content of: <book><chapter><para><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:524
 msgid "Configuration of user-mode-linux"
 msgstr "Configuration de user-mode-linux"
 
 # type: Content of: <book><chapter><para><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:527
 msgid "Configuration of rootstrap"
 msgstr "Configuration de rootstrap"
 
 # type: Content of: <book><chapter><para><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:530
 msgid "Configuration of pbuilder-uml"
 msgstr "Configuration de pbuilder-uml"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:535
 msgid "Configuring user-mode-linux"
 msgstr "Configurer user-mode-linux"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:537
 msgid ""
 "user-mode-linux isn't completely trivial to set up.  It would probably be "
@@ -1093,6 +1090,7 @@ msgstr ""
 "mode-linux</command> qui se trouve dans le paquet user-mode-linux-doc."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:547
 msgid ""
 "<command>user-mode-linux</command> requires the user to be in the uml-net "
@@ -1102,6 +1100,7 @@ msgstr ""
 "au groupe uml-net de façon à configurer le réseau, sauf si utilisez slirp."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:552
 msgid ""
 "If you compile your own kernel, you may want to verify that you enable TUN/"
@@ -1111,11 +1110,13 @@ msgstr ""
 "activé. Vous pouvez éventuellement appliquer le patch SKAS."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:558
 msgid "Configuring rootstrap"
 msgstr "Configurer rootstrap"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:560
 msgid ""
 "<command>rootstrap</command> is a wrapper around debootstrap.  It creates a "
@@ -1127,26 +1128,31 @@ msgstr ""
 "avec UML. Pour configurer rootstrap, il y a plusieurs prérequis."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:567
 msgid "Install the rootstrap package."
 msgstr "Installer le paquet rootstrap."
 
-# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
-#: pbuilder-doc.xml:571
-msgid ""
-"TUN/TAP only: add the user to the uml-net group to allow access to the "
-"network"
-msgstr ""
-"Seulement pour utiliser TUN/TAP : ajouter l'utilisateur au groupe uml-net "
-"pour autoriser l'accès au réseau"
-
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><screen>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><screen>
 #: pbuilder-doc.xml:573
 #, no-wrap
 msgid "adduser dancer uml-net"
 msgstr "adduser dancer uml-net"
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#: pbuilder-doc.xml:571
+#, fuzzy
+msgid ""
+"TUN/TAP only: add the user to the uml-net group to allow access to the "
+"network <placeholder type=\"screen\" id=\"0\"/>"
+msgstr ""
+"Seulement pour utiliser TUN/TAP : ajouter l'utilisateur au groupe uml-net "
+"pour autoriser l'accès au réseau"
+
+# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:577
 msgid ""
 "TUN/TAP only: Check that the kernel supports the TUN/TAP interface, or "
@@ -1155,47 +1161,44 @@ msgstr ""
 "Seulement pour utiliser TUN/TAP : vérifier que le noyau inclut l'interface "
 "TUN/TAP ou recompiler le noyau si nécessaire."
 
+# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><screen>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><screen>
+#: pbuilder-doc.xml:588
+#, no-wrap
+msgid ""
+"transport=tuntap\n"
+"interface=eth0\n"
+"gateway=192.168.1.1\n"
+"mirror=http://192.168.1.2:8081/debian\n"
+"host=192.168.1.198\n"
+"uml=192.168.1.199\n"
+"netmask=255.255.255.0"
+msgstr ""
+"transport=tuntap\n"
+"interface=eth0\n"
+"gateway=192.168.1.1\n"
+"mirror=http://192.168.1.2:8081/debian\n"
+"host=192.168.1.198\n"
+"uml=192.168.1.199\n"
+"netmask=255.255.255.0"
+
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:583
+#, fuzzy
 msgid ""
 "Set up <filename>/etc/rootstrap/rootstrap.conf</filename>.  For example, if "
 "the current host is 192.168.1.2, changing following entries to something "
-"like this seems to work."
+"like this seems to work.  <placeholder type=\"screen\" id=\"0\"/> Some "
+"experimentation with configuration and running <command>rootstrap ~/test."
+"uml</command> to actually test it would be handy."
 msgstr ""
 "Configurer <filename>/etc/rootstrap/rootstrap.conf</filename>. Par exemple, "
 "si l'IP de l'hôte est 192.168.1.2, vous pouvez utiliser quelque chose comme "
 "cela :"
 
-# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><screen>
-#: pbuilder-doc.xml:587
-#, fuzzy, no-wrap
-msgid ""
-"\n"
-"transport=tuntap\n"
-"interface=eth0\n"
-"gateway=192.168.1.1\n"
-"mirror=http://192.168.1.2:8081/debian\n"
-"host=192.168.1.198\n"
-"uml=192.168.1.199\n"
-"netmask=255.255.255.0"
-msgstr ""
-"transport=tuntap\n"
-"interface=eth0\n"
-"gateway=192.168.1.1\n"
-"mirror=http://192.168.1.2:8081/debian\n"
-"host=192.168.1.198\n"
-"uml=192.168.1.199\n"
-"netmask=255.255.255.0"
-
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
-#: pbuilder-doc.xml:595
-msgid ""
-"Some experimentation with configuration and running <command>rootstrap ~/"
-"test.uml</command> to actually test it would be handy."
-msgstr ""
-"Faire quelques essais en utilisant <command>rootstrap ~/test.uml</command>."
-
-# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:600
 msgid ""
 "Using slirp requires less configuration.  The default configuration comes "
@@ -1205,56 +1208,59 @@ msgstr ""
 "est livrée avec un exemple fonctionnel."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:607
 msgid "Configuring pbuilder-uml"
 msgstr "Configurer pbuilder-uml"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:609
 msgid "The following needs to happen:"
 msgstr "Suivre les étapes suivantes :"
 
 # type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:612
 msgid "Install the pbuilder-uml package."
 msgstr "Installer le paquet pbuilder-uml."
 
+# type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para><screen>
+#. type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para><screen>
+#: pbuilder-doc.xml:620
+#, no-wrap
+msgid ""
+"MY_ETH0=tuntap,,,192.168.1.198\n"
+"UML_IP=192.168.1.199\n"
+"UML_NETMASK=255.255.255.0\n"
+"UML_NETWORK=192.168.1.0\n"
+"UML_BROADCAST=255.255.255.255\n"
+"UML_GATEWAY=192.168.1.1\n"
+"PBUILDER_UML_IMAGE=\"/home/dancer/uml-image\""
+msgstr ""
+"MY_ETH0=tuntap,,,192.168.1.198\n"
+"UML_IP=192.168.1.199\n"
+"UML_NETMASK=255.255.255.0\n"
+"UML_NETWORK=192.168.1.0\n"
+"UML_BROADCAST=255.255.255.255\n"
+"UML_GATEWAY=192.168.1.1\n"
+"PBUILDER_UML_IMAGE=\"/home/dancer/uml-image\""
+
 # type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:616
+#, fuzzy
 msgid ""
 "Set up the configuration file <filename>/etc/pbuilder/pbuilder-uml.conf</"
-"filename> in the following manner. It will be different for slirp."
+"filename> in the following manner. It will be different for slirp.  "
+"<placeholder type=\"screen\" id=\"0\"/> Also, it needs to match the "
+"rootstrap configuration."
 msgstr ""
 "Configurer le fichier <filename>/etc/pbuilder/pbuilder-uml.conf</filename> "
 "de la façon suivante. Pour slirp, la configuration est différente."
 
-# type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para><screen>
-#: pbuilder-doc.xml:619
-#, fuzzy, no-wrap
-msgid ""
-"\n"
-"MY_ETH0=tuntap,,,192.168.1.198\n"
-"UML_IP=192.168.1.199\n"
-"UML_NETMASK=255.255.255.0\n"
-"UML_NETWORK=192.168.1.0\n"
-"UML_BROADCAST=255.255.255.255\n"
-"UML_GATEWAY=192.168.1.1\n"
-"PBUILDER_UML_IMAGE=\"/home/dancer/uml-image\""
-msgstr ""
-"MY_ETH0=tuntap,,,192.168.1.198\n"
-"UML_IP=192.168.1.199\n"
-"UML_NETMASK=255.255.255.0\n"
-"UML_NETWORK=192.168.1.0\n"
-"UML_BROADCAST=255.255.255.255\n"
-"UML_GATEWAY=192.168.1.1\n"
-"PBUILDER_UML_IMAGE=\"/home/dancer/uml-image\""
-
 # type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
-#: pbuilder-doc.xml:627
-msgid "Also, it needs to match the rootstrap configuration."
-msgstr "Cela doit aussi correspondre à la configuration de rootstrap."
-
-# type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:632
 msgid ""
 "Make sure BUILDPLACE is writable by the user.  Change BUILDPLACE in the "
@@ -1264,32 +1270,31 @@ msgstr ""
 "Changez la valeur de BUILDPLACE dans le fichier de configuration pour un "
 "emplacement pour lequel l'utilisateur a les droits d'écriture."
 
-# type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para><command>
+# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:638
-msgid "Run <command>pbuilder-user-mode-linux"
-msgstr "Exécutez <command>pbuilder-user-mode-linux"
-
-# type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para><command><option>
-#: pbuilder-doc.xml:638
-msgid "create --distribution sid"
-msgstr "create --distribution sid"
-
-# type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
-#: pbuilder-doc.xml:638
-msgid "</command> to create the image."
-msgstr "</command> pour créer l'image."
+#, fuzzy
+msgid ""
+"Run <command>pbuilder-user-mode-linux <option>create --distribution sid</"
+"option></command> to create the image."
+msgstr ""
+"<command>pbuilder-user-mode-linux</command> émule la plupart des "
+"fonctionnalités de <command>pbuilder</command> avec quelques différences."
 
 # type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:641
 msgid "Try running <command>pbuilder-user-mode-linux build</command>."
 msgstr "Essayez <command>pbuilder-user-mode-linux build</command>."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:647
 msgid "Considerations for running pbuilder-user-mode-linux"
 msgstr "Considérations pour exécuter pbuilder-user-mode-linux"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:649
 msgid ""
 "<command>pbuilder-user-mode-linux</command> emulates most of "
@@ -1299,6 +1304,7 @@ msgstr ""
 "fonctionnalités de <command>pbuilder</command> avec quelques différences."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:655
 msgid ""
 "<command>pbuilder-user-mode-linux</command> does not support all options of "
@@ -1310,13 +1316,16 @@ msgstr ""
 "problème qui sera réglé au fur et à mesure."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><command>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:662
+#, fuzzy
 msgid ""
 "/tmp is handled differently inside <command>pbuilder-user-mode-linux</"
 "command>.  In <command>pbuilder-user-mode-linux</command>, <filename>/tmp</"
 "filename> is mounted as tmpfs inside UML, so accessing files under "
 "<filename>/tmp</filename> from outside user-mode-linux does not work.  It "
-"affects options like <command>"
+"affects options like <command><option>--configfile</option></command>, and "
+"when trying to build packages placed under <filename>/tmp</filename>."
 msgstr ""
 "/tmp est utilisé différemment avec <command>pbuilder-user-mode-linux</"
 "command>. Avec <command>pbuilder-user-mode-linux</command>, <filename>/tmp</"
@@ -1324,21 +1333,14 @@ msgstr ""
 "l'extérieur de UML ne fonctionne donc pas. Cela affecte des options comme "
 "<command>"
 
-# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
-#: pbuilder-doc.xml:668
-msgid ""
-"</command>, and when trying to build packages placed under <filename>/tmp</"
-"filename>."
-msgstr ""
-"</command> et lorsqu'on essaie de construire des paquets placés dans "
-"<filename>/tmp</filename>."
-
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:676
 msgid "Parallel running of pbuilder-user-mode-linux"
 msgstr "Exécution en parallèle de pbuilder-user-mode-linux"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:678
 msgid ""
 "To run <command>pbuilder-user-mode-linux</command> in parallel on a system, "
@@ -1348,6 +1350,7 @@ msgstr ""
 "un système, un certain nombre de choses doivent être gardées à l'esprit."
 
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:683
 msgid ""
 "The create and update methods must not be run when a build is in progress, "
@@ -1357,81 +1360,59 @@ msgstr ""
 "est en cours de construction. Dans le cas contraire, le fichier COW sera "
 "corrompu."
 
+# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><screen>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><screen>
+#: pbuilder-doc.xml:694
+#, no-wrap
+msgid ""
+"for IP in 102 103 104 105; do\n"
+"  xterm -e pbuilder-user-mode-linux build --uml-ip 192.168.0.$IP \\\n"
+"    20030107/whizzytex_1.1.1-1.dsc &amp;\n"
+"done"
+msgstr ""
+"for IP in 102 103 104 105; do\n"
+"  xterm -e pbuilder-user-mode-linux build --uml-ip 192.168.0.$IP \\\n"
+"    20030107/whizzytex_1.1.1-1.dsc &amp;\n"
+"done"
+
 # type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#. type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
 #: pbuilder-doc.xml:688
+#, fuzzy
 msgid ""
 "If you are not using slirp, user-mode-linux processes which are running in "
 "parallel need to have different IP addresses.  Just trying to run the "
 "<command>pbuilder-user-mode-linux</command> several times will result in "
-"failure to access the network.  But something like the following will work:"
+"failure to access the network.  But something like the following will work: "
+"<placeholder type=\"screen\" id=\"0\"/> When using slirp, this problem does "
+"not exist."
 msgstr ""
 "Si vous n'utilisez pas slirp, les processus user-mode-linux qui tournent en "
 "parallèle doivent chacun avoir une adresse IP différente. Lancer plusieurs "
 "fois <command>pbuilder-user-mode-linux</command> provoquera des erreurs "
 "d'accès au réseau mais quelque chose comme ceci fonctionnera :"
 
-# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><screen>
-#: pbuilder-doc.xml:693
-#, fuzzy, no-wrap
-msgid ""
-"\n"
-"for IP in 102 103 104 105; do\n"
-"  xterm -e pbuilder-user-mode-linux build --uml-ip 192.168.0.$IP \\\n"
-"    20030107/whizzytex_1.1.1-1.dsc &amp;\n"
-"done"
-msgstr ""
-"for IP in 102 103 104 105; do\n"
-"  xterm -e pbuilder-user-mode-linux build --uml-ip 192.168.0.$IP \\\n"
-"    20030107/whizzytex_1.1.1-1.dsc &amp;\n"
-"done"
-
-# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
-#: pbuilder-doc.xml:698
-msgid "When using slirp, this problem does not exist."
-msgstr "En utilisant slirp, ce problème n'existe pas."
-
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:704
 msgid ""
 "Using pbuilder-user-mode-linux as a wrapper script to start up a virtual "
 "machine"
 msgstr "Utiliser pbuilder-user-mode-linux pour démarrer une machine virtuelle"
 
-# type: Content of: <book><chapter><sect1><para><command>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:706
 msgid ""
 "It is possible to use <command>pbuilder-user-mode-linux</command> for other "
-"uses than just building Debian packages.  <command>pbuilder-user-mode-linux"
+"uses than just building Debian packages.  <command>pbuilder-user-mode-linux "
+"<option>login</option></command> will let a user use a shell inside the user-"
+"mode-linux <command>pbuilder</command> base image, and <command>pbuilder-"
+"user-mode-linux <option>execute</option></command> will allow the user to "
+"execute a script inside the image."
 msgstr ""
-"Il est possible de s'aider de <command>pbuilder-user-mode-linux</command> "
-"pour autre chose que la construction de paquets Debian. <command>pbuilder-"
-"user-mode-linux"
-
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:710 pbuilder-doc.xml:816
-msgid "login"
-msgstr "login"
-
-# type: Content of: <book><chapter><sect1><para><command>
-#: pbuilder-doc.xml:710
-msgid ""
-"</command> will let a user use a shell inside the user-mode-linux "
-"<command>pbuilder</command> base image, and <command>pbuilder-user-mode-linux"
-msgstr ""
-"</command> permet d'obtenir un shell à l'intérieur de l'image de base et "
-"<command>pbuilder-user-mode-linux"
-
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:713
-msgid "execute"
-msgstr "execute"
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:713
-msgid "</command> will allow the user to execute a script inside the image."
-msgstr "</command> permet d'exécuter une commande à l'intérieur de l'image."
-
-# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:717
 msgid ""
 "You can use the script to install ssh and add a new user, so that it is "
@@ -1442,6 +1423,7 @@ msgstr ""
 "l'aide de ssh."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:721
 msgid ""
 "Note that it is not possible to use a script from <filename>/tmp</filename> "
@@ -1453,6 +1435,7 @@ msgstr ""
 "tmpfs sur <filename>/tmp</filename>."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:727
 msgid ""
 "The following example script may be useful in starting a sshd inside user-"
@@ -1461,10 +1444,10 @@ msgstr ""
 "Le script d'exemple suivant permet de démarrer sshd dans user-mode-linux."
 
 # type: Content of: <book><chapter><sect1><screen>
-#: pbuilder-doc.xml:730
-#, fuzzy, no-wrap
+#. type: Content of: <book><chapter><sect1><screen>
+#: pbuilder-doc.xml:731
+#, no-wrap
 msgid ""
-"\n"
 "#!/bin/bash\n"
 "\n"
 "apt-get install -y ssh xbase-clients xterm\n"
@@ -1492,11 +1475,13 @@ msgstr ""
 "read"
 
 # type: Content of: <book><chapter><title>
+#. type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:746
 msgid "Frequently asked questions"
 msgstr "Questions fréquentes"
 
 # type: Content of: <book><chapter><para>
+#. type: Content of: <book><chapter><para>
 #: pbuilder-doc.xml:749
 msgid ""
 "Here, known problems and frequently asked questions are documented. This "
@@ -1507,11 +1492,13 @@ msgstr ""
 "README.Debian mais a été déplacée ici."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:754
 msgid "pbuilder create fails"
 msgstr "Échec de <command>pbuilder create</command>"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:756
 msgid ""
 "It often happens that <command>pbuilder</command> cannot create the latest "
@@ -1528,6 +1515,7 @@ msgstr ""
 "futur."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:763
 msgid ""
 "There are people who occasionally back port debootstrap to stable versions; "
@@ -1537,6 +1525,7 @@ msgstr ""
 "les versions stables ; trouvez-les."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:767
 msgid ""
 "When there are errors with the debootstrap phase, the debootstrap script "
@@ -1548,6 +1537,7 @@ msgstr ""
 "de pallier aux problèmes de debootstrap."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:773
 msgid "Directories that cannot be bind-mounted"
 msgstr ""
@@ -1555,6 +1545,7 @@ msgstr ""
 "foreignphrase>)"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:775
 msgid ""
 "Because of the way <command>pbuilder</command> works, there are several "
@@ -1573,11 +1564,13 @@ msgstr ""
 "de l'utilisateur."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:786
 msgid "Logging in to pbuilder to investigate build failure"
 msgstr "Se logguer dans pbuilder pour déterminer les problèmes de construction"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:788
 msgid ""
 "It is possible to invoke a shell session after a build failure.  Example "
@@ -1591,11 +1584,13 @@ msgstr ""
 "l'environnement de base tandis que C11screen utilisera GNU screen."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:797
 msgid "Logging in to pbuilder to modify the environment"
 msgstr "Se logguer dans pbuilder pour modifier l'environnement"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:799
 msgid ""
 "It is sometimes necessary to modify the chroot environment.  <command>login</"
@@ -1611,10 +1606,10 @@ msgstr ""
 "shell est fourni sous le nom <filename>C10shell</filename>."
 
 # type: Content of: <book><chapter><sect1><screen>
-#: pbuilder-doc.xml:806
-#, fuzzy, no-wrap
+#. type: Content of: <book><chapter><sect1><screen>
+#: pbuilder-doc.xml:807
+#, no-wrap
 msgid ""
-"\n"
 "$ mkdir ~/loginhooks\n"
 "$ cp C10shell ~/loginhooks/E10shell\n"
 "$ sudo pbuilder update --hookdir ~/loginhooks/E10shell"
@@ -1623,81 +1618,48 @@ msgstr ""
 "$ cp C10shell ~/loginhooks/E10shell\n"
 "$ sudo pbuilder update --hookdir ~/loginhooks/E10shell"
 
-# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:811
-msgid "It is also possible to add"
-msgstr "Il est aussi possible de rajouter l'option"
-
-# type: Content of: <book><chapter><sect1><para><option>
-#: pbuilder-doc.xml:811
-msgid "--save-after-exec"
-msgstr "--save-after-exec"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:812
-msgid "and/or"
-msgstr "et/ou"
-
-# type: Content of: <book><chapter><sect1><para><option>
-#: pbuilder-doc.xml:812
-msgid "--save-after-login"
-msgstr "--save-after-login"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:812
 msgid ""
-"options to the <command>pbuilder login</command> session to accomplish the "
-"goal.  It is possible to add the"
+"It is also possible to add <option>--save-after-exec</option> and/or "
+"<option>--save-after-login</option> options to the <command>pbuilder login</"
+"command> session to accomplish the goal.  It is possible to add the "
+"<option>--uml-login-nocow</option> option to <command>pbuilder-user-mode-"
+"linux <option>login</option></command> session as well."
 msgstr ""
-"à <command>pbuilder login</command> pour remplir cet objectif. Il est "
-"également possible d'ajouter l'option"
-
-# type: Content of: <book><chapter><sect1><para><option>
-#: pbuilder-doc.xml:815
-msgid "--uml-login-nocow"
-msgstr "--uml-login-nocow"
-
-# type: Content of: <book><chapter><sect1><para><command>
-#: pbuilder-doc.xml:815
-msgid "option to <command>pbuilder-user-mode-linux"
-msgstr "à <command>pbuilder-user-mode-linux"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:816
-msgid "</command> session as well."
-msgstr "</command>."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:821
 msgid "Setting BUILDRESULTUID for sudo sessions"
 msgstr "Variable BUILDRESULTUID pour les sessions utilisant sudo"
 
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:823
-msgid "It is possible to set"
-msgstr "Il est possible de placer"
-
 # type: Content of: <book><chapter><sect1><para><screen>
+#. type: Content of: <book><chapter><sect1><para><screen>
 #: pbuilder-doc.xml:824
 #, no-wrap
 msgid "BUILDRESULTUID=$SUDO_UID"
 msgstr "BUILDRESULTUID=$SUDO_UID"
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:824
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:823
+#, fuzzy
 msgid ""
-"in pbuilderrc to set the proper BUILDRESULTUID when using <command>sudo</"
-"command>."
+"It is possible to set <placeholder type=\"screen\" id=\"0\"/> in pbuilderrc "
+"to set the proper BUILDRESULTUID when using <command>sudo</command>."
 msgstr ""
 "dans pbuilderrc pour renseigner correctement la variable BUILDRESULTUID en "
 "utilisant <command>sudo</command>."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:829
 msgid "Notes on usage of $TMPDIR"
 msgstr "Note à propos de l'utilisation de $TMPDIR"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:831
 msgid ""
 "If you are setting $TMPDIR to an unusual value, of other than <filename>/"
@@ -1708,27 +1670,26 @@ msgstr ""
 "peuvent se produire dans l'environnement de base telles que des échecs de "
 "<command>dpkg-source</command>."
 
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:835
-msgid ""
-"There are two options, you may install a hook to create that directory, or "
-"set"
-msgstr ""
-"Il y a deux solutions. Vous pouvez mettre en place un crochet pour créer ce "
-"répertoire ou utiliser"
-
 # type: Content of: <book><chapter><sect1><para><screen>
+#. type: Content of: <book><chapter><sect1><para><screen>
 #: pbuilder-doc.xml:837
 #, no-wrap
 msgid "export TMPDIR=/tmp"
 msgstr "export TMPDIR=/tmp"
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:838
-msgid "in pbuilderrc. Take your pick."
-msgstr "dans pbuilderrc. Choisissez."
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:835
+#, fuzzy
+msgid ""
+"There are two options, you may install a hook to create that directory, or "
+"set <placeholder type=\"screen\" id=\"0\"/> in pbuilderrc. Take your pick."
+msgstr ""
+"Il y a deux solutions. Vous pouvez mettre en place un crochet pour créer ce "
+"répertoire ou utiliser"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:841
 msgid ""
 "An example script is provided as <filename>examples/D10tmp</filename> with "
@@ -1738,6 +1699,7 @@ msgstr ""
 "filename> avec <command>pbuilder</command>."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:846
 msgid ""
 "Creating a shortcut for running <command>pbuilder</command> with a specific "
@@ -1747,6 +1709,7 @@ msgstr ""
 "distribution spécifique"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:848
 #, fuzzy
 msgid ""
@@ -1764,6 +1727,7 @@ msgstr ""
 "base de Etch."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:857
 msgid ""
 "Using environmental variables for running <command>pbuilder</command> for "
@@ -1772,17 +1736,14 @@ msgstr ""
 "Utilisation des variables d'environnement pour lancer <command>pbuilder</"
 "command> pour une distribution spécifique"
 
-# type: Content of: <book><chapter><sect1><para><footnote>
-#: pbuilder-doc.xml:860
-msgid "This section<footnote>"
-msgstr "Cette section<footnote>"
-
 # type: Content of: <book><chapter><sect1><para><footnote><para>
+#. type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:861
 msgid "This part of the documentation contributed by Andres Mejia"
 msgstr "Cette partie de la documentation est une contribution de Andres Mejia"
 
 # type: Content of: <book><chapter><sect1><para><footnote><para>
+#. type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:863
 msgid ""
 "This example was taken from a wiki (<ulink url=\"https://wiki.ubuntu.com/"
@@ -1792,12 +1753,14 @@ msgstr ""
 "PbuilderHowto\">https://wiki.ubuntu.com/PbuilderHowto</ulink>)."
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:866
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:860
+#, fuzzy
 msgid ""
-"</footnote> describes briefly a way to setup and use multiple pbuilder "
-"setups by creating a pbuilderrc configuration in your home path (<filename>"
-"$HOME/.pbuilderrc</filename>)  and using the variable \"DIST\" when running "
-"pbuilder or pdebuild."
+"This section<placeholder type=\"footnote\" id=\"0\"/> describes briefly a "
+"way to setup and use multiple pbuilder setups by creating a pbuilderrc "
+"configuration in your home path (<filename>$HOME/.pbuilderrc</filename>)  "
+"and using the variable \"DIST\" when running pbuilder or pdebuild."
 msgstr ""
 "</footnote> décrit brièvement comment configurer et utiliser plusieurs "
 "pbuilders en créant un fichier de configuration pbuilderrc dans votre "
@@ -1805,6 +1768,7 @@ msgstr ""
 "utilisant la variable \"DIST\" en lançant pbuilder ou pdebuild."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:871
 msgid "First, setup <filename>$HOME/.pbuilderrc</filename> to look like:"
 msgstr ""
@@ -1812,10 +1776,10 @@ msgstr ""
 "filename> ressemblant à ceci :"
 
 # type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:873
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:874
 #, fuzzy, no-wrap
 msgid ""
-"\n"
 "if [ -n \"${DIST}\" ]; then\n"
 "        BASETGZ=\"`dirname $BASETGZ`/$DIST-base.tgz\"\n"
 "        DISTRIBUTION=\"$DIST\"\n"
@@ -1830,7 +1794,15 @@ msgstr ""
 "        APTCACHE=\"/var/cache/pbuilder/$DIST/aptcache/\"\n"
 "fi"
 
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:873 pbuilder-doc.xml:889 pbuilder-doc.xml:930
+#: pbuilder-doc.xml:936 pbuilder-doc.xml:951 pbuilder-doc.xml:1039
+#: pbuilder-doc.xml:1190 pbuilder-doc.xml:1457 pbuilder-doc.xml:1468
+msgid "<placeholder type=\"screen\" id=\"0\"/>"
+msgstr ""
+
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:881
 msgid ""
 "Then, whenever you wish to use pbuilder for a particular distro, assign a "
@@ -1844,15 +1816,16 @@ msgstr ""
 "quelle valeur qui se trouve dans /usr/lib/debootstrap/scripts)."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:887
 msgid "Here's some examples on running pbuilder or pdebuild:"
 msgstr "Voici quelques exemples d'utilisation avec pbuilder ou pdebuild :"
 
 # type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:889
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:890
 #, fuzzy, no-wrap
 msgid ""
-"\n"
 "DIST=gutsy sudo pbuilder create\n"
 "\n"
 "DIST=sid sudo pbuilder create --mirror http://http.us.debian.org/debian\n"
@@ -1886,68 +1859,41 @@ msgstr ""
 "DIST=gutsy pdebuild"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:908
 msgid "Using special apt sources lists, and local packages"
 msgstr "Utiliser des sources spécifiques pour apt et des paquets locaux"
 
 # type: Content of: <book><chapter><sect1><para><command>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:910
 #, fuzzy
 msgid ""
 "If you have some very specialized requirements on your apt setup inside "
 "<command>pbuilder</command>, it is possible to specify that through the "
-"<command>"
+"<command><option>--othermirror</option></command> option.  Try something "
+"like: <command><option>--othermirror \"deb http://local/mirror stable main|"
+"deb-src http://local/source/repository ./\"</option></command>"
 msgstr ""
 "Si vous avez des besoins très spécifiques pour votre configuration d'apt à "
 "l'intérieur de l'environnement de base, il est possible de l'indiquer à "
 "l'aide de l'option <command>"
 
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:913
-msgid "--othermirror"
-msgstr "--othermirror"
-
 # type: Content of: <book><chapter><sect1><para><command>
-#: pbuilder-doc.xml:913
-msgid "</command> option.  Try something like: <command>"
-msgstr "</command>. Essayez quelque chose comme ceci : <command>"
-
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:916
-msgid ""
-"--othermirror \"deb http://local/mirror stable main|deb-src http://local/"
-"source/repository ./\""
-msgstr ""
-"--othermirror \"deb http://local/mirror stable main|deb-src http://local/"
-"source/repository ./\""
-
-# type: Content of: <book><chapter><sect1><para><command>
-#: pbuilder-doc.xml:916
-#, fuzzy
-msgid "</command>"
-msgstr "L'option <command>"
-
-# type: Content of: <book><chapter><sect1><para><command>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:919
+#, fuzzy
 msgid ""
 "To use the local file system instead of HTTP, it is necessary to do bind-"
-"mounting.  <command>"
+"mounting.  <command><option>--bindmounts</option></command> is a command-"
+"line option useful for such cases."
 msgstr ""
 "Pour utiliser un système de fichier local plutôt que HTTP, vous devez "
 "rattacher un système de fichier (<foreignphrase>bind-mounting</"
 "foreignphrase>). <command>"
 
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:921
-msgid "--bindmounts"
-msgstr "--bindmounts"
-
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:921
-msgid "</command> is a command-line option useful for such cases."
-msgstr "</command> est une option qui peut être utile dans de tels cas."
-
-# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:925
 msgid ""
 "It might be convenient to use your built packages from inside the chroot.  "
@@ -1960,21 +1906,23 @@ msgstr ""
 "rattacher votre répertoire contenant le résultat des constructions."
 
 # type: Content of: <book><chapter><sect1><para><screen>
+#. type: Content of: <book><chapter><sect1><para><screen>
 #: pbuilder-doc.xml:930
 #, no-wrap
 msgid "BINDMOUNTS=\"/var/cache/pbuilder/result\""
 msgstr "BINDMOUNTS=\"/var/cache/pbuilder/result\""
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:933
 msgid "Then, add the following hook"
 msgstr "Puis utilisez le crochet suivant"
 
 # type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:936
-#, fuzzy, no-wrap
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:937
+#, no-wrap
 msgid ""
-"\n"
 "# cat /var/cache/pbuilder/hooks/D70results\n"
 "#!/bin/sh\n"
 "cd /var/cache/pbuilder/result/\n"
@@ -1988,6 +1936,7 @@ msgstr ""
 "/usr/bin/apt-get update"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:944
 msgid ""
 "This way, you can use <filename>deb file:/var/cache/pbuilder/result</"
@@ -1996,17 +1945,16 @@ msgstr ""
 "De cette façon, vous pouvez utiliser <filename>deb file:/var/cache/pbuilder/"
 "result</filename>"
 
-# type: Content of: <book><chapter><sect1><para>
 #.  from http://ubuntuforums.org/archive/index.php/t-696820.html 
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:947
 msgid "To add new apt-key inside chroot:"
 msgstr ""
 
-# type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:951
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:952
 #, no-wrap
 msgid ""
-"\n"
 "sudo pbuilder --login --save-after-login\n"
 "# apt-key add - &lt;&lt;EOF\n"
 "...public key goes here...\n"
@@ -2015,6 +1963,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:960
 msgid ""
 "How to get pbuilder to run apt-get update before trying to satisfy build-"
@@ -2024,6 +1973,7 @@ msgstr ""
 "satisfaire les dépendances à la construction"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:962
 msgid ""
 "You can use hook scripts for this.  D scripts are run before satisfying "
@@ -2032,7 +1982,7 @@ msgstr ""
 "Vous pouvez utiliser à cet effet des crochets. Les scripts commençant par D "
 "sont lancés avant de résoudre les dépendances à la construction."
 
-# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:966
 msgid ""
 "<ulink url=\"http://lists.debian.org/debian-devel/2006/05/msg00550.html\"> "
@@ -2040,11 +1990,13 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:972
 msgid "Different bash prompts inside pbuilder login"
 msgstr "Utilise une invite différente à l'intérieur de pbuilder"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:974
 msgid ""
 "To make distinguishing bash prompts inside <command>pbuilder</command> "
@@ -2055,59 +2007,60 @@ msgstr ""
 "command>, il est possible de modifier l'invite en utilisant des variables "
 "comme PS1 dans <filename>pbuilderrc</filename>"
 
+# type: Content of: <book><chapter><sect1><para><footnote><para>
+#. type: Content of: <book><chapter><sect1><para><footnote><para>
+#: pbuilder-doc.xml:985
+msgid "Versions of bash from and before Debian 3.0"
+msgstr "Les versions de bash jusqu'à Debian 3.0 incluse"
+
 # type: Content of: <book><chapter><sect1><para><footnote>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:980
+#, fuzzy
 msgid ""
 "With versions of bash more recent than 2.05b-2-15, the value of the "
 "debian_chroot variable, if set, is included in the value of PS1 (the Bash "
-"prompt)  inside the chroot.  In prior versions of bash,<footnote>"
+"prompt)  inside the chroot.  In prior versions of bash,<placeholder type="
+"\"footnote\" id=\"0\"/> setting PS1 in pbuilderrc worked."
 msgstr ""
 "Avec les versions de bash plus récentes que la 2.05b-2-15, la valeur de la "
 "variable debian_chroot est incluse dans PS1 (l'invite de Bash). Dans les "
 "versions précédentes de bash,<footnote>"
 
-# type: Content of: <book><chapter><sect1><para><footnote><para>
-#: pbuilder-doc.xml:985
-msgid "Versions of bash from and before Debian 3.0"
-msgstr "Les versions de bash jusqu'à Debian 3.0 incluse"
-
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:986
-msgid "</footnote> setting PS1 in pbuilderrc worked."
-msgstr "</footnote> placer la variable PS1 dans pbuilderrc fonctionnait."
-
-# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:989
 msgid "example of debian_chroot"
 msgstr "exemple pour debian_chroot"
 
 # type: Content of: <book><chapter><sect1><screen>
-#: pbuilder-doc.xml:990
+#. type: Content of: <book><chapter><sect1><screen>
+#: pbuilder-doc.xml:991
 #, fuzzy, no-wrap
-msgid ""
-"\n"
-"\texport debian_chroot=\"pbuild$$\""
+msgid "\texport debian_chroot=\"pbuild$$\""
 msgstr "export debian_chroot=\"pbuild$$\""
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:992
 msgid "example of PS1"
 msgstr "exemple pour PS1"
 
 # type: Content of: <book><chapter><sect1><screen>
-#: pbuilder-doc.xml:993
+#. type: Content of: <book><chapter><sect1><screen>
+#: pbuilder-doc.xml:994
 #, fuzzy, no-wrap
-msgid ""
-"\n"
-"\texport PS1=\"pbuild chroot 32165 # \""
+msgid "\texport PS1=\"pbuild chroot 32165 # \""
 msgstr "export PS1=\"pbuild chroot 32165 # \""
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:997
 msgid "Creating a chroot reminder"
 msgstr "Création d'un pense-bête de chroot"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:999
 msgid ""
 "Bash prompts will help you remember that you are inside a chroot.  There are "
@@ -2122,11 +2075,13 @@ msgstr ""
 "filename> dans l'environnement chrooté."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1008
 msgid "Using /var/cache/apt/archives for the package cache"
 msgstr "Utiliser /var/cache/apt/archives comme cache pour les paquets"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1010
 msgid ""
 "For the help of low-bandwidth systems, it is possible to use <filename>/var/"
@@ -2139,6 +2094,7 @@ msgstr ""
 "var/cache/pbuilder/aptcache</filename>."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1016
 msgid ""
 "It is however not possible to do so currently with the user-mode-linux "
@@ -2151,6 +2107,7 @@ msgstr ""
 "que par root."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1022
 msgid ""
 "Use of dedicated tools such as apt-proxy is recommended, since caching of "
@@ -2161,11 +2118,13 @@ msgstr ""
 "des paquets profite également au reste du système."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1028
 msgid "pbuilder back ported to stable Debian releases"
 msgstr "Rétroportage de pbuilder vers les versions stables de Debian"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1030
 #, fuzzy
 msgid "Currently stable back port of pbuilder is available at backports.org."
@@ -2173,11 +2132,13 @@ msgstr ""
 "Actuellement, le rétroportage de pbuilder est disponible sur backports.org."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1034
 msgid "Warning about LOGNAME not being defined"
 msgstr "Alerte: LOGNAME n'est pas défini."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1036
 msgid ""
 "You might see a lot of warning messages when running <command>pbuilder</"
@@ -2187,14 +2148,14 @@ msgstr ""
 "<command>pbuilder</command>."
 
 # type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:1039
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:1040
 #, fuzzy, no-wrap
-msgid ""
-"\n"
-"\tdpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)"
+msgid "\tdpkg-genchanges: warning: no utmp entry available and LOGNAME not defined; using uid of process (1234)"
 msgstr "dpkg-genchanges: warning: aucune entrée UTMP disponible et LOGNAME non défini. Utilisation de l'UID du processus (1234)"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1043
 msgid ""
 "It is currently safe to ignore this warning message.  Please report back if "
@@ -2211,11 +2172,13 @@ msgstr ""
 "chroot."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1052
 msgid "Cannot Build-conflict against an essential package"
 msgstr "Construction impossible: conflit avec un paquet essentiel"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1054
 msgid ""
 "<command>pbuilder</command> does not currently allow Build-Conflicts against "
@@ -2231,43 +2194,44 @@ msgstr ""
 "paquet."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1063
 msgid "Avoiding the \"ln: Invalid cross-device link\" message"
 msgstr "Éviter le message \"ln: Lien croisé de périphérique invalide\""
 
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1065
-msgid ""
-"By default, <command>pbuilder</command> uses hard links to manage the "
-"<command>pbuilder</command> package cache.  It is not possible to make hard "
-"links across different devices; and thus this error will occur, depending on "
-"your set up.  If this happens, set"
-msgstr ""
-"Par défaut, <command>pbuilder</command> utilise des liens directs pour gérer "
-"le cache des paquets. Il n'est pas possible de créer des liens directs entre "
-"différents périphériques, ce qui explique l'erreur que vous obtenez sur "
-"votre système. Si cela se produit, ajoutez"
-
 # type: Content of: <book><chapter><sect1><para><screen>
+#. type: Content of: <book><chapter><sect1><para><screen>
 #: pbuilder-doc.xml:1069 pbuilder-doc.xml:1225
 #, no-wrap
 msgid "APTCACHEHARDLINK=no"
 msgstr "APTCACHEHARDLINK=no"
 
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1069
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:1065
+#, fuzzy
 msgid ""
+"By default, <command>pbuilder</command> uses hard links to manage the "
+"<command>pbuilder</command> package cache.  It is not possible to make hard "
+"links across different devices; and thus this error will occur, depending on "
+"your set up.  If this happens, set <placeholder type=\"screen\" id=\"0\"/> "
 "in your pbuilderrc file. Note that packages in <command>APTCACHE</command> "
 "will be copied into chroot local cache, so plan for enough space on "
 "<command>BUILDPLACE</command> device."
 msgstr ""
+"Par défaut, <command>pbuilder</command> utilise des liens directs pour gérer "
+"le cache des paquets. Il n'est pas possible de créer des liens directs entre "
+"différents périphériques, ce qui explique l'erreur que vous obtenez sur "
+"votre système. Si cela se produit, ajoutez"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1077
 msgid "Using fakechroot"
 msgstr "Utiliser fakechroot"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1079
 #, fuzzy
 msgid ""
@@ -2293,23 +2257,15 @@ msgstr ""
 "vérifier les dépendances à l'extérieur de l'image de base ce qui n'est pas "
 "le comportement attendu."
 
-# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1093
-msgid "To work around the problem, debootstrap has a"
-msgstr "Pour contourner de tels problèmes, debootstrap a une option"
-
-# type: Content of: <book><chapter><sect1><para><option>
-#: pbuilder-doc.xml:1094
-msgid "--variant fakechroot"
-msgstr "--variant fakechroot"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1094
-msgid "option.  Use that, so that ldd and ldconfig are overridden."
+msgid ""
+"To work around the problem, debootstrap has a <option>--variant fakechroot</"
+"option> option.  Use that, so that ldd and ldconfig are overridden."
 msgstr ""
-". Utilisez-la de façon à faire fonctionner correctement ldd et ldconfig."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1098
 msgid ""
 "Make sure you have set your LD_PRELOAD path correctly, as described in the "
@@ -2319,11 +2275,13 @@ msgstr ""
 "décrit dans la page de manuel de fakechroot."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1103
 msgid "Using debconf inside pbuilder sessions"
 msgstr "Utiliser debconf à l'intérieur d'une session pbuilder"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1105
 msgid ""
 "To use debconf inside <command>pbuilder</command>, setting DEBIAN_FRONTEND "
@@ -2338,11 +2296,13 @@ msgstr ""
 "ou dialog sont installés dans l'environnement de base."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1112
 msgid "nodev mount options hinder pbuilder activity"
 msgstr "L'option de montage nodev entrave le bon fonctionnement de pbuilder"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1114
 msgid ""
 "If you see messages such as this when building a chroot, you are mounting "
@@ -2353,14 +2313,14 @@ msgstr ""
 "fichiers."
 
 # type: Content of: <book><chapter><sect1><screen>
-#: pbuilder-doc.xml:1117
+#. type: Content of: <book><chapter><sect1><screen>
+#: pbuilder-doc.xml:1118
 #, fuzzy, no-wrap
-msgid ""
-"\n"
-"\t/var/lib/dpkg/info/base-files.postinst: /dev/null: Permission denied"
+msgid "\t/var/lib/dpkg/info/base-files.postinst: /dev/null: Permission denied"
 msgstr "/var/lib/dpkg/info/base-files.postinst: /dev/null: Permission non accordée"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1120
 msgid ""
 "You will also have problems if you mount the file system with the noexec "
@@ -2373,12 +2333,14 @@ msgstr ""
 "var/cache/pbuilder</filename> ou $BUILDPLACE."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1126
 msgid "This is not a problem when using <command>user-mode-linux</command>."
 msgstr ""
 "Ce problème n'apparaît pas en utilisant <command>user-mode-linux</command>."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1129
 msgid ""
 "See <ulink url=\"http://bugs.debian.org/316135\"> 316135 </ulink> for "
@@ -2388,11 +2350,13 @@ msgstr ""
 "pour un exemple."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1135
 msgid "pbuilder is slow"
 msgstr "pbuilder est lent"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1137
 msgid ""
 "<command>pbuilder</command> is often slow. The slowest part of "
@@ -2409,6 +2373,7 @@ msgstr ""
 "pas besoin de nettoyer et recréer l'image de base."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1146
 msgid ""
 "<command>pbuilder-user-mode-linux</command> is slower in executing the "
@@ -2420,6 +2385,7 @@ msgstr ""
 "système. Il est plus amical avec le disque dur."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1152
 msgid ""
 "<command>pbuilder</command> with cowdancer is also an alternative that "
@@ -2429,56 +2395,34 @@ msgstr ""
 "qui améliore la vitesse de lancement de pbuilder."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1157
 msgid "Using pdebuild to sponsor package"
 msgstr "Utilisation de pdebuild pour parrainer un paquet"
 
-# type: Content of: <book><chapter><sect1><para><command>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1159
 msgid ""
-"To sign a package marking for sponsorship, it is possible to use<command>"
+"To sign a package marking for sponsorship, it is possible to "
+"use<command><option> --auto-debsign</option></command> and "
+"<command><option>--debsign-k</option></command> options of "
+"<command>pdebuild</command>."
 msgstr ""
-"Pour signer un paquet en vue d'un parrainage, il est possible d'utiliser les "
-"options <command>"
 
-# type: Content of: <book><chapter><sect1><screen><command><option>
-#: pbuilder-doc.xml:1160 pbuilder-doc.xml:1165
-msgid "--auto-debsign"
-msgstr "--auto-debsign"
-
-# type: Content of: <book><chapter><sect1><para><command>
-#: pbuilder-doc.xml:1160
-msgid "</command> and <command>"
-msgstr "</command> et <command>"
-
-# type: Content of: <book><chapter><sect1><screen><command><option>
-#: pbuilder-doc.xml:1161 pbuilder-doc.xml:1165
-msgid "--debsign-k"
-msgstr "--debsign-k"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1161
-msgid "</command> options of <command>pdebuild</command>."
-msgstr "</command> de <command>pdebuild</command>."
-
-# type: Content of: <book><chapter><sect1><para><command>
-#: pbuilder-doc.xml:1165
-#, fuzzy
-msgid "<command>pdebuild"
-msgstr "L'option <command>"
-
-# type: Content of: <book><chapter><sect1><screen>
+#. type: Content of: <book><chapter><sect1><screen>
 #: pbuilder-doc.xml:1165
 #, no-wrap
-msgid "<parameter>XXXXXXXX</parameter></command>"
+msgid "\t<command>pdebuild  <option>--auto-debsign </option> <option>--debsign-k </option><parameter>XXXXXXXX</parameter></command>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1168
 msgid "Why is there a source.changes file in ../?"
 msgstr "Pourquoi y'a-t-il un fichier source.changes dans ../ ?"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1170
 msgid ""
 "When running <command>pdebuild</command>, <command>pbuilder</command> will "
@@ -2494,63 +2438,68 @@ msgstr ""
 "dans l'archive Debian."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1176
 #, fuzzy
-msgid "This behavior is different when running through"
+msgid ""
+"This behavior is different when running through <option>--use-pdebuild-"
+"internal</option>"
 msgstr "Ce comportement est différent en utilisant l'option"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1180
 msgid "amd64 and i386-mode"
 msgstr "amd64 et i386-mode"
 
 # type: Content of: <book><chapter><sect1><para><command>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1182
+#, fuzzy
 msgid ""
 "amd64 architectures are capable of running binaries in i386 mode.  It is "
 "possible to use <command>pbuilder</command> to run packages, using "
-"<command>linux32</command> and <command>debootstrap"
+"<command>linux32</command> and <command>debootstrap <option>--arch</option></"
+"command> option.  Specifically, a command-line option like the following "
+"will work."
 msgstr ""
 "Les architectures amd64 sont capables de lancer des binaires en mode i386. "
 "Il est possible d'utiliser <command>pbuilder</command> pour créer des "
 "paquets en utilisant les options <command>linux32</command> et "
 "<command>debootstrap"
 
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:1185
-msgid "--arch"
-msgstr "--arch"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1185
-msgid ""
-"</command> option.  Specifically, a command-line option like the following "
-"will work."
-msgstr "</command>. Une ligne de commande comme la suivante fonctionnera."
-
-# type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:1190
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:1191
 #, no-wrap
 msgid ""
-"\n"
 "<command>pbuilder create --distribution sid --debootstrapopts --arch --debootstrapopts i386 \\\n"
 "  --basetgz /var/cache/pbuilder/base-i386.tgz --mirror http://ftp.jp.debian.org/debian</command>\n"
 "<command>linux32 pbuilder build --basetgz /var/cache/pbuilder/base-i386.tgz</command>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1197
 msgid "How to use ccache"
 msgstr "Comment utiliser ccache"
 
+# type: Content of: <book><chapter><sect1><para><screen>
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:1203
+#, no-wrap
+msgid "uid=1234"
+msgstr "uid=1234"
+
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1199
 #, fuzzy
 msgid ""
 "To use <command>ccache</command> with <command>pbuilder</command>, use the "
 "following configuration.  Note that the directory used for CCACHE_DIR needs "
 "to exist, and be writable by user within <command>chroot</command>.  The "
-"default user within <command>chroot</command> is"
+"default user within <command>chroot</command> is <placeholder type=\"screen"
+"\" id=\"0\"/>."
 msgstr ""
 "Pour utiliser <command>ccache</command> avec <command>pbuilder</command>, "
 "utilisez la configuration suivante. Notez qu'il est nécessaire que le "
@@ -2558,27 +2507,17 @@ msgstr ""
 "l'image de base doit avoir les droits en écriture sur celui-ci. "
 "L'utilisateur par défaut utilisé dans l'image de base est"
 
-# type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:1203
-#, no-wrap
-msgid "uid=1234"
-msgstr "uid=1234"
-
 # type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1203 pbuilder-doc.xml:1225
-msgid "."
-msgstr "."
-
-# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1206
 msgid "Example is provided as pbuilderrc.ccache."
 msgstr "L'exemple suivant est disponible dans pbuilderrc.ccache."
 
 # type: Content of: <book><chapter><sect1><screen>
-#: pbuilder-doc.xml:1208
-#, fuzzy, no-wrap
+#. type: Content of: <book><chapter><sect1><screen>
+#: pbuilder-doc.xml:1209
+#, no-wrap
 msgid ""
-"\n"
 "export CCACHE_DIR=\"/var/cache/pbuilder/ccache\"\n"
 "export PATH=\"/usr/lib/ccache:${PATH}\"\n"
 "\n"
@@ -2591,7 +2530,7 @@ msgstr ""
 "EXTRAPACKAGES=ccache\n"
 "BINDMOUNTS=\"${CCACHE_DIR}\""
 
-# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1215
 msgid ""
 "<ulink url=\"http://web.glandium.org/blog/?p=55\">This entry created thanks "
@@ -2599,91 +2538,89 @@ msgid ""
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1220
 msgid "Using tmpfs for buildplace"
 msgstr "Utilisation de tmpfs comme emplacement de construction"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1222
+#, fuzzy
 msgid ""
 "To improve speed of operation, it is possible to use tmpfs for pbuilder "
 "build location.  Mount tmpfs to <filename>/var/cache/pbuilder/build</"
-"filename>, and set"
+"filename>, and set <placeholder type=\"screen\" id=\"0\"/>."
 msgstr ""
 "Pour améliorer la vitesse d'exécution, il est possible d'utiliser tmpfs "
 "comme emplacement de construction pour pbuilder. Montez un système tmpfs sur "
 "<filename>/var/cache/pbuilder/build</filename> et renseignez l'option"
 
 # type: Content of: <book><chapter><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1229
 msgid "Using svn-buildpackage together with pbuilder"
 msgstr "Utiliser svn-buildpackage avec pbuilder"
 
-# type: Content of: <book><chapter><sect1><para><footnote>
-#: pbuilder-doc.xml:1231
-msgid ""
-"pdebuild command can be used with svn-buildpackage --svn-builder command-"
-"line option.  <footnote>"
-msgstr ""
-"La commande pdebuild peut être utilisée avec l'option --svn-builder de svn-"
-"buildpackage.  <footnote>"
-
-# type: Content of: <book><chapter><sect1><para><footnote><para>
+#. type: Content of: <book><chapter><sect1><para><footnote><para>
 #: pbuilder-doc.xml:1234
 msgid ""
 "<ulink url=\"http://upsilon.cc/~zack/blog/posts/2007/09/svn-cowbuilder/\"> "
 "Zack has posted an example on his blog.  </ulink>"
 msgstr ""
 
-# type: Content of: <book><chapter><sect1><screen>
-#: pbuilder-doc.xml:1239
-#, fuzzy, no-wrap
+# type: Content of: <book><chapter><sect1><para><footnote>
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:1231
+#, fuzzy
 msgid ""
-"\n"
-"alias svn-cowbuilder=\"svn-buildpackage --svn-builder='pdebuild --pbuilder cowbuilder\""
+"pdebuild command can be used with svn-buildpackage --svn-builder command-"
+"line option.  <placeholder type=\"footnote\" id=\"0\"/>"
+msgstr ""
+"La commande pdebuild peut être utilisée avec l'option --svn-builder de svn-"
+"buildpackage.  <footnote>"
+
+# type: Content of: <book><chapter><sect1><screen>
+#. type: Content of: <book><chapter><sect1><screen>
+#: pbuilder-doc.xml:1240
+#, no-wrap
+msgid "alias svn-cowbuilder=\"svn-buildpackage --svn-builder='pdebuild --pbuilder cowbuilder\""
 msgstr "alias svn-cowbuilder=\"svn-buildpackage --svn-builder='pdebuild --pbuilder cowbuilder\""
 
 # type: Content of: <book><chapter><title>
+#. type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1247
 msgid "Troubleshooting and development"
 msgstr "Dépistage des pannes et développement"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1249
 msgid "Reporting bugs"
 msgstr "Rapports de bogues"
 
-# type: Content of: <book><chapter><sect1><para><command>
+# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1251
+#, fuzzy
 msgid ""
 "To report bugs, it would be important to have a log of what's going wrong.  "
-"Most of the time, adding a <command>"
-msgstr ""
-"Pour signaler un bogue, il est important d'avoir une trace montrant ce qui "
-"ne va pas. La plupart du temps, ajouter l'option <command>"
-
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:1253
-msgid "--debug"
-msgstr "--debug"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1253
-msgid ""
-"</command> option and re-running the session should do the trick.  Please "
-"send the log of such session along with your problem to ease the debugging "
-"process."
+"Most of the time, adding a <command><option>--debug</option></command> "
+"option and re-running the session should do the trick.  Please send the log "
+"of such session along with your problem to ease the debugging process."
 msgstr ""
 "</command> et relancer la session permet d'obtenir cette trace. Envoyez-la "
 "avec une description de votre problème pour faciliter la résolution du "
 "problème."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1260
 msgid "Mailing list"
 msgstr "Liste de diffusion"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1262
 msgid ""
 "There is a mailing list for <command>pbuilder</command> on alioth (pbuilder-"
@@ -2697,11 +2634,13 @@ msgstr ""
 "group_id=30778\">http://alioth.debian.org/mail/?group_id=30778</ulink>."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1270
 msgid "IRC Channel"
 msgstr "Canal IRC"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1272
 msgid ""
 "For coordination and communication, IRC channel #pbuilder on irc.oftc.net is "
@@ -2713,11 +2652,13 @@ msgstr ""
 "ou de publier une modification."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1279
 msgid "Information for pbuilder developers"
 msgstr "Informations pour les développeurs de pbuilder"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1281
 msgid ""
 "This section tries to document current development practices and how things "
@@ -2727,6 +2668,7 @@ msgstr ""
 "et comment les choses marchent dans le développement."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1285
 msgid ""
 "<command>pbuilder</command> is co-maintained with resources provided by "
@@ -2745,10 +2687,10 @@ msgstr ""
 "disponible par http, git ou (si vous avez un compte sur alioth) ssh."
 
 # type: Content of: <book><chapter><sect1><screen>
-#: pbuilder-doc.xml:1298
-#, fuzzy, no-wrap
+#. type: Content of: <book><chapter><sect1><screen>
+#: pbuilder-doc.xml:1299
+#, no-wrap
 msgid ""
-"\n"
 "git-clone git://git.debian.org/git/pbuilder/pbuilder.git\n"
 "git-clone http://git.debian.org/git/pbuilder/pbuilder.git\n"
 "git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git"
@@ -2758,6 +2700,7 @@ msgstr ""
 "git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1303
 msgid ""
 "Test-suites are available in <filename>./testsuite/</filename> directory.  "
@@ -2780,38 +2723,45 @@ msgstr ""
 "pbuilder est fonctionnel."
 
 # type: Content of: <book><chapter><sect1><table><title>
+#. type: Content of: <book><chapter><sect1><table><title>
 #: pbuilder-doc.xml:1312
 msgid "Directory structure of the testsuite"
 msgstr "Structure des répertoires de la suite de tests"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><thead><row><entry>
 #: pbuilder-doc.xml:1318 pbuilder-doc.xml:1519 pbuilder-doc.xml:1583
 msgid "Directory"
 msgstr "Répertoire"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><thead><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><thead><row><entry>
 #: pbuilder-doc.xml:1319 pbuilder-doc.xml:1520 pbuilder-doc.xml:1584
 msgid "Meaning"
 msgstr "Signification"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1324
 #, fuzzy
 msgid "<filename>./testsuite/</filename>"
 msgstr "Lien symbolique vers <filename>/proc/mounts</filename>."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1325
 msgid "Directory for testsuite"
 msgstr "Répertoire de la suite de tests"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1328
 #, fuzzy
 msgid "<filename>./testsuite/run-test.sh</filename>"
 msgstr "Lien symbolique vers <filename>/proc/mounts</filename>."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1329
 msgid ""
 "Daily regression test to test against Debian Archive changes breaking "
@@ -2821,42 +2771,47 @@ msgstr ""
 "changements survenus dans l'archive Debian."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1332
 #, fuzzy
 msgid "<filename>./testsuite/run-test.log</filename>"
 msgstr "Lien symbolique vers <filename>/proc/mounts</filename>."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1333
 msgid "A summary of testsuite"
 msgstr "Un résumé de la suite de tests"
 
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1336
 msgid "<filename>./testsuite/normal/</filename>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1337
 msgid "Directory for testsuite results of running pbuilder with debootstrap"
 msgstr "Répertoire contenant les résultats des tests en utilisant debootstrap"
 
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1340
 msgid "<filename>./testsuite/cdebootstrap/</filename>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1341
 msgid "Directory for testsuite results of running pbuilder with cdebootstrap"
 msgstr "Répertoire contenant les résultats des tests en utilisant cdebootstrap"
 
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1344
 msgid "<filename>./testsuite/run-regression.sh</filename>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1345
 msgid ""
 "Regression testsuite, ran every time change is made to pbuilder to make sure "
@@ -2865,42 +2820,46 @@ msgstr ""
 "Tests de régression lancés chaque fois qu'un changement est effectué sur "
 "pbuilder pour s'assurer qu'aucune régression n'est apparue"
 
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1348
 msgid "<filename>./testsuite/run-regression.log</filename>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1349
 msgid "Summary of test result"
 msgstr "Résumé des résultats des tests"
 
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1352
 msgid "<filename>./testsuite/regression/BugID-*.sh</filename>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1353
 msgid "Regression tests, exit 0 for success, exit 1 for failure"
 msgstr "Tests de régression, retourne 0 en cas de succès et 1 en cas d'échec"
 
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1356
 msgid "<filename>./testsuite/regression/BugID-*</filename>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1357
 msgid "Files used for the regression testsuite."
 msgstr "Fichiers utilisés pour les tests de régression."
 
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1360
 msgid "<filename>./testsuite/regression/log/BugID-*.sh.log</filename>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1361
 msgid ""
 "Output of the regression test, output from the script is redirected by run-"
@@ -2910,7 +2869,9 @@ msgstr ""
 "scripts par run-regression.sh"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1367
+#, fuzzy
 msgid ""
 "When making changes, changes should be documented in the Git commit log.  "
 "git-dch will generate debian/changelog from the commit log. Make the first "
@@ -2918,8 +2879,14 @@ msgid ""
 "available.  debian/changelog should not be edited directly unless when "
 "releasing a new version."
 msgstr ""
+"Lorsque des changements sont effectués, ceux-ci doivent être documentés dans "
+"les journaux de transaction de Git. git-dch construira le fichier debian/"
+"changelog à partir de ceux-ci. Assurez-vous que la première ligne de "
+"commentaire soit pertinente et ajoutez toutes les informations disponibles "
+"sur la clôture d'un bug."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1375
 msgid ""
 "A TODO file is available in <filename>debian/TODO</filename>.  It's mostly "
@@ -2932,6 +2899,7 @@ msgstr ""
 "pour éditer ce fichier."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1381
 msgid ""
 "When releasing a new version of <command>pbuilder</command>, the version is "
@@ -2944,16 +2912,19 @@ msgstr ""
 "action."
 
 # type: Content of: <book><chapter><title>
+#. type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1389
 msgid "Other uses of pbuilder"
 msgstr "Autres utilisations de pbuilder"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1391
 msgid "Using pbuilder for small experiments"
 msgstr "Utilisation de pbuilder pour de petites expérimentations"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1393
 msgid ""
 "There are cases when some small experimenting is required, and you do not "
@@ -2967,6 +2938,7 @@ msgstr ""
 "tels cas, la commande <command>pbuilder login</command> est disponible."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1400
 msgid ""
 "<command>pbuilder login </command> is a debugging feature for "
@@ -2978,6 +2950,7 @@ msgstr ""
 "temporairement un environnement restreint."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1404
 msgid ""
 "Note that the chroot is cleaned after logging out of the shell, and mounting "
@@ -2987,11 +2960,13 @@ msgstr ""
 "monter des systèmes de fichiers dans celui-ci est déconseillé."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1409
 msgid "Running little programs inside the chroot"
 msgstr "Lancer de petits programmes dans l'environnement de base"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1411
 msgid ""
 "To facilitate using <command>pbuilder</command> for other uses, "
@@ -3005,6 +2980,7 @@ msgstr ""
 "de base."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1418
 msgid ""
 "The script can be useful for sequences of operations such as installing ssh "
@@ -3015,11 +2991,13 @@ msgstr ""
 "l'environnement de base."
 
 # type: Content of: <book><chapter><title>
+#. type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1424
 msgid "Experimental or wish-list features of pbuilder"
 msgstr "Fonctionnalités expérimentales ou souhaitées de pbuilder"
 
 # type: Content of: <book><chapter><para>
+#. type: Content of: <book><chapter><para>
 #: pbuilder-doc.xml:1426
 msgid ""
 "There are some advanced features, above that of the basic feature of "
@@ -3029,11 +3007,13 @@ msgstr ""
 "pour certains usages spécifiques."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1430
 msgid "Using LVM"
 msgstr "Utilisation de LVM"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1432
 msgid ""
 "LVM2 has a useful snapshot function that features Copy-on-write images.  "
@@ -3051,11 +3031,13 @@ msgstr ""
 "examples/lvmpbuilder/</filename>"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1441
 msgid "Using cowdancer"
 msgstr "Utilisation de cowdancer"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1443
 msgid ""
 "<command>cowdancer</command> allows copy-on-write semantics on file system "
@@ -3075,15 +3057,16 @@ msgstr ""
 "<command>cowdancer</command> depuis la version 0.14"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1454
 msgid "Example command-lines for cowbuilder look like the following."
 msgstr "Voici quelques exemples pour utiliser cowbuilder."
 
 # type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:1457
-#, fuzzy, no-wrap
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:1458
+#, no-wrap
 msgid ""
-"\n"
 "# cowbuilder --create --distribution sid\n"
 "# cowbuilder --update --distribution sid\n"
 "# cowbuilder --build XXX.dsc"
@@ -3093,49 +3076,40 @@ msgstr ""
 "# cowbuilder --build XXX.dsc"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1463
+#, fuzzy
 msgid ""
 "It is also possible to use cowdancer with pdebuild command.  Specify with "
-"command-line option"
+"command-line option <option>--pbuilder</option> or set it in "
+"PDEBUILD_PBUILDER configuration option."
 msgstr ""
 "Il est également possible d'utiliser cowdancer avec la commande pdebuild. "
 "Utilisez l'option"
 
-# type: Content of: <book><chapter><sect1><para><option>
-#: pbuilder-doc.xml:1464
-msgid "--pbuilder"
-msgstr "--pbuilder"
-
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1465
-msgid "or set it in PDEBUILD_PBUILDER configuration option."
-msgstr "ou l'option de configuration PDEBUILD_PBUILDER."
-
 # type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:1468
-#, fuzzy, no-wrap
-msgid ""
-"\n"
-"$ pdebuild --pbuilder cowbuilder"
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:1469
+#, no-wrap
+msgid "$ pdebuild --pbuilder cowbuilder"
 msgstr "$ pdebuild --pbuilder cowbuilder"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1473
 msgid "Using pbuilder without tar.gz"
 msgstr "Utilisation de pbuilder sans tar.gz"
 
-# type: Content of: <book><chapter><sect1><para><command><option>
-#: pbuilder-doc.xml:1475
-msgid "--no-targz"
-msgstr "--no-targz"
-
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1475
+#, fuzzy
 msgid ""
-"</command> option of <command>pbuilder</command> will allow usage of "
-"<command>pbuilder</command> in a different way from conventional usage.  It "
-"will try to use an existing chroot, and will not try to clean up after "
-"working on it.  It is an operation mode more like <command>sbuild</command>."
+"The <command><option>--no-targz</option></command> option of "
+"<command>pbuilder</command> will allow usage of <command>pbuilder</command> "
+"in a different way from conventional usage.  It will try to use an existing "
+"chroot, and will not try to clean up after working on it.  It is an "
+"operation mode more like <command>sbuild</command>."
 msgstr ""
 "</command> de <command>pbuilder</command> permet l'utilisation de "
 "<command>pbuilder</command> d'une manière différente. Cela permet d'utiliser "
@@ -3143,20 +3117,11 @@ msgstr ""
 "avoir terminé les opérations. C'est un mode de fonctionnement plus proche de "
 "<command>sbuild</command>."
 
-# type: Content of: <book><chapter><sect1><para>
-#: pbuilder-doc.xml:1486
-msgid ""
-"It should be possible to create base chroot images for <command>dchroot</"
-"command> with the following commands:"
-msgstr ""
-"Il est possible de créer des environements de base pour <command>dchroot</"
-"command> à l'aide des commandes suivantes :"
-
 # type: Content of: <book><chapter><sect1><para><screen>
-#: pbuilder-doc.xml:1488
+#. type: Content of: <book><chapter><sect1><para><screen>
+#: pbuilder-doc.xml:1489
 #, fuzzy, no-wrap
 msgid ""
-"\n"
 "# pbuilder create --distribution lenny --no-targz --basetgz /chroot/lenny\n"
 "# pbuilder create --distribution squeeze --no-targz --basetgz /chroot/squeeze\n"
 "# pbuilder create --distribution sid --no-targz --basetgz /chroot/sid"
@@ -3165,12 +3130,25 @@ msgstr ""
 "# pbuilder create --distribution lenny --no-targz --basetgz /chroot/lenny\n"
 "# pbuilder create --distribution sid --no-targz --basetgz /chroot/sid"
 
+# type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
+#: pbuilder-doc.xml:1486
+#, fuzzy
+msgid ""
+"It should be possible to create base chroot images for <command>dchroot</"
+"command> with the following commands: <placeholder type=\"screen\" id=\"0\"/>"
+msgstr ""
+"Il est possible de créer des environements de base pour <command>dchroot</"
+"command> à l'aide des commandes suivantes :"
+
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1495
 msgid "Using pbuilder in a vserver"
 msgstr "Utilisation de pbuilder dans un vserver"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1497
 msgid ""
 "It is possible to use <command>pbuilder</command> in a vserver environment.  "
@@ -3182,6 +3160,7 @@ msgstr ""
 "récent ou bien un noyau Linux 2.6.16 ou plus récent."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1502
 msgid ""
 "To use <command>pbuilder</command> in a vserver, you need to set the "
@@ -3193,21 +3172,25 @@ msgstr ""
 "command> dans les <command>ccapabilities</command> de ce vserver."
 
 # type: Content of: <book><chapter><title>
+#. type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1509
 msgid "Reference materials"
 msgstr "Documents de référence"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1511
 msgid "Directory structure outside the chroot"
 msgstr "Structure des répertoires à l'extérieur de l'environnement de base"
 
 # type: Content of: <book><chapter><sect1><table><title>
+#. type: Content of: <book><chapter><sect1><table><title>
 #: pbuilder-doc.xml:1513
 msgid "Directory Structure outside the chroot"
 msgstr "Structure des répertoires à l'extérieur de l'environnement de base"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1525
 #, fuzzy
 msgid "<filename>/etc/pbuilderrc</filename>"
@@ -3216,21 +3199,24 @@ msgstr ""
 "filename> ressemblant à ceci :"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1526
 msgid "configuration file"
 msgstr "fichier de configuration"
 
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1529
 msgid "<filename>/usr/share/pbuilder/pbuilderrc</filename>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1530
 msgid "Default configuration"
 msgstr "Configuration par défaut"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1533
 #, fuzzy
 msgid "<filename>/var/cache/pbuilder/base.tgz</filename>"
@@ -3239,6 +3225,7 @@ msgstr ""
 "result</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1534
 msgid ""
 "Default location pbuilder uses for base.tgz, the tar-ball containing a basic "
@@ -3249,6 +3236,7 @@ msgstr ""
 "essentiels pour la construction des paquets."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1539
 #, fuzzy
 msgid "<filename>/var/cache/pbuilder/build/PID/</filename>"
@@ -3257,11 +3245,13 @@ msgstr ""
 "result</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1540
 msgid "Default location pbuilder uses for chroot"
 msgstr "Emplacement par défaut utilisé pour l'image de base"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1543
 #, fuzzy
 msgid "<filename>/var/cache/pbuilder/aptcache</filename>"
@@ -3270,6 +3260,7 @@ msgstr ""
 "result</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1544
 msgid ""
 "Default location <command>pbuilder</command> will use as apt cache, to store "
@@ -3279,6 +3270,7 @@ msgstr ""
 "les paquets Debian pendant le processus de construction."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1547
 #, fuzzy
 msgid "<filename>/var/cache/pbuilder/result</filename>"
@@ -3287,6 +3279,7 @@ msgstr ""
 "result</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1548
 msgid ""
 "Default location <command>pbuilder</command> puts the deb files and other "
@@ -3296,6 +3289,7 @@ msgstr ""
 "les autres fichiers créés après la construction"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1551
 #, fuzzy
 msgid "<filename>/var/cache/pbuilder/pbuilder-umlresult</filename>"
@@ -3304,6 +3298,7 @@ msgstr ""
 "result</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1552
 msgid ""
 "Default location <command>pbuilder-user-mode-linux</command> puts the deb "
@@ -3313,6 +3308,7 @@ msgstr ""
 "les paquets et les autres fichiers créés après la construction"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1555
 #, fuzzy
 msgid "<filename>/var/cache/pbuilder/pbuilder-mnt</filename>"
@@ -3321,6 +3317,7 @@ msgstr ""
 "result</filename>"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1556
 msgid ""
 "Default location <command>pbuilder-user-mode-linux</command> uses for "
@@ -3330,22 +3327,25 @@ msgstr ""
 "le système de fichiers COW pour l'environnement de base."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1559
 #, fuzzy
 msgid "<filename>/tmp</filename>"
 msgstr "Lien symbolique vers <filename>/proc/mounts</filename>."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1560
 msgid "<command>pbuilder-user-mode-linux</command> will mount tmpfs for work."
 msgstr "<command>pbuilder-user-mode-linux</command> montera le tmpfs ici."
 
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1563
 msgid "<filename>${HOME}/tmp/PID.cow</filename>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1564
 msgid ""
 "<command>pbuilder-user-mode-linux</command> use this directory for location "
@@ -3354,12 +3354,13 @@ msgstr ""
 "<command>pbuilder-user-mode-linux</command> utilise ce répertoire comme "
 "emplacement pour le système de fichiers COW."
 
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1567
 msgid "<filename>${HOME}/uml-image</filename>"
 msgstr ""
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1568
 msgid ""
 "<command>pbuilder-user-mode-linux</command> use this directory for user-mode-"
@@ -3369,33 +3370,39 @@ msgstr ""
 "placer l'image disque pour user-mode-linux."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1575
 msgid "Directory structure inside the chroot"
 msgstr "Structure des répertoires à l'intérieur de l'image de base"
 
 # type: Content of: <book><chapter><sect1><table><title>
+#. type: Content of: <book><chapter><sect1><table><title>
 #: pbuilder-doc.xml:1577
 msgid "Directory Structure inside the chroot"
 msgstr "Structure des répertoires à l'intérieur de l'image de base"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1589
 #, fuzzy
 msgid "<filename>/etc/mtab</filename>"
 msgstr "Lien symbolique vers <filename>/proc/mounts</filename>."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1591
 msgid "symlink to <filename>/proc/mounts</filename>."
 msgstr "Lien symbolique vers <filename>/proc/mounts</filename>."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1595
 #, fuzzy
 msgid "<filename>/tmp/buildd</filename>"
 msgstr "Lien symbolique vers <filename>/proc/mounts</filename>."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1596
 #, fuzzy
 msgid ""
@@ -3403,7 +3410,7 @@ msgid ""
 "package to be processed.  <filename>/tmp/buildd/packagename-version/</"
 "filename> will be the root directory of the package being processed.  HOME "
 "environment variable is set to this value inside chroot by pbuilder-"
-"buildpackage."
+"buildpackage.  <option>--inputfile</option> will place files here."
 msgstr ""
 "Emplacement par défaut utilisé par <command>pbuilder</command> pour mettre "
 "les paquets Debian à traiter. <filename>/tmp/buildd/packagename-version/</"
@@ -3411,24 +3418,15 @@ msgstr ""
 "d'environnement HOME est initialisée par pbuilder-buildpackage à cette "
 "valeur à l'intérieur de l'environnement de base."
 
-# type: Content of: <book><chapter><sect1><para><option>
-#: pbuilder-doc.xml:1602
-#, fuzzy
-msgid "--inputfile"
-msgstr "--pbuilder"
-
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
-#: pbuilder-doc.xml:1602
-msgid "will place files here."
-msgstr ""
-
-# type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1606
 #, fuzzy
 msgid "<filename>/run</filename>"
 msgstr "Lien symbolique vers <filename>/proc/mounts</filename>."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1607
 msgid ""
 "The script passed as an argument to <command>pbuilder</command> execute is "
@@ -3438,23 +3436,27 @@ msgstr ""
 "est placé ici."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1613
 #, fuzzy
 msgid "<filename>/tmp/hooks</filename>"
 msgstr "Lien symbolique vers <filename>/proc/mounts</filename>."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1615
 msgid "The location of hooks."
 msgstr "Emplacement des crochets."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1619
 #, fuzzy
 msgid "<filename>/var/cache/apt/archives</filename>"
 msgstr "Utiliser /var/cache/apt/archives comme cache pour les paquets"
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1621
 msgid ""
 "<command>pbuilder</command> copies the content of this directory to and from "
@@ -3464,12 +3466,14 @@ msgstr ""
 "le répertoire aptcache à l'extérieur de l'environnement de base."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1626
 #, fuzzy
 msgid "<filename>/tmp/XXXX</filename>"
 msgstr "Lien symbolique vers <filename>/proc/mounts</filename>."
 
 # type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
+#. type: Content of: <book><chapter><sect1><table><tgroup><tbody><row><entry>
 #: pbuilder-doc.xml:1627
 msgid ""
 "<command>pbuilder-user-mode-linux</command> uses a script in <filename>/tmp</"
@@ -3479,16 +3483,19 @@ msgstr ""
 "<filename>/tmp</filename> pour le démarrage initial dans user-mode-linux"
 
 # type: Content of: <book><chapter><title>
+#. type: Content of: <book><chapter><title>
 #: pbuilder-doc.xml:1637
 msgid "Minor archaeological details"
 msgstr "Quelques détails archéologiques mineurs"
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1639
 msgid "Documentation history"
 msgstr "Historique de la documentation"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1641
 msgid ""
 "This document was started on 28 Dec 2002 by Junichi Uekawa, trying to "
@@ -3499,6 +3506,7 @@ msgstr ""
 "command>."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1646
 msgid ""
 "This documentation is available from the <command>pbuilder</command> source "
@@ -3522,6 +3530,7 @@ msgstr ""
 "hébergée par le projet alioth."
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1657
 msgid ""
 "Documentation is written using DocBook XML, with emacs PSGML mode, and using "
@@ -3531,11 +3540,13 @@ msgstr ""
 "d'Emacs et wysidocbookxml pour la prévisualisation en direct."
 
 # type: Content of: <book><chapter><sect1><title>
+#. type: Content of: <book><chapter><sect1><title>
 #: pbuilder-doc.xml:1663
 msgid "Possibly inaccurate Background History of pbuilder"
 msgstr "Histoire peut-être incorrecte de pbuilder"
 
 # type: Content of: <book><chapter><sect1><para>
+#. type: Content of: <book><chapter><sect1><para>
 #: pbuilder-doc.xml:1665
 msgid ""
 "The following is a most possibly inaccurate account of how "
@@ -3551,11 +3562,13 @@ msgstr ""
 "avant <command>pbuilder</command>."
 
 # type: Content of: <book><chapter><sect1><sect2><title>
+#. type: Content of: <book><chapter><sect1><sect2><title>
 #: pbuilder-doc.xml:1672
 msgid "The Time Before pbuilder"
 msgstr "L'avant pbuilder"
 
 # type: Content of: <book><chapter><sect1><sect2><para>
+#. type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1674
 msgid ""
 "There was once dbuild, which was a shell script to build Debian packages "
@@ -3571,6 +3584,7 @@ msgstr ""
 "amélioré mais je n'ai trouvé que des citations et non le code source."
 
 # type: Content of: <book><chapter><sect1><sect2><para>
+#. type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1681
 msgid ""
 "debbuild was probably written by James Troup. I don't know it because I have "
@@ -3582,6 +3596,7 @@ msgstr ""
 "sur le net et dans les archives des listes de diffusion."
 
 # type: Content of: <book><chapter><sect1><sect2><para>
+#. type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1686
 msgid ""
 "sbuild is a perl script to build Debian packages from source.  It parses "
@@ -3607,11 +3622,13 @@ msgstr ""
 "Murray."
 
 # type: Content of: <book><chapter><sect1><sect2><title>
+#. type: Content of: <book><chapter><sect1><sect2><title>
 #: pbuilder-doc.xml:1700
 msgid "Birth of pbuilder"
 msgstr "Naissance de pbuilder"
 
 # type: Content of: <book><chapter><sect1><sect2><para>
+#. type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1702
 msgid ""
 "wanna-build (sbuild) was (at the time of year 2001) quite difficult to set "
@@ -3623,6 +3640,7 @@ msgstr ""
 "l'usage des dépendances source."
 
 # type: Content of: <book><chapter><sect1><sect2><para>
+#. type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1707
 msgid ""
 "Building packages from source using Build-Depends information within a "
@@ -3638,6 +3656,7 @@ msgstr ""
 "rapidement décidé que cette approche était trop lente."
 
 # type: Content of: <book><chapter><sect1><sect2><para>
+#. type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1715
 #, fuzzy
 msgid ""
@@ -3652,11 +3671,13 @@ msgstr ""
 "le nombre de paquets qui ne pouvaient pas être construits décroit rapidement."
 
 # type: Content of: <book><chapter><sect1><sect2><title>
+#. type: Content of: <book><chapter><sect1><sect2><title>
 #: pbuilder-doc.xml:1724
 msgid "And the second year of its life"
 msgstr "Et la seconde année de sa vie"
 
 # type: Content of: <book><chapter><sect1><sect2><para>
+#. type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1726
 msgid ""
 "Someone wanted <command>pbuilder</command> to not run as root, and as User-"
@@ -3676,11 +3697,13 @@ msgstr ""
 "cassé d'une façon ou d'une autre."
 
 # type: Content of: <book><chapter><sect1><sect2><title>
+#. type: Content of: <book><chapter><sect1><sect2><title>
 #: pbuilder-doc.xml:1739
 msgid "Fifth year of pbuilder"
 msgstr "Cinq années de pbuilder"
 
 # type: Content of: <book><chapter><sect1><sect2><para>
+#. type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1741
 msgid ""
 "<command>pbuilder</command> is now widely adopted as a 'almost standard' "
@@ -3697,6 +3720,7 @@ msgstr ""
 "personnes."
 
 # type: Content of: <book><chapter><sect1><sect2><para>
+#. type: Content of: <book><chapter><sect1><sect2><para>
 #: pbuilder-doc.xml:1749
 msgid ""
 "<command>sbuild</command> is now a well-maintained Debian package within "
@@ -3709,6 +3733,104 @@ msgstr ""
 "préfèrent l'approche de sbuild. Les développements visant à utilisant les "
 "instantanés LVM, cowloop ou cowdancer permettront sans doute d'améliorer "
 "cette situation."
+
+# type: Content of: <book><bookinfo><date>
+#~ msgid "2007-5-27"
+#~ msgstr "27 mai 2007"
+
+# type: Content of: <book><bookinfo><abbrev>
+#~ msgid "pbuilder-doc"
+#~ msgstr "pbuilder-doc"
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "--distribution"
+#~ msgstr "--distribution"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "</command> command-line option."
+#~ msgstr "</command>."
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid ""
+#~ "</footnote> to use, and proxy configuration may be required to allow "
+#~ "access through HTTP.  See the pbuilderrc.5 manual page for details."
+#~ msgstr ""
+#~ "</footnote> et, éventuellement, la configuration du proxy pour accéder au "
+#~ "miroir via HTTP. Référez-vous à la page de manuel pbuilderrc.5 pour plus "
+#~ "de détails."
+
+# type: Content of: <book><chapter><sect1><para><command>
+#~ msgid ""
+#~ "It is possible to switch the distribution which the base.tgz is targeted "
+#~ "at at this point.  Specify <command>"
+#~ msgstr ""
+#~ "Il est possible de changer la distribution utilisée dans l'environnement "
+#~ "contenu dans base.tgz à ce niveau. Utilisez <command>"
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "--distribution <parameter>sid</parameter>"
+#~ msgstr "--distribution <parameter>sid</parameter>"
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "--override-config"
+#~ msgstr "--override-config"
+
+# type: Content of: <book><chapter><sect1><para><footnote>
+#~ msgid "</command> to change the distribution to sid.  <footnote>"
+#~ msgstr "</command> pour changer la distribution pour « sid ». <footnote>"
+
+# type: Content of: <book><chapter><sect1><para><command>
+#~ msgid "To build a package inside the chroot, invoke <command>pbuilder build"
+#~ msgstr ""
+#~ "Pour construire un paquet dans l'environnement de base, invoquez "
+#~ "<command>pbuilder build"
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "whatever.dsc"
+#~ msgstr "paquet.dsc"
+
+# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><command><option>
+#~ msgid "--buildresult"
+#~ msgstr "--buildresult"
+
+# type: Content of: <book><chapter><sect1><para><command>
+#~ msgid "The <command>"
+#~ msgstr "L'option <command>"
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "--basetgz"
+#~ msgstr "--basetgz"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "</command> directory."
+#~ msgstr "</command>."
+
+# type: Content of: <book><chapter><sect1><para><option>
+#~ msgid "--use-pdebuild-internal"
+#~ msgstr "--use-pdebuild-internal"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid ""
+#~ "</command>.  It will try to bind mount the working directory inside "
+#~ "chroot, and run <command>dpkg-buildpackage</command> inside.  It has the "
+#~ "following characteristics, and is not yet the default mode of operation."
+#~ msgstr ""
+#~ "</command>. Le répertoire actuel sera alors attaché à l'intérieur de "
+#~ "l'environnement de base et <command>dpkg-buildpackage</command> sera "
+#~ "lancé dans celui-ci. Ce mode d'opération a les propriétés suivantes et "
+#~ "n'est pas encore utilisé par défaut."
+
+# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#~ msgid "</command> does not have any effect."
+#~ msgstr "</command> n'a aucun effet."
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "It is useful to use"
+#~ msgstr "Il est opportun d'utiliser l'option"
+
+# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para><command><option>
+#~ msgid "--configfile"
+#~ msgstr "--configfile"
 
 # type: Content of: <book><chapter><sect1><para>
 #~ msgid ""
@@ -3727,6 +3849,241 @@ msgstr ""
 #~ "DEBOOTSTRAPOPTS\" pour s'adapter à l'utilisation de cdebootstrap. Si vous "
 #~ "avez édité <filename>/etc/pbuilderrc</filename>, les mêmes manipulations "
 #~ "sont nécessaires."
+
+# type: Content of: <book><chapter><sect1><para><footnote>
+#~ msgid ""
+#~ "To use B92test-pkg script, first, add it to your hook directory.  "
+#~ "<footnote>"
+#~ msgstr ""
+#~ "Pour utiliser le script B92test-pkg, ajoutez-le d'abord dans votre "
+#~ "répertoire de crochets. <footnote>"
+
+# type: Content of: <book><chapter><sect1><para><footnote>
+#~ msgid ""
+#~ "</footnote>.  The test files are shell scripts placed in <filename>debian/"
+#~ "pbuilder-test/NN_name</filename> (where NN is number) following run-parts "
+#~ "standard<footnote>"
+#~ msgstr ""
+#~ "</footnote>. Les fichiers de tests sont des scripts placés dans "
+#~ "<filename>debian/pbuilder-test/NN_name</filename> (où NN est un nombre) "
+#~ "en respectant la convention de run-parts<footnote>"
+
+# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#~ msgid ""
+#~ "Some experimentation with configuration and running <command>rootstrap ~/"
+#~ "test.uml</command> to actually test it would be handy."
+#~ msgstr ""
+#~ "Faire quelques essais en utilisant <command>rootstrap ~/test.uml</"
+#~ "command>."
+
+# type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
+#~ msgid "Also, it needs to match the rootstrap configuration."
+#~ msgstr "Cela doit aussi correspondre à la configuration de rootstrap."
+
+# type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para><command>
+#~ msgid "Run <command>pbuilder-user-mode-linux"
+#~ msgstr "Exécutez <command>pbuilder-user-mode-linux"
+
+# type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para><command><option>
+#~ msgid "create --distribution sid"
+#~ msgstr "create --distribution sid"
+
+# type: Content of: <book><chapter><sect1><para><itemizedlist><listitem><para>
+#~ msgid "</command> to create the image."
+#~ msgstr "</command> pour créer l'image."
+
+# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#~ msgid ""
+#~ "</command>, and when trying to build packages placed under <filename>/"
+#~ "tmp</filename>."
+#~ msgstr ""
+#~ "</command> et lorsqu'on essaie de construire des paquets placés dans "
+#~ "<filename>/tmp</filename>."
+
+# type: Content of: <book><chapter><sect1><itemizedlist><listitem><para>
+#~ msgid "When using slirp, this problem does not exist."
+#~ msgstr "En utilisant slirp, ce problème n'existe pas."
+
+# type: Content of: <book><chapter><sect1><para><command>
+#~ msgid ""
+#~ "It is possible to use <command>pbuilder-user-mode-linux</command> for "
+#~ "other uses than just building Debian packages.  <command>pbuilder-user-"
+#~ "mode-linux"
+#~ msgstr ""
+#~ "Il est possible de s'aider de <command>pbuilder-user-mode-linux</command> "
+#~ "pour autre chose que la construction de paquets Debian. <command>pbuilder-"
+#~ "user-mode-linux"
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "login"
+#~ msgstr "login"
+
+# type: Content of: <book><chapter><sect1><para><command>
+#~ msgid ""
+#~ "</command> will let a user use a shell inside the user-mode-linux "
+#~ "<command>pbuilder</command> base image, and <command>pbuilder-user-mode-"
+#~ "linux"
+#~ msgstr ""
+#~ "</command> permet d'obtenir un shell à l'intérieur de l'image de base et "
+#~ "<command>pbuilder-user-mode-linux"
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "execute"
+#~ msgstr "execute"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "</command> will allow the user to execute a script inside the image."
+#~ msgstr "</command> permet d'exécuter une commande à l'intérieur de l'image."
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "It is also possible to add"
+#~ msgstr "Il est aussi possible de rajouter l'option"
+
+# type: Content of: <book><chapter><sect1><para><option>
+#~ msgid "--save-after-exec"
+#~ msgstr "--save-after-exec"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "and/or"
+#~ msgstr "et/ou"
+
+# type: Content of: <book><chapter><sect1><para><option>
+#~ msgid "--save-after-login"
+#~ msgstr "--save-after-login"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid ""
+#~ "options to the <command>pbuilder login</command> session to accomplish "
+#~ "the goal.  It is possible to add the"
+#~ msgstr ""
+#~ "à <command>pbuilder login</command> pour remplir cet objectif. Il est "
+#~ "également possible d'ajouter l'option"
+
+# type: Content of: <book><chapter><sect1><para><option>
+#~ msgid "--uml-login-nocow"
+#~ msgstr "--uml-login-nocow"
+
+# type: Content of: <book><chapter><sect1><para><command>
+#~ msgid "option to <command>pbuilder-user-mode-linux"
+#~ msgstr "à <command>pbuilder-user-mode-linux"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "</command> session as well."
+#~ msgstr "</command>."
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "It is possible to set"
+#~ msgstr "Il est possible de placer"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "in pbuilderrc. Take your pick."
+#~ msgstr "dans pbuilderrc. Choisissez."
+
+# type: Content of: <book><chapter><sect1><para><footnote>
+#~ msgid "This section<footnote>"
+#~ msgstr "Cette section<footnote>"
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "--othermirror"
+#~ msgstr "--othermirror"
+
+# type: Content of: <book><chapter><sect1><para><command>
+#~ msgid "</command> option.  Try something like: <command>"
+#~ msgstr "</command>. Essayez quelque chose comme ceci : <command>"
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid ""
+#~ "--othermirror \"deb http://local/mirror stable main|deb-src http://local/"
+#~ "source/repository ./\""
+#~ msgstr ""
+#~ "--othermirror \"deb http://local/mirror stable main|deb-src http://local/"
+#~ "source/repository ./\""
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "--bindmounts"
+#~ msgstr "--bindmounts"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "</command> is a command-line option useful for such cases."
+#~ msgstr "</command> est une option qui peut être utile dans de tels cas."
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "</footnote> setting PS1 in pbuilderrc worked."
+#~ msgstr "</footnote> placer la variable PS1 dans pbuilderrc fonctionnait."
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "in your pbuilderrc file."
+#~ msgstr "dans votre fichier pbuilderrc."
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "To work around the problem, debootstrap has a"
+#~ msgstr "Pour contourner de tels problèmes, debootstrap a une option"
+
+# type: Content of: <book><chapter><sect1><para><option>
+#~ msgid "--variant fakechroot"
+#~ msgstr "--variant fakechroot"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "option.  Use that, so that ldd and ldconfig are overridden."
+#~ msgstr ""
+#~ ". Utilisez-la de façon à faire fonctionner correctement ldd et ldconfig."
+
+# type: Content of: <book><chapter><sect1><para><command>
+#~ msgid ""
+#~ "To sign a package marking for sponsorship, it is possible to use<command>"
+#~ msgstr ""
+#~ "Pour signer un paquet en vue d'un parrainage, il est possible d'utiliser "
+#~ "les options <command>"
+
+# type: Content of: <book><chapter><sect1><screen><command><option>
+#~ msgid "--auto-debsign"
+#~ msgstr "--auto-debsign"
+
+# type: Content of: <book><chapter><sect1><para><command>
+#~ msgid "</command> and <command>"
+#~ msgstr "</command> et <command>"
+
+# type: Content of: <book><chapter><sect1><screen><command><option>
+#~ msgid "--debsign-k"
+#~ msgstr "--debsign-k"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "</command> options of <command>pdebuild</command>."
+#~ msgstr "</command> de <command>pdebuild</command>."
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "--arch"
+#~ msgstr "--arch"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid ""
+#~ "</command> option.  Specifically, a command-line option like the "
+#~ "following will work."
+#~ msgstr "</command>. Une ligne de commande comme la suivante fonctionnera."
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "."
+#~ msgstr "."
+
+# type: Content of: <book><chapter><sect1><para><command>
+#~ msgid ""
+#~ "To report bugs, it would be important to have a log of what's going "
+#~ "wrong.  Most of the time, adding a <command>"
+#~ msgstr ""
+#~ "Pour signaler un bogue, il est important d'avoir une trace montrant ce "
+#~ "qui ne va pas. La plupart du temps, ajouter l'option <command>"
+
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "--debug"
+#~ msgstr "--debug"
+
+# type: Content of: <book><chapter><sect1><para><option>
+#~ msgid "--pbuilder"
+#~ msgstr "--pbuilder"
+
+# type: Content of: <book><chapter><sect1><para>
+#~ msgid "or set it in PDEBUILD_PBUILDER configuration option."
+#~ msgstr "ou l'option de configuration PDEBUILD_PBUILDER."
 
 # type: Content of: <book><chapter><sect1><sect2><title>
 #~ msgid "Using cowdancer for sarge"
@@ -3761,9 +4118,7 @@ msgstr ""
 #~ "sarge et sarge-backports."
 
 # type: Content of: <book><chapter><sect1><sect2><para><screen>
-#, fuzzy
 #~ msgid ""
-#~ "\n"
 #~ "$ cat sources.list\n"
 #~ "# sarge-backports\n"
 #~ "deb     http://www.backports.org/debian sarge-backports main\n"
@@ -3791,9 +4146,7 @@ msgstr ""
 #~ "paquet cowdancer à l'aide du mécanisme de préférences d'APT."
 
 # type: Content of: <book><chapter><sect1><sect2><para><screen>
-#, fuzzy
 #~ msgid ""
-#~ "\n"
 #~ "$ cat preferences\n"
 #~ "Explanation: use cowdancer from backports\n"
 #~ "Package: cowdancer\n"
@@ -3806,9 +4159,9 @@ msgstr ""
 #~ "Pin: release a=sarge-backports\n"
 #~ "Pin-Priority: 950"
 
-# type: Content of: <book><chapter><sect1><para>
-#~ msgid "in your pbuilderrc file."
-#~ msgstr "dans votre fichier pbuilderrc."
+# type: Content of: <book><chapter><sect1><para><command><option>
+#~ msgid "--no-targz"
+#~ msgstr "--no-targz"
 
 # type: Content of: <book><chapter><sect1><para><footnote>
 #~ msgid ""
