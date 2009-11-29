@@ -23,4 +23,4 @@ pdebuild --use-pdebuild-internal -- --hookdir "${HOOKDIR}" | tee ../526471.log
 
 # I want to check for the output content. C01_failhook should have
 # been ran and output there.
-grep 'failpkg-hook-executed' 526471.log
+grep 'failpkg-hook-executed' ../526471.log
