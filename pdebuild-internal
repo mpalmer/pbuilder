@@ -77,9 +77,25 @@ while [ -n "$1" ]; do
     esac
 done
 
-# fool pbuilder-runhooks to use / as buildplace, since I am inside chroot.
-BUILDPLACE=/
+# Calling pbuilder-runhooks; we try to fix up enough to fool
+# pbuilder-runhooks.  The following source call depends on
+# pbuilder-runhook inside the chroot, which might be different from
+# the version outside the chroot.
 . /usr/lib/pbuilder/pbuilder-runhooks
+# fool pbuilder-runhooks to use / as buildplace, since I am already
+# inside chroot.
+BUILDPLACE=/
+# chroot command will just chroot to /, which will effectively chdir
+# to / and nothing else.
+CHROOTEXEC="chroot $BUILDPLACE "
+# make HOOKDIR contain something if there is a hook, to fool HOOKDIR
+# check inside pbuilder-runhooks that there is HOOKDIR
+# configuration. We don't call loadhooks or unloadhooks ourselves,
+# pbuilder execute will do that for you, so we should be okay.
+# TODO: handle when --hookdir was not initially specified.
+if [ -d "/$hookdir" ]; then
+    HOOKDIR="/$hookdir"
+fi
 
 executehooks "D"
 export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
@@ -97,6 +113,8 @@ executehooks "A"
 
 # do build with that user.
 export DEBBUILDOPTS
+# This command should be ran with current directory as bind-mounted
+# package source directory
 if echo /usr/bin/dpkg-buildpackage -rfakeroot -us -uc '${DEBBUILDOPTS}' | \
     su -p pbuser; 
     then
