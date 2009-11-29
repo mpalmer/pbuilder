@@ -1,3 +1,19 @@
+pbuilder (0.193) unstable; urgency=low
+
+  [ Matt Kraai ]
+  * Make debian/rules not ignore errors running "make clean"
+  * Add ${misc:Depends} to pbuilder-uml's Depends line
+  * Update the Standards-Version to 3.8.3
+  * complete filenames correctly if options are used. (closes: #555214)
+  * allow --autocleanaptcache to be specified in pbuilderrc.
+  * Update French documentation translation, thanks to Vincent Bernat.
+    (closes: #480216)
+
+  [ Junichi Uekawa ]
+  * make --hookdir work on pdebuild-internal (closes:#526471)
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 29 Nov 2009 18:25:40 +0900
+
 pbuilder (0.192) unstable; urgency=low
 
   * quote-escape debemail so that email with space can be handled
