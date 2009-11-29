@@ -24,7 +24,7 @@ The following NEW packages will be installed:
 0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
 Need to get 1897kB of archives.
 After this operation, 5775kB of additional disk space will be used.
-Get:1 http://localhost lenny/main libssl0.9.8 0.9.8g-15+lenny1 [975kB]
+Get:1 http://localhost lenny/main libssl0.9.8 0.9.8g-15+lenny3 [975kB]
 Get:2 http://localhost lenny/main wget 1.11.4-2 [616kB]
 Get:3 http://localhost lenny/main libdebian-installer4 0.61 [30.1kB]
 Get:4 http://localhost lenny/main libdebian-installer-extra4 0.61 [11.6kB]
@@ -34,7 +34,7 @@ debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libssl0.9.8.
 (Reading database ... 9662 files and directories currently installed.)
-Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8g-15+lenny1_amd64.deb) ...
+Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8g-15+lenny3_amd64.deb) ...
 Selecting previously deselected package wget.
 Unpacking wget (from .../wget_1.11.4-2_amd64.deb) ...
 Selecting previously deselected package libdebian-installer4.
@@ -45,13 +45,14 @@ Selecting previously deselected package cdebootstrap.
 Unpacking cdebootstrap (from .../cdebootstrap_0.5.4_amd64.deb) ...
 Selecting previously deselected package pbuilder.
 Unpacking pbuilder (from .../pbuilder_0.181_all.deb) ...
-Setting up libssl0.9.8 (0.9.8g-15+lenny1) ...
+Setting up libssl0.9.8 (0.9.8g-15+lenny3) ...
 Setting up wget (1.11.4-2) ...
 Setting up libdebian-installer4 (0.61) ...
 Setting up libdebian-installer-extra4 (0.61) ...
 Setting up cdebootstrap (0.5.4) ...
 Setting up pbuilder (0.181) ...
 I: Setting DEBBUILDOPTS=
+W: no hooks of type D found -- ignoring
  -> Attempting to satisfy build-dependencies
  -> Creating pbuilder-satisfydepends-dummy package
 Package: pbuilder-satisfydepends-dummy
@@ -192,6 +193,7 @@ Selecting previously deselected package fakeroot.
 Unpacking fakeroot (from .../fakeroot_1.11_amd64.deb) ...
 Processing triggers for man-db ...
 Setting up fakeroot (1.11) ...
+W: no hooks of type A found -- ignoring
 dpkg-buildpackage: set CFLAGS to default value: -g -O2
 dpkg-buildpackage: set CPPFLAGS to default value: 
 dpkg-buildpackage: set LDFLAGS to default value: 
@@ -503,7 +505,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Aug 15 23:10:26 UTC 2009
+Sun Nov 29 10:00:27 UTC 2009
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -573,14 +575,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Aug 15 23:10:31 UTC 2009
+Sun Nov 29 10:00:32 UTC 2009
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-b: b
-a: a
 c: c
 dsh: Process terminated (before write).
+b: b
+a: a
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -671,6 +673,7 @@ dpkg-deb: building package `dsh' in `../dsh_0.25.10-1_amd64.deb'.
  dpkg-genchanges  >../dsh_0.25.10-1_amd64.changes
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
+W: no hooks of type B found -- ignoring
 I: unmounting /TESTDIR/dir2 filesystem
 I: unmounting dev/pts filesystem
 I: unmounting proc filesystem

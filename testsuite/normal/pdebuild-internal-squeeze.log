@@ -12,50 +12,47 @@ Building dependency tree...
 Reading state information...
 passwd is already the newest version.
 The following extra packages will be installed:
-  cdebootstrap install-info libdebian-installer-extra4 libdebian-installer4
-  libssl0.9.8 wget
+  cdebootstrap libdebian-installer-extra4 libdebian-installer4 libssl0.9.8
+  wget
 Suggested packages:
   pbuilder-uml gdebi cowdancer
 Recommended packages:
   fakeroot sudo devscripts
 The following NEW packages will be installed:
-  cdebootstrap install-info libdebian-installer-extra4 libdebian-installer4
-  libssl0.9.8 pbuilder wget
-0 upgraded, 7 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2181kB of archives.
-After this operation, 6210kB of additional disk space will be used.
-Get:1 http://localhost squeeze/main install-info 4.13a.dfsg.1-4 [146kB]
-Get:2 http://localhost squeeze/main libssl0.9.8 0.9.8k-3 [982kB]
-Get:3 http://localhost squeeze/main wget 1.11.4-4 [648kB]
-Get:4 http://localhost squeeze/main libdebian-installer4 0.61 [30.1kB]
-Get:5 http://localhost squeeze/main libdebian-installer-extra4 0.61 [11.6kB]
-Get:6 http://localhost squeeze/main cdebootstrap 0.5.4 [32.3kB]
-Get:7 http://localhost squeeze/main pbuilder 0.189 [331kB]
+  cdebootstrap libdebian-installer-extra4 libdebian-installer4 libssl0.9.8
+  pbuilder wget
+0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2143kB of archives.
+After this operation, 6226kB of additional disk space will be used.
+Get:1 http://localhost squeeze/main libssl0.9.8 0.9.8k-6 [979kB]
+Get:2 http://localhost squeeze/main wget 1.12-1.1 [757kB]
+Get:3 http://localhost squeeze/main libdebian-installer4 0.69 [31.0kB]
+Get:4 http://localhost squeeze/main libdebian-installer-extra4 0.69 [12.9kB]
+Get:5 http://localhost squeeze/main cdebootstrap 0.5.5 [32.3kB]
+Get:6 http://localhost squeeze/main pbuilder 0.192 [331kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
-Selecting previously deselected package install-info.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9843 files and directories currently installed.)
-Unpacking install-info (from .../install-info_4.13a.dfsg.1-4_amd64.deb) ...
 Selecting previously deselected package libssl0.9.8.
-Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8k-3_amd64.deb) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10173 files and directories currently installed.)
+Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8k-6_amd64.deb) ...
 Selecting previously deselected package wget.
-Unpacking wget (from .../wget_1.11.4-4_amd64.deb) ...
+Unpacking wget (from .../wget_1.12-1.1_amd64.deb) ...
 Selecting previously deselected package libdebian-installer4.
-Unpacking libdebian-installer4 (from .../libdebian-installer4_0.61_amd64.deb) ...
+Unpacking libdebian-installer4 (from .../libdebian-installer4_0.69_amd64.deb) ...
 Selecting previously deselected package libdebian-installer-extra4.
-Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.61_amd64.deb) ...
+Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.69_amd64.deb) ...
 Selecting previously deselected package cdebootstrap.
-Unpacking cdebootstrap (from .../cdebootstrap_0.5.4_amd64.deb) ...
+Unpacking cdebootstrap (from .../cdebootstrap_0.5.5_amd64.deb) ...
 Selecting previously deselected package pbuilder.
-Unpacking pbuilder (from .../pbuilder_0.189_all.deb) ...
-Setting up install-info (4.13a.dfsg.1-4) ...
-Setting up libssl0.9.8 (0.9.8k-3) ...
-Setting up wget (1.11.4-4) ...
-Setting up libdebian-installer4 (0.61) ...
-Setting up libdebian-installer-extra4 (0.61) ...
-Setting up cdebootstrap (0.5.4) ...
-Setting up pbuilder (0.189) ...
+Unpacking pbuilder (from .../pbuilder_0.192_all.deb) ...
+Setting up libssl0.9.8 (0.9.8k-6) ...
+Setting up wget (1.12-1.1) ...
+Setting up libdebian-installer4 (0.69) ...
+Setting up libdebian-installer-extra4 (0.69) ...
+Setting up cdebootstrap (0.5.5) ...
+Setting up pbuilder (0.192) ...
 I: Setting DEBBUILDOPTS=
+W: no hooks of type D found -- ignoring
  -> Attempting to satisfy build-dependencies
  -> Creating pbuilder-satisfydepends-dummy package
 Package: pbuilder-satisfydepends-dummy
@@ -72,7 +69,7 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 10053 files and directories currently installed.)
+(Reading database ... 10373 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -99,62 +96,62 @@ The following NEW packages will be installed:
 The following partially installed packages will be configured:
   pbuilder-satisfydepends-dummy 
 0 packages upgraded, 21 newly installed, 0 to remove and 0 not upgraded.
-Need to get 11.3MB of archives. After unpacking 33.6MB will be used.
+Need to get 11.5MB of archives. After unpacking 34.5MB will be used.
 Writing extended state information...
-Get:1 http://localhost squeeze/main libmagic1 5.03-1 [389kB]
-Get:2 http://localhost squeeze/main file 5.03-1 [46.7kB]
+Get:1 http://localhost squeeze/main libmagic1 5.03-3 [389kB]
+Get:2 http://localhost squeeze/main file 5.03-3 [46.9kB]
 Get:3 http://localhost squeeze/main html2text 1.3.2a-14 [103kB]
-Get:4 http://localhost squeeze/main libpcre3 7.8-2 [215kB]
-Get:5 http://localhost squeeze/main libglib2.0-0 2.20.1-2 [845kB]
-Get:6 http://localhost squeeze/main libxml2 2.7.3.dfsg-2+b1 [865kB]
-Get:7 http://localhost squeeze/main libcroco3 0.6.1-2 [123kB]
-Get:8 http://localhost squeeze/main gettext-base 0.17-6 [125kB]
-Get:9 http://localhost squeeze/main gettext 0.17-6 [2710kB]
+Get:4 http://localhost squeeze/main libpcre3 7.8-3 [215kB]
+Get:5 http://localhost squeeze/main libglib2.0-0 2.22.2-2 [984kB]
+Get:6 http://localhost squeeze/main libxml2 2.7.6.dfsg-1 [876kB]
+Get:7 http://localhost squeeze/main libcroco3 0.6.2-1 [125kB]
+Get:8 http://localhost squeeze/main gettext-base 0.17-8 [133kB]
+Get:9 http://localhost squeeze/main gettext 0.17-8 [2503kB]
 Get:10 http://localhost squeeze/main intltool-debian 0.35.0+20060710.1 [30.8kB]
 Get:11 http://localhost squeeze/main po-debconf 1.0.16 [224kB]
-Get:12 http://localhost squeeze/main groff-base 1.18.1.1-22 [897kB]
-Get:13 http://localhost squeeze/main bsdmainutils 6.1.10 [179kB]
-Get:14 http://localhost squeeze/main man-db 2.5.5-3 [1496kB]
-Get:15 http://localhost squeeze/main debhelper 7.3.12 [534kB]
+Get:12 http://localhost squeeze/main groff-base 1.20.1-6 [1156kB]
+Get:13 http://localhost squeeze/main bsdmainutils 8.0.1 [197kB]
+Get:14 http://localhost squeeze/main man-db 2.5.6-4 [1477kB]
+Get:15 http://localhost squeeze/main debhelper 7.4.3 [454kB]
 Get:16 http://localhost squeeze/main libdshconfig1 0.20.13-1 [11.0kB]
 Get:17 http://localhost squeeze/main libdshconfig1-dev 0.20.13-1 [25.4kB]
 Get:18 http://localhost squeeze/main libsgmls-perl 1.03ii-32 [27.8kB]
 Get:19 http://localhost squeeze/main libsp1c2 1.3.4-1.2.1-47 [1386kB]
 Get:20 http://localhost squeeze/main sp 1.3.4-1.2.1-47 [182kB]
-Get:21 http://localhost squeeze/main po4a 0.36.3-1 [875kB]
+Get:21 http://localhost squeeze/main po4a 0.36.6-1 [946kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10053 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_5.03-1_amd64.deb) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10373 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_5.03-3_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_5.03-1_amd64.deb) ...
+Unpacking file (from .../archives/file_5.03-3_amd64.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-14_amd64.deb) ...
 Selecting previously deselected package libpcre3.
-Unpacking libpcre3 (from .../libpcre3_7.8-2_amd64.deb) ...
+Unpacking libpcre3 (from .../libpcre3_7.8-3_amd64.deb) ...
 Selecting previously deselected package libglib2.0-0.
-Unpacking libglib2.0-0 (from .../libglib2.0-0_2.20.1-2_amd64.deb) ...
+Unpacking libglib2.0-0 (from .../libglib2.0-0_2.22.2-2_amd64.deb) ...
 Selecting previously deselected package libxml2.
-Unpacking libxml2 (from .../libxml2_2.7.3.dfsg-2+b1_amd64.deb) ...
+Unpacking libxml2 (from .../libxml2_2.7.6.dfsg-1_amd64.deb) ...
 Selecting previously deselected package libcroco3.
-Unpacking libcroco3 (from .../libcroco3_0.6.1-2_amd64.deb) ...
+Unpacking libcroco3 (from .../libcroco3_0.6.2-1_amd64.deb) ...
 Selecting previously deselected package gettext-base.
-Unpacking gettext-base (from .../gettext-base_0.17-6_amd64.deb) ...
+Unpacking gettext-base (from .../gettext-base_0.17-8_amd64.deb) ...
 Selecting previously deselected package gettext.
-Unpacking gettext (from .../gettext_0.17-6_amd64.deb) ...
+Unpacking gettext (from .../gettext_0.17-8_amd64.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
 Selecting previously deselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_1.0.16_all.deb) ...
 Selecting previously deselected package groff-base.
-Unpacking groff-base (from .../groff-base_1.18.1.1-22_amd64.deb) ...
+Unpacking groff-base (from .../groff-base_1.20.1-6_amd64.deb) ...
 Selecting previously deselected package bsdmainutils.
-Unpacking bsdmainutils (from .../bsdmainutils_6.1.10_amd64.deb) ...
+Unpacking bsdmainutils (from .../bsdmainutils_8.0.1_amd64.deb) ...
 Selecting previously deselected package man-db.
-Unpacking man-db (from .../man-db_2.5.5-3_amd64.deb) ...
+Unpacking man-db (from .../man-db_2.5.6-4_amd64.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_7.3.12_all.deb) ...
+Unpacking debhelper (from .../debhelper_7.4.3_all.deb) ...
 Selecting previously deselected package libdshconfig1.
 Unpacking libdshconfig1 (from .../libdshconfig1_0.20.13-1_amd64.deb) ...
 Selecting previously deselected package libdshconfig1-dev.
@@ -166,31 +163,30 @@ Unpacking libsp1c2 (from .../libsp1c2_1.3.4-1.2.1-47_amd64.deb) ...
 Selecting previously deselected package sp.
 Unpacking sp (from .../sp_1.3.4-1.2.1-47_amd64.deb) ...
 Selecting previously deselected package po4a.
-Unpacking po4a (from .../archives/po4a_0.36.3-1_all.deb) ...
-Processing triggers for install-info ...
-Setting up libmagic1 (5.03-1) ...
-Setting up file (5.03-1) ...
+Unpacking po4a (from .../archives/po4a_0.36.6-1_all.deb) ...
+Setting up libmagic1 (5.03-3) ...
+Setting up file (5.03-3) ...
 Setting up html2text (1.3.2a-14) ...
-Setting up libpcre3 (7.8-2) ...
-Setting up libglib2.0-0 (2.20.1-2) ...
-Setting up libxml2 (2.7.3.dfsg-2+b1) ...
-Setting up libcroco3 (0.6.1-2) ...
-Setting up gettext-base (0.17-6) ...
-Setting up gettext (0.17-6) ...
+Setting up libpcre3 (7.8-3) ...
+Setting up libglib2.0-0 (2.22.2-2) ...
+Setting up libxml2 (2.7.6.dfsg-1) ...
+Setting up libcroco3 (0.6.2-1) ...
+Setting up gettext-base (0.17-8) ...
+Setting up gettext (0.17-8) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
 Setting up po-debconf (1.0.16) ...
-Setting up groff-base (1.18.1.1-22) ...
-Setting up bsdmainutils (6.1.10) ...
+Setting up groff-base (1.20.1-6) ...
+Setting up bsdmainutils (8.0.1) ...
 update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode.
-Setting up man-db (2.5.5-3) ...
+Setting up man-db (2.5.6-4) ...
 Building database of manual pages ...
-Setting up debhelper (7.3.12) ...
+Setting up debhelper (7.4.3) ...
 Setting up libdshconfig1 (0.20.13-1) ...
 Setting up libdshconfig1-dev (0.20.13-1) ...
 Setting up libsgmls-perl (1.03ii-32) ...
 Setting up libsp1c2 (1.3.4-1.2.1-47) ...
 Setting up sp (1.3.4-1.2.1-47) ...
-Setting up po4a (0.36.3-1) ...
+Setting up po4a (0.36.6-1) ...
 Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
 Reading package lists...
 Building dependency tree...
@@ -205,17 +201,18 @@ Reading state information...
 The following NEW packages will be installed:
   fakeroot
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 98.3kB of archives.
+Need to get 100kB of archives.
 After this operation, 385kB of additional disk space will be used.
-Get:1 http://localhost squeeze/main fakeroot 1.12.5 [98.3kB]
+Get:1 http://localhost squeeze/main fakeroot 1.14.4-1 [100kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11634 files and directories currently installed.)
-Unpacking fakeroot (from .../fakeroot_1.12.5_amd64.deb) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11978 files and directories currently installed.)
+Unpacking fakeroot (from .../fakeroot_1.14.4-1_amd64.deb) ...
 Processing triggers for man-db ...
-Setting up fakeroot (1.12.5) ...
+Setting up fakeroot (1.14.4-1) ...
 update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode.
+W: no hooks of type A found -- ignoring
 dpkg-buildpackage: set CFLAGS to default value: -g -O2
 dpkg-buildpackage: set CPPFLAGS to default value: 
 dpkg-buildpackage: set LDFLAGS to default value: 
@@ -246,6 +243,29 @@ dpkg-source: info: building dsh using existing dsh_0.25.10.orig.tar.gz
 dpkg-source: info: building dsh in dsh_0.25.10-1.diff.gz
 dpkg-source: warning: file dsh-0.25.10/dcp.sh has no final newline (either original or modified version)
 dpkg-source: warning: file dsh-0.25.10/debian/compat has no final newline (either original or modified version)
+dpkg-source: warning: the diff modifies the following upstream files: 
+ .cvsignore
+ CVS/Entries
+ CVS/Repository
+ CVS/Root
+ ChangeLog.OLD
+ dcp.sh
+ drshd.c
+ dsh.1.ja.po
+ m4/.cvsignore
+ m4/CVS/Entries
+ m4/CVS/Repository
+ m4/CVS/Root
+ po/.cvsignore
+ po/CVS/Entries
+ po/CVS/Repository
+ po/CVS/Root
+ po/insert-header.sin
+ tests/.cvsignore
+ tests/CVS/Entries
+ tests/CVS/Repository
+ tests/CVS/Root
+dpkg-source: info: use the '3.0 (quilt)' format to have separate and documented changes to upstream files, see dpkg-source(1)
 dpkg-source: info: building dsh in dsh_0.25.10-1.dsc
  debian/rules build
 dh_testdir
@@ -512,9 +532,9 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
 c: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -526,7 +546,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Aug 15 23:33:20 UTC 2009
+Sun Nov 29 10:12:44 UTC 2009
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -596,12 +616,13 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Aug 15 23:33:25 UTC 2009
+Sun Nov 29 10:12:49 UTC 2009
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
-c: c
 a: a
+dsh: Process terminated (before write).
+c: c
 b: b
 PASS: tests/segv-catcher.sh
 l w
@@ -693,6 +714,7 @@ dpkg-deb: building package `dsh' in `../dsh_0.25.10-1_amd64.deb'.
  dpkg-genchanges  >../dsh_0.25.10-1_amd64.changes
 dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: full upload (original source is included)
+W: no hooks of type B found -- ignoring
 I: unmounting /TESTDIR/dir2 filesystem
 I: unmounting dev/pts filesystem
 I: unmounting proc filesystem

@@ -13,196 +13,68 @@ I: upgrading packages
 Hit http://localhost sid Release.gpg
 Get:1 http://localhost experimental Release.gpg [835B]
 Hit http://localhost sid Release
-Get:2 http://localhost experimental Release [98.8kB]
+Get:2 http://localhost experimental Release [98.5kB]
 Ign http://localhost sid/main Packages/DiffIndex
 Ign http://localhost experimental/main Packages
 Ign http://localhost sid/main Packages
-Get:3 http://localhost experimental/main Packages [394kB]
+Ign http://localhost experimental/main Packages
+Ign http://localhost sid/main Packages
+Get:3 http://localhost experimental/main Packages [340kB]
 Hit http://localhost sid/main Packages
 Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following NEW packages will be installed:
-  apt-utils libapr1 libaprutil1 libdb4.5 libexpat1 liblog4cxx10 libsqlite3-0
-  libssl0.9.8 lsb-release mime-support python python-central python-debian
-  python-minimal python-support python-xapian python2.5 python2.5-minimal
-The following packages have been kept back:
-  aptitude
 The following packages will be upgraded:
-  bash diff libsigc++-2.0-0c2a readline-common
-4 upgraded, 18 newly installed, 0 to remove and 1 not upgraded.
-Need to get 9617kB of archives.
-After this operation, 29.5MB of additional disk space will be used.
-Get:1 http://localhost experimental/main bash 4.0-3 [1160kB]
-Get:2 http://localhost experimental/main diff 2.8.7-0.2 [248kB]
-Get:3 http://localhost experimental/main readline-common 6.0-1 [51.8kB]
-Get:4 http://localhost sid/main apt-utils 0.7.22.2 [194kB]
-Get:5 http://localhost experimental/main libsigc++-2.0-0c2a 2.2.2-1 [35.3kB]
-Get:6 http://localhost sid/main libssl0.9.8 0.9.8k-4 [979kB]
-Get:7 http://localhost sid/main libdb4.5 4.5.20-13 [555kB]
-Get:8 http://localhost sid/main libsqlite3-0 3.6.17-1 [291kB]
-Get:9 http://localhost sid/main mime-support 3.46-1 [34.0kB]
-Get:10 http://localhost sid/main python2.5-minimal 2.5.4-1 [1290kB]
-Get:11 http://localhost sid/main python2.5 2.5.4-1 [3041kB]
-Get:12 http://localhost experimental/main python-minimal 2.5.4-3 [13.9kB]
-Get:13 http://localhost experimental/main python 2.5.4-3 [142kB]
-Get:14 http://localhost sid/main python-central 0.6.11 [44.8kB]
-Get:15 http://localhost sid/main libapr1 1.3.8-1 [123kB]
-Get:16 http://localhost sid/main libexpat1 2.0.1-4 [136kB]
-Get:17 http://localhost sid/main libaprutil1 1.3.9+dfsg-1 [90.5kB]
-Get:18 http://localhost sid/main liblog4cxx10 0.10.0-1 [574kB]
-Get:19 http://localhost sid/main python-support 1.0.3 [31.6kB]
-Get:20 http://localhost sid/main python-debian 0.1.14 [58.5kB]
-Get:21 http://localhost sid/main python-xapian 1.0.14-1 [501kB]
-Get:22 http://localhost sid/main lsb-release 3.2-23 [21.5kB]
+  diff diffutils libmpfr1ldbl libsigc++-2.0-0c2a
+4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 717kB of archives.
+After this operation, 324kB of additional disk space will be used.
+Get:1 http://localhost experimental/main diffutils 1:2.8.7-0.1 [248kB]
+Get:2 http://localhost experimental/main libsigc++-2.0-0c2a 2.2.2-1 [35.3kB]
+Get:3 http://localhost experimental/main libmpfr1ldbl 2.4.2~rc2-1 [428kB]
+Get:4 http://localhost experimental/main diff 1:2.8.7-0.1 [5658B]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
-(READING DATABASE ... (READING DATABASE ... 5%(READING DATABASE ... 10%(READING DATABASE ... 15%(READING DATABASE ... 20%(READING DATABASE ... 25%(READING DATABASE ... 30%(READING DATABASE ... 35%(READING DATABASE ... 40%(READING DATABASE ... 45%(READING DATABASE ... 50%(READING DATABASE ... 55%(READING DATABASE ... 60%(READING DATABASE ... 65%(READING DATABASE ... 70%(READING DATABASE ... 75%(READING DATABASE ... 80%(READING DATABASE ... 85%(READING DATABASE ... 90%(READING DATABASE ... 95%(READING DATABASE ... 100%(READING DATABASE ... 9863 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE BASH 3.2-6 (USING .../ARCHIVES/BASH_4.0-3_AMD64.DEB) ...
-UNPACKING REPLACEMENT BASH ...
-SETTING UP BASH (4.0-3) ...
-INSTALLING NEW VERSION OF CONFIG FILE /ETC/BASH.BASHRC ...
-INSTALLING NEW VERSION OF CONFIG FILE /ETC/SKEL/.BASHRC ...
-UPDATE-ALTERNATIVES: USING /USR/SHARE/MAN/MAN7/BASH-BUILTINS.7.GZ TO PROVIDE /USR/SHARE/MAN/MAN7/BUILTINS.7.GZ (BUILTINS.7.GZ) IN AUTO MODE.
-(READING DATABASE ... (READING DATABASE ... 5%(READING DATABASE ... 10%(READING DATABASE ... 15%(READING DATABASE ... 20%(READING DATABASE ... 25%(READING DATABASE ... 30%(READING DATABASE ... 35%(READING DATABASE ... 40%(READING DATABASE ... 45%(READING DATABASE ... 50%(READING DATABASE ... 55%(READING DATABASE ... 60%(READING DATABASE ... 65%(READING DATABASE ... 70%(READING DATABASE ... 75%(READING DATABASE ... 80%(READING DATABASE ... 85%(READING DATABASE ... 90%(READING DATABASE ... 95%(READING DATABASE ... 100%(READING DATABASE ... 9884 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE DIFF 2.8.1-13 (USING .../DIFF_2.8.7-0.2_AMD64.DEB) ...
-UNPACKING REPLACEMENT DIFF ...
-SETTING UP DIFF (2.8.7-0.2) ...
-(READING DATABASE ... (READING DATABASE ... 5%(READING DATABASE ... 10%(READING DATABASE ... 15%(READING DATABASE ... 20%(READING DATABASE ... 25%(READING DATABASE ... 30%(READING DATABASE ... 35%(READING DATABASE ... 40%(READING DATABASE ... 45%(READING DATABASE ... 50%(READING DATABASE ... 55%(READING DATABASE ... 60%(READING DATABASE ... 65%(READING DATABASE ... 70%(READING DATABASE ... 75%(READING DATABASE ... 80%(READING DATABASE ... 85%(READING DATABASE ... 90%(READING DATABASE ... 95%(READING DATABASE ... 100%(READING DATABASE ... 9892 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE READLINE-COMMON 5.2-5 (USING .../READLINE-COMMON_6.0-1_ALL.DEB) ...
-UNPACKING REPLACEMENT READLINE-COMMON ...
-SETTING UP READLINE-COMMON (6.0-1) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE APT-UTILS.
-(READING DATABASE ... (READING DATABASE ... 5%(READING DATABASE ... 10%(READING DATABASE ... 15%(READING DATABASE ... 20%(READING DATABASE ... 25%(READING DATABASE ... 30%(READING DATABASE ... 35%(READING DATABASE ... 40%(READING DATABASE ... 45%(READING DATABASE ... 50%(READING DATABASE ... 55%(READING DATABASE ... 60%(READING DATABASE ... 65%(READING DATABASE ... 70%(READING DATABASE ... 75%(READING DATABASE ... 80%(READING DATABASE ... 85%(READING DATABASE ... 90%(READING DATABASE ... 95%(READING DATABASE ... 100%(READING DATABASE ... 9892 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-UNPACKING APT-UTILS (FROM .../APT-UTILS_0.7.22.2_AMD64.DEB) ...
-PREPARING TO REPLACE LIBSIGC++-2.0-0C2A 2.0.18-2 (USING .../LIBSIGC++-2.0-0C2A_2.2.2-1_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBSIGC++-2.0-0C2A ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBSSL0.9.8.
-UNPACKING LIBSSL0.9.8 (FROM .../LIBSSL0.9.8_0.9.8K-4_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBDB4.5.
-UNPACKING LIBDB4.5 (FROM .../LIBDB4.5_4.5.20-13_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBSQLITE3-0.
-UNPACKING LIBSQLITE3-0 (FROM .../LIBSQLITE3-0_3.6.17-1_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE MIME-SUPPORT.
-UNPACKING MIME-SUPPORT (FROM .../MIME-SUPPORT_3.46-1_ALL.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON2.5-MINIMAL.
-UNPACKING PYTHON2.5-MINIMAL (FROM .../PYTHON2.5-MINIMAL_2.5.4-1_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON2.5.
-UNPACKING PYTHON2.5 (FROM .../PYTHON2.5_2.5.4-1_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-MINIMAL.
-UNPACKING PYTHON-MINIMAL (FROM .../PYTHON-MINIMAL_2.5.4-3_ALL.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON.
-UNPACKING PYTHON (FROM .../PYTHON_2.5.4-3_ALL.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-CENTRAL.
-UNPACKING PYTHON-CENTRAL (FROM .../PYTHON-CENTRAL_0.6.11_ALL.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBAPR1.
-UNPACKING LIBAPR1 (FROM .../LIBAPR1_1.3.8-1_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBEXPAT1.
-UNPACKING LIBEXPAT1 (FROM .../LIBEXPAT1_2.0.1-4_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBAPRUTIL1.
-UNPACKING LIBAPRUTIL1 (FROM .../LIBAPRUTIL1_1.3.9+DFSG-1_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBLOG4CXX10.
-UNPACKING LIBLOG4CXX10 (FROM .../LIBLOG4CXX10_0.10.0-1_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-SUPPORT.
-UNPACKING PYTHON-SUPPORT (FROM .../PYTHON-SUPPORT_1.0.3_ALL.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-DEBIAN.
-UNPACKING PYTHON-DEBIAN (FROM .../PYTHON-DEBIAN_0.1.14_ALL.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE PYTHON-XAPIAN.
-UNPACKING PYTHON-XAPIAN (FROM .../PYTHON-XAPIAN_1.0.14-1_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LSB-RELEASE.
-UNPACKING LSB-RELEASE (FROM .../LSB-RELEASE_3.2-23_ALL.DEB) ...
-SETTING UP APT-UTILS (0.7.22.2) ...
-SETTING UP LIBSIGC++-2.0-0C2A (2.2.2-1) ...
-SETTING UP LIBSSL0.9.8 (0.9.8K-4) ...
-SETTING UP LIBDB4.5 (4.5.20-13) ...
-SETTING UP LIBSQLITE3-0 (3.6.17-1) ...
-SETTING UP MIME-SUPPORT (3.46-1) ...
-UPDATE-ALTERNATIVES: USING /USR/BIN/SEE TO PROVIDE /USR/BIN/VIEW (VIEW) IN AUTO MODE.
-SETTING UP PYTHON2.5-MINIMAL (2.5.4-1) ...
-SETTING UP PYTHON2.5 (2.5.4-1) ...
-SETTING UP PYTHON-MINIMAL (2.5.4-3) ...
-SETTING UP PYTHON (2.5.4-3) ...
-SETTING UP PYTHON-CENTRAL (0.6.11) ...
-SETTING UP LIBAPR1 (1.3.8-1) ...
-SETTING UP LIBEXPAT1 (2.0.1-4) ...
-SETTING UP LIBAPRUTIL1 (1.3.9+DFSG-1) ...
-SETTING UP LIBLOG4CXX10 (0.10.0-1) ...
-SETTING UP PYTHON-SUPPORT (1.0.3) ...
-SETTING UP PYTHON-DEBIAN (0.1.14) ...
-SETTING UP PYTHON-XAPIAN (1.0.14-1) ...
-SETTING UP LSB-RELEASE (3.2-23) ...
-PROCESSING TRIGGERS FOR PYTHON-SUPPORT ...
+(Reading database ... 10167 files and directories currently installed.)
+Preparing to replace diffutils 1:2.8.1-18 (using .../diffutils_1%3a2.8.7-0.1_amd64.deb) ...
+Unpacking replacement diffutils ...
+Setting up diffutils (1:2.8.7-0.1) ...
+(Reading database ... 10175 files and directories currently installed.)
+Preparing to replace libsigc++-2.0-0c2a 2.0.18-2 (using .../libsigc++-2.0-0c2a_2.2.2-1_amd64.deb) ...
+Unpacking replacement libsigc++-2.0-0c2a ...
+Preparing to replace libmpfr1ldbl 2.4.1-2 (using .../libmpfr1ldbl_2.4.2~rc2-1_amd64.deb) ...
+Unpacking replacement libmpfr1ldbl ...
+Preparing to replace diff 1:2.8.1-18 (using .../diff_1%3a2.8.7-0.1_all.deb) ...
+Unpacking replacement diff ...
+Setting up libsigc++-2.0-0c2a (2.2.2-1) ...
+Setting up libmpfr1ldbl (2.4.2~rc2-1) ...
+Setting up diff (1:2.8.7-0.1) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following packages were automatically installed and are no longer required:
-  python2.5-minimal python-debian python-minimal libapr1 python-central
-  python2.5 libexpat1 liblog4cxx10 python-xapian python mime-support
-  libssl0.9.8 libdb4.5 python-support libaprutil1 lsb-release libsqlite3-0
-The following packages will be REMOVED:
-  libapr1 libaprutil1 libdb4.5 libexpat1 liblog4cxx10 libsqlite3-0 libssl0.9.8
-  lsb-release mime-support python python-central python-debian python-minimal
-  python-support python-xapian python2.5 python2.5-minimal
-0 upgraded, 0 newly installed, 17 to remove and 1 not upgraded.
-After this operation, 26.9MB disk space will be freed.
-(Reading database ... 
-(Reading database ... 5%
-(Reading database ... 10%
-(Reading database ... 15%
-(Reading database ... 20%
-(Reading database ... 25%
-(Reading database ... 30%
-(Reading database ... 35%
-(Reading database ... 40%
-(Reading database ... 45%
-(Reading database ... 50%
-(Reading database ... 55%
-(Reading database ... 60%
-(Reading database ... 65%
-(Reading database ... 70%
-(Reading database ... 75%
-(Reading database ... 80%
-(Reading database ... 85%
-(Reading database ... 90%
-(Reading database ... 95%
-(Reading database ... 100%
-(Reading database ... 10878 files and directories currently installed.)
-Removing liblog4cxx10 ...
-Removing libaprutil1 ...
-Removing libapr1 ...
-Removing python-xapian ...
-Removing python-debian ...
-Removing lsb-release ...
-Removing python-support ...
-Removing python-central ...
-Removing python ...
-Removing python2.5 ...
-Removing libdb4.5 ...
-Removing libexpat1 ...
-Removing libsqlite3-0 ...
-Removing libssl0.9.8 ...
-Removing mime-support ...
-Removing python-minimal ...
-Removing python2.5-minimal ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 build-essential is already the newest version.
 dpkg-dev is already the newest version.
 apt is already the newest version.
-Some packages could not be installed. This may mean that you have
-requested an impossible situation or if you are using the unstable
-distribution that some required packages have not yet been created
-or been moved out of Incoming.
-The following information may help to resolve the situation:
-
-The following packages have unmet dependencies:
-  aptitude: Depends: apt-xapian-index but it is not going to be installed
-            Depends: libapt-pkg-libc6.9-6-4.7 but it is not installable
-E: Broken packages
+aptitude is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh starting
+umount: /sys: not mounted
+umount: /run: not found
+umount: /proc/bus/usb: not mounted
+umount: /dev/shm: not mounted
+umount: /lib/init/rw: not mounted
+cat: /var/run/inetd.pid: No such file or directory
+kill: 20: Usage: kill [-s sigspec | -signum | -sigspec] [pid | job]... or
+kill -l [exitstatus]
+I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh finished
 I: unmounting dev/pts filesystem
 I: unmounting proc filesystem
+I: creating base tarball [/TESTDIR/testimage]
 I: cleaning the build env 
 I: removing directory /var/cache/pbuilder/build//NUM and its subdirectories

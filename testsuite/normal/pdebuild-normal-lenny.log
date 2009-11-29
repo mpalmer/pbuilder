@@ -1,5 +1,3 @@
-dpkg-checkbuilddeps: Unmet build dependencies: libdshconfig1-dev (>= 0.20.11-1)
-W: Unmet build-dependency in source
 dpkg-buildpackage: set CFLAGS to default value: -g -O2
 dpkg-buildpackage: set CPPFLAGS to default value: 
 dpkg-buildpackage: set LDFLAGS to default value: 
@@ -8,11 +6,6 @@ dpkg-buildpackage: set CXXFLAGS to default value: -g -O2
 dpkg-buildpackage: source package dsh
 dpkg-buildpackage: source version 0.25.10-1
 dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
-dpkg-checkbuilddeps: Unmet build dependencies: libdshconfig1-dev (>= 0.20.11-1)
-dpkg-buildpackage: warning: Build dependencies/conflicts unsatisfied; aborting.
-dpkg-buildpackage: warning: (Use -d flag to override.)
-dpkg-buildpackage: warning: This is currently a non-fatal warning with -S, but
-dpkg-buildpackage: warning: will probably become fatal in the future.
  fakeroot debian/rules clean
 dh_testdir
 dh_testroot
@@ -40,8 +33,8 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: source only upload (original source is included)
 W: /home/dancer/.pbuilderrc does not exist
 I: using fakeroot in build.
-I: Current time: Sun Aug 16 08:06:08 JST 2009
-I: pbuilder-time-stamp: 1250377568
+I: Current time: Sun Nov 29 18:58:37 JST 2009
+I: pbuilder-time-stamp: 1259488717
 I: Building the build Environment
 I: extracting base tarball [/TESTDIR/testimage]
 I: creating local configuration
@@ -473,7 +466,6 @@ test to check that unknown parameter checking is right.
 PASS: tests/param-unknown.sh
 test1
 test2
-dsh: Process terminated (before write).
 PASS: tests/param-i.sh
 Check that cn4 option is working.
 PASS: tests/param-cn4.sh
@@ -498,9 +490,9 @@ success
 success
 success
 a: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
 b: dsh: Failed executing ./invalid-exec-file with llexec call
+c: dsh: Failed executing ./invalid-exec-file with llexec call
+d: dsh: Failed executing ./invalid-exec-file with llexec call
 success
 dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
@@ -508,11 +500,11 @@ dsh: Failed executing ./invalid-exec-file with llexec call
 dsh: Failed executing ./invalid-exec-file with llexec call
 success
 PASS: tests/param-r-invalid.sh
-1: 1
 2: 2
+1: 1
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Sat Aug 15 23:08:18 UTC 2009
+Sun Nov 29 09:59:25 UTC 2009
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -582,7 +574,7 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Sat Aug 15 23:08:23 UTC 2009
+Sun Nov 29 09:59:30 UTC 2009
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
@@ -684,5 +676,5 @@ I: unmounting dev/pts filesystem
 I: unmounting proc filesystem
 I: cleaning the build env 
 I: removing directory /TESTDIR/dir3/NUM and its subdirectories
-I: Current time: Sun Aug 16 08:08:49 JST 2009
-I: pbuilder-time-stamp: 1250377729
+I: Current time: Sun Nov 29 18:59:35 JST 2009
+I: pbuilder-time-stamp: 1259488775
