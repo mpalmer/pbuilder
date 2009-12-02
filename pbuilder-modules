@@ -226,16 +226,19 @@ function umountproc () {
 # Mount /proc /dev/pts /dev and bind-mount points
 # Also create a policy-rc.d script if it doesn't already exist.
 function mountproc () {
+    local -a mounted
     if [ "$USEPROC" = "yes" ]; then
 	log "I: mounting /proc filesystem"
 	mkdir -p $BUILDPLACE/proc
 	mount -t proc /proc "$BUILDPLACE/proc"
 	ln -s ../proc/mounts $BUILDPLACE/etc/mtab 2> /dev/null || true
+	mounted[${#mounted[@]}]="$BUILDPLACE/proc"
     fi
     if [ "$USEDEVFS" = "yes" ]; then
 	log "I: mounting /dev filesystem"x
 	mkdir -p $BUILDPLACE/dev || true
 	mount -t devfs /dev "$BUILDPLACE/dev" 
+	mounted[${#mounted[@]}]="$BUILDPLACE/dev"
     fi
     if [ "$USEDEVPTS" = "yes" ]; then
 	log "I: mounting /dev/pts filesystem"
@@ -244,13 +247,14 @@ function mountproc () {
 	TTYMODE=620
 	[ -f /etc/default/devpts ] && . /etc/default/devpts
 	mount -t devpts /dev/pts "$BUILDPLACE/dev/pts" -onoexec,nosuid,gid=$TTYGRP,mode=$TTYMODE
+	mounted[${#mounted[@]}]="$BUILDPLACE/dev/pts"
     fi
     if [ -x /usr/sbin/selinuxenabled ] && /usr/sbin/selinuxenabled; then
 	log "I: mounting selinux filesystem"
 	mkdir -p $BUILDPLACE/selinux
 	mount -t selinuxfs /selinux "$BUILDPLACE/selinux"
-    fi    
-    local -a mounted
+	mounted[${#mounted[@]}]="$BUILDPLACE/selinux"
+    fi
     for mnt in $BINDMOUNTS; do
 	log "I: Mounting $mnt"
 	if mkdir -p "$BUILDPLACE/$mnt" && 
@@ -258,9 +262,10 @@ function mountproc () {
 	    # successful.
 	    mounted[${#mounted[@]}]="$mnt"
 	else
-	    # when unsuccessful, backtrack / umount and abort.
+	    # this part of code is the only part which is supposed to fail.
+	    # When unsuccessful, backtrack / umount and abort.
 	    if [ -n "${mounted[*]}" ]; then
-		log "I: error recovery: umount successfully mounted bind-mounts: ${mounted[@]}"
+		log "I: error recovery: umount successfully mounted mount-points: ${mounted[@]}"
 		for umnt in "${mounted[@]}"; do
 		    log "I: umounting $umnt"
 		    umount "$umnt"
