@@ -102,12 +102,18 @@ export PBCURRENTCOMMANDLINEOPERATION="pdebuild"
 "$PBUILDERSATISFYDEPENDSCMD"
 apt-get install -q -y --force-yes fakeroot
 
-# create the user similar to that used outside
-groupadd -g "${BUILDRESULTGID}" -o pbgroup
-useradd -g pbgroup -u "${BUILDRESULTUID}" -o pbuser
 
-# what about id -G output? if other groups than the designated is used, we're stuffed.
-export HOME=$(pwd)/../
+# set home directory to ..
+export HOME=$(readlink -f $(pwd)/../)
+if [ -z "${HOME}" ]; then
+    echo "E: Failed to obtain reasonable HOME from pwd"
+fi
+
+# create the user similar to that used outside.
+# TODO: what about id -G output? if other groups than the designated
+# is used, we're stuffed.
+groupadd -g "${BUILDRESULTGID}" -o pbgroup
+useradd -g pbgroup -u "${BUILDRESULTUID}" -d "${HOME}" -o pbuser
 
 executehooks "A"
 
