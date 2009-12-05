@@ -40,6 +40,8 @@ function loadhooks () {
 	if ! cp -aL "$HOOKDIR/"* "$BUILDPLACE/$hooks"; then
 	    log "W: no hooks found in the hookdir '$HOOKDIR'"
 	fi
+    else
+	log "W: hookdir $HOOKDIR does not exist, skipping"
     fi
 }
 
