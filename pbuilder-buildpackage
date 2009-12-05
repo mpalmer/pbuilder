@@ -152,11 +152,14 @@ save_aptcache
 trap cleanbuildplace_trap exit sighup sigpipe
 umountproc
 
-
 if [ -d "${BUILDRESULT}" ]; then
     chown "${BUILDRESULTUID}:${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
     chgrp "${BUILDRESULTGID}" "${BUILDPLACE}"/tmp/buildd/*
-    cp -p "${BUILDPLACE}"/tmp/buildd/* "${BUILDRESULT}" 2>/dev/null || true
+    for FILE in "${BUILDPLACE}"/tmp/buildd/*; do
+	if [ -f "${FILE}" ]; then
+	    cp -p ${FILE} "${BUILDRESULT}" || true
+	fi
+    done
 else
     log "E: BUILDRESULT=[$BUILDRESULT] is not a directory."
 fi
