@@ -18,12 +18,11 @@ By default, build log file is stored in ../<package>_<version>_<arch>.build.
 
 .SH "PDEBUILD OPTIONS"
 
-The first option is always the operation to be done.
-It is followed by options of the form
+The options have the form
 .BI "\-\-" "option name"
-which modify the semantics as explained below.
-They are applied from left to right, and when
-options conflict, the rightmost options take effect.
+which modify the operation semantics as explained below.  They are
+applied from left to right, and when options conflict, the option that
+appear later take precedence.
 
 .TP
 .BI "\-\-buildsourceroot [" "fakeroot" "]"
