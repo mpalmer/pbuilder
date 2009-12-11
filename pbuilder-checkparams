@@ -26,6 +26,7 @@
 
 #default value for this option is !empty!
 INTERNAL_BUILD_UML=""
+TWICE=""
 CHROOTEXEC=""
 OVERRIDE_APTLINES="no"
 OVERRIDE_APTLINES_WARN="" # set this if --override-config option should be set.
@@ -233,6 +234,10 @@ while [ -n "$1" ]; do
 	    INTERNAL_BUILD_UML="yes"
 	    IGNORE_UMOUNT="no"
 	    shift; 
+	    ;;
+	--twice)
+	    TWICE="yes"
+	    shift;
 	    ;;
 	--) # end of processing for this
 	    shift;
