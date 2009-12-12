@@ -20,6 +20,7 @@
 
 
 DEBIAN_CONTROL=debian/control
+CHROOT=""
 CHROOTEXEC=""
 BD_REGEXP="build-(depends|depends-indep)"
 BC_REGEXP="build-(conflicts|conflicts-indep)"
@@ -37,6 +38,7 @@ while [ -n "$1" ]; do
 	# --chroot option and --internal-chrootexec options and --echo options somewhat conflict with each other.
 
 	--chroot)
+	    CHROOT="$2"
 	    CHROOTEXEC="chroot $2 "
 	    if [ ${CHROOTEXEC_AFTER_INTERNAL_CHROOTEXEC} = maybe ]; then
 		echo '--chroot specified after --internal-chrootexec' >&2

@@ -23,21 +23,19 @@
 set -e
 
 function checkbuilddep_internal () {
-    local BUILD_DEP_DEB_DIR=/tmp/satisfydepends-gdebi
-    local BUILD_DEP_DEB_CONTROL="$BUILD_DEP_DEB_DIR/`basename "$DEBIAN_CONTROL"`"
+    if ! [ -x /usr/bin/gdebi ]; then
+        echo "You need the gdebi-core package to resolve build-deps using gdebi"
+        exit 1
+    fi
 
-    $CHROOTEXEC apt-get -y --force-yes install gdebi-core
     NO_RECOMMENDS=""
-    if VERSION=$($CHROOTEXEC /usr/bin/gdebi --version 2>/dev/null); then
+    if VERSION=$(/usr/bin/gdebi --version 2>/dev/null); then
         if dpkg --compare-versions $VERSION ge 0.3.9; then
             NO_RECOMMENDS="-o APT::Install-Recommends=false"
         fi
     fi
 
-    $CHROOTEXEC mkdir -p "$BUILD_DEP_DEB_DIR"
-    cat "$DEBIAN_CONTROL" | $CHROOTEXEC sh -c "cat >\"$BUILD_DEP_DEB_CONTROL\""
-
-    INSTALL=$($CHROOTEXEC /usr/bin/gdebi --quiet --apt-line $NO_RECOMMENDS $BUILD_DEP_DEB_CONTROL)
+    INSTALL=$(/usr/bin/gdebi --quiet --root $CHROOT --apt-line $NO_RECOMMENDS $DEBIAN_CONTROL)
     $CHROOTEXEC /usr/bin/apt-get install -y --force-yes $INSTALL
 }
 
