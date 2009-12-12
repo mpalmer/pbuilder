@@ -119,9 +119,11 @@ executehooks "A"
 
 # do build with that user.
 export DEBBUILDOPTS
+CMD="/usr/bin/dpkg-buildpackage -rfakeroot -us -uc '\${DEBBUILDOPTS}'"
+echo "I: Running $CMD"
 # This command should be ran with current directory as bind-mounted
 # package source directory
-if echo /usr/bin/dpkg-buildpackage -rfakeroot -us -uc '${DEBBUILDOPTS}' | \
+if echo "$CMD" | \
     su -p pbuser; 
     then
     # build was successful

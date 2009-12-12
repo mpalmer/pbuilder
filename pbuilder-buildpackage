@@ -120,7 +120,12 @@ DPKG_COMMANDLINE="dpkg-buildpackage -us -uc ${DEBEMAIL:+\"-e$DEBEMAIL\"} $DEBBUI
 
 (
     : Build process
-    echo  "cd tmp/buildd/*/ && ${DPKG_COMMANDLINE}${TWICE:+ && ${DPKG_COMMANDLINE}}" | $CHROOTEXEC $SUTOUSER
+    if [ -n "$TWICE" ]; then
+        DPKG_COMMANDLINE="$DPKG_COMMANDLINE && $DPKG_COMMANDLINE"
+    fi
+    DPKG_COMMANDLINE="cd tmp/buildd/*/ && $DPKG_COMMANDLINE"
+    log "I: Running $DPKG_COMMANDLINE"
+    echo "$DPKG_COMMANDLINE" | $CHROOTEXEC $SUTOUSER
 ) &
 BUILD_PID=$!
 if [ -n "${TIMEOUT_TIME}" ]; then
