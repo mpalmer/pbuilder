@@ -6,6 +6,7 @@
 # testsuite to test pbuilder-satisfydepends-checkparams.
 
 test_get_control_re() {
+    # TODO move to build dir
     CONTROL=$(tempfile)
     cat <<EOF > "$CONTROL"
 Source: amule
@@ -27,6 +28,7 @@ Desctiption: test
  wow
 EOF
     get_control_re "$CONTROL" "build-(depends|depends-indep)"
+    rm -f "$CONTROL"
 }
 expect_output "  autotools-dev, debhelper, quilt, libwxgtk2.8-dev
  test, test1,  test2, test3 |  test4, test5" test_get_control_re
