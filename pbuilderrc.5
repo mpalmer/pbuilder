@@ -149,8 +149,9 @@ For details, see
 The options given here will be passed on to
 .BR dpkg-buildpackage .
 This can be useful e.g. for binary-only builds. The command-line option
-.B "--debbuildopts"
-overrides any contents specified here.
+.B "--debbuildopts" will be appended to any contents specified here but
+may also be used to reset the list of options.
+
 The default value is to build source and binary package.
 
 .TP

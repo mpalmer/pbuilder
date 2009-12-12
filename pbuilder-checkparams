@@ -142,7 +142,8 @@ while [ -n "$1" ]; do
 	    shift; shift;
 	    ;;
 	--debbuildopts)
-	    DEBBUILDOPTS="$2";
+	    # append to DEBBUILDOPTS or reset to empty if $2 isn't set
+	    DEBBUILDOPTS="${2:+$DEBBUILDOPTS $2}";
 	    shift; shift;
 	    ;;
 	--logfile)
@@ -173,6 +174,7 @@ while [ -n "$1" ]; do
 	    ;;
 	--binary-arch)
 	    BINARY_ARCH="yes"
+	    # XXX this might be overwriten by --debbuildopts ""
 	    DEBBUILDOPTS="${DEBBUILDOPTS} -B"
 	    shift;
 	    ;;

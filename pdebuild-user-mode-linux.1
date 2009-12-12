@@ -47,8 +47,9 @@ The configuration file is used, but not passed on to
 .BI "\-\-debbuildopts [" "options to pass to dpkg\-buildpackage" "]"
 
 The space-delimited list of options are passed to dpkg\-buildpackage.
-This option overrides pbuilder option 
+This option appends to pbuilder option
 .B "\-\-debbuildopts"
+and may also be used to reset the list of options by passing the empty string.
 
 .TP
 .BI "\-\-use\-pdebuild\-internal"

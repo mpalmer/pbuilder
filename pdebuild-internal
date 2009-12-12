@@ -46,8 +46,8 @@ function log() {
 while [ -n "$1" ]; do 
     case "$1" in 
 	--debbuildopts)
-	    log "I: Setting DEBBUILDOPTS=$2"
-	    DEBBUILDOPTS="$2"
+	    DEBBUILDOPTS="${2:+$DEBBUILDOPTS $2}";
+	    log "I: Setting DEBBUILDOPTS=$DEBBUILDOPTS"
 	    shift; shift;
 	    ;;
 	--uid)

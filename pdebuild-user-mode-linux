@@ -41,7 +41,7 @@ if [ "${USE_PDEBUILD_INTERNAL}" = 'yes' ]; then
 	echo "E: Cannot find .. dir from PWD=$(pwd)" >&2 
 	exit 1
     fi
-    pbuilder-user-mode-linux execute "$@" --bindmounts $(readlink -f ..) /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "${DEBBUILDOPTS}"
+    pbuilder-user-mode-linux execute "$@" --bindmounts $(readlink -f ..) /usr/lib/pbuilder/pdebuild-internal ${PWD} --debbuildopts "" --debbuildopts "${DEBBUILDOPTS}"
 else
     if ! dpkg-checkbuilddeps -B; then
 	echo "W: Unmet build-dependency in source" >&2 
