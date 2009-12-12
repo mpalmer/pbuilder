@@ -24,7 +24,7 @@ set -e
 
 function checkbuilddep_internal () {
     if ! [ -x /usr/bin/gdebi ]; then
-        echo "You need the gdebi-core package to resolve build-deps using gdebi"
+        echo "E: You need the gdebi-core package to resolve build-deps using gdebi" >&2
         exit 1
     fi
 
