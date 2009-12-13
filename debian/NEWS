@@ -1,6 +1,12 @@
 pbuilder (0.195) unstable; urgency=low
 
-  --debbuildopts is now additive and will append to pbuilderrc's DEBBUILDOPTS.
-  To reset the list of options, pass --debbuildopts "".
+  * --debbuildopts is now additive and will append to pbuilderrc's
+    DEBBUILDOPTS.  To reset the list of options, pass --debbuildopts "".
+  * The default debootstrap command is now "debootstrap" instead of
+    "cdebootstrap"; cdebootstrap is still supported, but you might have to set
+    DEBOOTSTRAP="cdebootstrap" in your pbuilderrc or pass
+    --debootstrap=cdebootstrap to use it.  Custom cdebootstrap options set via
+    DEBOOTSTRAPOPTS or --debootstrapopts might not be compatible with
+    debootstrap.
 
  -- Loïc Minier <lool@dooz.org>  Sat, 12 Dec 2009 16:03:21 +0100

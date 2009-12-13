@@ -74,8 +74,8 @@ export PATH="/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 # SHELL variable is used inside pbuilder by commands like 'su'; and they need sane values
 export SHELL=/bin/bash
 
-# The name of debootstrap command.
-DEBOOTSTRAP="cdebootstrap"
+# The name of debootstrap command, you might want "cdebootstrap".
+DEBOOTSTRAP="debootstrap"
 
 # default file extension for pkgname-logfile
 PKGNAME_LOGFILE_EXTENTION="_$(dpkg --print-architecture).build"
