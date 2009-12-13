@@ -3,6 +3,7 @@
 # estimated run-time on my PC; 1 hour
 
 PBUILDER=/usr/sbin/pbuilder
+DEBOOTSTRAPS="debootstrap cdebootstrap"
 
 log_success () {
     CODE=$?
@@ -17,7 +18,6 @@ log_success () {
 [ -x /usr/sbin/debootstrap ] || exit 1
 [ -x /usr/bin/cdebootstrap ] || exit 1
 
-
 mirror=http://localhost:9999/debian
 
 testdir=$(TMPDIR=$(pwd) mktemp -d)
@@ -30,7 +30,7 @@ export testdir
 
 HOOKOPTION=" --hookdir /usr/share/doc/pbuilder/examples/workaround"
 
-for DEBOOTSTRAP in debootstrap cdebootstrap; do
+for DEBOOTSTRAP in $DEBOOTSTRAPS; do
     case $DEBOOTSTRAP in 
 	debootstrap)
 	    logdir=$(readlink -f normal/)
