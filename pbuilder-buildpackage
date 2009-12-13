@@ -70,8 +70,7 @@ fi
 if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then
     if [ "${PKGNAME_LOGFILE}" = "yes" ]; then
 	PBUILDER_BUILD_LOGFILE="${BUILDRESULT}/"$(basename "${PACKAGENAME}" .dsc)"${PKGNAME_LOGFILE_EXTENTION}"
-	exec > >(tee "${PBUILDER_BUILD_LOGFILE}")
-	exec 2>&1
+	exec > >(tee "${PBUILDER_BUILD_LOGFILE}") 2>&1
 	PBUILDER_BUILD_LOGFILE=$(readlink -f "${PBUILDER_BUILD_LOGFILE}")
 	log "I: Using pkgname logfile"
 	echobacktime

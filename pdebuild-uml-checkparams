@@ -35,8 +35,7 @@ UML_LOGIN_NOCOW=
 while [ -n "$1" ] ; do
     case "$1" in
 	--logfile)
-	    exec > >(tee "$2");
-	    exec 2>&1
+	    exec > >(tee "$2") 2>&1
 	    shift;shift;;
 	--auto-debsign)
 	    AUTO_DEBSIGN="yes"
