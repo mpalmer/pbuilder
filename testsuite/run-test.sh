@@ -3,7 +3,14 @@
 # estimated run-time on my PC; 1 hour
 
 PBUILDER=/usr/sbin/pbuilder
+
+# ideal value
 DEBOOTSTRAPS="debootstrap cdebootstrap"
+DISTRIBUTIONS="sid lenny squeeze"
+
+# override
+DEBOOTSTRAPS="debootstrap"
+DISTRIBUTIONS="sid squeeze"
 
 log_success () {
     CODE=$?
@@ -50,7 +57,7 @@ for DEBOOTSTRAP in $DEBOOTSTRAPS; do
     : > ${RESULTFILE}
     RESULTFILE=$(readlink -f ${RESULTFILE})
     
-    for distribution in sid lenny squeeze; do
+    for distribution in ${DISTRIBUTIONS}; do
 	sudo ${PBUILDER} create $HOOKOPTION "${DEBOOTSTRAPOPTS[@]}" --mirror $mirror --debootstrap ${DEBOOTSTRAP} --distribution "${distribution}" --basetgz ${testimage} --logfile ${logdir}/pbuilder-create-${distribution}.log.orig 
 
 	log_success create-${distribution}-${DEBOOTSTRAP}
