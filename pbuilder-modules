@@ -346,9 +346,6 @@ function installaptlines (){
 	log "E: Distribution not specified, please specify"
 	exit 1
     fi
-    if [ -z "$COMPONENTS" ] ; then
-	COMPONENTS="main"
-    fi
     if [ -n "$OTHERMIRROR" ]; then 
 	echo "$OTHERMIRROR" | tr "|" "\n" >> "$BUILDPLACE"/etc/apt/sources.list 
     fi
