@@ -65,7 +65,8 @@ while [ -n "$1" ] ; do
 	    shift;
 	    ;;
 	--debbuildopts)
-	    DEBBUILDOPTS="${2:+$DEBBUILDOPTS $2}";
+	    # append to DEBBUILDOPTS or reset to empty if $2 isn't set
+	    DEBBUILDOPTS="${2:+${DEBBUILDOPTS:+$DEBBUILDOPTS }$2}";
 	    shift; shift;
 	    ;;
 	--buildresult)

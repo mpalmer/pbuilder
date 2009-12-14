@@ -33,7 +33,7 @@ fi;
 
 if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
     SUTOUSER="env LOGNAME=$BUILDUSERNAME su -p $BUILDUSERNAME"
-    DEBBUILDOPTS="$DEBBUILDOPTS -rfakeroot"
+    DEBBUILDOPTS="${DEBBUILDOPTS:+$DEBBUILDOPTS }-rfakeroot"
     EXTRAPACKAGES="${EXTRAPACKAGES} fakeroot"
     log "I: using fakeroot in build."
 else
