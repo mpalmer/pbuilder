@@ -39,8 +39,8 @@ the given options and settings in the configuration file
 for the base.tgz.
 
 For example, to switch the distribution of an existing
-base.tgz to lenny, specify the
-.B "\-\-distribution lenny \-\-override\-config" 
+base.tgz to sid, specify the
+.B "\-\-distribution sid \-\-override\-config"
 options to update.
 
 .TP
@@ -181,11 +181,11 @@ listed in
 
 .TP
 .BI "\-\-distribution [" "distribution" "]"
-Specifies the distribution used. Currently the supported values are
+Specifies the distribution used.  The supported values are the ones debootstrap
+supports, plus experimental which is special cased in pbuilder.  For instance
+you may use:
 .B "sid"
-.B "etch"
-.B "lenny"
-and 
+or
 .B "experimental".
 
 .TP
