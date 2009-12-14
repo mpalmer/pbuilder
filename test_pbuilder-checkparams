@@ -5,7 +5,9 @@
 # testsuite for pbuilder-checkparams
 
 test_debuildopts() {
-    . ./pbuilder-checkparams
+    # stderr is redirected to /dev/null to avoid failing if ~/.pbuilderrc is
+    # missing (this outputs a warning which is not expected in the output)
+    . ./pbuilder-checkparams 2>/dev/null
     echo "$DEBBUILDOPTS"
 }
 expect_output "" \
