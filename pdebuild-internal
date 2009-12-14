@@ -118,8 +118,9 @@ useradd -g pbgroup -u "${BUILDRESULTUID}" -d "${HOME}" -o pbuser
 executehooks "A"
 
 # do build with that user.
+# $DEBBUILDOPTS is evaluated inside the su and chroot.
 export DEBBUILDOPTS
-CMD="/usr/bin/dpkg-buildpackage -rfakeroot -us -uc \${DEBBUILDOPTS}"
+CMD="/usr/bin/dpkg-buildpackage -rfakeroot -us -uc "'${DEBBUILDOPTS}'
 echo "I: Running $CMD"
 # This command should be ran with current directory as bind-mounted
 # package source directory
