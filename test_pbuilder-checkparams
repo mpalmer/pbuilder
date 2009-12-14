@@ -1,0 +1,22 @@
+#!/bin/bash
+
+. ./testlib.sh
+
+# testsuite for pbuilder-checkparams
+
+test_debuildopts() {
+    . ./pbuilder-checkparams
+    echo "$DEBBUILDOPTS"
+}
+expect_output "" \
+    test_debuildopts foo.dsc
+expect_output "" \
+    test_debuildopts --debbuildopts "" foo.dsc
+expect_output " -v1.0 -efoo" \
+    test_debuildopts --debbuildopts "-v1.0 -efoo" foo.dsc
+expect_output " -v1.0 -efoo" \
+    test_debuildopts --debbuildopts -v1.0 --debbuildopts -efoo foo.dsc
+expect_output " -efoo" \
+    test_debuildopts --debbuildopts -v1.0 --debbuildopts "" --debbuildopts -efoo foo.dsc
+
+testlib_summary
