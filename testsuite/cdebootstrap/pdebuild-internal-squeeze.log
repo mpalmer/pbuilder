@@ -5,7 +5,7 @@ I: creating local configuration
 I: copying local configuration
 I: mounting /proc filesystem
 I: mounting /dev/pts filesystem
-I: Mounting /TESTDIR/dir2
+I: Mounting /home/dancer/DEBIAN/pbuilder
 I: policy-rc.d already exists
 Reading package lists...
 Building dependency tree...
@@ -22,19 +22,19 @@ The following NEW packages will be installed:
   cdebootstrap libdebian-installer-extra4 libdebian-installer4 libssl0.9.8
   pbuilder wget
 0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2143kB of archives.
+Need to get 2145kB of archives.
 After this operation, 6226kB of additional disk space will be used.
-Get:1 http://localhost squeeze/main libssl0.9.8 0.9.8k-6 [979kB]
+Get:1 http://localhost squeeze/main libssl0.9.8 0.9.8k-7 [979kB]
 Get:2 http://localhost squeeze/main wget 1.12-1.1 [757kB]
 Get:3 http://localhost squeeze/main libdebian-installer4 0.69 [31.0kB]
 Get:4 http://localhost squeeze/main libdebian-installer-extra4 0.69 [12.9kB]
 Get:5 http://localhost squeeze/main cdebootstrap 0.5.5 [32.3kB]
-Get:6 http://localhost squeeze/main pbuilder 0.192 [331kB]
+Get:6 http://localhost squeeze/main pbuilder 0.194 [332kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libssl0.9.8.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10105 files and directories currently installed.)
-Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8k-6_amd64.deb) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10094 files and directories currently installed.)
+Unpacking libssl0.9.8 (from .../libssl0.9.8_0.9.8k-7_amd64.deb) ...
 Selecting previously deselected package wget.
 Unpacking wget (from .../wget_1.12-1.1_amd64.deb) ...
 Selecting previously deselected package libdebian-installer4.
@@ -44,13 +44,14 @@ Unpacking libdebian-installer-extra4 (from .../libdebian-installer-extra4_0.69_a
 Selecting previously deselected package cdebootstrap.
 Unpacking cdebootstrap (from .../cdebootstrap_0.5.5_amd64.deb) ...
 Selecting previously deselected package pbuilder.
-Unpacking pbuilder (from .../pbuilder_0.192_all.deb) ...
-Setting up libssl0.9.8 (0.9.8k-6) ...
+Unpacking pbuilder (from .../pbuilder_0.194_all.deb) ...
+Setting up libssl0.9.8 (0.9.8k-7) ...
 Setting up wget (1.12-1.1) ...
 Setting up libdebian-installer4 (0.69) ...
 Setting up libdebian-installer-extra4 (0.69) ...
 Setting up cdebootstrap (0.5.5) ...
-Setting up pbuilder (0.192) ...
+Setting up pbuilder (0.194) ...
+I: Setting DEBBUILDOPTS=
 I: Setting DEBBUILDOPTS=
 W: no hooks of type D found -- ignoring
  -> Attempting to satisfy build-dependencies
@@ -61,7 +62,7 @@ Architecture: amd64
 Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
 Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
  This package was created automatically by pbuilder and should
-Depends: debhelper (>> 3.0.0), libdshconfig1-dev (>= 0.20.11-1), po4a
+Depends: debhelper (>= 7), docbook-xsl, ldp-docbook-xsl (>= 0.0.20040321-0.1), xsltproc, dpkg-dev (>= 1.13.19), dblatex, debconf | debconf-2.0, po-debconf, po4a
 dpkg-deb: building package `pbuilder-satisfydepends-dummy' in `/tmp/satisfydepends-aptitude/pbuilder-satisfydepends-dummy.deb'.
 Reading package lists...
 Building dependency tree...
@@ -69,13 +70,21 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 10305 files and directories currently installed.)
+(Reading database ... 10294 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
- pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
+ pbuilder-satisfydepends-dummy depends on debhelper (>= 7); however:
   Package debhelper is not installed.
- pbuilder-satisfydepends-dummy depends on libdshconfig1-dev (>= 0.20.11-1); however:
-  Package libdshconfig1-dev is not installed.
+ pbuilder-satisfydepends-dummy depends on docbook-xsl; however:
+  Package docbook-xsl is not installed.
+ pbuilder-satisfydepends-dummy depends on ldp-docbook-xsl (>= 0.0.20040321-0.1); however:
+  Package ldp-docbook-xsl is not installed.
+ pbuilder-satisfydepends-dummy depends on xsltproc; however:
+  Package xsltproc is not installed.
+ pbuilder-satisfydepends-dummy depends on dblatex; however:
+  Package dblatex is not installed.
+ pbuilder-satisfydepends-dummy depends on po-debconf; however:
+  Package po-debconf is not installed.
  pbuilder-satisfydepends-dummy depends on po4a; however:
   Package po4a is not installed.
 dpkg: error processing pbuilder-satisfydepends-dummy (--install):
@@ -88,21 +97,36 @@ Reading state information...
 Initializing package states...
 Writing extended state information...
 The following NEW packages will be installed:
-  bsdmainutils{a} debhelper{a} file{a} gettext{a} gettext-base{a} 
-  groff-base{a} html2text{a} intltool-debian{a} libcroco3{a} 
-  libdshconfig1{a} libdshconfig1-dev{a} libglib2.0-0{a} libmagic1{a} 
-  libpcre3{a} libsgmls-perl{a} libsp1c2{a} libxml2{a} man-db{a} 
-  po-debconf{a} po4a{a} sp{a} 
+  apt-utils{a} bsdmainutils{a} dblatex{a} debhelper{a} defoma{a} 
+  docbook-xml{a} docbook-xsl{a} ed{a} file{a} fontconfig-config{a} 
+  gettext{a} gettext-base{a} groff-base{a} html2text{a} intltool-debian{a} 
+  ldp-docbook-xsl{a} libcroco3{a} libdb4.5{a} libexpat1{a} 
+  libfontconfig1{a} libfreetype6{a} libgcrypt11{a} libglib2.0-0{a} 
+  libgpg-error0{a} libice6{a} libjpeg62{a} libkpathsea4{a} liblcms1{a} 
+  libmagic1{a} libnewt0.52{a} libopenjpeg2{a} libpcre3{a} libpng12-0{a} 
+  libpoppler5{a} libpopt0{a} libsgmls-perl{a} libslang2{a} libsm6{a} 
+  libsp1c2{a} libsqlite3-0{a} libx11-6{a} libx11-data{a} libxau6{a} 
+  libxaw7{a} libxcb1{a} libxdmcp6{a} libxext6{a} libxml2{a} libxmu6{a} 
+  libxpm4{a} libxslt1.1{a} libxt6{a} lsb-release{a} man-db{a} 
+  mime-support{a} po-debconf{a} po4a{a} preview-latex-style{a} python{a} 
+  python-apt{a} python-central{a} python-minimal{a} python-support{a} 
+  python2.5{a} python2.5-minimal{a} sgml-base{a} sgml-data{a} sp{a} 
+  tex-common{a} texlive{a} texlive-base{a} texlive-base-bin{a} 
+  texlive-bibtex-extra{a} texlive-common{a} texlive-doc-base{a} 
+  texlive-extra-utils{a} texlive-fonts-recommended{a} texlive-latex-base{a} 
+  texlive-latex-extra{a} texlive-latex-recommended{a} texlive-math-extra{a} 
+  texlive-pictures{a} ttf-dejavu{a} ttf-dejavu-core{a} ttf-dejavu-extra{a} 
+  ucf{a} whiptail{a} x11-common{a} xml-core{a} xsltproc{a} 
 The following partially installed packages will be configured:
   pbuilder-satisfydepends-dummy 
-0 packages upgraded, 21 newly installed, 0 to remove and 0 not upgraded.
-Need to get 11.5MB of archives. After unpacking 34.5MB will be used.
+0 packages upgraded, 90 newly installed, 0 to remove and 0 not upgraded.
+Need to get 64.4MB of archives. After unpacking 225MB will be used.
 Writing extended state information...
 Get:1 http://localhost squeeze/main libmagic1 5.03-3 [389kB]
 Get:2 http://localhost squeeze/main file 5.03-3 [46.9kB]
 Get:3 http://localhost squeeze/main html2text 1.3.2a-14 [103kB]
 Get:4 http://localhost squeeze/main libpcre3 7.8-3 [215kB]
-Get:5 http://localhost squeeze/main libglib2.0-0 2.22.2-2 [984kB]
+Get:5 http://localhost squeeze/main libglib2.0-0 2.22.3-1 [988kB]
 Get:6 http://localhost squeeze/main libxml2 2.7.6.dfsg-1 [876kB]
 Get:7 http://localhost squeeze/main libcroco3 0.6.2-1 [125kB]
 Get:8 http://localhost squeeze/main gettext-base 0.17-8 [133kB]
@@ -110,19 +134,88 @@ Get:9 http://localhost squeeze/main gettext 0.17-8 [2503kB]
 Get:10 http://localhost squeeze/main intltool-debian 0.35.0+20060710.1 [30.8kB]
 Get:11 http://localhost squeeze/main po-debconf 1.0.16 [224kB]
 Get:12 http://localhost squeeze/main groff-base 1.20.1-6 [1156kB]
-Get:13 http://localhost squeeze/main bsdmainutils 8.0.1 [197kB]
+Get:13 http://localhost squeeze/main bsdmainutils 8.0.2 [198kB]
 Get:14 http://localhost squeeze/main man-db 2.5.6-4 [1477kB]
 Get:15 http://localhost squeeze/main debhelper 7.4.3 [454kB]
-Get:16 http://localhost squeeze/main libdshconfig1 0.20.13-1 [11.0kB]
-Get:17 http://localhost squeeze/main libdshconfig1-dev 0.20.13-1 [25.4kB]
-Get:18 http://localhost squeeze/main libsgmls-perl 1.03ii-32 [27.8kB]
-Get:19 http://localhost squeeze/main libsp1c2 1.3.4-1.2.1-47 [1386kB]
-Get:20 http://localhost squeeze/main sp 1.3.4-1.2.1-47 [182kB]
-Get:21 http://localhost squeeze/main po4a 0.36.6-1 [946kB]
+Get:16 http://localhost squeeze/main sgml-base 1.26 [11.7kB]
+Get:17 http://localhost squeeze/main xml-core 0.13 [23.4kB]
+Get:18 http://localhost squeeze/main docbook-xsl 1.75.2+dfsg-3 [1618kB]
+Get:19 http://localhost squeeze/main ldp-docbook-xsl 0.0.20040321-2 [29.5kB]
+Get:20 http://localhost squeeze/main libgpg-error0 1.6-1 [43.9kB]
+Get:21 http://localhost squeeze/main libgcrypt11 1.4.4-6 [274kB]
+Get:22 http://localhost squeeze/main libxslt1.1 1.1.26-1 [243kB]
+Get:23 http://localhost squeeze/main xsltproc 1.1.26-1 [114kB]
+Get:24 http://localhost squeeze/main python2.5-minimal 2.5.4-3 [1286kB]
+Get:25 http://localhost squeeze/main mime-support 3.47-1 [34.3kB]
+Get:26 http://localhost squeeze/main libdb4.5 4.5.20-13.1 [553kB]
+Get:27 http://localhost squeeze/main libsqlite3-0 3.6.20-1 [300kB]
+Get:28 http://localhost squeeze/main python2.5 2.5.4-3 [3035kB]
+Get:29 http://localhost squeeze/main python-minimal 2.5.4-2 [13.9kB]
+Get:30 http://localhost squeeze/main python 2.5.4-2 [142kB]
+Get:31 http://localhost squeeze/main python-support 1.0.4 [32.0kB]
+Get:32 http://localhost squeeze/main sgml-data 2.0.3 [279kB]
+Get:33 http://localhost squeeze/main docbook-xml 4.5-7 [345kB]
+Get:34 http://localhost squeeze/main python-central 0.6.13 [45.8kB]
+Get:35 http://localhost squeeze/main apt-utils 0.7.23.1 [198kB]
+Get:36 http://localhost squeeze/main lsb-release 3.2-23 [21.5kB]
+Get:37 http://localhost squeeze/main python-apt 0.7.13.3 [377kB]
+Get:38 http://localhost squeeze/main ucf 3.0025 [66.0kB]
+Get:39 http://localhost squeeze/main tex-common 1.20 [722kB]
+Get:40 http://localhost squeeze/main texlive-common 2007.dfsg.2-4 [92.9kB]
+Get:41 http://localhost squeeze/main texlive-doc-base 2007.dfsg.2-2 [760kB]
+Get:42 http://localhost squeeze/main ed 1.4-1 [61.5kB]
+Get:43 http://localhost squeeze/main libkpathsea4 2007.dfsg.2-8 [124kB]
+Get:44 http://localhost squeeze/main libpng12-0 1.2.40-1 [173kB]
+Get:45 http://localhost squeeze/main libexpat1 2.0.1-5 [135kB]
+Get:46 http://localhost squeeze/main libfreetype6 2.3.11-1 [432kB]
+Get:47 http://localhost squeeze/main libslang2 2.2.1-1 [539kB]
+Get:48 http://localhost squeeze/main libnewt0.52 0.52.10-4.1 [67.9kB]
+Get:49 http://localhost squeeze/main libpopt0 1.15-1 [51.6kB]
+Get:50 http://localhost squeeze/main whiptail 0.52.10-4.1 [39.1kB]
+Get:51 http://localhost squeeze/main defoma 0.11.10-3 [99.0kB]
+Get:52 http://localhost squeeze/main ttf-dejavu-core 2.30-1 [1437kB]
+Get:53 http://localhost squeeze/main ttf-dejavu-extra 2.30-1 [3180kB]
+Get:54 http://localhost squeeze/main ttf-dejavu 2.30-1 [28.7kB]
+Get:55 http://localhost squeeze/main fontconfig-config 2.6.0-4 [184kB]
+Get:56 http://localhost squeeze/main libfontconfig1 2.6.0-4 [240kB]
+Get:57 http://localhost squeeze/main libjpeg62 6b-15 [92.2kB]
+Get:58 http://localhost squeeze/main liblcms1 1.18.dfsg-1 [111kB]
+Get:59 http://localhost squeeze/main libopenjpeg2 1.3+dfsg-4 [79.5kB]
+Get:60 http://localhost squeeze/main libpoppler5 0.12.2-2 [943kB]
+Get:61 http://localhost squeeze/main libxau6 1:1.0.5-1 [14.2kB]
+Get:62 http://localhost squeeze/main libxdmcp6 1:1.0.3-1 [18.9kB]
+Get:63 http://localhost squeeze/main libxcb1 1.4-1 [43.3kB]
+Get:64 http://localhost squeeze/main libx11-data 2:1.3.2-1 [219kB]
+Get:65 http://localhost squeeze/main libx11-6 2:1.3.2-1 [844kB]
+Get:66 http://localhost squeeze/main x11-common 1:7.4+4 [287kB]
+Get:67 http://localhost squeeze/main libxext6 2:1.0.4-1 [36.6kB]
+Get:68 http://localhost squeeze/main libice6 2:1.0.6-1 [53.8kB]
+Get:69 http://localhost squeeze/main libsm6 2:1.1.1-1 [25.0kB]
+Get:70 http://localhost squeeze/main libxt6 1:1.0.7-1 [192kB]
+Get:71 http://localhost squeeze/main libxmu6 2:1.0.5-1 [57.6kB]
+Get:72 http://localhost squeeze/main libxpm4 1:3.5.8-1 [44.2kB]
+Get:73 http://localhost squeeze/main libxaw7 2:1.0.7-1 [211kB]
+Get:74 http://localhost squeeze/main texlive-base-bin 2007.dfsg.2-8 [2628kB]
+Get:75 http://localhost squeeze/main texlive-base 2007.dfsg.2-4 [6297kB]
+Get:76 http://localhost squeeze/main texlive-fonts-recommended 2007.dfsg.2-4 [7320kB]
+Get:77 http://localhost squeeze/main texlive-latex-base 2007.dfsg.2-4 [1287kB]
+Get:78 http://localhost squeeze/main texlive-latex-recommended 2007.dfsg.2-4 [1920kB]
+Get:79 http://localhost squeeze/main texlive 2007.dfsg.2-4 [25.8kB]
+Get:80 http://localhost squeeze/main texlive-bibtex-extra 2007.dfsg.17-2 [3924kB]
+Get:81 http://localhost squeeze/main preview-latex-style 11.85-1 [122kB]
+Get:82 http://localhost squeeze/main texlive-pictures 2007.dfsg.2-4 [570kB]
+Get:83 http://localhost squeeze/main texlive-latex-extra 2007.dfsg.17-2 [3457kB]
+Get:84 http://localhost squeeze/main texlive-math-extra 2007.dfsg.17-2 [2582kB]
+Get:85 http://localhost squeeze/main texlive-extra-utils 2007.dfsg.2-8 [690kB]
+Get:86 http://localhost squeeze/main dblatex 0.2.12-2 [1278kB]
+Get:87 http://localhost squeeze/main libsgmls-perl 1.03ii-32 [27.8kB]
+Get:88 http://localhost squeeze/main libsp1c2 1.3.4-1.2.1-47 [1386kB]
+Get:89 http://localhost squeeze/main sp 1.3.4-1.2.1-47 [182kB]
+Get:90 http://localhost squeeze/main po4a 0.37.1-1 [1026kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10305 files and directories currently installed.)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10294 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_5.03-3_amd64.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_5.03-3_amd64.deb) ...
@@ -131,7 +224,7 @@ Unpacking html2text (from .../html2text_1.3.2a-14_amd64.deb) ...
 Selecting previously deselected package libpcre3.
 Unpacking libpcre3 (from .../libpcre3_7.8-3_amd64.deb) ...
 Selecting previously deselected package libglib2.0-0.
-Unpacking libglib2.0-0 (from .../libglib2.0-0_2.22.2-2_amd64.deb) ...
+Unpacking libglib2.0-0 (from .../libglib2.0-0_2.22.3-1_amd64.deb) ...
 Selecting previously deselected package libxml2.
 Unpacking libxml2 (from .../libxml2_2.7.6.dfsg-1_amd64.deb) ...
 Selecting previously deselected package libcroco3.
@@ -147,15 +240,157 @@ Unpacking po-debconf (from .../po-debconf_1.0.16_all.deb) ...
 Selecting previously deselected package groff-base.
 Unpacking groff-base (from .../groff-base_1.20.1-6_amd64.deb) ...
 Selecting previously deselected package bsdmainutils.
-Unpacking bsdmainutils (from .../bsdmainutils_8.0.1_amd64.deb) ...
+Unpacking bsdmainutils (from .../bsdmainutils_8.0.2_amd64.deb) ...
 Selecting previously deselected package man-db.
 Unpacking man-db (from .../man-db_2.5.6-4_amd64.deb) ...
 Selecting previously deselected package debhelper.
 Unpacking debhelper (from .../debhelper_7.4.3_all.deb) ...
-Selecting previously deselected package libdshconfig1.
-Unpacking libdshconfig1 (from .../libdshconfig1_0.20.13-1_amd64.deb) ...
-Selecting previously deselected package libdshconfig1-dev.
-Unpacking libdshconfig1-dev (from .../libdshconfig1-dev_0.20.13-1_amd64.deb) ...
+Selecting previously deselected package sgml-base.
+Unpacking sgml-base (from .../sgml-base_1.26_all.deb) ...
+Selecting previously deselected package xml-core.
+Unpacking xml-core (from .../archives/xml-core_0.13_all.deb) ...
+Selecting previously deselected package docbook-xsl.
+Unpacking docbook-xsl (from .../docbook-xsl_1.75.2+dfsg-3_all.deb) ...
+Selecting previously deselected package ldp-docbook-xsl.
+Unpacking ldp-docbook-xsl (from .../ldp-docbook-xsl_0.0.20040321-2_all.deb) ...
+Selecting previously deselected package libgpg-error0.
+Unpacking libgpg-error0 (from .../libgpg-error0_1.6-1_amd64.deb) ...
+Selecting previously deselected package libgcrypt11.
+Unpacking libgcrypt11 (from .../libgcrypt11_1.4.4-6_amd64.deb) ...
+Selecting previously deselected package libxslt1.1.
+Unpacking libxslt1.1 (from .../libxslt1.1_1.1.26-1_amd64.deb) ...
+Selecting previously deselected package xsltproc.
+Unpacking xsltproc (from .../xsltproc_1.1.26-1_amd64.deb) ...
+Selecting previously deselected package python2.5-minimal.
+Unpacking python2.5-minimal (from .../python2.5-minimal_2.5.4-3_amd64.deb) ...
+Selecting previously deselected package mime-support.
+Unpacking mime-support (from .../mime-support_3.47-1_all.deb) ...
+Selecting previously deselected package libdb4.5.
+Unpacking libdb4.5 (from .../libdb4.5_4.5.20-13.1_amd64.deb) ...
+Selecting previously deselected package libsqlite3-0.
+Unpacking libsqlite3-0 (from .../libsqlite3-0_3.6.20-1_amd64.deb) ...
+Selecting previously deselected package python2.5.
+Unpacking python2.5 (from .../python2.5_2.5.4-3_amd64.deb) ...
+Selecting previously deselected package python-minimal.
+Unpacking python-minimal (from .../python-minimal_2.5.4-2_all.deb) ...
+Selecting previously deselected package python.
+Unpacking python (from .../python_2.5.4-2_all.deb) ...
+Selecting previously deselected package python-support.
+Unpacking python-support (from .../python-support_1.0.4_all.deb) ...
+Selecting previously deselected package sgml-data.
+Unpacking sgml-data (from .../sgml-data_2.0.3_all.deb) ...
+Setting up sgml-base (1.26) ...
+Setting up xml-core (0.13) ...
+Selecting previously deselected package docbook-xml.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 13310 files and directories currently installed.)
+Unpacking docbook-xml (from .../docbook-xml_4.5-7_all.deb) ...
+Selecting previously deselected package python-central.
+Unpacking python-central (from .../python-central_0.6.13_all.deb) ...
+Selecting previously deselected package apt-utils.
+Unpacking apt-utils (from .../apt-utils_0.7.23.1_amd64.deb) ...
+Selecting previously deselected package lsb-release.
+Unpacking lsb-release (from .../lsb-release_3.2-23_all.deb) ...
+Selecting previously deselected package python-apt.
+Unpacking python-apt (from .../python-apt_0.7.13.3_amd64.deb) ...
+Selecting previously deselected package ucf.
+Unpacking ucf (from .../archives/ucf_3.0025_all.deb) ...
+Moving old data out of the way
+Selecting previously deselected package tex-common.
+Unpacking tex-common (from .../tex-common_1.20_all.deb) ...
+Selecting previously deselected package texlive-common.
+Unpacking texlive-common (from .../texlive-common_2007.dfsg.2-4_all.deb) ...
+Selecting previously deselected package texlive-doc-base.
+Unpacking texlive-doc-base (from .../texlive-doc-base_2007.dfsg.2-2_all.deb) ...
+Selecting previously deselected package ed.
+Unpacking ed (from .../archives/ed_1.4-1_amd64.deb) ...
+Selecting previously deselected package libkpathsea4.
+Unpacking libkpathsea4 (from .../libkpathsea4_2007.dfsg.2-8_amd64.deb) ...
+Selecting previously deselected package libpng12-0.
+Unpacking libpng12-0 (from .../libpng12-0_1.2.40-1_amd64.deb) ...
+Selecting previously deselected package libexpat1.
+Unpacking libexpat1 (from .../libexpat1_2.0.1-5_amd64.deb) ...
+Selecting previously deselected package libfreetype6.
+Unpacking libfreetype6 (from .../libfreetype6_2.3.11-1_amd64.deb) ...
+Selecting previously deselected package libslang2.
+Unpacking libslang2 (from .../libslang2_2.2.1-1_amd64.deb) ...
+Selecting previously deselected package libnewt0.52.
+Unpacking libnewt0.52 (from .../libnewt0.52_0.52.10-4.1_amd64.deb) ...
+Selecting previously deselected package libpopt0.
+Unpacking libpopt0 (from .../libpopt0_1.15-1_amd64.deb) ...
+Selecting previously deselected package whiptail.
+Unpacking whiptail (from .../whiptail_0.52.10-4.1_amd64.deb) ...
+Selecting previously deselected package defoma.
+Unpacking defoma (from .../defoma_0.11.10-3_all.deb) ...
+Selecting previously deselected package ttf-dejavu-core.
+Unpacking ttf-dejavu-core (from .../ttf-dejavu-core_2.30-1_all.deb) ...
+Selecting previously deselected package ttf-dejavu-extra.
+Unpacking ttf-dejavu-extra (from .../ttf-dejavu-extra_2.30-1_all.deb) ...
+Selecting previously deselected package ttf-dejavu.
+Unpacking ttf-dejavu (from .../ttf-dejavu_2.30-1_all.deb) ...
+Selecting previously deselected package fontconfig-config.
+Unpacking fontconfig-config (from .../fontconfig-config_2.6.0-4_all.deb) ...
+Selecting previously deselected package libfontconfig1.
+Unpacking libfontconfig1 (from .../libfontconfig1_2.6.0-4_amd64.deb) ...
+Selecting previously deselected package libjpeg62.
+Unpacking libjpeg62 (from .../libjpeg62_6b-15_amd64.deb) ...
+Selecting previously deselected package liblcms1.
+Unpacking liblcms1 (from .../liblcms1_1.18.dfsg-1_amd64.deb) ...
+Selecting previously deselected package libopenjpeg2.
+Unpacking libopenjpeg2 (from .../libopenjpeg2_1.3+dfsg-4_amd64.deb) ...
+Selecting previously deselected package libpoppler5.
+Unpacking libpoppler5 (from .../libpoppler5_0.12.2-2_amd64.deb) ...
+Selecting previously deselected package libxau6.
+Unpacking libxau6 (from .../libxau6_1%3a1.0.5-1_amd64.deb) ...
+Selecting previously deselected package libxdmcp6.
+Unpacking libxdmcp6 (from .../libxdmcp6_1%3a1.0.3-1_amd64.deb) ...
+Selecting previously deselected package libxcb1.
+Unpacking libxcb1 (from .../libxcb1_1.4-1_amd64.deb) ...
+Selecting previously deselected package libx11-data.
+Unpacking libx11-data (from .../libx11-data_2%3a1.3.2-1_all.deb) ...
+Selecting previously deselected package libx11-6.
+Unpacking libx11-6 (from .../libx11-6_2%3a1.3.2-1_amd64.deb) ...
+Selecting previously deselected package x11-common.
+Unpacking x11-common (from .../x11-common_1%3a7.4+4_all.deb) ...
+Selecting previously deselected package libxext6.
+Unpacking libxext6 (from .../libxext6_2%3a1.0.4-1_amd64.deb) ...
+Selecting previously deselected package libice6.
+Unpacking libice6 (from .../libice6_2%3a1.0.6-1_amd64.deb) ...
+Selecting previously deselected package libsm6.
+Unpacking libsm6 (from .../libsm6_2%3a1.1.1-1_amd64.deb) ...
+Selecting previously deselected package libxt6.
+Unpacking libxt6 (from .../libxt6_1%3a1.0.7-1_amd64.deb) ...
+Selecting previously deselected package libxmu6.
+Unpacking libxmu6 (from .../libxmu6_2%3a1.0.5-1_amd64.deb) ...
+Selecting previously deselected package libxpm4.
+Unpacking libxpm4 (from .../libxpm4_1%3a3.5.8-1_amd64.deb) ...
+Selecting previously deselected package libxaw7.
+Unpacking libxaw7 (from .../libxaw7_2%3a1.0.7-1_amd64.deb) ...
+Selecting previously deselected package texlive-base-bin.
+Unpacking texlive-base-bin (from .../texlive-base-bin_2007.dfsg.2-8_amd64.deb) ...
+Selecting previously deselected package texlive-base.
+Unpacking texlive-base (from .../texlive-base_2007.dfsg.2-4_all.deb) ...
+Selecting previously deselected package texlive-fonts-recommended.
+Unpacking texlive-fonts-recommended (from .../texlive-fonts-recommended_2007.dfsg.2-4_all.deb) ...
+Selecting previously deselected package texlive-latex-base.
+Unpacking texlive-latex-base (from .../texlive-latex-base_2007.dfsg.2-4_all.deb) ...
+Selecting previously deselected package texlive-latex-recommended.
+Unpacking texlive-latex-recommended (from .../texlive-latex-recommended_2007.dfsg.2-4_all.deb) ...
+Selecting previously deselected package texlive.
+Unpacking texlive (from .../texlive_2007.dfsg.2-4_all.deb) ...
+Selecting previously deselected package texlive-bibtex-extra.
+Unpacking texlive-bibtex-extra (from .../texlive-bibtex-extra_2007.dfsg.17-2_all.deb) ...
+Selecting previously deselected package preview-latex-style.
+Unpacking preview-latex-style (from .../preview-latex-style_11.85-1_all.deb) ...
+Selecting previously deselected package texlive-pictures.
+Unpacking texlive-pictures (from .../texlive-pictures_2007.dfsg.2-4_all.deb) ...
+Selecting previously deselected package texlive-latex-extra.
+Unpacking texlive-latex-extra (from .../texlive-latex-extra_2007.dfsg.17-2_all.deb) ...
+Selecting previously deselected package texlive-math-extra.
+Unpacking texlive-math-extra (from .../texlive-math-extra_2007.dfsg.17-2_all.deb) ...
+Selecting previously deselected package texlive-extra-utils.
+Unpacking texlive-extra-utils (from .../texlive-extra-utils_2007.dfsg.2-8_amd64.deb) ...
+Selecting previously deselected package dblatex.
+Unpacking dblatex (from .../dblatex_0.2.12-2_all.deb) ...
 Selecting previously deselected package libsgmls-perl.
 Unpacking libsgmls-perl (from .../libsgmls-perl_1.03ii-32_all.deb) ...
 Selecting previously deselected package libsp1c2.
@@ -163,12 +398,12 @@ Unpacking libsp1c2 (from .../libsp1c2_1.3.4-1.2.1-47_amd64.deb) ...
 Selecting previously deselected package sp.
 Unpacking sp (from .../sp_1.3.4-1.2.1-47_amd64.deb) ...
 Selecting previously deselected package po4a.
-Unpacking po4a (from .../archives/po4a_0.36.6-1_all.deb) ...
+Unpacking po4a (from .../archives/po4a_0.37.1-1_all.deb) ...
 Setting up libmagic1 (5.03-3) ...
 Setting up file (5.03-3) ...
 Setting up html2text (1.3.2a-14) ...
 Setting up libpcre3 (7.8-3) ...
-Setting up libglib2.0-0 (2.22.2-2) ...
+Setting up libglib2.0-0 (2.22.3-1) ...
 Setting up libxml2 (2.7.6.dfsg-1) ...
 Setting up libcroco3 (0.6.2-1) ...
 Setting up gettext-base (0.17-8) ...
@@ -176,18 +411,152 @@ Setting up gettext (0.17-8) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
 Setting up po-debconf (1.0.16) ...
 Setting up groff-base (1.20.1-6) ...
-Setting up bsdmainutils (8.0.1) ...
+Setting up bsdmainutils (8.0.2) ...
 update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode.
 Setting up man-db (2.5.6-4) ...
 Building database of manual pages ...
 Setting up debhelper (7.4.3) ...
-Setting up libdshconfig1 (0.20.13-1) ...
-Setting up libdshconfig1-dev (0.20.13-1) ...
+Setting up docbook-xsl (1.75.2+dfsg-3) ...
+Setting up ldp-docbook-xsl (0.0.20040321-2) ...
+Setting up libgpg-error0 (1.6-1) ...
+Setting up libgcrypt11 (1.4.4-6) ...
+Setting up libxslt1.1 (1.1.26-1) ...
+Setting up xsltproc (1.1.26-1) ...
+Setting up python2.5-minimal (2.5.4-3) ...
+Setting up mime-support (3.47-1) ...
+update-alternatives: using /usr/bin/see to provide /usr/bin/view (view) in auto mode.
+Setting up libdb4.5 (4.5.20-13.1) ...
+Setting up libsqlite3-0 (3.6.20-1) ...
+Setting up python2.5 (2.5.4-3) ...
+Setting up python-minimal (2.5.4-2) ...
+Setting up python (2.5.4-2) ...
+Setting up python-support (1.0.4) ...
+Setting up sgml-data (2.0.3) ...
+Setting up docbook-xml (4.5-7) ...
+Setting up python-central (0.6.13) ...
+Setting up apt-utils (0.7.23.1) ...
+Setting up lsb-release (3.2-23) ...
+Setting up python-apt (0.7.13.3) ...
+Setting up ucf (3.0025) ...
+Setting up tex-common (1.20) ...
+
+Creating config file /etc/texmf/texmf.d/05TeXMF.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/15Plain.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/45TeXinputs.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/55Fonts.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/65BibTeX.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/75DviPS.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/85Misc.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/90TeXDoc.cnf with new version
+
+Creating config file /etc/texmf/texmf.d/95NonPath.cnf with new version
+
+Creating config file /etc/texmf/updmap.d/00updmap.cfg with new version
+
+Creating config file /etc/texmf/texmf.cnf with new version
+Running mktexlsr. This may take some time... done.
+Running updmap-sys. This may take some time... done.
+Building format(s) --all.
+	This may take some time... done.
+Setting up texlive-common (2007.dfsg.2-4) ...
+Setting up texlive-doc-base (2007.dfsg.2-2) ...
+Running mktexlsr. This may take some time... done.
+Setting up ed (1.4-1) ...
+Setting up libkpathsea4 (2007.dfsg.2-8) ...
+Setting up libpng12-0 (1.2.40-1) ...
+Setting up libexpat1 (2.0.1-5) ...
+Setting up libfreetype6 (2.3.11-1) ...
+Setting up libslang2 (2.2.1-1) ...
+Setting up libnewt0.52 (0.52.10-4.1) ...
+Setting up libpopt0 (1.15-1) ...
+Setting up whiptail (0.52.10-4.1) ...
+Setting up defoma (0.11.10-3) ...
+Setting up ttf-dejavu-core (2.30-1) ...
+Setting up ttf-dejavu-extra (2.30-1) ...
+Setting up ttf-dejavu (2.30-1) ...
+Setting up fontconfig-config (2.6.0-4) ...
+Setting up libfontconfig1 (2.6.0-4) ...
+Setting up libjpeg62 (6b-15) ...
+Setting up liblcms1 (1.18.dfsg-1) ...
+Setting up libopenjpeg2 (1.3+dfsg-4) ...
+Setting up libpoppler5 (0.12.2-2) ...
+Setting up libxau6 (1:1.0.5-1) ...
+Setting up libxdmcp6 (1:1.0.3-1) ...
+Setting up libxcb1 (1.4-1) ...
+Setting up libx11-data (2:1.3.2-1) ...
+Setting up libx11-6 (2:1.3.2-1) ...
+Setting up x11-common (1:7.4+4) ...
+************************************
+All rc.d operations denied by policy
+************************************
+Setting up libxext6 (2:1.0.4-1) ...
+Setting up libice6 (2:1.0.6-1) ...
+Setting up libsm6 (2:1.1.1-1) ...
+Setting up libxt6 (1:1.0.7-1) ...
+Setting up libxmu6 (2:1.0.5-1) ...
+Setting up libxpm4 (1:3.5.8-1) ...
+Setting up libxaw7 (2:1.0.7-1) ...
+Setting up texlive-base-bin (2007.dfsg.2-8) ...
+Running mktexlsr. This may take some time... done.
+Building format(s) --all.
+	This may take some time... done.
+update-alternatives: using /usr/bin/xdvi-xaw.bin to provide /usr/bin/xdvi.bin (xdvi.bin) in auto mode.
+Setting up texlive-base (2007.dfsg.2-4) ...
+Running mktexlsr. This may take some time... done.
+Building format(s) --all.
+	This may take some time... done.
+Setting up preview-latex-style (11.85-1) ...
+mktexlsr: Updating /usr/local/share/texmf/ls-R... 
+mktexlsr: Updating /var/lib/texmf/ls-R-TEXMFMAIN... 
+mktexlsr: Updating /var/lib/texmf/ls-R-TEXLIVE... 
+mktexlsr: Updating /var/lib/texmf/ls-R... 
+mktexlsr: Done.
 Setting up libsgmls-perl (1.03ii-32) ...
 Setting up libsp1c2 (1.3.4-1.2.1-47) ...
 Setting up sp (1.3.4-1.2.1-47) ...
-Setting up po4a (0.36.6-1) ...
+Setting up po4a (0.37.1-1) ...
+Processing triggers for tex-common ...
+Running mktexlsr. This may take some time... done.
+Running updmap-sys. This may take some time... done.
+Setting up texlive-latex-base (2007.dfsg.2-4) ...
+Running mktexlsr. This may take some time... done.
+Building format(s) --all --cnffile /etc/texmf/fmt.d/10texlive-latex-base.cnf.
+	This may take some time... done.
+Setting up texlive-pictures (2007.dfsg.2-4) ...
+Running mktexlsr. This may take some time... done.
+Setting up texlive-extra-utils (2007.dfsg.2-8) ...
+Running mktexlsr. This may take some time... done.
+Setting up texlive-fonts-recommended (2007.dfsg.2-4) ...
+Running mktexlsr. This may take some time... done.
+Processing triggers for tex-common ...
+Running mktexlsr. This may take some time... done.
+Running updmap-sys. This may take some time... done.
+Setting up texlive-bibtex-extra (2007.dfsg.17-2) ...
+Running mktexlsr. This may take some time... done.
+Setting up texlive-latex-extra (2007.dfsg.17-2) ...
+Running mktexlsr. This may take some time... done.
+Setting up texlive-math-extra (2007.dfsg.17-2) ...
+Running mktexlsr. This may take some time... done.
+Building format(s) --all --cnffile /etc/texmf/fmt.d/10texlive-math-extra.cnf.
+	This may take some time... done.
+Setting up texlive-latex-recommended (2007.dfsg.2-4) ...
+Running mktexlsr. This may take some time... done.
+Setting up texlive (2007.dfsg.2-4) ...
+Processing triggers for tex-common ...
+Running mktexlsr. This may take some time... done.
+Running updmap-sys. This may take some time... done.
+Setting up dblatex (0.2.12-2) ...
+mktexlsr: Updating /var/lib/texmf/ls-R-TEXMFMAIN... 
+mktexlsr: Done.
 Setting up pbuilder-satisfydepends-dummy (0.invalid.0) ...
+Processing triggers for python-support ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -201,509 +570,55 @@ Reading state information...
 fakeroot is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 W: no hooks of type A found -- ignoring
-dpkg-buildpackage: set CFLAGS to default value: -g -O2
-dpkg-buildpackage: set CPPFLAGS to default value: 
-dpkg-buildpackage: set LDFLAGS to default value: 
-dpkg-buildpackage: set FFLAGS to default value: -g -O2
-dpkg-buildpackage: set CXXFLAGS to default value: -g -O2
-dpkg-buildpackage: source package dsh
-dpkg-buildpackage: source version 0.25.10-1
-dpkg-buildpackage: source changed by Junichi Uekawa <dancer@debian.org>
-dpkg-buildpackage: host architecture amd64
- fakeroot debian/rules clean
-dh_testdir
-dh_testroot
-rm -f build-stamp configure-stamp
-/usr/bin/make clean
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-make[1]: *** No rule to make target `clean'.  Stop.
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-make: [clean] Error 2 (ignored)
-/usr/bin/make distclean
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-make[1]: *** No rule to make target `distclean'.  Stop.
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-make: [clean] Error 2 (ignored)
-dh_clean
- dpkg-source -b dsh-0.25.10
-dpkg-source: info: using source format `1.0'
-dpkg-source: info: building dsh using existing dsh_0.25.10.orig.tar.gz
-dpkg-source: info: building dsh in dsh_0.25.10-1.diff.gz
-dpkg-source: warning: file dsh-0.25.10/dcp.sh has no final newline (either original or modified version)
-dpkg-source: warning: file dsh-0.25.10/debian/compat has no final newline (either original or modified version)
-dpkg-source: warning: the diff modifies the following upstream files: 
- .cvsignore
- CVS/Entries
- CVS/Repository
- CVS/Root
- ChangeLog.OLD
- dcp.sh
- drshd.c
- dsh.1.ja.po
- m4/.cvsignore
- m4/CVS/Entries
- m4/CVS/Repository
- m4/CVS/Root
- po/.cvsignore
- po/CVS/Entries
- po/CVS/Repository
- po/CVS/Root
- po/insert-header.sin
- tests/.cvsignore
- tests/CVS/Entries
- tests/CVS/Repository
- tests/CVS/Root
-dpkg-source: info: use the '3.0 (quilt)' format to have separate and documented changes to upstream files, see dpkg-source(1)
-dpkg-source: info: building dsh in dsh_0.25.10-1.dsc
- debian/rules build
-dh_testdir
-INSTALL_PROGRAM='install -p    -o root -g root  -m  755 -s' CFLAGS='-Wall -g -O2' \
-	 ./configure --prefix=/usr --sysconfdir=/etc/dsh --mandir=/usr/share/man
-checking for a BSD-compatible install... /usr/bin/install -c
-checking whether build environment is sane... yes
-checking for gawk... no
-checking for mawk... mawk
-checking whether make sets $(MAKE)... yes
-checking whether to enable maintainer-specific portions of Makefiles... no
-checking for style of include used by make... GNU
-checking for gcc... gcc
-checking for C compiler default output file name... a.out
-checking whether the C compiler works... yes
-checking whether we are cross compiling... no
-checking for suffix of executables... 
-checking for suffix of object files... o
-checking whether we are using the GNU C compiler... yes
-checking whether gcc accepts -g... yes
-checking for gcc option to accept ISO C89... none needed
-checking dependency style of gcc... gcc3
-checking for strerror in -lcposix... no
-checking for gcc... (cached) gcc
-checking whether we are using the GNU C compiler... (cached) yes
-checking whether gcc accepts -g... (cached) yes
-checking for gcc option to accept ISO C89... (cached) none needed
-checking dependency style of gcc... (cached) gcc3
-checking for gcc... (cached) gcc
-checking whether we are using the GNU C compiler... (cached) yes
-checking whether gcc accepts -g... (cached) yes
-checking for gcc option to accept ISO C89... (cached) none needed
-checking dependency style of gcc... (cached) gcc3
-checking whether make sets $(MAKE)... (cached) yes
-checking how to run the C preprocessor... gcc -E
-checking for grep that handles long lines and -e... /bin/grep
-checking for egrep... /bin/grep -E
-checking for ANSI C header files... yes
-checking for sys/wait.h that is POSIX.1 compatible... yes
-checking build system type... x86_64-unknown-linux-gnu
-checking host system type... x86_64-unknown-linux-gnu
-checking for a sed that does not truncate output... /bin/sed
-checking for ld used by gcc... /usr/bin/ld
-checking if the linker (/usr/bin/ld) is GNU ld... yes
-checking for /usr/bin/ld option to reload object files... -r
-checking for BSD-compatible nm... /usr/bin/nm -B
-checking whether ln -s works... yes
-checking how to recognize dependent libraries... pass_all
-checking for sys/types.h... yes
-checking for sys/stat.h... yes
-checking for stdlib.h... yes
-checking for string.h... yes
-checking for memory.h... yes
-checking for strings.h... yes
-checking for inttypes.h... yes
-checking for stdint.h... yes
-checking for unistd.h... yes
-checking dlfcn.h usability... yes
-checking dlfcn.h presence... yes
-checking for dlfcn.h... yes
-checking for g++... g++
-checking whether we are using the GNU C++ compiler... yes
-checking whether g++ accepts -g... yes
-checking dependency style of g++... gcc3
-checking how to run the C++ preprocessor... g++ -E
-checking for g77... no
-checking for xlf... no
-checking for f77... no
-checking for frt... no
-checking for pgf77... no
-checking for cf77... no
-checking for fort77... no
-checking for fl32... no
-checking for af77... no
-checking for xlf90... no
-checking for f90... no
-checking for pgf90... no
-checking for pghpf... no
-checking for epcf90... no
-checking for gfortran... no
-checking for g95... no
-checking for xlf95... no
-checking for f95... no
-checking for fort... no
-checking for ifort... no
-checking for ifc... no
-checking for efc... no
-checking for pgf95... no
-checking for lf95... no
-checking for ftn... no
-checking whether we are using the GNU Fortran 77 compiler... no
-checking whether  accepts -g... no
-checking the maximum length of command line arguments... 3458764513820540925
-checking command to parse /usr/bin/nm -B output from gcc object... ok
-checking for objdir... .libs
-checking for ar... ar
-checking for ranlib... ranlib
-checking for strip... strip
-checking if gcc supports -fno-rtti -fno-exceptions... no
-checking for gcc option to produce PIC... -fPIC
-checking if gcc PIC flag -fPIC works... yes
-checking if gcc static flag -static works... yes
-checking if gcc supports -c -o file.o... yes
-checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
-checking whether -lc should be explicitly linked in... no
-checking dynamic linker characteristics... GNU/Linux ld.so
-checking how to hardcode library paths into programs... immediate
-checking whether stripping libraries is possible... yes
-checking if libtool supports shared libraries... yes
-checking whether to build shared libraries... yes
-checking whether to build static libraries... yes
-configure: creating libtool
-appending configuration tag "CXX" to libtool
-checking for ld used by g++... /usr/bin/ld -m elf_x86_64
-checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
-checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
-checking for g++ option to produce PIC... -fPIC
-checking if g++ PIC flag -fPIC works... yes
-checking if g++ static flag -static works... yes
-checking if g++ supports -c -o file.o... yes
-checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
-checking dynamic linker characteristics... GNU/Linux ld.so
-checking how to hardcode library paths into programs... immediate
-appending configuration tag "F77" to libtool
-checking for an ANSI C-conforming const... yes
-checking for msgfmt... /usr/bin/msgfmt
-checking for gmsgfmt... /usr/bin/msgfmt
-checking for xgettext... /usr/bin/xgettext
-checking for msgmerge... /usr/bin/msgmerge
-checking for ld used by GCC... /usr/bin/ld -m elf_x86_64
-checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
-checking for shared library run path origin... done
-checking whether NLS is requested... yes
-checking for GNU gettext in libc... yes
-checking for gettext... yes
-checking getopt.h usability... yes
-checking getopt.h presence... yes
-checking for getopt.h... yes
-checking fcntl.h usability... yes
-checking fcntl.h presence... yes
-checking for fcntl.h... yes
-checking libintl.h usability... yes
-checking libintl.h presence... yes
-checking for libintl.h... yes
-checking locale.h usability... yes
-checking locale.h presence... yes
-checking for locale.h... yes
-checking for stdlib.h... (cached) yes
-checking netdb.h usability... yes
-checking netdb.h presence... yes
-checking for netdb.h... yes
-checking for string.h... (cached) yes
-checking for unistd.h... (cached) yes
-checking netgroup.h usability... no
-checking netgroup.h presence... no
-checking for netgroup.h... no
-checking signal.h usability... yes
-checking signal.h presence... yes
-checking for signal.h... yes
-checking for libdshconfig.h ... yes
-checking for asprintf... yes
-checking for strdup... yes
-checking for getopt_long... yes
-checking for getline... yes
-checking for dup2... yes
-checking for setlocale... yes
-checking for strcasecmp... yes
-checking for strchr... yes
-checking for setnetgrent... yes
-checking for getnetgrent... yes
-checking for endnetgrent... yes
-checking for open_dshconfig in -ldshconfig... yes
-checking netdb.h has setnetgrent that returns void... no
-checking getopt with a GNU option reordering extention... yes, disabling
-configure: creating ./config.status
-config.status: creating po/Makefile.in
-config.status: WARNING:  po/Makefile.in.in seems to ignore the --datarootdir setting
-config.status: creating m4/Makefile
-config.status: creating Makefile
-config.status: creating config.h
-config.status: executing depfiles commands
-config.status: executing default-1 commands
-config.status: creating po/POTFILES
-config.status: creating po/Makefile
-touch configure-stamp
-dh_testdir
-/usr/bin/make
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-/usr/bin/make  all-recursive
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-Making all in m4
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/m4'
-make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/m4'
-Making all in po
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/po'
-make[3]: Nothing to be done for `all'.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/po'
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-dsh.o -MD -MP -MF ".deps/dsh-dsh.Tpo" -c -o dsh-dsh.o `test -f 'dsh.c' || echo './'`dsh.c; \
-	then mv -f ".deps/dsh-dsh.Tpo" ".deps/dsh-dsh.Po"; else rm -f ".deps/dsh-dsh.Tpo"; exit 1; fi
-if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-linkedlist.o -MD -MP -MF ".deps/dsh-linkedlist.Tpo" -c -o dsh-linkedlist.o `test -f 'linkedlist.c' || echo './'`linkedlist.c; \
-	then mv -f ".deps/dsh-linkedlist.Tpo" ".deps/dsh-linkedlist.Po"; else rm -f ".deps/dsh-linkedlist.Tpo"; exit 1; fi
-if gcc -DHAVE_CONFIG_H -I. -I. -I.    -DDSHCONFDIR="\"/etc/dsh\"" -DDSH_COMMANDLINE="\"/usr/bin/dsh\"" -DLOCALEDIR="\"/usr/share/locale\"" -Wall -g -O2 -MT dsh-parameter.o -MD -MP -MF ".deps/dsh-parameter.Tpo" -c -o dsh-parameter.o `test -f 'parameter.c' || echo './'`parameter.c; \
-	then mv -f ".deps/dsh-parameter.Tpo" ".deps/dsh-parameter.Po"; else rm -f ".deps/dsh-parameter.Tpo"; exit 1; fi
-/bin/bash ./libtool --tag=CC --mode=link gcc  -Wall -g -O2   -o dsh  dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  -ldshconfig 
-mkdir .libs
-gcc -Wall -g -O2 -o dsh dsh-dsh.o dsh-linkedlist.o dsh-parameter.o  /usr/lib/libdshconfig.so  
-mkdir build-man
-sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.1 > build-man/dsh.1
-sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.5 > build-man/dsh.conf.5
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-/usr/bin/make check
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-Making check in m4
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/m4'
-make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/m4'
-Making check in po
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/po'
-make[2]: Nothing to be done for `check'.
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/po'
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-/usr/bin/make  dsh
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-make[3]: `dsh' is up to date.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-/usr/bin/make  check-TESTS
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-PASS: tests/param-f.sh
-dsh: File ./tests/nonexistent.file could not be opened for read
-PASS: tests/param-f-fail.sh
-PASS: tests/param-f-with-space.sh
-PASS: tests/param-m.sh
-test to check that unknown parameter checking is right.
-./dsh: unrecognized option '--unknown-parameter'
-./dsh: invalid option -- 'u'
-PASS: tests/param-unknown.sh
-test1
-test2
-dsh: Process terminated (before write).
-PASS: tests/param-i.sh
-Check that cn4 option is working.
-PASS: tests/param-cn4.sh
-test to check that -b0 is rejected, and -b1 is accepted
-Buffer size needs to be greater than 1
-Buffer size needs to be greater than 1
-a
-b
-PASS: tests/param-b-0.sh
-dsh: Failed executing ./invalid-exec-file with llexec call
-dsh: Failed executing ./invalid-exec-file with llexec call
-dsh: Failed executing ./invalid-exec-file with llexec call
-dsh: Failed executing ./invalid-exec-file with llexec call
-success
-dsh: Failed executing ./invalid-exec-file with llexec call
-dsh: Failed executing ./invalid-exec-file with llexec call
-dsh: Failed executing ./invalid-exec-file with llexec call
-dsh: Failed executing ./invalid-exec-file with llexec call
-success
-success
-success
-success
-success
-a: dsh: Failed executing ./invalid-exec-file with llexec call
-b: dsh: Failed executing ./invalid-exec-file with llexec call
-c: dsh: Failed executing ./invalid-exec-file with llexec call
-d: dsh: Failed executing ./invalid-exec-file with llexec call
-success
-dsh: Failed executing ./invalid-exec-file with llexec call
-dsh: Failed executing ./invalid-exec-file with llexec call
-dsh: Failed executing ./invalid-exec-file with llexec call
-dsh: Failed executing ./invalid-exec-file with llexec call
-success
-PASS: tests/param-r-invalid.sh
-1: 1
-2: 2
-dsh: fork limit and wait shell cannot be specified at the same time
-PASS: tests/param-F-invalid.sh
-Sun Nov 29 10:35:40 UTC 2009
-2: Using sleep as the remote shell
-2: Show machine names on output
-2: Adding machine 5,4,3,2,1 to list
-2: Setting forklimit to 3 and wait_shell to 0
-2: DUMPing parameters passed to llexec
-2: [2] 
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-DUMPing parameters passed to llexec
-[2] 
-3: Using sleep as the remote shell
-3: Show machine names on output
-3: Adding machine 5,4,3,2,1 to list
-3: Setting forklimit to 3 and wait_shell to 0
-3: DUMPing parameters passed to llexec
-3: [3] 
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-DUMPing parameters passed to llexec
-[3] 
-1: Using sleep as the remote shell
-1: Show machine names on output
-1: Adding machine 5,4,3,2,1 to list
-1: Setting forklimit to 3 and wait_shell to 0
-1: ... Waiting for process to end with waitpid
-1: DUMPing parameters passed to llexec
-1: [1] 
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-... Waiting for process to end with waitpid
-DUMPing parameters passed to llexec
-[1] 
-4: Using sleep as the remote shell
-4: Show machine names on output
-4: Adding machine 5,4,3,2,1 to list
-4: Setting forklimit to 3 and wait_shell to 0
-4: DUMPing parameters passed to llexec
-4: [4] 
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-DUMPing parameters passed to llexec
-[4] 
-5: Using sleep as the remote shell
-5: Show machine names on output
-5: Adding machine 5,4,3,2,1 to list
-5: Setting forklimit to 3 and wait_shell to 0
-5: DUMPing parameters passed to llexec
-5: [5] 
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-DUMPing parameters passed to llexec
-[5] 
---- Terminated running
-Using sleep as the remote shell
-Show machine names on output
-Adding machine 5,4,3,2,1 to list
-Setting forklimit to 3 and wait_shell to 0
-... Waiting for process to end with waitpid
-... Waiting for process to end with waitpid
-Sun Nov 29 10:35:45 UTC 2009
-PASS: tests/param-F-forklimit.sh
-PASS: tests/param-gnu-getopt.sh
-PASS: tests/news-okay.sh
-c: c
-a: a
-b: b
-PASS: tests/segv-catcher.sh
-l w
-PASS: tests/test-bufferoverflow.sh
-PASS: tests/machinelist-comment-test.sh
-PASS: tests/machinelist-order.sh
-===================
-All 17 tests passed
-===================
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-touch build-stamp
- fakeroot debian/rules binary
-dh_testdir
-dh_testroot
-dh_clean -k
-dh_installdirs
-# Add here commands to install the package into debian/dsh.
-/usr/bin/make install DESTDIR=/TESTDIR/dir2/dsh-0.25.10/debian/dsh
-make[1]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-Making install in m4
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/m4'
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/m4'
-make[3]: Nothing to be done for `install-exec-am'.
-make[3]: Nothing to be done for `install-data-am'.
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/m4'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/m4'
-Making install in po
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10/po'
-/bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share
-mkdir -p -- /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share
-mkdir -p -- /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/locale/ja/LC_MESSAGES
-installing ja.gmo as /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/locale/ja/LC_MESSAGES/dsh.mo
-if test "dsh" = "gettext"; then \
-	  /bin/sh `case "./mkinstalldirs" in /*) echo "./mkinstalldirs" ;; *) echo ".././mkinstalldirs" ;; esac` /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/gettext/po; \
-	  for file in Makefile.in.in Makevars remove-potcdate.sin   ; do \
-	    /usr/bin/install -c -m 644 ./$file \
-			    /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/gettext/po/$file; \
-	  done; \
-	else \
-	  : ; \
-	fi
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10/po'
-make[2]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-make[3]: Entering directory `/TESTDIR/dir2/dsh-0.25.10'
-test -z "/usr/bin" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/bin"
-  /bin/bash ./libtool --mode=install install -p    -o root -g root  -m  755 -s 'dsh' '/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/bin/dsh'
-install -p -o root -g root -m 755 -s dsh /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/bin/dsh
-test -z "/etc/dsh" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.10/debian/dsh/etc/dsh"
- /usr/bin/install -c -m 644 'dsh.conf' '/TESTDIR/dir2/dsh-0.25.10/debian/dsh/etc/dsh/dsh.conf'
-for LANGS in ja ; do \
-		mkdir -p /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/$LANGS/man1 ;\
-		mkdir -p /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/$LANGS/man5 ;\
-		sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.$LANGS.1 \
-			> /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/$LANGS/man1/dsh.1 ; \
-		sed -e 's,[@]sysconfdir[@],/etc/dsh,' < ./dsh.conf.$LANGS.5 \
-			> /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/$LANGS/man5/dsh.conf.5 ; \
-	done
-test -z "/usr/share/man/man1" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/man1"
- /usr/bin/install -c -m 644 './build-man/dsh.1' '/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/man1/dsh.1'
-test -z "/usr/share/man/man5" || mkdir -p -- "/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/man5"
- /usr/bin/install -c -m 644 './build-man/dsh.conf.5' '/TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/share/man/man5/dsh.conf.5'
-make[3]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-make[2]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-make[1]: Leaving directory `/TESTDIR/dir2/dsh-0.25.10'
-cp /TESTDIR/dir2/dsh-0.25.10/debian/machines.list /TESTDIR/dir2/dsh-0.25.10/debian/dsh/etc/dsh/machines.list
-cp /TESTDIR/dir2/dsh-0.25.10/dsh.conf /TESTDIR/dir2/dsh-0.25.10/debian/dsh/etc/dsh/dsh.conf
-ln -s ../machines.list /TESTDIR/dir2/dsh-0.25.10/debian/dsh/etc/dsh/group/all
-install -d /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/lib/update-cluster
-install -m 755 /TESTDIR/dir2/dsh-0.25.10/debian/dsh.updatelist /TESTDIR/dir2/dsh-0.25.10/debian/dsh/usr/lib/update-cluster/
-dh_testdir
-dh_testroot
-dh_installdocs NEWS
-dh_installexamples
-dh_installmenu
-dh_installman
-dh_installchangelogs ChangeLog 
-dh_link
-dh_strip
-dh_shlibdeps
-dh_compress
-dh_fixperms
-dh_installdeb
-dh_gencontrol
-dh_md5sums
-dh_builddeb
-dpkg-deb: building package `dsh' in `../dsh_0.25.10-1_amd64.deb'.
- dpkg-genchanges  >../dsh_0.25.10-1_amd64.changes
-dpkg-genchanges: including full source code in upload
-dpkg-buildpackage: full upload (original source is included)
-W: no hooks of type B found -- ignoring
-I: unmounting /TESTDIR/dir2 filesystem
+I: Running /usr/bin/dpkg-buildpackage -rfakeroot -us -uc '${DEBBUILDOPTS}'
+dpkg-buildpackage: unknown option or argument ${DEBBUILDOPTS}
+
+
+Usage: dpkg-buildpackage [<options> ...]
+
+Options:
+  -r<gain-root-command>
+                 command to gain root privileges (default is fakeroot).
+  -R<rules>      rules file to execute (default is debian/rules).
+  -p<sign-command>
+  -d             do not check build dependencies and conflicts.
+  -D             check build dependencies and conflicts.
+  -T<target>     call debian/rules <target> with the proper environment
+  --as-root      ensure -T calls the target with root rights
+  -j[<number>]   specify jobs to run simultaneously } passed to debian/rules
+  -k<keyid>      the key to use for signing.
+  -sgpg          the sign-command is called like GPG.
+  -spgp          the sign-command is called like PGP.
+  -us            unsigned source.
+  -uc            unsigned changes.
+  -a<arch>       Debian architecture we build for (implies -d).
+  -b             binary-only, do not build source.   } also passed to
+  -B             binary-only, no arch-indep files.   } dpkg-genchanges
+  -A             binary-only, only arch-indep files. }
+  -S             source only, no binary files.     }
+  -t<system>     set GNU system type.           } passed to dpkg-architecture
+  -v<version>    changes since version <version>.      }
+  -m<maint>      maintainer for package is <maint>.    }
+  -e<maint>      maintainer for release is <maint>.    } only passed
+  -C<descfile>   changes are described in <descfile>.  } to dpkg-genchanges
+  -si (default)  src includes orig if new upstream.    }
+  -sa            uploaded src always includes orig.    }
+  -sd            uploaded src is diff and .dsc only.   }
+  -sn            force Debian native source format.      }
+  -s[sAkurKUR]   see dpkg-source for explanation.        } only passed
+  -z<level>      compression level of source             } to dpkg-source
+  -Z<compressor> compression to use for source           }
+  -nc            do not clean source tree (implies -b).
+  -tc            clean source tree when finished.
+  -ap            add pause before starting signature process.
+  -i[<regex>]    ignore diffs of files matching regex.    } only passed
+  -I[<pattern>]  filter out files when building tarballs. } to dpkg-source
+  --admindir=<directory>
+                 change the administrative directory.
+  -h, --help     show this help message.
+      --version  show the version.
+W: no hooks of type C found -- ignoring
+I: unmounting /home/dancer/DEBIAN/pbuilder filesystem
 I: unmounting dev/pts filesystem
 I: unmounting proc filesystem
 I: cleaning the build env 

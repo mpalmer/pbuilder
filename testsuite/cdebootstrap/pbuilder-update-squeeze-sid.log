@@ -13,378 +13,162 @@ Get:1 http://localhost sid Release.gpg [835B]
 Get:2 http://localhost sid Release [104kB]
 Ign http://localhost sid/main Packages
 Ign http://localhost sid/main Packages
-Get:3 http://localhost sid/main Packages [8278kB]
+Get:3 http://localhost sid/main Packages [8343kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 The following NEW packages will be installed:
-  libapr1 libaprutil1 libboost-iostreams1.40.0 libdb4.8 libexpat1 liblog4cxx10
-  liblzma1 libsqlite3-0
+  cpp-4.4 g++-4.4 gcc-4.4 libapr1 libaprutil1 libboost-iostreams1.40.0
+  libdb4.8 libexpat1 liblog4cxx10 liblzma1 libsqlite3-0 libstdc++6-4.4-dev
 The following packages will be upgraded:
-  apt aptitude bash coreutils cpp dpkg dpkg-dev g++ gcc libacl1 libc-bin
-  libc-dev-bin libc6 libc6-dev libcwidget3 libgdbm3 liblzma0 libselinux1
-  libxapian15 linux-libc-dev sensible-utils xz-utils
-22 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
-Need to get 26.3MB of archives.
-After this operation, 6443kB of additional disk space will be used.
+  apt aptitude bash coreutils cpp dpkg dpkg-dev g++ gcc gcc-4.4-base libgcc1
+  libgomp1 libmpfr1ldbl libstdc++6 linux-libc-dev sed xz-utils
+17 upgraded, 12 newly installed, 0 to remove and 0 not upgraded.
+Need to get 32.0MB of archives.
+After this operation, 43.7MB of additional disk space will be used.
 Get:1 http://localhost sid/main bash 4.0-7 [1150kB]
 Get:2 http://localhost sid/main coreutils 8.0-2 [4490kB]
-Get:3 http://localhost sid/main dpkg 1.15.5.3 [2223kB]
-Get:4 http://localhost sid/main libc-dev-bin 2.10.2-2 [201kB]
-Get:5 http://localhost sid/main libc6-dev 2.10.2-2 [2546kB]
-Get:6 http://localhost sid/main libc-bin 2.10.2-2 [728kB]
-Get:7 http://localhost sid/main libc6 2.10.2-2 [4242kB]
-Get:8 http://localhost sid/main linux-libc-dev 2.6.32~rc8-1~experimental.1 [848kB]
+Get:3 http://localhost sid/main dpkg 1.15.5.4 [2226kB]
+Get:4 http://localhost sid/main sed 4.2.1-6 [251kB]
+Get:5 http://localhost sid/main libgomp1 4.4.2-4 [25.3kB]
+Get:6 http://localhost sid/main gcc-4.4-base 4.4.2-4 [114kB]
+Get:7 http://localhost sid/main libgcc1 1:4.4.2-4 [44.8kB]
+Get:8 http://localhost sid/main libstdc++6 4.4.2-4 [342kB]
 Get:9 http://localhost sid/main apt 0.7.24 [1684kB]
-Get:10 http://localhost sid/main libacl1 2.2.49-1 [19.2kB]
-Get:11 http://localhost sid/main libselinux1 2.0.89-4 [85.4kB]
-Get:12 http://localhost sid/main sensible-utils 0.0.2 [4566B]
-Get:13 http://localhost sid/main libboost-iostreams1.40.0 1.40.0-4 [40.7kB]
-Get:14 http://localhost sid/main libcwidget3 0.5.14-1 [310kB]
-Get:15 http://localhost sid/main libapr1 1.3.8-1 [123kB]
-Get:16 http://localhost sid/main libdb4.8 4.8.24-1 [681kB]
-Get:17 http://localhost sid/main libexpat1 2.0.1-5 [135kB]
-Get:18 http://localhost sid/main libaprutil1 1.3.9+dfsg-3 [90.7kB]
-Get:19 http://localhost sid/main liblog4cxx10 0.10.0-1 [574kB]
-Get:20 http://localhost sid/main libsqlite3-0 3.6.20-1 [300kB]
-Get:21 http://localhost sid/main libxapian15 1.0.17-1 [816kB]
-Get:22 http://localhost sid/main aptitude 0.6.1.3-3 [3668kB]
-Get:23 http://localhost sid/main libgdbm3 1.8.3-9 [46.2kB]
-Get:24 http://localhost sid/main cpp 4:4.3.4-1 [14.6kB]
-Get:25 http://localhost sid/main liblzma1 4.999.9beta+20091116-1 [150kB]
-Get:26 http://localhost sid/main xz-utils 4.999.9beta+20091116-1 [229kB]
-Get:27 http://localhost sid/main dpkg-dev 1.15.5.3 [758kB]
-Get:28 http://localhost sid/main gcc 4:4.3.4-1 [5006B]
-Get:29 http://localhost sid/main g++ 4:4.3.4-1 [1374B]
-Get:30 http://localhost sid/main liblzma0 4.999.9beta+20091016-1 [146kB]
+Get:10 http://localhost sid/main libboost-iostreams1.40.0 1.40.0-4 [40.7kB]
+Get:11 http://localhost sid/main libapr1 1.3.8-1 [123kB]
+Get:12 http://localhost sid/main libdb4.8 4.8.24-1 [681kB]
+Get:13 http://localhost sid/main libexpat1 2.0.1-5 [135kB]
+Get:14 http://localhost sid/main libaprutil1 1.3.9+dfsg-3 [90.7kB]
+Get:15 http://localhost sid/main liblog4cxx10 0.10.0-1 [574kB]
+Get:16 http://localhost sid/main libsqlite3-0 3.6.21-2 [304kB]
+Get:17 http://localhost sid/main aptitude 0.6.1.3-3 [3668kB]
+Get:18 http://localhost sid/main libmpfr1ldbl 2.4.2-3 [428kB]
+Get:19 http://localhost sid/main cpp-4.4 4.4.2-4 [3886kB]
+Get:20 http://localhost sid/main cpp 4:4.4.2-2 [14.7kB]
+Get:21 http://localhost sid/main liblzma1 4.999.9beta+20091116-1 [150kB]
+Get:22 http://localhost sid/main xz-utils 4.999.9beta+20091116-1 [229kB]
+Get:23 http://localhost sid/main dpkg-dev 1.15.5.4 [763kB]
+Get:24 http://localhost sid/main gcc-4.4 4.4.2-4 [2672kB]
+Get:25 http://localhost sid/main gcc 4:4.4.2-2 [4982B]
+Get:26 http://localhost sid/main libstdc++6-4.4-dev 4.4.2-4 [1552kB]
+Get:27 http://localhost sid/main g++-4.4 4.4.2-4 [5519kB]
+Get:28 http://localhost sid/main g++ 4:4.4.2-2 [1374B]
+Get:29 http://localhost sid/main linux-libc-dev 2.6.32-1 [849kB]
 debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
-(READING DATABASE ... 
-(READING DATABASE ... 5%
-(READING DATABASE ... 10%
-(READING DATABASE ... 15%
-(READING DATABASE ... 20%
-(READING DATABASE ... 25%
-(READING DATABASE ... 30%
-(READING DATABASE ... 35%
-(READING DATABASE ... 40%
-(READING DATABASE ... 45%
-(READING DATABASE ... 50%
-(READING DATABASE ... 55%
-(READING DATABASE ... 60%
-(READING DATABASE ... 65%
-(READING DATABASE ... 70%
-(READING DATABASE ... 75%
-(READING DATABASE ... 80%
-(READING DATABASE ... 85%
-(READING DATABASE ... 90%
-(READING DATABASE ... 95%
-(READING DATABASE ... 100%
-(READING DATABASE ... 10105 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE BASH 4.0-4 (USING .../ARCHIVES/BASH_4.0-7_AMD64.DEB) ...
-UNPACKING REPLACEMENT BASH ...
-SETTING UP BASH (4.0-7) ...
-UPDATE-ALTERNATIVES: USING /USR/SHARE/MAN/MAN7/BASH-BUILTINS.7.GZ TO PROVIDE /USR/SHARE/MAN/MAN7/BUILTINS.7.GZ (BUILTINS.7.GZ) IN AUTO MODE.
-(READING DATABASE ... 
-(READING DATABASE ... 5%
-(READING DATABASE ... 10%
-(READING DATABASE ... 15%
-(READING DATABASE ... 20%
-(READING DATABASE ... 25%
-(READING DATABASE ... 30%
-(READING DATABASE ... 35%
-(READING DATABASE ... 40%
-(READING DATABASE ... 45%
-(READING DATABASE ... 50%
-(READING DATABASE ... 55%
-(READING DATABASE ... 60%
-(READING DATABASE ... 65%
-(READING DATABASE ... 70%
-(READING DATABASE ... 75%
-(READING DATABASE ... 80%
-(READING DATABASE ... 85%
-(READING DATABASE ... 90%
-(READING DATABASE ... 95%
-(READING DATABASE ... 100%
-(READING DATABASE ... 10105 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE COREUTILS 7.4-2 (USING .../COREUTILS_8.0-2_AMD64.DEB) ...
-INSTALL-INFO: WARNING: MAINTAINER SCRIPTS SHOULD NOT CALL INSTALL-INFO ANYMORE,
-INSTALL-INFO: WARNING: THIS IS HANDLED NOW BY A DPKG TRIGGER PROVIDED BY THE
-INSTALL-INFO: WARNING: INSTALL-INFO PACKAGE; PACKAGE COREUTILS SHOULD BE UPDATED.
-UNPACKING REPLACEMENT COREUTILS ...
-SETTING UP COREUTILS (8.0-2) ...
-(READING DATABASE ... 
-(READING DATABASE ... 5%
-(READING DATABASE ... 10%
-(READING DATABASE ... 15%
-(READING DATABASE ... 20%
-(READING DATABASE ... 25%
-(READING DATABASE ... 30%
-(READING DATABASE ... 35%
-(READING DATABASE ... 40%
-(READING DATABASE ... 45%
-(READING DATABASE ... 50%
-(READING DATABASE ... 55%
-(READING DATABASE ... 60%
-(READING DATABASE ... 65%
-(READING DATABASE ... 70%
-(READING DATABASE ... 75%
-(READING DATABASE ... 80%
-(READING DATABASE ... 85%
-(READING DATABASE ... 90%
-(READING DATABASE ... 95%
-(READING DATABASE ... 100%
-(READING DATABASE ... 10116 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE DPKG 1.15.5.2 (USING .../DPKG_1.15.5.3_AMD64.DEB) ...
-UNPACKING REPLACEMENT DPKG ...
-SETTING UP DPKG (1.15.5.3) ...
-(READING DATABASE ... 
-(READING DATABASE ... 5%
-(READING DATABASE ... 10%
-(READING DATABASE ... 15%
-(READING DATABASE ... 20%
-(READING DATABASE ... 25%
-(READING DATABASE ... 30%
-(READING DATABASE ... 35%
-(READING DATABASE ... 40%
-(READING DATABASE ... 45%
-(READING DATABASE ... 50%
-(READING DATABASE ... 55%
-(READING DATABASE ... 60%
-(READING DATABASE ... 65%
-(READING DATABASE ... 70%
-(READING DATABASE ... 75%
-(READING DATABASE ... 80%
-(READING DATABASE ... 85%
-(READING DATABASE ... 90%
-(READING DATABASE ... 95%
-(READING DATABASE ... 100%
-(READING DATABASE ... 10116 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE LIBC-DEV-BIN 2.10.1-7 (USING .../LIBC-DEV-BIN_2.10.2-2_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBC-DEV-BIN ...
-PREPARING TO REPLACE LIBC6-DEV 2.10.1-7 (USING .../LIBC6-DEV_2.10.2-2_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBC6-DEV ...
-PREPARING TO REPLACE LIBC-BIN 2.10.1-7 (USING .../LIBC-BIN_2.10.2-2_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBC-BIN ...
-SETTING UP LIBC-BIN (2.10.2-2) ...
-(READING DATABASE ... 
-(READING DATABASE ... 5%
-(READING DATABASE ... 10%
-(READING DATABASE ... 15%
-(READING DATABASE ... 20%
-(READING DATABASE ... 25%
-(READING DATABASE ... 30%
-(READING DATABASE ... 35%
-(READING DATABASE ... 40%
-(READING DATABASE ... 45%
-(READING DATABASE ... 50%
-(READING DATABASE ... 55%
-(READING DATABASE ... 60%
-(READING DATABASE ... 65%
-(READING DATABASE ... 70%
-(READING DATABASE ... 75%
-(READING DATABASE ... 80%
-(READING DATABASE ... 85%
-(READING DATABASE ... 90%
-(READING DATABASE ... 95%
-(READING DATABASE ... 100%
-(READING DATABASE ... 10116 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE LIBC6 2.10.1-7 (USING .../LIBC6_2.10.2-2_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBC6 ...
-SETTING UP LIBC6 (2.10.2-2) ...
-(READING DATABASE ... 
-(READING DATABASE ... 5%
-(READING DATABASE ... 10%
-(READING DATABASE ... 15%
-(READING DATABASE ... 20%
-(READING DATABASE ... 25%
-(READING DATABASE ... 30%
-(READING DATABASE ... 35%
-(READING DATABASE ... 40%
-(READING DATABASE ... 45%
-(READING DATABASE ... 50%
-(READING DATABASE ... 55%
-(READING DATABASE ... 60%
-(READING DATABASE ... 65%
-(READING DATABASE ... 70%
-(READING DATABASE ... 75%
-(READING DATABASE ... 80%
-(READING DATABASE ... 85%
-(READING DATABASE ... 90%
-(READING DATABASE ... 95%
-(READING DATABASE ... 100%
-(READING DATABASE ... 10116 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE LINUX-LIBC-DEV 2.6.30-8 (USING .../LINUX-LIBC-DEV_2.6.32~RC8-1~EXPERIMENTAL.1_AMD64.DEB) ...
-UNPACKING REPLACEMENT LINUX-LIBC-DEV ...
-PREPARING TO REPLACE APT 0.7.23.1 (USING .../ARCHIVES/APT_0.7.24_AMD64.DEB) ...
-UNPACKING REPLACEMENT APT ...
-SETTING UP APT (0.7.24) ...
-GPG: KEY 6070D3A1: "DEBIAN ARCHIVE AUTOMATIC SIGNING KEY (4.0/ETCH) <FTPMASTER@DEBIAN.ORG>" NOT CHANGED
-GPG: KEY ADB11277: "ETCH STABLE RELEASE KEY <DEBIAN-RELEASE@LISTS.DEBIAN.ORG>" NOT CHANGED
-GPG: KEY BBE55AB3: "DEBIAN-VOLATILE ARCHIVE AUTOMATIC SIGNING KEY (4.0/ETCH)" NOT CHANGED
-GPG: KEY F42584E6: "LENNY STABLE RELEASE KEY <DEBIAN-RELEASE@LISTS.DEBIAN.ORG>" NOT CHANGED
-GPG: KEY 55BE302B: "DEBIAN ARCHIVE AUTOMATIC SIGNING KEY (5.0/LENNY) <FTPMASTER@DEBIAN.ORG>" NOT CHANGED
-GPG: KEY 6D849617: "DEBIAN-VOLATILE ARCHIVE AUTOMATIC SIGNING KEY (5.0/LENNY)" NOT CHANGED
-GPG: TOTAL NUMBER PROCESSED: 6
-GPG:              UNCHANGED: 6
-(READING DATABASE ... 
-(READING DATABASE ... 5%
-(READING DATABASE ... 10%
-(READING DATABASE ... 15%
-(READING DATABASE ... 20%
-(READING DATABASE ... 25%
-(READING DATABASE ... 30%
-(READING DATABASE ... 35%
-(READING DATABASE ... 40%
-(READING DATABASE ... 45%
-(READING DATABASE ... 50%
-(READING DATABASE ... 55%
-(READING DATABASE ... 60%
-(READING DATABASE ... 65%
-(READING DATABASE ... 70%
-(READING DATABASE ... 75%
-(READING DATABASE ... 80%
-(READING DATABASE ... 85%
-(READING DATABASE ... 90%
-(READING DATABASE ... 95%
-(READING DATABASE ... 100%
-(READING DATABASE ... 10060 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE LIBACL1 2.2.48-1 (USING .../LIBACL1_2.2.49-1_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBACL1 ...
-SETTING UP LIBACL1 (2.2.49-1) ...
-(READING DATABASE ... 
-(READING DATABASE ... 5%
-(READING DATABASE ... 10%
-(READING DATABASE ... 15%
-(READING DATABASE ... 20%
-(READING DATABASE ... 25%
-(READING DATABASE ... 30%
-(READING DATABASE ... 35%
-(READING DATABASE ... 40%
-(READING DATABASE ... 45%
-(READING DATABASE ... 50%
-(READING DATABASE ... 55%
-(READING DATABASE ... 60%
-(READING DATABASE ... 65%
-(READING DATABASE ... 70%
-(READING DATABASE ... 75%
-(READING DATABASE ... 80%
-(READING DATABASE ... 85%
-(READING DATABASE ... 90%
-(READING DATABASE ... 95%
-(READING DATABASE ... 100%
-(READING DATABASE ... 10060 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE LIBSELINUX1 2.0.88-1 (USING .../LIBSELINUX1_2.0.89-4_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBSELINUX1 ...
-SETTING UP LIBSELINUX1 (2.0.89-4) ...
-(READING DATABASE ... 
-(READING DATABASE ... 5%
-(READING DATABASE ... 10%
-(READING DATABASE ... 15%
-(READING DATABASE ... 20%
-(READING DATABASE ... 25%
-(READING DATABASE ... 30%
-(READING DATABASE ... 35%
-(READING DATABASE ... 40%
-(READING DATABASE ... 45%
-(READING DATABASE ... 50%
-(READING DATABASE ... 55%
-(READING DATABASE ... 60%
-(READING DATABASE ... 65%
-(READING DATABASE ... 70%
-(READING DATABASE ... 75%
-(READING DATABASE ... 80%
-(READING DATABASE ... 85%
-(READING DATABASE ... 90%
-(READING DATABASE ... 95%
-(READING DATABASE ... 100%
-(READING DATABASE ... 10060 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-PREPARING TO REPLACE SENSIBLE-UTILS 0.0.1 (USING .../SENSIBLE-UTILS_0.0.2_ALL.DEB) ...
-UNPACKING REPLACEMENT SENSIBLE-UTILS ...
-SETTING UP SENSIBLE-UTILS (0.0.2) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBBOOST-IOSTREAMS1.40.0.
-(READING DATABASE ... 
-(READING DATABASE ... 5%
-(READING DATABASE ... 10%
-(READING DATABASE ... 15%
-(READING DATABASE ... 20%
-(READING DATABASE ... 25%
-(READING DATABASE ... 30%
-(READING DATABASE ... 35%
-(READING DATABASE ... 40%
-(READING DATABASE ... 45%
-(READING DATABASE ... 50%
-(READING DATABASE ... 55%
-(READING DATABASE ... 60%
-(READING DATABASE ... 65%
-(READING DATABASE ... 70%
-(READING DATABASE ... 75%
-(READING DATABASE ... 80%
-(READING DATABASE ... 85%
-(READING DATABASE ... 90%
-(READING DATABASE ... 95%
-(READING DATABASE ... 100%
-(READING DATABASE ... 10060 FILES AND DIRECTORIES CURRENTLY INSTALLED.)
-UNPACKING LIBBOOST-IOSTREAMS1.40.0 (FROM .../LIBBOOST-IOSTREAMS1.40.0_1.40.0-4_AMD64.DEB) ...
-PREPARING TO REPLACE LIBCWIDGET3 0.5.13-1 (USING .../LIBCWIDGET3_0.5.14-1_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBCWIDGET3 ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBAPR1.
-UNPACKING LIBAPR1 (FROM .../LIBAPR1_1.3.8-1_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBDB4.8.
-UNPACKING LIBDB4.8 (FROM .../LIBDB4.8_4.8.24-1_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBEXPAT1.
-UNPACKING LIBEXPAT1 (FROM .../LIBEXPAT1_2.0.1-5_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBAPRUTIL1.
-UNPACKING LIBAPRUTIL1 (FROM .../LIBAPRUTIL1_1.3.9+DFSG-3_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBLOG4CXX10.
-UNPACKING LIBLOG4CXX10 (FROM .../LIBLOG4CXX10_0.10.0-1_AMD64.DEB) ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBSQLITE3-0.
-UNPACKING LIBSQLITE3-0 (FROM .../LIBSQLITE3-0_3.6.20-1_AMD64.DEB) ...
-PREPARING TO REPLACE LIBXAPIAN15 1.0.16-3 (USING .../LIBXAPIAN15_1.0.17-1_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBXAPIAN15 ...
-PREPARING TO REPLACE APTITUDE 0.4.11.11-1+B2 (USING .../APTITUDE_0.6.1.3-3_AMD64.DEB) ...
-UNPACKING REPLACEMENT APTITUDE ...
-PREPARING TO REPLACE LIBGDBM3 1.8.3-8 (USING .../LIBGDBM3_1.8.3-9_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBGDBM3 ...
-PREPARING TO REPLACE CPP 4:4.3.3-9+NMU1 (USING .../CPP_4%3A4.3.4-1_AMD64.DEB) ...
-UNPACKING REPLACEMENT CPP ...
-SELECTING PREVIOUSLY DESELECTED PACKAGE LIBLZMA1.
-UNPACKING LIBLZMA1 (FROM .../LIBLZMA1_4.999.9BETA+20091116-1_AMD64.DEB) ...
-PREPARING TO REPLACE XZ-UTILS 4.999.9BETA+20091004-1 (USING .../XZ-UTILS_4.999.9BETA+20091116-1_AMD64.DEB) ...
-UNPACKING REPLACEMENT XZ-UTILS ...
-PREPARING TO REPLACE DPKG-DEV 1.15.5.2 (USING .../DPKG-DEV_1.15.5.3_ALL.DEB) ...
-UNPACKING REPLACEMENT DPKG-DEV ...
-PREPARING TO REPLACE GCC 4:4.3.3-9+NMU1 (USING .../GCC_4%3A4.3.4-1_AMD64.DEB) ...
-REMOVING OLD GCC DOC DIRECTORY.
-UNPACKING REPLACEMENT GCC ...
-PREPARING TO REPLACE G++ 4:4.3.3-9+NMU1 (USING .../G++_4%3A4.3.4-1_AMD64.DEB) ...
-UNPACKING REPLACEMENT G++ ...
-PREPARING TO REPLACE LIBLZMA0 4.999.9BETA+20091004-1 (USING .../LIBLZMA0_4.999.9BETA+20091016-1_AMD64.DEB) ...
-UNPACKING REPLACEMENT LIBLZMA0 ...
-SETTING UP LIBC-DEV-BIN (2.10.2-2) ...
-SETTING UP LINUX-LIBC-DEV (2.6.32~RC8-1~EXPERIMENTAL.1) ...
-SETTING UP LIBC6-DEV (2.10.2-2) ...
-SETTING UP LIBBOOST-IOSTREAMS1.40.0 (1.40.0-4) ...
-SETTING UP LIBCWIDGET3 (0.5.14-1) ...
-SETTING UP LIBAPR1 (1.3.8-1) ...
-SETTING UP LIBDB4.8 (4.8.24-1) ...
-SETTING UP LIBEXPAT1 (2.0.1-5) ...
-SETTING UP LIBAPRUTIL1 (1.3.9+DFSG-3) ...
-SETTING UP LIBLOG4CXX10 (0.10.0-1) ...
-SETTING UP LIBSQLITE3-0 (3.6.20-1) ...
-SETTING UP LIBXAPIAN15 (1.0.17-1) ...
-SETTING UP APTITUDE (0.6.1.3-3) ...
-UPDATE-ALTERNATIVES: USING /USR/BIN/APTITUDE-CURSES TO PROVIDE /USR/BIN/APTITUDE (APTITUDE) IN AUTO MODE.
-SETTING UP LIBGDBM3 (1.8.3-9) ...
-SETTING UP CPP (4:4.3.4-1) ...
-SETTING UP LIBLZMA1 (4.999.9BETA+20091116-1) ...
-SETTING UP XZ-UTILS (4.999.9BETA+20091116-1) ...
-SETTING UP DPKG-DEV (1.15.5.3) ...
-SETTING UP GCC (4:4.3.4-1) ...
-SETTING UP G++ (4:4.3.4-1) ...
-SETTING UP LIBLZMA0 (4.999.9BETA+20091016-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10094 files and directories currently installed.)
+Preparing to replace bash 4.0-4 (using .../archives/bash_4.0-7_amd64.deb) ...
+Unpacking replacement bash ...
+Setting up bash (4.0-7) ...
+update-alternatives: using /usr/share/man/man7/bash-builtins.7.gz to provide /usr/share/man/man7/builtins.7.gz (builtins.7.gz) in auto mode.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10094 files and directories currently installed.)
+Preparing to replace coreutils 7.4-2 (using .../coreutils_8.0-2_amd64.deb) ...
+install-info: warning: maintainer scripts should not call install-info anymore,
+install-info: warning: this is handled now by a dpkg trigger provided by the
+install-info: warning: install-info package; package coreutils should be updated.
+Unpacking replacement coreutils ...
+Setting up coreutils (8.0-2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10105 files and directories currently installed.)
+Preparing to replace dpkg 1.15.5.3 (using .../dpkg_1.15.5.4_amd64.deb) ...
+Unpacking replacement dpkg ...
+Setting up dpkg (1.15.5.4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10105 files and directories currently installed.)
+Preparing to replace sed 4.2.1-4 (using .../archives/sed_4.2.1-6_amd64.deb) ...
+Unpacking replacement sed ...
+Setting up sed (4.2.1-6) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10105 files and directories currently installed.)
+Preparing to replace libgomp1 4.4.2-3 (using .../libgomp1_4.4.2-4_amd64.deb) ...
+Unpacking replacement libgomp1 ...
+Preparing to replace gcc-4.4-base 4.4.2-3 (using .../gcc-4.4-base_4.4.2-4_amd64.deb) ...
+Unpacking replacement gcc-4.4-base ...
+Setting up gcc-4.4-base (4.4.2-4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10105 files and directories currently installed.)
+Preparing to replace libgcc1 1:4.4.2-3 (using .../libgcc1_1%3a4.4.2-4_amd64.deb) ...
+Unpacking replacement libgcc1 ...
+Setting up libgcc1 (1:4.4.2-4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10105 files and directories currently installed.)
+Preparing to replace libstdc++6 4.4.2-3 (using .../libstdc++6_4.4.2-4_amd64.deb) ...
+Unpacking replacement libstdc++6 ...
+Setting up libstdc++6 (4.4.2-4) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10105 files and directories currently installed.)
+Preparing to replace apt 0.7.23.1 (using .../archives/apt_0.7.24_amd64.deb) ...
+Unpacking replacement apt ...
+Setting up apt (0.7.24) ...
+gpg: key 6070D3A1: "Debian Archive Automatic Signing Key (4.0/etch) <ftpmaster@debian.org>" not changed
+gpg: key ADB11277: "Etch Stable Release Key <debian-release@lists.debian.org>" not changed
+gpg: key BBE55AB3: "Debian-Volatile Archive Automatic Signing Key (4.0/etch)" not changed
+gpg: key F42584E6: "Lenny Stable Release Key <debian-release@lists.debian.org>" not changed
+gpg: key 55BE302B: "Debian Archive Automatic Signing Key (5.0/lenny) <ftpmaster@debian.org>" not changed
+gpg: key 6D849617: "Debian-Volatile Archive Automatic Signing Key (5.0/lenny)" not changed
+gpg: Total number processed: 6
+gpg:              unchanged: 6
+Selecting previously deselected package libboost-iostreams1.40.0.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10111 files and directories currently installed.)
+Unpacking libboost-iostreams1.40.0 (from .../libboost-iostreams1.40.0_1.40.0-4_amd64.deb) ...
+Selecting previously deselected package libapr1.
+Unpacking libapr1 (from .../libapr1_1.3.8-1_amd64.deb) ...
+Selecting previously deselected package libdb4.8.
+Unpacking libdb4.8 (from .../libdb4.8_4.8.24-1_amd64.deb) ...
+Selecting previously deselected package libexpat1.
+Unpacking libexpat1 (from .../libexpat1_2.0.1-5_amd64.deb) ...
+Selecting previously deselected package libaprutil1.
+Unpacking libaprutil1 (from .../libaprutil1_1.3.9+dfsg-3_amd64.deb) ...
+Selecting previously deselected package liblog4cxx10.
+Unpacking liblog4cxx10 (from .../liblog4cxx10_0.10.0-1_amd64.deb) ...
+Selecting previously deselected package libsqlite3-0.
+Unpacking libsqlite3-0 (from .../libsqlite3-0_3.6.21-2_amd64.deb) ...
+Preparing to replace aptitude 0.4.11.11-1+b2 (using .../aptitude_0.6.1.3-3_amd64.deb) ...
+Unpacking replacement aptitude ...
+Preparing to replace libmpfr1ldbl 2.4.1-2 (using .../libmpfr1ldbl_2.4.2-3_amd64.deb) ...
+Unpacking replacement libmpfr1ldbl ...
+Selecting previously deselected package cpp-4.4.
+Unpacking cpp-4.4 (from .../cpp-4.4_4.4.2-4_amd64.deb) ...
+Preparing to replace cpp 4:4.3.4-1 (using .../cpp_4%3a4.4.2-2_amd64.deb) ...
+Unpacking replacement cpp ...
+Selecting previously deselected package liblzma1.
+Unpacking liblzma1 (from .../liblzma1_4.999.9beta+20091116-1_amd64.deb) ...
+Preparing to replace xz-utils 4.999.9beta+20091004-1 (using .../xz-utils_4.999.9beta+20091116-1_amd64.deb) ...
+Unpacking replacement xz-utils ...
+Preparing to replace dpkg-dev 1.15.5.3 (using .../dpkg-dev_1.15.5.4_all.deb) ...
+Unpacking replacement dpkg-dev ...
+Selecting previously deselected package gcc-4.4.
+Unpacking gcc-4.4 (from .../gcc-4.4_4.4.2-4_amd64.deb) ...
+Preparing to replace gcc 4:4.3.4-1 (using .../gcc_4%3a4.4.2-2_amd64.deb) ...
+Removing old gcc doc directory.
+Unpacking replacement gcc ...
+Selecting previously deselected package libstdc++6-4.4-dev.
+Unpacking libstdc++6-4.4-dev (from .../libstdc++6-4.4-dev_4.4.2-4_amd64.deb) ...
+Selecting previously deselected package g++-4.4.
+Unpacking g++-4.4 (from .../g++-4.4_4.4.2-4_amd64.deb) ...
+Preparing to replace g++ 4:4.3.4-1 (using .../g++_4%3a4.4.2-2_amd64.deb) ...
+Unpacking replacement g++ ...
+Preparing to replace linux-libc-dev 2.6.30-8 (using .../linux-libc-dev_2.6.32-1_amd64.deb) ...
+Unpacking replacement linux-libc-dev ...
+Setting up libgomp1 (4.4.2-4) ...
+Setting up libboost-iostreams1.40.0 (1.40.0-4) ...
+Setting up libapr1 (1.3.8-1) ...
+Setting up libdb4.8 (4.8.24-1) ...
+Setting up libexpat1 (2.0.1-5) ...
+Setting up libaprutil1 (1.3.9+dfsg-3) ...
+Setting up liblog4cxx10 (0.10.0-1) ...
+Setting up libsqlite3-0 (3.6.21-2) ...
+Setting up aptitude (0.6.1.3-3) ...
+update-alternatives: using /usr/bin/aptitude-curses to provide /usr/bin/aptitude (aptitude) in auto mode.
+Setting up libmpfr1ldbl (2.4.2-3) ...
+Setting up cpp-4.4 (4.4.2-4) ...
+Setting up cpp (4:4.4.2-2) ...
+Setting up liblzma1 (4.999.9beta+20091116-1) ...
+Setting up xz-utils (4.999.9beta+20091116-1) ...
+Setting up dpkg-dev (1.15.5.4) ...
+Setting up gcc-4.4 (4.4.2-4) ...
+Setting up gcc (4:4.4.2-2) ...
+Setting up linux-libc-dev (2.6.32-1) ...
+Setting up g++-4.4 (4.4.2-4) ...
+Setting up libstdc++6-4.4-dev (4.4.2-4) ...
+Setting up g++ (4:4.4.2-2) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
