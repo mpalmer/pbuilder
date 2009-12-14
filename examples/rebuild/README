@@ -2,18 +2,18 @@
 ============================
 
   sudo aptitude install cowdancer grep-dctrl wget
-  sudo cowbuilder --create --distribution lenny --basepath /var/cache/pbuilder/testing-base.cow
+  sudo cowbuilder --create --distribution squeeze --basepath /var/cache/pbuilder/testing-base.cow
 
 2. Getting the list of packages to build:
 =========================================
 
-  getlist lenny
+  getlist squeeze
 
 Will fetch the Sources.gz for main and contrib of the distribution you
 choose and creates two files:
 
-  1. list.lenny
-  2. list.lenny.i368
+  1. list.squeeze
+  2. list.squeeze.i368
 
 The first list contains the name of all packages followed by all
 architectures it can be build on. The second list Contains the names of
@@ -30,7 +30,7 @@ The other settings BUILDDIR and LOGDIR are optional.
 4. Rebuilding the archive
 =========================
 
-  rebuild list.lenny.i386 lenny
+  rebuild list.squeeze.i386 squeeze
 
 Will attempt to build all packages appearing in list.testing.i368. It will
 temporarily build them in $BUILDDIR/$PACKAGE and will use $LOGDIR to create
