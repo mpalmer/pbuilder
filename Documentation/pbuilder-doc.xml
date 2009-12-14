@@ -1300,6 +1300,14 @@ git-clone git://git.debian.org/git/pbuilder/pbuilder.git
 git-clone http://git.debian.org/git/pbuilder/pbuilder.git
 git-clone ssh://git.debian.org/git/pbuilder/pbuilder.git</screen>
       <para>
+	Git commit message should have the first one line describing
+	what the commit does, formatted in the way debian/changelog is
+	formatted because it is copied verbatim to changelog via
+	git-dch. The second line is empty, and the rest should
+	describe the background and extra information related to
+	implementation of the commit.
+      </para>
+      <para>
 	Test-suites are available in <filename>./testsuite/</filename> directory.
 	Changes are expected not to break the test-suites.
 	<filename>./run-test.sh</filename> is a basic test-suite, which puts a summary in 
