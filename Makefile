@@ -108,6 +108,7 @@ install:
 	$(INSTALL_EXECUTABLE) examples/C11screen $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/D10tmp $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/D20addnonfree $(DESTDIR)/usr/share/doc/pbuilder/examples
+	$(INSTALL_EXECUTABLE) examples/D80no-man-db-rebuild $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/D90chrootmemo $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/F90chrootmemo $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/B90list-missing $(DESTDIR)/usr/share/doc/pbuilder/examples
