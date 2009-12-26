@@ -33,8 +33,8 @@ dpkg-genchanges: including full source code in upload
 dpkg-buildpackage: source only upload (original source is included)
 W: /home/dancer/.pbuilderrc does not exist
 I: using fakeroot in build.
-I: Current time: Mon Dec 14 22:13:32 JST 2009
-I: pbuilder-time-stamp: 1260796412
+I: Current time: Sun Dec 27 05:20:38 JST 2009
+I: pbuilder-time-stamp: 1261858838
 I: Building the build Environment
 I: extracting base tarball [/TESTDIR/testimage]
 I: creating local configuration
@@ -59,7 +59,7 @@ Reading state information...
 aptitude is already the newest version.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Selecting previously deselected package pbuilder-satisfydepends-dummy.
-(Reading database ... 10206 files and directories currently installed.)
+(Reading database ... 12215 files and directories currently installed.)
 Unpacking pbuilder-satisfydepends-dummy (from .../pbuilder-satisfydepends-dummy.deb) ...
 dpkg: dependency problems prevent configuration of pbuilder-satisfydepends-dummy:
  pbuilder-satisfydepends-dummy depends on debhelper (>> 3.0.0); however:
@@ -77,51 +77,47 @@ Building dependency tree...
 Reading state information...
 Initializing package states...
 Writing extended state information...
+Reading task descriptions...
 The following NEW packages will be installed:
-  bsdmainutils{a} debhelper{a} file{a} gettext{a} gettext-base{a} 
-  groff-base{a} html2text{a} intltool-debian{a} libcroco3{a} 
-  libdshconfig1{a} libdshconfig1-dev{a} libglib2.0-0{a} libmagic1{a} 
-  libpcre3{a} libsgmls-perl{a} libsp1c2{a} libxml2{a} man-db{a} 
-  po-debconf{a} po4a{a} sp{a} 
+  debhelper{a} file{a} gettext{a} gettext-base{a} html2text{a} 
+  intltool-debian{a} libcroco3{a} libdshconfig1{a} libdshconfig1-dev{a} 
+  libglib2.0-0{a} libmagic1{a} libpcre3{a} libsgmls-perl{a} libsp1c2{a} 
+  libxml2{a} po-debconf{a} po4a{a} sp{a} 
 The following partially installed packages will be configured:
   pbuilder-satisfydepends-dummy 
-0 packages upgraded, 21 newly installed, 0 to remove and 0 not upgraded.
-Need to get 11.6MB of archives. After unpacking 35.1MB will be used.
+0 packages upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
+Need to get 8765kB of archives. After unpacking 27.3MB will be used.
 Writing extended state information...
-Get:1 http://localhost sid/main libmagic1 5.03-4 [392kB]
-Get:2 http://localhost sid/main file 5.03-4 [47.5kB]
+Get:1 http://localhost sid/main libmagic1 5.03-5 [393kB]
+Get:2 http://localhost sid/main file 5.03-5 [47.6kB]
 Get:3 http://localhost sid/main html2text 1.3.2a-14 [103kB]
 Get:4 http://localhost sid/main libpcre3 7.8-3 [215kB]
-Get:5 http://localhost sid/main libglib2.0-0 2.22.3-1 [988kB]
+Get:5 http://localhost sid/main libglib2.0-0 2.22.3-2 [999kB]
 Get:6 http://localhost sid/main libxml2 2.7.6.dfsg-1 [876kB]
 Get:7 http://localhost sid/main libcroco3 0.6.2-1 [125kB]
 Get:8 http://localhost sid/main gettext-base 0.17-8 [133kB]
 Get:9 http://localhost sid/main gettext 0.17-8 [2503kB]
 Get:10 http://localhost sid/main intltool-debian 0.35.0+20060710.1 [30.8kB]
 Get:11 http://localhost sid/main po-debconf 1.0.16 [224kB]
-Get:12 http://localhost sid/main groff-base 1.20.1-6 [1156kB]
-Get:13 http://localhost sid/main bsdmainutils 8.0.3 [198kB]
-Get:14 http://localhost sid/main man-db 2.5.6-4 [1477kB]
-Get:15 http://localhost sid/main debhelper 7.4.10 [458kB]
-Get:16 http://localhost sid/main libdshconfig1 0.20.13-1 [11.0kB]
-Get:17 http://localhost sid/main libdshconfig1-dev 0.20.13-1 [25.4kB]
-Get:18 http://localhost sid/main libsgmls-perl 1.03ii-32 [27.8kB]
-Get:19 http://localhost sid/main libsp1c2 1.3.4-1.2.1-47 [1386kB]
-Get:20 http://localhost sid/main sp 1.3.4-1.2.1-47 [182kB]
-Get:21 http://localhost sid/main po4a 0.37.1-1 [1026kB]
-debconf: delaying package configuration, since apt-utils is not installed
+Get:12 http://localhost sid/main debhelper 7.4.10 [458kB]
+Get:13 http://localhost sid/main libdshconfig1 0.20.13-1 [11.0kB]
+Get:14 http://localhost sid/main libdshconfig1-dev 0.20.13-1 [25.4kB]
+Get:15 http://localhost sid/main libsgmls-perl 1.03ii-32 [27.8kB]
+Get:16 http://localhost sid/main libsp1c2 1.3.4-1.2.1-47 [1386kB]
+Get:17 http://localhost sid/main sp 1.3.4-1.2.1-47 [182kB]
+Get:18 http://localhost sid/main po4a 0.37.1-1 [1026kB]
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package libmagic1.
-(Reading database ... 10206 files and directories currently installed.)
-Unpacking libmagic1 (from .../libmagic1_5.03-4_amd64.deb) ...
+(Reading database ... 12215 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_5.03-5_amd64.deb) ...
 Selecting previously deselected package file.
-Unpacking file (from .../archives/file_5.03-4_amd64.deb) ...
+Unpacking file (from .../archives/file_5.03-5_amd64.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-14_amd64.deb) ...
 Selecting previously deselected package libpcre3.
 Unpacking libpcre3 (from .../libpcre3_7.8-3_amd64.deb) ...
 Selecting previously deselected package libglib2.0-0.
-Unpacking libglib2.0-0 (from .../libglib2.0-0_2.22.3-1_amd64.deb) ...
+Unpacking libglib2.0-0 (from .../libglib2.0-0_2.22.3-2_amd64.deb) ...
 Selecting previously deselected package libxml2.
 Unpacking libxml2 (from .../libxml2_2.7.6.dfsg-1_amd64.deb) ...
 Selecting previously deselected package libcroco3.
@@ -134,12 +130,6 @@ Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
 Selecting previously deselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_1.0.16_all.deb) ...
-Selecting previously deselected package groff-base.
-Unpacking groff-base (from .../groff-base_1.20.1-6_amd64.deb) ...
-Selecting previously deselected package bsdmainutils.
-Unpacking bsdmainutils (from .../bsdmainutils_8.0.3_amd64.deb) ...
-Selecting previously deselected package man-db.
-Unpacking man-db (from .../man-db_2.5.6-4_amd64.deb) ...
 Selecting previously deselected package debhelper.
 Unpacking debhelper (from .../debhelper_7.4.10_all.deb) ...
 Selecting previously deselected package libdshconfig1.
@@ -154,22 +144,19 @@ Selecting previously deselected package sp.
 Unpacking sp (from .../sp_1.3.4-1.2.1-47_amd64.deb) ...
 Selecting previously deselected package po4a.
 Unpacking po4a (from .../archives/po4a_0.37.1-1_all.deb) ...
-Setting up libmagic1 (5.03-4) ...
-Setting up file (5.03-4) ...
+Processing triggers for man-db ...
+Processing triggers for install-info ...
+Setting up libmagic1 (5.03-5) ...
+Setting up file (5.03-5) ...
 Setting up html2text (1.3.2a-14) ...
 Setting up libpcre3 (7.8-3) ...
-Setting up libglib2.0-0 (2.22.3-1) ...
+Setting up libglib2.0-0 (2.22.3-2) ...
 Setting up libxml2 (2.7.6.dfsg-1) ...
 Setting up libcroco3 (0.6.2-1) ...
 Setting up gettext-base (0.17-8) ...
 Setting up gettext (0.17-8) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
 Setting up po-debconf (1.0.16) ...
-Setting up groff-base (1.20.1-6) ...
-Setting up bsdmainutils (8.0.3) ...
-update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode.
-Setting up man-db (2.5.6-4) ...
-Building database of manual pages ...
 Setting up debhelper (7.4.10) ...
 Setting up libdshconfig1 (0.20.13-1) ...
 Setting up libdshconfig1-dev (0.20.13-1) ...
@@ -184,6 +171,7 @@ Reading state information...
 Reading extended state information...
 Initializing package states...
 Writing extended state information...
+Reading task descriptions...
  -> Finished parsing the build-deps
 Reading package lists...
 Building dependency tree...
@@ -195,10 +183,9 @@ The following NEW packages will be installed:
 Need to get 100kB of archives.
 After this operation, 385kB of additional disk space will be used.
 Get:1 http://localhost sid/main fakeroot 1.14.4-1 [100kB]
-debconf: delaying package configuration, since apt-utils is not installed
 Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package fakeroot.
-(Reading database ... 11844 files and directories currently installed.)
+(Reading database ... 13377 files and directories currently installed.)
 Unpacking fakeroot (from .../fakeroot_1.14.4-1_amd64.deb) ...
 Processing triggers for man-db ...
 Setting up fakeroot (1.14.4-1) ...
@@ -235,7 +222,7 @@ dpkg-source: info: upstream files that have been modified:
  dsh-0.25.10/tests/CVS/Repository
  dsh-0.25.10/tests/CVS/Root
 I: Building the package
-I: Running cd tmp/buildd/*/ && dpkg-buildpackage -us -uc   -rfakeroot
+I: Running cd tmp/buildd/*/ && dpkg-buildpackage -us -uc  -rfakeroot
 dpkg-buildpackage: set CFLAGS to default value: -g -O2
 dpkg-buildpackage: set CPPFLAGS to default value: 
 dpkg-buildpackage: set LDFLAGS to default value: 
@@ -571,7 +558,7 @@ PASS: tests/param-r-invalid.sh
 2: 2
 dsh: fork limit and wait shell cannot be specified at the same time
 PASS: tests/param-F-invalid.sh
-Mon Dec 14 13:14:26 UTC 2009
+Sat Dec 26 20:21:28 UTC 2009
 2: Using sleep as the remote shell
 2: Show machine names on output
 2: Adding machine 5,4,3,2,1 to list
@@ -641,14 +628,14 @@ Adding machine 5,4,3,2,1 to list
 Setting forklimit to 3 and wait_shell to 0
 ... Waiting for process to end with waitpid
 ... Waiting for process to end with waitpid
-Mon Dec 14 13:14:31 UTC 2009
+Sat Dec 26 20:21:33 UTC 2009
 PASS: tests/param-F-forklimit.sh
 PASS: tests/param-gnu-getopt.sh
 PASS: tests/news-okay.sh
 a: a
 b: b
-dsh: Process terminated (before write).
 c: c
+dsh: Process terminated (before write).
 PASS: tests/segv-catcher.sh
 l w
 PASS: tests/test-bufferoverflow.sh
@@ -759,5 +746,5 @@ I: unmounting dev/pts filesystem
 I: unmounting proc filesystem
 I: cleaning the build env 
 I: removing directory /TESTDIR/dir3/NUM and its subdirectories
-I: Current time: Mon Dec 14 22:14:35 JST 2009
-I: pbuilder-time-stamp: 1260796475
+I: Current time: Sun Dec 27 05:21:37 JST 2009
+I: pbuilder-time-stamp: 1261858897
