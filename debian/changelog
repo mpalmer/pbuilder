@@ -1,3 +1,35 @@
+pbuilder (0.195) unstable; urgency=low
+
+  [ Junichi Uekawa ]
+  * fix pdebuild.1 documentation about options which was confusing
+    (closes: #527878)
+  * Warn when there is non-existing hookdir. (closes: #525420)
+  * pdebuild-internal make HOME set to non-relative path. (closes:
+    #492898)
+  * Make error message visible when copying out to buildresult (closes:
+    #505695)
+  * explain pbuilder git commit message style in documentation.
+  * install D80no-man-db-rebuild to example directory.
+  * pbuilderrc: --variant=buildd is temporarily broken, disable.
+
+  [ Loïc Minier ]
+  * Change default root command to sudo -E; (closes: #361362)
+  * Do not mention codename of testing where possible
+  * Use debootstrap by default instead of cdebootstrap
+  * Factor "exec >" + "exec 2>&1" together
+  * Add support for building packages twice; (closes: #493538)
+  * Update header of /usr/share/pbuilder/pbuilderrc
+  * Copy .dsc in chroot before calling gdebi; (closes: #472407)
+  * Make --debbuildopts additive
+  * Log dpkg-buildpackage command lines
+  * Require gdebi/gdebi-core on host to resolve bdeps
+
+  [ gregor herrmann ]
+  * Add a hook script example to disable man-db regeneration inside
+    chroot (closes: #561539)
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 27 Dec 2009 05:39:15 +0900
+
 pbuilder (0.194) unstable; urgency=low
 
   * Gracefully handle non-existing bind-mount in --bindmount option
