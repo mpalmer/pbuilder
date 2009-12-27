@@ -7,9 +7,14 @@
 test_debuildopts() {
     # stderr is redirected to /dev/null to avoid failing if ~/.pbuilderrc is
     # missing (this outputs a warning which is not expected in the output)
-    . ./pbuilder-checkparams 2>/dev/null
+    . ./pbuilder-checkparams
     echo "$DEBBUILDOPTS"
 }
+
+# setup a fake installed environment
+trap testlib_cleanup_env sigpipe sighup exit
+testlib_setup_env
+
 expect_output "" \
     test_debuildopts foo.dsc
 expect_output "" \
