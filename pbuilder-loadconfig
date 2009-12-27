@@ -17,7 +17,10 @@
 #   along with this program; if not, write to the Free Software
 #   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-for RCFILE in /usr/share/pbuilder/pbuilderrc /etc/pbuilderrc ${HOME}/.pbuilderrc; do
+export PBUILDER_PKGDATADIR="${PBUILDER_PKGDATADIR:-$PBUILDER_ROOT/usr/share/pbuilder}"
+export PBUILDER_SYSCONFDIR="${PBUILDER_SYSCONFDIR:-$PBUILDER_ROOT/etc}"
+
+for RCFILE in "$PBUILDER_PKGDATADIR"/pbuilderrc "$PBUILDER_SYSCONFDIR"/pbuilderrc "$HOME"/.pbuilderrc; do
     if [ -f "$RCFILE" ]; then 
 	. "$RCFILE"
     else

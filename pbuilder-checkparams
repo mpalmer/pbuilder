@@ -21,8 +21,10 @@
 # This code is called for pbuilder and pbuilder inside pbuilder-uml; 
 # pbuilder-uml calls uml-checkparams.
 
-. /usr/lib/pbuilder/pbuilder-loadconfig
-. /usr/lib/pbuilder/pbuilder-modules
+export PBUILDER_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-${PBUILDER_ROOT}/usr/lib/pbuilder}"
+
+. "$PBUILDER_PKGLIBDIR"/pbuilder-loadconfig
+. "$PBUILDER_PKGLIBDIR"/pbuilder-modules
 
 #default value for this option is !empty!
 INTERNAL_BUILD_UML=""
