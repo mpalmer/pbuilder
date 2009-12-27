@@ -34,6 +34,56 @@ testlib_summary() {
     exit 0
 }
 
+# Create fake installed tree with basic config files.  Make sure you trap test
+# script exit to call testlib_cleanup_env.  Optional arg is location of the
+# pbuilder checkout to copy files from.
+# this is where the env actually lives
+testlib_env_root=""
+testlib_setup_env() {
+    local pbuilder_checkout abs_pbuilder_checkout r
+    pbuilder_checkout="${1:-.}"
+    abs_pbuilder_checkout="`cd $pbuilder_checkout; pwd`"
+
+    if [ -n "$testlib_env_root" ]; then
+        echo "testlib_setup_env called twice without testlib_cleanup_env" >&2
+        testlib_cleanup_env
+        exit 1
+    fi
+
+    # backup env vars
+    testlib_env_oldhome="$HOME"
+    testlib_env_oldroot="$PBUILDER_ROOT"
+
+    testlib_env_root="`mktemp -dt`"
+    # brevity
+    r="$testlib_env_root"
+
+    mkdir "$r"/etc
+    touch "$r"/etc/pbuilderrc
+    mkdir -p "$r"/usr/share/pbuilder
+    cp "$pbuilder_checkout"/pbuilderrc "$r"/usr/share/pbuilder
+    mkdir -p "$r"/usr/lib
+    ln -s "$abs_pbuilder_checkout" "$r"/usr/lib/pbuilder
+    export PBUILDER_ROOT="$r"
+
+    mkdir "$r"/home
+    touch "$r"/home/.pbuilderrc
+    export HOME="$r"/home
+}
+
+# Reverse the effect of testlib_setup_env.  Setup a trap handler in your tests
+# on this function if you call testlib_setup_env.
+testlib_cleanup_env() {
+    if [ -z "$testlib_env_root" ]; then
+        # nothing to do
+        return
+    fi
+    rm -rf "$testlib_env_root"
+    export PBUILDER_ROOT="$testlib_env_oldroot"
+    export HOME="$testlib_env_oldhome"
+    testlib_env_root=""
+}
+
 expect_success() {
     # run the test in subshell
     if (
