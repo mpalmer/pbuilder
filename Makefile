@@ -31,11 +31,13 @@ SHELLCODES=pbuilder-buildpackage \
 all:
 
 check:
+	# syntax check
 	set -e; \
 	for A in $(SHELLCODES); do \
 		bash -n $$A; \
 		echo $$A; \
 	done
+	# testsuite
 	set -e ; \
 	for A in test_*; do \
 		bash $$A; \
