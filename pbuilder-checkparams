@@ -82,6 +82,10 @@ while [ -n "$1" ]; do
 	    OVERRIDE_APTLINES_WARN=yes
 	    shift; shift;
 	    ;;
+	--architecture)
+	    ARCHITECTURE="$2";
+	    shift; shift;
+	    ;;
 	--components)
 	    COMPONENTS="$2";
 	    OVERRIDE_APTLINES_WARN=yes

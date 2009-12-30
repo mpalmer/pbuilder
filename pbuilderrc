@@ -15,6 +15,9 @@ BUILDRESULT=/var/cache/pbuilder/result/
 
 # specifying the distribution forces the distribution on "pbuilder update"
 #DISTRIBUTION=sid
+# specifying the architecture passes --arch= to debootstrap; the default is
+# to use the architecture of the host
+#ARCHITECTURE=`dpkg --print-architecture`
 # specifying the components of the distribution, for instance to enable all
 # components on Debian use "main contrib non-free" and on Ubuntu "main
 # restricted universe multiverse"
