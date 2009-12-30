@@ -31,7 +31,7 @@ fi;
 
 PKG_SOURCENAME=$(dpkg-parsechangelog|sed -n 's/^Source: //p')
 PKG_VERSION=$(dpkg-parsechangelog|sed -n 's/^Version: \(.*:\|\)//p')
-ARCHITECTURE=$(dpkg-architecture -qDEB_HOST_ARCH)
+ARCHITECTURE="${ARCHITECTURE:-`dpkg-architecture -qDEB_HOST_ARCH`}"
 CHANGES="${PKG_SOURCENAME}_${PKG_VERSION}_${ARCHITECTURE}.changes"
 
 if [ -z "${PBUILDER_BUILD_LOGFILE}" ]; then

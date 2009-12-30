@@ -55,6 +55,10 @@ while [ -n "$1" ]; do
 	    shift; shift; 
 	    ;;
 	    # pdebuild specific options.
+	--architecture)
+	    ARCHITECTURE="$2"
+	    shift; shift;
+	    ;;
 	--auto-debsign)
 	    AUTO_DEBSIGN="yes"
 	    shift;
