@@ -1,3 +1,25 @@
+pbuilder (0.196) UNRELEASED; urgency=low
+
+  [ Loïc Minier ]
+  * Add comments to check target.
+  * Use GNU-style vars for system directories, allow to set them from the
+    env, and let them be prefixed with a PBUILDER_ROOT directory to allow
+    relocation.
+  * Add helpers to relocate pbuilder in testsuite.
+  * Use a relocated pbuilder setup to run test_debuildopts; closes: #562681.
+
+  [ Junichi Uekawa ]
+  * Add Loic to uploaders.
+
+  [ Loïc Minier ]
+  * pbuilder: add support for setting the architecture on the command-line
+    and in pbuilderrc.
+  * pdebuild: add support for setting the architecture on the command-line
+    and in pbuilderrc; closes: #516625.
+  * Set testsuite mirror depending on FQDN.
+
+ -- Loïc Minier <lool@dooz.org>  Fri, 01 Jan 2010 18:52:04 +0100
+
 pbuilder (0.195) unstable; urgency=low
 
   [ Junichi Uekawa ]
