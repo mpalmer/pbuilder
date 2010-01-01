@@ -25,7 +25,14 @@ log_success () {
 [ -x /usr/sbin/debootstrap ] || exit 1
 [ -x /usr/bin/cdebootstrap ] || exit 1
 
-mirror=http://localhost:9999/debian
+case "`hostname --fqdn`" in
+  *.dooz.org)
+    mirror=http://ftp.de.debian.org/debian
+  ;;
+  *)
+    mirror=http://localhost:9999/debian
+  ;;
+esac
 
 testdir=$(TMPDIR=$(pwd) mktemp -d)
 testimage=$testdir/testimage
