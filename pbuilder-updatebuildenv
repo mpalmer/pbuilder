@@ -38,6 +38,16 @@ loadhooks
 log "I: Refreshing the base.tgz "
 log "I: upgrading packages"
 $CHROOTEXEC /usr/bin/apt-get -q update
+
+case "`readlink -e "$PBUILDERSATISFYDEPENDSCMD"`" in
+  *-aptitude)
+    EXTRAPACKAGES="$EXTRAPACKAGES aptitude"
+  ;;
+  *)
+    REMOVEPACKAGES="$REMOVEPACKAGES aptitude"
+  ;;
+esac
+
 if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
 fi

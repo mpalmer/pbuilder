@@ -86,18 +86,21 @@ log "I: upgrading packages"
 mountproc
 $TRAP umountproc_cleanbuildplace_trap exit sighup
 $CHROOTEXEC /usr/bin/apt-get -q update
+
+case "`readlink -e "$PBUILDERSATISFYDEPENDSCMD"`" in
+  *-aptitude)
+    EXTRAPACKAGES="$EXTRAPACKAGES aptitude"
+  ;;
+  *)
+    REMOVEPACKAGES="$REMOVEPACKAGES aptitude"
+  ;;
+esac
+
 if [ -n "$REMOVEPACKAGES" ]; then
     $CHROOTEXEC /usr/bin/dpkg --purge $REMOVEPACKAGES
 fi
 recover_aptcache
 $CHROOTEXEC /usr/bin/apt-get -q -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrade
-
-case `readlink -e /usr/lib/pbuilder/pbuilder-satisfydepends` in
-  *-aptitude)
-    EXTRAPACKAGES="$EXTRAPACKAGES aptitude"
-  ;;
-esac
-
 $CHROOTEXEC /usr/bin/apt-get -q -y --force-yes install build-essential dpkg-dev $EXTRAPACKAGES
 save_aptcache
 
