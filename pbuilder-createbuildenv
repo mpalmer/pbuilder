@@ -91,7 +91,7 @@ if [ -n "$REMOVEPACKAGES" ]; then
 fi
 recover_aptcache
 $CHROOTEXEC /usr/bin/apt-get -q -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrade
-$CHROOTEXEC /usr/bin/apt-get -q -y --force-yes install build-essential dpkg-dev apt $EXTRAPACKAGES
+$CHROOTEXEC /usr/bin/apt-get -q -y --force-yes install build-essential dpkg-dev $EXTRAPACKAGES
 save_aptcache
 
 executehooks "E"
