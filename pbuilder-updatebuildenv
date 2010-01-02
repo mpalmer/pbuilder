@@ -49,7 +49,7 @@ $CHROOTEXEC /usr/bin/apt-get -q -y --force-yes "${FORCE_CONFNEW[@]}" dist-upgrad
 # support autoremove. TODO: Do not ignore error when etch is no longer
 # supported.
 $CHROOTEXEC /usr/bin/apt-get -q -y --force-yes autoremove || true
-$CHROOTEXEC /usr/bin/apt-get -q -y --force-yes install build-essential dpkg-dev apt $EXTRAPACKAGES
+$CHROOTEXEC /usr/bin/apt-get -q -y --force-yes install build-essential dpkg-dev $EXTRAPACKAGES
 save_aptcache
 
 # optionally auto-clean apt-cache
