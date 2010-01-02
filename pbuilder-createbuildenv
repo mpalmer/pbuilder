@@ -62,7 +62,10 @@ else
     exit 1
 fi
 
-if ! ( cd "$BUILDPLACE" && "${DEBOOTSTRAP}" ${ARCHITECTURE:+--arch=$ARCHITECTURE} "${DEBOOTSTRAPOPTS[@]}" "$DISTRIBUTION" . "$MIRRORSITE" $DEBOOTSTRAPSCRIPT ) ; then
+# FIXME if the end-user passes another --include= to debootstrap in
+# DEBOOTSTRAPOPTS, it will override the --include=apt one and apt might not be
+# installed
+if ! ( cd "$BUILDPLACE" && "${DEBOOTSTRAP}" ${ARCHITECTURE:+--arch=$ARCHITECTURE} --include=apt "${DEBOOTSTRAPOPTS[@]}" "$DISTRIBUTION" . "$MIRRORSITE" $DEBOOTSTRAPSCRIPT ) ; then
     log "E: $DEBOOTSTRAP failed"
     exit 1
 fi
