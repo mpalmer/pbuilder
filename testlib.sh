@@ -65,6 +65,10 @@ testlib_setup_env() {
     mkdir -p "$r"/usr/lib
     ln -s "$abs_pbuilder_checkout" "$r"/usr/lib/pbuilder
     export PBUILDER_ROOT="$r"
+    # when running the testsuite within pbuilder, these env vars will have been
+    # set by regular pbuilder commands, so we need to unset them as to allow
+    # their default values to be recomputed relative to PBUILDER_ROOT
+    unset PBUILDER_PKGLIBDIR PBUILDER_PKGDATADIR PBUILDER_SYSCONFDIR
 
     mkdir "$r"/home
     touch "$r"/home/.pbuilderrc
