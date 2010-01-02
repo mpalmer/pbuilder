@@ -4,13 +4,12 @@ I: running debootstrap
 /usr/sbin/debootstrap
 I: Retrieving Release
 I: Retrieving Packages
-I: Retrieving Packages
 I: Validating Packages
 I: Resolving dependencies of required packages...
 I: Resolving dependencies of base packages...
 I: Found additional required dependencies: dash insserv libdb4.7 
 I: Found additional base dependencies: libapr1 libaprutil1 libboost-iostreams1.40.0 libdb4.8 libexpat1 liblog4cxx10 libsqlite3-0 libudev0 
-I: Checking component main on http://localhost:9999/debian...
+I: Checking component main on http://ftp.de.debian.org/debian...
 I: Retrieving libacl1
 I: Validating libacl1
 I: Retrieving adduser
@@ -605,13 +604,138 @@ I: upgrading packages
 I: mounting /proc filesystem
 I: mounting /dev/pts filesystem
 I: installing dummy policy-rc.d
-Get:1 http://localhost sid Release.gpg [835B]
-Hit http://localhost sid Release
-Ign http://localhost sid/main Packages/DiffIndex
-Ign http://localhost sid/main Packages
-Hit http://localhost sid/main Packages
+Get:1 http://ftp.de.debian.org sid Release.gpg [835B]
+Hit http://ftp.de.debian.org sid Release
+Get:2 http://ftp.de.debian.org sid/main Packages/DiffIndex [2038B]
 Fetched XXXB in Xs (XXXXXB/s)
 Reading package lists...
+I: Obtaining the cached apt archive contents
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libssl0.9.8_0.9.8k-7_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libc-bin_2.10.2-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/bsdutils_1%3a2.16.2-0_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libslang2_2.2.2-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/netbase_4.40_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libcomerr2_1.41.9-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libxapian15_1.0.17-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/logrotate_3.7.8-4_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/tasksel_2.80_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/debianutils_3.2.2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libboost-iostreams1.40.0_1.40.0-5_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libacl1_2.2.49-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/dmidecode_2.9-1.2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/lsb-base_3.2-23_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/dash_0.5.5.1-3_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libwrap0_7.6.q-18_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libss2_1.41.9-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libsqlite3-0_3.6.21-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/procps_1%3a3.2.8-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/aptitude_0.6.1.3-3_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/perl-base_5.10.1-8_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libusb-0.1-4_2%3a0.1.12-13_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libpam0g_1.1.0-4_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/login_1%3a4.1.4.2-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/man-db_2.5.6-4_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libgdbm3_1.8.3-9_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/ed_1.4-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/debconf_1.5.28_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/liblog4cxx10_0.10.0-1.1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/sysv-rc_2.87dsf-8_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/vim-common_2%3a7.2.284-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/module-init-tools_3.11-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/manpages_3.23-1_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/findutils_4.4.2-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/nano_2.2.1-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/base-passwd_3.5.22_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/liblocale-gettext-perl_1.05-6_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libcwidget3_0.5.16-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libstdc++6_4.4.2-8_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libsigc++-2.0-0c2a_2.0.18-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/ncurses-bin_5.7+20090803-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/cron_3.0pl1-106_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/netcat-traditional_1.10-38_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/e2fslibs_1.41.9-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/initscripts_2.87dsf-8_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/zlib1g_1%3a1.2.3.4.dfsg-3_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libreadline5_5.2-7_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libdb4.7_4.7.25-9_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/debian-archive-keyring_2009.01.31_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/grep_2.5.4-4_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/dhcp3-client_3.1.3-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/tar_1.22-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libapr1_1.3.8-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/gcc-4.3-base_4.3.4-6_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/iproute_20090324-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/iptables_1.4.6-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libtext-wrapi18n-perl_0.06-7_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/apt_0.7.25_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/gcc-4.4-base_4.4.2-8_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/sysvinit_2.87dsf-8_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/passwd_1%3a4.1.4.2-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libaprutil1_1.3.9+dfsg-3_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/tasksel-data_2.80_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/bash_4.0-7_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/tzdata_2009u-1_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libsepol1_2.0.40-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libtasn1-3_2.3-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libdb4.8_4.8.26-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libexpat1_2.0.1-7_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/adduser_3.112_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/util-linux_2.16.2-0_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/traceroute_2.0.13-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/iputils-ping_3%3a20071127-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libreadline6_6.0-5_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libnewt0.52_0.52.10-5_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/gpgv_1.4.10-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/install-info_4.13a.dfsg.1-5_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/dhcp3-common_3.1.3-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/dpkg_1.15.5.5_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libpam-runtime_1.1.0-4_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/sysvinit-utils_2.87dsf-8_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/sensible-utils_0.0.2_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/whiptail_0.52.10-5_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libblkid1_2.16.2-0_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/apt-utils_0.7.25_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libtext-iconv-perl_1.7-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/diffutils_1%3a2.8.1-18_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libselinux1_2.0.89-4_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/net-tools_1.60-23_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/udev_149-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libdevmapper1.02.1_2%3a1.02.39-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libncursesw5_5.7+20090803-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libunwind7_0.99-0.2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/mount_2.16.2-0_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libc6_2.10.2-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libpopt0_1.15-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libudev0_149-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/debconf-i18n_1.5.28_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/rsyslog_4.4.2-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/groff-base_1.20.1-6_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/ncurses-base_5.7+20090803-2_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/hostname_3.01_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libbz2-1.0_1.0.5-3_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/gnupg_1.4.10-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/wget_1.12-1.1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/insserv_1.12.0-14_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/cpio_2.10-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/sed_4.2.1-6_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/lzma_4.43-14_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libncurses5_5.7+20090803-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/ifupdown_0.6.9_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libtext-charwidth-perl_0.04-6_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libuuid1_2.16.2-0_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/readline-common_6.0-5_all.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/bsdmainutils_8.0.5_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/gzip_1.3.12-8_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libattr1_1%3a2.4.44-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/coreutils_8.0-2_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/base-files_5.0.0_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libpam-modules_1.1.0-4_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/info_4.13a.dfsg.1-5_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/e2fsprogs_1.41.9-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libept0_0.5.30_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/vim-tiny_2%3a7.2.284-1_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/mawk_1.3.3-15_amd64.deb': File exists
+ln: creating hard link `/var/cache/pbuilder/build//NUM/var/cache/apt/archives/libgcc1_1%3a4.4.2-8_amd64.deb': File exists
 Reading package lists...
 Building dependency tree...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
@@ -639,33 +763,8 @@ The following NEW packages will be installed:
   libstdc++6-4.4-dev libtimedate-perl linux-libc-dev make patch perl
   perl-modules xz-utils
 0 upgraded, 24 newly installed, 0 to remove and 0 not upgraded.
-Need to get 31.0MB of archives.
+Need to get 0B/30.9MB of archives.
 After this operation, 105MB of additional disk space will be used.
-Get:1 http://localhost sid/main patch 2.6-2 [120kB]
-Get:2 http://localhost sid/main perl-modules 5.10.1-8 [3478kB]
-Get:3 http://localhost sid/main perl 5.10.1-8 [4417kB]
-Get:4 http://localhost sid/main binutils 2.20-4 [3300kB]
-Get:5 http://localhost sid/main libc-dev-bin 2.10.2-2 [201kB]
-Get:6 http://localhost sid/main linux-libc-dev 2.6.32-2 [853kB]
-Get:7 http://localhost sid/main libc6-dev 2.10.2-2 [2546kB]
-Get:8 http://localhost sid/main libgmp3c2 2:4.3.1+dfsg-3 [307kB]
-Get:9 http://localhost sid/main libmpfr1ldbl 2.4.2-3 [428kB]
-Get:10 http://localhost sid/main cpp-4.4 4.4.2-6 [3886kB]
-Get:11 http://localhost sid/main cpp 4:4.4.2-2 [14.7kB]
-Get:12 http://localhost sid/main libgomp1 4.4.2-6 [25.3kB]
-Get:13 http://localhost sid/main gcc-4.4 4.4.2-6 [2673kB]
-Get:14 http://localhost sid/main gcc 4:4.4.2-2 [4982B]
-Get:15 http://localhost sid/main libstdc++6-4.4-dev 4.4.2-6 [1552kB]
-Get:16 http://localhost sid/main g++-4.4 4.4.2-6 [5521kB]
-Get:17 http://localhost sid/main g++ 4:4.4.2-2 [1374B]
-Get:18 http://localhost sid/main make 3.81-7 [404kB]
-Get:19 http://localhost sid/main bzip2 1.0.5-3 [48.6kB]
-Get:20 http://localhost sid/main liblzma1 4.999.9beta+20091116-1 [150kB]
-Get:21 http://localhost sid/main xz-utils 4.999.9beta+20091116-1 [229kB]
-Get:22 http://localhost sid/main libtimedate-perl 1.1900-1 [40.5kB]
-Get:23 http://localhost sid/main dpkg-dev 1.15.5.5 [762kB]
-Get:24 http://localhost sid/main build-essential 11.4 [7126B]
-Fetched XXXB in Xs (XXXXXB/s)
 Selecting previously deselected package patch.
 (Reading database ... 8349 files and directories currently installed.)
 Unpacking patch (from .../archives/patch_2.6-2_amd64.deb) ...
@@ -678,7 +777,7 @@ Unpacking binutils (from .../binutils_2.20-4_amd64.deb) ...
 Selecting previously deselected package libc-dev-bin.
 Unpacking libc-dev-bin (from .../libc-dev-bin_2.10.2-2_amd64.deb) ...
 Selecting previously deselected package linux-libc-dev.
-Unpacking linux-libc-dev (from .../linux-libc-dev_2.6.32-2_amd64.deb) ...
+Unpacking linux-libc-dev (from .../linux-libc-dev_2.6.32-3_amd64.deb) ...
 Selecting previously deselected package libc6-dev.
 Unpacking libc6-dev (from .../libc6-dev_2.10.2-2_amd64.deb) ...
 Selecting previously deselected package libgmp3c2.
@@ -686,19 +785,19 @@ Unpacking libgmp3c2 (from .../libgmp3c2_2%3a4.3.1+dfsg-3_amd64.deb) ...
 Selecting previously deselected package libmpfr1ldbl.
 Unpacking libmpfr1ldbl (from .../libmpfr1ldbl_2.4.2-3_amd64.deb) ...
 Selecting previously deselected package cpp-4.4.
-Unpacking cpp-4.4 (from .../cpp-4.4_4.4.2-6_amd64.deb) ...
+Unpacking cpp-4.4 (from .../cpp-4.4_4.4.2-8_amd64.deb) ...
 Selecting previously deselected package cpp.
 Unpacking cpp (from .../cpp_4%3a4.4.2-2_amd64.deb) ...
 Selecting previously deselected package libgomp1.
-Unpacking libgomp1 (from .../libgomp1_4.4.2-6_amd64.deb) ...
+Unpacking libgomp1 (from .../libgomp1_4.4.2-8_amd64.deb) ...
 Selecting previously deselected package gcc-4.4.
-Unpacking gcc-4.4 (from .../gcc-4.4_4.4.2-6_amd64.deb) ...
+Unpacking gcc-4.4 (from .../gcc-4.4_4.4.2-8_amd64.deb) ...
 Selecting previously deselected package gcc.
 Unpacking gcc (from .../gcc_4%3a4.4.2-2_amd64.deb) ...
 Selecting previously deselected package libstdc++6-4.4-dev.
-Unpacking libstdc++6-4.4-dev (from .../libstdc++6-4.4-dev_4.4.2-6_amd64.deb) ...
+Unpacking libstdc++6-4.4-dev (from .../libstdc++6-4.4-dev_4.4.2-8_amd64.deb) ...
 Selecting previously deselected package g++-4.4.
-Unpacking g++-4.4 (from .../g++-4.4_4.4.2-6_amd64.deb) ...
+Unpacking g++-4.4 (from .../g++-4.4_4.4.2-8_amd64.deb) ...
 Selecting previously deselected package g++.
 Unpacking g++ (from .../g++_4%3a4.4.2-2_amd64.deb) ...
 Selecting previously deselected package make.
@@ -719,29 +818,30 @@ Processing triggers for man-db ...
 Setting up patch (2.6-2) ...
 Setting up binutils (2.20-4) ...
 Setting up libc-dev-bin (2.10.2-2) ...
-Setting up linux-libc-dev (2.6.32-2) ...
+Setting up linux-libc-dev (2.6.32-3) ...
 Setting up libc6-dev (2.10.2-2) ...
 Setting up libgmp3c2 (2:4.3.1+dfsg-3) ...
 Setting up libmpfr1ldbl (2.4.2-3) ...
-Setting up cpp-4.4 (4.4.2-6) ...
+Setting up cpp-4.4 (4.4.2-8) ...
 Setting up cpp (4:4.4.2-2) ...
-Setting up libgomp1 (4.4.2-6) ...
-Setting up gcc-4.4 (4.4.2-6) ...
+Setting up libgomp1 (4.4.2-8) ...
+Setting up gcc-4.4 (4.4.2-8) ...
 Setting up gcc (4:4.4.2-2) ...
 Setting up make (3.81-7) ...
 Setting up bzip2 (1.0.5-3) ...
 Setting up liblzma1 (4.999.9beta+20091116-1) ...
 Setting up xz-utils (4.999.9beta+20091116-1) ...
 Setting up perl-modules (5.10.1-8) ...
-Setting up libstdc++6-4.4-dev (4.4.2-6) ...
+Setting up libstdc++6-4.4-dev (4.4.2-8) ...
 Setting up perl (5.10.1-8) ...
 update-alternatives: using /usr/bin/prename to provide /usr/bin/rename (rename) in auto mode.
-Setting up g++-4.4 (4.4.2-6) ...
+Setting up g++-4.4 (4.4.2-8) ...
 Setting up g++ (4:4.4.2-2) ...
 update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode.
 Setting up libtimedate-perl (1.1900-1) ...
 Setting up dpkg-dev (1.15.5.5) ...
 Setting up build-essential (11.4) ...
+I: Copying back the cached apt archive contents
 I: user script /var/cache/pbuilder/build//NUM/tmp/hooks/E50-initscripts-2.86.ds1-7.workaround.sh starting
 umount: /sys: not mounted
 umount: /run: not found
