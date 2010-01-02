@@ -74,7 +74,8 @@ Version: 0.invalid.0
 Architecture: $ARCH
 Maintainer: Debian Pbuilder Team <pbuilder-maint@lists.alioth.debian.org>
 Description: Dummy package to satisfy dependencies with aptitude - created by pbuilder
- This package was created automatically by pbuilder and should
+ This package was created automatically by pbuilder to satisfy the
+ build-dependencies of the package being currently built.
 EOF
     if [ -n "$DEPENDS" ]; then
         $CHROOTEXEC sh -c "echo \"Depends: $DEPENDS\" >>\"$BUILD_DEP_DEB_CONTROL\""
