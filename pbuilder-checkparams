@@ -297,5 +297,12 @@ case "$PBCURRENTCOMMANDLINEOPERATION" in
 	;;
 esac
 
+if [ -n "$CCACHEDIR" ]; then
+    if [ -d "$CCACHEDIR" ]; then
+        BINDMOUNTS="$BINDMOUNTS $CCACHEDIR"
+    fi
+    export PATH="/usr/lib/ccache:$PATH"
+fi
+
 # sort BINDMOUNTS to ensure that deeper directories are mounted last
 BINDMOUNTS="$(for i in $BINDMOUNTS; do echo $i; done | sort -u)"

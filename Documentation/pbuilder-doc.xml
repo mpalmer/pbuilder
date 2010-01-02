@@ -1193,29 +1193,6 @@ EOF
 <command>linux32 pbuilder build --basetgz /var/cache/pbuilder/base-i386.tgz</command></screen>
       </para>
     </sect1>
-    <sect1 id="ccache">
-      <title>How to use ccache</title>
-      <para>
-	To use <command>ccache</command> with
-	<command>pbuilder</command>, use the following
-	configuration.  Note that the directory used for CCACHE_DIR
-	needs to exist, and be writable by user within <command>chroot</command>.  The
-	default user within <command>chroot</command> is <screen>uid=1234</screen>.
-      </para>
-      <para>
-	Example is provided as pbuilderrc.ccache.
-      </para>
-      <screen>
-export CCACHE_DIR="/var/cache/pbuilder/ccache"
-export PATH="/usr/lib/ccache:${PATH}"
-
-EXTRAPACKAGES=ccache
-BINDMOUNTS="${CCACHE_DIR}"</screen>
-      <para>
-	<ulink url="http://web.glandium.org/blog/?p=55">This entry created thanks to a blog posting.
-	</ulink>
-      </para>
-    </sect1>
     <sect1 id="tmpfsforpbuilder">
       <title>Using tmpfs for buildplace</title>
       <para>
@@ -1512,6 +1489,22 @@ $ pdebuild --pbuilder cowbuilder</screen>
 	<command>ccapabilities</command> of this vserver.
       </para>
     </sect1>
+    <sect1 id="ccache">
+      <title>Usage of ccache</title>
+      <para>
+       By default <command>pbuilder</command> will use the C compiler cache
+       <command>ccache</command> to speed up repeated builds of the same
+       package (or packages that compile the same files multiple times for some
+       reason). Using <command>ccache</command> can speed up repeated building
+       of large packages dramatically, at the cost of some disk space and
+       bookkeeping.
+      </para>
+      <para>
+       To disable usage of <command>ccache</command> with
+       <command>pbuilder</command>, you should unset CCACHEDIR in your
+       pbuilderrc file.
+      </para>
+    </sect1>
   </chapter>
   <chapter id="refs">
     <title>Reference materials</title>
@@ -1550,6 +1543,11 @@ $ pdebuild --pbuilder cowbuilder</screen>
 	    <row>
 	      <entry><filename>/var/cache/pbuilder/aptcache</filename></entry>
 	      <entry>Default location <command>pbuilder</command> will use as apt cache, to store deb packages required during <command>pbuilder</command> build.</entry>
+	    </row>
+	    <row>
+	      <entry><filename>/var/cache/pbuilder/ccache</filename></entry>
+	      <entry>Default location <command>pbuilder</command> will use as
+cache location</entry>
 	    </row>
 	    <row>
 	      <entry><filename>/var/cache/pbuilder/result</filename></entry>
@@ -1628,6 +1626,13 @@ $ pdebuild --pbuilder cowbuilder</screen>
 	      <entry>
 		<command>pbuilder</command> copies the content of this directory to and from 
 		the aptcache directory of outside chroot.
+	      </entry>
+	    </row>
+	    <row>
+	      <entry><filename>/var/cache/pbuilder/ccache</filename></entry>
+	      <entry>
+	        <command>pbuilder</command> bind-mounts this directory for use
+	        by ccache.
 	      </entry>
 	    </row>
 	    <row>

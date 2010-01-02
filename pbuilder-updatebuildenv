@@ -48,6 +48,12 @@ case "`readlink -e "$PBUILDERSATISFYDEPENDSCMD"`" in
   ;;
 esac
 
+if [ -n "$CCACHEDIR" ]; then
+    EXTRAPACKAGES="$EXTRAPACKAGES ccache"
+else
+    EXTRAPACKAGES="$EXTRAPACKAGES ccache-"
+fi
+
 if [ -n "$REMOVEPACKAGES" ]; then
     # FIXME this wont work if the packages have some reverse dependencies;
     # apt-get can also remove package, either with apt-get remove or purge, or

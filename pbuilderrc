@@ -28,6 +28,8 @@ APTCACHEHARDLINK="yes"
 REMOVEPACKAGES=""
 #HOOKDIR="/usr/lib/pbuilder/hooks"
 HOOKDIR=""
+# NB: this var is private to pbuilder; ccache uses "CCACHE_DIR" instead
+CCACHEDIR="/var/cache/pbuilder/ccache"
 
 # make debconf not interact with user
 export DEBIAN_FRONTEND="noninteractive"

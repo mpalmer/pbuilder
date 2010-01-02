@@ -1,8 +1,0 @@
-export CCACHE_DIR="/var/cache/pbuilder/ccache"
-export PATH="/usr/lib/ccache:${PATH}"
-EXTRAPACKAGES="ccache ${EXTRAPACKAGES}"
-BINDMOUNTS="${CCACHE_DIR} ${BINDMOUNTS}"
-mkdir -p "${CCACHE_DIR}" 2> /dev/null || true
-if [ -n "${BUILDUSERID}" ]; then
-   chown "${BUILDUSERID}":"${BUILDUSERID}" "${CCACHE_DIR}" || true
-fi 

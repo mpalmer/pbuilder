@@ -86,6 +86,16 @@ fi
 
 recover_aptcache
 createbuilduser
+if [ -n "$CCACHEDIR" ]; then
+    log "I: Setting up ccache"
+    if ! [ -d "$BUILDPLACE/$CCACHEDIR" ]; then
+        mkdir -p "$BUILDPLACE/$CCACHEDIR"
+    fi
+    chown -R $BUILDUSERID:$BUILDUSERID "$BUILDPLACE/$CCACHEDIR"
+    # Unfortunate difference between pbuilder-style and ccache-style config env
+    # vars   :-/
+    export CCACHE_DIR="$CCACHEDIR"
+fi
 log "I: Installing the build-deps"
 executehooks "D"
 trap saveaptcache_umountproc_cleanbuildplace_trap exit sighup sigpipe

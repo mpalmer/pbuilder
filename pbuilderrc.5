@@ -150,6 +150,16 @@ For details, see
 .B "pbuilder.8"
 
 .TP
+.BI "CCACHEDIR=" "/var/cache/pbuilder/ccache"
+Specifies where ccache will keep its cached compiler output.
+
+If this is specified, ccache will be installed upon pbuilder create or
+pbuilder update, /usr/lib/ccache will be prepended to the PATH,
+CCACHEDIR will be bind-mounted in the chroot, and CCACHE_DIR will be
+set to CCACHEDIR.  Note that files in CCACHEDIR are chowned to
+BUILDUSERID (1234 by default).
+
+.TP
 .BI "DEBBUILDOPTS=" ""
 
 The options given here will be passed on to
