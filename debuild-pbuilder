@@ -11,5 +11,5 @@ if test ! -d ./debian; then
 fi;
 
 . /usr/lib/pbuilder/pbuilder-loadconfig
-"$PBUILDERROOTCMD" "$PBUILDERSATISFYDEPENDSCMD"
+$PBUILDERROOTCMD "$PBUILDERSATISFYDEPENDSCMD"
 /usr/bin/debuild "$@"
