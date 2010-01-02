@@ -1,4 +1,4 @@
-pbuilder (0.196) UNRELEASED; urgency=low
+pbuilder (0.196) unstable; urgency=low
 
   [ Loïc Minier ]
   * Add comments to check target.
@@ -17,6 +17,13 @@ pbuilder (0.196) UNRELEASED; urgency=low
   * pdebuild: add support for setting the architecture on the command-line
     and in pbuilderrc; closes: #516625.
   * Set testsuite mirror depending on FQDN.
+  * Always prepend --include=apt to debootstrap args; this is needed when
+    using --variant=buildd which doesn't include apt since pbuilder calls
+    apt-get in the chroot.  Note that this can still be overrident by the
+    end-user by passing another --include= flag via DEBOOTSTRAPOPTS since
+    these flags aren't cumulative in debootstrap.
+  * Update testsuite logs; note that update-squeeze-sid-experimental fails
+    due to #563049.
 
  -- Loïc Minier <lool@dooz.org>  Fri, 01 Jan 2010 18:52:04 +0100
 
