@@ -104,3 +104,16 @@ function createbuilduser () {
 	unset LOGNAME || true
     fi
 }
+
+function setup_ccache() {
+    if [ -n "$CCACHEDIR" ]; then
+        log "I: Setting up ccache"
+        if ! [ -d "$BUILDPLACE/$CCACHEDIR" ]; then
+            mkdir -p "$BUILDPLACE/$CCACHEDIR"
+        fi
+        chown -R $BUILDUSERID:$BUILDUSERID "$BUILDPLACE/$CCACHEDIR"
+        # Unfortunate difference between pbuilder-style and ccache-style config
+        # env vars   :-/
+        export CCACHE_DIR="$CCACHEDIR"
+    fi
+}
