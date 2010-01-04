@@ -79,6 +79,16 @@ get_control_re() {
         sed 's/^[^: ]*://'
 }
 
+# NB: BD_REGEXP only includes Build-Depends-Indep when building binary-indep
+# packages; see pbuilder-satisfydepends-checkparams
+get_build_deps() {
+    get_control_re "$DEBIAN_CONTROL" "$BD_REGEXP"
+}
+
+get_build_conflicts() {
+    get_control_re "$DEBIAN_CONTROL" "$BC_REGEXP"
+}
+
 checkbuilddep_archdeps() {
     # returns FALSE on INSTALL
     local INSTALLPKG="$1"

@@ -35,7 +35,7 @@ function checkbuilddep_internal () {
     local SATISFIED
     local APTFLAG="-o APT::Install-Recommends=false"
     echo " -> Attempting to parse the build-deps "
-    for INSTALLPKGMULTI in $(get_control_re "$DEBIAN_CONTROL" "$BD_REGEXP" |
+    for INSTALLPKGMULTI in $(get_build_deps |
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
       echo " -> Considering build-dep$(echo "$INSTALLPKGMULTI" | tr "/" " " )"
@@ -113,7 +113,7 @@ function checkbuilddep_internal () {
     fi
 
     # start processing build-conflicts.
-    for INSTALLPKG in $(get_control_re "$DEBIAN_CONTROL" "$BC_REGEXP" |
+    for INSTALLPKG in $(get_build_conflicts |
 	tr " " "/" | \
 	awk 'BEGIN{RS=","} {print}'); do
       CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed -e 's#^/*##' -e 's#[[/(].*##')

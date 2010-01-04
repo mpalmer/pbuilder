@@ -6,6 +6,7 @@
 # testsuite to test pbuilder-satisfydepends-funcs.
 
 DEBIAN_CONTROL=""
+BD_REGEXP="build-(depends|depends-indep)"
 
 cleanup() {
     if [ -n "$DEBIAN_CONTROL" ]; then
@@ -13,7 +14,7 @@ cleanup() {
     fi
 }
 
-test_get_control_re() {
+test_get_build_deps() {
     cat <<EOF >"$DEBIAN_CONTROL"
 Source: amule
 XXXX:
@@ -33,7 +34,7 @@ Description: test
  other things
  wow
 EOF
-    get_control_re "$DEBIAN_CONTROL" "build-(depends|depends-indep)"
+    get_build_deps
 }
 
 trap cleanup sigpipe sighup exit
@@ -42,6 +43,6 @@ trap cleanup sigpipe sighup exit
 DEBIAN_CONTROL="$(tempfile)"
 
 expect_output "  autotools-dev, debhelper, quilt, libwxgtk2.8-dev
- test, test1,  test2, test3 |  test4, test5" test_get_control_re
+ test, test1,  test2, test3 |  test4, test5" test_get_build_deps
 
 testlib_summary
