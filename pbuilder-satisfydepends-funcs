@@ -22,7 +22,7 @@
 
 package_versions() {
 	local PACKAGE="$1"
-	( $CHROOTEXEC /usr/bin/apt-cache show "$PACKAGE" ) | sed -n 's/^Version: //p'
+	LC_ALL=C $CHROOTEXEC /usr/bin/apt-cache show "$PACKAGE" | sed -n 's/^Version: //p'
 }
 
 candidate_version() {
