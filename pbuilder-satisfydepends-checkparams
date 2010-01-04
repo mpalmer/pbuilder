@@ -22,8 +22,7 @@
 DEBIAN_CONTROL=debian/control
 CHROOT=""
 CHROOTEXEC=""
-BD_REGEXP="build-(depends|depends-indep)"
-BC_REGEXP="build-(conflicts|conflicts-indep)"
+BINARY_ARCH="no"
 FORCEVERSION=""
 CONTINUE_FAIL="no"
 CHROOTEXEC_AFTER_INTERNAL_CHROOTEXEC=no
@@ -58,13 +57,11 @@ while [ -n "$1" ]; do
 	    ;;
 
 	--binary-all)
-	    BD_REGEXP='build-(depends|depends-indep)'
-	    BC_REGEXP='build-(conflicts|conflicts-indep)'
+	    BINARY_ARCH="no"
 	    shift
 	    ;;
 	--binary-arch)
-	    BD_REGEXP='build-depends'
-	    BC_REGEXP='build-conflicts'
+	    BINARY_ARCH="yes"
 	    shift
 	    ;;
 	--continue-fail)
