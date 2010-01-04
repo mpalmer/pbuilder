@@ -3,7 +3,7 @@
 . ./testlib.sh
 . ./pbuilder-satisfydepends-funcs
 
-# testsuite to test pbuilder-satisfydepends-checkparams.
+# testsuite to test pbuilder-satisfydepends-funcs.
 
 DEBIAN_CONTROL=""
 
@@ -14,7 +14,7 @@ cleanup() {
 }
 
 test_get_control_re() {
-    cat <<EOF > "$DEBIAN_CONTROL"
+    cat <<EOF >"$DEBIAN_CONTROL"
 Source: amule
 XXXX:
 Build-Depends: 
@@ -29,7 +29,7 @@ Build-Depends-Indep: test, test1,
 Misc: test
 
 Build-Depends: wrong build depends, line
-Desctiption: test
+Description: test
  other things
  wow
 EOF
