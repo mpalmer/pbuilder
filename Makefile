@@ -102,7 +102,6 @@ install:
 	$(INSTALL_FILE) pbuilderrc $(DESTDIR)/usr/share/pbuilder
 	$(INSTALL_FILE) pbuilder-uml.conf $(DESTDIR)/etc/pbuilder
 	$(INSTALL_FILE) pbuilder-uml.conf $(DESTDIR)/usr/share/pbuilder
-	$(INSTALL_FILE) examples/pbuilderrc.ccache $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/B90lintian $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/B91dpkg-i $(DESTDIR)/usr/share/doc/pbuilder/examples
 	$(INSTALL_EXECUTABLE) examples/B92test-pkg $(DESTDIR)/usr/share/doc/pbuilder/examples
