@@ -22,12 +22,12 @@
 
 package_versions() {
 	local PACKAGE="$1"
-	( $CHROOTEXEC /usr/bin/apt-cache show "$PACKAGE" ) | sed -n 's/^Version: \(.*\)$/\1/p'
+	( $CHROOTEXEC /usr/bin/apt-cache show "$PACKAGE" ) | sed -n 's/^Version: //p'
 }
 
 candidate_version() {
 	local PACKAGE="$1"
-	LC_ALL=C $CHROOTEXEC apt-cache policy "$PACKAGE" | sed -n 's/ *Candidate: *\(.*\)/\1/p'
+	LC_ALL=C $CHROOTEXEC apt-cache policy "$PACKAGE" | sed -n 's/ *Candidate: //p'
 }
 
 checkbuilddep_versiondeps() {
