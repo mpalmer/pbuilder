@@ -53,20 +53,34 @@ checkbuilddep_versiondeps() {
 get_source_control_field() {
     local field="$1"
 
-    sed -n -e "
-s/^$field://i
+    sed -n -e "s/^$field://i" -e '
 t store
-/^\$/q
+/^$/q
 d
 : store
 H
 : loop
 n
 /^#/ b loop
-/^[ \\t]/ b store
+/^[ \t]/ b store
 x
-s/\\n//g
-p" \
+# output on single line
+s/\n//g
+# change series of tabs and spaces into a space
+s/[\t ]\+/ /g
+# normalize space before and after commas
+s/ *, */, /g
+# normalize space before and after pipes
+s/ *| */ | /g
+# normalize space before and after parentheses
+s/ *( */ (/g
+s/ *) */)/g
+# normalize space between operator and version
+s/(\(>>\|>=\|>\|==\|=\|<=\|<<\|<\|!=\) *\([^)]*\))/(\1 \2)/g
+# normalize space at beginning and end of line
+s/^ *//
+s/ *$//
+p' \
         "$DEBIAN_CONTROL"
 }
 
