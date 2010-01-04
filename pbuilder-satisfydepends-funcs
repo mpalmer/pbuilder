@@ -52,10 +52,9 @@ checkbuilddep_versiondeps() {
 
 get_control_re() {
     # output the field which matches RE of control file in stdout.
-    control="$1"
-    re="$2"
+    re="$1"
 
-    cat "$control" |
+    cat "$DEBIAN_CONTROL" |
         awk '
         BEGIN { source=1 }
         /^$/ { 
@@ -82,11 +81,11 @@ get_control_re() {
 # NB: BD_REGEXP only includes Build-Depends-Indep when building binary-indep
 # packages; see pbuilder-satisfydepends-checkparams
 get_build_deps() {
-    get_control_re "$DEBIAN_CONTROL" "$BD_REGEXP"
+    get_control_re "$BD_REGEXP"
 }
 
 get_build_conflicts() {
-    get_control_re "$DEBIAN_CONTROL" "$BC_REGEXP"
+    get_control_re "$BC_REGEXP"
 }
 
 checkbuilddep_archdeps() {
