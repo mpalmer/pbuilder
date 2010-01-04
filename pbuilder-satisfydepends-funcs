@@ -20,17 +20,17 @@
 # module to satisfy build dependencies; common functions
 
 
-function package_versions() {
+package_versions() {
 	local PACKAGE="$1"
 	( $CHROOTEXEC /usr/bin/apt-cache show "$PACKAGE" ) | sed -n 's/^Version: \(.*\)$/\1/p'
 }
 
-function candidate_version() {
+candidate_version() {
 	local PACKAGE="$1"
 	LC_ALL=C $CHROOTEXEC apt-cache policy "$PACKAGE" | sed -n 's/ *Candidate: *\(.*\)/\1/p'
 }
 
-function checkbuilddep_versiondeps () {
+checkbuilddep_versiondeps() {
     local PACKAGE="$1"
     local COMPARESTRING="$2"
     local DEPSVERSION="$3"
@@ -79,7 +79,7 @@ get_control_re() {
         sed 's/^[^: ]*://'
 }
 
-function checkbuilddep_archdeps () {
+checkbuilddep_archdeps() {
     # returns FALSE on INSTALL
     local INSTALLPKG="$1"
     local ARCH="$2"
@@ -100,7 +100,7 @@ function checkbuilddep_archdeps () {
     return 1;
 }
 
-function checkbuilddep_provides () {
+checkbuilddep_provides() {
     local PACKAGENAME="$1"
     # PROVIDED needs to be used outside of this function.
     PROVIDED=$($CHROOTEXEC /usr/bin/apt-cache showpkg $PACKAGENAME | awk '{p=0}/^Reverse Provides:/,/^$/{p=1}{if(p && ($0 !~ "Reverse Provides:")){PACKAGE=$1}} END{print PACKAGE}')
@@ -108,7 +108,7 @@ function checkbuilddep_provides () {
 
 # returns either "package=version", to append to an apt-get install line, or
 # package
-function versioneddep_to_aptcmd () {
+versioneddep_to_aptcmd() {
 	local INSTALLPKG="$1"
 
 	local PACKAGE
@@ -148,7 +148,7 @@ function versioneddep_to_aptcmd () {
 	echo "$PACKAGE_WITHVERSION"
 }
 
-function print_help () {
+print_help() {
     # print out help message
     cat <<EOF
 pbuilder-satisfydepends -- satisfy dependencies
