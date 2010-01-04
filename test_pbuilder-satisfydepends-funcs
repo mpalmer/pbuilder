@@ -5,9 +5,15 @@
 
 # testsuite to test pbuilder-satisfydepends-checkparams.
 
+DEBIAN_CONTROL=""
+
+cleanup() {
+    if [ -n "$DEBIAN_CONTROL" ]; then
+        rm -f "$DEBIAN_CONTROL"
+    fi
+}
+
 test_get_control_re() {
-    # TODO move to build dir
-    DEBIAN_CONTROL=$(tempfile)
     cat <<EOF > "$DEBIAN_CONTROL"
 Source: amule
 XXXX:
@@ -28,8 +34,13 @@ Desctiption: test
  wow
 EOF
     get_control_re "$DEBIAN_CONTROL" "build-(depends|depends-indep)"
-    rm -f "$DEBIAN_CONTROL"
 }
+
+trap cleanup sigpipe sighup exit
+
+# TODO move to build dir
+DEBIAN_CONTROL="$(tempfile)"
+
 expect_output "  autotools-dev, debhelper, quilt, libwxgtk2.8-dev
  test, test1,  test2, test3 |  test4, test5" test_get_control_re
 
