@@ -85,17 +85,23 @@ p' \
 }
 
 get_build_deps() {
-    get_source_control_field "Build-Depends"
+    local output
+
+    output="`get_source_control_field "Build-Depends"`"
     if [ "$BINARY_ARCH" = no ]; then
-        get_source_control_field "Build-Depends-Indep"
+        output="${output:+$output, }`get_source_control_field "Build-Depends-Indep"`"
     fi
+    echo "$output"
 }
 
 get_build_conflicts() {
-    get_control_field "Build-Conflicts"
+    local output
+
+    output="`get_control_field "Build-Conflicts"`"
     if [ "$BINARY_ARCH" = no ]; then
-        get_source_control_field "Build-Conflicts-Indep"
+        output="${output:+$output, }`get_source_control_field "Build-Conflicts-Indep"`"
     fi
+    echo "$output"
 }
 
 checkbuilddep_archdeps() {
