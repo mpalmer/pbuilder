@@ -27,8 +27,8 @@ Build-Depends:
  quilt(<<12:0),
 ##
  libwxgtk2.8-dev
-Build-Depends-Indep: test, test1, 
- test2, test3 | 
+Build-Depends-Indep: test [ amd64 i386 ], test1, 
+ test2[!i386 ! amd64], test3 | 
  test4, test5
 Misc: test
 
@@ -45,7 +45,7 @@ trap cleanup sigpipe sighup exit
 # TODO move to build dir
 DEBIAN_CONTROL="$(tempfile)"
 
-expect_output "autotools-dev (>= 1.2), debhelper, quilt (<< 12:0), libwxgtk2.8-dev, test, test1, test2, test3 | test4, test5" \
+expect_output "autotools-dev (>= 1.2), debhelper, quilt (<< 12:0), libwxgtk2.8-dev, test [amd64 i386], test1, test2 [!i386 !amd64], test3 | test4, test5" \
     test_get_build_deps "no"
 expect_output "autotools-dev (>= 1.2), debhelper, quilt (<< 12:0), libwxgtk2.8-dev" \
     test_get_build_deps "yes"

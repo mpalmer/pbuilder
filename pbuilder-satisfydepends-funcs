@@ -75,6 +75,11 @@ s/ *| */ | /g
 # normalize space before and after parentheses
 s/ *( */ (/g
 s/ *) */)/g
+# normalize space before and after brackets
+s/ *\[ */ [/g
+s/ *\] */]/g
+# normalize space after exclamation mark
+s/! */!/g
 # normalize space between operator and version
 s/(\(>>\|>=\|>\|==\|=\|<=\|<<\|<\|!=\) *\([^)]*\))/(\1 \2)/g
 # normalize space at beginning and end of line
