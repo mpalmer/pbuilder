@@ -50,45 +50,37 @@ checkbuilddep_versiondeps() {
     return 1;
 }
 
-get_control_re() {
-    # output the field which matches RE of control file in stdout.
-    re="$1"
+get_source_control_field() {
+    local field="$1"
 
-    cat "$DEBIAN_CONTROL" |
-        awk '
-        BEGIN { source=1 }
-        /^$/ { 
-          if (p) {
-            print s
-            s=""
-          }
-          source=0 
-        }
-        /^Source:/ { source=1 }
-        /^[^ ]*:/ { 
-          if (source && p) { 
-            print s
-            s=""
-          }
-          p=0
-        }
-        /^#/ { next }
-        tolower($0) ~ /^'"$re"':/ { p=1 }
-        { if (p && source) { s=s""$0 } }' |
-        sed 's/^[^: ]*://'
+    sed -n -e "
+s/^$field://i
+t store
+/^\$/q
+d
+: store
+H
+: loop
+n
+/^#/ b loop
+/^[ \\t]/ b store
+x
+s/\\n//g
+p" \
+        "$DEBIAN_CONTROL"
 }
 
 get_build_deps() {
-    get_control_re "build-depends"
+    get_source_control_field "Build-Depends"
     if [ "$BINARY_ARCH" = no ]; then
-        get_control_re "build-depends-indep"
+        get_source_control_field "Build-Depends-Indep"
     fi
 }
 
 get_build_conflicts() {
-    get_control_re "build-conflicts"
+    get_control_field "Build-Conflicts"
     if [ "$BINARY_ARCH" = no ]; then
-        get_control_re "build-conflicts-indep"
+        get_source_control_field "Build-Conflicts-Indep"
     fi
 }
 
