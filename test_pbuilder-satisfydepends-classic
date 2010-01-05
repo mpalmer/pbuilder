@@ -88,4 +88,15 @@ gnome-doc-utils
 libssl-dev
 liblaunchpad-integration-dev" get_pkg_name "`test_split_deps`"
 
+expect_output ">= 5.0.0
+>= 2.12
+>= 2.10
+>= 2.16.0
+>= 2.16.0
+>= 2.9.2
+>= 0.60
+>= 0.3.2-0
+>= 0.1.7
+>= 0.9.8b-1" get_dep_op_and_ver "`test_split_deps | grep '('`"
+
 testlib_summary
