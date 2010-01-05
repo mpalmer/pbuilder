@@ -31,7 +31,7 @@ export PBUILDER_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder
 # first as to iterate on deps with "for"; e.g. "foo, bar | baz", "foobar (>=
 # 2)"  becomes "foo", "bar/|/baz", "foobar/(>=/2)"
 split_deps() {
-    tr " " "/" | awk 'BEGIN{RS=","} {print}'
+    sed 's#, *#\n#g; s# #/#g'
 }
 # and build-conflicts
 
