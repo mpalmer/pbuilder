@@ -38,7 +38,7 @@ split_deps() {
 # splits build-dep with alternates into one alternate per line; e.g. "foo|bar"
 # becomes "foo", "bar"
 split_alternates() {
-    echo "$*" | awk 'BEGIN{RS="|"} {print}'
+    echo "$*" | sed 's/ *| */\n/g'
 }
 
 # filters package name out of a "/" escaped simple build-dep, possibly with
