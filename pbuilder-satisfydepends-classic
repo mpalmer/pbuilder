@@ -22,7 +22,9 @@
 
 set -e
 
-. /usr/lib/pbuilder/pbuilder-satisfydepends-funcs
+export PBUILDER_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder}"
+
+. "$PBUILDER_PKGLIBDIR"/pbuilder-satisfydepends-funcs
 
 function checkbuilddep_internal () {
 # Use this function to fulfill the dependency (almost)
@@ -168,5 +170,5 @@ Copyright 2002-2007  Junichi Uekawa <dancer@debian.org>
 EOF
 }
 
-. /usr/lib/pbuilder/pbuilder-satisfydepends-checkparams
+. "$PBUILDER_PKGLIBDIR"/pbuilder-satisfydepends-checkparams
 

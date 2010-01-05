@@ -21,7 +21,10 @@
 
 set -e
 
-. /usr/lib/pbuilder/pbuilder-satisfydepends-funcs
+export PBUILDER_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder}"
+
+. "$PBUILDER_PKGLIBDIR"/pbuilder-satisfydepends-funcs
+
 
 # filter out dependencies sent on input not for this arch; deps can have
 # multiple lines; output is on a single line or "" if empty
@@ -114,5 +117,5 @@ Copyright 2002-2007  Junichi Uekawa <dancer@debian.org>
 EOF
 }
 
-. /usr/lib/pbuilder/pbuilder-satisfydepends-checkparams
+. "$PBUILDER_PKGLIBDIR"/pbuilder-satisfydepends-checkparams
 
