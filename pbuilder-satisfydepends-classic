@@ -51,7 +51,7 @@ get_pkg_name() {
 # filter operator and version of a "/" escaped versioned build-dep; e.g.
 # "foo/(>=/2)" becomes ">= 2"
 get_dep_op_and_ver() {
-    echo "$*" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\1 \2/'
+    echo "$*" | sed -n 's#/# #g; s/.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\([^ )]*\) *).*/\1 \2/p'
 }
 
 # call apt-get in chroot in simulate mode
