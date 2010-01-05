@@ -45,7 +45,7 @@ split_alternates() {
 # architecture or version specifier; e.g. "/foo/(>=/2)/[i386/amd64]" becomes
 # "foo"
 get_pkg_name() {
-    echo "$*" | sed -e 's#^/*##' -e 's#[[/(].*##'
+    echo "$*" | sed 's#^/*##; s#[[/(].*##'
 }
 
 # filter operator and version of a "/" escaped versioned build-dep; e.g.
