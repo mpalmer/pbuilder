@@ -62,4 +62,30 @@ liblaunchpad-integration-dev" test_split_deps
 expect_output "foo
 bar" split_alternates "foo | bar"
 
+expect_output "debhelper
+gnome-pkg-tools
+autotools-dev
+cdbs
+libglib2.0-dev
+libgtk2.0-dev
+libgnome2-dev
+libgnomeui-dev
+libglade2-dev
+libgnomevfs2-dev
+libgconf2-dev
+libxft-dev
+libperl-dev
+python-dev
+tcl8.4-dev
+libxml-parser-perl
+libdbus-glib-1-dev
+libtool
+scrollkeeper
+libgnutls-dev
+libnotify-dev
+libsexy-dev
+gnome-doc-utils
+libssl-dev
+liblaunchpad-integration-dev" get_pkg_name "`test_split_deps`"
+
 testlib_summary
