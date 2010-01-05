@@ -110,9 +110,7 @@ checkbuilddep_internal() {
 		else
 		    # show the error for diagnostic purposes
 		    echo "       -> Cannot install $PROVIDED; apt errors follow:"
-		    if apt_sim $APTFLAG $INSTALLPKGLIST $PROVIDED; then
-			:
-		    fi
+		    apt_sim $APTFLAG $INSTALLPKGLIST $PROVIDED || true
 		fi
 	    fi
 	fi
