@@ -26,9 +26,41 @@ export PBUILDER_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder
 
 . "$PBUILDER_PKGLIBDIR"/pbuilder-satisfydepends-funcs
 
-function checkbuilddep_internal () {
-# Use this function to fulfill the dependency (almost)
+# splits lines of deps (possibly with alternates) separated by commas into one
+# dep (possibly with alternates) per line; also changes all spaces to slashes
+# first as to iterate on deps with "for"; e.g. "foo, bar | baz", "foobar (>=
+# 2)"  becomes "foo", "bar/|/baz", "foobar/(>=/2)"
+split_deps() {
+    tr " " "/" | awk 'BEGIN{RS=","} {print}'
+}
+# and build-conflicts
 
+# splits build-dep with alternates into one alternate per line; e.g. "foo|bar"
+# becomes "foo", "bar"
+split_alternates() {
+    echo "$*" | awk 'BEGIN{RS="|"} {print}'
+}
+
+# filters package name out of a "/" escaped simple build-dep, possibly with
+# architecture or version specifier; e.g. "/foo/(>=/2)/[i386/amd64]" becomes
+# "foo"
+get_pkg_name() {
+    echo "$*" | sed -e 's#^/*##' -e 's#[[/(].*##'
+}
+
+# filter operator and version of a "/" escaped versioned build-dep; e.g.
+# "foo/(>=/2)" becomes ">= 2"
+get_dep_op_and_ver() {
+    echo "$*" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\1 \2/'
+}
+
+# call apt-get in chroot in simulate mode
+apt_sim() {
+    $CHROOTEXEC /usr/bin/apt-get -s install "$@"
+}
+
+# Use this function to fulfill the dependency (almost)
+checkbuilddep_internal() {
     local ARCH=$($CHROOTEXEC dpkg-architecture -qDEB_HOST_ARCH)
     local INSTALLPKG
     local INSTALLPKGLIST
@@ -37,14 +69,11 @@ function checkbuilddep_internal () {
     local SATISFIED
     local APTFLAG="-o APT::Install-Recommends=false"
     echo " -> Attempting to parse the build-deps "
-    for INSTALLPKGMULTI in $(get_build_deps |
-	tr " " "/" | \
-	awk 'BEGIN{RS=","} {print}'); do
+    for INSTALLPKGMULTI in $(get_build_deps | split_deps); do
       echo " -> Considering build-dep$(echo "$INSTALLPKGMULTI" | tr "/" " " )"
       SATISFIED="no"
-      for INSTALLPKG in $(echo "$INSTALLPKGMULTI" | \
-	  awk 'BEGIN{RS="|"} {print}'); do
-	CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed -e 's#^/*##' -e 's#[[/(].*##')
+      for INSTALLPKG in $(split_alternates "$INSTALLPKGMULTI"); do
+	CURRENTREALPKGNAME=$(get_pkg_name "$INSTALLPKG")
 	if echo "$INSTALLPKG" | grep -q '\['; then
 	    if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
 		SATISFIED="yes"
@@ -54,21 +83,19 @@ function checkbuilddep_internal () {
 	fi
 	if echo "$INSTALLPKG" | grep -q '('; then
 	    #echo "Debug: $INSTALLPKG"
-	    if ! checkbuilddep_versiondeps $CURRENTREALPKGNAME \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\1/') \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\2/') ; then
+	    if ! checkbuilddep_versiondeps "$CURRENTREALPKGNAME" `get_dep_op_and_ver "$INSTALLPKG"`; then
 	      echo "   -> Does not satisfy version, not trying"
 	      continue
 	    fi
 	fi
 	echo "   -> Trying $CURRENTREALPKGNAME"
 
-	if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST $CURRENTREALPKGNAME >& /dev/null; then
+	if apt_sim $APTFLAG $INSTALLPKGLIST $CURRENTREALPKGNAME >& /dev/null; then
 	    SATISFIED="yes"
 	    INSTALLPKGLIST="$INSTALLPKGLIST $CURRENTREALPKGNAME"
 	else
 	    echo "       -> Cannot install $CURRENTREALPKGNAME; apt errors follow:"
-	    if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST "$CURRENTREALPKGNAME"; then
+	    if apt_sim $APTFLAG $INSTALLPKGLIST "$CURRENTREALPKGNAME"; then
 		:
 	    fi
 	    # package could not be found. -- looking for alternative.
@@ -77,13 +104,13 @@ function checkbuilddep_internal () {
 	    if [ -n "$PROVIDED" ]; then
 		# something provides this package
 		echo "     -> Considering $PROVIDED to satisfy the dependency "
-		if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST $PROVIDED >& /dev/null; then
+		if apt_sim $APTFLAG $INSTALLPKGLIST $PROVIDED >& /dev/null; then
 		    SATISFIED="yes";
 		    INSTALLPKGLIST="$INSTALLPKGLIST $PROVIDED"
 		else
 		    # show the error for diagnostic purposes
 		    echo "       -> Cannot install $PROVIDED; apt errors follow:"
-		    if $CHROOTEXEC /usr/bin/apt-get -s install $APTFLAG $INSTALLPKGLIST $PROVIDED; then
+		    if apt_sim $APTFLAG $INSTALLPKGLIST $PROVIDED; then
 			:
 		    fi
 		fi
@@ -115,10 +142,8 @@ function checkbuilddep_internal () {
     fi
 
     # start processing build-conflicts.
-    for INSTALLPKG in $(get_build_conflicts |
-	tr " " "/" | \
-	awk 'BEGIN{RS=","} {print}'); do
-      CURRENTREALPKGNAME=$(echo "$INSTALLPKG" | sed -e 's#^/*##' -e 's#[[/(].*##')
+    for INSTALLPKG in $(get_build_conflicts | split_deps); do
+      CURRENTREALPKGNAME=$(get_pkg_name "$INSTALLPKG")
       echo " -> Considering $CURRENTREALPKGNAME"
       
       if echo "$INSTALLPKG" | grep -q '\['; then
@@ -130,16 +155,14 @@ function checkbuilddep_internal () {
       fi
       if echo "$INSTALLPKG" | grep -q '('; then
 	  # this package has version-conflicts
-	  if ! checkbuilddep_versiondeps $CURRENTREALPKGNAME \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\1/') \
-		$(echo "$INSTALLPKG" | tr "/" " " | sed 's/^.*( *\(<<\|<=\|>=\|=\|<\|>>\|>\) *\(.*\)).*$/\2/'); then
+	  if ! checkbuilddep_versiondeps "$CURRENTREALPKGNAME" `get_dep_op_and_ver "$INSTALLPKG"`; then
 	      echo "I: Satisfies version, not trying"
 	      continue
 	  fi
       fi
 
       # if package exists, remove it.
-      if $CHROOTEXEC /usr/bin/dpkg -s $(echo "$INSTALLPKG" | tr "/" " " | awk '{print $1}') 2>&1 | grep -q ^Package:; then
+      if $CHROOTEXEC /usr/bin/dpkg -s "$CURRENTREALPKGNAME" 2>&1 | grep -q ^Package:; then
 	  if ! $CHROOTEXEC /usr/bin/apt-get -y remove $CURRENTREALPKGNAME ; then
 	      echo "E: Could not satisfy build-conflicts" >&2
 	      exit 1
@@ -152,7 +175,7 @@ function checkbuilddep_internal () {
 }
 
 
-function print_help () {
+print_help() {
     # print out help message
     cat <<EOF
 pbuilder-satisfydepends -- satisfy dependencies
