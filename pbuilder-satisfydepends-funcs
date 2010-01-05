@@ -102,7 +102,7 @@ get_build_deps() {
 get_build_conflicts() {
     local output
 
-    output="`get_control_field "Build-Conflicts"`"
+    output="`get_source_control_field "Build-Conflicts"`"
     if [ "$BINARY_ARCH" = no ]; then
         output="${output:+$output, }`get_source_control_field "Build-Conflicts-Indep"`"
     fi
