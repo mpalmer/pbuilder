@@ -1,0 +1,62 @@
+#!/bin/bash
+#for flavour in aptitude classic experimental gdebi; do
+#    (. ./pbuilder-satisfydepends-"$flavour")
+#done
+
+. ./testlib.sh
+
+DEBIAN_CONTROL=""
+
+cleanup() {
+    if [ -n "$DEBIAN_CONTROL" ]; then
+        rm -f "$DEBIAN_CONTROL"
+    fi
+    testlib_cleanup_env
+}
+
+trap cleanup sigpipe sighup exit
+
+# setup a fake installed environment
+testlib_setup_env
+
+set -- --echo --control "$DEBIAN_CONTROL"
+# this is just to source the functions
+. ./pbuilder-satisfydepends-classic >/dev/null 2>&1 || true
+
+DEBIAN_CONTROL="`mktemp -t`"
+cat >"$DEBIAN_CONTROL" <<EOF
+Build-Depends: debhelper (>= 5.0.0), gnome-pkg-tools, autotools-dev, cdbs, libglib2.0-dev (>= 2.12), libgtk2.0-dev (>= 2.10), libgnome2-dev (>=	2.16.0), libgnomeui-dev (>= 2.16.0), libglade2-dev, libgnomevfs2-dev (>= 2.9.2), libgconf2-dev, libxft-dev, libperl-dev, python-dev, tcl8.4-dev, libxml-parser-perl, libdbus-glib-1-dev (>= 0.60), libtool, scrollkeeper, libgnutls-dev, libnotify-dev (>= 0.3.2-0), libsexy-dev (>= 0.1.7), gnome-doc-utils, libssl-dev (>= 0.9.8b-1), liblaunchpad-integration-dev  
+
+EOF
+
+test_split_deps() {
+    get_build_deps | split_deps
+}
+
+expect_output "debhelper/(>=/5.0.0)
+/gnome-pkg-tools
+/autotools-dev
+/cdbs
+/libglib2.0-dev/(>=/2.12)
+/libgtk2.0-dev/(>=/2.10)
+/libgnome2-dev/(>=/2.16.0)
+/libgnomeui-dev/(>=/2.16.0)
+/libglade2-dev
+/libgnomevfs2-dev/(>=/2.9.2)
+/libgconf2-dev
+/libxft-dev
+/libperl-dev
+/python-dev
+/tcl8.4-dev
+/libxml-parser-perl
+/libdbus-glib-1-dev/(>=/0.60)
+/libtool
+/scrollkeeper
+/libgnutls-dev
+/libnotify-dev/(>=/0.3.2-0)
+/libsexy-dev/(>=/0.1.7)
+/gnome-doc-utils
+/libssl-dev/(>=/0.9.8b-1)
+/liblaunchpad-integration-dev" test_split_deps
+
+testlib_summary
