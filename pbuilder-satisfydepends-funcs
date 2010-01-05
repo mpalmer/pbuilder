@@ -93,8 +93,10 @@ get_build_deps() {
     local output
 
     output="`get_source_control_field "Build-Depends"`"
+    output="${output%, }"
     if [ "$BINARY_ARCH" = no ]; then
         output="${output:+$output, }`get_source_control_field "Build-Depends-Indep"`"
+        output="${output%, }"
     fi
     echo "$output"
 }
