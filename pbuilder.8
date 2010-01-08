@@ -356,7 +356,9 @@ Use this option rather than using
 .BI "\-\-bindmounts " "bind-mount-points"
 Bind-mount the specified directories to inside the chroot.
 .I "bind-mount-points"
-is a space-delimited list of directories to bind-mount.
+is a space-delimited list of directories to bind-mount which should be
+specified in a space-delimited manner, surrounded in double quotations, like:
+.B """/srv /somedir /someotherdir"""
 
 .TP
 .BI "\-\-debootstrapopts " "\-\-variant=buildd"
