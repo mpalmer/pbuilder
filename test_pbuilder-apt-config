@@ -5,7 +5,7 @@ set -e
 . ./testlib.sh
 
 run_suite_mode() {
-    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components component "$@"
+    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components component apt-sources "$@"
 }
 
 test_components() {
@@ -34,7 +34,7 @@ strip_mirror() {
 
 test_profile() {
     local profile="$1"
-    ./pbuilder-apt-config --with-sources=no --profile "$profile" --components comp1 | strip_mirror
+    ./pbuilder-apt-config --with-sources=no --profile "$profile" --components comp1 apt-sources | strip_mirror
 }
 
 test_fail() {

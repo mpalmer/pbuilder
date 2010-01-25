@@ -105,6 +105,14 @@ output_sources() {
     esac
 }
 
+sources=""
+add_output_sources() {
+    local output="$(output_sources "$@")"
+
+    sources="$sources${sources:+
+}$output"
+}
+
 getopt_output="`getopt -o "" -l help,with-sources::,arch:,components:,mirror:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
 
 eval set -- "$getopt_output"
@@ -201,8 +209,8 @@ if [ -n "$profile" ]; then
         case "$profile" in
           experimental)
             base_dist="unstable"
-            output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
-            output_sources "$with_sources" "$base_mirror" "$profile" "$components"
+            add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            add_output_sources "$with_sources" "$base_mirror" "$profile" "$components"
           ;;
           */volatile|*/volatile-sloppy)
             if [ "$base_dist" != "${profile%%/*}" ]; then
@@ -211,10 +219,10 @@ if [ -n "$profile" ]; then
             archive="volatile"
             mirror="`get_archive_url "$archive"`"
             volatile_dist=${profile%%-*}
-            output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
-            output_sources "$with_sources" "$mirror" "$volatile_dist" "$components"
+            add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            add_output_sources "$with_sources" "$mirror" "$volatile_dist" "$components"
             if [ "$volatile_dist" != "$profile" ]; then
-                output_sources "$with_sources" "$mirror" "$profile" "$components"
+                add_output_sources "$with_sources" "$mirror" "$profile" "$components"
             fi
           ;;
           *-backports)
@@ -223,21 +231,21 @@ if [ -n "$profile" ]; then
             fi
             archive="backports.org"
             mirror="`get_archive_url "$archive"`"
-            output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
-            output_sources "$with_sources" "$mirror" "$profile" "$components"
+            add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            add_output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
           *-proposed-updates)
             if [ "$base_dist" != "${profile%%-*}" ]; then
                 die "Unknown Debian updates based profile=$profile"
             fi
-            output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
-            output_sources "$with_sources" "$base_mirror" "$profile" "$components"
+            add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            add_output_sources "$with_sources" "$base_mirror" "$profile" "$components"
           ;;
           *)
             if [ "$base_dist" != "$profile" ]; then
                 die "Unknown Debian based profile=$profile"
             fi
-            output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
           ;;
         esac
       ;;
@@ -265,16 +273,15 @@ if [ -n "$profile" ]; then
             fi
           ;;
         esac
-        output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+        add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
         for pocket in $pockets; do
-            output_sources "$with_sources" "$base_mirror" "$base_dist-$pocket" "$components"
+            add_output_sources "$with_sources" "$base_mirror" "$base_dist-$pocket" "$components"
         done
       ;;
       *)
         die "Unknown profile for base_archive=$base_archive"
       ;;
     esac
-    exit 0
 fi
 
 if [ -n "$suite" ]; then
@@ -284,16 +291,16 @@ if [ -n "$suite" ]; then
         fi
         mirror="`get_archive_url "$archive"`"
     fi
-    output_sources "$with_sources" "$mirror" "$suite" "$components"
+    add_output_sources "$with_sources" "$mirror" "$suite" "$components"
     for pocket in $pockets; do
-        output_sources "$with_sources" "$mirror" "$suite-$pocket" "$components"
+        add_output_sources "$with_sources" "$mirror" "$suite-$pocket" "$components"
     done
-    exit 0
 fi
 
 command="$1"
 case $1 in
   apt-sources)
+    echo "$sources"
   ;;
   debootstrap-mirror)
   ;;
