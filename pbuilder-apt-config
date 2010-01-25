@@ -8,6 +8,7 @@ self="$(basename "$0")"
 # TODO
 # - support setting --mirror-map (for --profile)
 # - Debian security entries?
+# - oldstable
 
 log() {
     echo "$@" >&2
@@ -106,11 +107,41 @@ output_sources() {
 }
 
 sources=""
+debootstrap_suite=""
+debootstrap_mirror=""
+
 add_output_sources() {
     local output="$(output_sources "$@")"
 
     sources="$sources${sources:+
 }$output"
+}
+
+set_debootstrap_suite() {
+    local archive="$1"
+    local suite="$2"
+
+    case "$archive" in
+      debian)
+        case "$suite" in
+          unstable)
+            debootstrap_suite="sid"
+          ;;
+          testing)
+            debootstrap_suite="squeeze"
+          ;;
+          stable)
+            debootstrap_suite="lenny"
+          ;;
+          *)
+            debootstrap_suite="$suite"
+          ;;
+        esac
+      ;;
+      *)
+        debootstrap_suite="$suite"
+      ;;
+    esac
 }
 
 getopt_output="`getopt -o "" -l help,with-sources::,arch:,components:,mirror:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
@@ -249,7 +280,7 @@ if [ -n "$profile" ]; then
           ;;
         esac
       ;;
-      ubuntu)
+      ubuntu|ubuntu-ports)
         if [ "$base_dist" != "${profile%%-*}" ]; then
             die "Unknown Ubuntu based profile=$profile"
         fi
@@ -282,6 +313,8 @@ if [ -n "$profile" ]; then
         die "Unknown profile for base_archive=$base_archive"
       ;;
     esac
+    set_debootstrap_suite "$base_archive" "$base_dist"
+    debootstrap_mirror="$base_mirror"
 fi
 
 if [ -n "$suite" ]; then
@@ -295,6 +328,12 @@ if [ -n "$suite" ]; then
     for pocket in $pockets; do
         add_output_sources "$with_sources" "$mirror" "$suite-$pocket" "$components"
     done
+    # NB: archive might be empty; best effort to try to guess it
+    if [ -z "$archive" ]; then
+        archive="`guess_dist_arch_archive "$suite" "$arch"`" 2>/dev/null || true
+    fi
+    set_debootstrap_suite "$archive" "$suite"
+    debootstrap_mirror="$mirror"
 fi
 
 command="$1"
@@ -303,8 +342,10 @@ case $1 in
     echo "$sources"
   ;;
   debootstrap-mirror)
+    echo "$debootstrap_mirror"
   ;;
   debootstrap-suite)
+    echo "$debootstrap_suite"
   ;;
   *)
     usage
