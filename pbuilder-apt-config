@@ -67,6 +67,9 @@ guess_vendor_arch_mirror() {
           ;;
         esac
       ;;
+      volatile)
+        echo "http://volatile.debian.org/debian-volatile/"
+      ;;
       *)
         die "Unknown mirror for vendor=$vendor"
       ;;
@@ -197,7 +200,8 @@ components="$(echo "$components" | tr , " ")"
 pockets="$(echo "$pockets" | tr , " ")"
 
 if [ -n "$profile" ]; then
-    base_dist="${profile%%-*}"
+    base_dist="${profile%%/*}"
+    base_dist="${base_dist%%-*}"
     base_vendor="`guess_dist_vendor "$base_dist"`"
     base_mirror="`guess_vendor_arch_mirror "$base_vendor" "$arch"`"
     case "$base_vendor" in
@@ -206,6 +210,10 @@ if [ -n "$profile" ]; then
           experimental)
             base_dist="unstable"
             mirror="$base_mirror"
+          ;;
+          */volatile)
+            vendor="volatile"
+            mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
           ;;
           *-backports)
             vendor="backports.org"
