@@ -27,15 +27,26 @@ die() {
     exit 1
 }
 
-guess_dist_vendor() {
+guess_dist_arch_vendor() {
     local dist="$1"
+    local arch="$2"
 
     case "$dist" in
       etch|lenny|squeeze|sid|testing|unstable|experimental)
         echo "debian"
       ;;
       hardy|intrepid|jaunty|karmic|lucid)
-        echo "ubuntu"
+        case "$arch" in
+          amd64|i386)
+            echo "ubuntu"
+          ;;
+          armel|hppa|ia64|lpia|powerpc|sparc)
+            echo "ubuntu-ports"
+          ;;
+          *)
+            die "Unknown Ubuntu vendor for arch=$arch"
+          ;;
+        esac
       ;;
       *)
         die "Unknown vendor for dist=$dist"
@@ -43,9 +54,8 @@ guess_dist_vendor() {
     esac
 }
 
-guess_vendor_arch_mirror() {
+guess_vendor_mirror() {
     local vendor="$1"
-    local arch="$2"
 
     case "$vendor" in
       backports.org)
@@ -55,17 +65,10 @@ guess_vendor_arch_mirror() {
         echo "http://ftp.us.debian.org/debian/"
       ;;
       ubuntu)
-        case "$arch" in
-          amd64|i386)
-            echo "http://archive.ubuntu.com/ubuntu/"
-          ;;
-          armel|hppa|ia64|lpia|powerpc|sparc)
-            echo "http://ports.ubuntu.com/ubuntu-ports/"
-          ;;
-          *)
-            die "Unknown mirror for Ubuntu and arch=$arch"
-          ;;
-        esac
+        echo "http://archive.ubuntu.com/ubuntu/"
+      ;;
+      ubuntu-ports)
+        echo "http://ports.ubuntu.com/ubuntu-ports/"
       ;;
       volatile)
         echo "http://volatile.debian.org/debian-volatile/"
@@ -202,8 +205,8 @@ pockets="$(echo "$pockets" | tr , " ")"
 if [ -n "$profile" ]; then
     base_dist="${profile%%/*}"
     base_dist="${base_dist%%-*}"
-    base_vendor="`guess_dist_vendor "$base_dist"`"
-    base_mirror="`guess_vendor_arch_mirror "$base_vendor" "$arch"`"
+    base_vendor="`guess_dist_arch_vendor "$base_dist" "$arch"`"
+    base_mirror="`guess_vendor_mirror "$base_vendor"`"
     case "$base_vendor" in
       debian)
         case "$profile" in
@@ -217,7 +220,7 @@ if [ -n "$profile" ]; then
                 die "Unknown Volatile based profile=$profile"
             fi
             vendor="volatile"
-            mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
+            mirror="`guess_vendor_mirror "$vendor"`"
             volatile_dist=${profile%%-*}
             output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             output_sources "$with_sources" "$mirror" "$volatile_dist" "$components"
@@ -230,7 +233,7 @@ if [ -n "$profile" ]; then
                 die "Unknown Backports.org based profile=$profile"
             fi
             vendor="backports.org"
-            mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
+            mirror="`guess_vendor_mirror "$vendor"`"
             output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
@@ -285,9 +288,9 @@ fi
 if [ -n "$suite" ]; then
     if [ -z "$mirror" ]; then
         if [ -z "$vendor" ]; then
-            vendor="`guess_dist_vendor "$suite"`"
+            vendor="`guess_dist_arch_vendor "$suite" "$arch"`"
         fi
-        mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
+        mirror="`guess_vendor_mirror "$vendor"`"
     fi
     output_sources "$with_sources" "$mirror" "$suite" "$components"
     for pocket in $pockets; do
