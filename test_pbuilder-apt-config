@@ -1,0 +1,66 @@
+#!/bin/sh
+
+. ./testlib.sh
+
+test_suite_mode() {
+    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components component
+}
+
+test_components() {
+    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components comp1
+    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components comp1,comp2,comp3
+    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components "comp1 comp2 comp3"
+}
+
+strip_mirror() {
+    local deb mirror eol
+
+    while read deb mirror eol; do
+        echo "$deb $eol"
+    done
+}
+
+test_profile() {
+    local profile="$1"
+    ./pbuilder-apt-config --with-sources=no --profile "$profile" --components comp1 | strip_mirror
+}
+
+test_fail() {
+    exit 1
+}
+
+test_options() {
+    echo "$@"
+    exit 1
+}
+
+expect_output "deb mirror suite component" test_suite_mode
+
+expect_output "deb mirror suite comp1
+deb mirror suite comp1 comp2 comp3
+deb mirror suite comp1 comp2 comp3" test_components
+
+expect_output "deb unstable comp1" test_profile unstable
+expect_output "deb sid comp1" test_profile sid
+expect_output "deb unstable comp1
+deb experimental comp1" test_profile experimental
+expect_output "deb squeeze comp1
+deb squeeze-proposed-updates comp1" test_profile squeeze-proposed-updates
+expect_output "deb squeeze comp1
+deb squeeze-backports comp1" test_profile squeeze-backports
+expect_output "deb squeeze comp1
+deb squeeze/volatile comp1" test_profile squeeze/volatile
+expect_output "deb squeeze comp1
+deb squeeze/volatile comp1
+deb squeeze/volatile-sloppy comp1" test_profile squeeze/volatile-sloppy
+expect_output "deb lucid comp1" test_profile lucid
+expect_output "deb lucid comp1
+deb lucid-updates comp1
+deb lucid-backports comp1" test_profile lucid-backports
+expect_output "deb lucid comp1
+deb lucid-updates comp1
+deb lucid-proposed comp1" test_profile lucid-proposed
+expect_output "deb lucid comp1
+deb lucid-updates comp1" test_profile lucid-updates
+
+testlib_summary
