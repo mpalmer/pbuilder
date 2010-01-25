@@ -155,6 +155,9 @@ if [ -z "$suite" ] && [ -z "$profile" ]; then
     die "Please pass --suite or --profile"
 fi
 
+components="$(echo "$components" | tr , " ")"
+pockets="$(echo "$pockets" | tr , " ")"
+
 if [ -n "$profile" ]; then
     base_dist="${profile%%-*}"
     base_vendor="`guess_dist_vendor "$base_dist"`"
