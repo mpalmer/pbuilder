@@ -9,7 +9,7 @@ self="$(basename "$0")"
 # - currently only handles a single --suite or --profile; allow multiple ones?
 # - nicer error messages
 # - default output when neither --suite nor --profile is set?
-# - support getting/setting --vendor?
+# - support getting/setting --archive?
 # - support setting --mirror-map (for --profile)
 # - list Ubuntu security pocket?  Debian security entries?
 
@@ -27,7 +27,7 @@ die() {
     exit 1
 }
 
-guess_dist_arch_vendor() {
+guess_dist_arch_archive() {
     local dist="$1"
     local arch="$2"
 
@@ -44,20 +44,20 @@ guess_dist_arch_vendor() {
             echo "ubuntu-ports"
           ;;
           *)
-            die "Unknown Ubuntu vendor for arch=$arch"
+            die "Unknown Ubuntu archive for arch=$arch"
           ;;
         esac
       ;;
       *)
-        die "Unknown vendor for dist=$dist"
+        die "Unknown archive for dist=$dist"
       ;;
     esac
 }
 
-guess_vendor_mirror() {
-    local vendor="$1"
+get_archive_url() {
+    local archive="$1"
 
-    case "$vendor" in
+    case "$archive" in
       backports.org)
         echo "http://www.backports.org/backports.org/"
       ;;
@@ -74,7 +74,7 @@ guess_vendor_mirror() {
         echo "http://volatile.debian.org/debian-volatile/"
       ;;
       *)
-        die "Unknown mirror for vendor=$vendor"
+        die "Unknown mirror for archive=$archive"
       ;;
     esac
 }
@@ -113,7 +113,7 @@ components="main"
 mirror=""
 suite=""
 pockets=""
-vendor=""
+archive=""
 profile=""
 
 while :; do
@@ -158,8 +158,8 @@ while :; do
         pockets="$2"
         shift 2
       ;;
-      --vendor)
-        vendor="$2"
+      --archive)
+        archive="$2"
         shift 2
       ;;
       --profile)
@@ -205,9 +205,9 @@ pockets="$(echo "$pockets" | tr , " ")"
 if [ -n "$profile" ]; then
     base_dist="${profile%%/*}"
     base_dist="${base_dist%%-*}"
-    base_vendor="`guess_dist_arch_vendor "$base_dist" "$arch"`"
-    base_mirror="`guess_vendor_mirror "$base_vendor"`"
-    case "$base_vendor" in
+    base_archive="`guess_dist_arch_archive "$base_dist" "$arch"`"
+    base_mirror="`get_archive_url "$base_archive"`"
+    case "$base_archive" in
       debian)
         case "$profile" in
           experimental)
@@ -219,8 +219,8 @@ if [ -n "$profile" ]; then
             if [ "$base_dist" != "${profile%%/*}" ]; then
                 die "Unknown Volatile based profile=$profile"
             fi
-            vendor="volatile"
-            mirror="`guess_vendor_mirror "$vendor"`"
+            archive="volatile"
+            mirror="`get_archive_url "$archive"`"
             volatile_dist=${profile%%-*}
             output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             output_sources "$with_sources" "$mirror" "$volatile_dist" "$components"
@@ -232,8 +232,8 @@ if [ -n "$profile" ]; then
             if [ "$base_dist" != "${profile%%-*}" ]; then
                 die "Unknown Backports.org based profile=$profile"
             fi
-            vendor="backports.org"
-            mirror="`guess_vendor_mirror "$vendor"`"
+            archive="backports.org"
+            mirror="`get_archive_url "$archive"`"
             output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
@@ -279,7 +279,7 @@ if [ -n "$profile" ]; then
         done
       ;;
       *)
-        die "Unknown profile for base_vendor=$base_vendor"
+        die "Unknown profile for base_archive=$base_archive"
       ;;
     esac
     exit 0
@@ -287,10 +287,10 @@ fi
 
 if [ -n "$suite" ]; then
     if [ -z "$mirror" ]; then
-        if [ -z "$vendor" ]; then
-            vendor="`guess_dist_arch_vendor "$suite" "$arch"`"
+        if [ -z "$archive" ]; then
+            archive="`guess_dist_arch_archive "$suite" "$arch"`"
         fi
-        mirror="`guess_vendor_mirror "$vendor"`"
+        mirror="`get_archive_url "$archive"`"
     fi
     output_sources "$with_sources" "$mirror" "$suite" "$components"
     for pocket in $pockets; do
