@@ -209,9 +209,8 @@ if [ -n "$profile" ]; then
         case "$profile" in
           experimental)
             base_dist="unstable"
-            mirror="$base_mirror"
             output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
-            output_sources "$with_sources" "$mirror" "$profile" "$components"
+            output_sources "$with_sources" "$base_mirror" "$profile" "$components"
           ;;
           */volatile)
             vendor="volatile"
@@ -226,9 +225,8 @@ if [ -n "$profile" ]; then
             output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
           *-proposed-updates)
-            mirror="$base_mirror"
             output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
-            output_sources "$with_sources" "$mirror" "$profile" "$components"
+            output_sources "$with_sources" "$base_mirror" "$profile" "$components"
           ;;
           *)
             if [ "$base_dist" != "$profile" ]; then
