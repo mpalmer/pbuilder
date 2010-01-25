@@ -8,7 +8,6 @@ self="$(basename "$0")"
 # TODO
 # - support setting --mirror-map (for --profile)
 # - Debian security entries?
-# - oldstable
 
 log() {
     echo "$@" >&2
@@ -35,8 +34,11 @@ guess_dist_arch_archive() {
     local arch="$2"
 
     case "$dist" in
-      etch|lenny|squeeze|sid|testing|unstable|experimental)
+      etch|lenny|squeeze|sid|oldstable|stable|testing|unstable|experimental)
         echo "debian"
+      ;;
+      buzz|rex|bo|hamm|slink|potato|woody|sarge|etch|lenny|squeeze)
+        echo "debian-archive"
       ;;
       hardy|intrepid|jaunty|karmic|lucid)
         case "$arch" in
@@ -66,6 +68,9 @@ get_archive_url() {
       ;;
       debian)
         echo "http://ftp.us.debian.org/debian/"
+      ;;
+      debian-archive)
+        echo "http://archive.debian.org/debian/"
       ;;
       ubuntu)
         echo "http://archive.ubuntu.com/ubuntu/"
@@ -132,6 +137,9 @@ set_debootstrap_suite() {
           ;;
           stable)
             debootstrap_suite="lenny"
+          ;;
+          oldstable)
+            debootstrap_suite="etch"
           ;;
           *)
             debootstrap_suite="$suite"
@@ -236,7 +244,7 @@ if [ -n "$profile" ]; then
     base_archive="`guess_dist_arch_archive "$base_dist" "$arch"`"
     base_mirror="`get_archive_url "$base_archive"`"
     case "$base_archive" in
-      debian)
+      debian|debian-archive)
         case "$profile" in
           experimental)
             base_dist="unstable"
