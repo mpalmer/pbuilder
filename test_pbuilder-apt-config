@@ -2,14 +2,14 @@
 
 . ./testlib.sh
 
-test_suite_mode() {
-    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components component
+run_suite_mode() {
+    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components component "$@"
 }
 
 test_components() {
-    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components comp1
-    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components comp1,comp2,comp3
-    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components "comp1 comp2 comp3"
+    run_suite_mode --components comp1
+    run_suite_mode --components comp1,comp2,comp3
+    run_suite_mode --components "comp1 comp2 comp3"
 }
 
 strip_mirror() {
@@ -34,7 +34,7 @@ test_options() {
     exit 1
 }
 
-expect_output "deb mirror suite component" test_suite_mode
+expect_output "deb mirror suite component" run_suite_mode
 
 expect_output "deb mirror suite comp1
 deb mirror suite comp1 comp2 comp3
@@ -62,5 +62,13 @@ deb lucid-updates comp1
 deb lucid-proposed comp1" test_profile lucid-proposed
 expect_output "deb lucid comp1
 deb lucid-updates comp1" test_profile lucid-updates
+
+expect_output "deb     mirror suite component
+deb-src mirror suite component" run_suite_mode --with-sources=yes
+expect_output "deb     mirror suite component
+deb-src mirror suite component" run_suite_mode --with-sources=
+expect_output "deb     mirror suite component
+#deb-src mirror suite component" run_suite_mode --with-sources=disabled
+expect_output "deb mirror suite component" run_suite_mode --with-sources=no
 
 testlib_summary
