@@ -250,6 +250,9 @@ if [ -n "$profile" ]; then
         esac
       ;;
       ubuntu)
+        if [ "$base_dist" != "${profile%%-*}" ]; then
+            die "Unknown Ubuntu based profile=$profile"
+        fi
         case "$profile" in
           *-backports)
             pockets="updates backports"
@@ -262,7 +265,7 @@ if [ -n "$profile" ]; then
           ;;
           *)
             if [ "$base_dist" != "$profile" ]; then
-                die "Unknown Ubuntu based profile=$profile"
+                die "Unknown Ubuntu pocket based profile=$profile"
             fi
           ;;
         esac
