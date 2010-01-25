@@ -86,13 +86,18 @@ deb squeeze/volatile-sloppy comp1" test_profile squeeze/volatile-sloppy
 
 expect_output "deb lucid comp1" test_profile lucid
 expect_output "deb lucid comp1
+deb lucid-security comp1" test_profile lucid-security
+expect_output "deb lucid comp1
+deb lucid-security comp1
+deb lucid-updates comp1" test_profile lucid-updates
+expect_output "deb lucid comp1
+deb lucid-security comp1
 deb lucid-updates comp1
 deb lucid-backports comp1" test_profile lucid-backports
 expect_output "deb lucid comp1
+deb lucid-security comp1
 deb lucid-updates comp1
 deb lucid-proposed comp1" test_profile lucid-proposed
-expect_output "deb lucid comp1
-deb lucid-updates comp1" test_profile lucid-updates
 
 expect_output "deb     mirror suite component
 deb-src mirror suite component" run_suite_mode --with-sources=yes

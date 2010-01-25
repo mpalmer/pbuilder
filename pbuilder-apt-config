@@ -11,7 +11,7 @@ self="$(basename "$0")"
 # - default output when neither --suite nor --profile is set?
 # - support getting/setting --archive?
 # - support setting --mirror-map (for --profile)
-# - list Ubuntu security pocket?  Debian security entries?
+# - Debian security entries?
 
 log() {
     echo "$@" >&2
@@ -258,14 +258,17 @@ if [ -n "$profile" ]; then
         fi
         pockets=""
         case "$profile" in
-          *-backports)
-            pockets="updates backports"
-          ;;
-          *-proposed)
-            pockets="updates proposed"
+          *-security)
+            pockets="security"
           ;;
           *-updates)
-            pockets="updates"
+            pockets="security updates"
+          ;;
+          *-backports)
+            pockets="security updates backports"
+          ;;
+          *-proposed)
+            pockets="security updates proposed"
           ;;
           *)
             if [ "$base_dist" != "$profile" ]; then
