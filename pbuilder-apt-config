@@ -210,28 +210,33 @@ if [ -n "$profile" ]; then
           experimental)
             base_dist="unstable"
             mirror="$base_mirror"
+            output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
           */volatile)
             vendor="volatile"
             mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
+            output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
           *-backports)
             vendor="backports.org"
             mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
+            output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
           *-proposed-updates)
             mirror="$base_mirror"
+            output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
           *)
             if [ "$base_dist" != "$profile" ]; then
                 die "Unknown Debian based profile=$profile"
             fi
+            output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
           ;;
         esac
-        output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
-        if [ -n "$mirror" ]; then
-            output_sources "$with_sources" "$mirror" "$profile" "$components"
-        fi
       ;;
       ubuntu)
         case "$profile" in
