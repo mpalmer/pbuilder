@@ -253,6 +253,7 @@ if [ -n "$profile" ]; then
         if [ "$base_dist" != "${profile%%-*}" ]; then
             die "Unknown Ubuntu based profile=$profile"
         fi
+        pockets=""
         case "$profile" in
           *-backports)
             pockets="updates backports"
@@ -289,6 +290,9 @@ if [ -n "$suite" ]; then
         mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
     fi
     output_sources "$with_sources" "$mirror" "$suite" "$components"
+    for pocket in $pockets; do
+        output_sources "$with_sources" "$mirror" "$suite-$pocket" "$components"
+    done
     exit 0
 fi
 

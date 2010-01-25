@@ -12,6 +12,16 @@ test_components() {
     run_suite_mode --components "comp1 comp2 comp3"
 }
 
+test_pockets() {
+    run_suite_mode --pockets ""
+    echo
+    run_suite_mode --pockets pocket1
+    echo
+    run_suite_mode --pockets pocket1,pocket2,pocket3
+    echo
+    run_suite_mode --pockets "pocket1 pocket2 pocket3"
+}
+
 strip_mirror() {
     local deb mirror eol
 
@@ -40,6 +50,21 @@ expect_output "deb mirror suite comp1
 deb mirror suite comp1 comp2 comp3
 deb mirror suite comp1 comp2 comp3" test_components
 
+expect_output "deb mirror suite component
+
+deb mirror suite component
+deb mirror suite-pocket1 component
+
+deb mirror suite component
+deb mirror suite-pocket1 component
+deb mirror suite-pocket2 component
+deb mirror suite-pocket3 component
+
+deb mirror suite component
+deb mirror suite-pocket1 component
+deb mirror suite-pocket2 component
+deb mirror suite-pocket3 component" test_pockets
+
 expect_output "deb unstable comp1" test_profile unstable
 expect_output "deb sid comp1" test_profile sid
 expect_output "deb unstable comp1
@@ -53,6 +78,7 @@ deb squeeze/volatile comp1" test_profile squeeze/volatile
 expect_output "deb squeeze comp1
 deb squeeze/volatile comp1
 deb squeeze/volatile-sloppy comp1" test_profile squeeze/volatile-sloppy
+
 expect_output "deb lucid comp1" test_profile lucid
 expect_output "deb lucid comp1
 deb lucid-updates comp1
