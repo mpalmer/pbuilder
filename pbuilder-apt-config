@@ -6,10 +6,6 @@ set -e
 self="$(basename "$0")"
 
 # TODO
-# - currently only handles a single --suite or --profile; allow multiple ones?
-# - nicer error messages
-# - default output when neither --suite nor --profile is set?
-# - support getting/setting --archive?
 # - support setting --mirror-map (for --profile)
 # - Debian security entries?
 
@@ -156,10 +152,6 @@ while :; do
       ;;
       --pockets)
         pockets="$2"
-        shift 2
-      ;;
-      --archive)
-        archive="$2"
         shift 2
       ;;
       --profile)
