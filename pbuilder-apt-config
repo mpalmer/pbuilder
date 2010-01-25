@@ -1,0 +1,223 @@
+#!/bin/sh
+# Outputs APT configuration data
+
+set -e
+
+self="$(basename "$0")"
+
+# TODO
+# - handle enabling/disabling deb-src
+# - currently only handles a single --suite or --profile; allow multiple ones?
+# - nicer error messages
+# - default output when neither --suite nor --profile is set?
+# - support getting/setting --vendor?
+# - support setting --mirror-map (for --profile)
+# - list Ubuntu security pocket?  Debian security entries?
+
+log() {
+    echo "$@" >&2
+}
+
+usage() {
+    log "$self [--arch=<arch>] [--components=<comp1>,<comp2>] [--mirror=<mirror>] [--suite=<suite>] [--pockets=<pocket1>,<pocket2>]" >&2
+    log "$self [--arch=<arch>] [--components=<comp1>,<comp2>] [--profile=<profile>]" >&2
+}
+
+die() {
+    log "$@"
+    exit 1
+}
+
+guess_dist_vendor() {
+    local dist="$1"
+
+    case "$dist" in
+      etch|lenny|squeeze|sid|testing|unstable|experimental)
+        echo "debian"
+      ;;
+      hardy|intrepid|jaunty|karmic|lucid)
+        echo "ubuntu"
+      ;;
+      *)
+        die "Unknown vendor for dist=$dist"
+      ;;
+    esac
+}
+
+guess_vendor_arch_mirror() {
+    local vendor="$1"
+    local arch="$2"
+
+    case "$vendor" in
+      bpo)
+        echo "http://www.backports.org/backports.org/"
+      ;;
+      debian)
+        echo "http://ftp.us.debian.org/debian/"
+      ;;
+      ubuntu)
+        case "$arch" in
+          amd64|i386)
+            echo "http://archive.ubuntu.com/ubuntu/"
+          ;;
+          armel|hppa|ia64|lpia|powerpc|sparc)
+            echo "http://ports.ubuntu.com/ubuntu-ports/"
+          ;;
+          *)
+            die "Unknown mirror for Ubuntu and arch=$arch"
+          ;;
+        esac
+      ;;
+      *)
+        die "Unknown mirror for vendor=$vendor"
+      ;;
+    esac
+}
+
+getopt_output="`getopt -o "" -l arch:,components:,mirror:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
+
+eval set -- "$getopt_output"
+
+arch="`dpkg --print-architecture`"
+components="main"
+mirror=""
+suite=""
+pockets=""
+vendor=""
+profile=""
+
+while :; do
+    case "$1" in
+      --arch)
+        arch="$2"
+        shift 2
+      ;;
+      --components)
+        components="$2"
+        shift 2
+      ;;
+      --mirror)
+        mirror="$2"
+        shift 2
+      ;;
+      --suite)
+        if [ -z "$2" ]; then
+            die "Need a suite for --suite"
+        fi
+        if [ -n "$profile" ]; then
+            die "Can't set --suite after --profile"
+        fi
+        suite="$2"
+        shift 2
+      ;;
+      --pockets)
+        pockets="$2"
+        shift 2
+      ;;
+      --vendor)
+        vendor="$2"
+        shift 2
+      ;;
+      --profile)
+        if [ -z "$2" ]; then
+            die "Need a profile for --profile"
+        fi
+        if [ -n "$suite" ]; then
+            die "Can't set --profile after --suite"
+        fi
+        profile="$2"
+        shift 2
+      ;;
+      --)
+        shift
+        break
+      ;;
+      *)
+        die "Internal error: unhandled arg $1=$2"
+      ;;
+    esac
+done
+
+case $# in
+  0)
+    command="sources"
+  ;;
+  1)
+    command="$1"
+  ;;
+  2)
+    usage
+    exit 1
+  ;;
+esac
+
+if [ -z "$suite" ] && [ -z "$profile" ]; then
+    die "Please pass --suite or --profile"
+fi
+
+if [ -n "$profile" ]; then
+    base_dist="${profile%%-*}"
+    base_vendor="`guess_dist_vendor "$base_dist"`"
+    base_mirror="`guess_vendor_arch_mirror "$base_vendor" "$arch"`"
+    case "$base_vendor" in
+      debian)
+        case "$profile" in
+          experimental)
+            base_dist="unstable"
+            mirror="$base_mirror"
+          ;;
+          *-backports)
+            vendor="bpo"
+            mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
+          ;;
+          *-proposed-updates)
+            mirror="$base_mirror"
+          ;;
+          *)
+            if [ "$base_dist" != "$profile" ]; then
+                die "Unknown Debian based profile=$profile"
+            fi
+          ;;
+        esac
+        echo "deb     $base_mirror $base_dist $components"
+        if [ -n "$mirror" ]; then
+            echo "deb     $mirror $profile $components"
+        fi
+      ;;
+      ubuntu)
+        case "$profile" in
+          *-backports)
+            pockets="updates backports"
+          ;;
+          *-proposed)
+            pockets="updates proposed"
+          ;;
+          *-updates|*-security)
+            pockets="updates"
+          ;;
+          *)
+            if [ "$base_dist" != "$profile" ]; then
+                die "Unknown Ubuntu based profile=$profile"
+            fi
+          ;;
+        esac
+        echo "deb     $base_mirror $base_dist $components"
+        for pocket in $pockets; do
+            echo "deb     $base_mirror $base_dist-$pocket $components"
+        done
+      ;;
+    esac
+    exit 0
+fi
+
+if [ -n "$suite" ]; then
+    if [ -z "$mirror" ]; then
+        if [ -z "$vendor" ]; then
+            vendor="`guess_dist_vendor "$suite"`"
+        fi
+        mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
+    fi
+    echo "deb     $mirror $suite $components"
+    exit 0
+fi
+
