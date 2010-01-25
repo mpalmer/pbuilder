@@ -133,7 +133,7 @@ while :; do
         break
       ;;
       *)
-        die "Internal error: unhandled arg $1=$2"
+        die "Unhandled arg=$1"
       ;;
     esac
 done
@@ -205,6 +205,9 @@ if [ -n "$profile" ]; then
         for pocket in $pockets; do
             echo "deb     $base_mirror $base_dist-$pocket $components"
         done
+      ;;
+      *)
+        die "Unknown profile for base_vendor=$base_vendor"
       ;;
     esac
     exit 0
