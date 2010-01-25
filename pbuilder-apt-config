@@ -49,7 +49,7 @@ guess_vendor_arch_mirror() {
     local arch="$2"
 
     case "$vendor" in
-      bpo)
+      backports.org)
         echo "http://www.backports.org/backports.org/"
       ;;
       debian)
@@ -167,7 +167,7 @@ if [ -n "$profile" ]; then
             mirror="$base_mirror"
           ;;
           *-backports)
-            vendor="bpo"
+            vendor="backports.org"
             mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
           ;;
           *-proposed-updates)
