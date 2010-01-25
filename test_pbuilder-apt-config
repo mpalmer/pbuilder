@@ -48,6 +48,9 @@ test_options() {
 
 expect_output "deb mirror suite component" run_suite_mode
 
+expect_output "deb http://archive.ubuntu.com/ubuntu/ lucid component" run_suite_mode --mirror "" --suite lucid --arch i386
+expect_output "deb http://ports.ubuntu.com/ubuntu-ports/ lucid component" run_suite_mode --mirror "" --suite lucid --arch armel
+
 expect_output "deb mirror suite comp1
 deb mirror suite comp1 comp2 comp3
 deb mirror suite comp1 comp2 comp3" test_components
