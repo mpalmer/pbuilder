@@ -14,8 +14,14 @@ log() {
 }
 
 usage() {
-    log "$self [--with-sources=[yes|no|disabled]] [--arch=<arch>] [--components=<comp1>,<comp2>] [--mirror=<mirror>] [--suite=<suite>] [--pockets=<pocket1>,<pocket2>]" >&2
-    log "$self [--with-sources=[yes|no|disabled]] [--arch=<arch>] [--components=<comp1>,<comp2>] [--profile=<profile>]" >&2
+    log "$self [<options>] [--mirror=<mirror>] [--suite=<suite>] [--pockets=<pocket1>,<pocket2>] <action>"
+    log "$self [--profile=<profile>] <action>"
+    log "  where <action> is one of apt-sources, debootstrap-mirror, or debootstrap-suite"
+    log
+    log "Common options:"
+    log "  --with-sources, --with-sources=[yes|no|disabled]"
+    log "  --arch=<arch>"
+    log "  --components=<comp1>,<comp2>"
 }
 
 die() {
@@ -99,7 +105,7 @@ output_sources() {
     esac
 }
 
-getopt_output="`getopt -o "" -l with-sources::,arch:,components:,mirror:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
+getopt_output="`getopt -o "" -l help,with-sources::,arch:,components:,mirror:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
 
 eval set -- "$getopt_output"
 
@@ -114,6 +120,10 @@ profile=""
 
 while :; do
     case "$1" in
+      --help)
+        usage
+        exit 0
+      ;;
       --with-sources)
         case "$2" in
           "")
@@ -173,19 +183,6 @@ while :; do
       ;;
     esac
 done
-
-case $# in
-  0)
-    command="sources"
-  ;;
-  1)
-    command="$1"
-  ;;
-  2)
-    usage
-    exit 1
-  ;;
-esac
 
 if [ -z "$suite" ] && [ -z "$profile" ]; then
     die "Please pass --suite or --profile"
@@ -293,4 +290,18 @@ if [ -n "$suite" ]; then
     done
     exit 0
 fi
+
+command="$1"
+case $1 in
+  apt-sources)
+  ;;
+  debootstrap-mirror)
+  ;;
+  debootstrap-suite)
+  ;;
+  *)
+    usage
+    exit 1
+  ;;
+esac
 
