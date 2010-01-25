@@ -226,12 +226,18 @@ if [ -n "$profile" ]; then
             fi
           ;;
           *-backports)
+            if [ "$base_dist" != "${profile%%-*}" ]; then
+                die "Unknown Backports.org based profile=$profile"
+            fi
             vendor="backports.org"
             mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
             output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
           *-proposed-updates)
+            if [ "$base_dist" != "${profile%%-*}" ]; then
+                die "Unknown Debian updates based profile=$profile"
+            fi
             output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             output_sources "$with_sources" "$base_mirror" "$profile" "$components"
           ;;
