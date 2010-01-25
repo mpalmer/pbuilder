@@ -6,7 +6,6 @@ set -e
 self="$(basename "$0")"
 
 # TODO
-# - handle enabling/disabling deb-src
 # - currently only handles a single --suite or --profile; allow multiple ones?
 # - nicer error messages
 # - default output when neither --suite nor --profile is set?
@@ -19,8 +18,8 @@ log() {
 }
 
 usage() {
-    log "$self [--arch=<arch>] [--components=<comp1>,<comp2>] [--mirror=<mirror>] [--suite=<suite>] [--pockets=<pocket1>,<pocket2>]" >&2
-    log "$self [--arch=<arch>] [--components=<comp1>,<comp2>] [--profile=<profile>]" >&2
+    log "$self [--with-sources=[yes|no|disabled]] [--arch=<arch>] [--components=<comp1>,<comp2>] [--mirror=<mirror>] [--suite=<suite>] [--pockets=<pocket1>,<pocket2>]" >&2
+    log "$self [--with-sources=[yes|no|disabled]] [--arch=<arch>] [--components=<comp1>,<comp2>] [--profile=<profile>]" >&2
 }
 
 die() {
@@ -74,10 +73,35 @@ guess_vendor_arch_mirror() {
     esac
 }
 
-getopt_output="`getopt -o "" -l arch:,components:,mirror:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
+output_sources() {
+    local with_sources="$1"
+    local mirror="$2"
+    local dist="$3"
+    local components="$4"
+
+    case "$with_sources" in
+      yes)
+        echo "deb     $mirror $dist $components"
+        echo "deb-src $mirror $dist $components"
+      ;;
+      disabled)
+        echo "deb     $mirror $dist $components"
+        echo "#deb-src $mirror $dist $components"
+      ;;
+      no)
+        echo "deb $mirror $dist $components"
+      ;;
+      *)
+        die 'with_sources must be either "yes", "disabled", or "no"'
+      ;;
+    esac
+}
+
+getopt_output="`getopt -o "" -l with-sources::,arch:,components:,mirror:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
 
 eval set -- "$getopt_output"
 
+with_sources="disabled"
 arch="`dpkg --print-architecture`"
 components="main"
 mirror=""
@@ -88,6 +112,20 @@ profile=""
 
 while :; do
     case "$1" in
+      --with-sources)
+        case "$2" in
+          "")
+            with_sources="yes"
+          ;;
+          yes|no|disabled)
+            with_sources="$2"
+          ;;
+          *)
+            die '--with-sources must be either "yes", "disabled", or "no"'
+          ;;
+        esac
+        shift 2
+      ;;
       --arch)
         arch="$2"
         shift 2
@@ -182,9 +220,9 @@ if [ -n "$profile" ]; then
             fi
           ;;
         esac
-        echo "deb     $base_mirror $base_dist $components"
+        output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
         if [ -n "$mirror" ]; then
-            echo "deb     $mirror $profile $components"
+            output_sources "$with_sources" "$mirror" "$profile" "$components"
         fi
       ;;
       ubuntu)
@@ -204,9 +242,9 @@ if [ -n "$profile" ]; then
             fi
           ;;
         esac
-        echo "deb     $base_mirror $base_dist $components"
+        output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
         for pocket in $pockets; do
-            echo "deb     $base_mirror $base_dist-$pocket $components"
+            output_sources "$with_sources" "$base_mirror" "$base_dist-$pocket" "$components"
         done
       ;;
       *)
@@ -223,7 +261,7 @@ if [ -n "$suite" ]; then
         fi
         mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
     fi
-    echo "deb     $mirror $suite $components"
+    output_sources "$with_sources" "$mirror" "$suite" "$components"
     exit 0
 fi
 
