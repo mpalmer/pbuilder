@@ -212,11 +212,18 @@ if [ -n "$profile" ]; then
             output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             output_sources "$with_sources" "$base_mirror" "$profile" "$components"
           ;;
-          */volatile)
+          */volatile|*/volatile-sloppy)
+            if [ "$base_dist" != "${profile%%/*}" ]; then
+                die "Unknown Volatile based profile=$profile"
+            fi
             vendor="volatile"
             mirror="`guess_vendor_arch_mirror "$vendor" "$arch"`"
+            volatile_dist=${profile%%-*}
             output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
-            output_sources "$with_sources" "$mirror" "$profile" "$components"
+            output_sources "$with_sources" "$mirror" "$volatile_dist" "$components"
+            if [ "$volatile_dist" != "$profile" ]; then
+                output_sources "$with_sources" "$mirror" "$profile" "$components"
+            fi
           ;;
           *-backports)
             vendor="backports.org"
