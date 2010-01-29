@@ -78,7 +78,7 @@ get_archive_url() {
       ubuntu-ports)
         echo "http://ports.ubuntu.com/ubuntu-ports/"
       ;;
-      volatile)
+      debian-volatile)
         echo "http://volatile.debian.org/debian-volatile/"
       ;;
       *)
@@ -255,7 +255,7 @@ if [ -n "$profile" ]; then
             if [ "$base_dist" != "${profile%%/*}" ]; then
                 die "Unknown Volatile based profile=$profile"
             fi
-            archive="volatile"
+            archive="debian-volatile"
             mirror="`get_archive_url "$archive"`"
             volatile_dist=${profile%%-*}
             add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
