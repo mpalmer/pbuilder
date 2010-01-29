@@ -91,6 +91,9 @@ deb squeeze/volatile comp1" test_profile squeeze/volatile
 expect_output "deb squeeze comp1
 deb squeeze/volatile comp1
 deb squeeze/volatile-sloppy comp1" test_profile squeeze/volatile-sloppy
+expect_output "deb squeeze comp1
+deb squeeze/volatile comp1
+deb squeeze-proposed-updates/volatile comp1" test_profile squeeze-proposed-updates/volatile
 expect_output "deb bo comp1" test_profile bo
 
 expect_output "deb lucid comp1" test_profile lucid

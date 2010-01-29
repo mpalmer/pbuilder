@@ -251,13 +251,21 @@ if [ -n "$profile" ]; then
             add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             add_output_sources "$with_sources" "$base_mirror" "$profile" "$components"
           ;;
+          *-proposed-updates/volatile)
+            archive="debian-volatile"
+            mirror="`get_archive_url "$archive"`"
+            volatile_dist="$base_dist/volatile"
+            add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            add_output_sources "$with_sources" "$mirror" "$volatile_dist" "$components"
+            add_output_sources "$with_sources" "$mirror" "$profile" "$components"
+          ;;
           */volatile|*/volatile-sloppy)
             if [ "$base_dist" != "${profile%%/*}" ]; then
-                die "Unknown Volatile based profile=$profile"
+                die "Unknown Debian Volatile based profile=$profile"
             fi
             archive="debian-volatile"
             mirror="`get_archive_url "$archive"`"
-            volatile_dist=${profile%%-*}
+            volatile_dist=${profile%-sloppy}
             add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             add_output_sources "$with_sources" "$mirror" "$volatile_dist" "$components"
             if [ "$volatile_dist" != "$profile" ]; then
