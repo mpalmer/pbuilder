@@ -6,7 +6,7 @@ INSTALL_EXECUTABLE=install -m 0755
 #
 # To add new script, add it to here, so that it will be tested. And then add a rule to install: target.
 #
-SHELLCODES=pbuilder-buildpackage \
+SHELLCODES := pbuilder-buildpackage \
 	pbuilder-buildpackage-funcs \
 	pbuilder-checkparams \
 	pbuilder-uml-checkparams \
@@ -26,7 +26,15 @@ SHELLCODES=pbuilder-buildpackage \
 	pdebuild \
 	pdebuild-checkparams \
 	pdebuild-user-mode-linux \
-	pdebuild-internal
+	pdebuild-internal \
+	testlib.sh \
+	test_pbuilder-apt-config \
+	test_pbuilder-checkparams \
+	test_pbuilder-modules \
+	test_pbuilder-satisfydepends-checkparams \
+	test_pbuilder-satisfydepends-classic \
+	test_pbuilder-satisfydepends-funcs \
+	test_testlib.sh
 
 all:
 
