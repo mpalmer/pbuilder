@@ -11,30 +11,66 @@ SBINDIR := $(DESTDIR)/usr/sbin
 EXAMPLEDIR := $(DESTDIR)/usr/share/doc/pbuilder/examples
 PKGDATADIR := $(DESTDIR)/usr/share/pbuilder
 
-#
-# To add new script, add it to here, so that it will be tested. And then add a rule to install: target.
-#
-SHELLCODES := pbuilder-buildpackage \
+define newline
+
+
+endef
+
+NULL :=
+
+BIN_SCRIPTS += \
+	debuild-pbuilder \
+	pbuilder-user-mode-linux \
+	pdebuild \
+	pdebuild-user-mode-linux \
+	$(NULL)
+
+PKGLIB_SCRIPTS += \
+	pbuilder-buildpackage \
 	pbuilder-buildpackage-funcs \
 	pbuilder-checkparams \
-	pbuilder-uml-checkparams \
 	pbuilder-createbuildenv \
 	pbuilder-loadconfig \
 	pbuilder-modules \
 	pbuilder-runhooks \
-	pbuilder-satisfydepends-classic \
-	pbuilder-satisfydepends-gdebi \
-	pbuilder-satisfydepends-funcs \
-	pbuilder-satisfydepends-checkparams \
 	pbuilder-satisfydepends-aptitude \
+	pbuilder-satisfydepends-checkparams \
+	pbuilder-satisfydepends-classic \
 	pbuilder-satisfydepends-experimental \
+	pbuilder-satisfydepends-funcs \
+	pbuilder-satisfydepends-gdebi \
+	pbuilder-uml-checkparams \
 	pbuilder-updatebuildenv \
-	pbuilder-user-mode-linux \
-	pbuilder \
-	pdebuild \
 	pdebuild-checkparams \
-	pdebuild-user-mode-linux \
 	pdebuild-internal \
+	pdebuild-uml-checkparams \
+	$(NULL)
+# TODO add pbuilder-apt-config
+
+SBIN_SCRIPTS += \
+	pbuilder \
+	$(NULL)
+
+EXAMPLE_SCRIPTS += \
+	examples/B90lintian \
+	examples/B91dpkg-i \
+	examples/B92test-pkg \
+	examples/C10shell \
+	examples/C11screen \
+	examples/D10tmp \
+	examples/D20addnonfree \
+	examples/D80no-man-db-rebuild \
+	examples/D90chrootmemo \
+	examples/F90chrootmemo \
+	examples/B90list-missing \
+	examples/B91debc \
+	examples/execute_installtest.sh \
+	examples/execute_paramtest.sh \
+	examples/pbuilder-distribution.sh \
+	$(NULL)
+
+NOINST_SCRIPTS += \
+	debuild.sh \
 	testlib.sh \
 	test_pbuilder-apt-config \
 	test_pbuilder-checkparams \
@@ -42,18 +78,24 @@ SHELLCODES := pbuilder-buildpackage \
 	test_pbuilder-satisfydepends-checkparams \
 	test_pbuilder-satisfydepends-classic \
 	test_pbuilder-satisfydepends-funcs \
-	test_testlib.sh
+	test_testlib.sh \
+	$(NULL)
+
+# TODO: check bash_completion.pbuilder
+
+# TODO: check man pages
+
+# TODO: check pbuilderrcs and *.conf
+
+# TODO: check subdirs, more examples etc.
+
+CHECK_SCRIPTS += $(BIN_SCRIPTS) $(PKGLIB_SCRIPTS) $(SBIN_SCRIPTS) $(EXAMPLE_SCRIPTS) $(NOINST_SCRIPTS)
 
 all:
 
-define newline
-
-
-endef
-
 check:
 	# syntax check
-	$(foreach script,$(SHELLCODES),bash -n $(script)$(newline))
+	$(foreach script,$(CHECK_SCRIPTS),bash -n $(script)$(newline))
 	# testsuite
 	$(foreach test,$(wildcard ./test_*),$(test)$(newline))
 
@@ -82,52 +124,17 @@ install:
 	$(INSTALL_DIRECTORY) $(EXAMPLEDIR)/lvmpbuilder/lib
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-mnt
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-umlresult
-	$(INSTALL_EXECUTABLE) pbuilder-buildpackage $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-buildpackage-funcs $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-createbuildenv $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-updatebuildenv $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-loadconfig $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-runhooks $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-checkparams $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pdebuild-checkparams $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-uml-checkparams $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pdebuild-uml-checkparams $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-modules $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder $(SBINDIR)
-	$(INSTALL_EXECUTABLE) pdebuild $(BINDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-user-mode-linux $(BINDIR)
-	$(INSTALL_EXECUTABLE) pdebuild-user-mode-linux $(BINDIR)
-	$(INSTALL_EXECUTABLE) debuild-pbuilder $(BINDIR)
-
-	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-classic $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-gdebi $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-aptitude $(PKGLIBDIR)
+	$(foreach script,$(BIN_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(BINDIR)$(newline))
+	$(foreach script,$(PKGLIB_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(PKGLIBDIR)$(newline))
+	$(foreach script,$(SBIN_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(SBINDIR)$(newline))
+	$(foreach script,$(EXAMPLE_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(EXAMPLEDIR)$(newline))
 	# install -aptitude flavour as the default satisfydepends
 	ln -sf pbuilder-satisfydepends-aptitude $(PKGLIBDIR)/pbuilder-satisfydepends
-	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-experimental $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-checkparams $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-funcs $(PKGLIBDIR)
-	$(INSTALL_EXECUTABLE) pdebuild-internal $(PKGLIBDIR)
 	$(INSTALL_FILE) pbuilderrc $(EXAMPLEDIR)
 	$(INSTALL_FILE) bash_completion.pbuilder $(DESTDIR)/etc/bash_completion.d/pbuilder
 	$(INSTALL_FILE) pbuilderrc $(PKGDATADIR)
 	$(INSTALL_FILE) pbuilder-uml.conf $(SYSCONFDIR)/pbuilder
 	$(INSTALL_FILE) pbuilder-uml.conf $(PKGDATADIR)
-	$(INSTALL_EXECUTABLE) examples/B90lintian $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/B91dpkg-i $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/B92test-pkg $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/C10shell $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/C11screen $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/D10tmp $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/D20addnonfree $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/D80no-man-db-rebuild $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/D90chrootmemo $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/F90chrootmemo $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/B90list-missing $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/B91debc $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/execute_installtest.sh $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/execute_paramtest.sh $(EXAMPLEDIR)
-	$(INSTALL_EXECUTABLE) examples/pbuilder-distribution.sh $(EXAMPLEDIR)
 	$(INSTALL_EXECUTABLE) examples/rebuild/buildall $(EXAMPLEDIR)/rebuild
 	$(INSTALL_EXECUTABLE) examples/rebuild/getlist $(EXAMPLEDIR)/rebuild
 	$(INSTALL_FILE) examples/rebuild/README $(EXAMPLEDIR)/rebuild
