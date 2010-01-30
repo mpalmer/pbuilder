@@ -23,12 +23,14 @@ BASHCOMPLETIONDIR := $(SYSCONFDIR)/bash_completion.d
 BASHCOMPLETION_DATA += \
 	bash_completion.d/pbuilder \
 	$(NULL)
+CHECK_SCRIPTS += bash_completion.d/pbuilder
 
 ALLDIRS += PBUILDERCONF
 PBUILDERCONFDIR := $(SYSCONFDIR)/pbuilder
 PBUILDERCONF_DATA += \
 	pbuilder-uml.conf \
 	$(NULL)
+CHECK_SCRIPTS += pbuilder-uml.conf
 
 ALLDIRS += BIN
 BIN_SCRIPTS += \
@@ -71,6 +73,7 @@ EXAMPLEDIR := $(DESTDIR)/usr/share/doc/pbuilder/examples
 EXAMPLE_DATA += \
 	pbuilderrc \
 	$(NULL)
+CHECK_SCRIPTS += pbuilderrc
 EXAMPLE_SCRIPTS += \
 	examples/B90lintian \
 	examples/B91dpkg-i \
@@ -106,6 +109,11 @@ EXAMPLE_LVMPBUILDER_LIB_DATA += \
 	examples/lvmpbuilder/lib/lvmbuilder-modules \
 	examples/lvmpbuilder/lib/lvmbuilder-unimplemented \
 	$(NULL)
+CHECK_SCRIPTS += \
+	examples/lvmpbuilder/lib/lvmbuilder-checkparams \
+	examples/lvmpbuilder/lib/lvmbuilder-modules \
+	examples/lvmpbuilder/lib/lvmbuilder-unimplemented \
+	$(NULL)
 EXAMPLE_LVMPBUILDER_LIB_SCRIPTS += \
 	$(NULL)
 
@@ -135,8 +143,6 @@ EXAMPLE_REBUILD_SCRIPTS += \
 
 ALLDIRS += EXAMPLE_WORKAROUND
 EXAMPLE_WORKAROUNDDIR := $(EXAMPLEDIR)/workaround
-EXAMPLE_WORKAROUND_DATA += \
-	$(NULL)
 EXAMPLE_WORKAROUND_SCRIPTS += \
 	examples/E50-initscripts-2.86.ds1-7.workaround.sh \
 	examples/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh \
@@ -144,6 +150,10 @@ EXAMPLE_WORKAROUND_SCRIPTS += \
 
 ALLDIRS += PKGDATA
 PKGDATA_DATA += \
+	pbuilderrc \
+	pbuilder-uml.conf \
+	$(NULL)
+CHECK_SCRIPTS += \
 	pbuilderrc \
 	pbuilder-uml.conf \
 	$(NULL)
@@ -159,16 +169,13 @@ NOINST_SCRIPTS += \
 	test_pbuilder-satisfydepends-funcs \
 	test_testlib.sh \
 	$(NULL)
-
-# TODO: check bash_completion.pbuilder
+CHECK_SCRIPTS += $(NOINST_SCRIPTS)
 
 # TODO: check man pages
 
-# TODO: check pbuilderrcs and *.conf
+# TODO: check subdirs etc.
 
-# TODO: check subdirs, more examples etc.
-
-CHECK_SCRIPTS += $(BIN_SCRIPTS) $(PKGLIB_SCRIPTS) $(SBIN_SCRIPTS) $(EXAMPLE_SCRIPTS) $(NOINST_SCRIPTS)
+CHECK_SCRIPTS += $(foreach d,$(ALLDIRS),$($(d)_SCRIPTS))
 
 all:
 
