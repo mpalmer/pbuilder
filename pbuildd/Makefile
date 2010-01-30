@@ -1,7 +1,7 @@
 PBUILDDDIR=/usr/share/doc/pbuilder/examples/pbuildd/
 
 clean:
-	-rm *~
+	rm -f *~
 
 install:
 	install -d $(DESTDIR)$(PBUILDDDIR)

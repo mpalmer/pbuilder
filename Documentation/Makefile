@@ -44,7 +44,7 @@ release-netfort: pbuilder-doc.html pbuilder-doc.xml pbuilder-doc.css pbuilder-do
 	cp $^ ~/public_html/netfort/software/pbuilder-doc/
 
 clean: 
-	-rm pbuilder-doc.pdf pbuilder-doc.glo pbuilder-doc.idx pbuilder-doc.log pbuilder-doc.out \
+	rm -f pbuilder-doc.pdf pbuilder-doc.glo pbuilder-doc.idx pbuilder-doc.log pbuilder-doc.out \
 		pbuilder-doc.aux pbuilder-doc.html.tmp
 
 .PHONY: preview release-netfort release clean
