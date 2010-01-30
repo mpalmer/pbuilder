@@ -42,6 +42,7 @@ BIN_SCRIPTS += \
 
 ALLDIRS += PKGLIB
 PKGLIB_SCRIPTS += \
+	pbuilder-apt-config \
 	pbuilder-buildpackage \
 	pbuilder-buildpackage-funcs \
 	pbuilder-checkparams \
@@ -69,7 +70,6 @@ PKGLIB_SCRIPTS += \
 	test_pbuilder-satisfydepends-funcs \
 	test_testlib.sh \
 	$(NULL)
-# TODO add pbuilder-apt-config
 
 ALLDIRS += SBIN
 SBIN_SCRIPTS += \
