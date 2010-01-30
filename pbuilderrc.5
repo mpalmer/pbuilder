@@ -197,7 +197,7 @@ When this option is set to
 .B "pbuilder"
 will invoke 
 .B "$DEBOOTSTRAP" 
-with "--variant=buildd"
+with "\-\-variant=buildd"
 option, which results in debootstrap creating a minimal chroot for 
 buildd instead of trying to create a minimal installation chroot.
 .B "DEBOOTSTRAP"
@@ -396,13 +396,13 @@ option, and create a logfile named after the package name.
 Specify what pbuilder implementation to use for pdebuild.
 The currently possible values are
 .B "pbuilder"
-and 
+and
 .B "cowbuilder"
 
 .TP
 .BI "AUTOCLEANAPTCACHE=" "yes"
 Always run with
--B "--autocleanaptcache"
+.B "\-\-autocleanaptcache"
 option.
 
 .SH "AUTHOR"

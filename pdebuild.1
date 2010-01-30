@@ -171,13 +171,13 @@ dpkg-buildpackage: source version without epoch 0.26
  fakeroot debian/rules clean
 dh_testdir
 dh_testroot
-rm -f build-stamp configure-stamp
+rm \-f build-stamp configure-stamp
 /usr/bin/make clean
 make[1]: Entering directory `/home/dancer/DEBIAN/cowdancer/cowdancer'
-rm -f *~ *.o *.lo libcowdancer.so cow-shell cowbuilder
+rm \-f *~ *.o *.lo libcowdancer.so cow-shell cowbuilder
 make[1]: Leaving directory `/home/dancer/DEBIAN/cowdancer/cowdancer'
 dh_clean
- dpkg-source -b cowdancer
+ dpkg-source \-b cowdancer
 dpkg-source: warning: source directory `./cowdancer' is not <sourcepackage>-<upstreamversion> `cowdancer-0.26'
 dpkg-source: building cowdancer in cowdancer_0.26.tar.gz
 	.
