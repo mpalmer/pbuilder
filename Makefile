@@ -65,7 +65,6 @@ TAGS:
 	etags pbuilder-* pbuilder
 
 install:
-	$(INSTALL_DIRECTORY) $(DESTDIR)/etc
 	$(INSTALL_DIRECTORY) $(DESTDIR)/etc/pbuilder
 	$(INSTALL_DIRECTORY) $(DESTDIR)/etc/bash_completion.d
 	$(INSTALL_DIRECTORY) $(DESTDIR)/usr/sbin
