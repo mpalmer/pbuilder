@@ -38,23 +38,19 @@ SHELLCODES := pbuilder-buildpackage \
 
 all:
 
+define newline
+
+
+endef
+
 check:
 	# syntax check
-	set -e; \
-	for A in $(SHELLCODES); do \
-		bash -n $$A; \
-		echo $$A; \
-	done
+	$(foreach script,$(SHELLCODES),bash -n $(script)$(newline))
 	# testsuite
-	set -e ; \
-	for A in test_*; do \
-		bash $$A; \
-	done
+	$(foreach test,$(wildcard ./test_*),$(test)$(newline))
 
-full-check: 
-	set -e; \
-	cd testsuite; \
-	./run-test.sh 
+full-check:
+	cd testsuite && ./run-test.sh
 
 clean:
 	rm -f *.bak *~ TAGS
