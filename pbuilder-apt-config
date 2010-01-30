@@ -66,11 +66,19 @@ get_archive_url() {
     fi
 
     if [ -n "$mirror_map" ]; then
-        url="$(sed -n "s/^[[:space:]]*//; s/[[:space:]]*\$//; /^#/ d; /^\$/ d; s#^$archive\\([[:space:]]\+\\|\$\\)##p" "$mirror_map")"
-        if [ -n "$url" ]; then
-            echo "$url"
-            return
-        fi
+        while read a url; do
+            case "$a" in
+              "$archive")
+                if [ -n "$url" ]; then
+                    echo "$url"
+                    return
+                fi
+              ;;
+              \#*|""|*)
+                :
+              ;;
+            esac
+        done <"$mirror_map"
     fi
     builtin_mirror_map "$archive"
 }
