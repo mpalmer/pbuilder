@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+if [ -n "$PBUILDER_CHECKOUT" ]; then
+    PBUILDER_TESTS_DIR="$PBUILDER_CHECKOUT"
+else
+    PBUILDER_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder}"
+    PBUILDER_TESTS_DIR="$PBUILDER_PKGLIBDIR"
+fi
+
+for t in "$PBUILDER_TESTS_DIR"/test_*; do
+    "$t"
+done

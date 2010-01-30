@@ -1,9 +1,19 @@
 #!/bin/bash
 
-. ./testlib.sh
-. ./pbuilder-satisfydepends-funcs
-
 # testsuite to test pbuilder-satisfydepends-funcs.
+
+if [ -n "$PBUILDER_CHECKOUT" ]; then
+    . "$PBUILDER_CHECKOUT/testlib.sh"
+
+    . "$PBUILDER_CHECKOUT/pbuilder-satisfydepends-funcs"
+else
+    # these currently don't need to be exported
+    PBUILDER_TEST_ROOT="${PBUILDER_ROOT:-}"
+    PBUILDER_TEST_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder}"
+    . "$PBUILDER_TEST_PKGLIBDIR/testlib.sh"
+
+    . "$PBUILDER_TEST_PKGLIBDIR/pbuilder-satisfydepends-funcs"
+fi
 
 DEBIAN_CONTROL=""
 

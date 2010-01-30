@@ -56,6 +56,7 @@ PKGLIB_SCRIPTS += \
 	pbuilder-satisfydepends-experimental \
 	pbuilder-satisfydepends-funcs \
 	pbuilder-satisfydepends-gdebi \
+	pbuilder-selftest \
 	pbuilder-uml-checkparams \
 	pbuilder-updatebuildenv \
 	pdebuild-checkparams \
@@ -177,6 +178,7 @@ CHECK_SCRIPTS += $(foreach d,$(ALLDIRS),$($(d)_SCRIPTS))
 
 all:
 
+check: export PBUILDER_CHECKOUT := $(CURDIR)
 check:
 	# syntax check
 	$(foreach script,$(CHECK_SCRIPTS),bash -n $(script)$(newline))

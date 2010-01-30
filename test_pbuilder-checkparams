@@ -1,17 +1,31 @@
 #!/bin/bash
 
-. ./testlib.sh
-
 # testsuite for pbuilder-checkparams
 
-test_debuildopts() {
-    . ./pbuilder-checkparams
-    echo "$DEBBUILDOPTS"
-}
+if [ -n "$PBUILDER_CHECKOUT" ]; then
+    . "$PBUILDER_CHECKOUT/testlib.sh"
+else
+    # these currently don't need to be exported
+    PBUILDER_TEST_ROOT="${PBUILDER_ROOT:-}"
+    PBUILDER_TEST_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder}"
+    . "$PBUILDER_TEST_PKGLIBDIR/testlib.sh"
+fi
 
 # setup a fake installed environment
 trap testlib_cleanup_env sigpipe sighup exit
 testlib_setup_env
+
+if [ -n "$PBUILDER_CHECKOUT" ]; then
+    PBUILDER_CHECKPARAMS="$PBUILDER_CHECKOUT/pbuilder-checkparams"
+else
+    export PBUILDER_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder}"
+    PBUILDER_CHECKPARAMS="$PBUILDER_PKGLIBDIR/pbuilder-checkparams"
+fi
+
+test_debuildopts() {
+    . "$PBUILDER_CHECKPARAMS"
+    echo "$DEBBUILDOPTS"
+}
 
 expect_output "" \
     test_debuildopts foo.dsc

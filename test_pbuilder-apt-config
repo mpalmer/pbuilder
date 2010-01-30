@@ -4,7 +4,22 @@ set -e
 
 self="$(basename "$0")"
 
-. ./testlib.sh
+# if this is set, use pbuilder files from this location; otherwise, use
+# installed files (from PBUILDER_TEST_ROOT, which is a copy of PBUILDER_ROOT)
+PBUILDER_CHECKOUT="${PBUILDER_CHECKOUT:-}"
+
+if [ -n "$PBUILDER_CHECKOUT" ]; then
+    . "$PBUILDER_CHECKOUT/testlib.sh"
+
+    PBUILDER_APT_CONFIG="$PBUILDER_CHECKOUT/pbuilder-apt-config"
+else
+    # these currently don't need to be exported
+    PBUILDER_TEST_ROOT="${PBUILDER_ROOT:-}"
+    PBUILDER_TEST_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder}"
+    . "$PBUILDER_TEST_PKGLIBDIR/testlib.sh"
+
+    PBUILDER_APT_CONFIG="$PBUILDER_TEST_PKGLIBDIR/pbuilder-apt-config"
+fi
 
 mirror_map=""
 
@@ -29,15 +44,15 @@ debian-archive
 EOF
 
 run_suite_mode() {
-    ./pbuilder-apt-config --mirror-map="$mirror_map" --with-sources=no --mirror mirror --suite suite --components component apt-sources "$@"
+    "$PBUILDER_APT_CONFIG" --mirror-map="$mirror_map" --with-sources=no --mirror mirror --suite suite --components component apt-sources "$@"
 }
 
 debootstrap_suite() {
-    ./pbuilder-apt-config --mirror-map="$mirror_map" --with-sources=no --mirror mirror --components component debootstrap-suite "$@"
+    "$PBUILDER_APT_CONFIG" --mirror-map="$mirror_map" --with-sources=no --mirror mirror --components component debootstrap-suite "$@"
 }
 
 debootstrap_mirror() {
-    ./pbuilder-apt-config --mirror-map="$mirror_map" --with-sources=no --components component debootstrap-mirror "$@"
+    "$PBUILDER_APT_CONFIG" --mirror-map="$mirror_map" --with-sources=no --components component debootstrap-mirror "$@"
 }
 
 test_components() {
@@ -66,7 +81,7 @@ strip_mirror() {
 
 test_profile() {
     local profile="$1"
-    ./pbuilder-apt-config --with-sources=no --profile "$profile" --components comp1 apt-sources | strip_mirror
+    "$PBUILDER_APT_CONFIG" --with-sources=no --profile "$profile" --components comp1 apt-sources | strip_mirror
 }
 
 test_fail() {

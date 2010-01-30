@@ -1,6 +1,17 @@
 #!/bin/bash
 
-. ./testlib.sh
+if [ -n "$PBUILDER_CHECKOUT" ]; then
+    . "$PBUILDER_CHECKOUT/testlib.sh"
+
+    PBUILDER_SATISFYDEPENDS_CHECKPARAMS="$PBUILDER_CHECKOUT/pbuilder-satisfydepends-checkparams"
+else
+    # these currently don't need to be exported
+    PBUILDER_TEST_ROOT="${PBUILDER_ROOT:-}"
+    PBUILDER_TEST_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder}"
+    . "$PBUILDER_TEST_PKGLIBDIR/testlib.sh"
+
+    PBUILDER_SATISFYDEPENDS_CHECKPARAMS="$PBUILDER_TEST_PKGLIBDIR/pbuilder-satisfydepends-checkparams"
+fi
 
 # testsuite to test pbuilder-satisfydepends-checkparams.
 
@@ -11,32 +22,32 @@ checkbuilddep_internal() {
 
 test_chrootexec2() {
     set -- --internal-chrootexec 'chroot /tmp-hoge ' --chroot /tmp
-    . ./pbuilder-satisfydepends-checkparams
+    . "$PBUILDER_SATISFYDEPENDS_CHECKPARAMS"
 }
 expect_fail test_chrootexec2
 
 test_chrootexec1() {
     set -- --chroot /tmp --internal-chrootexec 'chroot /tmp-hoge '
-    . ./pbuilder-satisfydepends-checkparams
+    . "$PBUILDER_SATISFYDEPENDS_CHECKPARAMS"
 }
 expect_success test_chrootexec1
 
 test_chrootexec_echo() {
     set -- --echo --chroot /tmp
-    . ./pbuilder-satisfydepends-checkparams
+    . "$PBUILDER_SATISFYDEPENDS_CHECKPARAMS"
 }
 expect_fail test_chrootexec_echo
 
 test_chrootexec_echo2() {
     set -- --chroot /tmp --echo 
-    . ./pbuilder-satisfydepends-checkparams
+    . "$PBUILDER_SATISFYDEPENDS_CHECKPARAMS"
     echo $CHROOTEXEC
 }
 expect_output "echo chroot /tmp" test_chrootexec_echo2 
 
 test_chrootexec_expect() {
     set -- --chroot /tmp --internal-chrootexec 'chroot /tmp-hoge '
-    . ./pbuilder-satisfydepends-checkparams
+    . "$PBUILDER_SATISFYDEPENDS_CHECKPARAMS"
     echo $CHROOTEXEC
 }
 expect_output "chroot /tmp-hoge" test_chrootexec_expect 
