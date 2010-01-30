@@ -177,6 +177,8 @@ CHECK_SCRIPTS += $(NOINST_SCRIPTS)
 CHECK_SCRIPTS += $(foreach d,$(ALLDIRS),$($(d)_SCRIPTS))
 
 all:
+	$(MAKE) -C pbuildd $@
+	$(MAKE) -C Documentation $@
 
 check: export PBUILDER_CHECKOUT := $(CURDIR)
 check:

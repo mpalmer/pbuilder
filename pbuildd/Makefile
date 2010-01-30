@@ -1,5 +1,7 @@
 PBUILDDDIR=/usr/share/doc/pbuilder/examples/pbuildd/
 
+all:
+
 clean:
 	rm -f *~
 
