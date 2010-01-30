@@ -7,7 +7,6 @@ self="$(basename "$0")"
 
 # TODO
 # - support setting --mirror-map (for --profile)
-# - Debian security entries?
 
 log() {
     echo "$@" >&2
@@ -89,6 +88,9 @@ get_archive_url() {
       ;;
       ubuntu-ports)
         echo "http://ports.ubuntu.com/ubuntu-ports/"
+      ;;
+      debian-security)
+        echo "http://security.debian.org/"
       ;;
       debian-volatile)
         echo "http://volatile.debian.org/debian-volatile/"
@@ -298,9 +300,18 @@ if [ -n "$profile" ]; then
             add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             add_output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
+          */updates)
+            if [ "$base_dist" != "${profile%%/*}" ]; then
+                die "Unknown Debian Security based profile=$profile"
+            fi
+            archive="debian-security"
+            mirror="`get_archive_url "$archive"`"
+            add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
+            add_output_sources "$with_sources" "$mirror" "$profile" "$components"
+          ;;
           *-proposed-updates)
             if [ "$base_dist" != "${profile%%-*}" ]; then
-                die "Unknown Debian updates based profile=$profile"
+                die "Unknown Debian Updates based profile=$profile"
             fi
             add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             add_output_sources "$with_sources" "$base_mirror" "$profile" "$components"

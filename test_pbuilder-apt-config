@@ -83,6 +83,8 @@ expect_output "deb sid comp1" test_profile sid
 expect_output "deb unstable comp1
 deb experimental comp1" test_profile experimental
 expect_output "deb squeeze comp1
+deb squeeze/updates comp1" test_profile squeeze/updates
+expect_output "deb squeeze comp1
 deb squeeze-proposed-updates comp1" test_profile squeeze-proposed-updates
 expect_output "deb squeeze comp1
 deb squeeze-backports comp1" test_profile squeeze-backports
