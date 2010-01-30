@@ -3,19 +3,12 @@ INSTALL_DIRECTORY = $(INSTALL) -d -m 0755
 INSTALL_FILE = $(INSTALL) -m 0644
 INSTALL_EXECUTABLE = $(INSTALL) -m 0755
 
+# semi-standard dirs
 DESTDIR :=
 SYSCONFDIR := $(DESTDIR)/etc
-PBUILDERCONFDIR := $(SYSCONFDIR)/pbuilder
-BASHCOMPLETIONDIR := $(SYSCONFDIR)/bash_completion.d
 BINDIR := $(DESTDIR)/usr/bin
 PKGLIBDIR := $(DESTDIR)/usr/lib/pbuilder
 SBINDIR := $(DESTDIR)/usr/sbin
-EXAMPLEDIR := $(DESTDIR)/usr/share/doc/pbuilder/examples
-EXAMPLE_LVMPBUILDERDIR := $(EXAMPLEDIR)/lvmpbuilder
-EXAMPLE_LVMPBUILDER_LIBDIR := $(EXAMPLE_LVMPBUILDERDIR)/lib
-EXAMPLE_PBUILDERTESTDIR := $(EXAMPLEDIR)/pbuilder-test
-EXAMPLE_REBUILDDIR := $(EXAMPLEDIR)/rebuild
-EXAMPLE_WORKAROUNDDIR := $(EXAMPLEDIR)/workaround
 PKGDATADIR := $(DESTDIR)/usr/share/pbuilder
 
 define newline
@@ -25,14 +18,19 @@ endef
 
 NULL :=
 
+ALLDIRS += BASHCOMPLETION
+BASHCOMPLETIONDIR := $(SYSCONFDIR)/bash_completion.d
 BASHCOMPLETION_DATA += \
 	bash_completion.d/pbuilder \
 	$(NULL)
 
+ALLDIRS += PBUILDERCONF
+PBUILDERCONFDIR := $(SYSCONFDIR)/pbuilder
 PBUILDERCONF_DATA += \
 	pbuilder-uml.conf \
 	$(NULL)
 
+ALLDIRS += BIN
 BIN_SCRIPTS += \
 	debuild-pbuilder \
 	pbuilder-user-mode-linux \
@@ -40,6 +38,7 @@ BIN_SCRIPTS += \
 	pdebuild-user-mode-linux \
 	$(NULL)
 
+ALLDIRS += PKGLIB
 PKGLIB_SCRIPTS += \
 	pbuilder-buildpackage \
 	pbuilder-buildpackage-funcs \
@@ -62,14 +61,16 @@ PKGLIB_SCRIPTS += \
 	$(NULL)
 # TODO add pbuilder-apt-config
 
+ALLDIRS += SBIN
 SBIN_SCRIPTS += \
 	pbuilder \
 	$(NULL)
 
+ALLDIRS += EXAMPLE
+EXAMPLEDIR := $(DESTDIR)/usr/share/doc/pbuilder/examples
 EXAMPLE_DATA += \
 	pbuilderrc \
 	$(NULL)
-
 EXAMPLE_SCRIPTS += \
 	examples/B90lintian \
 	examples/B91dpkg-i \
@@ -88,29 +89,32 @@ EXAMPLE_SCRIPTS += \
 	examples/pbuilder-distribution.sh \
 	$(NULL)
 
+ALLDIRS += EXAMPLE_LVMPBUILDER
+EXAMPLE_LVMPBUILDERDIR := $(EXAMPLEDIR)/lvmpbuilder
 EXAMPLE_LVMPBUILDER_DATA += \
 	examples/lvmpbuilder/README \
 	examples/lvmpbuilder/STRATEGY \
 	$(NULL)
-
 EXAMPLE_LVMPBUILDER_SCRIPTS += \
 	examples/lvmpbuilder/lvmbuilder \
 	$(NULL)
 
+ALLDIRS += EXAMPLE_LVMPBUILDER_LIB
+EXAMPLE_LVMPBUILDER_LIBDIR := $(EXAMPLE_LVMPBUILDERDIR)/lib
 EXAMPLE_LVMPBUILDER_LIB_DATA += \
 	examples/lvmpbuilder/lib/lvmbuilder-checkparams \
 	examples/lvmpbuilder/lib/lvmbuilder-modules \
 	examples/lvmpbuilder/lib/lvmbuilder-unimplemented \
 	$(NULL)
-
 EXAMPLE_LVMPBUILDER_LIB_SCRIPTS += \
 	$(NULL)
 
+ALLDIRS += EXAMPLE_PBUILDERTEST
+EXAMPLE_PBUILDERTESTDIR := $(EXAMPLEDIR)/pbuilder-test
 EXAMPLE_PBUILDERTEST_DATA += \
 	examples/pbuilder-test/README \
 	examples/pbuilder-test/002_sample.c \
 	$(NULL)
-
 EXAMPLE_PBUILDERTEST_SCRIPTS += \
 	examples/pbuilder-test/000_prepinstall \
 	examples/pbuilder-test/001_apprun \
@@ -119,23 +123,26 @@ EXAMPLE_PBUILDERTEST_SCRIPTS += \
 	examples/pbuilder-test/004_ldd \
 	$(NULL)
 
+ALLDIRS += EXAMPLE_REBUILD
+EXAMPLE_REBUILDDIR := $(EXAMPLEDIR)/rebuild
 EXAMPLE_REBUILD_DATA += \
 	examples/rebuild/README \
 	$(NULL)
-
 EXAMPLE_REBUILD_SCRIPTS += \
 	examples/rebuild/buildall \
 	examples/rebuild/getlist \
 	$(NULL)
 
+ALLDIRS += EXAMPLE_WORKAROUND
+EXAMPLE_WORKAROUNDDIR := $(EXAMPLEDIR)/workaround
 EXAMPLE_WORKAROUND_DATA += \
 	$(NULL)
-
 EXAMPLE_WORKAROUND_SCRIPTS += \
 	examples/E50-initscripts-2.86.ds1-7.workaround.sh \
 	examples/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh \
 	$(NULL)
 
+ALLDIRS += PKGDATA
 PKGDATA_DATA += \
 	pbuilderrc \
 	pbuilder-uml.conf \
@@ -182,39 +189,16 @@ clean:
 TAGS:
 	etags pbuilder-* pbuilder
 
+define install_dir_impl
+$(INSTALL_DIRECTORY) $($(1)DIR)$(newline)
+$(foreach file,$($(1)_DATA),$(INSTALL_FILE) $(file) $($(1)DIR)$(newline))
+$(foreach script,$($(1)_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $($(1)DIR)$(newline))
+endef
+
 install:
-	$(INSTALL_DIRECTORY) $(BASHCOMPLETIONDIR)
-	$(INSTALL_DIRECTORY) $(PBUILDERCONFDIR)
-	$(INSTALL_DIRECTORY) $(SBINDIR)
-	$(INSTALL_DIRECTORY) $(BINDIR)
-	$(INSTALL_DIRECTORY) $(PKGLIBDIR)
-	$(INSTALL_DIRECTORY) $(EXAMPLEDIR)
-	$(INSTALL_DIRECTORY) $(EXAMPLE_LVMPBUILDERDIR)
-	$(INSTALL_DIRECTORY) $(EXAMPLE_LVMPBUILDER_LIBDIR)
-	$(INSTALL_DIRECTORY) $(EXAMPLE_PBUILDERTESTDIR)
-	$(INSTALL_DIRECTORY) $(EXAMPLE_REBUILDDIR)
-	$(INSTALL_DIRECTORY) $(EXAMPLE_WORKAROUNDDIR)
-	$(INSTALL_DIRECTORY) $(PKGDATADIR)
+	$(foreach d,$(ALLDIRS),$(call install_dir_impl,$(d)))
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-mnt
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-umlresult
-	$(foreach file,$(PBUILDERCONF_DATA),$(INSTALL_FILE) $(file) $(PBUILDERCONFDIR)$(newline))
-	$(foreach file,$(BASHCOMPLETION_DATA),$(INSTALL_FILE) $(file) $(BASHCOMPLETIONDIR)$(newline))
-	$(foreach script,$(BIN_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(BINDIR)$(newline))
-	$(foreach script,$(PKGLIB_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(PKGLIBDIR)$(newline))
-	$(foreach script,$(SBIN_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(SBINDIR)$(newline))
-	$(foreach file,$(EXAMPLE_DATA),$(INSTALL_FILE) $(file) $(EXAMPLEDIR)$(newline))
-	$(foreach script,$(EXAMPLE_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(EXAMPLEDIR)$(newline))
-	$(foreach file,$(EXAMPLE_REBUILD_DATA),$(INSTALL_FILE) $(file) $(EXAMPLE_REBUILDDIR)$(newline))
-	$(foreach script,$(EXAMPLE_REBUILD_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(EXAMPLE_REBUILDDIR)$(newline))
-	$(foreach file,$(EXAMPLE_PBUILDERTEST_DATA),$(INSTALL_FILE) $(file) $(EXAMPLE_PBUILDERTESTDIR)$(newline))
-	$(foreach script,$(EXAMPLE_PBUILDERTEST_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(EXAMPLE_PBUILDERTESTDIR)$(newline))
-	$(foreach file,$(EXAMPLE_LVMPBUILDER_DATA),$(INSTALL_FILE) $(file) $(EXAMPLE_LVMPBUILDERDIR)$(newline))
-	$(foreach script,$(EXAMPLE_LVMPBUILDER_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(EXAMPLE_LVMPBUILDERDIR)$(newline))
-	$(foreach file,$(EXAMPLE_LVMPBUILDER_LIB_DATA),$(INSTALL_FILE) $(file) $(EXAMPLE_LVMPBUILDER_LIBDIR)$(newline))
-	$(foreach script,$(EXAMPLE_LVMPBUILDER_LIB_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(EXAMPLE_LVMPBUILDER_LIBDIR)$(newline))
-	$(foreach file,$(EXAMPLE_WORKAROUND_DATA),$(INSTALL_FILE) $(file) $(EXAMPLE_WORKAROUNDDIR)$(newline))
-	$(foreach script,$(EXAMPLE_WORKAROUND_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(EXAMPLE_WORKAROUNDDIR)$(newline))
-	$(foreach file,$(PKGDATA_DATA),$(INSTALL_FILE) $(file) $(PKGDATADIR)$(newline))
 	# install -aptitude flavour as the default satisfydepends
 	ln -sf pbuilder-satisfydepends-aptitude $(PKGLIBDIR)/pbuilder-satisfydepends
 	$(MAKE) -C pbuildd $@
