@@ -25,33 +25,38 @@ if [ -z "$PBUILDER_CHECKOUT" ]; then
     PBUILDER_TEST_PKGDATADIR="${PBUILDER_PKGDATADIR:-$PBUILDER_ROOT/usr/share/pbuilder}"
 fi
 
+# set PBUILDER_TEST_VERBOSE to get the full output of tests
+
 TESTLIB_FAILS=0
 TESTLIB_TESTS=0
 
 testlib_echo() {
     case "$1" in
-	OK)
-	    # no output is probably good.
-    	    ;;
-	FAIL)
-	    shift
-	    echo "[FAIL]" "$@" >&2 
-	    TESTLIB_FAILS=$((TESTLIB_FAILS+1))
-	    ;;
+      OK)
+        shift
+        if [ -n "$PBUILDER_TEST_VERBOSE" ]; then
+            echo "[OK]" "$@" >&2
+        fi
+      ;;
+      FAIL)
+        shift
+        echo "[FAIL]" "$@" >&2
+        TESTLIB_FAILS=$(($TESTLIB_FAILS + 1))
+      ;;
     esac
-    TESTLIB_TESTS=$((TESTLIB_TESTS+1))
+    TESTLIB_TESTS=$(($TESTLIB_TESTS + 1))
 }
 
 testlib_summary() {
-    echo "$0: Ran ${TESTLIB_TESTS} tests and $((TESTLIB_TESTS - TESTLIB_FAILS)) succeeded, ${TESTLIB_FAILS} failed"
+    echo "$0: Ran $TESTLIB_TESTS tests and $(($TESTLIB_TESTS - $TESTLIB_FAILS)) succeeded, $TESTLIB_FAILS failed"
     if [ $TESTLIB_FAILS != 0 ]; then
-	echo '================='
-	echo 'Testsuite FAILED!'
-	echo "  $0"
-	echo '================='
-	exit 1
+        echo '================='
+        echo 'Testsuite FAILED!'
+        echo "  $0"
+        echo '================='
+        return 1
     fi
-    exit 0
+    return 0
 }
 
 # Create fake installed tree with basic config files.  Make sure you trap test
@@ -119,43 +124,35 @@ testlib_cleanup_env() {
 }
 
 expect_success() {
-    # run the test in subshell
-    if (
-	"$@"
-	); then
-	testlib_echo "OK" "$1" 
+    # run the test in subshell; successful commands should not output anything
+    # to stderr but may send output to stdout
+    if (if [ -z "$PBUILDER_TEST_VERBOSE" ]; then exec >/dev/null; fi; "$@"); then
+        testlib_echo "OK" "$1"
     else
-	testlib_echo "FAIL" "$1" 
+        testlib_echo "FAIL" "$1" 
     fi
 }
 
 expect_fail() {
-    # run the test in subshell
-    if (
-	"$@"
-	); then
-	testlib_echo "FAIL" "$1"
+    # run the test in subshell; failed commands may output anything to stdout
+    # and stderr
+    if (if [ -z "$PBUILDER_TEST_VERBOSE" ]; then exec >/dev/null 2>&1; fi; "$@"); then
+        testlib_echo "FAIL" "$1"
     else
-	testlib_echo "OK" "$1"
+        testlib_echo "OK" "$1"
     fi
 }
 
 expect_output() {
     # run the test in subshell
     local val result
-    val="$1"; shift 
-    result="$( ( "$@" 2>&1 ) )"|| true
-    if [ "${result}" = "${val}" ]; then
-	testlib_echo "OK" "$1"
+    val="$1"
+    shift
+    result="`"$@" 2>&1`" || true
+    if [ "$result" = "$val" ]; then
+        testlib_echo "OK" "$1"
     else
-	testlib_echo "FAIL" "$1 reason: [${result}] != [${val}]" 
+        testlib_echo "FAIL" "$1" "expected [$val] but got [$result]"
     fi
 }
-
-#   Write your functions test_xxxx and call them at the end with their expected result code:
-# . ./testlib.sh
-# expect_success test_success
-# expect_success test_fail
-# expect_success test_options "hello world"
-# testlib_summary 
 
