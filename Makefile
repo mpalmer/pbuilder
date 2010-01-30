@@ -104,17 +104,10 @@ EXAMPLE_LVMPBUILDER_SCRIPTS += \
 
 ALLDIRS += EXAMPLE_LVMPBUILDER_LIB
 EXAMPLE_LVMPBUILDER_LIBDIR := $(EXAMPLE_LVMPBUILDERDIR)/lib
-EXAMPLE_LVMPBUILDER_LIB_DATA += \
-	examples/lvmpbuilder/lib/lvmbuilder-checkparams \
-	examples/lvmpbuilder/lib/lvmbuilder-modules \
-	examples/lvmpbuilder/lib/lvmbuilder-unimplemented \
-	$(NULL)
-CHECK_SCRIPTS += \
-	examples/lvmpbuilder/lib/lvmbuilder-checkparams \
-	examples/lvmpbuilder/lib/lvmbuilder-modules \
-	examples/lvmpbuilder/lib/lvmbuilder-unimplemented \
-	$(NULL)
 EXAMPLE_LVMPBUILDER_LIB_SCRIPTS += \
+	examples/lvmpbuilder/lib/lvmbuilder-checkparams \
+	examples/lvmpbuilder/lib/lvmbuilder-modules \
+	examples/lvmpbuilder/lib/lvmbuilder-unimplemented \
 	$(NULL)
 
 ALLDIRS += EXAMPLE_PBUILDERTEST
