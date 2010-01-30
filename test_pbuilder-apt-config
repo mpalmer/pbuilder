@@ -1,0 +1,171 @@
+#!/bin/sh
+
+set -e
+
+self="$(basename "$0")"
+
+. ./testlib.sh
+
+mirror_map=""
+
+cleanup() {
+    if [ -n "$mirror_map" ]; then
+        rm -f "$mirror_map"
+    fi
+}
+
+mirror_map="$(mktemp -t "$self.XXXXXXXXXX")"
+cat >"$mirror_map" <<EOF
+archive                 archive-mirror
+ubuntu                  ubuntu-mirror
+ubuntu-ports            ubuntu-ports-mirror
+nomirror
+
+ppa:people              ppa-people-ppa
+ppa:people/otherppa     ppa-people-otherppa
+
+# no mirror
+debian-archive
+EOF
+
+run_suite_mode() {
+    ./pbuilder-apt-config --mirror-map="$mirror_map" --with-sources=no --mirror mirror --suite suite --components component apt-sources "$@"
+}
+
+debootstrap_suite() {
+    ./pbuilder-apt-config --mirror-map="$mirror_map" --with-sources=no --mirror mirror --components component debootstrap-suite "$@"
+}
+
+debootstrap_mirror() {
+    ./pbuilder-apt-config --mirror-map="$mirror_map" --with-sources=no --components component debootstrap-mirror "$@"
+}
+
+test_components() {
+    run_suite_mode --components comp1
+    run_suite_mode --components comp1,comp2,comp3
+    run_suite_mode --components "comp1 comp2 comp3"
+}
+
+test_pockets() {
+    run_suite_mode --pockets ""
+    echo
+    run_suite_mode --pockets pocket1
+    echo
+    run_suite_mode --pockets pocket1,pocket2,pocket3
+    echo
+    run_suite_mode --pockets "pocket1 pocket2 pocket3"
+}
+
+strip_mirror() {
+    local deb mirror eol
+
+    while read deb mirror eol; do
+        echo "$deb $eol"
+    done
+}
+
+test_profile() {
+    local profile="$1"
+    ./pbuilder-apt-config --with-sources=no --profile "$profile" --components comp1 apt-sources | strip_mirror
+}
+
+test_fail() {
+    exit 1
+}
+
+test_options() {
+    echo "$@"
+    exit 1
+}
+
+expect_output "deb mirror suite component" run_suite_mode
+
+expect_output "deb archive-mirror suite component" run_suite_mode --mirror "" --archive archive
+expect_fail run_suite_mode --mirror "" --archive nomirror
+expect_output "deb http://archive.debian.org/debian/ bo component" run_suite_mode --mirror "" --suite bo
+
+expect_output "deb ubuntu-mirror lucid component" run_suite_mode --mirror "" --suite lucid --arch i386
+expect_output "deb ubuntu-ports-mirror lucid component" run_suite_mode --mirror "" --suite lucid --arch armel
+
+expect_output "deb mirror suite comp1
+deb mirror suite comp1 comp2 comp3
+deb mirror suite comp1 comp2 comp3" test_components
+
+expect_output "deb mirror suite component
+
+deb mirror suite component
+deb mirror suite-pocket1 component
+
+deb mirror suite component
+deb mirror suite-pocket1 component
+deb mirror suite-pocket2 component
+deb mirror suite-pocket3 component
+
+deb mirror suite component
+deb mirror suite-pocket1 component
+deb mirror suite-pocket2 component
+deb mirror suite-pocket3 component" test_pockets
+
+expect_output "deb unstable comp1" test_profile unstable
+expect_output "deb sid comp1" test_profile sid
+expect_output "deb unstable comp1
+deb experimental comp1" test_profile experimental
+expect_output "deb squeeze comp1
+deb squeeze/updates comp1" test_profile squeeze/updates
+expect_output "deb squeeze comp1
+deb squeeze-proposed-updates comp1" test_profile squeeze-proposed-updates
+expect_output "deb squeeze comp1
+deb squeeze-backports comp1" test_profile squeeze-backports
+expect_output "deb squeeze comp1
+deb squeeze/volatile comp1" test_profile squeeze/volatile
+expect_output "deb squeeze comp1
+deb squeeze/volatile comp1
+deb squeeze/volatile-sloppy comp1" test_profile squeeze/volatile-sloppy
+expect_output "deb squeeze comp1
+deb squeeze/volatile comp1
+deb squeeze-proposed-updates/volatile comp1" test_profile squeeze-proposed-updates/volatile
+expect_output "deb bo comp1" test_profile bo
+
+expect_output "deb lucid comp1" test_profile lucid
+expect_output "deb lucid comp1
+deb lucid-security comp1" test_profile lucid-security
+expect_output "deb lucid comp1
+deb lucid-security comp1
+deb lucid-updates comp1" test_profile lucid-updates
+expect_output "deb lucid comp1
+deb lucid-security comp1
+deb lucid-updates comp1
+deb lucid-backports comp1" test_profile lucid-backports
+expect_output "deb lucid comp1
+deb lucid-security comp1
+deb lucid-updates comp1
+deb lucid-proposed comp1" test_profile lucid-proposed
+
+expect_output "deb     mirror suite component
+deb-src mirror suite component" run_suite_mode --with-sources=yes
+expect_output "deb     mirror suite component
+deb-src mirror suite component" run_suite_mode --with-sources=
+expect_output "deb     mirror suite component
+#deb-src mirror suite component" run_suite_mode --with-sources=disabled
+expect_output "deb mirror suite component" run_suite_mode --with-sources=no
+
+expect_output "deb ubuntu-mirror suite component" run_suite_mode --mirror "" --archive ubuntu
+expect_output "deb ubuntu-ports-mirror suite component" run_suite_mode --arch armel --mirror "" --archive ubuntu-ports
+expect_fail run_suite_mode --arch armel --mirror "" --archive otherarchive
+expect_success run_suite_mode --mirror "" --suite lucid
+expect_fail    run_suite_mode --mirror "" --suite suite
+expect_success run_suite_mode --mirror "" --suite suite --archive ubuntu
+expect_output "deb ppa-people-ppa suite component" run_suite_mode --mirror "" --suite suite --archive ppa:people
+expect_output "deb ppa-people-otherppa suite component" run_suite_mode --mirror "" --suite suite --archive ppa:people/otherppa
+
+expect_output "suite" debootstrap_suite --suite suite
+expect_output "sid" debootstrap_suite --suite sid
+expect_output "sid" debootstrap_suite --suite unstable
+expect_output "mirror" debootstrap_mirror --suite suite --mirror mirror
+
+expect_output "sid" debootstrap_suite --profile sid
+expect_output "sid" debootstrap_suite --profile unstable
+expect_output "ubuntu-mirror" debootstrap_mirror --profile lucid
+expect_output "ubuntu-ports-mirror" debootstrap_mirror --profile lucid --arch armel
+
+testlib_summary

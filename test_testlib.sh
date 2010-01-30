@@ -16,7 +16,12 @@ test_options() {
     exit 1
 }
 
+test_output() {
+    echo "$@"
+}
+
 expect_success test_success
 expect_fail test_fail
 expect_fail test_options "hello world"
-testlib_summary 
+expect_output "foo bar" test_output "foo" "bar"
+testlib_summary
