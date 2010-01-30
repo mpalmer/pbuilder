@@ -1,7 +1,7 @@
-INSTALL_DIRECTORY=install -d -m 0755 
-INSTALL_FILE=install -m 0644
-INSTALL_EXECUTABLE=install -m 0755
-
+INSTALL = install
+INSTALL_DIRECTORY = $(INSTALL) -d -m 0755
+INSTALL_FILE = $(INSTALL) -m 0644
+INSTALL_EXECUTABLE = $(INSTALL) -m 0755
 
 #
 # To add new script, add it to here, so that it will be tested. And then add a rule to install: target.
