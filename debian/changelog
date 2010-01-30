@@ -1,3 +1,31 @@
+pbuilder (0.196ubuntu1) UNRELEASED; urgency=low
+
+  * pbuilder-createbuildenv, -updatebuildenv: Remove apt from $CHROOTEXEC
+    apt-get install call and add aptitude if pbuilder-satisfydepends uses it;
+    remove aptitude otherwise; closes: 539578.  Fixes support for
+    --variant=buildd.
+  * Make /usr/lib/pbuilder/pbuilder-satisfydepends a symlink to pbuilder-
+    satisfydepends-aptitude instead of a copy; closes: #448098.
+  * pbuilder-satisfydepends-aptitude: Fix typo in package description.
+  * Add builtin support for using ccache in pbuilder and enable it by default.
+    Ship a new /var/cache/pbuilder/ccache dir and bind-mount and chown it to
+    BUILDUSERID at build time.  Install/remove ccache automatically on
+    create/update if CCACHEDIR is set/unset.  Update docs and remove old
+    ccache config example.  Add a NEWS entry featuring the change.  Stop
+    intalling ccache sample config
+  * debuild-pbuilder.1: update sample output of debuild-pbuilder to match
+    current code; thanks Osamu Aoki; closes: 563209.
+  * Don't quote PBUILDERROOTCMD as it's typically a command with arguments
+    such as "su -p" or "sudo -E"; thanks Osamu Aoki; see #563209.
+  * test_pbuilder-satisfydepends-*: add many tests.
+  * pbuilder-satisfydepends-*: Large refactoring and cleanups; fixes
+    historical bugs with space/tabs/etc. parsing in debian/control with
+    pbuilder-satisfydepends-classic and perhaps -aptitude and -experimental.
+    Also avoids large code duplication and normalizes debian/control handling.
+  * pbuilder.8: Mention quoting around --bindmounts; LP: #376612
+
+ -- Loïc Minier <lool@dooz.org>  Sat, 30 Jan 2010 14:24:11 +0100
+
 pbuilder (0.196) unstable; urgency=low
 
   [ Loïc Minier ]
