@@ -191,6 +191,8 @@ clean:
 	rm -f *.bak *~ TAGS
 	rm -f testsuite/testimage
 	rm -rf testsuite/testbuild testsuite/testbuild2
+	$(MAKE) -C pbuildd $@
+	$(MAKE) -C Documentation $@
 
 TAGS:
 	etags pbuilder-* pbuilder
