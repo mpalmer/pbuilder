@@ -5,6 +5,8 @@ INSTALL_EXECUTABLE = $(INSTALL) -m 0755
 
 DESTDIR :=
 SYSCONFDIR := $(DESTDIR)/etc
+PBUILDERCONFDIR := $(SYSCONFDIR)/pbuilder
+BASHCOMPLETIONDIR := $(SYSCONFDIR)/bash_completion.d
 BINDIR := $(DESTDIR)/usr/bin
 PKGLIBDIR := $(DESTDIR)/usr/lib/pbuilder
 SBINDIR := $(DESTDIR)/usr/sbin
@@ -22,6 +24,14 @@ define newline
 endef
 
 NULL :=
+
+BASHCOMPLETION_DATA += \
+	bash_completion.d/pbuilder \
+	$(NULL)
+
+PBUILDERCONF_DATA += \
+	pbuilder-uml.conf \
+	$(NULL)
 
 BIN_SCRIPTS += \
 	debuild-pbuilder \
@@ -126,6 +136,11 @@ EXAMPLE_WORKAROUND_SCRIPTS += \
 	examples/G50-initscripts-2.86.ds1-11-cdebootstrap0.3.9.sh \
 	$(NULL)
 
+PKGDATA_DATA += \
+	pbuilderrc \
+	pbuilder-uml.conf \
+	$(NULL)
+
 NOINST_SCRIPTS += \
 	debuild.sh \
 	testlib.sh \
@@ -168,20 +183,22 @@ TAGS:
 	etags pbuilder-* pbuilder
 
 install:
-	$(INSTALL_DIRECTORY) $(SYSCONFDIR)/pbuilder
+	$(INSTALL_DIRECTORY) $(BASHCOMPLETIONDIR)
+	$(INSTALL_DIRECTORY) $(PBUILDERCONFDIR)
 	$(INSTALL_DIRECTORY) $(SBINDIR)
 	$(INSTALL_DIRECTORY) $(BINDIR)
-	$(INSTALL_DIRECTORY) $(DESTDIR)/etc/bash_completion.d
 	$(INSTALL_DIRECTORY) $(PKGLIBDIR)
-	$(INSTALL_DIRECTORY) $(PKGDATADIR)
 	$(INSTALL_DIRECTORY) $(EXAMPLEDIR)
 	$(INSTALL_DIRECTORY) $(EXAMPLE_LVMPBUILDERDIR)
 	$(INSTALL_DIRECTORY) $(EXAMPLE_LVMPBUILDER_LIBDIR)
 	$(INSTALL_DIRECTORY) $(EXAMPLE_PBUILDERTESTDIR)
 	$(INSTALL_DIRECTORY) $(EXAMPLE_REBUILDDIR)
 	$(INSTALL_DIRECTORY) $(EXAMPLE_WORKAROUNDDIR)
+	$(INSTALL_DIRECTORY) $(PKGDATADIR)
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-mnt
 	$(INSTALL_DIRECTORY) $(DESTDIR)/var/cache/pbuilder/pbuilder-umlresult
+	$(foreach file,$(PBUILDERCONF_DATA),$(INSTALL_FILE) $(file) $(PBUILDERCONFDIR)$(newline))
+	$(foreach file,$(BASHCOMPLETION_DATA),$(INSTALL_FILE) $(file) $(BASHCOMPLETIONDIR)$(newline))
 	$(foreach script,$(BIN_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(BINDIR)$(newline))
 	$(foreach script,$(PKGLIB_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(PKGLIBDIR)$(newline))
 	$(foreach script,$(SBIN_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(SBINDIR)$(newline))
@@ -197,12 +214,9 @@ install:
 	$(foreach script,$(EXAMPLE_LVMPBUILDER_LIB_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(EXAMPLE_LVMPBUILDER_LIBDIR)$(newline))
 	$(foreach file,$(EXAMPLE_WORKAROUND_DATA),$(INSTALL_FILE) $(file) $(EXAMPLE_WORKAROUNDDIR)$(newline))
 	$(foreach script,$(EXAMPLE_WORKAROUND_SCRIPTS),$(INSTALL_EXECUTABLE) $(script) $(EXAMPLE_WORKAROUNDDIR)$(newline))
+	$(foreach file,$(PKGDATA_DATA),$(INSTALL_FILE) $(file) $(PKGDATADIR)$(newline))
 	# install -aptitude flavour as the default satisfydepends
 	ln -sf pbuilder-satisfydepends-aptitude $(PKGLIBDIR)/pbuilder-satisfydepends
-	$(INSTALL_FILE) bash_completion.pbuilder $(DESTDIR)/etc/bash_completion.d/pbuilder
-	$(INSTALL_FILE) pbuilderrc $(PKGDATADIR)
-	$(INSTALL_FILE) pbuilder-uml.conf $(SYSCONFDIR)/pbuilder
-	$(INSTALL_FILE) pbuilder-uml.conf $(PKGDATADIR)
 	$(MAKE) -C pbuildd $@
 	$(MAKE) -C Documentation $@
 
