@@ -151,6 +151,12 @@ CHECK_SCRIPTS += \
 	pbuilder-uml.conf \
 	$(NULL)
 
+NOINST_MANPAGES += \
+	debuild-pbuilder.1 \
+	pbuilder.8 \
+	pbuilderrc.5 \
+	pdebuild.1 \
+	$(NULL)
 NOINST_SCRIPTS += \
 	debuild.sh \
 	testlib.sh \
@@ -162,9 +168,8 @@ NOINST_SCRIPTS += \
 	test_pbuilder-satisfydepends-funcs \
 	test_testlib.sh \
 	$(NULL)
+CHECK_MANPAGES += $(NOINST_MANPAGES)
 CHECK_SCRIPTS += $(NOINST_SCRIPTS)
-
-# TODO: check man pages
 
 # TODO: check subdirs etc.
 
@@ -175,6 +180,7 @@ all:
 check:
 	# syntax check
 	$(foreach script,$(CHECK_SCRIPTS),bash -n $(script)$(newline))
+	$(foreach mp,$(CHECK_MANPAGES),LANG=C MANWIDTH=80 man --warnings -E UTF-8 -l $(mp) >/dev/null$(newline))
 	# testsuite
 	$(foreach test,$(wildcard ./test_*),$(test)$(newline))
 
