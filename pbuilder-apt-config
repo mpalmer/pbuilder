@@ -14,7 +14,7 @@ log() {
 }
 
 usage() {
-    log "$self [<options>] [--mirror=<mirror>] [--suite=<suite>] [--pockets=<pocket1>,<pocket2>] <action>"
+    log "$self [<options>] [--archive=<archive>] [--mirror=<mirror>] [--suite=<suite>] [--pockets=<pocket1>,<pocket2>] <action>"
     log "$self [--profile=<profile>] <action>"
     log "  where <action> is one of apt-sources, debootstrap-mirror, or debootstrap-suite"
     log
@@ -152,13 +152,14 @@ set_debootstrap_suite() {
     esac
 }
 
-getopt_output="`getopt -o "" -l help,with-sources::,arch:,components:,mirror:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
+getopt_output="`getopt -o "" -l help,with-sources::,arch:,components:,archive:,mirror:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
 
 eval set -- "$getopt_output"
 
 with_sources="disabled"
 arch="`dpkg --print-architecture`"
 components="main"
+archive=""
 mirror=""
 suite=""
 pockets=""
@@ -191,6 +192,10 @@ while :; do
       ;;
       --components)
         components="$2"
+        shift 2
+      ;;
+      --archive)
+        archive="$2"
         shift 2
       ;;
       --mirror)
