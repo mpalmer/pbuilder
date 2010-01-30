@@ -23,6 +23,11 @@ pbuilder (0.196ubuntu1) UNRELEASED; urgency=low
     pbuilder-satisfydepends-classic and perhaps -aptitude and -experimental.
     Also avoids large code duplication and normalizes debian/control handling.
   * pbuilder.8: Mention quoting around --bindmounts; LP: #376612
+  * Add pbuilder-apt-config tool to generate APT sources.list and query misc
+    other data from archives; this is aimed at supporting multiple archives
+    and setups better (instead of a single MIRROR, DISTRIBUTION etc.) but is
+    generic and independent to encourage reuse.  Comes with testsuite showing
+    sample uses.
 
  -- Loïc Minier <lool@dooz.org>  Sat, 30 Jan 2010 14:24:11 +0100
 
