@@ -60,6 +60,14 @@ PKGLIB_SCRIPTS += \
 	pdebuild-checkparams \
 	pdebuild-internal \
 	pdebuild-uml-checkparams \
+	testlib.sh \
+	test_pbuilder-apt-config \
+	test_pbuilder-checkparams \
+	test_pbuilder-modules \
+	test_pbuilder-satisfydepends-checkparams \
+	test_pbuilder-satisfydepends-classic \
+	test_pbuilder-satisfydepends-funcs \
+	test_testlib.sh \
 	$(NULL)
 # TODO add pbuilder-apt-config
 
@@ -159,14 +167,6 @@ NOINST_MANPAGES += \
 	$(NULL)
 NOINST_SCRIPTS += \
 	debuild.sh \
-	testlib.sh \
-	test_pbuilder-apt-config \
-	test_pbuilder-checkparams \
-	test_pbuilder-modules \
-	test_pbuilder-satisfydepends-checkparams \
-	test_pbuilder-satisfydepends-classic \
-	test_pbuilder-satisfydepends-funcs \
-	test_testlib.sh \
 	$(NULL)
 CHECK_MANPAGES += $(NOINST_MANPAGES)
 CHECK_SCRIPTS += $(NOINST_SCRIPTS)
