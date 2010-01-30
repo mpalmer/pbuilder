@@ -5,9 +5,6 @@ set -e
 
 self="$(basename "$0")"
 
-# TODO
-# - support setting --mirror-map (for --profile)
-
 log() {
     echo "$@" >&2
 }
@@ -19,6 +16,7 @@ usage() {
     log
     log "Common options:"
     log "  --with-sources, --with-sources=[yes|no|disabled]"
+    log "  --mirror-map=<mirror-map>"
     log "  --arch=<arch>"
     log "  --components=<comp1>,<comp2>"
 }
@@ -59,6 +57,25 @@ guess_dist_arch_archive() {
 }
 
 get_archive_url() {
+    local mirror_map="$1"
+    local archive="$2"
+    local url
+
+    if [ -z "$archive" ]; then
+        die "Need an archive in get_archive_url()"
+    fi
+
+    if [ -n "$mirror_map" ]; then
+        url="$(sed -n "s/^[[:space:]]*//; s/[[:space:]]*\$//; /^#/ d; /^\$/ d; s#^$archive\\([[:space:]]\+\\|\$\\)##p" "$mirror_map")"
+        if [ -n "$url" ]; then
+            echo "$url"
+            return
+        fi
+    fi
+    builtin_mirror_map "$archive"
+}
+
+builtin_mirror_map() {
     local archive="$1"
     local people_ppa
 
@@ -166,7 +183,7 @@ set_debootstrap_suite() {
     esac
 }
 
-getopt_output="`getopt -o "" -l help,with-sources::,arch:,components:,archive:,mirror:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
+getopt_output="`getopt -o "" -l help,with-sources::,arch:,components:,archive:,mirror:,mirror-map:,suite:,pockets:,profile: -n "$self" -s sh -- "$@"`"
 
 eval set -- "$getopt_output"
 
@@ -175,6 +192,7 @@ arch="`dpkg --print-architecture`"
 components="main"
 archive=""
 mirror=""
+mirror_map=""
 suite=""
 pockets=""
 archive=""
@@ -214,6 +232,10 @@ while :; do
       ;;
       --mirror)
         mirror="$2"
+        shift 2
+      ;;
+      --mirror-map)
+        mirror_map="$2"
         shift 2
       ;;
       --suite)
@@ -261,7 +283,7 @@ if [ -n "$profile" ]; then
     base_dist="${profile%%/*}"
     base_dist="${base_dist%%-*}"
     base_archive="`guess_dist_arch_archive "$base_dist" "$arch"`"
-    base_mirror="`get_archive_url "$base_archive"`"
+    base_mirror="`get_archive_url "$mirror_map" "$base_archive"`"
     case "$base_archive" in
       debian|debian-archive)
         case "$profile" in
@@ -272,7 +294,7 @@ if [ -n "$profile" ]; then
           ;;
           *-proposed-updates/volatile)
             archive="debian-volatile"
-            mirror="`get_archive_url "$archive"`"
+            mirror="`get_archive_url "$mirror_map" "$archive"`"
             volatile_dist="$base_dist/volatile"
             add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             add_output_sources "$with_sources" "$mirror" "$volatile_dist" "$components"
@@ -283,7 +305,7 @@ if [ -n "$profile" ]; then
                 die "Unknown Debian Volatile based profile=$profile"
             fi
             archive="debian-volatile"
-            mirror="`get_archive_url "$archive"`"
+            mirror="`get_archive_url "$mirror_map" "$archive"`"
             volatile_dist=${profile%-sloppy}
             add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             add_output_sources "$with_sources" "$mirror" "$volatile_dist" "$components"
@@ -296,7 +318,7 @@ if [ -n "$profile" ]; then
                 die "Unknown Backports.org based profile=$profile"
             fi
             archive="backports.org"
-            mirror="`get_archive_url "$archive"`"
+            mirror="`get_archive_url "$mirror_map" "$archive"`"
             add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             add_output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
@@ -305,7 +327,7 @@ if [ -n "$profile" ]; then
                 die "Unknown Debian Security based profile=$profile"
             fi
             archive="debian-security"
-            mirror="`get_archive_url "$archive"`"
+            mirror="`get_archive_url "$mirror_map" "$archive"`"
             add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
             add_output_sources "$with_sources" "$mirror" "$profile" "$components"
           ;;
@@ -366,7 +388,7 @@ if [ -n "$suite" ]; then
         if [ -z "$archive" ]; then
             archive="`guess_dist_arch_archive "$suite" "$arch"`"
         fi
-        mirror="`get_archive_url "$archive"`"
+        mirror="`get_archive_url "$mirror_map" "$archive"`"
     fi
     add_output_sources "$with_sources" "$mirror" "$suite" "$components"
     for pocket in $pockets; do

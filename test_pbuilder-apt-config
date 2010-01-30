@@ -2,18 +2,42 @@
 
 set -e
 
+self="$(basename "$0")"
+
 . ./testlib.sh
 
+mirror_map=""
+
+cleanup() {
+    if [ -n "$mirror_map" ]; then
+        rm -f "$mirror_map"
+    fi
+}
+
+mirror_map="$(mktemp -t "$self.XXXXXXXXXX")"
+cat >"$mirror_map" <<EOF
+archive                 archive-mirror
+ubuntu                  ubuntu-mirror
+ubuntu-ports            ubuntu-ports-mirror
+nomirror
+
+ppa:people              ppa-people-ppa
+ppa:people/otherppa     ppa-people-otherppa
+
+# no mirror
+debian-archive
+EOF
+
 run_suite_mode() {
-    ./pbuilder-apt-config --with-sources=no --mirror mirror --suite suite --components component apt-sources "$@"
+    ./pbuilder-apt-config --mirror-map="$mirror_map" --with-sources=no --mirror mirror --suite suite --components component apt-sources "$@"
 }
 
 debootstrap_suite() {
-    ./pbuilder-apt-config --with-sources=no --mirror mirror --components component debootstrap-suite "$@"
+    ./pbuilder-apt-config --mirror-map="$mirror_map" --with-sources=no --mirror mirror --components component debootstrap-suite "$@"
 }
 
 debootstrap_mirror() {
-    ./pbuilder-apt-config --with-sources=no --components component debootstrap-mirror "$@"
+    ./pbuilder-apt-config --mirror-map="$mirror_map" --with-sources=no --components component debootstrap-mirror "$@"
 }
 
 test_components() {
@@ -56,8 +80,12 @@ test_options() {
 
 expect_output "deb mirror suite component" run_suite_mode
 
-expect_output "deb http://archive.ubuntu.com/ubuntu/ lucid component" run_suite_mode --mirror "" --suite lucid --arch i386
-expect_output "deb http://ports.ubuntu.com/ubuntu-ports/ lucid component" run_suite_mode --mirror "" --suite lucid --arch armel
+expect_output "deb archive-mirror suite component" run_suite_mode --mirror "" --archive archive
+expect_fail run_suite_mode --mirror "" --archive nomirror
+expect_output "deb http://archive.debian.org/debian/ bo component" run_suite_mode --mirror "" --suite bo
+
+expect_output "deb ubuntu-mirror lucid component" run_suite_mode --mirror "" --suite lucid --arch i386
+expect_output "deb ubuntu-ports-mirror lucid component" run_suite_mode --mirror "" --suite lucid --arch armel
 
 expect_output "deb mirror suite comp1
 deb mirror suite comp1 comp2 comp3
@@ -121,14 +149,14 @@ expect_output "deb     mirror suite component
 #deb-src mirror suite component" run_suite_mode --with-sources=disabled
 expect_output "deb mirror suite component" run_suite_mode --with-sources=no
 
-expect_output "deb http://archive.ubuntu.com/ubuntu/ suite component" run_suite_mode --mirror "" --archive ubuntu
-expect_output "deb http://ports.ubuntu.com/ubuntu-ports/ suite component" run_suite_mode --arch armel --mirror "" --archive ubuntu-ports
-expect_fail run_suite_mode --arch armel --mirror "" --archive archive
+expect_output "deb ubuntu-mirror suite component" run_suite_mode --mirror "" --archive ubuntu
+expect_output "deb ubuntu-ports-mirror suite component" run_suite_mode --arch armel --mirror "" --archive ubuntu-ports
+expect_fail run_suite_mode --arch armel --mirror "" --archive otherarchive
 expect_success run_suite_mode --mirror "" --suite lucid
 expect_fail    run_suite_mode --mirror "" --suite suite
 expect_success run_suite_mode --mirror "" --suite suite --archive ubuntu
-expect_output "deb http://ppa.launchpad.net/people/ppa/ubuntu/ suite component" run_suite_mode --mirror "" --suite suite --archive ppa:people
-expect_output "deb http://ppa.launchpad.net/people/otherppa/ubuntu/ suite component" run_suite_mode --mirror "" --suite suite --archive ppa:people/otherppa
+expect_output "deb ppa-people-ppa suite component" run_suite_mode --mirror "" --suite suite --archive ppa:people
+expect_output "deb ppa-people-otherppa suite component" run_suite_mode --mirror "" --suite suite --archive ppa:people/otherppa
 
 expect_output "suite" debootstrap_suite --suite suite
 expect_output "sid" debootstrap_suite --suite sid
@@ -137,7 +165,7 @@ expect_output "mirror" debootstrap_mirror --suite suite --mirror mirror
 
 expect_output "sid" debootstrap_suite --profile sid
 expect_output "sid" debootstrap_suite --profile unstable
-expect_output "http://archive.ubuntu.com/ubuntu/" debootstrap_mirror --profile lucid
-expect_output "http://ports.ubuntu.com/ubuntu-ports/" debootstrap_mirror --profile lucid --arch armel
+expect_output "ubuntu-mirror" debootstrap_mirror --profile lucid
+expect_output "ubuntu-ports-mirror" debootstrap_mirror --profile lucid --arch armel
 
 testlib_summary
