@@ -125,6 +125,8 @@ expect_fail run_suite_mode --arch armel --mirror "" --archive archive
 expect_success run_suite_mode --mirror "" --suite lucid
 expect_fail    run_suite_mode --mirror "" --suite suite
 expect_success run_suite_mode --mirror "" --suite suite --archive ubuntu
+expect_output "deb http://ppa.launchpad.net/people/ppa/ubuntu/ suite component" run_suite_mode --mirror "" --suite suite --archive ppa:people
+expect_output "deb http://ppa.launchpad.net/people/otherppa/ubuntu/ suite component" run_suite_mode --mirror "" --suite suite --archive ppa:people/otherppa
 
 expect_output "suite" debootstrap_suite --suite suite
 expect_output "sid" debootstrap_suite --suite sid

@@ -61,6 +61,7 @@ guess_dist_arch_archive() {
 
 get_archive_url() {
     local archive="$1"
+    local people_ppa
 
     case "$archive" in
       backports.org)
@@ -71,6 +72,17 @@ get_archive_url() {
       ;;
       debian-archive)
         echo "http://archive.debian.org/debian/"
+      ;;
+      ppa:*)
+        people_ppa="${archive#ppa:}"
+        case "$people_ppa" in
+          */*)
+            :
+          ;;
+          *)
+            people_ppa="$people_ppa/ppa"
+        esac
+        echo "http://ppa.launchpad.net/$people_ppa/ubuntu/"
       ;;
       ubuntu)
         echo "http://archive.ubuntu.com/ubuntu/"
