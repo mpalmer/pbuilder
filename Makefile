@@ -95,7 +95,7 @@ install:
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-gdebi $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-aptitude $(DESTDIR)/usr/lib/pbuilder/
 	# install -aptitude flavour as the default satisfydepends
-	ln -s pbuilder-satisfydepends-aptitude $(DESTDIR)/usr/lib/pbuilder/pbuilder-satisfydepends
+	ln -sf pbuilder-satisfydepends-aptitude $(DESTDIR)/usr/lib/pbuilder/pbuilder-satisfydepends
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-experimental $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-checkparams $(DESTDIR)/usr/lib/pbuilder/
 	$(INSTALL_EXECUTABLE) pbuilder-satisfydepends-funcs $(DESTDIR)/usr/lib/pbuilder/
