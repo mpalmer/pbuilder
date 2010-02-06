@@ -62,9 +62,6 @@ guess_dist_arch_archive() {
       buzz|rex|bo|hamm|slink|potato|woody|sarge|etch|lenny|squeeze)
         echo "debian-archive"
       ;;
-      warty|hoary|breezy|edgy|feisty|gutsy)
-        echo "ubuntu-old"
-      ;;
       dapper|hardy|intrepid|jaunty|karmic|lucid)
         case "$arch" in
           amd64|i386)
@@ -77,6 +74,9 @@ guess_dist_arch_archive() {
             die "Unknown Ubuntu archive for arch=$arch"
           ;;
         esac
+      ;;
+      warty|hoary|breezy|edgy|feisty|gutsy)
+        echo "ubuntu-old"
       ;;
       *)
         die "Unknown archive for dist=$dist"
@@ -125,6 +125,12 @@ builtin_mirror_map() {
       debian-archive)
         echo "http://archive.debian.org/debian/"
       ;;
+      debian-security)
+        echo "http://security.debian.org/"
+      ;;
+      debian-volatile)
+        echo "http://volatile.debian.org/debian-volatile/"
+      ;;
       ppa:*)
         people_ppa="${archive#ppa:}"
         case "$people_ppa" in
@@ -144,12 +150,6 @@ builtin_mirror_map() {
       ;;
       ubuntu-ports)
         echo "http://ports.ubuntu.com/ubuntu-ports/"
-      ;;
-      debian-security)
-        echo "http://security.debian.org/"
-      ;;
-      debian-volatile)
-        echo "http://volatile.debian.org/debian-volatile/"
       ;;
       *)
         die "Unknown mirror for archive=$archive"
