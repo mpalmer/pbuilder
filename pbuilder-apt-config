@@ -62,6 +62,9 @@ guess_dist_arch_archive() {
       buzz|rex|bo|hamm|slink|potato|woody|sarge|etch|lenny|squeeze)
         echo "debian-archive"
       ;;
+      warty|hoary|breezy|edgy|feisty|gutsy)
+        echo "ubuntu-old"
+      ;;
       hardy|intrepid|jaunty|karmic|lucid)
         case "$arch" in
           amd64|i386)
@@ -135,6 +138,9 @@ builtin_mirror_map() {
       ;;
       ubuntu)
         echo "http://archive.ubuntu.com/ubuntu/"
+      ;;
+      ubuntu-old)
+        echo "http://old-releases.ubuntu.com/ubuntu/"
       ;;
       ubuntu-ports)
         echo "http://ports.ubuntu.com/ubuntu-ports/"
@@ -379,7 +385,7 @@ if [ -n "$profile" ]; then
           ;;
         esac
       ;;
-      ubuntu|ubuntu-ports)
+      ubuntu|ubuntu-old|ubuntu-ports)
         if [ "$base_dist" != "${profile%%-*}" ]; then
             die "Unknown Ubuntu based profile=$profile"
         fi
