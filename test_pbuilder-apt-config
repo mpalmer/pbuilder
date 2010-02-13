@@ -34,6 +34,7 @@ cat >"$mirror_map" <<EOF
 archive                 archive-mirror
 ubuntu                  ubuntu-mirror
 ubuntu-ports            ubuntu-ports-mirror
+ubuntu-security         ubuntu-security-mirror
 nomirror
 
 ppa:people              ppa-people-ppa
@@ -143,18 +144,22 @@ expect_output "deb bo comp1" test_profile bo
 
 expect_output "deb lucid comp1" test_profile lucid
 expect_output "deb lucid comp1
+deb lucid-security comp1
 deb lucid-security comp1" test_profile lucid-security
 expect_output "deb lucid comp1
 deb lucid-security comp1
-deb lucid-updates comp1" test_profile lucid-updates
+deb lucid-updates comp1
+deb lucid-security comp1" test_profile lucid-updates
 expect_output "deb lucid comp1
 deb lucid-security comp1
 deb lucid-updates comp1
-deb lucid-backports comp1" test_profile lucid-backports
+deb lucid-backports comp1
+deb lucid-security comp1" test_profile lucid-backports
 expect_output "deb lucid comp1
 deb lucid-security comp1
 deb lucid-updates comp1
-deb lucid-proposed comp1" test_profile lucid-proposed
+deb lucid-proposed comp1
+deb lucid-security comp1" test_profile lucid-proposed
 
 expect_output "deb     mirror suite component
 deb-src mirror suite component" run_suite_mode --with-sources=yes

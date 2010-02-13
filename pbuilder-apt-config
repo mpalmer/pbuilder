@@ -151,6 +151,9 @@ builtin_mirror_map() {
       ubuntu-ports)
         echo "http://ports.ubuntu.com/ubuntu-ports/"
       ;;
+      ubuntu-security)
+        echo "http://security.ubuntu.com/ubuntu/"
+      ;;
       *)
         die "Unknown mirror for archive=$archive"
       ;;
@@ -390,6 +393,8 @@ if [ -n "$profile" ]; then
             die "Unknown Ubuntu based profile=$profile"
         fi
         pockets=""
+        # whether to include the security mirror
+        has_security="yes"
         case "$profile" in
           *-security)
             pockets="security"
@@ -407,12 +412,20 @@ if [ -n "$profile" ]; then
             if [ "$base_dist" != "$profile" ]; then
                 die "Unknown Ubuntu pocket based profile=$profile"
             fi
+            has_security="no"
           ;;
         esac
         add_output_sources "$with_sources" "$base_mirror" "$base_dist" "$components"
         for pocket in $pockets; do
             add_output_sources "$with_sources" "$base_mirror" "$base_dist-$pocket" "$components"
         done
+        if [ "$has_security" = "yes" ]; then
+            archive="ubuntu-security"
+            mirror="`get_archive_url "$mirror_map" "$archive"`"
+            if [ "$mirror" != "$base_mirror" ]; then
+                add_output_sources "$with_sources" "$mirror" "$base_dist-security" "$components"
+            fi
+        fi
       ;;
       *)
         die "Unknown profile for base_archive=$base_archive"
