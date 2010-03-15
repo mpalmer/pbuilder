@@ -50,6 +50,30 @@ EOF
     get_build_deps
 }
 
+test_get_build_deps_dsc() {
+    cat <<EOF >"$DEBIAN_CONTROL"
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.0
+Source: hello-debhelper
+Build-Depends: debhelper (>= 7)
+Checksums-Sha1: 
+ fcbf0264928900adf03a7797474375e1a6fa3836 499638 hello-debhelper_2.4.orig.tar.gz
+ 0ea70eb46b4c90a8dbefbe60bebe4b9f9abb2733 5308 hello-debhelper_2.4-3.diff.gz
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (GNU/Linux)
+
+iQEcBAEBCAAGBQJKml74AAoJEEHOfwufG4sysC4H/26EikyIgIqRuSXMiykc1hmd
+97id9nWl+QzgCpUEg/+uDqEW+Bl6291FstGvzTFCwmB5JjH9ErH1LsyG1OLXbFUb
+H89Em7qkl4o2ACTh255oM7FhVweof3UEaLCZMH+HZVVpHXNpEnhrfDvpTBbPGjUi
+-----END PGP SIGNATURE-----
+EOF
+    get_build_deps
+}
+
 trap cleanup sigpipe sighup exit
 
 # TODO move to build dir
@@ -59,5 +83,7 @@ expect_output "autotools-dev (>= 1.2), debhelper, quilt (<< 12:0), libwxgtk2.8-d
     test_get_build_deps "no"
 expect_output "autotools-dev (>= 1.2), debhelper, quilt (<< 12:0), libwxgtk2.8-dev" \
     test_get_build_deps "yes"
+
+expect_output "debhelper (>= 7)" test_get_build_deps_dsc
 
 testlib_summary

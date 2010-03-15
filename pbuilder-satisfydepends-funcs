@@ -55,6 +55,12 @@ get_source_control_field() {
 
     sed -n -e "s/^$field://i" -e '
 t store
+/^-----BEGIN PGP SIGNED MESSAGE-----$/ {
+    : pgploop
+    n
+    /^$/ d
+    b pgploop
+}
 /^$/q
 d
 : store
