@@ -2,42 +2,86 @@
 .SH NAME
 pbuilderrc \- configuration files for personal package builder
 .SH DESCRIPTION
-.B "/etc/pbuilderrc" 
-contains default values used in the 
+.B "/etc/pbuilderrc"
+contains default values used in the
 .B "pbuilder"
 program invocation.
 .PP
 The file itself is sourced by a shell script, so
 it is required that the file conforms to shell script conventions.
 .SH "FORMAT"
+.TP
+.BI "APTCACHE=" "/var/cache/pbuilder/aptcache"
+Specify the location that the packages downloaded by apt
+should be cached.
+Setting this value to "" will cause caching to be
+turned off.
+.TP
+.BI "APTCACHEHARDLINK=" "yes"
+Specify using hard links in apt cache handling.
+Changing this to no will disable hard linking and will
+copy the files.
 
+It is advised to set this to
+.B "no"
+if you are using user-mode-linux.
+.TP
+.BI "APTCONFDIR=" "/etc/apt"
+Configures where the apt configuration files are copied from.
+By default, this value is empty,
+allowing the usual configuration options
+to take effect.
+Setting this variable overrides other options.
+.TP
+.BI "ARCHITECTURE=" "`dpkg --print-architecture`"
+Specify the default distribution to use.
+This option only affects when doing
+.B "pbuilder create"
+.TP
+.BI "AUTOCLEANAPTCACHE=" "yes"
+Always run with
+.B "\-\-autocleanaptcache"
+option.
+.TP
+.BI "AUTO_DEBSIGN=" "yes"
+When this value is set to yes,
+.B pdebuild
+will invoke debsign command after building.
 .TP
 .BI "BASETGZ=" "/var/cache/pbuilder/base.tgz"
-Specifies the default location for the archived 
+Specifies the default location for the archived
 chroot image to be created and used.
-This is overridden with the option 
+This is overridden with the option
 .BR "--basetgz" "."
+.TP
+.BI "BINDMOUNTS=" "directories-to-bind-mount"
+When this value is set, pbuilder will mount these directories using
+bind-mount. Do not bind-mount
+.B "/"
+An Example:
 
+.EX
+BINDMOUNTS="/home /mnt/test"
+.EE
 .TP
 .BI "BUILDPLACE=" "/var/cache/pbuilder/build/"
 The default place which the chroot is constructed.
 .B pbuilder
-will use the directory 
+will use the directory
 .BR "$BUILDPLACE$$" "."
-which means, that it will use the directory and the 
+which means, that it will use the directory and the
 PID to determine the directory to use.
-This should obtain an unique directory for 
+This should obtain an unique directory for
 concurrent runs of pbuilder in one machine.
 This is not guaranteed to happen on network shared drives,
 so be aware of this fact when playing with this option
 on NFS shared beowulf clusters.
-Change it to something like 
+Change it to something like
 .I "/var/cache/pbuilder/build/$HOSTNAME/"
 when doing such a thing.
 
 .B "pbuilder clean"
 cleans up this directory.
-
 .TP
 .BI "BUILDRESULT=" "/var/cache/pbuilder/result/"
 Specify the default directory which the build result will
@@ -47,59 +91,53 @@ Unlike
 .B "--buildresult"
 command-line option.
 The path is not canonicalized, so you should specify a full-path,
-not a relative path.
-
+not a relative path..TP
+.BI "CCACHEDIR=" "/var/cache/pbuilder/ccache"
+Specifies where ccache will keep its cached compiler output.
+If this is specified, ccache will be installed upon pbuilder create or
+pbuilder update, /usr/lib/ccache will be prepended to the PATH,
+CCACHEDIR will be bind-mounted in the chroot, and CCACHE_DIR will be
+set to CCACHEDIR.  Note that files in CCACHEDIR are chowned to
+BUILDUSERID (1234 by default).
 .TP
-.BI "MIRRORSITE=" "http://www.jp.debian.org/debian"
-Specify the mirror site which contains the
-main Debian distribution.
+.BI "BUILDRESULTUID=".TP
+.BI "BUILDRESULTGID="
+Set the UID and GID of the files built as result.
+They probably need to be set to numeric UID values,
+so that it works the same inside the chroot and outside the
+chroot.
 
-Note that you cannot really use
-.B "file:/" 
-kind of URL, because the location needs to be accessible from within
-the chroot.
-
+If sudo is used, the values specified by sudo is used.
+They are
+.BR "SUDO_UID" ", and"
+.BR "SUDO_GID" ". "
+The default value is
+.B "0"
 .TP
-.BI "OTHERMIRROR=" "deb http://xxx/xxx/ ./ " "[|" " other deb lines... " "]"
-The lines which is added to the sources.list, delimited with 
-.B "|"
-Like 
-.B "deb http://local/mirror stable main|deb file:/usr/local/mirror ./"
-
-The deb lines here are the ones that will appear at the top of the 
-.B "sources.list"
-inside the chroot.
-Be sure to follow the syntax rules of
-.BR "sources.list" "(5)."
-These lines appear at the beginning of the
-constructed sources file, so this is the place to list your
-.B "local"
-mirror sites; apt will then use them in preference to the ones 
-listed in 
-.B "MIRRORSITE".
-
-To make changes on mirror site effective on 
-.B update
-.B "--override-config"
-needs to be specified.
-
+.BI "BUILDSOURCEROOTCMD=" "fakeroot"
+This option is used on invocation of fakeroot
+for
+.B "dpkg-buildpackage"
+in
+.B "pdebuild"
 .TP
-.BI "DISTRIBUTION=" "sid"
-Specify the default distribution to use.
-This option only affects when doing
-.B "pbuilder create" 
-or when
-.B "--override-config"
-is specified for 
-.B "pbuilder update" 
-option.
-
+.BI "BUILDUSERID=" "1234"
+The uid to be used inside chroot.
+It should ideally not collide with user-id outside the chroot,
+to avoid user inside chroot having access to
+processes owned by the user id outside the chroot.
 .TP
-.BI "ARCHITECTURE=" "`dpkg --print-architecture`"
-Specify the default distribution to use.
-This option only affects when doing
-.B "pbuilder create"
+.BI "BUILDUSERNAME=" "pbuilder"
+The user name of the user the build will run as.
+Specifying this will enable the use of fakeroot inside
+pbuilder.
 
+Note that this will require fakeroot to be installed within
+the chroot, and fakeroot will automatically be installed.
+And
+.B "-rfakeroot"
+will be added to
+.B "DEBBUILDOPTS"
 .TP
 .BI "COMPONENTS=" "main"
 Specify the default distribution components to use.
@@ -110,58 +148,16 @@ or when
 .B "--override-config"
 is specified for
 .B "pbuilder update"
-option.
-
-.TP
+option..TP
 .BI "export http_proxy=" "http://your-proxy:8080/"
 Defines the proxy for http connection.
-
 .TP
-.BI "APTCACHE=" "/var/cache/pbuilder/aptcache"
-Specify the location that the packages downloaded by apt
-should be cached.
-Setting this value to "" will cause caching to be 
-turned off.
-
-.TP
-.BI "APTCACHEHARDLINK=" "yes"
-Specify using hard links in apt cache handling.
-Changing this to no will disable hard linking and will
-copy the files.
-
-It is advised to set this to 
-.B "no"
-if you are using user-mode-linux.
-
-.TP
-.BI "HOOKDIR=" "/usr/lib/pbuilder/hooks"
-Specifies the default location for the user hooks
-directory. 
-This is overridden with the option 
-.BR "--hookdir" "."
-
-If this is specified, hooks are searched for in
-the chroot, when running 
-.BR "pbuilder" "."
-If it is not defined, or is an empty string, 
-hooks are not executed.
-
-For details, see 
-.B "pbuilder.8"
-
-.TP
-.BI "CCACHEDIR=" "/var/cache/pbuilder/ccache"
-Specifies where ccache will keep its cached compiler output.
-
-If this is specified, ccache will be installed upon pbuilder create or
-pbuilder update, /usr/lib/ccache will be prepended to the PATH,
-CCACHEDIR will be bind-mounted in the chroot, and CCACHE_DIR will be
-set to CCACHEDIR.  Note that files in CCACHEDIR are chowned to
-BUILDUSERID (1234 by default).
-
+.BI "export DEBIAN_BUILDARCH=" "athlon"
+Uses this variable as
+.BR "DEBIAN_BUILDARCH" "."
+This trick can be used for other environmental variables as well.
 .TP
 .BI "DEBBUILDOPTS=" ""
-
 The options given here will be passed on to
 .BR dpkg-buildpackage .
 This can be useful e.g. for binary-only builds. The command-line option
@@ -169,128 +165,134 @@ This can be useful e.g. for binary-only builds. The command-line option
 may also be used to reset the list of options.
 
 The default value is to build source and binary package.
-
-.TP
-.BI "BINDMOUNTS=" "directories-to-bind-mount"
-When this value is set, pbuilder will mount these directories using
-bind-mount.
-
-Example:
-.B "BINDMOUNTS=""/home /mnt/test """
-
-Do not bind-mount 
-.B "/"
-
-.TP
-.BI "USE_PDEBUILD_INTERNAL=" "yes"
-When this option is set to
-.I yes
-.B "pdebuild-internal"
-implementation of 
-.B pdebuild
-is used.
-
 .TP
 .BI "DEBOOTSTRAPOPTS=" "'--variant=buildd'"
-When this option is set to 
+When this option is set to
 .B "--variant=buildd"
 .B "pbuilder"
-will invoke 
-.B "$DEBOOTSTRAP" 
+will invoke
+.B "$DEBOOTSTRAP"
 with "\-\-variant=buildd"
-option, which results in debootstrap creating a minimal chroot for 
+option, which results in debootstrap creating a minimal chroot for
 buildd instead of trying to create a minimal installation chroot.
 .B "DEBOOTSTRAP"
 is another directive in this file.
-
 .TP
 .BI "DEBOOTSTRAP=" "debootstrap"
 Use this option to switch the implementation of
 debootstrap.
-Known implementations of debootstrap are 
-.B "cdebootstrap" 
+Known implementations of debootstrap are
+.B "cdebootstrap"
 and
 .B "debootstrap"
-
+.TP
+.BI "DEBEMAIL=" "Maintainer Name <Mail@Address>"
+If this was specified,
+.B dpkg-buildpackage
+command will be passed with the necessary sponsorship option
+.B "-mMaintainer Name <Mail@Address>"
+on building.
+Overridden with
+.B "--debemail"
+command-line option.
+The default configuration for
+.B pbuilder
+is empty for this value.
+.TP
+.BI "export DEBIAN_FRONTEND=" "noninteractive"
+Sets interactiveness of pbuilder run.
+Setting this value to blank will cause the
+pbuilder run to be interactive.
+Change this value when noninteractive upgrades
+do not work.
+.TP
+.BI "DISTRIBUTION=" "sid"
+Specify the default distribution to use.
+This option only affects when doing
+.B "pbuilder create"
+or when
+.B "--override-config"
+is specified for
+.B "pbuilder update"
+option.
 .TP
 .BI "EXTRAPACKAGES=" """ccache lintian XXX"""
 Specifies extra packages which the system should install
-in the chroot on 
+in the chroot on
 .BR "pbuilder create" "."
 This is a space-delimited list.
 Also this is installed on
 .B "pbuilder build"
-
 .TP
-.BI "export DEBIAN_BUILDARCH=" "athlon"
-Uses this variable as 
-.BR "DEBIAN_BUILDARCH" "."
-This trick can be used for other environmental variables as well.
+.BI "HOOKDIR=" "/usr/lib/pbuilder/hooks"
+Specifies the default location for the user hooks
+directory.
+This is overridden with the option
+.BR "--hookdir" "."
 
+If this is specified, hooks are searched for in
+the chroot, when running
+.BR "pbuilder" "."
+If it is not defined, or is an empty string,
+hooks are not executed.
+
+For details, see
+.B "pbuilder(8)"
 .TP
-.BI "USEPROC=" "yes"
-Specify 
-.B yes
-when it is desired to mount
-.B /proc
-interface. It is usually a good idea, since there are many
-software which fail miserably when there is no
-.B /proc
-being mounted.
+.BI "MIRRORSITE=" "http://www.jp.debian.org/debian"
+Specify the mirror site which contains the
+main Debian distribution.
 
+Note that you cannot really use
+.B "file:/"
+kind of URL, because the location needs to be accessible from within
+the chroot.
 .TP
-.BI "USEDEVPTS=" "yes"
-Specify
-.B yes
-when it is desired to mount
-.B /dev/pts
-interface. It is usually a good idea, since there
-are many software which fail miserably when there is no
-.B /dev/pts
-being mounted.
+.BI "OTHERMIRROR=" "deb http://xxx/xxx/ ./ " "[|" " other deb lines... " "]"
+The lines which is added to the sources.list, delimited with
+.B "|"
+Like
+.B "deb http://local/mirror stable main|deb file:/usr/local/mirror ./"
 
+The deb lines here are the ones that will appear at the top of the
+.B "sources.list"
+inside the chroot.
+Be sure to follow the syntax rules of
+.BR "sources.list" "(5)."
+These lines appear at the beginning of the
+constructed sources file, so this is the place to list your
+.B "local"
+mirror sites; apt will then use them in preference to the ones
+listed in
+.B "MIRRORSITE".
+
+To make changes on mirror site effective on
+.B update
+.B "--override-config"
+needs to be specified.
 .TP
-.BI "REMOVEPACKAGES=" "lilo"
-Specify the packages to be removed on creation of 
-.B base.tgz
-Leaving lilo in the chroot is like keeping a timebomb...
-
+.BI "PDEBUILD_PBUILDER=" "pbuilder"
+Specify what pbuilder implementation to use for pdebuild.
+The currently possible values are
+.B "pbuilder"
+and
+.B "cowbuilder"
 .TP
-.BI "DEBEMAIL=" "Maintainer Name <Mail@Address>"
-
-If this was specified, 
-.B dpkg-buildpackage
-command will be passed with the necessary sponsorship option 
-.B "-mMaintainer Name <Mail@Address>"
-on building.
-Overridden with 
-.B "--debemail"
-command-line option.
-
-The default configuration for 
-.B pbuilder
-is empty for this value.
-
+.BI "PKGNAME_LOGFILE_EXTENTION=" ".build"
+The extension of filename used in pkgname-logfile option.
 .TP
-.BI "BUILDSOURCEROOTCMD=" "fakeroot"
-
-This option is used on invocation of fakeroot 
-for 
-.B "dpkg-buildpackage"
-in 
-.B "pdebuild"
-
+.BI "PKGNAME_LOGFILE=" "yes"
+Always run with
+.B "--pkgname-logfile"
+option, and create a logfile named after the package name.
 .TP
 .BI "PBUILDERROOTCMD=" "sudo -E"
-
-This option is used on invocation of 
+This option is used on invocation of
 .B "pbuilder build"
-in 
+in
 .B "pdebuild"
-
 .TP
 .BI "PBUILDERSATISFYDEPENDSCMD=" "/usr/lib/pbuilder/pbuilder-satisfydepends"
-
 This option is used by various parts of pbuilder to satisfy
 (i.e. install) the build-dependencies of a package.  There are four
 implementations:
@@ -313,111 +315,58 @@ The "classic" implementation, which was the original implementation
 used until 0.172.
 
 The default is now "aptitude".
-
 .TP
-.BI "BUILDUSERID=" "1234"
-The uid to be used inside chroot.
-It should ideally not collide with user-id outside the chroot,
-to avoid user inside chroot having access to 
-processes owned by the user id outside the chroot.
-
-.TP
-.BI "BUILDUSERNAME=" "pbuilder"
-The user name of the user the build will run as.
-Specifying this will enable the use of fakeroot inside 
-pbuilder.
-
-Note that this will require fakeroot to be installed within
-the chroot, and fakeroot will automatically be installed.
-And 
-.B "-rfakeroot"
-will be added to
-.B "DEBBUILDOPTS"
-
-.TP
-.BI "APTCONFDIR=" "/etc/apt"
-Configures where the apt configuration files are copied from.
-By default, this value is empty,
-allowing the usual configuration options
-to take effect.
-Setting this variable overrides other options.
-
+.BI "REMOVEPACKAGES=" "lilo"
+Specify the packages to be removed on creation of
+.B base.tgz
+Leaving lilo in the chroot is like keeping a timebomb...
 .TP
 .BI "TIMEOUT_TIME=" "2h"
 Sets timeout time.
 Build will be stoped with SIGTERM after the set time.
-
-.TP
-.BI "export DEBIAN_FRONTEND=" "noninteractive"
-Sets interactiveness of pbuilder run.
-Setting this value to blank will cause the 
-pbuilder run to be interactive.
-Change this value when noninteractive upgrades 
-do not work.
-
 .TP
 .BI "USEDEVFS=" "no"
 Whether to use DEVFS or not.
-
 .TP
-.BI "BUILDRESULTUID="
+.BI "USEDEVPTS=" "yes"
+Specify
+.B yes
+when it is desired to mount
+.B /dev/pts
+interface. It is usually a good idea, since there
+are many software which fail miserably when there is no
+.B /dev/pts
+being mounted.
 .TP
-.BI "BUILDRESULTGID="
-Set the UID and GID of the files built as result.
-They probably need to be set to numeric UID values,
-so that it works the same inside the chroot and outside the 
-chroot.
-
-If sudo is used, the values specified by sudo is used.
-They are 
-.BR "SUDO_UID" ", and"
-.BR "SUDO_GID" ". "
-The default value is 
-.B "0"
-
+.BI "USE_PDEBUILD_INTERNAL=" "yes"
+When this option is set to
+.I yes
+.B "pdebuild-internal"
+implementation of
+.B pdebuild
+is used.
 .TP
-.BI "AUTO_DEBSIGN=" "yes"
-When this value is set to yes, 
-.B pdebuild 
-will invoke debsign command after building.
-
-.TP
-.BI "PKGNAME_LOGFILE_EXTENTION=" ".build"
-The extension of filename used in pkgname-logfile option.
-
-.TP
-.BI "PKGNAME_LOGFILE=" "yes"
-Always run with
-.B "--pkgname-logfile"
-option, and create a logfile named after the package name.
-
-.TP
-.BI "PDEBUILD_PBUILDER=" "pbuilder"
-Specify what pbuilder implementation to use for pdebuild.
-The currently possible values are
-.B "pbuilder"
-and
-.B "cowbuilder"
-
-.TP
-.BI "AUTOCLEANAPTCACHE=" "yes"
-Always run with
-.B "\-\-autocleanaptcache"
-option.
-
+.BI "USEPROC=" "yes"
+Specify
+.B yes
+when it is desired to mount
+.B /proc
+interface. It is usually a good idea, since there are many
+software which fail miserably when there is no
+.B /proc
+being mounted.
 .SH "AUTHOR"
-Initial coding, and main maintenance is done by 
+Initial coding, and main maintenance is done by
 Junichi Uekawa <dancer@debian.org>.
 User hooks code added by Dale Amon <amon@vnl.com>
 
 The homepage is available at
 .B "\%http://pbuilder.alioth.debian.org"
-
-
 .SH "FILES"
-.I "/etc/pbuilderrc, ${HOME}/.pbuilderrc"
+.I "/etc/pbuilderrc, $HOME/.pbuilderrc"
 .SH "SEE ALSO"
 .BR "/usr/share/doc/pbuilder/pbuilder-doc.html" ", "
+.BR "cowbuilder" "(8), "
 .BR "pbuilder" "(8), "
 .BR "pdebuild" "(1)"
 
