@@ -502,7 +502,7 @@ function copyinputfile() {
 	exit 1x
     fi
     if [ -n "$INPUTFILE" ]; then
-	log "I: copy ${INPUTFILE[*]} to taget directory"
+	log "I: copy ${INPUTFILE[*]} to target directory"
 	cp "${INPUTFILE[@]}" "${TARGETDIR}"
     fi
 }
