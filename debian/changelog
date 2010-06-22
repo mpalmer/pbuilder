@@ -1,5 +1,6 @@
-pbuilder (0.197) UNRELEASED; urgency=low
+pbuilder (0.197) unstable; urgency=low
 
+  [ Loïc Minier ]
   * pbuilder-createbuildenv, -updatebuildenv: Remove apt from $CHROOTEXEC
     apt-get install call and add aptitude if pbuilder-satisfydepends uses it;
     remove aptitude otherwise; closes: 539578.  Fixes support for
@@ -32,8 +33,19 @@ pbuilder (0.197) UNRELEASED; urgency=low
   * Rework Makefile entirely.
   * Use paragraphs in debian/NEWS file instead of bullet points.
   * pbuilder-selftest: new command to run the tests which are now installed.
+  
+  [ Junichi Uekawa ]
+  * [INTL:da] Danish translation of the debconf templates
+    pbuilder (closes: 583676)
+  * document that DEBOOTSTRAPOPTS is an array. (closes: 578989)
 
- -- Loïc Minier <lool@dooz.org>  Sat, 30 Jan 2010 14:24:11 +0100
+  [ Hideki Yamane ]
+  * typo "taget" (closes: 582415)
+
+  [ Jari Aalto ]
+  * pbuilderrc.5 - Order item alphabetically (closes: 579705)
+
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 23 Jun 2010 07:21:11 +0900
 
 pbuilder (0.196) unstable; urgency=low
 
