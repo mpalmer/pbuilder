@@ -69,7 +69,10 @@ BUILDUSERNAME=pbuilder
 BINDMOUNTS=""
 
 # Set the debootstrap variant to 'buildd' type.
-DEBOOTSTRAPOPTS[0]='--variant=buildd'
+DEBOOTSTRAPOPTS=(
+    '--variant=buildd'
+    '--keyring' '/usr/share/keyrings/debian-archive-keyring.gpg'
+    )
 # or unset it to make it not a buildd type.
 # unset DEBOOTSTRAPOPTS
 
