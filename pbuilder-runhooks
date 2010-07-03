@@ -56,7 +56,7 @@ function unloadhooks () {
     if [ -d "$BUILDPLACE/$hooks" ]; then
 	rm -rf "$BUILDPLACE/$hooks"
     else
-	log "E: Logic failure."
+	log "E: Logic failure in hook handling. Directory $BUILDPLACE/$hooks should exist but it does not."
     fi
 }
 
