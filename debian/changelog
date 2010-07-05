@@ -1,3 +1,13 @@
+pbuilder (0.199) unstable; urgency=low
+
+  * add a more useful message for pbuilder-runhooks when hookdir cannot
+    be removed. (closes: #587254)
+  * Add an option to verify key signatures. (closes: #579028)
+    This is experimental; You can try with APTGETOPT, and setting
+    PBUILDERSATISFYDEPENDSOPT=('--check-key').
+
+ -- Junichi Uekawa <dancer@debian.org>  Mon, 05 Jul 2010 22:35:40 +0900
+
 pbuilder (0.198) unstable; urgency=low
 
   * add --keyring option as default parameter to DEBOOTSTRAPOPTS
