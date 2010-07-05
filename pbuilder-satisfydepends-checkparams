@@ -28,8 +28,9 @@ CONTINUE_FAIL="no"
 CHROOTEXEC_AFTER_INTERNAL_CHROOTEXEC=no
 
 # aptitude flag to ignore key verification
-PBUILDER_APTITUDE_CHECK_OPTS=('-o' \
-    'Aptitude::CmdLine::Ignore-Trust-Violations=true')
+PBUILDER_APTITUDE_CHECK_OPTS=(
+    '-o'
+    'Aptitude::CmdLine::Ignore-Trust-Violations=true' )
 # apt flag to ignore key verification
 PBUILDER_APT_GET_CHECK_OPTS="--force-yes"
 
