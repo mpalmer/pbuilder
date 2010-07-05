@@ -53,6 +53,12 @@ PBUILDERROOTCMD="sudo -E"
 # not support unsigned APT repositories
 PBUILDERSATISFYDEPENDSCMD="/usr/lib/pbuilder/pbuilder-satisfydepends"
 
+# You can optionally make pbuilder check key by setting the following flags
+# PBUILDERSATISFYDEPENDSOPT=('--check-key')
+# unset PBUILDERSATISFYDEPENDSOPT
+# option to pass to apt-get always.
+export APTGETOPT=('--force-yes')
+
 #Command-line option passed on to dpkg-buildpackage.
 #DEBBUILDOPTS="-IXXX -iXXX"
 DEBBUILDOPTS=""

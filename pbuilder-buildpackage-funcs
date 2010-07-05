@@ -37,7 +37,7 @@ function checkbuilddep () {
 	yes) BUILDOPT="--binary-arch";;
 	*) ;;
     esac
-    if "$PBUILDERSATISFYDEPENDSCMD" --control "$1" --chroot "${BUILDPLACE}" --internal-chrootexec "${CHROOTEXEC}" "${BUILDOPT}" ; then
+    if "$PBUILDERSATISFYDEPENDSCMD" --control "$1" --chroot "${BUILDPLACE}" --internal-chrootexec "${CHROOTEXEC}" "${BUILDOPT}" "${PBUILDERSATISFYDEPENDSOPT[@]}"; then
 	:
     else
     # If asked to preserve the build place, and pbuilder-satisfydepends
@@ -50,7 +50,7 @@ function checkbuilddep () {
     fi
     # install extra packages to the chroot
     if [ -n "$EXTRAPACKAGES" ]; then 
-	$CHROOTEXEC usr/bin/apt-get -q -y --force-yes install ${EXTRAPACKAGES}
+	$CHROOTEXEC usr/bin/apt-get -q -y "${APTGETOPT[@]}" install ${EXTRAPACKAGES}
     fi
 }
 

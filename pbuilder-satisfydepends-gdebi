@@ -36,7 +36,7 @@ function checkbuilddep_internal () {
     fi
 
     INSTALL=$(/usr/bin/gdebi --quiet --root $CHROOT --apt-line $NO_RECOMMENDS $DEBIAN_CONTROL)
-    $CHROOTEXEC /usr/bin/apt-get install -y --force-yes $INSTALL
+    $CHROOTEXEC /usr/bin/apt-get install -y "${APTGETOPT[@]}" $INSTALL
 }
 
 . /usr/lib/pbuilder/pbuilder-satisfydepends-checkparams

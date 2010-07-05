@@ -89,7 +89,7 @@ EOF
     $CHROOTEXEC sh -c "cat \"$BUILD_DEP_DEB_CONTROL\""
     $CHROOTEXEC sh -c "dpkg-deb -b \"$BUILD_DEP_DEB_DIR/pbuilder-satisfydepends-dummy\""
     $CHROOTEXEC dpkg -i "$BUILD_DEP_DEB_DIR/pbuilder-satisfydepends-dummy.deb" || true
-    $CHROOTEXEC aptitude -y --without-recommends -o APT::Install-Recommends=false -o Aptitude::CmdLine::Ignore-Trust-Violations=true -o Aptitude::ProblemResolver::StepScore=100 install pbuilder-satisfydepends-dummy
+    $CHROOTEXEC aptitude -y --without-recommends -o APT::Install-Recommends=false "${PBUILDER_APTITUDE_CHECK_OPTS[$@]}" -o Aptitude::ProblemResolver::StepScore=100 install pbuilder-satisfydepends-dummy
     # check whether the aptitude's resolver kept the package
     if ! $CHROOTEXEC dpkg -l pbuilder-satisfydepends-dummy 2>/dev/null | grep -q ^ii; then
         echo "Aptitude couldn't satisfy the build dependencies"

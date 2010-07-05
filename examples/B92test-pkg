@@ -10,13 +10,13 @@ set -e
 echo "Installing the prerequisites"
 # ignore the failures since they are not the prime interest
 for PKG in $(ls /tmp/buildd/*.deb | sed -e's,.*/,,;s,_.*,,' ); do
-    apt-get install -y --force-yes "$PKG" || true 
+    apt-get install -y "${APTGETOPT[@]}" "$PKG" || true 
     apt-get remove -y "$PKG" || true 
 done
 
 # install the single package, then try to satisfy dependencies.
 dpkg -i /tmp/buildd/*.deb || true
-apt-get install -y -f --force-yes
+apt-get install -y -f "${APTGETOPT[@]}"
 
 if chmod a+x /tmp/buildd/*/debian/pbuilder-test/*; then
     :

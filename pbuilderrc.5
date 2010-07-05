@@ -316,6 +316,17 @@ used until 0.172.
 
 The default is now "aptitude".
 .TP
+.BI "PBUILDERSATISFYDEPENDSOPT=" "('--check-key')"
+Array of flags to give to pbuilder-satisfydepends.
+Specifying --check-key here will try to verify key signatures.
+
+.TP
+.BI "APTGETOPT=" "('--force-yes')"
+Extra flags to give to apt-get.
+Default is --force-yes, which will skip key verification of packages
+to be installed. Unset if you want to enable key verification.
+
+.TP
 .BI "REMOVEPACKAGES=" "lilo"
 Specify the packages to be removed on creation of
 .B base.tgz

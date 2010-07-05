@@ -3,7 +3,7 @@
 #
 # 343894: a script to run debc command, contributed from q-funk.
 
-apt-get install -y --force-yes devscripts
+apt-get install -y "${APTGETOPT[@]}" devscripts
 cd /tmp/buildd/*/debian
 cd ..
 debc

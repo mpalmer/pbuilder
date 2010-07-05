@@ -17,7 +17,7 @@ INSTALLTESTPID=$$
 ( sleep 1h ; kill $INSTALLTESTPID ) &
 KILLPID=$!
 
-apt-get install -y --force-yes "$@" < /dev/null
+apt-get install -y "${APTGETOPT[@]}" "$@" < /dev/null
 
 kill $KILLPID
 

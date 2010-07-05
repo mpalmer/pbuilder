@@ -4,6 +4,6 @@
 # invoke GNU screen if build fails.
 
 export debian_chroot="pbuilder"
-apt-get install -y --force-yes screen vim less
+apt-get install -y "${APTGETOPT[@]}" screen vim less
 cd /tmp/buildd/*/debian/..
 screen </dev/tty > /dev/tty 2> /dev/tty
