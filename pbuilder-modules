@@ -319,9 +319,23 @@ function cleanbuildplace () {
 	log "W: Aborting with an error";
     fi
     if [ "${INTERNAL_BUILD_UML}" != "yes" ]; then
-	if [ -d "$BUILDPLACE" ]; then 
-	    log "I: cleaning the build env "
-	    clean_subdirectories "$BUILDPLACE"
+        if [ -d "$BUILDPLACE" ]; then
+            # A directory on the same partition as $BUILDPLACE, bind-mounted
+            # into $BUILDPLACE, will be cleaned out by clean_subdirectories
+            # (because -xdev doesn't know about bind mounts).  To avoid that
+            # potential disaster (and also to avoid ugly error messages from
+            # rmdir otherwise), we want to make sure that there is *nothing*
+            # mounted under the chroot before we do our bulldozer routine.
+            #
+            # The readlink -f is a simple way to canonicalize the path for
+            # $BUILDPLACE (no dirty double slashes for *us*), so it matches
+            # what will be in the output of mount.
+            if mount |grep -q $(readlink -f $BUILDPLACE)/; then
+                log "E: Something is still mounted under ${BUILDPLACE}; unmount and remove ${BUILDPLACE} manually"
+            else
+                log "I: cleaning the build env "
+                clean_subdirectories "$BUILDPLACE"
+            fi
 	fi;
     fi
 }
