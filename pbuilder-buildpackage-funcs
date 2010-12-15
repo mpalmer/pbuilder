@@ -32,8 +32,8 @@ function copydsc () {
 
 function checkarchitecture () {
     local DSCFILE="$1"
+    local ARCH="$2"
     local ARCHES="$(cat $DSCFILE | grep Architecture | sed 's/^[^:]\+:\s*//')"
-    local ARCH=$(dpkg-architecture -qDEB_HOST_ARCH)
     local VALID_ARCH
     for d in $ARCHES; do
         if dpkg-architecture -a$ARCH -i$d; then

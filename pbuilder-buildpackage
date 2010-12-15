@@ -31,9 +31,6 @@ if [ ! -f "$PACKAGENAME" ]; then
     exit 1;
 fi;
 
-# check if this package should be built at all
-checkarchitecture "$PACKAGENAME"
-
 if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
     SUTOUSER="env LOGNAME=$BUILDUSERNAME su -p $BUILDUSERNAME"
     DEBBUILDOPTS="${DEBBUILDOPTS:+$DEBBUILDOPTS }-rfakeroot"
@@ -56,6 +53,10 @@ export HOME="/tmp/buildd"
 echobacktime
 extractbuildplace 
 trap umountproc_cleanbuildplace_trap exit sighup sigpipe
+
+# check if this package should be built at all
+checkarchitecture "$PACKAGENAME" "$($CHROOTEXEC dpkg-architecture -qDEB_HOST_ARCH)"
+
 loadhooks
 
 if [ ! -d "${BUILDRESULT}" ]; then
