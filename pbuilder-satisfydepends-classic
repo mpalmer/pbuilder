@@ -75,7 +75,7 @@ checkbuilddep_internal() {
       for INSTALLPKG in $(split_alternates "$INSTALLPKGMULTI"); do
 	CURRENTREALPKGNAME=$(get_pkg_name "$INSTALLPKG")
 	if echo "$INSTALLPKG" | grep -q '\['; then
-	    if checkbuilddep_archdeps "$INSTALLPKG" "$ARCH"; then
+	    if checkbuilddep_archdeps "$(echo "$INSTALLPKG" | tr "/" " ")" "$ARCH"; then
 		SATISFIED="yes"
 		echo "   -> This package is not for this architecture"
 		continue
