@@ -180,8 +180,8 @@ function umount_one () {
 		sleep 5s
 		cat <<EOF
 
-  Could not unmount $1, some programs might
-  still be using files in /proc (klogd?).
+  Could not unmount $1, a program might still have
+  files open in the partition.
   Please check and kill these processes manually
   so that I can unmount $1.  Last umount error was:
 $UMOUNT_OUTPUT
