@@ -70,7 +70,7 @@ checkbuilddep_internal() {
     local APTFLAG="-o APT::Install-Recommends=false"
     echo " -> Attempting to parse the build-deps "
     for INSTALLPKGMULTI in $(get_build_deps | split_deps); do
-      echo " -> Considering build-dep$(echo "$INSTALLPKGMULTI" | tr "/" " " )"
+      echo " -> Considering build-dep $(echo "$INSTALLPKGMULTI" | tr "/" " " )"
       SATISFIED="no"
       for INSTALLPKG in $(split_alternates "$INSTALLPKGMULTI"); do
 	CURRENTREALPKGNAME=$(get_pkg_name "$INSTALLPKG")
