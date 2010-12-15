@@ -199,30 +199,17 @@ EOF
 }
 
 function umountproc () {
-    # push arguments on a stack to reverse direction.
+    # Unmount everything that is mounted in the chroot.  This includes
+    # anything that we mounted internally (/proc, /dev/pts, etc), anything
+    # that the user asked us to mount via BINDMOUNTS, and also anything that
+    # the user may have decided to mount themselves manually or via a hook.
     local reversed
-    reversed=
-    for mnt in $BINDMOUNTS; do
-	reversed="$mnt $reversed"
+    reversed=""
+    local bp
+    bp="$(readlink -f $BUILDPLACE)"
+    mount |grep $(readlink -f $bp) | cut -d ' ' -f 3 | sort -r | while read mnt; do
+        umount_one ${mnt/$bp\//}
     done
-    for mnt in $reversed; do
-	umount_one "$mnt"
-    done
-    if [ -x /usr/sbin/selinuxenabled ] && /usr/sbin/selinuxenabled; then
-	umount_one "selinux"
-    fi
-    if [ "$USEDEVPTS" = "yes" ]; then
-	umount_one "dev/pts"
-    fi
-    if [ "$USEDEVFS" = "yes" ]; then
-	umount_one "dev"
-    fi
-    if [ "$USEPROC" = "yes" ]; then
-	if [ -e $BUILDPLACE/proc/sys/fs/binfmt_misc/status ]; then
-	    umount_one "proc/sys/fs/binfmt_misc"
-	fi
-	umount_one "proc"
-    fi
 }
 
 
