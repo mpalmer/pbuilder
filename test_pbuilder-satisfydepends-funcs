@@ -86,4 +86,17 @@ expect_output "autotools-dev (>= 1.2), debhelper, quilt (<< 12:0), libwxgtk2.8-d
 
 expect_output "debhelper (>= 7)" test_get_build_deps_dsc
 
+# "Success" in checkbuilddep_archdeps means "do not install", and
+# "fail" means "please do install"
+expect_fail checkbuilddep_archdeps "test [i386]" "i386"
+expect_fail checkbuilddep_archdeps "test [i386 amd64]" "i386"
+expect_fail checkbuilddep_archdeps "test [!sparc64]" "i386"
+expect_success checkbuilddep_archdeps "test [sparc64]" "i386"
+expect_success checkbuilddep_archdeps "test [!i386]" "i386"
+
+expect_fail checkbuilddep_archdeps "test [linux-any]" "i386"
+expect_success checkbuilddep_archdeps "test [hurd-any]" "i386"
+expect_fail checkbuilddep_archdeps "test [!hurd-any]" "i386"
+expect_success checkbuilddep_archdeps "test [!linux-any]" "i386"
+
 testlib_summary
