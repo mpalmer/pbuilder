@@ -32,7 +32,7 @@ else
 fi
 
 extractbuildplace
-$TRAP umountproc_cleanbuildplace_trap exit sighup
+$TRAP umountall_cleanbuildplace_trap exit sighup
 
 loadhooks
 log "I: Refreshing the base.tgz "
@@ -63,7 +63,7 @@ if [ -n "$REMOVEPACKAGES" ]; then
 fi
 recover_aptcache
 
-$TRAP saveaptcache_umountproc_cleanbuildplace_trap exit sighup
+$TRAP saveaptcache_umountall_cleanbuildplace_trap exit sighup
 $CHROOTEXEC /usr/bin/apt-get -q -y "${APTGETOPT[@]}" "${FORCE_CONFNEW[@]}" dist-upgrade
 # autoremove: Ignore error in case of etch because apt in etch doesn't
 # support autoremove. TODO: Do not ignore error when etch is no longer
@@ -86,11 +86,11 @@ if [ "${AUTOCLEANAPTCACHE}" = "yes" -a -n "$APTCACHE" ]; then
     done
 fi
 
-$TRAP umountproc_cleanbuildplace_trap exit sighup
+$TRAP umountall_cleanbuildplace_trap exit sighup
 executehooks "E"
 unloadhooks
 
-umountproc
+umountall
 $CHROOTEXEC /usr/bin/apt-get clean || true
 
 $TRAP cleanbuildplace_trap exit sighup

@@ -43,7 +43,7 @@ function checkbuilddep () {
     # If asked to preserve the build place, and pbuilder-satisfydepends
     # didn't taint it, then don't clean it when exiting.
 	if [ $? -eq 2 -a "${PRESERVE_BUILDPLACE}" = "yes" ]; then
-	    trap umountproc_trap exit sighup
+	    trap umountall_trap exit sighup
 	fi
 	log "E: pbuilder-satisfydepends failed."
 	exit 2

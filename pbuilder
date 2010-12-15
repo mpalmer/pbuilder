@@ -55,11 +55,11 @@ case "$1" in
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	. /usr/lib/pbuilder/pbuilder-runhooks
 	extractbuildplace
-	trap umountproc_cleanbuildplace_trap exit sighup
+	trap umountall_cleanbuildplace_trap exit sighup
 	copyinputfile "${BUILDPLACE}/tmp/buildd"
 	loadhooks
 	recover_aptcache
-	trap saveaptcache_umountproc_cleanbuildplace_trap exit sighup
+	trap saveaptcache_umountall_cleanbuildplace_trap exit sighup
 
 	if [ "${INTERNAL_BUILD_UML}" = "yes" ]; then
 	    log "I: entering the shell"
@@ -74,7 +74,7 @@ File extracted to: $BUILDPLACE
 
 	save_aptcache
 
-	trap umountproc_cleanbuildplace_trap exit sighup
+	trap umountall_cleanbuildplace_trap exit sighup
 
 	# saving the place afterwards
 	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
@@ -84,7 +84,7 @@ File extracted to: $BUILDPLACE
 	    else
 		log "I: Saving the results, modifications to this session will persist"
 		unloadhooks
-		umountproc
+		umountall
 		trap cleanbuildplace_trap exit sighup
 		${CHROOTEXEC} /usr/bin/apt-get clean || true
 		create_basetgz
@@ -93,7 +93,7 @@ File extracted to: $BUILDPLACE
 		exit $RET
 	    fi
 	fi
-	umountproc_cleanbuildplace
+	umountall_cleanbuildplace
 	trap - exit sighup
 	exit $RET
 	;;
@@ -110,11 +110,11 @@ File extracted to: $BUILDPLACE
 	fi;
 	extractbuildplace
 
-	trap umountproc_cleanbuildplace_trap exit sighup
+	trap umountall_cleanbuildplace_trap exit sighup
 	copyinputfile "${BUILDPLACE}/tmp/buildd"
 	loadhooks
 	recover_aptcache
-	trap saveaptcache_umountproc_cleanbuildplace_trap exit sighup
+	trap saveaptcache_umountall_cleanbuildplace_trap exit sighup
 
 	RUNNAME="$BUILDPLACE/run"
 	cat "$EXECPROGRAM" > "$RUNNAME"
@@ -125,7 +125,7 @@ File extracted to: $BUILDPLACE
 	rm -f "$RUNNAME"
 
 	save_aptcache
-	trap umountproc_cleanbuildplace_trap exit sighup
+	trap umountall_cleanbuildplace_trap exit sighup
 
 	# saving the place afterwards
 	if [ "${SAVE_AFTER_LOGIN}" = "yes" ]; then
@@ -134,7 +134,7 @@ File extracted to: $BUILDPLACE
 	    else
 		log "I: Saving the results, modifications to this session will persist"
 		unloadhooks
-		umountproc
+		umountall
 		trap cleanbuildplace_trap exit sighup
 		${CHROOTEXEC} /usr/bin/apt-get clean || true
 		create_basetgz
@@ -143,7 +143,7 @@ File extracted to: $BUILDPLACE
 		exit $RET
 	    fi
 	fi
-	umountproc_cleanbuildplace
+	umountall_cleanbuildplace
 	trap - exit sighup
 	exit $RET
 	;;
@@ -152,7 +152,7 @@ File extracted to: $BUILDPLACE
 	. /usr/lib/pbuilder/pbuilder-checkparams
 	. /usr/lib/pbuilder/pbuilder-runhooks
 	extractbuildplace
-	trap umountproc_cleanbuildplace_trap exit sighup
+	trap umountall_cleanbuildplace_trap exit sighup
 	loadhooks
 	executehooks "F"
 	log "I: start dump config"

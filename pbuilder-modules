@@ -198,7 +198,7 @@ EOF
     fi
 }
 
-function umountproc () {
+function umountall () {
     # Unmount everything that is mounted in the chroot.  This includes
     # anything that we mounted internally (/proc, /dev/pts, etc), anything
     # that the user asked us to mount via BINDMOUNTS, and also anything that
@@ -215,7 +215,7 @@ function umountproc () {
 
 # Mount /proc /dev/pts /dev and bind-mount points
 # Also create a policy-rc.d script if it doesn't already exist.
-function mountproc () {
+function mountall () {
     local -a mounted
     if [ "$USEPROC" = "yes" ]; then
 	log "I: mounting /proc filesystem"
@@ -327,19 +327,19 @@ function cleanbuildplace () {
     fi
 }
 
-function umountproc_cleanbuildplace () {
+function umountall_cleanbuildplace () {
     # rolling back to abort.
     if [ "$?" -ne 0 ]; then
 	log "W: Aborting with an error";
     fi
-    umountproc
+    umountall
     cleanbuildplace
 }
 
-function saveaptcache_umountproc_cleanbuildplace () {
-    # save the apt cache, and call umountproc_cleanbuildplace
+function saveaptcache_umountall_cleanbuildplace () {
+    # save the apt cache, and call umountall_cleanbuildplace
     save_aptcache
-    umountproc_cleanbuildplace
+    umountall_cleanbuildplace
 }
 
 function installaptlines (){
@@ -397,7 +397,7 @@ function copy_local_configuration () {
 }
 
 function extractbuildplace () {
-    # after calling this function, umountproc, and cleanbuildplace
+    # after calling this function, umountall, and cleanbuildplace
     # needs to be called. Please trap it after calling this function.
 
     if [ "${INTERNAL_BUILD_UML}" != "yes" -a ! \( "${PRESERVE_BUILDPLACE}" = "yes" -a -d "$BUILDPLACE" \) ]; then
@@ -421,7 +421,7 @@ function extractbuildplace () {
     fi
     copy_local_configuration
 
-    # installaptlines may fail with exit 1, do it earlier than mountproc.
+    # installaptlines may fail with exit 1, do it earlier than mountall.
     if [ "$OVERRIDE_APTLINES" = "yes" ]; then
 	installaptlines
     else # Warn if override config is not set
@@ -430,7 +430,7 @@ function extractbuildplace () {
 	fi
     fi
 
-    mountproc
+    mountall
     mkdir -p "$BUILDPLACE/tmp/buildd"
 }
 
@@ -516,24 +516,24 @@ function cleanbuildplace_trap () {
     trap - exit sighup sigpipe
     exit 1
 }
-function saveaptcache_umountproc_cleanbuildplace_trap () {
+function saveaptcache_umountall_cleanbuildplace_trap () {
     trap "" sigpipe sighup
     set +e
-    saveaptcache_umountproc_cleanbuildplace
+    saveaptcache_umountall_cleanbuildplace
     trap - exit sighup sigpipe
     exit 1
 }
-function umountproc_cleanbuildplace_trap () {
+function umountall_cleanbuildplace_trap () {
     trap "" sigpipe sighup
     set +e
-    umountproc_cleanbuildplace
+    umountall_cleanbuildplace
     trap - exit sighup sigpipe
     exit 1
 }
-function umountproc_trap () {
+function umountall_trap () {
     trap "" sigpipe sighup
     set +e
-    umountproc
+    umountall
     trap - exit sighup sigpipe
     exit 1
 }

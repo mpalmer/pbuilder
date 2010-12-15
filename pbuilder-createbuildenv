@@ -83,8 +83,8 @@ executehooks "G"
 
 log "I: Refreshing the base.tgz "
 log "I: upgrading packages"
-mountproc
-$TRAP umountproc_cleanbuildplace_trap exit sighup
+mountall
+$TRAP umountall_cleanbuildplace_trap exit sighup
 $CHROOTEXEC /usr/bin/apt-get -q update
 
 case "`readlink -e "$PBUILDERSATISFYDEPENDSCMD"`" in
@@ -116,7 +116,7 @@ save_aptcache
 
 executehooks "E"
 unloadhooks
-umountproc
+umountall
 $CHROOTEXEC /usr/bin/apt-get clean || true
 $TRAP cleanbuildplace_trap exit sighup
 
