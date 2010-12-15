@@ -31,6 +31,9 @@ if [ ! -f "$PACKAGENAME" ]; then
     exit 1;
 fi;
 
+# check if this package should be built at all
+checkarchitecture "$PACKAGENAME"
+
 if [ -n "$BUILDUSERNAME" -a -n "$BUILDUSERID" ]; then
     SUTOUSER="env LOGNAME=$BUILDUSERNAME su -p $BUILDUSERNAME"
     DEBBUILDOPTS="${DEBBUILDOPTS:+$DEBBUILDOPTS }-rfakeroot"

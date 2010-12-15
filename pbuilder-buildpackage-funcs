@@ -30,6 +30,25 @@ function copydsc () {
     done
 }
 
+function checkarchitecture () {
+    local DSCFILE="$1"
+    local ARCHES="$(cat $DSCFILE | grep Architecture | sed 's/^[^:]\+:\s*//')"
+    local ARCH=$(dpkg-architecture -qDEB_HOST_ARCH)
+    local VALID_ARCH
+    for d in $ARCHES; do
+        if dpkg-architecture -a$ARCH -i$d; then
+            VALID_ARCH="yes"
+            break
+        fi
+    done
+    if [ ! $VALID_ARCH ] && [ ! "$ARCHES" = "all" ]; then
+        local msg="E: $ARCH not in arch list or does not match any "
+        msg="$msg arch wildcards: $ARCHES"
+        log $msg
+        exit 2
+    fi
+}
+
 function checkbuilddep () {
     # call satisfydepends
     local BUILDOPT="--binary-all"
