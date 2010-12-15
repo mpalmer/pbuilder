@@ -127,9 +127,9 @@ expect_success() {
     # run the test in subshell; successful commands should not output anything
     # to stderr but may send output to stdout
     if (if [ -z "$PBUILDER_TEST_VERBOSE" ]; then exec >/dev/null; fi; "$@"); then
-        testlib_echo "OK" "$1"
+        testlib_echo "OK" "$@"
     else
-        testlib_echo "FAIL" "$1" 
+        testlib_echo "FAIL" "$@" 
     fi
 }
 
@@ -137,9 +137,9 @@ expect_fail() {
     # run the test in subshell; failed commands may output anything to stdout
     # and stderr
     if (if [ -z "$PBUILDER_TEST_VERBOSE" ]; then exec >/dev/null 2>&1; fi; "$@"); then
-        testlib_echo "FAIL" "$1"
+        testlib_echo "FAIL" "$@"
     else
-        testlib_echo "OK" "$1"
+        testlib_echo "OK" "$@"
     fi
 }
 
