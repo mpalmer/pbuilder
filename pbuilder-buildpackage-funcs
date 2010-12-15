@@ -42,10 +42,7 @@ function checkarchitecture () {
         fi
     done
     if [ ! $VALID_ARCH ] && [ ! "$ARCHES" = "all" ]; then
-        local msg="E: $ARCH not in arch list or does not match any "
-        msg="$msg arch wildcards: $ARCHES"
-        log $msg
-        exit 2
+        return 1
     fi
 }
 
