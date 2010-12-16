@@ -61,6 +61,12 @@ t store
     /^$/ d
     b pgploop
 }
+: leadloop
+/^#/ {
+    n
+    /^$/ d
+    b leadloop
+}
 /^$/q
 d
 : store

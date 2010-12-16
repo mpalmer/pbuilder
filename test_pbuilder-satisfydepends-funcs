@@ -74,6 +74,18 @@ EOF
     get_build_deps
 }
 
+test_get_source_control_field_with_comments() {
+    cat <<EOF >"$DEBIAN_CONTROL"
+# This is a comment
+# So is this
+Format: 1.0
+Source: something-funny
+Build-Depends: debhelper, something-else
+
+EOF
+    get_source_control_field "Source"
+}
+
 trap cleanup sigpipe sighup exit
 
 # TODO move to build dir
@@ -85,5 +97,7 @@ expect_output "autotools-dev (>= 1.2), debhelper, quilt (<< 12:0), libwxgtk2.8-d
     test_get_build_deps "yes"
 
 expect_output "debhelper (>= 7)" test_get_build_deps_dsc
+
+expect_output "something-funny" test_get_source_control_field_with_comments
 
 testlib_summary
