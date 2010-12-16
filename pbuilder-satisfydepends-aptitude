@@ -59,7 +59,7 @@ function filter_arch_deps() {
 
 function checkbuilddep_internal () {
 # Use this function to fulfill the dependency (almost)
-    local ARCH=$($CHROOTEXEC dpkg-architecture -qDEB_HOST_ARCH)
+    local ARCH=$($CHROOTEXEC dpkg-architecture -f -qDEB_HOST_ARCH)
     local BUILD_DEP_DEB_DIR
     local BUILD_DEP_DEB_CONTROL
     local DEPENDS

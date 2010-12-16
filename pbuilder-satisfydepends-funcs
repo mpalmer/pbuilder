@@ -131,11 +131,11 @@ checkbuilddep_archdeps() {
     for d in $DEP_ARCHES; do
         if echo "$d" | grep -q '!'; then
             d="$(echo $d | sed 's/!//')"
-            if dpkg-architecture -a$ARCH -i$d; then
+            if dpkg-architecture -f -a$ARCH -i$d; then
                 IGNORE_IT="yes"
             fi
         else
-            if dpkg-architecture -a$ARCH -i$d; then
+            if dpkg-architecture -f -a$ARCH -i$d; then
                 USE_IT="yes"
             fi
             INCLUDE="yes"

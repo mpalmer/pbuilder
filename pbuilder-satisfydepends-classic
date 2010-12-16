@@ -61,7 +61,7 @@ apt_sim() {
 
 # Use this function to fulfill the dependency (almost)
 checkbuilddep_internal() {
-    local ARCH=$($CHROOTEXEC dpkg-architecture -qDEB_HOST_ARCH)
+    local ARCH=$($CHROOTEXEC dpkg-architecture -f -qDEB_HOST_ARCH)
     local INSTALLPKG
     local INSTALLPKGLIST
     local INSTALLPKGMULTI

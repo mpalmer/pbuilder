@@ -55,7 +55,7 @@ extractbuildplace
 trap umountproc_cleanbuildplace_trap exit sighup sigpipe
 
 # check if this package should be built at all
-HOST_ARCH="$($CHROOTEXEC dpkg-architecture -qDEB_HOST_ARCH)"
+HOST_ARCH="$($CHROOTEXEC dpkg-architecture -f -qDEB_HOST_ARCH)"
 if ! checkarchitecture "$PACKAGENAME" "$HOST_ARCH"; then
     log "E: $HOST_ARCH not in arch list or does not match any arch wildcards for this package"
     exit 2

@@ -2,7 +2,7 @@
 
 DIST=$1
 
-BUILD_ARCH=$(dpkg-architecture -qDEB_BUILD_ARCH)
+BUILD_ARCH=$(dpkg-architecture -f -qDEB_BUILD_ARCH)
 MIRROR=http://ftp.at.debian.org
 
 if [ -z $DIST ]; then
