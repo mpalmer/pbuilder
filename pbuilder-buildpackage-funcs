@@ -36,12 +36,12 @@ function checkarchitecture () {
     local ARCHES="$(cat $DSCFILE | grep Architecture | sed 's/^[^:]\+:\s*//')"
     local VALID_ARCH
     for d in $ARCHES; do
-        if dpkg-architecture -a$ARCH -i$d; then
+        if dpkg-architecture -a$ARCH -i$d >/dev/null 2>&1 || [ "$d" = "all" ]; then
             VALID_ARCH="yes"
             break
         fi
     done
-    if [ ! $VALID_ARCH ] && [ ! "$ARCHES" = "all" ]; then
+    if [ "$VALID_ARCH" != "yes" ]; then
         return 1
     fi
 }

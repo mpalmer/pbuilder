@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# testsuite to test pbuilder-buildpackage-funcs.
+
+if [ -n "$PBUILDER_CHECKOUT" ]; then
+    . "$PBUILDER_CHECKOUT/testlib.sh"
+
+    . "$PBUILDER_CHECKOUT/pbuilder-buildpackage-funcs"
+else
+    # these currently don't need to be exported
+    PBUILDER_TEST_ROOT="${PBUILDER_ROOT:-}"
+    PBUILDER_TEST_PKGLIBDIR="${PBUILDER_PKGLIBDIR:-$PBUILDER_ROOT/usr/lib/pbuilder}"
+    . "$PBUILDER_TEST_PKGLIBDIR/testlib.sh"
+
+    . "$PBUILDER_TEST_PKGLIBDIR/pbuilder-buildpackage-funcs"
+fi
+
+DSC=""
+
+cleanup() {
+    if [ -n "$DSC" ]; then
+        rm -f "$DSC"
+    fi
+}
+
+write_dsc_for_checkarchitecture() {
+    local ARCHLIST="$1"
+    cat <<EOF >"$DSC"
+Source: test
+Architecture: $ARCHLIST
+EOF
+}
+
+trap cleanup sigpipe sighup exit
+
+# TODO move to build dir
+DSC="$(tempfile)"
+
+write_dsc_for_checkarchitecture "any"
+expect_success checkarchitecture $DSC "i386"
+expect_success checkarchitecture $DSC "amd64"
+expect_success checkarchitecture $DSC "armel"
+expect_success checkarchitecture $DSC "kfreebsd-i386"
+
+write_dsc_for_checkarchitecture "all"
+expect_success checkarchitecture $DSC "i386"
+expect_success checkarchitecture $DSC "amd64"
+expect_success checkarchitecture $DSC "armel"
+expect_success checkarchitecture $DSC "kfreebsd-i386"
+
+write_dsc_for_checkarchitecture "i386 amd64"
+expect_success checkarchitecture $DSC "i386"
+expect_success checkarchitecture $DSC "amd64"
+expect_fail checkarchitecture $DSC "armel"
+
+write_dsc_for_checkarchitecture "linux-any"
+expect_success checkarchitecture $DSC "i386"
+expect_success checkarchitecture $DSC "amd64"
+expect_success checkarchitecture $DSC "armel"
+expect_fail checkarchitecture $DSC "kfreebsd-i386"
+
+write_dsc_for_checkarchitecture "hurd-any"
+expect_fail checkarchitecture $DSC "i386"
+expect_fail checkarchitecture $DSC "amd64"
+expect_success checkarchitecture $DSC "hurd-i386"
+
+# Policy 5.6.8 says that .dsc files can have this style of architecture list
+write_dsc_for_checkarchitecture "all i386 amd64"
+expect_success checkarchitecture $DSC "i386"
+expect_success checkarchitecture $DSC "amd64"
+expect_success checkarchitecture $DSC "armel"
+expect_success checkarchitecture $DSC "kfreebsd-i386"
+
+testlib_summary
