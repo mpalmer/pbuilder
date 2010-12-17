@@ -317,7 +317,7 @@ function cleanbuildplace () {
             # The readlink -f is a simple way to canonicalize the path for
             # $BUILDPLACE (no dirty double slashes for *us*), so it matches
             # what will be in the output of mount.
-            if mount |grep -q $(readlink -f $BUILDPLACE)/; then
+            if mount |grep -q -F " $(readlink -f $BUILDPLACE)/"; then
                 log "E: Something is still mounted under ${BUILDPLACE}; unmount and remove ${BUILDPLACE} manually"
             else
                 log "I: cleaning the build env "
